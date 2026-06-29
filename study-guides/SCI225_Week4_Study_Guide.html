@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SCI225 Week 4 Study Guide — Neurologic Structure, Function & Disorders</title>
+<style>
+  :root {
+    --u1: #1e40af; --u1-bg: #eff6ff; --u1-brd: #93c5fd;
+    --u2: #7c3aed; --u2-bg: #faf5ff; --u2-brd: #c4b5fd;
+    --u3: #c2410c; --u3-bg: #fff7ed; --u3-brd: #fdba74;
+    --u4: #047857; --u4-bg: #ecfdf5; --u4-brd: #6ee7b7;
+    --u5: #b91c1c; --u5-bg: #fef2f2; --u5-brd: #fca5a5;
+    --u6: #be185d; --u6-bg: #fdf2f8; --u6-brd: #f9a8d4;
+    --u7: #a16207; --u7-bg: #fefce8; --u7-brd: #fde047;
+    --mech: #1d4ed8; --mech-bg: #eff6ff;
+    --why:  #b45309; --why-bg:  #fffbeb;
+    --comp: #047857; --comp-bg: #f0fdf4;
+    --path: #be123c; --path-bg: #fff1f2;
+    --miss: #991b1b; --miss-bg: #fef2f2;
+    --acro: #6d28d9; --acro-bg: #f5f3ff;
+    --tip:  #0f766e; --tip-bg:  #ecfdf5;
+    --text: #111827; --muted: #4b5563; --line: #d1d5db;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    font-size: 10.5pt; line-height: 1.42; color: var(--text);
+    margin: 0; padding: 0; background: #f9fafb;
+  }
+  .layout { display: grid; grid-template-columns: 240px 1fr; max-width: 1140px; margin: 0 auto; }
+  nav.toc {
+    position: sticky; top: 0; align-self: start; max-height: 100vh; overflow-y: auto;
+    background: #fff; border-right: 1px solid var(--line); padding: 14px 12px; font-size: 9.4pt;
+  }
+  nav.toc h3 { font-size: 10pt; margin: 6px 0 8px; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; }
+  nav.toc a { display: block; padding: 3px 6px; color: var(--text); text-decoration: none; border-radius: 3px; margin-bottom: 1px; }
+  nav.toc a:hover { background: #f3f4f6; }
+  nav.toc .u1 { border-left: 3px solid var(--u1); }
+  nav.toc .u2 { border-left: 3px solid var(--u2); }
+  nav.toc .u3 { border-left: 3px solid var(--u3); }
+  nav.toc .u4 { border-left: 3px solid var(--u4); }
+  nav.toc .u5 { border-left: 3px solid var(--u5); }
+  nav.toc .u6 { border-left: 3px solid var(--u6); }
+  nav.toc .u7 { border-left: 3px solid var(--u7); }
+  main { padding: 20px 28px; background: #fff; }
+  h1 { font-size: 20pt; margin: 0 0 4px; }
+  h2 { font-size: 15pt; margin: 18px 0 6px; padding: 6px 10px; border-radius: 4px; color: #fff; }
+  h3 { font-size: 12pt; margin: 12px 0 4px; padding-bottom: 2px; border-bottom: 1px solid var(--line); }
+  h4 { font-size: 10.8pt; margin: 8px 0 3px; color: var(--muted); }
+  .unit1 h2 { background: var(--u1); } .unit2 h2 { background: var(--u2); }
+  .unit3 h2 { background: var(--u3); } .unit4 h2 { background: var(--u4); }
+  .unit5 h2 { background: var(--u5); } .unit6 h2 { background: var(--u6); }
+  .unit7 h2 { background: var(--u7); }
+  .unit1 h3 { color: var(--u1); border-bottom-color: var(--u1-brd); }
+  .unit2 h3 { color: var(--u2); border-bottom-color: var(--u2-brd); }
+  .unit3 h3 { color: var(--u3); border-bottom-color: var(--u3-brd); }
+  .unit4 h3 { color: var(--u4); border-bottom-color: var(--u4-brd); }
+  .unit5 h3 { color: var(--u5); border-bottom-color: var(--u5-brd); }
+  .unit6 h3 { color: var(--u6); border-bottom-color: var(--u6-brd); }
+  .unit7 h3 { color: var(--u7); border-bottom-color: var(--u7-brd); }
+  p { margin: 4px 0; }
+  ul, ol { margin: 4px 0 6px 20px; padding: 0; }
+  li { margin: 1px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 9.8pt; margin: 6px 0 8px; }
+  th, td { border: 1px solid var(--line); padding: 4px 6px; text-align: left; vertical-align: top; }
+  th { background: #f3f4f6; font-weight: 600; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+  .box { border-left: 4px solid; padding: 6px 10px; margin: 6px 0; border-radius: 3px; font-size: 10pt; }
+  .mech { border-color: var(--mech); background: var(--mech-bg); }
+  .mech::before { content: "MECHANISM "; font-weight: 700; color: var(--mech); font-size: 8.5pt; letter-spacing: .5px; }
+  .why { border-color: var(--why); background: var(--why-bg); }
+  .why::before { content: "WHY "; font-weight: 700; color: var(--why); font-size: 8.5pt; letter-spacing: .5px; }
+  .comp { border-color: var(--comp); background: var(--comp-bg); }
+  .comp::before { content: "COMPENSATION "; font-weight: 700; color: var(--comp); font-size: 8.5pt; letter-spacing: .5px; }
+  .path { border-color: var(--path); background: var(--path-bg); }
+  .path::before { content: "PATHOLOGY "; font-weight: 700; color: var(--path); font-size: 8.5pt; letter-spacing: .5px; }
+  .miss { border-color: var(--miss); background: var(--miss-bg); }
+  .miss::before { content: "⚠ COMMON MISSTEP "; font-weight: 700; color: var(--miss); font-size: 8.5pt; letter-spacing: .5px; }
+  .acro { border-color: var(--acro); background: var(--acro-bg); }
+  .acro::before { content: "ACRONYM / MNEMONIC "; font-weight: 700; color: var(--acro); font-size: 8.5pt; letter-spacing: .5px; }
+  .tip { border-color: var(--tip); background: var(--tip-bg); }
+  .tip::before { content: "★ EXAM TIP "; font-weight: 700; color: var(--tip); font-size: 8.5pt; letter-spacing: .5px; }
+  .flow { background: #f9fafb; border: 1px solid var(--line); padding: 8px 10px; border-radius: 4px; font-size: 9.8pt; margin: 6px 0; font-family: "Consolas", monospace; }
+  .flow .arr { color: #6b7280; margin: 0 3px; }
+  .q { background: #fafafa; border: 1px solid var(--line); border-radius: 4px; padding: 8px 10px; margin: 6px 0; font-size: 10pt; }
+  .q .qhead { font-weight: 600; margin-bottom: 3px; }
+  .q .opts { margin: 3px 0 4px 0; }
+  .q .ans { background: #ecfdf5; border-left: 3px solid var(--comp); padding: 4px 8px; margin-top: 4px; font-size: 9.8pt; }
+  .q .ans b { color: var(--comp); }
+  details summary { cursor: pointer; color: var(--mech); font-size: 9.5pt; font-weight: 600; }
+  .hero { padding: 14px 18px; background: linear-gradient(135deg, #1e3a8a, #7c3aed, #b91c1c); color: #fff; border-radius: 6px; margin-bottom: 14px; }
+  .hero h1 { color: #fff; }
+  .hero p { margin: 4px 0; font-size: 10pt; opacity: .95; }
+  .spine { background: rgba(255,255,255,.15); padding: 6px 10px; border-radius: 4px; margin-top: 6px; font-size: 9.8pt; }
+  .legend { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 10px; font-size: 9pt; }
+  .legend span { padding: 2px 8px; border-radius: 3px; border: 1px solid; }
+  .lg-mech { color: var(--mech); background: var(--mech-bg); border-color: var(--mech); }
+  .lg-why  { color: var(--why);  background: var(--why-bg);  border-color: var(--why); }
+  .lg-comp { color: var(--comp); background: var(--comp-bg); border-color: var(--comp); }
+  .lg-path { color: var(--path); background: var(--path-bg); border-color: var(--path); }
+  .lg-miss { color: var(--miss); background: var(--miss-bg); border-color: var(--miss); }
+  .lg-acro { color: var(--acro); background: var(--acro-bg); border-color: var(--acro); }
+  .lg-tip  { color: var(--tip);  background: var(--tip-bg);  border-color: var(--tip); }
+  .chip { font-size: 9pt; padding: 2px 8px; border-radius: 3px; color: #fff; font-weight: 600; }
+  .c1 { background: var(--u1); } .c2 { background: var(--u2); } .c3 { background: var(--u3); }
+  .c4 { background: var(--u4); } .c5 { background: var(--u5); } .c6 { background: var(--u6); }
+  .c7 { background: var(--u7); }
+  .btns { margin: 10px 0; }
+  .btns button { background: #0f172a; color: #fff; border: 0; padding: 6px 12px; border-radius: 4px; font-size: 9.8pt; cursor: pointer; margin-right: 6px; }
+  .small { font-size: 9.3pt; color: var(--muted); }
+  @media print {
+    body { background: #fff; }
+    .layout { display: block; max-width: none; }
+    nav.toc, .btns { display: none; }
+    main { padding: 0.35in 0.4in; }
+    details { page-break-inside: avoid; }
+    details[open] summary { display: none; }
+    details:not([open]) > *:not(summary) { display: block; }
+    .hero, h2, .chip, .box, .q .ans, th { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+<div class="layout">
+<nav class="toc">
+  <h3>Week 4 Study Guide</h3>
+  <a href="#intro"><b>How to use this guide</b></a>
+  <a href="#u1" class="u1"><b>Unit 1.</b> Cells & Conduction</a>
+  <a href="#u1-neuron" class="u1">&nbsp;&nbsp;Neurons & glia</a>
+  <a href="#u1-conduct" class="u1">&nbsp;&nbsp;Conduction & demyelination</a>
+  <a href="#u1-q" class="u1">&nbsp;&nbsp;Practice Qs</a>
+  <a href="#u2" class="u2"><b>Unit 2.</b> CNS Protection</a>
+  <a href="#u2-meninges" class="u2">&nbsp;&nbsp;Meninges & CSF</a>
+  <a href="#u2-bleed" class="u2">&nbsp;&nbsp;Hematomas</a>
+  <a href="#u2-hydro" class="u2">&nbsp;&nbsp;Hydrocephalus</a>
+  <a href="#u2-q" class="u2">&nbsp;&nbsp;Practice Qs</a>
+  <a href="#u3" class="u3"><b>Unit 3.</b> Sensory & Pain</a>
+  <a href="#u3-pathway" class="u3">&nbsp;&nbsp;Sensory pathways</a>
+  <a href="#u3-pain" class="u3">&nbsp;&nbsp;Pain types</a>
+  <a href="#u3-q" class="u3">&nbsp;&nbsp;Practice Qs</a>
+  <a href="#u4" class="u4"><b>Unit 4.</b> Sleep & Arousal</a>
+  <a href="#u4-q" class="u4">&nbsp;&nbsp;Practice Qs</a>
+  <a href="#u5" class="u5"><b>Unit 5.</b> Motor System</a>
+  <a href="#u5-umnlmn" class="u5">&nbsp;&nbsp;UMN vs LMN</a>
+  <a href="#u5-park" class="u5">&nbsp;&nbsp;Parkinson's, ALS, SCI</a>
+  <a href="#u5-q" class="u5">&nbsp;&nbsp;Practice Qs</a>
+  <a href="#u6" class="u6"><b>Unit 6.</b> Cognition</a>
+  <a href="#u6-q" class="u6">&nbsp;&nbsp;Practice Qs</a>
+  <a href="#u7" class="u7"><b>Unit 7.</b> Cerebral Hemodynamics & ICP</a>
+  <a href="#u7-q" class="u7">&nbsp;&nbsp;Practice Qs</a>
+  <a href="#appx"><b>Appendix:</b> Missteps & Mnemonics</a>
+</nav>
+
+<main>
+
+<div class="btns">
+  <button onclick="window.print()">Print / Save as PDF</button>
+  <button onclick="document.querySelectorAll('details').forEach(d=>d.open=true)">Expand All</button>
+  <button onclick="document.querySelectorAll('details').forEach(d=>d.open=false)">Collapse All</button>
+</div>
+
+<section id="intro">
+<div class="hero">
+  <h1>SCI225 Week 4 — Complete Study Guide</h1>
+  <p><b>Made by Dr. Vidya Aggrawal</b></p>
+  <p>Neurologic Structure & Function · Pain, Temperature, Sleep & Sensory · Cognition · Cerebral Hemodynamics · Motor Function</p>
+  <div class="spine"><b>Study Spine — for every neuro topic ask:</b><br>
+  1. CNS or PNS? &nbsp; 2. Which cell or pathway is broken? &nbsp; 3. What's the location/level of the lesion? &nbsp; 4. UMN sign or LMN sign?</div>
+</div>
+
+<div class="legend">
+  <span class="lg-mech">MECHANISM</span>
+  <span class="lg-why">WHY</span>
+  <span class="lg-comp">COMPENSATION</span>
+  <span class="lg-path">PATHOLOGY</span>
+  <span class="lg-miss">MISSTEP</span>
+  <span class="lg-acro">ACRONYM</span>
+  <span class="lg-tip">EXAM TIP</span>
+</div>
+
+<h3>Course alignment</h3>
+<p>This guide maps to the three Week 4 learning objectives:</p>
+<ul>
+  <li><b>LO1</b> — Identify Structure and Function of the Neurologic System <span class="small">(Units 1, 2)</span></li>
+  <li><b>LO2</b> — Explain Pain, Temperature, Sleep, and Sensory Function <span class="small">(Units 3, 4)</span></li>
+  <li><b>LO3</b> — Discuss Alterations in Cognitive Systems, Cerebral Hemodynamics, and Motor Function <span class="small">(Units 5, 6, 7)</span></li>
+</ul>
+<p>Every practice question here was written fresh to teach you to apply the concept. None reproduces an exam item.</p>
+</section>
+
+<!-- ========================= UNIT 1 ========================= -->
+<section id="u1" class="unit1">
+<h2>Unit 1 &nbsp;•&nbsp; Cells of the Nervous System & Conduction &nbsp;<span class="chip c1">LO1</span></h2>
+
+<h3 id="u1-neuron">1.1 Neurons and Neuroglia (Support Cells)</h3>
+
+<div class="box mech">
+A <b>neuron</b> has three parts: dendrites (receive), cell body/soma (process), axon (transmit). The axon is wrapped in <b>myelin</b>, which insulates it and lets the action potential <i>jump</i> from one node of Ranvier to the next — this is <b>saltatory conduction</b>. Myelinated axons conduct ~50× faster than unmyelinated ones.
+</div>
+
+<div class="box acro">
+<b>The 6 neuroglial (support) cell types — "MOSES + AM":</b><br>
+<b>M</b>icroglia · <b>O</b>ligodendrocytes · <b>S</b>chwann · <b>E</b>pendymal · <b>S</b>atellite · <b>A</b>strocytes · plus <b>M</b>any neurons supported by all of them.<br>
+4 are CNS (astrocytes, oligodendrocytes, microglia, ependymal). 2 are PNS (Schwann, satellite).
+</div>
+
+<table>
+  <tr><th>Cell</th><th>Location</th><th>Function</th><th>If damaged…</th></tr>
+  <tr><td><b>Astrocytes</b></td><td>CNS</td><td>Form the blood-brain barrier; potassium buffering; metabolic support</td><td>Toxins cross BBB → neuroinflammation, edema</td></tr>
+  <tr><td><b>Oligodendrocytes</b></td><td>CNS</td><td>Make myelin in CNS — one cell wraps multiple axons</td><td>Slowed/lost saltatory conduction in CNS (multiple sclerosis)</td></tr>
+  <tr><td><b>Microglia</b></td><td>CNS</td><td>Resident immune / phagocytic cells; clear debris</td><td>Impaired CNS immune response and clearance</td></tr>
+  <tr><td><b>Ependymal cells</b></td><td>CNS — line ventricles & central canal</td><td>Make and circulate CSF (choroid plexus)</td><td>↓ CSF production or obstruction → hydrocephalus</td></tr>
+  <tr><td><b>Schwann cells</b></td><td>PNS</td><td>Make myelin in PNS — one cell wraps one axon segment</td><td>PNS demyelination (Guillain-Barré, Charcot-Marie-Tooth)</td></tr>
+  <tr><td><b>Satellite cells</b></td><td>PNS — in ganglia</td><td>Surround and support PNS neuron cell bodies</td><td>Ganglion dysfunction</td></tr>
+</table>
+
+<div class="box tip">
+<b>The CNS/PNS myelin split:</b> "<b>O</b>ligo in <b>O</b>ne (CNS) — many axons. <b>S</b>chwann in <b>S</b>egments (PNS) — one axon."<br>
+This single distinction underlies the difference between MS (CNS, oligo) and Guillain-Barré (PNS, Schwann).
+</div>
+
+<h3 id="u1-conduct">1.2 Conduction & Demyelinating Disorders</h3>
+
+<div class="flow">
+Stimulus <span class="arr">→</span> Na⁺ influx at node <span class="arr">→</span> action potential <span class="arr">→</span> impulse "jumps" from node to node along myelin <span class="arr">→</span> rapid signal arrival at synapse
+</div>
+
+<div class="box why">
+<b>Why demyelination slows conduction.</b> Without myelin between nodes, the axon must depolarize the entire length of membrane like an unmyelinated fiber. The signal arrives late, weakly, or not at all. Voluntary movement and sensation become delayed, fatigue with repetition (because Na⁺ channel reserves run out), and may stop entirely as disease progresses.
+</div>
+
+<table>
+  <tr><th>Disorder</th><th>Where</th><th>Cell affected</th><th>Classic presentation</th></tr>
+  <tr><td><b>Multiple sclerosis (MS)</b></td><td>CNS</td><td>Oligodendrocytes — autoimmune T-cell attack on CNS myelin</td><td>Young adult, female, "dissemination in time and space" — optic neuritis, weakness, sensory loss, relapsing</td></tr>
+  <tr><td><b>Guillain-Barré syndrome (GBS)</b></td><td>PNS</td><td>Schwann cells — autoimmune demyelination, often post-viral</td><td><b>Ascending</b> symmetric flaccid weakness 1–3 weeks after a viral or GI infection (Campylobacter); CSF shows ↑ protein with normal cells</td></tr>
+  <tr><td><b>Charcot-Marie-Tooth</b></td><td>PNS</td><td>Hereditary demyelinating neuropathy</td><td>Childhood-onset distal weakness, "stork leg" deformity, foot drop</td></tr>
+</table>
+
+<div class="box path">
+<b>Guillain-Barré is the most common cause of acute flaccid paralysis</b> in developed countries. The classic story: a young adult had a GI bug 1–3 weeks ago; now they have ascending symmetric weakness, areflexia, and tingling. Watch the diaphragm — respiratory failure is the killer. Treat with IVIG or plasmapheresis.
+</div>
+
+<div class="box miss">
+<b>"MS and Guillain-Barré are the same demyelinating disease."</b> No — completely different. MS = CNS, oligodendrocytes, relapsing-remitting, lifelong. GBS = PNS, Schwann cells, single ascending paralysis episode, often resolves. The exam loves making you pick between these two.
+</div>
+
+<h3 id="u1-q">Practice Questions — Cells & Conduction</h3>
+
+<div class="q">
+<div class="qhead">Q1. A patient with a CNS demyelinating disorder develops slowed nerve conduction. Which cell is most likely dysfunctional?</div>
+<div class="opts">
+A. Astrocyte<br>
+B. Microglia<br>
+C. Oligodendrocyte<br>
+D. Schwann cell
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>C.</b> CNS myelin is made by oligodendrocytes. Schwann cells make PNS myelin. Astrocytes form the BBB; microglia are immune cells.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q2. A patient has demyelination and develops slowed voluntary movement. The pathophysiology is best explained by:</div>
+<div class="opts">
+A. Loss of saltatory conduction along the axon<br>
+B. Failure of neurotransmitter release at the synapse<br>
+C. Reduced cerebral blood flow<br>
+D. Loss of dendritic branching
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>A.</b> Demyelination disrupts the node-to-node "jumping" of action potentials. The signal still propagates but slowly and weakly, producing delayed and weak movements.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q3. A patient develops ascending symmetric weakness 2 weeks after a viral GI illness. Which mechanism?</div>
+<div class="opts">
+A. CNS oligodendrocyte loss (multiple sclerosis)<br>
+B. Peripheral nerve demyelination from autoimmune attack on Schwann cells (Guillain-Barré)<br>
+C. Dopamine deficiency in basal ganglia<br>
+D. Anterior horn cell death (poliomyelitis)
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Post-infectious ascending flaccid paralysis = Guillain-Barré. Schwann cells in PNS are the target. Treat with IVIG or plasmapheresis; monitor diaphragm.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q4. <b>Matching.</b> Match each support cell to the dysfunction it causes when damaged.</div>
+<table>
+<tr><th>Cell</th><th>Effect of damage</th></tr>
+<tr><td>Astrocyte</td><td>___</td></tr>
+<tr><td>Oligodendrocyte</td><td>___</td></tr>
+<tr><td>Schwann cell</td><td>___</td></tr>
+<tr><td>Ependymal cell</td><td>___</td></tr>
+</table>
+<div class="opts">Choices: PNS demyelination &nbsp;·&nbsp; CNS demyelination &nbsp;·&nbsp; Loss of CSF circulation &nbsp;·&nbsp; Weakened blood-brain barrier</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>Astrocyte → Weakened BBB · Oligodendrocyte → CNS demyelination · Schwann → PNS demyelination · Ependymal → Loss of CSF circulation.</b></div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q5. <b>Dropdown.</b> A patient with myelin damage develops slowed voluntary movement because [select: saltatory conduction / synaptic release / Na/K pump activity] is disrupted and impulses no longer leap rapidly between [select: dendrites / nodes of Ranvier / synapses].</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>Saltatory conduction · nodes of Ranvier.</b> Myelin lets action potentials skip from node to node — remove myelin and the cascade slows or fails.</div>
+</details>
+</div>
+
+</section>
+
+<!-- ========================= UNIT 2 ========================= -->
+<section id="u2" class="unit2">
+<h2>Unit 2 &nbsp;•&nbsp; CNS Protection: Meninges, CSF & Vascular Spaces &nbsp;<span class="chip c2">LO1</span></h2>
+
+<h3 id="u2-meninges">2.1 The Three Meningeal Layers and the Spaces Between Them</h3>
+
+<div class="flow">
+Skull <span class="arr">→</span> EPIDURAL space <span class="arr">→</span> Dura mater <span class="arr">→</span> SUBDURAL space <span class="arr">→</span> Arachnoid <span class="arr">→</span> SUBARACHNOID space (CSF) <span class="arr">→</span> Pia mater <span class="arr">→</span> Brain
+</div>
+
+<table>
+  <tr><th>Layer / Space</th><th>Contents</th><th>Vessels there</th></tr>
+  <tr><td><b>Epidural space</b></td><td>Potential space between skull and dura</td><td>Meningeal arteries (esp. middle meningeal)</td></tr>
+  <tr><td><b>Dura mater</b></td><td>Tough outer layer attached to skull</td><td>—</td></tr>
+  <tr><td><b>Subdural space</b></td><td>Between dura and arachnoid</td><td><b>Bridging veins</b></td></tr>
+  <tr><td><b>Arachnoid mater</b></td><td>Web-like middle layer</td><td>—</td></tr>
+  <tr><td><b>Subarachnoid space</b></td><td>Holds CSF</td><td>Cerebral arteries (Circle of Willis)</td></tr>
+  <tr><td><b>Pia mater</b></td><td>Thin layer hugging brain surface</td><td>—</td></tr>
+</table>
+
+<h4>CSF — production, circulation, function</h4>
+<div class="box mech">
+CSF is produced by the <b>choroid plexus</b> (specialized ependymal cells) inside the ventricles. It circulates through the lateral → 3rd → 4th ventricles → into the subarachnoid space → reabsorbed by <b>arachnoid villi</b> back into venous sinuses.<br>
+Functions: cushions brain, removes waste, delivers nutrients, regulates pressure.
+</div>
+
+<h3 id="u2-bleed">2.2 The Three Hematomas — Where the Blood Pools</h3>
+
+<table>
+  <tr><th>Type</th><th>Vessel torn</th><th>Mechanism</th><th>Classic clinical picture</th><th>CT shape</th></tr>
+  <tr><td><b>Epidural hematoma</b></td><td>Middle meningeal <b>artery</b></td><td>Skull fracture (often temporal bone)</td><td>Brief loss of consciousness → "lucid interval" minutes to hours → rapid deterioration, fixed pupil; expands fast (arterial)</td><td><b>Lens-shaped</b> (biconvex), does not cross sutures</td></tr>
+  <tr><td><b>Subdural hematoma</b></td><td>Bridging <b>veins</b></td><td>Sudden head movement (fall, MVA) or atrophy (elderly, alcoholic)</td><td>Slower onset over hours to weeks; gradual confusion, headache, drowsiness</td><td><b>Crescent-shaped</b>, crosses sutures</td></tr>
+  <tr><td><b>Subarachnoid hemorrhage</b></td><td>Berry aneurysm rupture (often Circle of Willis)</td><td>Spontaneous or HTN</td><td>"<b>Worst headache of my life</b>" — thunderclap, neck stiffness, photophobia</td><td>Blood in subarachnoid space, around brainstem and basilar cisterns</td></tr>
+  <tr><td><b>Intracerebral hemorrhage</b></td><td>Small penetrating arteries</td><td>HTN, AVM, trauma</td><td>Focal neurologic deficits depending on lesion location; gradual stroke-like onset</td><td>Blood within brain parenchyma</td></tr>
+</table>
+
+<div class="box acro">
+<b>"E-A-V-S"</b> for hematoma vessel and timing:<br>
+<b>E</b>pidural — <b>A</b>rterial — fast (lucid interval)<br>
+Sub<b>d</b>ural — <b>V</b>enous — slow<br>
+Sub<b>a</b>rachnoid — aneurysm — sudden "worst headache"
+</div>
+
+<div class="box path">
+<b>The lucid interval</b> is the classic epidural hematoma story. Patient is hit on the temple, briefly loses consciousness, "wakes up" feeling fine, then deteriorates rapidly as the arterial bleed expands. This is a neurosurgical emergency — drain the hematoma before brainstem herniation occurs.
+</div>
+
+<h3 id="u2-hydro">2.3 Hydrocephalus</h3>
+
+<div class="box mech">
+Hydrocephalus = excess CSF in the ventricles. Classified by where the problem is:
+<ul>
+  <li><b>Communicating</b> (non-obstructive) — CSF flows through ventricles freely but is not <i>reabsorbed</i> at arachnoid villi (post-meningitis, post-subarachnoid bleed, congenital)</li>
+  <li><b>Non-communicating</b> (obstructive) — flow is <i>blocked</i> somewhere in the ventricular system. Classic site: <b>cerebral aqueduct</b> (aqueduct of Sylvius) between 3rd and 4th ventricles → CSF backs up into the lateral and 3rd ventricles → they enlarge.</li>
+  <li><b>Normal pressure hydrocephalus (NPH)</b> — adult chronic form: <i>Wet, Wobbly, Wacky</i> — incontinence, gait apraxia, dementia.</li>
+</ul>
+</div>
+
+<div class="box why">
+<b>Why aqueduct obstruction enlarges ventricles upstream.</b> CSF made in the lateral ventricles must funnel through a narrow channel — the cerebral aqueduct — to reach the 4th ventricle. Block that channel, and CSF accumulates behind it. The lateral and 3rd ventricles balloon, pressing on surrounding brain tissue.
+</div>
+
+<div class="box tip">
+<b>Hydrocephalus classic pictures:</b><br>
+- Infant with rapidly enlarging head, sunset eyes, bulging fontanelle → congenital obstructive<br>
+- Older adult with the "3 W's" (Wet, Wobbly, Wacky) → NPH<br>
+- Adult after meningitis or subarachnoid bleed → communicating
+</div>
+
+<h3 id="u2-q">Practice Questions — CNS Protection</h3>
+
+<div class="q">
+<div class="qhead">Q6. A patient has a skull fracture and rapidly rising pressure between the skull and dura mater. Which mechanism explains this lesion?</div>
+<div class="opts">
+A. A meningeal artery is torn within the epidural space<br>
+B. A bridging vein is torn within the subdural space<br>
+C. A berry aneurysm has ruptured into the subarachnoid space<br>
+D. CSF accumulates due to ependymal damage
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>A.</b> Skull fracture + rapid pressure between skull and dura = epidural hematoma. The middle meningeal artery is the most common source.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q7. An elderly patient on anticoagulation falls and develops gradually worsening confusion over two weeks. CT shows a crescent-shaped collection along the cerebral convexity. Which lesion?</div>
+<div class="opts">
+A. Epidural hematoma<br>
+B. Subdural hematoma — bridging vein rupture<br>
+C. Subarachnoid hemorrhage<br>
+D. Intracerebral hemorrhage
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Slow onset, crescent shape, bridging-vein source, elderly with brain atrophy that stretches those veins. Anticoagulation worsens the bleeding.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q8. A patient develops ventricular enlargement after obstruction of the cerebral aqueduct. Which mechanism accounts for this change?</div>
+<div class="opts">
+A. CSF accumulates because normal fluid drainage is blocked<br>
+B. Blood accumulates because arterial inflow is blocked<br>
+C. Lymph accumulates because venous outflow is blocked<br>
+D. Ions accumulate because neural signaling is blocked
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>A.</b> Aqueduct of Sylvius blockage prevents CSF flowing from 3rd to 4th ventricle → lateral and 3rd ventricles balloon → non-communicating (obstructive) hydrocephalus.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q9. A 30-year-old presents with a "thunderclap headache" — the worst of her life — followed by neck stiffness. Which lesion is most likely?</div>
+<div class="opts">
+A. Epidural hematoma<br>
+B. Subdural hematoma<br>
+C. Subarachnoid hemorrhage from ruptured berry aneurysm<br>
+D. Intracerebral hemorrhage
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>C.</b> "Worst headache of my life" + nuchal rigidity = subarachnoid hemorrhage until proven otherwise. CT first; if negative and suspicion remains, lumbar puncture for xanthochromia.</div>
+</details>
+</div>
+
+</section>
+
+<!-- ========================= UNIT 3 ========================= -->
+<section id="u3" class="unit3">
+<h2>Unit 3 &nbsp;•&nbsp; Sensory Function & Pain &nbsp;<span class="chip c3">LO2</span></h2>
+
+<h3 id="u3-pathway">3.1 Sensory Pathway — From Receptor to Perception</h3>
+
+<div class="flow">
+Skin receptor <span class="arr">→</span> peripheral nerve <span class="arr">→</span> dorsal horn of spinal cord <span class="arr">→</span> ascending tract <span class="arr">→</span> thalamus <span class="arr">→</span> primary sensory cortex (parietal lobe) <span class="arr">→</span> conscious perception
+</div>
+
+<div class="box mech">
+A signal must travel a four-neuron chain to be perceived. Cut any link — peripheral nerve, dorsal column, thalamus, cortex — and perception fails. A patient who is touched but does not feel it has a break somewhere on this pathway.
+</div>
+
+<h4>The two main ascending sensory tracts</h4>
+<table>
+  <tr><th>Tract</th><th>Carries</th><th>Decussates (crosses)</th><th>Lesion → loss</th></tr>
+  <tr><td><b>Dorsal column / medial lemniscus</b></td><td>Fine touch, vibration, proprioception, 2-point discrimination</td><td>In the medulla (high)</td><td>Same side below the lesion if cord lesion; opposite side if brainstem lesion</td></tr>
+  <tr><td><b>Spinothalamic tract</b></td><td>Pain, temperature, crude touch</td><td>Within 1–2 levels of entering the cord (low)</td><td>Opposite side below the lesion</td></tr>
+</table>
+
+<div class="box tip">
+<b>"Pain crosses early, vibration crosses late."</b> Spinothalamic = pain/temp = decussates near entry. Dorsal columns = vibration/proprioception = decussates in the medulla. This explains why hemicord lesions (Brown-Séquard) cause pain loss <i>opposite</i> the lesion and proprioception loss <i>same</i> side.
+</div>
+
+<h3 id="u3-pain">3.2 Pain Types</h3>
+
+<table>
+  <tr><th>Type</th><th>Cause</th><th>Quality</th><th>Examples</th></tr>
+  <tr><td><b>Nociceptive — somatic</b></td><td>Tissue injury detected by nociceptors in skin, muscle, bone, joint</td><td>Sharp, throbbing, well-localized</td><td>Cut, fracture, sprain, surgical incision</td></tr>
+  <tr><td><b>Nociceptive — visceral</b></td><td>Stretching/distension of organs</td><td>Dull, achy, poorly localized; may refer (e.g., diaphragm pain to shoulder)</td><td>Appendicitis, MI (referred to arm/jaw), bowel obstruction</td></tr>
+  <tr><td><b>Neuropathic</b></td><td>Damage to peripheral or central nerves directly</td><td><b>Burning, shooting, electric, tingling, numb</b></td><td>Diabetic neuropathy, post-herpetic neuralgia, sciatica, trigeminal neuralgia, phantom limb</td></tr>
+  <tr><td><b>Referred</b></td><td>Visceral pain perceived at a distant somatic site (shared spinal level)</td><td>Same as visceral</td><td>MI → left arm/jaw; gallbladder → right shoulder; appendicitis → periumbilical</td></tr>
+</table>
+
+<div class="box miss">
+<b>"Burning, shooting pain without a new injury" is the classic neuropathic pain stem.</b> Don't pick nociceptive when you see those words. Neuropathic pain comes from the nerve itself being damaged or sensitized — diabetes, herpes, nerve compression, amputation.
+</div>
+
+<div class="box why">
+<b>Why neuropathic pain doesn't respond well to opioids.</b> Opioids dampen nociceptive signaling at the dorsal horn and brain. Neuropathic pain is generated by damaged neurons firing abnormally, often above the level the opioid acts. That's why we use anticonvulsants (gabapentin, pregabalin) and antidepressants (TCAs, SNRIs) — they calm hyperexcitable nerves.
+</div>
+
+<h3 id="u3-q">Practice Questions — Sensory & Pain</h3>
+
+<div class="q">
+<div class="qhead">Q10. A patient feels a pinprick at the skin but does not perceive it after a spinal cord lesion. Which best explains the loss of perception?</div>
+<div class="opts">
+A. The skin receptors are damaged<br>
+B. The signal cannot ascend through the spinal cord to the cortex<br>
+C. The motor pathway is interrupted<br>
+D. The cerebellum is dysfunctional
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Receptor activation is intact (the patient feels it locally), but the ascending sensory tract is interrupted, so the signal cannot reach the cortex for conscious perception.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q11. A patient describes burning, shooting pain in the foot without any new injury. Which type of pain is most likely?</div>
+<div class="opts">
+A. Visceral nociceptive pain<br>
+B. Somatic nociceptive pain<br>
+C. Neuropathic pain<br>
+D. Referred pain
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>C.</b> "Burning, shooting" + no fresh injury = damaged nerve firing abnormally → neuropathic. Common causes: diabetes, post-herpetic neuralgia, sciatica.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q12. Which finding is most consistent with nociceptive pain?</div>
+<div class="opts">
+A. Burning sensation along a dermatome with no injury<br>
+B. Sharp, well-localized pain at a surgical incision<br>
+C. Numbness and tingling in the toes from years of diabetes<br>
+D. Phantom limb sensation after amputation
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Sharp, localized, tied to tissue injury = somatic nociceptive. The other options describe neuropathic pain.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q13. <b>Matching.</b> Match each lesion location to its expected sensory deficit.</div>
+<table>
+<tr><th>Lesion</th><th>Deficit</th></tr>
+<tr><td>Peripheral nerve</td><td>___</td></tr>
+<tr><td>Spinothalamic tract (cord)</td><td>___</td></tr>
+<tr><td>Dorsal column (cord)</td><td>___</td></tr>
+<tr><td>Primary sensory cortex</td><td>___</td></tr>
+</table>
+<div class="opts">Choices: Loss of fine touch, vibration, proprioception same side &nbsp;·&nbsp; Loss of all modalities in nerve distribution &nbsp;·&nbsp; Loss of pain and temp opposite side &nbsp;·&nbsp; Cortical neglect or loss of fine discrimination opposite side</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>Peripheral nerve → all modalities in nerve territory · Spinothalamic → pain/temp opposite side · Dorsal column → fine touch/vibration/proprioception same side · Cortex → cortical neglect / fine discrimination opposite side.</b></div>
+</details>
+</div>
+
+</section>
+
+<!-- ========================= UNIT 4 ========================= -->
+<section id="u4" class="unit4">
+<h2>Unit 4 &nbsp;•&nbsp; Sleep, Arousal & Consciousness &nbsp;<span class="chip c4">LO2</span></h2>
+
+<div class="box mech">
+<b>Arousal</b> (being awake) is driven by the <b>reticular activating system (RAS)</b> — a network of neurons in the brainstem (especially the upper pons and midbrain reticular formation) that projects up to the thalamus and cortex. Without RAS input, the cortex cannot be aroused even if it is anatomically intact.
+</div>
+
+<div class="box why">
+<b>Why brainstem injuries cause coma.</b> A patient with a normal cortex but a destroyed RAS cannot be awakened — the cortex needs continual "wake-up" signals from the brainstem. This is why even small brainstem strokes can produce profound consciousness deficits, while large cortical strokes may leave the patient awake but with focal deficits.
+</div>
+
+<h4>Sleep architecture</h4>
+<table>
+  <tr><th>Stage</th><th>Features</th><th>Regulator</th></tr>
+  <tr><td><b>NREM 1</b></td><td>Light sleep, easy to wake</td><td>Hypothalamus dampens RAS</td></tr>
+  <tr><td><b>NREM 2</b></td><td>Sleep spindles, K complexes</td><td>—</td></tr>
+  <tr><td><b>NREM 3 (slow-wave)</b></td><td>Deep sleep; growth hormone release; "physical restoration"</td><td>—</td></tr>
+  <tr><td><b>REM</b></td><td>Rapid eye movements, dreaming, atonia of voluntary muscles, "memory consolidation"</td><td>Brainstem (pons)</td></tr>
+</table>
+
+<div class="box path">
+<b>Sleep-wake cycle disruption.</b> The suprachiasmatic nucleus (SCN) of the hypothalamus is the body's circadian pacemaker. The brainstem coordinates the sleep stages themselves. Brainstem injury disrupts both REM and arousal — patients lose normal sleep architecture and may fluctuate between hypersomnia and unrousable states.
+</div>
+
+<div class="box tip">
+<b>"Difficult to arouse after brainstem injury"</b> = damaged RAS. The level of consciousness is the responsibility of the brainstem, not the cortex.
+</div>
+
+<h3 id="u4-q">Practice Questions — Sleep & Arousal</h3>
+
+<div class="q">
+<div class="qhead">Q14. A patient becomes difficult to arouse after a brainstem injury. Which system is impaired?</div>
+<div class="opts">
+A. Reticular activating system (RAS)<br>
+B. Cerebellum<br>
+C. Hippocampus<br>
+D. Basal ganglia
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>A.</b> RAS sits in the brainstem and drives cortical arousal. Damage there → impaired wakefulness even when the cortex is intact.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q15. A patient develops disrupted sleep-wake cycles after a brainstem injury. Which structures most likely caused this?</div>
+<div class="opts">
+A. Hippocampus and amygdala<br>
+B. Reticular activating system and pontine sleep regulators<br>
+C. Cerebellum and vestibular nuclei<br>
+D. Basal ganglia
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> The brainstem houses both the RAS (arousal) and the pontine centers that regulate REM/NREM cycling. Injury here scrambles the architecture.</div>
+</details>
+</div>
+
+</section>
+
+<!-- ========================= UNIT 5 ========================= -->
+<section id="u5" class="unit5">
+<h2>Unit 5 &nbsp;•&nbsp; Motor System & Movement Disorders &nbsp;<span class="chip c5">LO3</span></h2>
+
+<h3 id="u5-umnlmn">5.1 The Two-Neuron Motor Pathway: UMN vs LMN</h3>
+
+<div class="flow">
+Motor cortex (UMN) <span class="arr">→</span> corticospinal tract <span class="arr">→</span> anterior horn cell (LMN starts) <span class="arr">→</span> peripheral nerve <span class="arr">→</span> neuromuscular junction <span class="arr">→</span> muscle
+</div>
+
+<div class="box mech">
+The motor system uses <b>two neurons in series</b>:
+<ul>
+  <li><b>Upper motor neuron (UMN)</b> — cell body in the cortex; axon descends in the corticospinal tract through internal capsule and brainstem; ends in the spinal cord.</li>
+  <li><b>Lower motor neuron (LMN)</b> — cell body in the anterior (ventral) horn of the spinal cord; axon exits through ventral roots and peripheral nerves to reach muscle.</li>
+</ul>
+The <i>signs</i> of a lesion depend entirely on which neuron is broken.
+</div>
+
+<table>
+  <tr><th>Sign</th><th>UMN lesion</th><th>LMN lesion</th></tr>
+  <tr><td>Weakness</td><td>Yes (often hemiparesis)</td><td>Yes (focal, in nerve distribution)</td></tr>
+  <tr><td>Tone</td><td><b>Increased</b> (spasticity)</td><td><b>Decreased</b> (flaccid)</td></tr>
+  <tr><td>Reflexes</td><td><b>Hyperreflexic</b>, clonus</td><td><b>Hyporeflexic</b> or absent</td></tr>
+  <tr><td>Babinski</td><td><b>Positive</b> (toes up)</td><td>Negative</td></tr>
+  <tr><td>Atrophy</td><td>Mild, late (disuse)</td><td><b>Marked, early</b></td></tr>
+  <tr><td>Fasciculations</td><td>No</td><td><b>Yes</b></td></tr>
+  <tr><td>Examples</td><td>Stroke, MS, spinal cord injury (chronic)</td><td>Polio, peripheral nerve injury, GBS, anterior horn disease</td></tr>
+</table>
+
+<div class="box acro">
+<b>UMN = "EVERYTHING UP except strength."</b> Tone up, reflexes up, toes up (Babinski).<br>
+<b>LMN = "EVERYTHING DOWN."</b> Tone down (flaccid), reflexes down, toes down. Plus visible atrophy and fasciculations.
+</div>
+
+<h3 id="u5-park">5.2 Major Movement and Motor Disorders</h3>
+
+<table>
+  <tr><th>Disorder</th><th>Lesion / Mechanism</th><th>Cardinal signs</th></tr>
+  <tr><td><b>Parkinson's disease</b></td><td>Loss of dopamine-producing neurons in <b>substantia nigra</b> → loss of basal ganglia inhibition → rigidity</td><td><b>TRAP:</b> Tremor (resting), Rigidity (cogwheel), Akinesia/bradykinesia, Postural instability; mask-like face, shuffling gait</td></tr>
+  <tr><td><b>Amyotrophic lateral sclerosis (ALS / Lou Gehrig's)</b></td><td>Degeneration of <b>both UMN and LMN</b></td><td>Mixed signs: spasticity AND atrophy/fasciculations; cognition spared; respiratory failure is the killer</td></tr>
+  <tr><td><b>Huntington disease</b></td><td>Autosomal dominant CAG repeat expansion → caudate atrophy</td><td>Mid-adult onset chorea, psychiatric symptoms, dementia</td></tr>
+  <tr><td><b>Cerebellar lesions</b></td><td>Damage to cerebellum (stroke, alcohol, MS)</td><td>Ataxia, intention tremor, dysmetria, dysdiadochokinesia, scanning speech, falls toward lesion side</td></tr>
+  <tr><td><b>Spinal cord injury — acute</b></td><td>Spinal shock — temporary loss of all reflex activity below the lesion</td><td><b>Flaccid paralysis</b>, areflexia, autonomic instability for days to weeks</td></tr>
+  <tr><td><b>Spinal cord injury — chronic</b></td><td>Reflex arcs return below the lesion but UMN signal is still cut</td><td>Spasticity, hyperreflexia, clonus, possible muscle spasms</td></tr>
+</table>
+
+<div class="box path">
+<b>Spinal shock to spasticity transition.</b> Right after spinal cord injury, even reflexes below the lesion vanish — flaccid paralysis. Over days to weeks, the spinal cord reflex arcs reorganize and start firing without UMN inhibition → the limbs become spastic, hyperreflexic, sometimes with painful spasms. Same lesion, two phases: acute = LMN-like; chronic = UMN-like.
+</div>
+
+<div class="box miss">
+<b>"Parkinson's is a memory disease."</b> No — Parkinson's is a <i>movement</i> disorder. Cognition can decline late, but the cardinal features are motor (TRAP). Alzheimer's is the classic memory disease.
+</div>
+
+<div class="box tip">
+<b>ALS is the only movement disorder with mixed UMN AND LMN signs.</b> A patient with both spasticity and fasciculations, with normal cognition, points at ALS. This is a high-yield distinguishing feature.
+</div>
+
+<h3 id="u5-q">Practice Questions — Motor</h3>
+
+<div class="q">
+<div class="qhead">Q16. A patient with Parkinson's disease has slowed movement initiation, resting tremor, and cogwheel rigidity. Which mechanism best explains these findings?</div>
+<div class="opts">
+A. Excess dopamine in the cortex<br>
+B. Loss of dopamine-producing neurons in the substantia nigra → reduced basal ganglia output<br>
+C. Demyelination of the corticospinal tract<br>
+D. Cerebellar degeneration
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Substantia nigra dopamine loss → impaired basal ganglia regulation of voluntary movement → rigidity, bradykinesia, resting tremor. Treatment with levodopa replenishes dopamine.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q17. A patient develops flaccid paralysis with marked muscle atrophy and decreased reflexes in one arm. Which lesion?</div>
+<div class="opts">
+A. Upper motor neuron (corticospinal tract) lesion<br>
+B. Lower motor neuron lesion<br>
+C. Cerebellar hemisphere lesion<br>
+D. Basal ganglia lesion
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Flaccid + atrophy + ↓ reflexes = LMN. Hyperreflexia and spasticity would suggest UMN.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q18. A patient is diagnosed with ALS. Which combination of findings is most expected?</div>
+<div class="opts">
+A. Spasticity and hyperreflexia, but no muscle atrophy<br>
+B. Flaccid paralysis without spasticity<br>
+C. Both upper motor neuron signs (spasticity, hyperreflexia) and lower motor neuron signs (atrophy, fasciculations); cognition preserved<br>
+D. Pure cerebellar ataxia
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>C.</b> ALS uniquely combines UMN + LMN signs because both neuron types degenerate. Cognition is typically spared (unlike many other neurodegenerative diseases).</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q19. A patient with a spinal cord injury initially has flaccid paralysis below the level of the injury. Several days later, the nurse notes increased muscle tone and intermittent spasms. Which best explains this transition?</div>
+<div class="opts">
+A. The injury has worsened<br>
+B. Spinal shock has resolved; reflex arcs are returning without UMN inhibition, producing spasticity<br>
+C. The patient is developing seizures<br>
+D. The bones are healing
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Spinal shock = temporary areflexia after acute SCI. As reflex arcs reorganize without descending UMN control, spasticity, hyperreflexia, and clonus emerge.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q20. A patient develops radiating leg weakness after an intervertebral disk ruptures into the spinal canal. Which mechanism?</div>
+<div class="opts">
+A. UMN compression in the cervical cord<br>
+B. Compression of nerve roots (radiculopathy) → LMN-pattern weakness in the affected dermatome/myotome<br>
+C. Cerebellar herniation<br>
+D. Astrocyte activation
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Disk herniation compresses spinal nerve roots, producing LMN-type weakness, sensory deficits, and reflex loss along the affected nerve's distribution. Sciatica is the classic presentation.</div>
+</details>
+</div>
+
+</section>
+
+<!-- ========================= UNIT 6 ========================= -->
+<section id="u6" class="unit6">
+<h2>Unit 6 &nbsp;•&nbsp; Cognition: Dementia, Delirium &amp; Consciousness &nbsp;<span class="chip c6">LO3</span></h2>
+
+<div class="box mech">
+<b>Dementia</b> = chronic, progressive, irreversible decline in cognition. Memory, language, executive function, and judgment slowly erode over months to years.<br>
+<b>Delirium</b> = acute, fluctuating, often <i>reversible</i> disturbance in attention and consciousness, usually caused by medical illness, drugs, or hospitalization. Hours to days.
+</div>
+
+<table>
+  <tr><th>Feature</th><th>Dementia</th><th>Delirium</th></tr>
+  <tr><td><b>Onset</b></td><td>Insidious (months to years)</td><td>Acute (hours to days)</td></tr>
+  <tr><td><b>Course</b></td><td>Slowly progressive</td><td>Fluctuating; classically worse at night ("sundowning")</td></tr>
+  <tr><td><b>Attention</b></td><td>Preserved early; declines late</td><td><b>Impaired</b> from the start — defining feature</td></tr>
+  <tr><td><b>Consciousness</b></td><td>Clear</td><td>Altered (hyperalert or drowsy)</td></tr>
+  <tr><td><b>Reversibility</b></td><td>Usually no (with rare exceptions)</td><td><b>Usually yes</b> when underlying cause is treated</td></tr>
+  <tr><td><b>Common causes</b></td><td>Alzheimer's, vascular, Lewy body, frontotemporal</td><td>Infection (UTI in elderly), medications (anticholinergics, opioids, benzos), metabolic derangement, alcohol withdrawal, post-op, ICU stay</td></tr>
+</table>
+
+<div class="box tip">
+<b>The single best discriminator: <i>onset</i>.</b> If the change happened over a weekend, it's delirium. If it happened over months, it's dementia. A demented patient who suddenly worsens may have <i>delirium superimposed on dementia</i> — usually triggered by a UTI, medication, or pneumonia.
+</div>
+
+<div class="box why">
+<b>Why elderly patients delirium-out so easily.</b> Aging brains have less cognitive reserve. Add a medication, an infection, a hospital admission, or sleep deprivation, and the system tips into delirium. Treating the underlying cause and minimizing tethering, sedatives, and sensory deprivation usually reverses it.
+</div>
+
+<h4>Levels of consciousness — the spectrum</h4>
+<ul>
+  <li><b>Alert</b> — fully aware, responsive</li>
+  <li><b>Confused</b> — disoriented, may follow simple commands</li>
+  <li><b>Lethargic</b> — drowsy but rouses to voice</li>
+  <li><b>Obtunded</b> — rouses to vigorous stimulation, slow response</li>
+  <li><b>Stuporous</b> — rouses only to painful stimuli, returns to unresponsive state</li>
+  <li><b>Comatose</b> — no purposeful response to any stimulus</li>
+</ul>
+
+<div class="box miss">
+<b>"A demented patient is just confused."</b> Don't blame all confusion on baseline dementia. A new behavior change in a demented patient is delirium until proven otherwise — search for infection, medication change, hypoxia, electrolyte abnormality, or pain.
+</div>
+
+<h3 id="u6-q">Practice Questions — Cognition</h3>
+
+<div class="q">
+<div class="qhead">Q21. Which feature most reliably distinguishes dementia from delirium?</div>
+<div class="opts">
+A. Memory loss<br>
+B. Acute fluctuating course with impaired attention<br>
+C. Age over 65<br>
+D. Hallucinations
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Acute onset, fluctuating, and impaired attention define delirium. Memory loss can occur in both. Dementia is gradual and consciousness/attention are preserved early.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q22. An 82-year-old with mild dementia is admitted with pneumonia and becomes acutely confused, agitated at night, and inattentive. Most likely cause?</div>
+<div class="opts">
+A. Worsening Alzheimer's<br>
+B. Stroke<br>
+C. Delirium superimposed on dementia, triggered by infection and hospitalization<br>
+D. New psychiatric illness
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>C.</b> Acute change + inattention + hospitalized + infection = delirium on top of dementia. Treat the pneumonia, minimize tethers and sedatives, restore sleep-wake cycle, and the delirium typically resolves.</div>
+</details>
+</div>
+
+</section>
+
+<!-- ========================= UNIT 7 ========================= -->
+<section id="u7" class="unit7">
+<h2>Unit 7 &nbsp;•&nbsp; Cerebral Hemodynamics & Intracranial Pressure &nbsp;<span class="chip c7">LO3</span></h2>
+
+<h3>7.1 The Monro-Kellie Doctrine</h3>
+
+<div class="box mech">
+The skull is a fixed compartment containing three things: <b>brain tissue (~80%), blood (~10%), CSF (~10%)</b>. If one expands, the others must shrink to keep total volume — and pressure — constant. When compensation is exhausted, ICP rises sharply.
+</div>
+
+<div class="flow">
+Mass added (tumor, blood, edema) <span class="arr">→</span> CSF first displaced <span class="arr">→</span> blood volume reduced <span class="arr">→</span> compensation exhausted <span class="arr">→</span> ICP rises rapidly <span class="arr">→</span> herniation
+</div>
+
+<p><b>Normal ICP: 5–15 mm Hg. Sustained &gt; 20 mm Hg is pathologic.</b></p>
+
+<h3>7.2 Cerebral Autoregulation</h3>
+
+<div class="box mech">
+Cerebral blood vessels constrict or dilate to keep cerebral blood flow constant despite changes in MAP. Two key chemical influences:
+<ul>
+  <li><b>↑ CO₂ (or ↓ pH)</b> → cerebral vaso<b>dilation</b> → ↑ blood flow → ↑ ICP</li>
+  <li><b>↓ CO₂</b> → cerebral vaso<b>constriction</b> → ↓ blood flow → ↓ ICP (this is why we briefly hyperventilate patients with herniation)</li>
+  <li><b>↓ O₂</b> → cerebral vaso<b>dilation</b></li>
+</ul>
+</div>
+
+<div class="box why">
+<b>Why a CO₂ rise is dangerous in head injury.</b> Hypoventilation → ↑ PaCO₂ → cerebral vasodilation → more blood in the skull → ↑ ICP → less cerebral perfusion. Patients with raised ICP are kept normoventilated (PaCO₂ around 35–40 mm Hg) and oxygenated to avoid this trap.
+</div>
+
+<h3>7.3 Cushing Triad — The Late Warning</h3>
+
+<div class="box path">
+When ICP rises so high that the brainstem is being compressed, the body responds with the <b>Cushing reflex</b> — a sympathetic surge to push blood through the brain:
+<ul>
+  <li><b>Hypertension (↑ systolic BP, widening pulse pressure)</b></li>
+  <li><b>Bradycardia</b></li>
+  <li><b>Irregular respirations</b> (Cheyne-Stokes or apneic)</li>
+</ul>
+This is a late, ominous sign — herniation is imminent.
+</div>
+
+<h3>7.4 Early vs Late Signs of Rising ICP</h3>
+<table>
+  <tr><th>Early</th><th>Late</th></tr>
+  <tr><td>Headache, restlessness, irritability</td><td>Decreasing level of consciousness</td></tr>
+  <tr><td>Subtle confusion, change in behavior</td><td>Cushing triad</td></tr>
+  <tr><td>Pupils still reactive</td><td>Fixed, dilated pupil (often unilateral first — "blown pupil")</td></tr>
+  <tr><td>Vomiting (often projectile)</td><td>Posturing (decorticate or decerebrate)</td></tr>
+  <tr><td>Visual changes, papilledema on exam</td><td>Coma, herniation, apnea</td></tr>
+</table>
+
+<div class="box tip">
+<b>"A head-injured patient who becomes restless and confused" is showing an EARLY sign of rising ICP — not just psychological distress.</b> Behavior change before posturing is when the team has time to act.
+</div>
+
+<div class="box miss">
+<b>"Hypotension and tachycardia mean rising ICP."</b> Wrong direction. Cushing triad is <b>HTN + bradycardia + irregular respirations</b>. Hypotension + tachycardia points to hypovolemia, sepsis, or shock.
+</div>
+
+<h3 id="u7-q">Practice Questions — Cerebral Hemodynamics & ICP</h3>
+
+<div class="q">
+<div class="qhead">Q23. A patient with rising carbon dioxide develops compensatory cerebral vasodilation. Which mechanism best explains this response?</div>
+<div class="opts">
+A. CO₂ acts as a vasoconstrictor<br>
+B. ↑ CO₂ lowers pH locally → cerebral vessels dilate to increase blood flow and CO₂ clearance<br>
+C. CO₂ causes anaphylaxis<br>
+D. The kidney releases vasodilators
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> CO₂ is a potent cerebral vasodilator. Hypercapnia → ↓ brain tissue pH → arteriolar dilation → ↑ flow. This is autoregulation working — but in a head-injured patient with already-high ICP, it can be dangerous.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q24. A patient with a head injury becomes increasingly restless and confused. Which finding is MOST concerning for worsening intracranial pressure?</div>
+<div class="opts">
+A. Anxiety alone<br>
+B. New-onset hypertension with bradycardia and irregular respirations<br>
+C. Heart rate of 95<br>
+D. Mild headache
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Cushing triad — HTN, bradycardia, irregular respirations — is the late warning of severe ICP elevation and impending herniation. Restlessness/confusion is an earlier sign that should still trigger urgent assessment.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q25. <b>Select all that apply.</b> A patient develops rising PaCO₂. Which cerebral hemodynamic responses may occur?</div>
+<div class="opts">
+A. Cerebral vasodilation<br>
+B. Increased cerebral blood flow<br>
+C. Increased intracranial pressure<br>
+D. Cerebral vasoconstriction<br>
+E. Decreased intracranial pressure
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>A, B, C.</b> Hypercapnia dilates cerebral vessels → more blood in the skull → higher ICP. D and E describe the response to <i>hypocapnia</i> (low CO₂), which is the opposite.</div>
+</details>
+</div>
+
+</section>
+
+<!-- ========================= APPENDIX ========================= -->
+<section id="appx">
+<h2 style="background:#374151;">Appendix &nbsp;•&nbsp; Top Missteps & Master Mnemonics</h2>
+
+<h3 style="color:#374151;border-bottom-color:#9ca3af;">Top 15 Week 4 Missteps</h3>
+<table>
+<tr><th>#</th><th>The trap</th><th>What's actually true</th></tr>
+<tr><td>1</td><td>"Schwann cells make CNS myelin."</td><td>Schwann = PNS. Oligodendrocytes = CNS.</td></tr>
+<tr><td>2</td><td>"MS and Guillain-Barré are the same disease."</td><td>MS = CNS, oligodendrocytes, relapsing. GBS = PNS, Schwann cells, ascending, single episode.</td></tr>
+<tr><td>3</td><td>"Epidural hematoma is venous and slow."</td><td>Epidural = arterial (middle meningeal), <b>fast</b>, lucid interval. Subdural = venous (bridging veins), slow.</td></tr>
+<tr><td>4</td><td>"Subarachnoid hemorrhage causes a mild headache."</td><td>It's the "<b>worst headache of my life</b>" — thunderclap. With nuchal rigidity.</td></tr>
+<tr><td>5</td><td>"All hydrocephalus is from too much CSF production."</td><td>Most is from <b>impaired flow or absorption</b>, not overproduction.</td></tr>
+<tr><td>6</td><td>"Burning, shooting pain is nociceptive."</td><td>That's <b>neuropathic</b>. Nociceptive is sharp/throbbing/well-localized.</td></tr>
+<tr><td>7</td><td>"Brainstem injury causes only motor problems."</td><td>It also wipes out arousal (RAS) and sleep architecture — coma and disrupted sleep-wake cycles.</td></tr>
+<tr><td>8</td><td>"Parkinson's is a memory disease."</td><td>Movement disorder. TRAP: tremor, rigidity, akinesia, postural instability.</td></tr>
+<tr><td>9</td><td>"ALS spares lower motor neurons."</td><td>ALS hits <b>both</b> UMN and LMN — that's its signature.</td></tr>
+<tr><td>10</td><td>"Spinal shock is permanent flaccid paralysis."</td><td>It's a <b>temporary phase</b>. Spasticity emerges as reflex arcs reorganize.</td></tr>
+<tr><td>11</td><td>"Delirium is permanent."</td><td>Delirium is acute and usually <b>reversible</b> when the cause is treated.</td></tr>
+<tr><td>12</td><td>"All confusion in the elderly is dementia."</td><td>Acute change = delirium until proven otherwise. Look for infection, drugs, electrolytes.</td></tr>
+<tr><td>13</td><td>"Cushing triad is HTN + tachycardia."</td><td>It's HTN + <b>brady</b>cardia + irregular respirations — late ICP elevation.</td></tr>
+<tr><td>14</td><td>"Low CO₂ raises ICP."</td><td>Low CO₂ → vasoconstriction → <b>lowers</b> ICP. High CO₂ raises it.</td></tr>
+<tr><td>15</td><td>"Pain crosses the cord at the brainstem."</td><td>Spinothalamic pain crosses <b>at entry</b> (low). Dorsal column proprioception crosses at the medulla (high).</td></tr>
+</table>
+
+<h3 style="color:#374151;border-bottom-color:#9ca3af;">Master Mnemonic Sheet</h3>
+<table>
+<tr><th>Mnemonic</th><th>Meaning</th></tr>
+<tr><td><b>"O in CNS, S in PNS"</b></td><td>Oligodendrocytes make CNS myelin; Schwann make PNS myelin</td></tr>
+<tr><td><b>TRAP</b></td><td>Parkinson's: Tremor, Rigidity, Akinesia, Postural instability</td></tr>
+<tr><td><b>UMN = "EVERYTHING UP"</b></td><td>Tone up, reflexes up, toes up (Babinski). Atrophy late, no fasciculations.</td></tr>
+<tr><td><b>LMN = "EVERYTHING DOWN"</b></td><td>Tone down (flaccid), reflexes down. Atrophy early, fasciculations present.</td></tr>
+<tr><td><b>"Pain crosses early, vibration crosses late"</b></td><td>Spinothalamic decussates at cord entry; dorsal columns at medulla</td></tr>
+<tr><td><b>"E-A-V-S"</b></td><td>Epidural=Artery, subDural=Vein, Subarachnoid=aneurysm</td></tr>
+<tr><td><b>"Lens vs Crescent"</b></td><td>Epidural is lens-shaped (does not cross sutures); subdural is crescent-shaped (crosses sutures)</td></tr>
+<tr><td><b>3 W's</b></td><td>Normal pressure hydrocephalus: Wet (incontinent), Wobbly (gait), Wacky (dementia)</td></tr>
+<tr><td><b>"Worst headache of my life"</b></td><td>Subarachnoid hemorrhage</td></tr>
+<tr><td><b>Cushing triad</b></td><td>↑ BP + ↓ HR + irregular respirations = late, severe ICP elevation</td></tr>
+<tr><td><b>Acute = Delirium, Chronic = Dementia</b></td><td>Onset is the single best discriminator</td></tr>
+<tr><td><b>"ALS = both"</b></td><td>UMN signs + LMN signs together, cognition spared</td></tr>
+</table>
+
+<h3 style="color:#374151;border-bottom-color:#9ca3af;">Quick Reference — Lesion Localization</h3>
+<table>
+<tr><th>Symptom</th><th>Most likely location</th></tr>
+<tr><td>Slowed conduction in CNS</td><td>Oligodendrocyte injury (e.g., MS plaques)</td></tr>
+<tr><td>Ascending flaccid paralysis post-virus</td><td>PNS Schwann cells (Guillain-Barré)</td></tr>
+<tr><td>Lucid interval after head trauma</td><td>Epidural hematoma (middle meningeal artery)</td></tr>
+<tr><td>Crescent CT in elderly faller</td><td>Subdural hematoma (bridging veins)</td></tr>
+<tr><td>Resting tremor + rigidity</td><td>Substantia nigra → basal ganglia</td></tr>
+<tr><td>Mixed UMN + LMN signs</td><td>ALS</td></tr>
+<tr><td>Difficult to arouse</td><td>RAS / brainstem</td></tr>
+<tr><td>Acute attention disturbance</td><td>Delirium</td></tr>
+<tr><td>HTN + bradycardia + irregular respirations</td><td>Severe ICP elevation (Cushing triad)</td></tr>
+</table>
+
+<h3 style="color:#374151;border-bottom-color:#9ca3af;">Week 4 Study Strategy</h3>
+<ul>
+  <li><b>Master the support cells first.</b> Half of the LO1 questions are decided by knowing which glial cell does what.</li>
+  <li><b>Anchor every disorder to its location.</b> CNS or PNS? Cortex, brainstem, basal ganglia, cerebellum, cord, root, peripheral nerve, neuromuscular junction, or muscle? Location dictates symptoms.</li>
+  <li><b>Drill UMN vs LMN sign tables.</b> Many motor questions reduce to which side of the dotted line you're on.</li>
+  <li><b>Memorize the three hematomas as a set.</b> Vessel, space, timing, and CT shape — never one without the others.</li>
+  <li><b>Know the Cushing triad cold.</b> It's the highest-yield late-ICP teaching point and easy points if you have it.</li>
+  <li><b>Onset over hours = delirium. Onset over months = dementia.</b> Don't overthink it.</li>
+  <li><b>Spend extra time on the sensory-tract crossings.</b> Brown-Séquard hemicord lesion is a perennial favorite.</li>
+</ul>
+
+<p class="small" style="margin-top:16px;">SCI225 Week 4 Study Guide — built from the Week 4 learning objectives covering neurologic structure & function, sensory and pain, sleep, motor function, cognition, and cerebral hemodynamics. Made by Dr. Vidya Aggrawal to teach the concepts tested, not the exam questions themselves. Same color-coded format as the Week 1 and Week 2 guides. Print for paper, or use in-browser with collapsible practice answers.</p>
+</section>
+
+</main>
+</div>
+</body>
+</html>

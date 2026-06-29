@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SCI225 Week 12 &middot; Reproductive Systems Study Guide &middot; Dr. Vidya</title>
+<style>
+  :root{
+    --ink:#26181F; --muted:#6A5560; --line:#EBDDE3; --bg:#FBF6F8;
+    --pri:#AD1457; --pri-dk:#880E4F; --pri-lt:#FCE4EC;
+    --s1:#AD1457; --s1lt:#FCE4EC;
+    --s2:#1565C0; --s2lt:#E3F2FD;
+    --s3:#2E7D32; --s3lt:#E8F5E9;
+    --amber:#B7791F; --amberlt:#FBF1DD;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0; font-family:"Segoe UI",Arial,Helvetica,sans-serif; color:var(--ink); background:var(--bg); line-height:1.62;}
+  .wrap{max-width:1000px; margin:0 auto; padding:0 18px 80px;}
+  a{color:var(--pri);}
+  h1,h2,h3,h4{line-height:1.22;}
+
+  header.hero{background:linear-gradient(135deg,#880E4F 0%,#AD1457 50%,#1565C0 100%); color:#fff; border-radius:0 0 22px 22px; padding:46px 36px 40px; margin:0 -18px 8px; position:relative; overflow:hidden; box-shadow:0 10px 30px rgba(136,14,79,.30);}
+  header.hero .blob{position:absolute; border-radius:50%; background:rgba(255,255,255,.07);}
+  .kicker{font-size:12px; letter-spacing:3px; font-weight:700; opacity:.92; margin-bottom:10px;}
+  header.hero h1{margin:0 0 10px; font-size:38px;}
+  header.hero p{margin:0; font-size:17px; opacity:.96; max-width:660px;}
+  .herometa{margin-top:18px; display:flex; flex-wrap:wrap; gap:8px;}
+  .chip{display:inline-block; background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.28); padding:5px 12px; border-radius:20px; font-size:12.5px; font-weight:600;}
+
+  .toolbar{display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between; margin:18px 0 6px;}
+  .btn{display:inline-block; border:none; cursor:pointer; text-decoration:none; font-weight:700; border-radius:30px; padding:11px 22px; font-size:14px; box-shadow:0 4px 12px rgba(0,0,0,.16);}
+  .btn-print{background:linear-gradient(135deg,#880E4F,#AD1457); color:#fff;}
+  .btn-light{background:#fff; color:var(--pri); border:1.5px solid var(--pri);}
+  .btn:hover{filter:brightness(1.06);}
+
+  .toc{background:#fff; border:1px solid var(--line); border-radius:14px; padding:18px 20px; margin:14px 0 26px; box-shadow:0 2px 10px rgba(0,0,0,.04);}
+  .toc h2{margin:0 0 12px; font-size:16px; letter-spacing:.5px; text-transform:uppercase; color:var(--muted);}
+  .toc-grid{display:grid; grid-template-columns:1fr 1fr 1fr; gap:18px;}
+  .toc-col h3{margin:0 0 8px; font-size:14px;}
+  .toc-col.c1 h3{color:var(--s1);} .toc-col.c2 h3{color:var(--s2);} .toc-col.c3 h3{color:var(--s3);}
+  .toc a{display:block; color:var(--ink); text-decoration:none; font-size:13.4px; padding:4px 8px; border-radius:6px;}
+  .toc a:hover{background:var(--pri-lt);}
+  @media (max-width:760px){ .toc-grid{grid-template-columns:1fr;} }
+
+  .sec{margin:40px 0 6px; padding:14px 20px; border-radius:12px; color:#fff; display:flex; align-items:center; gap:14px;}
+  .sec.one{background:linear-gradient(135deg,#AD1457,#880E4F);}
+  .sec.two{background:linear-gradient(135deg,#1565C0,#0D47A1);}
+  .sec.three{background:linear-gradient(135deg,#2E7D32,#1B5E20);}
+  .sec .num{font-size:13px; font-weight:800; letter-spacing:2px; background:rgba(255,255,255,.2); padding:6px 12px; border-radius:8px; white-space:nowrap;}
+  .sec h2{margin:0; font-size:22px;}
+  .sec p{margin:3px 0 0; font-size:13.5px; opacity:.95;}
+
+  details.topic{background:#fff; border:1px solid var(--line); border-left-width:5px; border-radius:10px; margin:12px 0; overflow:hidden; box-shadow:0 1px 6px rgba(0,0,0,.04);}
+  details.topic.one{border-left-color:var(--s1);}
+  details.topic.two{border-left-color:var(--s2);}
+  details.topic.three{border-left-color:var(--s3);}
+  details.topic > summary{cursor:pointer; list-style:none; padding:16px 20px; font-weight:700; font-size:16.5px; display:flex; align-items:center; gap:12px;}
+  details.topic > summary::-webkit-details-marker{display:none;}
+  details.topic > summary .tnum{font-size:12.5px; font-weight:800; color:#fff; border-radius:7px; padding:4px 9px; white-space:nowrap;}
+  details.topic.one > summary .tnum{background:var(--s1);}
+  details.topic.two > summary .tnum{background:var(--s2);}
+  details.topic.three > summary .tnum{background:var(--s3);}
+  details.topic > summary .arrow{margin-left:auto; transition:transform .2s; color:var(--muted); font-size:14px;}
+  details.topic[open] > summary .arrow{transform:rotate(90deg);}
+  details.topic[open] > summary{border-bottom:1px solid var(--line);}
+  .body{padding:6px 22px 20px;}
+  .body h4{margin:18px 0 6px; font-size:15.5px; color:var(--pri-dk);}
+  .body p{margin:8px 0;}
+  .body ul{margin:8px 0 8px; padding-left:20px;}
+  .body li{margin:5px 0;}
+
+  .keyidea{background:var(--pri-lt); border-left:4px solid var(--pri); border-radius:0 8px 8px 0; padding:12px 16px; margin:14px 0; font-size:14.5px;}
+  .pearl{background:var(--amberlt); border-left:4px solid var(--amber); border-radius:0 8px 8px 0; padding:12px 16px; margin:14px 0; font-size:14.5px;}
+  .mnem{background:#ECF6F1; border:1px dashed #2E9E78; border-radius:8px; padding:10px 14px; margin:14px 0; font-size:14px;}
+  .mnem .lbl{font-weight:800; color:#1E7A57; letter-spacing:.5px; font-size:12px; text-transform:uppercase;}
+
+  table.dt{width:100%; border-collapse:collapse; margin:14px 0; font-size:13.7px;}
+  table.dt th{background:#1F3242; color:#fff; text-align:left; padding:9px 11px; font-weight:600;}
+  table.dt td{border:1px solid var(--line); padding:9px 11px; vertical-align:top;}
+  table.dt tr:nth-child(even) td{background:#F7FAFC;}
+  .up{color:#C62828; font-weight:800;} .dn{color:#1565C0; font-weight:800;} .nl{color:#5A6573;}
+
+  .practice{background:#FBFCFE; border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin:16px 0;}
+  .practice .ptag{display:inline-block; background:var(--s2); color:#fff; font-size:11px; font-weight:800; letter-spacing:1px; padding:3px 10px; border-radius:20px; text-transform:uppercase;}
+  .q{font-weight:600; margin:10px 0 6px;}
+  .opts{margin:6px 0 6px; padding-left:6px;}
+  .opts div{padding:3px 0;}
+  .reveal{cursor:pointer; border:none; background:var(--s2); color:#fff; font-weight:700; font-size:12.5px; padding:7px 14px; border-radius:20px; margin-top:6px;}
+  .reveal:hover{filter:brightness(1.08);}
+  .ans{display:none; margin-top:10px; background:#EEF7F1; border-left:4px solid #2E9E78; border-radius:0 8px 8px 0; padding:11px 14px; font-size:14px;}
+  .ans.show{display:block;}
+  .ans .correct{font-weight:800; color:#1E7A57;}
+
+  .fig{background:#fff; border:1px solid var(--line); border-radius:10px; padding:14px; margin:16px 0; text-align:center;}
+  .fig figcaption{font-size:12.5px; color:var(--muted); margin-top:8px;}
+
+  .cheat{background:#fff; border:2px solid var(--pri); border-radius:14px; padding:8px 22px 22px; margin:14px 0;}
+  .gloss dt{font-weight:700; color:var(--pri-dk); margin-top:12px;}
+  .gloss dd{margin:2px 0 0; padding-left:0;}
+
+  footer.foot{text-align:center; color:var(--muted); font-size:13px; margin-top:50px; padding-top:22px; border-top:1px solid var(--line);}
+
+  @media print{
+    body{background:#fff;} .toolbar,.toc{display:none;}
+    details.topic{break-inside:avoid; box-shadow:none;}
+    header.hero{box-shadow:none;}
+    .ans{display:block !important;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="blob" style="width:230px;height:230px;right:-40px;top:-50px;"></div>
+    <div class="blob" style="width:150px;height:150px;right:130px;bottom:-60px;"></div>
+    <div class="kicker">SCI225 &middot; PATHOPHYSIOLOGY &middot; WEEK 12 &middot; NIGHTINGALE COLLEGE</div>
+    <h1>The Reproductive Systems</h1>
+    <p>Female and male reproductive physiology and its disorders &mdash; the menstrual cycle, PCOS and endometriosis, testicular and prostate disease, and the hormonal logic that ties them together.</p>
+    <div class="herometa">
+      <span class="chip">Dr. Vidya Aggrawal</span>
+      <span class="chip">Module 12</span>
+      <span class="chip">Female &middot; Male</span>
+      <span class="chip">8 topics + cheat sheet</span>
+    </div>
+  </header>
+
+  <div class="toolbar">
+    <div style="font-size:13.5px;color:var(--muted);">Click any topic to expand. Try each practice question <b>before</b> revealing the answer.</div>
+    <div style="display:flex;gap:10px;">
+      <button class="btn btn-light" onclick="toggleAll()" id="toggleBtn">Expand all</button>
+      <button class="btn btn-print" onclick="savePDF()">&#128424;&nbsp; Save as PDF</button>
+    </div>
+  </div>
+
+  <nav class="toc">
+    <h2>What's inside</h2>
+    <div class="toc-grid">
+      <div class="toc-col c1">
+        <h3>1 &middot; Female Reproductive</h3>
+        <a href="#t1">1. Menstrual cycle &amp; hormonal control</a>
+        <a href="#t2">2. Menstrual &amp; ovulatory disorders (PCOS)</a>
+        <a href="#t3">3. Structural &amp; proliferative disorders</a>
+        <a href="#t4">4. Infections &amp; menopause</a>
+      </div>
+      <div class="toc-col c2">
+        <h3>2 &middot; Male Reproductive</h3>
+        <a href="#t5">5. Male physiology &amp; aging</a>
+        <a href="#t6">6. Testicular &amp; scrotal disorders</a>
+        <a href="#t7">7. Prostate: BPH vs cancer</a>
+        <a href="#t8">8. Erectile &amp; sexual dysfunction</a>
+      </div>
+      <div class="toc-col c3">
+        <h3>Review</h3>
+        <a href="#cheat">&#11088; Cheat sheet</a>
+        <a href="#gloss">&#128218; Glossary</a>
+      </div>
+    </div>
+  </nav>
+
+
+  
+
+  <!-- SECTION 1 - FEMALE -->
+  <div class="sec one" id="sec1"><span class="num">SECTION 1</span><div><h2>Female Reproductive System</h2><p>The cycle, its hormonal control, and the disorders of ovulation, structure, infection, and menopause.</p></div></div>
+
+  <!-- T1 -->
+  <details class="topic one" id="t1">
+    <summary><span class="tnum">1</span> The Menstrual Cycle &amp; Hormonal Control <span class="arrow">&#9654;</span></summary>
+    <div class="body">
+      <p>The cycle is a hormonal relay: the <b>hypothalamus &rarr; pituitary &rarr; ovary &rarr; uterus</b>. Get the sequence and you can predict almost every disorder.</p>
+      <table class="dt">
+        <tr><th>Hormone (source)</th><th>Job</th></tr>
+        <tr><td><b>GnRH</b> (hypothalamus)</td><td>Triggers the pituitary to release FSH &amp; LH; rises at <b>puberty</b> to start reproductive function</td></tr>
+        <tr><td><b>FSH</b> (pituitary)</td><td>Stimulates ovarian <b>follicles</b> to mature</td></tr>
+        <tr><td><b>LH</b> (pituitary)</td><td>The <b>LH surge triggers ovulation</b></td></tr>
+        <tr><td><b>Estrogen</b> (follicle)</td><td>Builds up (proliferates) the endometrium</td></tr>
+        <tr><td><b>Progesterone</b> (<b>corpus luteum</b>)</td><td>After ovulation, <b>maintains/stabilizes</b> the endometrium for possible pregnancy</td></tr>
+      </table>
+      <h4>What happens across the cycle</h4>
+      <ul>
+        <li>FSH matures a follicle &rarr; estrogen rises &rarr; endometrium thickens.</li>
+        <li>The <b>LH surge</b> &rarr; <b>ovulation</b> (egg released).</li>
+        <li>The ruptured follicle becomes the <b>corpus luteum</b>, which makes <b>progesterone</b> to hold the lining.</li>
+        <li>No pregnancy &rarr; corpus luteum degenerates &rarr; <b>progesterone falls</b> &rarr; the lining loses support and sheds = <b>menstruation</b>.</li>
+        <li>If fertilization occurs, it usually happens in the <b>fallopian tube (ampulla)</b>.</li>
+      </ul>
+      <div class="keyidea"><b>Key idea:</b> <b>progesterone is the "stay" hormone.</b> Its withdrawal (when the corpus luteum dies) removes endometrial support &rarr; the lining breaks down and sheds. Anything that prevents ovulation prevents corpus luteum formation &rarr; no progesterone &rarr; abnormal, unopposed estrogen effects (Topic 2).</div>
+      <div class="mnem"><span class="lbl">Memory hook</span><br><b>FSH = Follicle Stimulating</b> (grows the egg). <b>LH = "Launches" ovulation</b> (the surge). <b>Corpus luteum = progesterone = "pro-gestation"</b> (holds the lining for pregnancy).</div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q1. The corpus luteum degenerates and progesterone falls. Which mechanism leads to menstruation?</p>
+        <div class="opts"><div>A. Loss of endometrial support causing tissue breakdown</div><div>B. Rising estrogen thickening the lining</div><div>C. An LH surge triggering ovulation</div><div>D. Increased progesterone stabilizing the lining</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> When progesterone is withdrawn, the endometrium loses its hormonal support, breaks down, and sheds as menstrual flow.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q2. Which structure produces progesterone after ovulation, and where does fertilization most often occur?</p>
+        <div class="opts"><div>A. Corpus luteum; fallopian tube (ampulla)</div><div>B. Ovarian follicle; uterus</div><div>C. Endometrium; cervix</div><div>D. Pituitary; ovary</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> The corpus luteum (the ruptured follicle) secretes progesterone; fertilization typically occurs in the ampulla of the fallopian tube.</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- T2 -->
+  <details class="topic one" id="t2">
+    <summary><span class="tnum">2</span> Menstrual &amp; Ovulatory Disorders (incl. PCOS) <span class="arrow">&#9654;</span></summary>
+    <div class="body">
+      <p>When ovulation or hormone signaling goes wrong, the cycle becomes irregular.</p>
+      <table class="dt">
+        <tr><th>Disorder</th><th>Mechanism</th></tr>
+        <tr><td><b>PCOS</b></td><td><b>Anovulation</b> + <b>insulin resistance</b>: high insulin raises ovarian <b>androgens</b> and disrupts the LH surge &rarr; eggs don't release</td></tr>
+        <tr><td><b>Primary dysmenorrhea</b></td><td><b>High prostaglandins</b> &rarr; uterine cramping + reduced uterine blood flow &rarr; pain</td></tr>
+        <tr><td><b>Amenorrhea</b></td><td>Absent periods &mdash; from anovulation, hormonal, or structural causes</td></tr>
+        <tr><td><b>Abnormal uterine bleeding</b></td><td>Anovulation &rarr; no progesterone &rarr; estrogen keeps building the lining &rarr; it overgrows then sheds irregularly (skipped cycles then heavy bleeding)</td></tr>
+      </table>
+      <h4>PCOS in depth (Olivia's case)</h4>
+      <p>Olivia (28) has 1 year of infertility, only 4&ndash;5 cycles/year, BMI 35, acne, <b>elevated insulin and testosterone</b>, and ovaries with many small peripheral follicles. The chain: <b>insulin resistance &rarr; high insulin &rarr; excess ovarian androgens &rarr; disrupted LH surge &rarr; chronic anovulation</b> &rarr; infertility, irregular bleeding, acne, and hirsutism.</p>
+      <div class="keyidea"><b>Key idea &mdash; why PCOS bleeding is irregular:</b> without ovulation there's <b>no corpus luteum and no progesterone</b>, but estrogen keeps stimulating the endometrium. The lining overgrows (unopposed estrogen) and eventually sheds erratically &mdash; skipped cycles followed by heavy bleeding. This is also why PCOS raises <b>endometrial hyperplasia/cancer</b> risk (Topic 3) and <b>type 2 diabetes</b> risk.</div>
+      <div class="pearl"><b>Pearl:</b> the "monitor for" answer in PCOS is <b>endometrial cancer and type 2 diabetes</b> (from unopposed estrogen and insulin resistance, respectively). Dysmenorrhea's "mediator" answer is always <b>prostaglandins</b>.</div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q1. Which pathophysiologic mechanism best explains chronic anovulation in PCOS?</p>
+        <div class="opts"><div>A. Excess insulin raises androgens and disrupts the LH surge</div><div>B. Excess insulin promotes normal follicular maturation</div><div>C. Low androgens prevent follicle growth</div><div>D. High progesterone blocks ovulation</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Insulin resistance drives high insulin, which raises ovarian androgens and disrupts the LH surge needed to ovulate &mdash; so follicles don't release (anovulation).</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q2. A patient reports skipped cycles followed by heavy uterine bleeding. Which process is the cause?</p>
+        <div class="opts"><div>A. Anovulation with endometrial overgrowth (unopposed estrogen)</div><div>B. Estrogen loss thinning the lining</div><div>C. Excess progesterone stabilizing the lining</div><div>D. High prolactin maintaining the cycle</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Without ovulation there's no progesterone, so estrogen keeps thickening the endometrium until it overgrows and sheds irregularly &mdash; skipped cycles then heavy bleeding.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q3. Which mediator causes the uterine cramping and reduced blood flow of primary dysmenorrhea?</p>
+        <div class="opts"><div>A. Prostaglandins</div><div>B. Progesterone</div><div>C. FSH</div><div>D. Insulin</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> High prostaglandins cause strong uterine contractions and vasoconstriction (reduced blood flow) &rarr; the cramping pain of primary dysmenorrhea.</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- T3 -->
+  <details class="topic one" id="t3">
+    <summary><span class="tnum">3</span> Structural &amp; Proliferative Disorders <span class="arrow">&#9654;</span></summary>
+    <div class="body">
+      <p>These involve abnormal tissue &mdash; ectopic, overgrown, or benign tumors.</p>
+      <table class="dt">
+        <tr><th>Disorder</th><th>What it is</th><th>Consequence</th></tr>
+        <tr><td><b>Endometriosis</b></td><td><b>Ectopic endometrial tissue</b> outside the uterus that still responds to cyclic hormones</td><td>Bleeds cyclically &rarr; inflammation, <b>pelvic adhesions</b>, pain, infertility</td></tr>
+        <tr><td><b>Uterine fibroids (leiomyoma)</b></td><td><b>Benign smooth-muscle</b> tumors of the uterus</td><td>Heavy bleeding, bulk/pressure symptoms</td></tr>
+        <tr><td><b>Endometrial hyperplasia/cancer</b></td><td>Overgrowth from <b>prolonged estrogen without progesterone</b></td><td>Abnormal bleeding; can progress to cancer</td></tr>
+        <tr><td><b>Androgen insensitivity syndrome</b></td><td>Genetically male, body can't respond to androgens; <b>no uterus develops</b></td><td><b>No menstruation</b> (no endometrium to shed)</td></tr>
+      </table>
+      <div class="keyidea"><b>Key idea &mdash; unopposed estrogen:</b> estrogen <i>builds</i> the endometrium; progesterone <i>controls</i> it. <b>Estrogen for a long time without progesterone</b> (PCOS, anovulation, estrogen-only therapy) &rarr; the lining overgrows = <b>endometrial hyperplasia</b>, which can become endometrial cancer. This is why amenorrhea from anovulation still needs follow-up &mdash; the lining is unprotected.</div>
+      <div class="pearl"><b>Pearl &mdash; endometriosis vs fibroids:</b> <b>endometriosis</b> = endometrial tissue in the <i>wrong place</i> (responds to hormones, bleeds, causes adhesions). <b>Fibroids (leiomyomas)</b> = benign <i>smooth-muscle</i> growths of the uterus itself.</div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q1. Which ectopic tissue responds to menstrual hormones, bleeds cyclically, and causes pelvic adhesions?</p>
+        <div class="opts"><div>A. Endometrial tissue outside the uterus (endometriosis)</div><div>B. Smooth-muscle tissue (fibroid)</div><div>C. Ovarian follicular tissue</div><div>D. Cervical epithelium</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Endometriosis is ectopic endometrial tissue that responds to the cycle, bleeds, and triggers inflammation and adhesions.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q2. A patient has prolonged estrogen exposure without progesterone. Which outcome occurs?</p>
+        <div class="opts"><div>A. Endometrial overgrowth (hyperplasia) with cancer risk</div><div>B. Endometrial thinning</div><div>C. Immediate menopause</div><div>D. Suppressed estrogen receptors</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Unopposed estrogen keeps stimulating endometrial growth without progesterone to control it &rarr; hyperplasia, which can progress to endometrial cancer.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q3. Which missing structure prevents menstruation in androgen insensitivity syndrome?</p>
+        <div class="opts"><div>A. The uterus (no endometrium to shed)</div><div>B. The ovaries</div><div>C. The pituitary</div><div>D. The cervix only</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Without a uterus there is no endometrial lining to build and shed, so menstruation cannot occur.</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- T4 -->
+  <details class="topic one" id="t4">
+    <summary><span class="tnum">4</span> Infections, PID &amp; Menopause <span class="arrow">&#9654;</span></summary>
+    <div class="body">
+      <p>The vagina's normal acidity protects it; lose that protection and infection follows. Pelvic infection and menopause each change the tract.</p>
+      <table class="dt">
+        <tr><th>Topic</th><th>Mechanism</th></tr>
+        <tr><td><b>Vaginitis</b></td><td>Disrupted normal flora / <b>raised vaginal pH</b> lets microorganisms overgrow</td></tr>
+        <tr><td><b>Douching</b></td><td>Washes out protective flora &rarr; <b>&uarr; pH</b> &rarr; infection risk</td></tr>
+        <tr><td><b>Postmenopausal vaginitis</b></td><td><b>Low estrogen</b> thins/atrophies the vaginal lining and raises pH &rarr; infection risk</td></tr>
+        <tr><td><b>PID &rarr; ectopic pregnancy</b></td><td>Infection scars the <b>fallopian tubes</b>; scarring blocks/slows egg transport &rarr; implantation in the tube (ectopic)</td></tr>
+        <tr><td><b>Menopause</b></td><td>Ovarian estrogen declines &rarr; cycles stop; atrophy, vasomotor symptoms, bone loss</td></tr>
+      </table>
+      <div class="keyidea"><b>Key idea &mdash; PID and ectopic pregnancy:</b> pelvic inflammatory disease scars and narrows the fallopian tubes. A fertilized egg can't move normally to the uterus, so it implants in the <b>tube</b> &mdash; an ectopic pregnancy. The mechanism is <b>fallopian tube scarring</b>.</div>
+      <div class="pearl"><b>Pearl:</b> estrogen keeps the vagina acidic and the lining thick. <b>Less estrogen (menopause) or washed-out flora (douching) &rarr; higher pH &rarr; more infections.</b> The protective factor is the <b>acidic environment</b>.</div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q1. A patient with a history of PID is at increased ectopic pregnancy risk. Which change explains it?</p>
+        <div class="opts"><div>A. Fallopian tube scarring blocking normal egg transport</div><div>B. Thickened endometrium</div><div>C. Increased ovarian reserve</div><div>D. Elevated progesterone</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> PID scars the fallopian tubes; the fertilized egg gets trapped and implants in the tube rather than the uterus.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q2. After menopause, why is vaginal infection risk increased?</p>
+        <div class="opts"><div>A. Decreased estrogen thins the lining and raises vaginal pH</div><div>B. Increased estrogen thickens the lining</div><div>C. Higher progesterone</div><div>D. Increased glycogen and acidity</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Low estrogen causes atrophy and a higher (less acidic) pH, weakening the vagina's natural defense against microorganisms.</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- SECTION 2 - MALE -->
+  <div class="sec two" id="sec2"><span class="num">SECTION 2</span><div><h2>Male Reproductive System</h2><p>Erection and sperm physiology, the scrotal emergencies, prostate disease, and erectile dysfunction.</p></div></div>
+
+  <!-- T5 -->
+  <details class="topic two" id="t5">
+    <summary><span class="tnum">5</span> Male Physiology, Sperm &amp; Aging <span class="arrow">&#9654;</span></summary>
+    <div class="body">
+      <p>Three jobs: make <b>testosterone</b>, make and mature <b>sperm</b>, and achieve <b>erection</b> for delivery.</p>
+      <table class="dt">
+        <tr><th>Structure / process</th><th>Role</th></tr>
+        <tr><td><b>Testes (Leydig cells)</b></td><td>Produce <b>testosterone</b>; sperm form in the seminiferous tubules</td></tr>
+        <tr><td><b>Epididymis</b></td><td>Sperm <b>mature</b> and gain <b>motility</b> here</td></tr>
+        <tr><td><b>Sperm flagellum (tail)</b></td><td>Provides <b>motility</b>; tail dysfunction &rarr; impaired sperm movement</td></tr>
+        <tr><td><b>Erection</b></td><td>A <b>vascular event</b> &mdash; arterial inflow fills the erectile tissue while venous outflow is restricted</td></tr>
+      </table>
+      <h4>Erection physiology</h4>
+      <p>Erection is fundamentally about <b>blood filling the erectile (cavernous) tissue</b>: parasympathetic signals dilate arteries, blood floods the sinusoids, and the swelling compresses the veins to trap it. Anything that limits inflow (vascular disease) limits erection (Topic 8).</p>
+      <h4>Aging male</h4>
+      <p>Testosterone gradually <b>declines</b> with age &rarr; reduced libido, less muscle mass, slower sperm production, and a higher rate of erectile and prostate issues.</p>
+      <div class="keyidea"><b>Key idea:</b> <b>erection = vascular filling</b>; <b>sperm motility = the flagellum + epididymal maturation</b>. Separating these two helps you place each disorder: ED is usually a <i>blood-flow</i> problem; infertility from poor motility is a <i>sperm-structure/maturation</i> problem.</div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q1. A patient has impaired sperm motility. Dysfunction of which structure best explains this?</p>
+        <div class="opts"><div>A. The sperm flagellum (tail)</div><div>B. The prostate gland</div><div>C. The seminal vesicle duct</div><div>D. The bladder neck</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> The flagellum (tail) propels the sperm; if it's defective, motility drops. (Sperm also gain motility maturing in the epididymis.)</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q2. Which physiologic change occurs during erection?</p>
+        <div class="opts"><div>A. Increased arterial blood flow fills the erectile tissue</div><div>B. Venous outflow increases to drain the tissue</div><div>C. Arterial constriction reduces inflow</div><div>D. Smooth muscle of the corpora contracts to empty blood</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Erection is a vascular event: arterial inflow fills the cavernous tissue while venous outflow is compressed to maintain it.</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- T6 -->
+  <details class="topic two" id="t6">
+    <summary><span class="tnum">6</span> Testicular &amp; Scrotal Disorders <span class="arrow">&#9654;</span></summary>
+    <div class="body">
+      <p>The scrotal differential is high-yield &mdash; especially distinguishing the <b>surgical emergency</b> (torsion) from infections.</p>
+      <table class="dt">
+        <tr><th>Disorder</th><th>Mechanism / clues</th></tr>
+        <tr><td><b>Testicular torsion</b></td><td>The <b>spermatic cord twists</b> &rarr; cuts off blood supply &rarr; <b>ischemia</b>. <b>Sudden, severe</b> pain (often during activity), nausea, testicle <b>riding high</b>. <b>Surgical emergency.</b></td></tr>
+        <tr><td><b>Epididymitis</b></td><td>Often from an <b>STI</b>; <b>gradual</b> scrotal pain/swelling + <b>burning with urination</b> (dysuria)</td></tr>
+        <tr><td><b>Orchitis</b></td><td>Testicular inflammation, classically <b>after a viral illness (mumps)</b> &rarr; fever + painful swelling</td></tr>
+        <tr><td><b>Varicocele</b></td><td>Dilated scrotal <b>veins</b> &rarr; pooled blood <b>raises testicular temperature</b> &rarr; reduced sperm quality</td></tr>
+        <tr><td><b>Cryptorchidism</b> (undescended testis)</td><td>Testis fails to descend &rarr; later &uarr; risk of <b>infertility and testicular cancer</b></td></tr>
+        <tr><td><b>Gynecomastia</b></td><td>Male breast tissue from an <b>estrogen-to-testosterone imbalance</b> (relative estrogen excess)</td></tr>
+      </table>
+      <div class="keyidea"><b>Key idea &mdash; torsion vs epididymitis:</b> <b>torsion</b> = <i>sudden</i>, severe pain, high-riding testicle, cord twist &rarr; ischemia &mdash; minutes matter (untwist surgically to save the testicle). <b>Epididymitis</b> = <i>gradual</i> pain with an STI and <b>burning urination</b>. Timing + dysuria separate them.</div>
+      <div class="pearl"><b>Pearl:</b> <b>varicocele</b> raises scrotal temperature (warm blood pooling), and sperm production needs a <b>cooler</b> environment &mdash; that's why it lowers sperm quality. <b>Cryptorchidism</b>'s exam answer is increased <b>cancer/infertility</b> risk.</div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q1. A 17-year-old has sudden severe unilateral scrotal pain during sports, nausea, and a testicle positioned higher than the other. Which process explains this?</p>
+        <div class="opts"><div>A. Spermatic cord twisting cutting off blood supply (ischemia)</div><div>B. Gradual STI-related inflammation</div><div>C. Dilated scrotal veins raising temperature</div><div>D. Post-viral testicular inflammation</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Testicular torsion: the cord twists, blood supply is cut off, and the testicle ischemic and high-riding &mdash; a surgical emergency.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q2. A 25-year-old has gradual unilateral scrotal pain, swelling, and burning with urination after unprotected sex. Which finding supports epididymitis?</p>
+        <div class="opts"><div>A. Dysuria (burning urination) with gradual onset and recent STI exposure</div><div>B. Sudden onset during exertion with a high-riding testis</div><div>C. Bilateral painless masses</div><div>D. Absent cremasteric reflex with instant pain</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Epididymitis is usually an STI-related, gradual process with dysuria &mdash; unlike the sudden, ischemic onset of torsion.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q3. Which vascular change reduces sperm quality in varicocele?</p>
+        <div class="opts"><div>A. Dilated veins pool blood and raise testicular temperature</div><div>B. Arterial blockage cools the testis</div><div>C. Reduced venous pressure lowers temperature</div><div>D. Increased lymphatic drainage</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Pooled venous blood warms the testis, and sperm production needs cooler-than-core temperature &mdash; so sperm quality drops.</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- T7 -->
+  <details class="topic two" id="t7">
+    <summary><span class="tnum">7</span> Prostate Disorders: BPH vs Cancer <span class="arrow">&#9654;</span></summary>
+    <div class="body">
+      <p>The prostate wraps around the urethra, so prostate enlargement squeezes the urinary stream. Both BPH and prostate cancer can obstruct.</p>
+      <table class="dt">
+        <tr><th></th><th>BPH (benign prostatic hyperplasia)</th><th>Prostate cancer</th></tr>
+        <tr><td><b>What</b></td><td><b>Benign</b> enlargement (very common with aging)</td><td><b>Malignant</b> growth, often peripheral</td></tr>
+        <tr><td><b>Mechanism of urinary symptoms</b></td><td>Enlarged prostate <b>compresses the urethra</b></td><td>Tumor growth compresses/obstructs the urethra (often later)</td></tr>
+        <tr><td><b>Symptoms</b></td><td><b>Hesitancy, weak stream, incomplete emptying, nocturia</b></td><td>Similar obstructive symptoms; may be asymptomatic early; can metastasize (bone)</td></tr>
+      </table>
+      <div class="keyidea"><b>Key idea:</b> the urinary symptoms of both BPH and prostate cancer come from the <b>same mechanism &mdash; the enlarged prostate compressing the urethra</b> &rarr; hesitancy, weak stream, incomplete emptying, nocturia. BPH is benign and extremely common with age; cancer must be ruled out (screening, exam, PSA).</div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q1. An older adult reports urinary hesitancy, a weak stream, and incomplete bladder emptying. What is the cause?</p>
+        <div class="opts"><div>A. An enlarged prostate compressing the urethra</div><div>B. Bladder muscle hypertrophy increasing flow</div><div>C. Urethral widening</div><div>D. Decreased prostate size</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Prostate enlargement (most often BPH) compresses the urethra, producing hesitancy, weak stream, and incomplete emptying.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q2. A 72-year-old has a slow stream, hesitancy, and nocturia. Which mechanism explains how prostate cancer can cause these?</p>
+        <div class="opts"><div>A. Tumor growth compresses and obstructs the urethra</div><div>B. The tumor widens the urethra</div><div>C. The bladder shrinks the prostate</div><div>D. Increased urine production only</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Like BPH, prostate cancer can compress/obstruct the urethra, producing obstructive urinary symptoms.</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- T8 -->
+  <details class="topic two" id="t8">
+    <summary><span class="tnum">8</span> Erectile &amp; Sexual Dysfunction <span class="arrow">&#9654;</span></summary>
+    <div class="body">
+      <p>Because erection is a <b>vascular</b> event, most erectile dysfunction is a blood-flow problem.</p>
+      <table class="dt">
+        <tr><th>Condition</th><th>Mechanism</th></tr>
+        <tr><td><b>Vascular ED</b></td><td>Reduced <b>arterial inflow</b> can't fill the erectile tissue (atherosclerosis, diabetes, hypertension)</td></tr>
+        <tr><td><b>Priapism</b></td><td>Prolonged, unwanted erection &rarr; trapped blood becomes deoxygenated &rarr; <b>ischemia</b> damages erectile tissue &rarr; later ED</td></tr>
+      </table>
+      <div class="keyidea"><b>Key idea:</b> <b>vascular ED</b> = not enough inflow to fill the tissue (a "pipe" problem &mdash; often the first sign of systemic vascular disease/diabetes). <b>Priapism</b> is the opposite extreme: blood gets <i>stuck</i>, goes ischemic, and the resulting tissue damage causes later erectile dysfunction &mdash; which is why prolonged priapism is an emergency.</div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q1. Which change limits filling of the erectile tissue in vascular erectile dysfunction?</p>
+        <div class="opts"><div>A. Reduced arterial inflow to the erectile tissue</div><div>B. Excess arterial inflow</div><div>C. Increased venous trapping of blood</div><div>D. Overactive parasympathetic dilation</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Vascular ED results from inadequate arterial inflow, so the cavernous tissue can't fill and stiffen.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q2. Why can prolonged priapism lead to erectile dysfunction?</p>
+        <div class="opts"><div>A. Trapped blood becomes ischemic and damages the erectile tissue</div><div>B. Excess oxygen strengthens the tissue</div><div>C. Increased arterial inflow heals the tissue</div><div>D. Rapid venous drainage protects the tissue</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> In prolonged priapism blood stays trapped, loses oxygen, and the resulting ischemia injures the erectile tissue &mdash; leading to later ED.</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- CHEAT SHEET -->
+  <div class="sec one" id="cheat" style="background:linear-gradient(135deg,#880E4F,#AD1457);"><span class="num">&#11088; EXAM</span><div><h2>Reproductive Cheat Sheet</h2><p>The highest-yield patterns &mdash; review the night before.</p></div></div>
+  <div class="cheat">
+    <h4 style="color:var(--pri-dk);">Female &mdash; don't miss</h4>
+    <ul>
+      <li><b>Hormones:</b> GnRH&rarr;FSH/LH; <b>FSH grows follicle</b>, <b>LH surge = ovulation</b>; corpus luteum = <b>progesterone</b> (holds lining). Progesterone withdrawal &rarr; menstruation. Fertilization = fallopian tube (ampulla).</li>
+      <li><b>PCOS:</b> insulin resistance &rarr; &uarr; androgens &rarr; disrupted LH surge &rarr; <b>anovulation</b>; irregular/heavy bleeding; monitor for <b>endometrial cancer &amp; type 2 diabetes</b>.</li>
+      <li><b>Dysmenorrhea mediator = prostaglandins.</b></li>
+      <li><b>Unopposed estrogen</b> (no progesterone) &rarr; endometrial <b>hyperplasia &rarr; cancer</b>.</li>
+      <li><b>Endometriosis</b> = ectopic endometrial tissue &rarr; cyclic bleeding, adhesions. <b>Fibroid (leiomyoma)</b> = benign smooth muscle.</li>
+      <li><b>PID</b> &rarr; fallopian tube scarring &rarr; <b>ectopic pregnancy</b>.</li>
+      <li><b>Vaginitis:</b> &uarr; pH (douching, low estrogen after menopause) lets microbes overgrow. Estrogen keeps it acidic/protective.</li>
+      <li><b>Androgen insensitivity:</b> no uterus &rarr; no menstruation.</li>
+    </ul>
+    <h4 style="color:#0D47A1;">Male &mdash; don't miss</h4>
+    <ul>
+      <li><b>Erection = vascular filling</b> of erectile tissue; <b>vascular ED</b> = &darr; arterial inflow. <b>Priapism</b> &rarr; ischemia &rarr; later ED.</li>
+      <li><b>Torsion</b> = cord twist &rarr; ischemia; <b>sudden</b> severe pain, high-riding testis &mdash; <b>surgical emergency</b>.</li>
+      <li><b>Epididymitis</b> = STI, <b>gradual</b> pain + <b>dysuria</b>. <b>Orchitis</b> = after viral illness (mumps).</li>
+      <li><b>Varicocele</b> = dilated veins &rarr; &uarr; temperature &rarr; &darr; sperm quality.</li>
+      <li><b>Cryptorchidism</b> (undescended testis) &rarr; &uarr; infertility &amp; testicular cancer risk.</li>
+      <li><b>Sperm motility = flagellum</b> (+ epididymal maturation). <b>Gynecomastia</b> = estrogen/testosterone imbalance.</li>
+      <li><b>BPH &amp; prostate cancer:</b> enlarged prostate <b>compresses the urethra</b> &rarr; hesitancy, weak stream, incomplete emptying, nocturia.</li>
+    </ul>
+  </div>
+
+  <!-- GLOSSARY -->
+  <div class="sec two" id="gloss" style="background:linear-gradient(135deg,#1565C0,#0D47A1);"><span class="num">&#128218; TERMS</span><div><h2>Glossary</h2><p>Quick definitions of the Week 12 vocabulary.</p></div></div>
+  <div class="cheat" style="border-color:var(--s2);">
+    <dl class="gloss">
+      <dt>GnRH / FSH / LH</dt><dd>Hypothalamic and pituitary hormones that drive the ovarian cycle; the LH surge triggers ovulation.</dd>
+      <dt>Corpus luteum</dt><dd>The ruptured follicle after ovulation; secretes progesterone to maintain the endometrium.</dd>
+      <dt>Anovulation</dt><dd>Failure to ovulate; no corpus luteum &rarr; no progesterone &rarr; irregular bleeding (PCOS).</dd>
+      <dt>Unopposed estrogen</dt><dd>Estrogen stimulating the endometrium without progesterone &rarr; hyperplasia/cancer risk.</dd>
+      <dt>PCOS</dt><dd>Polycystic ovary syndrome &mdash; insulin resistance, excess androgens, anovulation, infertility.</dd>
+      <dt>Dysmenorrhea</dt><dd>Painful menstruation; primary type driven by prostaglandins.</dd>
+      <dt>Endometriosis</dt><dd>Endometrial tissue outside the uterus that bleeds cyclically and causes adhesions.</dd>
+      <dt>Leiomyoma (fibroid)</dt><dd>Benign uterine smooth-muscle tumor.</dd>
+      <dt>PID</dt><dd>Pelvic inflammatory disease; scars fallopian tubes &rarr; ectopic pregnancy risk.</dd>
+      <dt>Ectopic pregnancy</dt><dd>Implantation outside the uterus, usually in a scarred fallopian tube.</dd>
+      <dt>Testicular torsion</dt><dd>Twisting of the spermatic cord cutting off blood supply &mdash; a surgical emergency.</dd>
+      <dt>Epididymitis / Orchitis</dt><dd>Inflammation of the epididymis (often STI) / testis (often post-viral, mumps).</dd>
+      <dt>Varicocele</dt><dd>Dilated scrotal veins that raise temperature and reduce sperm quality.</dd>
+      <dt>Cryptorchidism</dt><dd>Undescended testis; raises infertility and testicular cancer risk.</dd>
+      <dt>BPH</dt><dd>Benign prostatic hyperplasia; enlarged prostate compresses the urethra &rarr; obstructive urinary symptoms.</dd>
+      <dt>Priapism</dt><dd>Prolonged erection &rarr; ischemia &rarr; later erectile dysfunction.</dd>
+    </dl>
+  </div>
+
+
+
+
+  <footer class="foot">
+    SCI225 Pathophysiology &middot; Week 12 &mdash; The Reproductive Systems &middot; Dr. Vidya Aggrawal &middot; Nightingale College<br>
+    <span style="font-size:12px;">Study guide for educational use. Built from the Week 12 learning objectives, pre-assessment, and case studies.</span>
+  </footer>
+
+</div>
+
+<script>
+  function toggleAll(){
+    var ds=document.querySelectorAll('details.topic');
+    var btn=document.getElementById('toggleBtn');
+    var anyClosed=Array.prototype.some.call(ds,function(d){return !d.open;});
+    ds.forEach(function(d){d.open=anyClosed;});
+    btn.textContent=anyClosed?'Collapse all':'Expand all';
+  }
+  function savePDF(){
+    document.querySelectorAll('details.topic').forEach(function(d){d.open=true;});
+    document.querySelectorAll('.ans').forEach(function(a){a.classList.add('show');});
+    setTimeout(function(){window.print();},250);
+  }
+  function reveal(btn){
+    var ans=btn.nextElementSibling;
+    ans.classList.toggle('show');
+    btn.textContent=ans.classList.contains('show')?'Hide answer':'Show answer';
+  }
+</script>
+</body>
+</html>

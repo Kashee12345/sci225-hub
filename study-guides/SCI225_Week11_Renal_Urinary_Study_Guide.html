@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SCI225 Week 11 &middot; Renal &amp; Urinary System Study Guide &middot; Dr. Vidya</title>
+<style>
+  :root{
+    --ink:#27210F; --muted:#6A5F45; --line:#E8E1D0; --bg:#FBF8F1;
+    --pri:#A65F00; --pri-dk:#7A4600; --pri-lt:#FBF0DA;
+    --s1:#B45309; --s1lt:#FEF3C7;
+    --s2:#9A3412; --s2lt:#FFEDD5;
+    --s3:#00838F; --s3lt:#E0F7FA;
+    --amber:#B7791F; --amberlt:#FBF1DD;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0; font-family:"Segoe UI",Arial,Helvetica,sans-serif; color:var(--ink); background:var(--bg); line-height:1.62;}
+  .wrap{max-width:1000px; margin:0 auto; padding:0 18px 80px;}
+  a{color:var(--pri);}
+  h1,h2,h3,h4{line-height:1.22;}
+
+  header.hero{background:linear-gradient(135deg,#7A4600 0%,#B45309 55%,#00838F 100%); color:#fff; border-radius:0 0 22px 22px; padding:46px 36px 40px; margin:0 -18px 8px; position:relative; overflow:hidden; box-shadow:0 10px 30px rgba(122,70,0,.30);}
+  header.hero .blob{position:absolute; border-radius:50%; background:rgba(255,255,255,.07);}
+  .kicker{font-size:12px; letter-spacing:3px; font-weight:700; opacity:.92; margin-bottom:10px;}
+  header.hero h1{margin:0 0 10px; font-size:38px;}
+  header.hero p{margin:0; font-size:17px; opacity:.96; max-width:660px;}
+  .herometa{margin-top:18px; display:flex; flex-wrap:wrap; gap:8px;}
+  .chip{display:inline-block; background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.28); padding:5px 12px; border-radius:20px; font-size:12.5px; font-weight:600;}
+
+  .toolbar{display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between; margin:18px 0 6px;}
+  .btn{display:inline-block; border:none; cursor:pointer; text-decoration:none; font-weight:700; border-radius:30px; padding:11px 22px; font-size:14px; box-shadow:0 4px 12px rgba(0,0,0,.16);}
+  .btn-print{background:linear-gradient(135deg,#7A4600,#B45309); color:#fff;}
+  .btn-light{background:#fff; color:var(--pri); border:1.5px solid var(--pri);}
+  .btn:hover{filter:brightness(1.06);}
+
+  .toc{background:#fff; border:1px solid var(--line); border-radius:14px; padding:18px 20px; margin:14px 0 26px; box-shadow:0 2px 10px rgba(0,0,0,.04);}
+  .toc h2{margin:0 0 12px; font-size:16px; letter-spacing:.5px; text-transform:uppercase; color:var(--muted);}
+  .toc-grid{display:grid; grid-template-columns:1fr 1fr 1fr; gap:18px;}
+  .toc-col h3{margin:0 0 8px; font-size:14px;}
+  .toc-col.c1 h3{color:var(--s1);} .toc-col.c2 h3{color:var(--s2);} .toc-col.c3 h3{color:var(--s3);}
+  .toc a{display:block; color:var(--ink); text-decoration:none; font-size:13.4px; padding:4px 8px; border-radius:6px;}
+  .toc a:hover{background:var(--pri-lt);}
+  @media (max-width:760px){ .toc-grid{grid-template-columns:1fr;} }
+
+  .sec{margin:40px 0 6px; padding:14px 20px; border-radius:12px; color:#fff; display:flex; align-items:center; gap:14px;}
+  .sec.one{background:linear-gradient(135deg,#B45309,#7A4600);}
+  .sec.two{background:linear-gradient(135deg,#9A3412,#7C2D12);}
+  .sec.three{background:linear-gradient(135deg,#00838F,#005662);}
+  .sec .num{font-size:13px; font-weight:800; letter-spacing:2px; background:rgba(255,255,255,.2); padding:6px 12px; border-radius:8px; white-space:nowrap;}
+  .sec h2{margin:0; font-size:22px;}
+  .sec p{margin:3px 0 0; font-size:13.5px; opacity:.95;}
+
+  details.topic{background:#fff; border:1px solid var(--line); border-left-width:5px; border-radius:10px; margin:12px 0; overflow:hidden; box-shadow:0 1px 6px rgba(0,0,0,.04);}
+  details.topic.one{border-left-color:var(--s1);}
+  details.topic.two{border-left-color:var(--s2);}
+  details.topic.three{border-left-color:var(--s3);}
+  details.topic > summary{cursor:pointer; list-style:none; padding:16px 20px; font-weight:700; font-size:16.5px; display:flex; align-items:center; gap:12px;}
+  details.topic > summary::-webkit-details-marker{display:none;}
+  details.topic > summary .tnum{font-size:12.5px; font-weight:800; color:#fff; border-radius:7px; padding:4px 9px; white-space:nowrap;}
+  details.topic.one > summary .tnum{background:var(--s1);}
+  details.topic.two > summary .tnum{background:var(--s2);}
+  details.topic.three > summary .tnum{background:var(--s3);}
+  details.topic > summary .arrow{margin-left:auto; transition:transform .2s; color:var(--muted); font-size:14px;}
+  details.topic[open] > summary .arrow{transform:rotate(90deg);}
+  details.topic[open] > summary{border-bottom:1px solid var(--line);}
+  .body{padding:6px 22px 20px;}
+  .body h4{margin:18px 0 6px; font-size:15.5px; color:var(--pri-dk);}
+  .body p{margin:8px 0;}
+  .body ul{margin:8px 0 8px; padding-left:20px;}
+  .body li{margin:5px 0;}
+
+  .keyidea{background:var(--pri-lt); border-left:4px solid var(--pri); border-radius:0 8px 8px 0; padding:12px 16px; margin:14px 0; font-size:14.5px;}
+  .pearl{background:var(--amberlt); border-left:4px solid var(--amber); border-radius:0 8px 8px 0; padding:12px 16px; margin:14px 0; font-size:14.5px;}
+  .mnem{background:#ECF6F1; border:1px dashed #2E9E78; border-radius:8px; padding:10px 14px; margin:14px 0; font-size:14px;}
+  .mnem .lbl{font-weight:800; color:#1E7A57; letter-spacing:.5px; font-size:12px; text-transform:uppercase;}
+
+  table.dt{width:100%; border-collapse:collapse; margin:14px 0; font-size:13.7px;}
+  table.dt th{background:#1F3242; color:#fff; text-align:left; padding:9px 11px; font-weight:600;}
+  table.dt td{border:1px solid var(--line); padding:9px 11px; vertical-align:top;}
+  table.dt tr:nth-child(even) td{background:#F7FAFC;}
+  .up{color:#C62828; font-weight:800;} .dn{color:#1565C0; font-weight:800;} .nl{color:#5A6573;}
+
+  .practice{background:#FBFCFE; border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin:16px 0;}
+  .practice .ptag{display:inline-block; background:var(--s2); color:#fff; font-size:11px; font-weight:800; letter-spacing:1px; padding:3px 10px; border-radius:20px; text-transform:uppercase;}
+  .q{font-weight:600; margin:10px 0 6px;}
+  .opts{margin:6px 0 6px; padding-left:6px;}
+  .opts div{padding:3px 0;}
+  .reveal{cursor:pointer; border:none; background:var(--s2); color:#fff; font-weight:700; font-size:12.5px; padding:7px 14px; border-radius:20px; margin-top:6px;}
+  .reveal:hover{filter:brightness(1.08);}
+  .ans{display:none; margin-top:10px; background:#EEF7F1; border-left:4px solid #2E9E78; border-radius:0 8px 8px 0; padding:11px 14px; font-size:14px;}
+  .ans.show{display:block;}
+  .ans .correct{font-weight:800; color:#1E7A57;}
+
+  .fig{background:#fff; border:1px solid var(--line); border-radius:10px; padding:14px; margin:16px 0; text-align:center;}
+  .fig figcaption{font-size:12.5px; color:var(--muted); margin-top:8px;}
+
+  .cheat{background:#fff; border:2px solid var(--pri); border-radius:14px; padding:8px 22px 22px; margin:14px 0;}
+  .gloss dt{font-weight:700; color:var(--pri-dk); margin-top:12px;}
+  .gloss dd{margin:2px 0 0; padding-left:0;}
+
+  footer.foot{text-align:center; color:var(--muted); font-size:13px; margin-top:50px; padding-top:22px; border-top:1px solid var(--line);}
+
+  @media print{
+    body{background:#fff;} .toolbar,.toc{display:none;}
+    details.topic{break-inside:avoid; box-shadow:none;}
+    header.hero{box-shadow:none;}
+    .ans{display:block !important;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="blob" style="width:230px;height:230px;right:-40px;top:-50px;"></div>
+    <div class="blob" style="width:150px;height:150px;right:130px;bottom:-60px;"></div>
+    <div class="kicker">SCI225 &middot; PATHOPHYSIOLOGY &middot; WEEK 11 &middot; NIGHTINGALE COLLEGE</div>
+    <h1>The Renal &amp; Urinary System</h1>
+    <p>How the kidney filters, concentrates, and regulates &mdash; and what goes wrong: obstruction and stones, infection, acute kidney injury, chronic kidney disease, and the pediatric renal disorders.</p>
+    <div class="herometa">
+      <span class="chip">Dr. Vidya Aggrawal</span>
+      <span class="chip">Module 11</span>
+      <span class="chip">Function &middot; Alterations &middot; Pediatric</span>
+      <span class="chip">9 topics + cheat sheet</span>
+    </div>
+  </header>
+
+  <div class="toolbar">
+    <div style="font-size:13.5px;color:var(--muted);">Click any topic to expand. Try each practice question <b>before</b> revealing the answer.</div>
+    <div style="display:flex;gap:10px;">
+      <button class="btn btn-light" onclick="toggleAll()" id="toggleBtn">Expand all</button>
+      <button class="btn btn-print" onclick="savePDF()">&#128424;&nbsp; Save as PDF</button>
+    </div>
+  </div>
+
+  <nav class="toc">
+    <h2>What's inside</h2>
+    <div class="toc-grid">
+      <div class="toc-col c1">
+        <h3>1 &middot; Structure &amp; Function</h3>
+        <a href="#t1">1. The nephron, filtration &amp; GFR</a>
+        <a href="#t2">2. Hormonal control &amp; autoregulation</a>
+      </div>
+      <div class="toc-col c2">
+        <h3>2 &middot; Alterations</h3>
+        <a href="#t3">3. Obstruction &amp; kidney stones</a>
+        <a href="#t4">4. Urinary tract infection</a>
+        <a href="#t5">5. Acute kidney injury &amp; glomerular disease</a>
+        <a href="#t6">6. Chronic kidney disease</a>
+      </div>
+      <div class="toc-col c3">
+        <h3>3 &middot; Pediatric Renal</h3>
+        <a href="#t7">7. Congenital &amp; obstructive (reflux, PKD)</a>
+        <a href="#t8">8. Pediatric glomerular &amp; HUS</a>
+        <a href="#t9">9. Wilms tumor &amp; infant fluid risk</a>
+        <a href="#cheat">&#11088; Cheat sheet</a>
+        <a href="#gloss">&#128218; Glossary</a>
+      </div>
+    </div>
+  </nav>
+
+
+  
+
+  <!-- SECTION 1 -->
+  <div class="sec one" id="sec1"><span class="num">SECTION 1</span><div><h2>Structure &amp; Function</h2><p>How the nephron filters and concentrates, and how the kidney defends its filtration rate and controls blood pressure.</p></div></div>
+
+  <!-- T1 -->
+  <details class="topic one" id="t1">
+    <summary><span class="tnum">1</span> The Nephron, Filtration &amp; GFR <span class="arrow">&#9654;</span></summary>
+    <div class="body">
+      <p>The <b>nephron</b> is the kidney's functional unit. Filter at the <b>glomerulus</b>, then fine-tune along the tubule.</p>
+      <table class="dt">
+        <tr><th>Structure</th><th>Job</th></tr>
+        <tr><td><b>Glomerulus</b></td><td><b>Filters</b> blood; the driving force is <b>capillary hydrostatic (blood) pressure</b> pushing fluid into the filtrate</td></tr>
+        <tr><td><b>Proximal tubule</b></td><td><b>Reabsorbs most</b> of the filtered water, sodium, glucose, and nutrients (the bulk-reabsorption workhorse)</td></tr>
+        <tr><td><b>Loop of Henle</b></td><td>The <b>countercurrent system</b> builds the medullary concentration gradient &rarr; lets the kidney <b>concentrate urine</b></td></tr>
+        <tr><td><b>Distal tubule / collecting duct</b></td><td>Final adjustments under <b>aldosterone</b> (Na/K) and <b>ADH</b> (water)</td></tr>
+      </table>
+      <h4>GFR and creatinine</h4>
+      <p><b>Glomerular filtration rate (GFR)</b> is how much blood the kidneys filter per minute &mdash; the key measure of kidney function. <b>Creatinine</b> is a waste product cleared by filtration, so when <b>GFR falls, creatinine rises</b> (it accumulates). A high plasma creatinine therefore means <b>reduced kidney filtration</b>.</p>
+      <div class="keyidea"><b>Key idea:</b> filtration is driven by <b>blood (hydrostatic) pressure</b> in the glomerulus. The <b>proximal tubule reabsorbs the most</b>, and the <b>loop of Henle</b> (countercurrent) is what lets you make <b>concentrated</b> urine. Watch <b>creatinine</b> as the mirror of GFR &mdash; it goes <b>up</b> when filtration goes <b>down</b>.</div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q1. Which factor drives glomerular filtration?</p>
+        <div class="opts"><div>A. Capillary hydrostatic (blood) pressure pushing fluid into the filtrate</div><div>B. Plasma oncotic pressure pulling fluid in</div><div>C. Tubular reabsorption</div><div>D. ADH secretion</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Glomerular capillary hydrostatic pressure is the main force pushing fluid across the filtration barrier into the tubule.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q2. A patient has an elevated plasma creatinine. What does this indicate?</p>
+        <div class="opts"><div>A. GFR has declined, so creatinine accumulates</div><div>B. GFR has increased</div><div>C. Increased muscle hydration</div><div>D. Excess tubular secretion of creatinine</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Creatinine is cleared by filtration; when GFR falls it builds up in the blood &mdash; a marker of reduced kidney function.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q3. Which nephron structure contributes most to urine concentration?</p>
+        <div class="opts"><div>A. The loop of Henle (countercurrent multiplier)</div><div>B. The glomerulus</div><div>C. The proximal tubule</div><div>D. The ureter</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> The loop of Henle's countercurrent system builds the medullary osmotic gradient that allows water reabsorption and concentrated urine.</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- T2 -->
+  <details class="topic one" id="t2">
+    <summary><span class="tnum">2</span> Hormonal Control &amp; Autoregulation <span class="arrow">&#9654;</span></summary>
+    <div class="body">
+      <p>The kidney both <b>protects its own GFR</b> and <b>controls blood pressure/fluid balance</b>.</p>
+      <h4>Autoregulation &mdash; keeping GFR steady</h4>
+      <ul>
+        <li>The kidney adjusts the <b>afferent (incoming) and efferent (outgoing) arterioles</b> to hold GFR roughly constant despite changing blood pressure.</li>
+        <li><b>Sympathetic activation</b> constricts the <b>afferent arteriole</b> &rarr; less blood in &rarr; <b>&darr; GFR</b> (e.g., in shock, blood is shunted away from the kidney).</li>
+      </ul>
+      <h4>RAAS &mdash; the blood-pressure axis</h4>
+      <ul>
+        <li><b>Low blood pressure/flow</b> &rarr; the kidney releases <b>renin</b>.</li>
+        <li>Renin &rarr; angiotensin II (<b>vasoconstriction</b>) + <b>aldosterone</b> (Na &amp; water retention) &rarr; <b>raises blood volume and pressure</b>.</li>
+      </ul>
+      <h4>ADH &mdash; water control</h4>
+      <p><b>ADH</b> makes the collecting duct reabsorb <b>water</b> &rarr; concentrated urine, higher blood volume (links to Week 8's DI/SIADH).</p>
+      <div class="keyidea"><b>Key idea:</b> <b>low BP &rarr; renin &rarr; RAAS &rarr; retain salt &amp; water &rarr; BP up.</b> Autoregulation tweaks the two arterioles to stabilize GFR; strong <b>sympathetic drive constricts the afferent arteriole and drops GFR</b>. ADH adds water back when the body needs volume.</div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q1. A patient's blood pressure drops. Which mechanism explains increased renin release?</p>
+        <div class="opts"><div>A. Reduced renal perfusion triggers renin to activate RAAS</div><div>B. High blood pressure stimulates renin</div><div>C. Excess sodium triggers renin</div><div>D. ADH suppresses renin</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Low pressure/flow to the kidney triggers renin release, launching RAAS to raise volume and pressure.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q2. Which physiologic response occurs with RAAS activation?</p>
+        <div class="opts"><div>A. Increased sodium and water reabsorption, raising blood volume/pressure</div><div>B. Sodium loss and diuresis</div><div>C. Vasodilation lowering blood pressure</div><div>D. Decreased aldosterone</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Angiotensin II constricts vessels and aldosterone retains sodium and water &mdash; together raising blood volume and pressure.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q3. Sympathetic activation decreases afferent arteriole diameter. What results?</p>
+        <div class="opts"><div>A. Reduced blood flow into the glomerulus and a lower GFR</div><div>B. Increased GFR</div><div>C. Increased renal blood flow</div><div>D. No change in filtration</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Constricting the afferent (incoming) arteriole reduces blood entering the glomerulus, lowering GFR &mdash; useful for redirecting blood during stress/shock.</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- SECTION 2 -->
+  <div class="sec two" id="sec2"><span class="num">SECTION 2</span><div><h2>Alterations of Renal &amp; Urinary Function</h2><p>Obstruction and stones, infection, acute kidney injury and glomerular disease, and chronic kidney disease.</p></div></div>
+
+  <!-- T3 -->
+  <details class="topic two" id="t3">
+    <summary><span class="tnum">3</span> Obstruction &amp; Kidney Stones <span class="arrow">&#9654;</span></summary>
+    <div class="body">
+      <p>When urine can't drain, pressure backs up into the kidney &mdash; and stones are the classic cause of sudden obstruction.</p>
+      <table class="dt">
+        <tr><th>Concept</th><th>Mechanism</th></tr>
+        <tr><td><b>Hydronephrosis</b></td><td>Obstruction backs urine up &rarr; the renal pelvis/calyces <b>dilate</b> under pressure (e.g., ureteropelvic junction obstruction)</td></tr>
+        <tr><td><b>&darr; GFR during obstruction</b></td><td>Back-pressure rises in the tubules, opposing filtration &rarr; <b>filtration falls</b>; prolonged obstruction can cause AKI</td></tr>
+        <tr><td><b>&uarr; infection risk</b></td><td>Stagnant, retained urine is a breeding ground &rarr; more UTIs</td></tr>
+        <tr><td><b>Postobstructive diuresis</b></td><td>After relief, <b>retained fluid and solutes are dumped</b> &rarr; large urine output (watch for dehydration/electrolyte loss)</td></tr>
+        <tr><td><b>Kidney stones (calculi)</b></td><td><b>Concentrated urine</b> (dehydration) + supersaturation &rarr; crystals; <b>calcium oxalate</b> is the most common type</td></tr>
+      </table>
+      <div class="keyidea"><b>Key idea &mdash; the obstruction chain:</b> blockage &rarr; <b>back-pressure</b> &rarr; <b>hydronephrosis</b> + <b>falling GFR</b> + <b>stasis/infection</b>. Relieve it and you may see <b>postobstructive diuresis</b> as the kidney unloads retained fluid and solutes.</div>
+      <div class="pearl"><b>Pearl &mdash; renal colic (Carlos's case):</b> a stone causes <b>sudden severe flank pain radiating to the groin</b>, in <b>waves (colicky)</b>, with restlessness, nausea, and <b>concentrated urine</b>. Staying hydrated (dilute urine) helps prevent calcium oxalate stones.</div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q1. What process causes hydronephrosis?</p>
+        <div class="opts"><div>A. Obstruction backs urine up, dilating the renal pelvis and calyces under pressure</div><div>B. Increased GFR</div><div>C. Excess water intake</div><div>D. Loss of renal blood flow only</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Blocked outflow raises pressure that distends the collecting system &mdash; hydronephrosis (e.g., from a ureteropelvic junction obstruction).</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q2. Which process explains postobstructive diuresis after relief of an obstruction?</p>
+        <div class="opts"><div>A. Retained fluid and solutes are excreted once flow is restored</div><div>B. The kidney stops making urine</div><div>C. Aldosterone surges to retain water</div><div>D. GFR falls permanently</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> After the blockage clears, accumulated fluid and solutes are dumped, producing a large diuresis &mdash; monitor for dehydration and electrolyte loss.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q3. Which condition promotes kidney stone formation?</p>
+        <div class="opts"><div>A. Concentrated urine (dehydration) causing supersaturation of stone-forming salts</div><div>B. Dilute urine</div><div>C. High fluid intake</div><div>D. Low urine calcium</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Concentrated urine supersaturates with calcium oxalate (the most common stone), allowing crystals to form and grow.</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- T4 -->
+  <details class="topic two" id="t4">
+    <summary><span class="tnum">4</span> Urinary Tract Infection <span class="arrow">&#9654;</span></summary>
+    <div class="body">
+      <p>Most UTIs are <b>ascending</b> &mdash; bacteria travel <b>up</b> from the urethra. The higher they go, the more serious.</p>
+      <table class="dt">
+        <tr><th>Level</th><th>What it is</th><th>Clues</th></tr>
+        <tr><td><b>Cystitis</b> (lower UTI)</td><td>Bladder infection/inflammation</td><td><b>Urgency, frequency, dysuria</b> (burning), suprapubic discomfort</td></tr>
+        <tr><td><b>Pyelonephritis</b> (upper UTI)</td><td>Infection reaches the <b>kidney</b> (usually ascending from the bladder)</td><td><b>Flank pain, fever, chills</b>, systemic illness</td></tr>
+      </table>
+      <div class="keyidea"><b>Key idea:</b> UTIs are usually <b>ascending</b> (urethra &rarr; bladder &rarr; up the ureter to the kidney). <b>Cystitis</b> = bladder (urgency/frequency/burning). <b>Pyelonephritis</b> = kidney (flank pain + fever). <b>Stasis</b> from obstruction or reflux makes infection more likely.</div>
+      <div class="pearl"><b>Pearl:</b> the irritated bladder wall in <b>cystitis</b> signals the urge to void even when nearly empty &rarr; the classic <b>urgency and frequency</b>. Anything that traps urine (obstruction, incomplete emptying, reflux) raises infection risk.</div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q1. Which mechanism explains an ascending urinary tract infection?</p>
+        <div class="opts"><div>A. Bacteria travel up from the urethra into the bladder and toward the kidney</div><div>B. Bacteria spread from the blood only</div><div>C. The kidney filters bacteria into urine</div><div>D. Bacteria descend from the lungs</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Most UTIs ascend from the urethra; if they reach the kidney they cause pyelonephritis.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q2. What causes urgency and frequency with cystitis?</p>
+        <div class="opts"><div>A. Bladder wall inflammation triggers the urge to void even when not full</div><div>B. Increased GFR</div><div>C. Reduced bladder sensation</div><div>D. Ureteral dilation</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Inflammation irritates the bladder, producing a frequent, urgent need to urinate plus burning (dysuria).</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- T5 -->
+  <details class="topic two" id="t5">
+    <summary><span class="tnum">5</span> Acute Kidney Injury &amp; Glomerular Disease <span class="arrow">&#9654;</span></summary>
+    <div class="body">
+      <p><b>Acute kidney injury (AKI)</b> is a sudden drop in GFR. <b>Glomerular disease</b> damages the filter itself, leaking what should stay in the blood.</p>
+      <h4>AKI &mdash; sudden loss of filtration</h4>
+      <ul>
+        <li><b>Prerenal</b> (most common): poor blood flow to the kidney (<b>dehydration</b>, hemorrhage, shock) &rarr; <b>&darr; GFR &rarr; oliguria</b> (low urine output).</li>
+        <li><b>Intrarenal:</b> direct kidney damage (toxins, ischemia, myoglobin).</li>
+        <li><b>Postrenal:</b> obstruction (Topic 3).</li>
+        <li>Falling GFR &rarr; <b>creatinine and waste rise</b>; urine output drops.</li>
+      </ul>
+      <h4>Glomerular disease &mdash; a leaky filter</h4>
+      <ul>
+        <li><b>Glomerulonephritis</b>: inflammation damages the glomerulus &rarr; <b>blood leaks into urine (hematuria)</b>.</li>
+        <li><b>Nephrotic pattern</b>: barrier damage &rarr; massive <b>protein loss (proteinuria)</b> &rarr; low blood albumin &rarr; <b>edema</b>.</li>
+      </ul>
+      <div class="keyidea"><b>Key idea:</b> <b>dehydration &rarr; prerenal AKI &rarr; oliguria</b> (the kidney is starved of blood, so GFR and urine fall, and creatinine rises). When the <b>glomerular filter</b> itself is injured, it leaks: inflammation &rarr; <b>blood (hematuria)</b>; barrier breakdown &rarr; <b>protein (proteinuria) &rarr; edema</b>.</div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q1. A patient with severe dehydration develops oliguria. Which mechanism explains it?</p>
+        <div class="opts"><div>A. Reduced renal blood flow lowers GFR, so less urine is formed (prerenal AKI)</div><div>B. Increased GFR</div><div>C. Excess ADH suppression</div><div>D. Glomerular protein loss</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Dehydration drops blood flow to the kidney &rarr; GFR falls &rarr; oliguria (low output) &mdash; the classic prerenal AKI mechanism.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q2. What explains hematuria in glomerular disease?</p>
+        <div class="opts"><div>A. Inflammation damages the glomerular filter, letting red blood cells leak into the urine</div><div>B. Bladder infection</div><div>C. A kidney stone scraping the ureter</div><div>D. Increased urine concentration</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> A damaged, inflamed glomerulus becomes leaky to red blood cells &rarr; hematuria (blood in urine).</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q3. What change decreases urine output in acute kidney injury?</p>
+        <div class="opts"><div>A. A fall in glomerular filtration rate</div><div>B. A rise in GFR</div><div>C. Increased renal perfusion</div><div>D. Decreased creatinine</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> AKI lowers GFR, so less filtrate is formed and urine output drops (oliguria), while creatinine and wastes accumulate.</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- T6 -->
+  <details class="topic two" id="t6">
+    <summary><span class="tnum">6</span> Chronic Kidney Disease <span class="arrow">&#9654;</span></summary>
+    <div class="body">
+      <p><b>Chronic kidney disease (CKD)</b> is progressive, irreversible loss of nephrons over time. As GFR declines, the kidney fails at <b>excretion, fluid/electrolyte balance, and hormone production</b>.</p>
+      <table class="dt">
+        <tr><th>Consequence</th><th>Mechanism</th></tr>
+        <tr><td><b>Most common cause</b></td><td><b>Diabetes</b> (then hypertension) damages the small renal vessels over years</td></tr>
+        <tr><td><b>Anemia</b> (fatigue, pallor)</td><td>Damaged kidneys make less <b>erythropoietin (EPO)</b> &rarr; fewer RBCs</td></tr>
+        <tr><td><b>Hyperkalemia</b></td><td>Failing kidneys can't excrete <b>potassium</b> &rarr; it builds up (dangerous for the heart)</td></tr>
+        <tr><td><b>Fluid overload / acidosis / waste buildup</b></td><td>Lost excretory and regulatory capacity &rarr; edema, metabolic acidosis, rising creatinine/BUN</td></tr>
+        <tr><td><b>Bone &amp; mineral changes</b></td><td>Altered calcium/phosphate and vitamin D handling</td></tr>
+      </table>
+      <div class="keyidea"><b>Key idea:</b> CKD's <b>#1 cause is diabetes</b>. Two classic patho links to remember: <b>low EPO &rarr; anemia</b> (fatigue, pallor) and <b>failure to excrete potassium &rarr; hyperkalemia</b> (the electrolyte CKD patients are at greatest risk for).</div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q1. Which condition is the most common cause of chronic kidney disease?</p>
+        <div class="opts"><div>A. Diabetes mellitus</div><div>B. Kidney stones</div><div>C. A single urinary tract infection</div><div>D. Dehydration</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Diabetes (followed by hypertension) damages the kidney's small vessels over time and is the leading cause of CKD.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q2. A patient with CKD develops fatigue and pallor. Which mechanism best explains these findings?</p>
+        <div class="opts"><div>A. Reduced erythropoietin production lowers red blood cell production (anemia)</div><div>B. Increased EPO</div><div>C. Iron overload</div><div>D. Excess oxygen delivery</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Diseased kidneys make less EPO, so fewer RBCs are produced &mdash; anemia causes the fatigue and pallor.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q3. Which electrolyte imbalance is a CKD patient at greatest risk for developing?</p>
+        <div class="opts"><div>A. Hyperkalemia (high potassium)</div><div>B. Hypokalemia</div><div>C. Hypernatremia only</div><div>D. Hypocalcemia only</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Failing kidneys can't excrete potassium well, so it accumulates &mdash; hyperkalemia, which is dangerous for cardiac rhythm.</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- SECTION 3 -->
+  <div class="sec three" id="sec3"><span class="num">SECTION 3</span><div><h2>Pediatric Renal &amp; Urinary</h2><p>Congenital and obstructive problems, the childhood glomerular diseases, the renal tumor, and why infants are fluid-fragile.</p></div></div>
+
+  <!-- T7 -->
+  <details class="topic three" id="t7">
+    <summary><span class="tnum">7</span> Congenital &amp; Obstructive (Reflux, PKD) <span class="arrow">&#9654;</span></summary>
+    <div class="body">
+      <table class="dt">
+        <tr><th>Condition</th><th>Mechanism</th></tr>
+        <tr><td><b>Vesicoureteral reflux (VUR)</b></td><td>The valve where the ureter enters the bladder fails &rarr; urine flows <b>backward</b> toward the kidney &rarr; <b>recurrent infections</b> and scarring</td></tr>
+        <tr><td><b>Ureteropelvic junction (UPJ) obstruction</b></td><td>Narrowing where the renal pelvis meets the ureter &rarr; back-pressure &rarr; <b>hydronephrosis</b></td></tr>
+        <tr><td><b>Congenital bladder outlet obstruction</b> (e.g., posterior urethral valves)</td><td>Blockage at the bladder outlet &rarr; back-pressure up the tract &rarr; <b>hydronephrosis and kidney damage</b> if untreated</td></tr>
+        <tr><td><b>Polycystic kidney disease (PKD)</b></td><td>Numerous <b>fluid-filled cysts</b> enlarge and <b>compress/replace</b> functional kidney tissue &rarr; progressive loss of function</td></tr>
+      </table>
+      <div class="keyidea"><b>Key idea:</b> normally a one-way valve (the vesicoureteral junction) <b>prevents urine refluxing</b> from bladder to ureter. In <b>VUR</b> that valve fails, so urine refluxes up and brings bacteria with it &rarr; <b>recurrent UTIs</b> and renal scarring. Obstructions anywhere (UPJ, bladder outlet) cause the same back-pressure picture: <b>hydronephrosis</b>.</div>
+      <div class="pearl"><b>Pearl &mdash; PKD:</b> it isn't a blockage &mdash; it's <b>cysts</b> that grow and squeeze out working nephrons, so kidney function declines as the cysts expand.</div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q1. Which mechanism normally prevents reflux of urine from the bladder into the ureters?</p>
+        <div class="opts"><div>A. A one-way valve at the ureterovesical (bladder) junction</div><div>B. The glomerular filter</div><div>C. The loop of Henle</div><div>D. The renal capsule</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> The junction acts as a one-way valve; when it fails (VUR), urine refluxes toward the kidney &rarr; recurrent infections.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q2. What explains recurrent infections with vesicoureteral reflux?</p>
+        <div class="opts"><div>A. Urine refluxes backward toward the kidney, carrying bacteria upward</div><div>B. The kidney over-filters bacteria</div><div>C. Increased bladder emptying</div><div>D. Reduced bladder pressure</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Backward urine flow moves bacteria from the bladder up to the kidneys, causing repeated UTIs and potential scarring.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q3. Which mechanism reduces kidney function in polycystic kidney disease?</p>
+        <div class="opts"><div>A. Growing fluid-filled cysts compress and replace functional kidney tissue</div><div>B. A single obstructing stone</div><div>C. Bacterial infection only</div><div>D. Low erythropoietin</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Multiple enlarging cysts crowd out and destroy normal nephrons over time, progressively reducing function.</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- T8 -->
+  <details class="topic three" id="t8">
+    <summary><span class="tnum">8</span> Pediatric Glomerular Disease &amp; HUS <span class="arrow">&#9654;</span></summary>
+    <div class="body">
+      <table class="dt">
+        <tr><th>Condition</th><th>Mechanism</th></tr>
+        <tr><td><b>Poststreptococcal glomerulonephritis</b></td><td><b>Immune complexes</b> form after a strep infection and deposit in the glomeruli &rarr; inflammation &rarr; <b>hematuria</b> (and edema, hypertension); appears <b>after the infection resolves</b></td></tr>
+        <tr><td><b>Nephrotic syndrome (childhood)</b></td><td>Glomerular barrier damage &rarr; heavy <b>proteinuria</b> &rarr; low blood albumin &rarr; <b>edema</b> (low oncotic pressure)</td></tr>
+        <tr><td><b>Hemolytic uremic syndrome (HUS)</b></td><td>Often after toxin-producing <em>E. coli</em> &rarr; <b>endothelial injury &amp; microthrombi</b> in the kidney &rarr; renal injury (with hemolytic anemia + low platelets)</td></tr>
+      </table>
+      <div class="keyidea"><b>Key idea &mdash; "nephritic vs nephrotic":</b> inflammation that lets <b>blood</b> through = <b>hematuria</b> (poststrep glomerulonephritis &mdash; Aiden's case, kidney injury appearing <i>after</i> the strep throat clears). Barrier breakdown that lets <b>protein</b> out = <b>proteinuria &rarr; edema</b> (nephrotic syndrome). <b>HUS</b> injures the kidney through <b>microthrombi/endothelial damage</b>.</div>
+      <div class="pearl"><b>Pearl &mdash; Aiden's case:</b> untreated strep pharyngitis &rarr; immune complexes deposit in the glomeruli &rarr; <b>poststreptococcal glomerulonephritis</b>, which shows up <i>after</i> the sore throat resolves with <b>hematuria</b> (tea/cola-colored urine), edema, and high blood pressure.</div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q1. What causes hematuria after poststreptococcal glomerulonephritis?</p>
+        <div class="opts"><div>A. Immune complexes deposit in the glomeruli, inflaming and damaging the filter</div><div>B. A bladder stone</div><div>C. Direct bacterial filtration</div><div>D. Increased erythropoietin</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Post-strep immune complexes lodge in the glomeruli and trigger inflammation, making the filter leaky to red blood cells &rarr; hematuria.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q2. What causes the edema in childhood nephrotic syndrome?</p>
+        <div class="opts"><div>A. Heavy urinary protein loss lowers blood albumin and oncotic pressure, so fluid leaks into tissues</div><div>B. Excess albumin in the blood</div><div>C. Increased GFR</div><div>D. High potassium</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Losing protein in the urine drops plasma albumin, lowering oncotic pressure so fluid shifts into the tissues &rarr; edema.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q3. What causes renal injury in hemolytic uremic syndrome?</p>
+        <div class="opts"><div>A. Endothelial damage and microthrombi obstruct small renal vessels</div><div>B. A blocked ureter</div><div>C. Low erythropoietin</div><div>D. Bacterial cystitis</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> HUS (often after Shiga-toxin <em>E. coli</em>) injures small-vessel endothelium and forms microthrombi that damage the kidney &mdash; alongside hemolytic anemia and thrombocytopenia.</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- T9 -->
+  <details class="topic three" id="t9">
+    <summary><span class="tnum">9</span> Wilms Tumor &amp; Infant Fluid Risk <span class="arrow">&#9654;</span></summary>
+    <div class="body">
+      <table class="dt">
+        <tr><th>Topic</th><th>Mechanism</th></tr>
+        <tr><td><b>Nephroblastoma (Wilms tumor)</b></td><td>Malignant proliferation of <b>embryonic kidney cells</b> &rarr; a (often large, one-sided) abdominal/renal mass in young children</td></tr>
+        <tr><td><b>Congenital bladder outlet obstruction (untreated)</b></td><td>Persistent back-pressure &rarr; hydronephrosis &rarr; <b>progressive kidney damage/failure</b></td></tr>
+        <tr><td><b>Infant fluid fragility</b></td><td>Infants have a <b>higher body-water percentage, higher turnover, and immature kidneys</b> that concentrate urine poorly &rarr; they <b>dehydrate quickly</b> and are prone to fluid/electrolyte imbalance</td></tr>
+      </table>
+      <div class="keyidea"><b>Key idea:</b> <b>Wilms tumor (nephroblastoma)</b> is the classic childhood kidney cancer &mdash; embryonic renal cells proliferating into a renal mass. And remember <b>why infants are fluid-fragile:</b> more total body water, faster turnover, and <b>immature kidneys</b> that can't concentrate urine well &mdash; so they lose fluid fast and tip into imbalance quickly.</div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q1. Which mechanism best explains nephroblastoma (Wilms tumor)?</p>
+        <div class="opts"><div>A. Malignant proliferation of embryonic kidney cells forming a renal mass</div><div>B. Bacterial kidney infection</div><div>C. A blocking stone</div><div>D. Immune-complex deposition</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Wilms tumor arises from primitive (embryonic) kidney cells that proliferate into a mass &mdash; the most common childhood renal cancer.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q2. A newborn has severe congenital bladder outlet obstruction. Which complication is most likely if untreated?</p>
+        <div class="opts"><div>A. Back-pressure causes hydronephrosis and progressive kidney damage</div><div>B. Spontaneous resolution with no risk</div><div>C. Increased GFR</div><div>D. Low potassium</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Persistent outlet obstruction backs urine up the tract, distending the kidneys (hydronephrosis) and damaging them over time.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q3. Why are infants at higher risk for fluid imbalance?</p>
+        <div class="opts"><div>A. Higher body-water percentage and turnover with immature kidneys that concentrate urine poorly</div><div>B. Lower body-water percentage than adults</div><div>C. Fully mature concentrating ability</div><div>D. Very slow fluid turnover</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Infants have proportionally more water, faster turnover, and immature kidneys that can't concentrate urine well, so they dehydrate quickly.</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- CHEAT SHEET -->
+  <div class="sec one" id="cheat" style="background:linear-gradient(135deg,#7A4600,#B45309);"><span class="num">&#11088; EXAM</span><div><h2>Renal &amp; Urinary Cheat Sheet</h2><p>The highest-yield patterns &mdash; review the night before.</p></div></div>
+  <div class="cheat">
+    <h4 style="color:var(--pri-dk);">Function</h4>
+    <ul>
+      <li><b>GFR</b> driven by glomerular <b>hydrostatic (blood) pressure</b>. <b>Proximal tubule</b> reabsorbs the most; <b>loop of Henle</b> (countercurrent) concentrates urine.</li>
+      <li><b>Creatinine &uarr; = GFR &darr;</b> (kidney function marker).</li>
+      <li><b>Low BP &rarr; renin &rarr; RAAS</b> (angiotensin II vasoconstriction + aldosterone Na/water retention) &rarr; BP up. <b>ADH</b> retains water. <b>Sympathetic</b> constricts afferent arteriole &rarr; &darr;GFR.</li>
+    </ul>
+    <h4 style="color:#7C2D12;">Alterations</h4>
+    <ul>
+      <li><b>Obstruction</b> &rarr; back-pressure &rarr; <b>hydronephrosis</b> + &darr;GFR + infection risk; relief &rarr; <b>postobstructive diuresis</b>. <b>Stones</b> = concentrated urine; <b>calcium oxalate</b> most common; renal colic = flank&rarr;groin pain in waves.</li>
+      <li><b>UTI</b> usually <b>ascending</b>: cystitis (bladder &mdash; urgency/frequency/dysuria) vs pyelonephritis (kidney &mdash; flank pain + fever).</li>
+      <li><b>AKI</b>: prerenal (dehydration/shock) &rarr; &darr;GFR &rarr; <b>oliguria</b>, &uarr; creatinine. <b>Glomerular disease</b>: inflammation &rarr; <b>hematuria</b>; barrier loss &rarr; <b>proteinuria &rarr; edema</b>.</li>
+      <li><b>CKD</b>: #1 cause <b>diabetes</b>; &darr;EPO &rarr; <b>anemia</b>; can't excrete K&#8314; &rarr; <b>hyperkalemia</b>.</li>
+    </ul>
+    <h4 style="color:#005662;">Pediatric</h4>
+    <ul>
+      <li><b>VUR</b> = failed bladder-ureter valve &rarr; reflux &rarr; recurrent UTIs. <b>UPJ / bladder-outlet obstruction</b> &rarr; hydronephrosis. <b>PKD</b> = cysts crowd out nephrons.</li>
+      <li><b>Poststrep glomerulonephritis</b> = immune complexes &rarr; hematuria (after strep resolves). <b>Nephrotic syndrome</b> = proteinuria &rarr; edema. <b>HUS</b> = endothelial injury/microthrombi (often E. coli).</li>
+      <li><b>Wilms tumor (nephroblastoma)</b> = embryonic kidney-cell tumor. <b>Infants</b> = more body water + immature kidneys &rarr; dehydrate fast.</li>
+    </ul>
+  </div>
+
+  <!-- GLOSSARY -->
+  <div class="sec three" id="gloss" style="background:linear-gradient(135deg,#00838F,#005662);"><span class="num">&#128218; TERMS</span><div><h2>Glossary</h2><p>Quick definitions of the Week 11 vocabulary.</p></div></div>
+  <div class="cheat" style="border-color:var(--s3);">
+    <dl class="gloss">
+      <dt>Nephron</dt><dd>The kidney's functional unit (glomerulus + tubule).</dd>
+      <dt>GFR</dt><dd>Glomerular filtration rate &mdash; volume of blood filtered per minute; the key measure of kidney function.</dd>
+      <dt>Creatinine</dt><dd>Waste cleared by filtration; rises when GFR falls.</dd>
+      <dt>RAAS</dt><dd>Renin-angiotensin-aldosterone system; raises blood pressure/volume via vasoconstriction and Na/water retention.</dd>
+      <dt>ADH</dt><dd>Antidiuretic hormone; promotes water reabsorption in the collecting duct.</dd>
+      <dt>Hydronephrosis</dt><dd>Dilation of the renal collecting system from obstructed urine flow.</dd>
+      <dt>Postobstructive diuresis</dt><dd>Large urine output after relieving an obstruction as retained fluid/solutes are excreted.</dd>
+      <dt>Renal calculi (stones)</dt><dd>Crystallized deposits (commonly calcium oxalate) forming in concentrated urine.</dd>
+      <dt>Cystitis / Pyelonephritis</dt><dd>Bladder infection / kidney infection (usually ascending).</dd>
+      <dt>Acute kidney injury (AKI)</dt><dd>Sudden drop in GFR; prerenal, intrarenal, or postrenal.</dd>
+      <dt>Oliguria</dt><dd>Abnormally low urine output.</dd>
+      <dt>Hematuria / Proteinuria</dt><dd>Blood / protein in the urine from glomerular damage.</dd>
+      <dt>Chronic kidney disease (CKD)</dt><dd>Progressive, irreversible nephron loss; leading cause is diabetes.</dd>
+      <dt>Vesicoureteral reflux (VUR)</dt><dd>Backward urine flow from bladder to ureter from a failed valve &rarr; recurrent UTIs.</dd>
+      <dt>Polycystic kidney disease</dt><dd>Cysts that enlarge and replace functional kidney tissue.</dd>
+      <dt>Poststreptococcal glomerulonephritis</dt><dd>Immune-complex glomerular inflammation after strep &rarr; hematuria.</dd>
+      <dt>Nephrotic syndrome</dt><dd>Heavy proteinuria &rarr; low albumin &rarr; edema.</dd>
+      <dt>Hemolytic uremic syndrome (HUS)</dt><dd>Endothelial injury/microthrombi (often E. coli) &rarr; renal injury, anemia, low platelets.</dd>
+      <dt>Nephroblastoma (Wilms tumor)</dt><dd>Childhood kidney cancer from embryonic renal cells.</dd>
+    </dl>
+  </div>
+
+
+
+
+  <footer class="foot">
+    SCI225 Pathophysiology &middot; Week 11 &mdash; The Renal &amp; Urinary System &middot; Dr. Vidya Aggrawal &middot; Nightingale College<br>
+    <span style="font-size:12px;">Study guide for educational use. Built from the Week 11 learning objectives, pre-assessment, and case studies.</span>
+  </footer>
+
+</div>
+
+<script>
+  function toggleAll(){
+    var ds=document.querySelectorAll('details.topic');
+    var btn=document.getElementById('toggleBtn');
+    var anyClosed=Array.prototype.some.call(ds,function(d){return !d.open;});
+    ds.forEach(function(d){d.open=anyClosed;});
+    btn.textContent=anyClosed?'Collapse all':'Expand all';
+  }
+  function savePDF(){
+    document.querySelectorAll('details.topic').forEach(function(d){d.open=true;});
+    document.querySelectorAll('.ans').forEach(function(a){a.classList.add('show');});
+    setTimeout(function(){window.print();},250);
+  }
+  function reveal(btn){
+    var ans=btn.nextElementSibling;
+    ans.classList.toggle('show');
+    btn.textContent=ans.classList.contains('show')?'Hide answer':'Show answer';
+  }
+</script>
+</body>
+</html>

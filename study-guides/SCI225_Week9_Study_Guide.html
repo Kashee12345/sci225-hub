@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SCI225 Week 9 Study Guide — Cardiovascular Structure, Function & Alterations</title>
+<style>
+  :root {
+    --u1: #1e40af; --u1-bg: #eff6ff; --u1-brd: #93c5fd;
+    --u2: #b91c1c; --u2-bg: #fef2f2; --u2-brd: #fca5a5;
+    --u3: #047857; --u3-bg: #ecfdf5; --u3-brd: #6ee7b7;
+    --u4: #be185d; --u4-bg: #fdf2f8; --u4-brd: #f9a8d4;
+    --u5: #c2410c; --u5-bg: #fff7ed; --u5-brd: #fdba74;
+    --mech: #1d4ed8; --mech-bg: #eff6ff;
+    --why:  #b45309; --why-bg:  #fffbeb;
+    --comp: #047857; --comp-bg: #f0fdf4;
+    --path: #be123c; --path-bg: #fff1f2;
+    --miss: #991b1b; --miss-bg: #fef2f2;
+    --acro: #6d28d9; --acro-bg: #f5f3ff;
+    --tip:  #0f766e; --tip-bg:  #ecfdf5;
+    --text: #111827; --muted: #4b5563; --line: #d1d5db;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    font-size: 10.5pt; line-height: 1.42; color: var(--text);
+    margin: 0; padding: 0; background: #f9fafb;
+  }
+  .layout { display: grid; grid-template-columns: 240px 1fr; max-width: 1140px; margin: 0 auto; }
+  nav.toc {
+    position: sticky; top: 0; align-self: start; max-height: 100vh; overflow-y: auto;
+    background: #fff; border-right: 1px solid var(--line); padding: 14px 12px; font-size: 9.4pt;
+  }
+  nav.toc h3 { font-size: 10pt; margin: 6px 0 8px; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; }
+  nav.toc a { display: block; padding: 3px 6px; color: var(--text); text-decoration: none; border-radius: 3px; margin-bottom: 1px; }
+  nav.toc a:hover { background: #f3f4f6; }
+  nav.toc .u1 { border-left: 3px solid var(--u1); }
+  nav.toc .u2 { border-left: 3px solid var(--u2); }
+  nav.toc .u3 { border-left: 3px solid var(--u3); }
+  nav.toc .u4 { border-left: 3px solid var(--u4); }
+  nav.toc .u5 { border-left: 3px solid var(--u5); }
+  main { padding: 20px 28px; background: #fff; }
+  h1 { font-size: 20pt; margin: 0 0 4px; }
+  h2 { font-size: 15pt; margin: 18px 0 6px; padding: 6px 10px; border-radius: 4px; color: #fff; }
+  h3 { font-size: 12pt; margin: 12px 0 4px; padding-bottom: 2px; border-bottom: 1px solid var(--line); }
+  h4 { font-size: 10.8pt; margin: 8px 0 3px; color: var(--muted); }
+  .unit1 h2 { background: var(--u1); } .unit2 h2 { background: var(--u2); }
+  .unit3 h2 { background: var(--u3); } .unit4 h2 { background: var(--u4); }
+  .unit5 h2 { background: var(--u5); }
+  .unit1 h3 { color: var(--u1); border-bottom-color: var(--u1-brd); }
+  .unit2 h3 { color: var(--u2); border-bottom-color: var(--u2-brd); }
+  .unit3 h3 { color: var(--u3); border-bottom-color: var(--u3-brd); }
+  .unit4 h3 { color: var(--u4); border-bottom-color: var(--u4-brd); }
+  .unit5 h3 { color: var(--u5); border-bottom-color: var(--u5-brd); }
+  p { margin: 4px 0; }
+  ul, ol { margin: 4px 0 6px 20px; padding: 0; }
+  li { margin: 1px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 9.8pt; margin: 6px 0 8px; }
+  th, td { border: 1px solid var(--line); padding: 4px 6px; text-align: left; vertical-align: top; }
+  th { background: #f3f4f6; font-weight: 600; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+  .box { border-left: 4px solid; padding: 6px 10px; margin: 6px 0; border-radius: 3px; font-size: 10pt; }
+  .mech { border-color: var(--mech); background: var(--mech-bg); }
+  .mech::before { content: "MECHANISM "; font-weight: 700; color: var(--mech); font-size: 8.5pt; letter-spacing: .5px; }
+  .why { border-color: var(--why); background: var(--why-bg); }
+  .why::before { content: "WHY "; font-weight: 700; color: var(--why); font-size: 8.5pt; letter-spacing: .5px; }
+  .comp { border-color: var(--comp); background: var(--comp-bg); }
+  .comp::before { content: "COMPENSATION "; font-weight: 700; color: var(--comp); font-size: 8.5pt; letter-spacing: .5px; }
+  .path { border-color: var(--path); background: var(--path-bg); }
+  .path::before { content: "PATHOLOGY "; font-weight: 700; color: var(--path); font-size: 8.5pt; letter-spacing: .5px; }
+  .miss { border-color: var(--miss); background: var(--miss-bg); }
+  .miss::before { content: "⚠ COMMON MISSTEP "; font-weight: 700; color: var(--miss); font-size: 8.5pt; letter-spacing: .5px; }
+  .acro { border-color: var(--acro); background: var(--acro-bg); }
+  .acro::before { content: "ACRONYM / MNEMONIC "; font-weight: 700; color: var(--acro); font-size: 8.5pt; letter-spacing: .5px; }
+  .tip { border-color: var(--tip); background: var(--tip-bg); }
+  .tip::before { content: "★ EXAM TIP "; font-weight: 700; color: var(--tip); font-size: 8.5pt; letter-spacing: .5px; }
+  .flow { background: #f9fafb; border: 1px solid var(--line); padding: 8px 10px; border-radius: 4px; font-size: 9.8pt; margin: 6px 0; font-family: "Consolas", monospace; }
+  .flow .arr { color: #6b7280; margin: 0 3px; }
+  .q { background: #fafafa; border: 1px solid var(--line); border-radius: 4px; padding: 8px 10px; margin: 6px 0; font-size: 10pt; }
+  .q .qhead { font-weight: 600; margin-bottom: 3px; }
+  .q .opts { margin: 3px 0 4px 0; }
+  .q .ans { background: #ecfdf5; border-left: 3px solid var(--comp); padding: 4px 8px; margin-top: 4px; font-size: 9.8pt; }
+  .q .ans b { color: var(--comp); }
+  details summary { cursor: pointer; color: var(--mech); font-size: 9.5pt; font-weight: 600; }
+  .hero { padding: 14px 18px; background: linear-gradient(135deg, #1e3a8a, #b91c1c, #c2410c); color: #fff; border-radius: 6px; margin-bottom: 14px; }
+  .hero h1 { color: #fff; }
+  .hero p { margin: 4px 0; font-size: 10pt; opacity: .95; }
+  .spine { background: rgba(255,255,255,.15); padding: 6px 10px; border-radius: 4px; margin-top: 6px; font-size: 9.8pt; }
+  .legend { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 10px; font-size: 9pt; }
+  .legend span { padding: 2px 8px; border-radius: 3px; border: 1px solid; }
+  .lg-mech { color: var(--mech); background: var(--mech-bg); border-color: var(--mech); }
+  .lg-why  { color: var(--why);  background: var(--why-bg);  border-color: var(--why); }
+  .lg-comp { color: var(--comp); background: var(--comp-bg); border-color: var(--comp); }
+  .lg-path { color: var(--path); background: var(--path-bg); border-color: var(--path); }
+  .lg-miss { color: var(--miss); background: var(--miss-bg); border-color: var(--miss); }
+  .lg-acro { color: var(--acro); background: var(--acro-bg); border-color: var(--acro); }
+  .lg-tip  { color: var(--tip);  background: var(--tip-bg);  border-color: var(--tip); }
+  .chip { font-size: 9pt; padding: 2px 8px; border-radius: 3px; color: #fff; font-weight: 600; }
+  .c1 { background: var(--u1); } .c2 { background: var(--u2); } .c3 { background: var(--u3); }
+  .c4 { background: var(--u4); } .c5 { background: var(--u5); }
+  .btns { margin: 10px 0; }
+  .btns button { background: #0f172a; color: #fff; border: 0; padding: 6px 12px; border-radius: 4px; font-size: 9.8pt; cursor: pointer; margin-right: 6px; }
+  .small { font-size: 9.3pt; color: var(--muted); }
+  @media print {
+    body { background: #fff; }
+    .layout { display: block; max-width: none; }
+    nav.toc, .btns { display: none; }
+    main { padding: 0.35in 0.4in; }
+    details { page-break-inside: avoid; }
+    details[open] summary { display: none; }
+    details:not([open]) > *:not(summary) { display: block; }
+    .hero, h2, .chip, .box, .q .ans, th { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+<div class="layout">
+<nav class="toc">
+  <h3>Week 9 Study Guide</h3>
+  <a href="#intro"><b>How to use this guide</b></a>
+  <a href="#u1" class="u1"><b>Unit 1.</b> CV Structure & Function</a>
+  <a href="#u1-heart" class="u1">&nbsp;&nbsp;Heart anatomy</a>
+  <a href="#u1-conduct" class="u1">&nbsp;&nbsp;Pacemaker & conduction</a>
+  <a href="#u1-vessel" class="u1">&nbsp;&nbsp;Vessels & capillaries</a>
+  <a href="#u1-q" class="u1">&nbsp;&nbsp;Practice Qs</a>
+  <a href="#u2" class="u2"><b>Unit 2.</b> Heart Failure & Ischemia</a>
+  <a href="#u2-hf" class="u2">&nbsp;&nbsp;Heart failure</a>
+  <a href="#u2-edema" class="u2">&nbsp;&nbsp;Edema mechanisms</a>
+  <a href="#u2-isch" class="u2">&nbsp;&nbsp;Ischemia & MI</a>
+  <a href="#u2-q" class="u2">&nbsp;&nbsp;Practice Qs</a>
+  <a href="#u3" class="u3"><b>Unit 3.</b> Compensatory Mechanisms</a>
+  <a href="#u3-q" class="u3">&nbsp;&nbsp;Practice Qs</a>
+  <a href="#u4" class="u4"><b>Unit 4.</b> Pediatric Cardiac</a>
+  <a href="#u4-fetal" class="u4">&nbsp;&nbsp;Fetal circulation</a>
+  <a href="#u4-shunt" class="u4">&nbsp;&nbsp;L→R vs R→L shunts</a>
+  <a href="#u4-defects" class="u4">&nbsp;&nbsp;Specific defects</a>
+  <a href="#u4-q" class="u4">&nbsp;&nbsp;Practice Qs</a>
+  <a href="#u5" class="u5"><b>Unit 5.</b> Vascular Disease & Wound Healing</a>
+  <a href="#u5-q" class="u5">&nbsp;&nbsp;Practice Qs</a>
+  <a href="#appx"><b>Appendix:</b> Missteps & Mnemonics</a>
+</nav>
+
+<main>
+
+<div class="btns">
+  <button onclick="window.print()">Print / Save as PDF</button>
+  <button onclick="document.querySelectorAll('details').forEach(d=>d.open=true)">Expand All</button>
+  <button onclick="document.querySelectorAll('details').forEach(d=>d.open=false)">Collapse All</button>
+</div>
+
+<section id="intro">
+<div class="hero">
+  <h1>SCI225 Week 9 — Complete Study Guide</h1>
+  <p><b>Made by Dr. Vidya Aggrawal</b></p>
+  <p>Cardiovascular & Lymphatic Structure · Heart Failure · Compensatory Mechanisms · Pediatric Congenital Heart Disease · Vascular Disease & Wound Healing</p>
+  <div class="spine"><b>Study Spine — for every CV problem ask:</b><br>
+  1. Forward flow (CO) or backward congestion? &nbsp; 2. Left side or right side? &nbsp; 3. Preload, afterload, or contractility issue? &nbsp; 4. Compensation helping or hurting?</div>
+</div>
+
+<div class="legend">
+  <span class="lg-mech">MECHANISM</span>
+  <span class="lg-why">WHY</span>
+  <span class="lg-comp">COMPENSATION</span>
+  <span class="lg-path">PATHOLOGY</span>
+  <span class="lg-miss">MISSTEP</span>
+  <span class="lg-acro">ACRONYM</span>
+  <span class="lg-tip">EXAM TIP</span>
+</div>
+
+<h3>Course alignment</h3>
+<ul>
+  <li><b>LO1</b> — Recall the structure and function of the cardiovascular and lymphatic systems <span class="small">(Unit 1)</span></li>
+  <li><b>LO2</b> — Understand alterations of cardiovascular function <span class="small">(Units 2, 3)</span></li>
+  <li><b>LO3</b> — Discuss alterations of cardiovascular function in children <span class="small">(Unit 4)</span></li>
+  <li><b>LO4</b> — Connect key ideas from current events to learning <span class="small">(Unit 5 — vascular disease and healing)</span></li>
+</ul>
+</section>
+
+<!-- ========================= UNIT 1 ========================= -->
+<section id="u1" class="unit1">
+<h2>Unit 1 &nbsp;•&nbsp; Cardiovascular Structure & Function &nbsp;<span class="chip c1">LO1</span></h2>
+
+<h3 id="u1-heart">1.1 Heart Anatomy and Flow</h3>
+
+<div class="flow">
+Body → SVC/IVC → <b>RA</b> → tricuspid valve → <b>RV</b> → pulmonic valve → pulmonary artery → lungs → pulmonary veins → <b>LA</b> → mitral valve → <b>LV</b> → aortic valve → aorta → body
+</div>
+
+<div class="box mech">
+<b>Why the LV wall is thicker than the RV wall.</b> The right ventricle pumps blood through the low-pressure pulmonary circuit (~25/8 mm Hg). The left ventricle pumps against the high-pressure systemic circulation (~120/80 mm Hg). The LV wall is 3–4× thicker because it must generate much higher pressures to push blood into the aorta against systemic afterload.
+</div>
+
+<h4>Valves and one-way flow</h4>
+<div class="box mech">
+The four valves enforce <b>one-way blood flow</b> through the heart by closing whenever the pressure gradient would push blood backward. AV valves (tricuspid, mitral) close at the start of systole — preventing back-flow into atria. Semilunar valves (pulmonic, aortic) close at the start of diastole — preventing back-flow from the great vessels into the ventricles. <b>S1 (LUBB)</b> = AV valves closing. <b>S2 (DUPP)</b> = semilunar valves closing.
+</div>
+
+<h3 id="u1-conduct">1.2 Pacemaker Cells and Conduction</h3>
+
+<div class="flow">
+SA node (60–100/min — primary pacemaker) <span class="arr">→</span> AV node (delays signal) <span class="arr">→</span> Bundle of His <span class="arr">→</span> Right and left bundle branches <span class="arr">→</span> Purkinje fibers <span class="arr">→</span> Ventricular myocardium contracts
+</div>
+
+<div class="box why">
+<b>Automaticity</b> — pacemaker cells (SA node especially) have an unstable resting membrane potential that slowly depolarizes on its own toward threshold. They generate impulses <i>without</i> external stimulation. This is what keeps the heart beating even after denervation (e.g., transplanted hearts beat despite no nerve supply). Other cells (AV node, His-Purkinje) have lower intrinsic rates and serve as backup pacemakers.
+</div>
+
+<div class="box tip">
+The SA node fires fastest, so it normally sets the rate. If SA fails, the AV node takes over (~40–60/min). If AV fails, the His-Purkinje (~20–40/min). The faster pacemaker wins. This is why bradycardia from SA failure can usually still produce a slow rhythm — backup pacemakers exist.
+</div>
+
+<h3 id="u1-vessel">1.3 Vessels, Endothelium & Capillaries</h3>
+
+<table>
+  <tr><th>Vessel</th><th>Wall</th><th>Function</th></tr>
+  <tr><td><b>Arteries</b></td><td>Thick muscular, elastic</td><td>High-pressure flow away from heart; recoil drives diastolic flow</td></tr>
+  <tr><td><b>Arterioles</b></td><td>Smooth muscle dominant</td><td>Resistance vessels — adjust tone to control BP and tissue perfusion</td></tr>
+  <tr><td><b>Capillaries</b></td><td><b>Single layer of endothelial cells</b> only</td><td>Site of gas, nutrient, waste exchange</td></tr>
+  <tr><td><b>Venules</b></td><td>Thin walls</td><td>Collect blood from capillaries</td></tr>
+  <tr><td><b>Veins</b></td><td>Thin walls, valves</td><td>Capacitance vessels (hold ~70% of blood); valves prevent backflow against gravity</td></tr>
+</table>
+
+<div class="box mech">
+<b>Capillaries are one cell thick.</b> That single layer of endothelium is exactly what allows efficient diffusion of O₂, CO₂, glucose, and waste products between blood and tissue. Anything that thickens the capillary wall (diabetic microangiopathy, fibrosis) impairs exchange.
+</div>
+
+<h4>The endothelium does much more than line vessels</h4>
+<ul>
+  <li>Maintains a smooth, non-thrombogenic surface (releases nitric oxide, prostacyclin)</li>
+  <li>Regulates vascular tone (NO → vasodilation; endothelin → vasoconstriction)</li>
+  <li>Controls vessel permeability and leukocyte trafficking</li>
+  <li>Activates and presents antigens during inflammation</li>
+</ul>
+
+<div class="box path">
+<b>Endothelial injury</b> impairs all of these functions: surfaces become thrombogenic, vasodilation fails, permeability rises, and atherosclerotic plaque forms. Endothelial dysfunction is the earliest detectable abnormality in atherosclerosis, hypertension, and diabetes.
+</div>
+
+<h4>Venous return — how blood gets back to the heart</h4>
+<ul>
+  <li><b>Skeletal muscle pump</b> — contractions squeeze veins; one-way valves direct flow toward heart</li>
+  <li><b>Respiratory pump</b> — inspiration drops thoracic pressure, drawing blood toward right atrium</li>
+  <li><b>Sympathetic venoconstriction</b> — reduces venous capacitance</li>
+  <li><b>Pressure gradient</b> — venous pressure higher in periphery than at the right atrium</li>
+</ul>
+
+<div class="box why">
+<b>Why blood moves through capillary beds.</b> The pressure difference between arterial and venous ends drives flow. Net filtration at the arterial end vs reabsorption at the venous end is governed by <b>Starling forces</b> (capillary hydrostatic pressure, plasma oncotic pressure, interstitial pressures). Disruption of these forces causes edema (Week 1).
+</div>
+
+<h3 id="u1-q">Practice Questions — CV Structure & Function</h3>
+
+<div class="q">
+<div class="qhead">Q1. Which physiologic explanation accounts for the thicker wall of the left ventricle?</div>
+<div class="opts">
+A. The LV holds more blood than the RV<br>
+B. The LV must pump against the high-pressure systemic circulation, requiring greater force<br>
+C. The LV pumps deoxygenated blood<br>
+D. The LV is closer to the heart's pacemaker
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Pressure work, not volume, drives wall thickness. Systemic afterload (~120/80) requires much more force than pulmonary afterload (~25/8) → thicker LV wall.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q2. Which mechanism ensures one-way blood flow through the heart?</div>
+<div class="opts">
+A. Coronary arteries<br>
+B. Cardiac valves opening and closing in response to pressure gradients<br>
+C. The pericardium<br>
+D. Pulmonary capillaries
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> AV valves prevent atrial backflow during systole; semilunar valves prevent ventricular backflow during diastole. Heart sounds are the valves closing.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q3. Which property allows pacemaker cells to generate impulses without external stimulation?</div>
+<div class="opts">
+A. Conductivity<br>
+B. Contractility<br>
+C. Automaticity<br>
+D. Excitability
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>C.</b> Automaticity = ability to spontaneously depolarize. Other key properties: excitability (responding to stimulation), conductivity (transmitting impulses), contractility (mechanical response).</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q4. Which structural feature allows capillaries to perform their primary function of exchange?</div>
+<div class="opts">
+A. Thick smooth muscle layer<br>
+B. Single layer of endothelial cells facilitates rapid diffusion<br>
+C. Multiple elastic fibers<br>
+D. Valves to prevent backflow
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> One cell thick = minimal diffusion distance. Anything thickening the wall (diabetic microangiopathy) impairs gas/nutrient exchange.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q5. A patient develops endothelial injury. Which normal endothelial function is impaired?</div>
+<div class="opts">
+A. Nitric oxide–mediated vasodilation and antithrombotic surface properties<br>
+B. Heart valve closure<br>
+C. Pacemaker firing<br>
+D. Lymphatic drainage
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>A.</b> Endothelial dysfunction loses NO release (vasoconstriction worsens), loses antithrombotic surface (clots form), and increases permeability — the earliest event in atherosclerosis.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q6. Which mechanism helps move blood back to the heart through the venous system?</div>
+<div class="opts">
+A. Skeletal muscle pump combined with one-way venous valves<br>
+B. Arterial pulsation<br>
+C. Capillary contraction<br>
+D. Pulmonary surfactant
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>A.</b> Muscle contractions squeeze veins; valves direct flow toward the heart. Respiratory pump and venoconstriction also contribute. This is why immobility raises venous stasis.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q7. Which principle explains blood movement through capillary beds?</div>
+<div class="opts">
+A. Pressure gradient between arterial and venous ends drives flow; Starling forces govern filtration vs reabsorption<br>
+B. Active transport pumps push blood<br>
+C. Magnetic fields<br>
+D. Capillary muscle contraction
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>A.</b> Capillaries have no muscle. Hydrostatic and oncotic pressures (Starling forces) determine net fluid movement at each end of the capillary bed.</div>
+</details>
+</div>
+
+</section>
+
+<!-- ========================= UNIT 2 ========================= -->
+<section id="u2" class="unit2">
+<h2>Unit 2 &nbsp;•&nbsp; Heart Failure & Myocardial Ischemia &nbsp;<span class="chip c2">LO2</span></h2>
+
+<h3 id="u2-hf">2.1 Heart Failure — The Forward/Backward Framework</h3>
+
+<div class="box mech">
+<b>Heart failure</b> = the heart cannot pump enough blood to meet metabolic demands at normal filling pressures. Two simultaneous problems:
+<ul>
+  <li><b>Forward failure</b> — low cardiac output → fatigue, weakness, low exercise tolerance, reduced organ perfusion</li>
+  <li><b>Backward failure (congestion)</b> — blood backs up behind the failing chamber → pulmonary congestion (left HF) or systemic congestion (right HF)</li>
+</ul>
+</div>
+
+<table>
+  <tr><th></th><th>Left-sided HF</th><th>Right-sided HF</th></tr>
+  <tr><td><b>Backward congestion site</b></td><td>Lungs</td><td>Systemic veins</td></tr>
+  <tr><td><b>Symptoms</b></td><td>Dyspnea, orthopnea, paroxysmal nocturnal dyspnea, crackles, pink frothy sputum, pulmonary edema</td><td>JVD, peripheral edema, hepatomegaly, ascites, weight gain</td></tr>
+  <tr><td><b>Most common cause</b></td><td>Hypertension, ischemic heart disease, valvular disease</td><td>Most often <b>left HF</b>; also pulmonary disease (cor pulmonale), pulmonary HTN</td></tr>
+</table>
+
+<div class="box acro">
+<b>"Left = Lungs."</b> Pulmonary congestion = LV failed.<br>
+<b>"Right = Rest of the body."</b> Peripheral edema, JVD, hepatomegaly = RV failed.
+</div>
+
+<h4>Systolic vs Diastolic Heart Failure</h4>
+<table>
+  <tr><th></th><th>Systolic (HFrEF)</th><th>Diastolic (HFpEF)</th></tr>
+  <tr><td>Problem</td><td>Weak pump — ↓ contractility → ↓ stroke volume</td><td>Stiff ventricle — fails to relax and fill</td></tr>
+  <tr><td>Ejection fraction</td><td><b>Reduced</b> (&lt; 40%)</td><td>Preserved (&gt; 50%)</td></tr>
+  <tr><td>Causes</td><td>MI, dilated cardiomyopathy, chronic ischemia, valvular regurgitation</td><td>Long-standing HTN with LVH, hypertrophic cardiomyopathy, restrictive cardiomyopathy, aging</td></tr>
+</table>
+
+<div class="box mech">
+<b>Why chronic HTN causes LV hypertrophy.</b> The LV faces persistently high afterload. Like any muscle that does extra work, it hypertrophies — the wall thickens. <b>Concentric LVH</b> reduces chamber size and stiffens the wall. Initially compensatory, but eventually the stiff hypertrophied LV can't relax (diastolic dysfunction) and consumes too much oxygen (ischemia risk).
+</div>
+
+<h3 id="u2-edema">2.2 Edema in Heart Failure</h3>
+
+<div class="box why">
+<b>Pulmonary edema in left HF.</b> When LV cannot eject blood forward, blood backs up into the LA → pulmonary veins → pulmonary capillaries. Hydrostatic pressure rises in pulmonary capillaries until fluid is forced into alveoli. Result: dyspnea, crackles, hypoxemia, pink frothy sputum.
+</div>
+
+<div class="box why">
+<b>Peripheral edema in right HF.</b> RV cannot eject blood forward into the lungs → blood backs up into RA → systemic veins → high venous pressure forces fluid out at peripheral capillaries. Hepatic veins also engorge → <b>hepatomegaly</b>; jugular veins distend → <b>JVD</b>; pitting edema appears in dependent areas.
+</div>
+
+<div class="box mech">
+<b>RAAS in heart failure makes things worse over time.</b> Low cardiac output triggers RAAS → angiotensin II → vasoconstriction (raises afterload, worsening forward failure) + aldosterone → Na/water retention (raises preload and worsens congestion). This is why ACE inhibitors and aldosterone antagonists are mainstays of HF therapy — they break the maladaptive cycle.
+</div>
+
+<h3 id="u2-isch">2.3 Myocardial Ischemia and Infarction</h3>
+
+<div class="box mech">
+The myocardium is highly oxygen-dependent. Coronary arteries (LAD, LCX, RCA) supply it. When O₂ demand exceeds supply (atherosclerotic narrowing, plaque rupture, vasospasm, severe anemia), myocytes go anaerobic, lose ATP, and stop contracting effectively. Brief ischemia → reversible dysfunction (angina). Sustained ischemia → cell death (MI).
+</div>
+
+<div class="flow">
+↓ Coronary blood flow <span class="arr">→</span> ↓ O₂ to myocytes <span class="arr">→</span> ↓ ATP <span class="arr">→</span> impaired contraction (stunned) <span class="arr">→</span> if persistent, anaerobic metabolism + lactate <span class="arr">→</span> Ca²⁺ influx <span class="arr">→</span> myocyte death (infarction) <span class="arr">→</span> troponin release
+</div>
+
+<div class="box path">
+<b>Reduced coronary blood flow</b> directly produces:
+<ul>
+  <li>Decreased contractility (less ATP for actin-myosin cycling)</li>
+  <li>Reduced stroke volume → reduced cardiac output</li>
+  <li>Risk of arrhythmia from ischemic, electrically unstable tissue</li>
+  <li>If sustained &gt;20–40 min, irreversible necrosis</li>
+</ul>
+</div>
+
+<div class="box tip">
+<b>Anemia + heart disease</b> = a particularly dangerous combination. Anemia reduces O₂ <i>delivery</i>; heart disease reduces O₂ <i>extraction efficiency</i>. The body compensates with tachycardia — but tachycardia raises myocardial O₂ demand and further worsens ischemia. This is why severely anemic patients can present with angina even with non-critical coronary disease.
+</div>
+
+<div class="box why">
+<b>Coronary blood flow is matched to demand by local metabolites.</b> The heart already extracts ~70&ndash;80% of the oxygen it is offered at rest, so it cannot simply extract more during exertion &mdash; it must increase <i>flow</i>. When myocardial oxygen demand rises (exercise raises heart rate, contractility, and wall stress), active myocytes release local vasodilatory metabolites &mdash; <b>adenosine, CO&#8322;, H&#8314;, and K&#8314;</b> &mdash; that dilate the coronary arterioles (metabolic autoregulation), raising coronary blood flow to match demand. Sympathetic tone rises too, but local metabolic vasodilation overrides any constriction in working myocardium.
+</div>
+
+<div class="box tip">
+<b>Timing matters:</b> the left coronary bed fills mainly during <b>diastole</b> (systolic contraction squeezes the intramural vessels). Tachycardia shortens diastole, so very fast heart rates can limit coronary filling &mdash; another reason a racing heart worsens ischemia.
+</div>
+
+<h3 id="u2-q">Practice Questions — Heart Failure & Ischemia</h3>
+
+<div class="q">
+<div class="qhead">Q8. A patient with chronic hypertension develops left ventricular hypertrophy. Which physiologic mechanism best explains this change?</div>
+<div class="opts">
+A. The LV pumps less blood, becoming smaller<br>
+B. Sustained high afterload requires the LV to generate higher pressures, leading to muscle wall thickening<br>
+C. Coronary arteries grow into the LV<br>
+D. Increased preload stretches the wall
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Pressure overload → concentric hypertrophy. Initially compensatory; eventually stiffens the ventricle (diastolic dysfunction) and raises O₂ demand.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q9. A patient with systolic heart failure has decreased stroke volume. Which physiologic alteration best explains this finding?</div>
+<div class="opts">
+A. Reduced ventricular contractility from weakened myocardium<br>
+B. Increased venous return<br>
+C. Reduced afterload<br>
+D. Decreased preload
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>A.</b> Systolic HF (HFrEF) = pump weakness. Each beat ejects less blood (low ejection fraction). Causes: MI, dilated cardiomyopathy, chronic ischemia.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q10. Which mechanism best explains pulmonary edema in a patient with heart failure?</div>
+<div class="opts">
+A. Increased pulmonary capillary hydrostatic pressure from blood backing up behind a failing left ventricle<br>
+B. Decreased plasma proteins<br>
+C. Lymphatic obstruction<br>
+D. Pulmonary vasoconstriction
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>A.</b> Left HF → backup into pulmonary veins and capillaries → high hydrostatic pressure forces fluid into alveoli → pulmonary edema.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q11. A patient with chronic heart failure develops peripheral edema. Which mechanism best explains this?</div>
+<div class="opts">
+A. Increased capillary permeability from infection<br>
+B. Right HF → systemic venous congestion → ↑ venous hydrostatic pressure forces fluid into the interstitium<br>
+C. Decreased thyroid hormone<br>
+D. Lymphatic obstruction
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Same Starling logic as pulmonary edema, but on the systemic side. RAAS-mediated Na/water retention amplifies the effect.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q12. Which mechanism explains reduced cardiac function in a patient with reduced coronary blood flow?</div>
+<div class="opts">
+A. Reduced O₂ delivery to myocytes impairs ATP production and contractile function<br>
+B. Sympathetic stimulation<br>
+C. Increased pulmonary venous return<br>
+D. Vagal stimulation
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>A.</b> Coronary ischemia = energy starvation → impaired contraction → ↓ stroke volume → ↓ cardiac output. If prolonged, infarction.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q13. Which mechanism explains increased coronary blood flow during exercise?</div>
+<div class="opts">
+A. Release of local metabolic vasodilators (adenosine, CO₂, H⁺, K⁺) within the myocardium<br>
+B. A decrease in myocardial oxygen consumption during activity<br>
+C. Sympathetic constriction of the coronary resistance vessels<br>
+D. A slower heart rate lowering myocardial oxygen demand
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>A.</b> Working myocardium produces vasodilatory metabolites (adenosine, CO₂, H⁺, K⁺) that dilate coronary arterioles — metabolic autoregulation — raising flow to match the higher O₂ demand of exercise. O₂ consumption <i>rises</i> (not falls), and local vasodilation overrides sympathetic constriction.</div>
+</details>
+</div>
+
+</section>
+
+<!-- ========================= UNIT 3 ========================= -->
+<section id="u3" class="unit3">
+<h2>Unit 3 &nbsp;•&nbsp; Compensatory Mechanisms &nbsp;<span class="chip c3">LO2</span></h2>
+
+<div class="box mech">
+When cardiac output falls, the body engages compensation in a predictable order — fast first (seconds), slow second (hours), and remodeling last (weeks). Some compensations help short-term but harm long-term — the central problem in chronic heart failure.
+</div>
+
+<h4>Order of compensation when cardiac output drops</h4>
+<table>
+  <tr><th>Time scale</th><th>Mechanism</th><th>Effect</th></tr>
+  <tr><td><b>Seconds</b></td><td><b>Baroreceptor reflex</b> (sympathetic activation)</td><td>↑ HR, ↑ contractility, vasoconstriction → maintain BP</td></tr>
+  <tr><td>Minutes to hours</td><td><b>RAAS activation</b></td><td>Vasoconstriction (angiotensin II) + Na/water retention (aldosterone) → restore volume and BP</td></tr>
+  <tr><td>Hours</td><td><b>ADH release</b></td><td>Water retention</td></tr>
+  <tr><td>Days to weeks</td><td>Cardiac remodeling: hypertrophy, ventricular dilation</td><td>Try to maintain stroke volume; eventually maladaptive</td></tr>
+</table>
+
+<div class="box why">
+<b>The first compensation to a drop in cardiac output is the baroreceptor reflex.</b> Carotid sinus and aortic arch baroreceptors sense the BP fall and immediately decrease their inhibitory firing → sympathetic discharge increases → tachycardia, increased contractility, vasoconstriction. This buys the body seconds while slower mechanisms engage.
+</div>
+
+<div class="box path">
+<b>Why severe anemia produces tachycardia.</b> ↓ Hgb → ↓ O₂-carrying capacity → tissue hypoxia → sympathetic activation → increased heart rate to push more blood per minute. Same mechanism in pediatric anemia: a child's heart compensates by beating faster. Same in chronic anemia from any cause.
+</div>
+
+<div class="box mech">
+<b>Decreased baroreceptor sensitivity</b> (common with aging, prolonged hypertension, diabetes) means the reflex is sluggish. Patients become orthostatic, can't compensate quickly for BP changes, fall more often, and may have wider BP swings. Treatment of HTN must account for this in older patients.
+</div>
+
+<h3 id="u3-q">Practice Questions — Compensation</h3>
+
+<div class="q">
+<div class="qhead">Q14. Which compensatory mechanism occurs FIRST when cardiac output falls?</div>
+<div class="opts">
+A. Cardiac remodeling and hypertrophy<br>
+B. Baroreceptor-mediated sympathetic activation (↑ HR, ↑ contractility, vasoconstriction)<br>
+C. RAAS activation<br>
+D. Erythropoietin release
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Seconds-fast neural reflex. RAAS takes minutes to hours, remodeling takes weeks.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q15. A patient with severe anemia develops increased heart rate. Which mechanism best explains this response?</div>
+<div class="opts">
+A. Direct effect of low Hgb on the SA node<br>
+B. Tissue hypoxia activates sympathetic compensation → ↑ HR to maintain O₂ delivery<br>
+C. Decreased venous return<br>
+D. Increased afterload
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Same mechanism in adult anemia, pediatric anemia, blood loss — sympathetic-driven tachycardia compensates for reduced oxygen-carrying capacity.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q16. Which physiologic change is expected in a patient with decreased baroreceptor sensitivity?</div>
+<div class="opts">
+A. Wider blood pressure swings, especially with position changes (orthostatic hypotension)<br>
+B. Improved BP regulation<br>
+C. Normal heart rate response to standing<br>
+D. Decreased risk of falls
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>A.</b> Sluggish baroreflex → impaired HR/vasoconstriction response to position change → orthostatic hypotension and falls. Common in elderly and diabetic patients.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q17. A patient with impaired lung function develops fatigue, restlessness, and low activity tolerance. Which mechanism best explains these findings?</div>
+<div class="opts">
+A. Reduced oxygenation of blood → reduced O₂ delivery to tissues → systemic compensation can't fully restore tissue O₂<br>
+B. Excess oxygen at the tissue level<br>
+C. Increased glucose intake<br>
+D. Hypocalcemia
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>A.</b> Lung dysfunction lowers SaO₂; tissues become hypoxic; CV compensation (tachycardia, increased CO) helps but cannot fully overcome the deficit. Fatigue, restlessness (early hypoxia sign), and exercise intolerance result.</div>
+</details>
+</div>
+
+</section>
+
+<!-- ========================= UNIT 4 ========================= -->
+<section id="u4" class="unit4">
+<h2>Unit 4 &nbsp;•&nbsp; Pediatric & Congenital Cardiac &nbsp;<span class="chip c4">LO3</span></h2>
+
+<h3 id="u4-fetal">4.1 Fetal Circulation and the Newborn Transition</h3>
+
+<div class="box mech">
+The fetus relies on the placenta for gas exchange, so blood is shunted around the lungs by three structures:
+<ol>
+  <li><b>Ductus venosus</b> — bypasses the liver (umbilical vein → IVC)</li>
+  <li><b>Foramen ovale</b> — opening between RA and LA, lets oxygenated blood from placenta skip the lungs</li>
+  <li><b>Ductus arteriosus</b> — connects pulmonary artery to aorta, lets blood skip the high-resistance fetal lungs</li>
+</ol>
+</div>
+
+<h4>Birth — what changes in seconds to minutes</h4>
+<ul>
+  <li>First breath → lungs expand → pulmonary vascular resistance drops dramatically</li>
+  <li>Pulmonary blood flow increases → LA pressure rises → <b>foramen ovale closes</b> (becomes fossa ovalis)</li>
+  <li>Rising O₂ → <b>ductus arteriosus closes</b> functionally within hours, anatomically within days</li>
+  <li>Cord clamped → ductus venosus closes</li>
+</ul>
+
+<div class="box path">
+<b>Persistent fetal circulation</b> = the newborn's pulmonary vascular resistance fails to drop after birth. Right-to-left shunting persists through the foramen ovale and ductus arteriosus → deoxygenated blood bypasses the lungs → cyanosis. Causes include meconium aspiration, sepsis, congenital diaphragmatic hernia. Treatment aims to lower pulmonary pressure (oxygen, nitric oxide).
+</div>
+
+<h3 id="u4-shunt">4.2 Left-to-Right vs Right-to-Left Shunts</h3>
+
+<table>
+  <tr><th></th><th>Left → Right shunt</th><th>Right → Left shunt</th></tr>
+  <tr><td><b>Direction</b></td><td>Oxygenated blood from systemic side flows back into pulmonary side</td><td>Deoxygenated blood from pulmonary/right side bypasses the lungs and enters systemic circulation</td></tr>
+  <tr><td><b>Cyanosis</b></td><td>NO (saturated blood is being recirculated through lungs)</td><td>YES — deoxygenated blood enters arterial system</td></tr>
+  <tr><td><b>Examples</b></td><td>VSD, ASD, PDA</td><td>Tetralogy of Fallot, transposition of great arteries, persistent fetal circulation, Eisenmenger physiology (late reversal of an L→R shunt)</td></tr>
+  <tr><td><b>Initial effect</b></td><td>↑ pulmonary blood flow → CHF symptoms (tachypnea, poor feeding, failure to thrive); pulmonary HTN over years</td><td>Cyanosis, polycythemia (chronic hypoxia → ↑ EPO), clubbing</td></tr>
+</table>
+
+<div class="box acro">
+<b>"Pink and tired" vs "Blue and tired."</b><br>
+L→R = Pink: not cyanotic, but heart works extra → CHF, poor feeding.<br>
+R→L = Blue: cyanotic from shunted deoxygenated blood; chronic hypoxia → polycythemia.
+</div>
+
+<h3 id="u4-defects">4.3 Specific Congenital Defects</h3>
+
+<table>
+  <tr><th>Defect</th><th>Anatomy</th><th>Hallmark</th></tr>
+  <tr><td><b>Ventricular septal defect (VSD)</b></td><td>Hole in interventricular septum; L→R shunt</td><td>Holosystolic murmur at LLSB; large VSDs cause infant tachypnea, poor feeding, hepatomegaly, failure to thrive</td></tr>
+  <tr><td><b>Atrial septal defect (ASD)</b></td><td>Hole in atrial septum; L→R shunt</td><td>Often asymptomatic in childhood; fixed split S2; may present in adulthood</td></tr>
+  <tr><td><b>Patent ductus arteriosus (PDA)</b></td><td>Ductus fails to close after birth; L→R shunt from aorta to pulmonary artery throughout cardiac cycle</td><td><b>Continuous "machinery" murmur</b>; bounding pulses; common in premature infants. Indomethacin closes PDA; prostaglandin E₁ keeps it open.</td></tr>
+  <tr><td><b>Coarctation of the aorta</b></td><td>Narrowing of aorta, classically just distal to left subclavian</td><td><b>Weak/delayed lower extremity pulses</b>, BP higher in arms than legs, rib notching on CXR</td></tr>
+  <tr><td><b>Tetralogy of Fallot (ToF)</b></td><td>Four anomalies: <b>P</b>ulmonary stenosis, <b>R</b>VH, <b>O</b>verriding aorta, <b>V</b>SD</td><td>Cyanotic R→L shunt; "boot-shaped" heart on CXR; <b>"tet spells"</b> of worsening cyanosis with crying or exertion (squatting helps by raising afterload and reducing R→L shunt)</td></tr>
+  <tr><td><b>Transposition of great arteries</b></td><td>Aorta arises from RV; PA arises from LV → two parallel circulations</td><td>Severe cyanosis at birth; survival depends on a mixing lesion (PFO, PDA, VSD); prostaglandin E₁ to keep PDA open until surgery</td></tr>
+</table>
+
+<div class="box acro">
+<b>"PROVe" — Tetralogy of Fallot:</b> <b>P</b>ulmonary stenosis · <b>R</b>VH · <b>O</b>verriding aorta · <b>V</b>SD<br>
+Squatting raises systemic afterload, reducing the R→L shunt, which is why kids with ToF instinctively squat during tet spells.
+</div>
+
+<div class="box why">
+<b>Why a child with a R→L shunt develops polycythemia.</b> Chronic hypoxia → kidney releases EPO → bone marrow produces more RBCs → Hct rises (sometimes &gt;65%). This compensates for low SaO₂ but raises blood viscosity and stroke risk. It also masks anemia because the absolute RBC count is high while individual cells may not be carrying enough O₂.
+</div>
+
+<div class="box path">
+<b>Infant with VSD develops tachypnea and poor feeding.</b> Why? L→R shunting overloads the pulmonary circulation → pulmonary congestion → tachypnea and increased work of breathing. The infant fatigues during feeding (feeding requires significant work). Hepatomegaly emerges as right HF develops. This is the textbook large-VSD presentation.
+</div>
+
+<div class="box why">
+<b>Coarctation and weak lower-extremity pulses.</b> The narrowing is distal to the upper-body branches but proximal to lower-body supply, so the upper body gets full pressure (often hypertensive arms) while the lower body sees diminished flow → weak femoral pulses and lower BP in legs. Differential cyanosis can occur if a PDA delivers desaturated PA blood to the lower body.
+</div>
+
+<div class="box why">
+<b>Pediatric coronary circulation &mdash; smaller vessels, less reserve.</b> A child&rsquo;s coronary arteries have a <b>smaller diameter</b>, and because flow capacity depends steeply on vessel radius, children have a <b>lower coronary flow reserve</b> than adults &mdash; less ability to recruit extra flow when demand climbs. This matters when pediatric myocardial demand rises (congenital heart disease, or coronary involvement in Kawasaki disease): the smaller-caliber vessels cap how much additional flow the heart can summon.
+</div>
+
+<h3 id="u4-q">Practice Questions — Pediatric Cardiac</h3>
+
+<div class="q">
+<div class="qhead">Q18. Which physiologic effect occurs initially in a child with a left-to-right cardiac shunt?</div>
+<div class="opts">
+A. Cyanosis<br>
+B. Increased pulmonary blood flow → pulmonary congestion and CHF symptoms; cyanosis is absent initially<br>
+C. Polycythemia<br>
+D. Cardiac arrest at birth
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> L→R shunts overload the lungs but circulate already-oxygenated blood — no cyanosis. Symptoms reflect heart failure: tachypnea, poor feeding, failure to thrive.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q19. An infant with a large VSD develops tachypnea and poor feeding. Which mechanism best explains these findings?</div>
+<div class="opts">
+A. Cyanosis from R→L shunting<br>
+B. L→R shunt → pulmonary overcirculation → pulmonary congestion → tachypnea and feeding fatigue<br>
+C. Coarctation of aorta<br>
+D. Persistent fetal circulation
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Pulmonary congestion makes feeding (which is hard work for an infant) intolerable. Tachypnea is the breathing response to lung edema.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q20. A newborn with a R→L cardiac shunt develops cyanosis. Which mechanism best explains this?</div>
+<div class="opts">
+A. Excessive pulmonary blood flow<br>
+B. Deoxygenated blood bypasses the lungs and enters the systemic circulation directly<br>
+C. Anemia<br>
+D. Sepsis only
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> R→L shunt = blood from the right side (deoxygenated) crosses into the left side without going through the lungs → systemic circulation receives desaturated blood → cyanosis.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q21. An infant with patent ductus arteriosus develops a continuous "machinery" murmur. Which mechanism explains this finding?</div>
+<div class="opts">
+A. Backward flow through the mitral valve<br>
+B. Continuous flow from the higher-pressure aorta into the lower-pressure pulmonary artery throughout systole and diastole<br>
+C. Pulmonary stenosis<br>
+D. Coarctation
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> The PDA stays open after birth, allowing aortic blood (high pressure all the time) to flow into the pulmonary artery (lower pressure) continuously → continuous "machinery" murmur.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q22. A child with tetralogy of Fallot has worsening cyanosis during crying ("tet spell"). Which mechanism explains this change?</div>
+<div class="opts">
+A. Crying increases left-sided pressures and reverses the shunt<br>
+B. Crying lowers systemic vascular resistance, which increases R→L shunting through the VSD and worsens cyanosis<br>
+C. Crying increases pulmonary blood flow<br>
+D. Crying causes anemia
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Crying reduces systemic vascular resistance → less afterload on LV → easier for blood to go right-to-left through the VSD instead of out the aorta. Squatting raises afterload and reduces the shunt — kids learn this instinctively.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q23. An infant with coarctation of the aorta has weak lower extremity pulses. Which mechanism explains this finding?</div>
+<div class="opts">
+A. Aortic narrowing reduces blood flow distal to the coarctation, lowering perfusion to the lower body<br>
+B. Mitral stenosis<br>
+C. Excessive pulmonary blood flow<br>
+D. Anemia of prematurity
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>A.</b> Coarctation distal to upper-body branches → upper body normal/hypertensive, lower body underperfused. Femoral pulses weak/delayed; arm-leg BP gradient.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q24. Which mechanism reduces oxygen delivery in persistent fetal circulation?</div>
+<div class="opts">
+A. Pulmonary vascular resistance fails to drop, leading to right-to-left shunting through the foramen ovale and ductus arteriosus<br>
+B. Excessive lung surfactant<br>
+C. Premature ductal closure<br>
+D. Pulmonary vasodilation
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>A.</b> Persistent high pulmonary pressure keeps the fetal-pattern shunts open, sending deoxygenated blood into the systemic circulation. Treat with O₂, nitric oxide to lower pulmonary resistance.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q25. Which change supports normal oxygenation as a newborn transitions to neonatal circulation?</div>
+<div class="opts">
+A. The first breath expands the lungs, pulmonary vascular resistance drops sharply, and increased LA pressure closes the foramen ovale<br>
+B. Pulmonary vessels constrict<br>
+C. Foramen ovale enlarges<br>
+D. Ductus arteriosus widens
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>A.</b> First breath = pulmonary vascular bed opens. Sequential closure of foramen ovale (pressure-driven) and ductus arteriosus (O₂- and prostaglandin-driven) completes the transition.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q26. A child with congenital heart disease develops polycythemia. Which mechanism best explains this?</div>
+<div class="opts">
+A. Increased iron intake<br>
+B. Chronic hypoxia from R→L shunt → ↑ EPO → ↑ RBC production<br>
+C. Bone marrow tumor<br>
+D. Decreased erythropoiesis
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Same kidney-EPO-marrow axis from Week 8 — chronic hypoxia drives compensatory polycythemia, which raises viscosity and stroke risk in cyanotic CHD.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q27. An infant with heart failure develops hepatomegaly. Which mechanism best explains this finding?</div>
+<div class="opts">
+A. Acute liver inflammation<br>
+B. Right HF → systemic venous congestion → engorgement of hepatic veins → liver enlargement<br>
+C. Left HF causing pulmonary edema<br>
+D. Iron overload
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> The IVC drains the liver. When right-side pressure rises, hepatic venous pressure rises → liver passively engorges. Same as JVD on the neck.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q28. Which pediatric difference most directly affects coronary circulation?</div>
+<div class="opts">
+A. Smaller coronary vessel diameter limiting flow capacity<br>
+B. Lower blood viscosity reducing vascular resistance<br>
+C. Greater vessel compliance reducing perfusion pressure<br>
+D. Reduced ventricular mass lowering oxygen demand
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>A.</b> Vessel diameter is a major determinant of flow, so smaller pediatric coronary vessels provide less flow capacity and lower coronary flow reserve. Lower viscosity (B) would <i>ease</i> flow; reduced ventricular mass (D) lowers demand but doesn&rsquo;t define the coronary-circulation difference itself.</div>
+</details>
+</div>
+
+</section>
+
+<!-- ========================= UNIT 5 ========================= -->
+<section id="u5" class="unit5">
+<h2>Unit 5 &nbsp;•&nbsp; Vascular Disease & Wound Healing &nbsp;<span class="chip c5">LO4</span></h2>
+
+<div class="box mech">
+Wound healing requires <b>oxygen + nutrients + immune cells + growth factors</b> all delivered to the wound by capillaries. Anything that reduces local perfusion, oxygenation, or capillary function impairs healing. This is why CV disease, edema, anemia, and diabetes all slow wound repair through related mechanisms.
+</div>
+
+<h4>Phases of normal wound healing</h4>
+<ol>
+  <li><b>Hemostasis</b> (minutes) — vasoconstriction + platelet plug + clot</li>
+  <li><b>Inflammation</b> (days 1–3) — neutrophils clear bacteria; macrophages clear debris</li>
+  <li><b>Proliferation</b> (days 3–21) — fibroblasts make collagen; angiogenesis builds new vessels; epithelium covers wound</li>
+  <li><b>Remodeling</b> (weeks to months) — collagen reorganizes; scar matures</li>
+</ol>
+
+<h3>Why specific conditions delay healing</h3>
+
+<table>
+  <tr><th>Condition</th><th>Mechanism of delayed healing</th></tr>
+  <tr><td><b>Heart failure</b></td><td>Reduced cardiac output → reduced tissue perfusion → reduced O₂ and nutrient delivery to wound</td></tr>
+  <tr><td><b>Peripheral artery disease (PAD)</b></td><td>Atherosclerotic narrowing → poor distal arterial supply → ischemic ulcers (often on toes, lower leg) that don't heal without revascularization</td></tr>
+  <tr><td><b>Chronic hypoxia</b></td><td>Inadequate O₂ for collagen synthesis (proline hydroxylation requires O₂), neutrophil killing, mitochondrial energy production</td></tr>
+  <tr><td><b>Edema</b></td><td>Increased interstitial fluid creates a longer diffusion distance between capillaries and cells; stretched tissue has higher pressure that compresses small vessels; bacterial proliferation in stagnant fluid</td></tr>
+  <tr><td><b>Diabetes mellitus</b></td><td>Multiple hits: microvascular disease (thickened basement membrane reduces diffusion), peripheral neuropathy (unfelt injury, late presentation), hyperglycemia impairs neutrophil function and collagen synthesis, immunosuppression</td></tr>
+  <tr><td><b>Generalized vascular disease</b></td><td>Atherosclerosis + endothelial dysfunction → poor inflammation, poor angiogenesis, poor delivery of repair cells and growth factors</td></tr>
+  <tr><td><b>Pediatric CHD</b></td><td>Chronic hypoxia + altered growth factors + nutritional compromise → delayed growth and slower wound healing, particularly post-surgically</td></tr>
+</table>
+
+<div class="box why">
+<b>The unifying logic:</b> wound healing is a high-energy, high-oxygen, capillary-dependent process. Anything that limits perfusion, oxygenation, or capillary diffusion impairs healing — and most chronic CV diseases do exactly that. This is why the same patients who need wounds to heal (post-surgical, diabetic ulcers, decubitus ulcers) often have the conditions that prevent it.
+</div>
+
+<div class="box path">
+<b>Diabetic ulcers — a perfect storm.</b>
+<ol>
+  <li><b>Neuropathy</b> — patient doesn't feel the small injury that becomes the ulcer.</li>
+  <li><b>Microvascular disease</b> — thickened capillary basement membrane impairs O₂ and immune cell delivery.</li>
+  <li><b>Macrovascular disease (PAD)</b> — atherosclerosis reduces large-vessel inflow.</li>
+  <li><b>Hyperglycemia</b> — neutrophil chemotaxis, phagocytosis, and bactericidal activity are all impaired.</li>
+  <li><b>Glycation of collagen</b> — abnormal collagen cross-linking weakens new tissue.</li>
+</ol>
+Together these are why diabetic foot ulcers can take months to heal and frequently end in amputation.
+</div>
+
+<div class="box tip">
+<b>"Edema delays healing"</b> — not just because of stretched tissue. Increased interstitial fluid is a longer diffusion distance for O₂ and nutrients to reach cells, AND it provides a culture medium for bacteria. Compression therapy and elevation are core wound-care interventions for that reason.
+</div>
+
+<h3 id="u5-q">Practice Questions — Vascular Disease & Healing</h3>
+
+<div class="q">
+<div class="qhead">Q29. A patient with chronic cardiovascular disease develops delayed wound healing. Which mechanism best explains this outcome?</div>
+<div class="opts">
+A. Reduced tissue perfusion limits oxygen and nutrient delivery to the wound<br>
+B. Increased platelet count<br>
+C. Reduced sodium intake<br>
+D. Excess vitamin K
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>A.</b> CV disease reduces perfusion → less O₂, fewer immune cells, fewer growth factors reach the wound. Healing slows accordingly.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q30. A patient with peripheral artery disease develops a non-healing ulcer. Which mechanism best explains this finding?</div>
+<div class="opts">
+A. Atherosclerotic arterial narrowing reduces distal blood flow → tissue ischemia → impaired healing<br>
+B. Lymphatic obstruction<br>
+C. Acute infection only<br>
+D. Bone marrow failure
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>A.</b> PAD = atherosclerosis of peripheral arteries (especially lower extremities). Without adequate blood flow, ulcers (often on toes, dorsum of foot) cannot heal. Revascularization may be required.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q31. Which mechanism best explains delayed healing in a diabetic patient with chronic wounds?</div>
+<div class="opts">
+A. Multiple factors: microvascular disease, neuropathy, hyperglycemia impairing immune function, and macrovascular disease<br>
+B. Excess insulin only<br>
+C. Calcium overload<br>
+D. Increased wound platelets
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>A.</b> The "diabetic ulcer storm": neuropathy + micro/macrovascular disease + impaired neutrophil function + glycated collagen all contribute to slow healing and high amputation risk.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q32. A patient with edema develops delayed healing of skin tissue. Which mechanism most directly explains this finding?</div>
+<div class="opts">
+A. Increased interstitial fluid lengthens the diffusion distance for oxygen and nutrients, and supports bacterial growth<br>
+B. Edema raises platelet count<br>
+C. Edema increases collagen synthesis<br>
+D. Edema improves immune function
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>A.</b> Excess interstitial fluid impedes diffusion and supports infection. Compression and elevation are interventions to reduce edema and aid healing.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q33. A patient with chronic hypoxia develops delayed wound healing. Which mechanism contributes most directly?</div>
+<div class="opts">
+A. Inadequate oxygen for collagen synthesis (proline hydroxylation), neutrophil bactericidal activity, and mitochondrial energy production at the wound<br>
+B. Excess oxygen toxicity<br>
+C. Calcium overload<br>
+D. Improved immune response
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>A.</b> O₂ is required for hydroxylation of proline residues in collagen synthesis, for oxidative bacterial killing by neutrophils, and for ATP production. Without it, healing falters.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q34. An infant with congenital heart disease develops poor wound healing after cardiac surgery. Which mechanism most directly explains this?</div>
+<div class="opts">
+A. Chronic hypoxia, altered hemodynamics, and nutritional compromise impair tissue oxygen delivery and growth-factor signaling at the wound<br>
+B. Excess immune function<br>
+C. Excess growth hormone<br>
+D. Hyperthyroidism
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>A.</b> CHD infants often have chronic hypoxia and growth/feeding problems pre-surgery; healing post-op is slower than in healthy infants for these reasons.</div>
+</details>
+</div>
+
+</section>
+
+<!-- ========================= APPENDIX ========================= -->
+<section id="appx">
+<h2 style="background:#374151;">Appendix &nbsp;•&nbsp; Top Missteps & Master Mnemonics</h2>
+
+<h3 style="color:#374151;border-bottom-color:#9ca3af;">Top 15 Week 9 Missteps</h3>
+<table>
+<tr><th>#</th><th>The trap</th><th>What's actually true</th></tr>
+<tr><td>1</td><td>"LV is thicker because it holds more blood."</td><td>LV is thicker because it pumps against higher <b>pressure</b> (afterload), not because of volume.</td></tr>
+<tr><td>2</td><td>"Left HF causes peripheral edema."</td><td>Left HF causes <b>pulmonary</b> edema. Right HF causes peripheral edema and hepatomegaly.</td></tr>
+<tr><td>3</td><td>"L→R shunt causes cyanosis."</td><td>L→R shunts do NOT cause cyanosis (oxygenated blood is recirculated). R→L shunts cause cyanosis.</td></tr>
+<tr><td>4</td><td>"PDA is innocent because it has a continuous murmur."</td><td>Continuous "machinery" murmur is the diagnostic clue, not a sign of harmlessness. Untreated large PDAs cause CHF and pulmonary HTN.</td></tr>
+<tr><td>5</td><td>"Tetralogy of Fallot is acyanotic."</td><td>ToF is the most common <b>cyanotic</b> congenital heart defect.</td></tr>
+<tr><td>6</td><td>"Coarctation has equal pulses."</td><td>Coarctation produces <b>weak/delayed lower-extremity pulses</b> with stronger upper-extremity pulses; arm-leg BP gradient.</td></tr>
+<tr><td>7</td><td>"Polycythemia in CHD is harmful and should be aggressively treated."</td><td>Polycythemia in CHD is <b>compensatory</b> for hypoxia. Aggressive phlebotomy can be dangerous; manage the underlying hypoxia.</td></tr>
+<tr><td>8</td><td>"RAAS is helpful in chronic HF."</td><td>RAAS is helpful acutely but <b>maladaptive long-term</b> — it raises afterload and preload, worsening HF. ACE inhibitors block this.</td></tr>
+<tr><td>9</td><td>"The first compensation for low CO is RAAS."</td><td>First is the <b>baroreceptor reflex</b> (seconds). RAAS is slower (minutes-hours).</td></tr>
+<tr><td>10</td><td>"Anemia tachycardia is a primary heart problem."</td><td>It's a normal sympathetic compensation for low O₂ delivery — heart is fine, blood is the problem.</td></tr>
+<tr><td>11</td><td>"Edema doesn't affect wound healing."</td><td>It does — longer diffusion distance + bacterial growth + tissue stretch.</td></tr>
+<tr><td>12</td><td>"Diabetic ulcers are mostly an infection problem."</td><td>They're a vascular + neurologic + immune + biochemical problem. Infection is downstream.</td></tr>
+<tr><td>13</td><td>"PAD ulcers heal with antibiotics alone."</td><td>Without restoring blood flow (revascularization), ulcers persist regardless of antibiotic therapy.</td></tr>
+<tr><td>14</td><td>"Persistent fetal circulation = aortic obstruction."</td><td>It's failure of pulmonary vascular resistance to drop after birth → continued R→L shunting through fetal pathways.</td></tr>
+<tr><td>15</td><td>"Tet spells are made worse by squatting."</td><td>Squatting <b>helps</b> tet spells by increasing systemic afterload and reducing R→L shunting.</td></tr>
+</table>
+
+<h3 style="color:#374151;border-bottom-color:#9ca3af;">Master Mnemonic Sheet</h3>
+<table>
+<tr><th>Mnemonic</th><th>Meaning</th></tr>
+<tr><td><b>"Left = Lungs"</b></td><td>Left HF backs up into the pulmonary circulation</td></tr>
+<tr><td><b>"Right = Rest of body"</b></td><td>Right HF backs up systemically (JVD, hepatomegaly, peripheral edema)</td></tr>
+<tr><td><b>CO = HR × SV</b></td><td>Cardiac output equation</td></tr>
+<tr><td><b>SV depends on PRELOAD, AFTERLOAD, CONTRACTILITY</b></td><td>Three levers for stroke volume</td></tr>
+<tr><td><b>Baroreflex first, then RAAS, then remodeling</b></td><td>Order of compensation for low CO</td></tr>
+<tr><td><b>"Pink and tired = L→R; Blue and tired = R→L"</b></td><td>Initial physiologic effect of shunts</td></tr>
+<tr><td><b>PROVe</b></td><td>Tetralogy of Fallot: Pulmonary stenosis, RVH, Overriding aorta, VSD</td></tr>
+<tr><td><b>Squatting fixes tet spells</b></td><td>↑ afterload → ↓ R→L shunt</td></tr>
+<tr><td><b>"Machinery murmur = PDA"</b></td><td>Continuous flow aorta → PA</td></tr>
+<tr><td><b>"Weak lower pulses = coarctation"</b></td><td>Narrowing distal to upper-body branches</td></tr>
+<tr><td><b>Polycythemia in CHD is compensatory</b></td><td>Hypoxia → EPO → RBC</td></tr>
+<tr><td><b>"Single endothelial layer enables exchange"</b></td><td>Capillary structural feature</td></tr>
+<tr><td><b>O₂ is needed for collagen synthesis</b></td><td>Proline hydroxylation requires O₂; explains why hypoxia delays healing</td></tr>
+</table>
+
+<h3 style="color:#374151;border-bottom-color:#9ca3af;">Pediatric Cardiac Quick Reference</h3>
+<table>
+<tr><th>Defect</th><th>Type</th><th>Hallmark</th></tr>
+<tr><td>VSD</td><td>L→R, acyanotic</td><td>Holosystolic murmur LLSB; large = CHF in infancy</td></tr>
+<tr><td>ASD</td><td>L→R, acyanotic</td><td>Fixed split S2; often presents in adulthood</td></tr>
+<tr><td>PDA</td><td>L→R, acyanotic</td><td>Continuous "machinery" murmur; bounding pulses</td></tr>
+<tr><td>Coarctation</td><td>Obstruction</td><td>Weak femoral pulses, arm-leg BP gradient, rib notching</td></tr>
+<tr><td>Tetralogy of Fallot</td><td>R→L, cyanotic</td><td>Tet spells; squatting helps; PROVe</td></tr>
+<tr><td>Transposition of great arteries</td><td>R→L, cyanotic</td><td>Cyanosis at birth; needs mixing lesion to survive</td></tr>
+<tr><td>Persistent fetal circulation</td><td>R→L through fetal shunts</td><td>Cyanosis without structural defect; treat with O₂, NO</td></tr>
+</table>
+
+<h3 style="color:#374151;border-bottom-color:#9ca3af;">Week 9 Study Strategy</h3>
+<ul>
+  <li><b>Anchor every CV concept to forward flow vs backward congestion.</b> If you can locate where blood is "stuck," you can predict the symptoms.</li>
+  <li><b>Memorize compensation order.</b> Baroreflex (seconds) → RAAS (minutes) → remodeling (weeks).</li>
+  <li><b>For shunts, check direction first.</b> L→R = pink CHF. R→L = blue cyanosis. Direction tells you almost all the symptoms.</li>
+  <li><b>Pair every congenital defect with one diagnostic clue.</b> Holosystolic LLSB = VSD. Machinery murmur = PDA. Weak femoral = coarctation. Tet spells = ToF.</li>
+  <li><b>Wound-healing questions reduce to perfusion.</b> CV disease, PAD, edema, hypoxia, and diabetes all impair healing through reduced O₂/nutrient delivery to the wound.</li>
+  <li><b>"Left is Lungs" is the single best HF mnemonic.</b> Drill it.</li>
+  <li><b>Anemia and CHD share the polycythemia story.</b> Chronic hypoxia → EPO → ↑ RBC. Compensatory, not primary.</li>
+</ul>
+
+<p class="small" style="margin-top:16px;">SCI225 Week 9 Study Guide — built from the Week 9 learning objectives covering cardiovascular and lymphatic structure and function, alterations of cardiovascular function, pediatric and congenital cardiac disease, and wound healing in vascular disease. Made by Dr. Vidya Aggrawal to teach the concepts tested, not the exam questions themselves. Same color-coded format as Weeks 1–8. Print for paper, or use in-browser with collapsible practice answers.</p>
+</section>
+
+</main>
+</div>
+</body>
+</html>

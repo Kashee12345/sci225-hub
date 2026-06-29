@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SCI225 Week 3 Study Guide — Oncology: Biology, Epidemiology & Pediatric Cancers</title>
+<style>
+  :root {
+    --u1: #1e40af; --u1-bg: #eff6ff; --u1-brd: #93c5fd;
+    --u2: #b91c1c; --u2-bg: #fef2f2; --u2-brd: #fca5a5;
+    --u3: #c2410c; --u3-bg: #fff7ed; --u3-brd: #fdba74;
+    --u4: #047857; --u4-bg: #ecfdf5; --u4-brd: #6ee7b7;
+    --u5: #be185d; --u5-bg: #fdf2f8; --u5-brd: #f9a8d4;
+    --u6: #7c3aed; --u6-bg: #faf5ff; --u6-brd: #c4b5fd;
+    --mech: #1d4ed8; --mech-bg: #eff6ff;
+    --why:  #b45309; --why-bg:  #fffbeb;
+    --comp: #047857; --comp-bg: #f0fdf4;
+    --path: #be123c; --path-bg: #fff1f2;
+    --miss: #991b1b; --miss-bg: #fef2f2;
+    --acro: #6d28d9; --acro-bg: #f5f3ff;
+    --tip:  #0f766e; --tip-bg:  #ecfdf5;
+    --text: #111827; --muted: #4b5563; --line: #d1d5db;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    font-size: 10.5pt; line-height: 1.42; color: var(--text);
+    margin: 0; padding: 0; background: #f9fafb;
+  }
+  .layout { display: grid; grid-template-columns: 240px 1fr; max-width: 1140px; margin: 0 auto; }
+  nav.toc {
+    position: sticky; top: 0; align-self: start; max-height: 100vh; overflow-y: auto;
+    background: #fff; border-right: 1px solid var(--line); padding: 14px 12px; font-size: 9.4pt;
+  }
+  nav.toc h3 { font-size: 10pt; margin: 6px 0 8px; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; }
+  nav.toc a { display: block; padding: 3px 6px; color: var(--text); text-decoration: none; border-radius: 3px; margin-bottom: 1px; }
+  nav.toc a:hover { background: #f3f4f6; }
+  nav.toc .u1 { border-left: 3px solid var(--u1); }
+  nav.toc .u2 { border-left: 3px solid var(--u2); }
+  nav.toc .u3 { border-left: 3px solid var(--u3); }
+  nav.toc .u4 { border-left: 3px solid var(--u4); }
+  nav.toc .u5 { border-left: 3px solid var(--u5); }
+  nav.toc .u6 { border-left: 3px solid var(--u6); }
+  main { padding: 20px 28px; background: #fff; }
+  h1 { font-size: 20pt; margin: 0 0 4px; }
+  h2 { font-size: 15pt; margin: 18px 0 6px; padding: 6px 10px; border-radius: 4px; color: #fff; }
+  h3 { font-size: 12pt; margin: 12px 0 4px; padding-bottom: 2px; border-bottom: 1px solid var(--line); }
+  h4 { font-size: 10.8pt; margin: 8px 0 3px; color: var(--muted); }
+  .unit1 h2 { background: var(--u1); } .unit2 h2 { background: var(--u2); }
+  .unit3 h2 { background: var(--u3); } .unit4 h2 { background: var(--u4); }
+  .unit5 h2 { background: var(--u5); } .unit6 h2 { background: var(--u6); }
+  .unit1 h3 { color: var(--u1); border-bottom-color: var(--u1-brd); }
+  .unit2 h3 { color: var(--u2); border-bottom-color: var(--u2-brd); }
+  .unit3 h3 { color: var(--u3); border-bottom-color: var(--u3-brd); }
+  .unit4 h3 { color: var(--u4); border-bottom-color: var(--u4-brd); }
+  .unit5 h3 { color: var(--u5); border-bottom-color: var(--u5-brd); }
+  .unit6 h3 { color: var(--u6); border-bottom-color: var(--u6-brd); }
+  p { margin: 4px 0; }
+  ul, ol { margin: 4px 0 6px 20px; padding: 0; }
+  li { margin: 1px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 9.8pt; margin: 6px 0 8px; }
+  th, td { border: 1px solid var(--line); padding: 4px 6px; text-align: left; vertical-align: top; }
+  th { background: #f3f4f6; font-weight: 600; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+  .box { border-left: 4px solid; padding: 6px 10px; margin: 6px 0; border-radius: 3px; font-size: 10pt; }
+  .mech { border-color: var(--mech); background: var(--mech-bg); }
+  .mech::before { content: "MECHANISM "; font-weight: 700; color: var(--mech); font-size: 8.5pt; letter-spacing: .5px; }
+  .why { border-color: var(--why); background: var(--why-bg); }
+  .why::before { content: "WHY "; font-weight: 700; color: var(--why); font-size: 8.5pt; letter-spacing: .5px; }
+  .comp { border-color: var(--comp); background: var(--comp-bg); }
+  .comp::before { content: "COMPENSATION "; font-weight: 700; color: var(--comp); font-size: 8.5pt; letter-spacing: .5px; }
+  .path { border-color: var(--path); background: var(--path-bg); }
+  .path::before { content: "PATHOLOGY "; font-weight: 700; color: var(--path); font-size: 8.5pt; letter-spacing: .5px; }
+  .miss { border-color: var(--miss); background: var(--miss-bg); }
+  .miss::before { content: "⚠ COMMON MISSTEP "; font-weight: 700; color: var(--miss); font-size: 8.5pt; letter-spacing: .5px; }
+  .acro { border-color: var(--acro); background: var(--acro-bg); }
+  .acro::before { content: "ACRONYM / MNEMONIC "; font-weight: 700; color: var(--acro); font-size: 8.5pt; letter-spacing: .5px; }
+  .tip { border-color: var(--tip); background: var(--tip-bg); }
+  .tip::before { content: "★ EXAM TIP "; font-weight: 700; color: var(--tip); font-size: 8.5pt; letter-spacing: .5px; }
+  .flow { background: #f9fafb; border: 1px solid var(--line); padding: 8px 10px; border-radius: 4px; font-size: 9.8pt; margin: 6px 0; font-family: "Consolas", monospace; }
+  .flow .arr { color: #6b7280; margin: 0 3px; }
+  .q { background: #fafafa; border: 1px solid var(--line); border-radius: 4px; padding: 8px 10px; margin: 6px 0; font-size: 10pt; }
+  .q .qhead { font-weight: 600; margin-bottom: 3px; }
+  .q .opts { margin: 3px 0 4px 0; }
+  .q .ans { background: #ecfdf5; border-left: 3px solid var(--comp); padding: 4px 8px; margin-top: 4px; font-size: 9.8pt; }
+  .q .ans b { color: var(--comp); }
+  details summary { cursor: pointer; color: var(--mech); font-size: 9.5pt; font-weight: 600; }
+  .hero { padding: 14px 18px; background: linear-gradient(135deg, #1e3a8a, #b91c1c, #be185d); color: #fff; border-radius: 6px; margin-bottom: 14px; }
+  .hero h1 { color: #fff; }
+  .hero p { margin: 4px 0; font-size: 10pt; opacity: .95; }
+  .spine { background: rgba(255,255,255,.15); padding: 6px 10px; border-radius: 4px; margin-top: 6px; font-size: 9.8pt; }
+  .legend { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 10px; font-size: 9pt; }
+  .legend span { padding: 2px 8px; border-radius: 3px; border: 1px solid; }
+  .lg-mech { color: var(--mech); background: var(--mech-bg); border-color: var(--mech); }
+  .lg-why  { color: var(--why);  background: var(--why-bg);  border-color: var(--why); }
+  .lg-comp { color: var(--comp); background: var(--comp-bg); border-color: var(--comp); }
+  .lg-path { color: var(--path); background: var(--path-bg); border-color: var(--path); }
+  .lg-miss { color: var(--miss); background: var(--miss-bg); border-color: var(--miss); }
+  .lg-acro { color: var(--acro); background: var(--acro-bg); border-color: var(--acro); }
+  .lg-tip  { color: var(--tip);  background: var(--tip-bg);  border-color: var(--tip); }
+  .chip { font-size: 9pt; padding: 2px 8px; border-radius: 3px; color: #fff; font-weight: 600; }
+  .c1 { background: var(--u1); } .c2 { background: var(--u2); } .c3 { background: var(--u3); }
+  .c4 { background: var(--u4); } .c5 { background: var(--u5); } .c6 { background: var(--u6); }
+  .btns { margin: 10px 0; }
+  .btns button { background: #0f172a; color: #fff; border: 0; padding: 6px 12px; border-radius: 4px; font-size: 9.8pt; cursor: pointer; margin-right: 6px; }
+  .small { font-size: 9.3pt; color: var(--muted); }
+  @media print {
+    body { background: #fff; }
+    .layout { display: block; max-width: none; }
+    nav.toc, .btns { display: none; }
+    main { padding: 0.35in 0.4in; }
+    details { page-break-inside: avoid; }
+    details[open] summary { display: none; }
+    details:not([open]) > *:not(summary) { display: block; }
+    .hero, h2, .chip, .box, .q .ans, th { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+<div class="layout">
+<nav class="toc">
+  <h3>Week 3 Study Guide</h3>
+  <a href="#intro"><b>How to use this guide</b></a>
+  <a href="#u1" class="u1"><b>Unit 1.</b> Biology of Cancer</a>
+  <a href="#u1-genes" class="u1">&nbsp;&nbsp;Oncogenes & tumor suppressors</a>
+  <a href="#u1-stages" class="u1">&nbsp;&nbsp;Stages of cancer development</a>
+  <a href="#u1-q" class="u1">&nbsp;&nbsp;Practice Qs</a>
+  <a href="#u2" class="u2"><b>Unit 2.</b> Tumor Behavior</a>
+  <a href="#u2-spread" class="u2">&nbsp;&nbsp;Invasion & metastasis</a>
+  <a href="#u2-angio" class="u2">&nbsp;&nbsp;Angiogenesis</a>
+  <a href="#u2-cachex" class="u2">&nbsp;&nbsp;Cachexia & paraneoplastic</a>
+  <a href="#u2-q" class="u2">&nbsp;&nbsp;Practice Qs</a>
+  <a href="#u3" class="u3"><b>Unit 3.</b> Naming, Grading & Staging</a>
+  <a href="#u3-q" class="u3">&nbsp;&nbsp;Practice Qs</a>
+  <a href="#u4" class="u4"><b>Unit 4.</b> Cancer Epidemiology</a>
+  <a href="#u4-risk" class="u4">&nbsp;&nbsp;Risk factors</a>
+  <a href="#u4-genetic" class="u4">&nbsp;&nbsp;Hereditary syndromes</a>
+  <a href="#u4-q" class="u4">&nbsp;&nbsp;Practice Qs</a>
+  <a href="#u5" class="u5"><b>Unit 5.</b> Pediatric Cancers</a>
+  <a href="#u5-leuk" class="u5">&nbsp;&nbsp;Leukemia</a>
+  <a href="#u5-cns" class="u5">&nbsp;&nbsp;CNS tumors</a>
+  <a href="#u5-emb" class="u5">&nbsp;&nbsp;Embryonal tumors</a>
+  <a href="#u5-q" class="u5">&nbsp;&nbsp;Practice Qs</a>
+  <a href="#u6" class="u6"><b>Unit 6.</b> Adolescent Cancers</a>
+  <a href="#u6-bone" class="u6">&nbsp;&nbsp;Bone tumors</a>
+  <a href="#u6-lymph" class="u6">&nbsp;&nbsp;Lymphomas</a>
+  <a href="#u6-q" class="u6">&nbsp;&nbsp;Practice Qs</a>
+  <a href="#appx"><b>Appendix:</b> Missteps & Mnemonics</a>
+</nav>
+
+<main>
+
+<div class="btns">
+  <button onclick="window.print()">Print / Save as PDF</button>
+  <button onclick="document.querySelectorAll('details').forEach(d=>d.open=true)">Expand All</button>
+  <button onclick="document.querySelectorAll('details').forEach(d=>d.open=false)">Collapse All</button>
+</div>
+
+<section id="intro">
+<div class="hero">
+  <h1>SCI225 Week 3 — Complete Study Guide</h1>
+  <p><b>Made by Dr. Vidya Aggrawal</b></p>
+  <p>Biology of Cancer · Cancer Epidemiology · Pediatric & Adolescent Malignancies</p>
+  <div class="spine"><b>Study Spine — for every cancer ask:</b><br>
+  1. Which gene category drives it (oncogene, tumor suppressor, DNA repair)? &nbsp; 2. Tissue of origin? &nbsp; 3. Stage vs grade? &nbsp; 4. Modifiable risk factor or hereditary?</div>
+</div>
+
+<div class="legend">
+  <span class="lg-mech">MECHANISM</span>
+  <span class="lg-why">WHY</span>
+  <span class="lg-comp">COMPENSATION</span>
+  <span class="lg-path">PATHOLOGY</span>
+  <span class="lg-miss">MISSTEP</span>
+  <span class="lg-acro">ACRONYM</span>
+  <span class="lg-tip">EXAM TIP</span>
+</div>
+
+<h3>Course alignment</h3>
+<ul>
+  <li><b>LO1</b> — Recall the Biology of Cancer and specifically how it occurs <span class="small">(Units 1–3)</span></li>
+  <li><b>LO2</b> — Define and discuss Cancer Epidemiology and the specific consequences that it entails <span class="small">(Unit 4)</span></li>
+  <li><b>LO3</b> — Identify different types of cancer in children and adolescents <span class="small">(Units 5, 6)</span></li>
+</ul>
+<p>Every practice question here was written to teach you to apply the concept. None reproduces an exam item.</p>
+</section>
+
+<!-- ========================= UNIT 1 ========================= -->
+<section id="u1" class="unit1">
+<h2>Unit 1 &nbsp;•&nbsp; Biology of Cancer &nbsp;<span class="chip c1">LO1</span></h2>
+
+<div class="box mech">
+Cancer is the outcome of <b>accumulated mutations</b> in a cell that disable the normal controls on growth, death, and tissue boundaries. The result: a clone of cells that proliferates, refuses to die, evades the immune system, builds its own blood supply, invades adjacent tissue, and ultimately spreads.
+</div>
+
+<h3 id="u1-genes">1.1 Three Gene Categories That Matter in Cancer</h3>
+
+<table>
+  <tr><th>Gene type</th><th>Normal job</th><th>Cancer change</th><th>How many "hits" needed?</th><th>Examples</th></tr>
+  <tr><td><b>Proto-oncogene → oncogene</b></td><td>Promote cell growth (gas pedal)</td><td><b>Activated / overexpressed</b> → uncontrolled growth</td><td>Just <b>one allele</b> needs to be activated (gain of function — dominant)</td><td>HER2 (breast), RAS (many), MYC (lymphoma), BCR-ABL (CML)</td></tr>
+  <tr><td><b>Tumor suppressor gene</b></td><td>Brake on cell growth (brake pedal)</td><td><b>Inactivated / lost</b> → no brakes</td><td><b>Both alleles</b> must be lost (Knudson's two-hit hypothesis — recessive at the cell level)</td><td>TP53 (~half of all cancers), RB1 (retinoblastoma), BRCA1/2, APC (colon)</td></tr>
+  <tr><td><b>DNA repair gene</b></td><td>Fix mutations as they happen</td><td>Loss of repair → mutations accumulate elsewhere</td><td>Both alleles (similar logic to suppressors)</td><td>BRCA1/2, MLH1/MSH2 (Lynch syndrome)</td></tr>
+</table>
+
+<div class="box why">
+<b>Why oncogenes need only one hit but tumor suppressors need two.</b><br>
+A proto-oncogene normally has carefully regulated activity. Activate <i>one</i> copy abnormally and it overproduces growth signals — the other normal copy can't shut it off. Gain of function = dominant.<br>
+A tumor suppressor still works if <i>one</i> copy is intact (the other does the job). You need to lose <b>both</b> copies before the brake is gone — Knudson's two-hit. Loss of function = recessive at the cellular level.
+</div>
+
+<h4>How oncogenes get activated</h4>
+<ul>
+  <li><b>Point mutation</b> — single nucleotide change makes the gene constitutively active (RAS)</li>
+  <li><b>Gene amplification</b> — extra copies of the gene (HER2 amplified in some breast cancers)</li>
+  <li><b>Chromosomal translocation</b> — gene is moved next to an active promoter (BCR-ABL Philadelphia chromosome in CML)</li>
+  <li><b>Insertion / viral integration</b> — virus inserts near the gene (HTLV-1, HPV)</li>
+</ul>
+
+<div class="box tip">
+<b>HER2 overexpression in breast cancer</b> is a textbook oncogene-activation example. The HER2 gene is amplified, the receptor is overexpressed on the cell surface, and the tumor responds to anti-HER2 therapy (trastuzumab). When you see "HER2 amplified" or "HER2 positive," think oncogene activation by amplification.
+</div>
+
+<h3 id="u1-stages">1.2 Stages of Cancer Development</h3>
+
+<div class="flow">
+Normal <span class="arr">→</span> hyperplasia <span class="arr">→</span> dysplasia <span class="arr">→</span> carcinoma in situ <span class="arr">→</span> invasive carcinoma <span class="arr">→</span> metastatic carcinoma
+</div>
+
+<table>
+  <tr><th>Stage</th><th>What's happening</th></tr>
+  <tr><td><b>Hyperplasia</b></td><td>Increased number of normal-looking cells in response to a stimulus. Reversible if stimulus removed.</td></tr>
+  <tr><td><b>Dysplasia</b></td><td>Disorganized, abnormal-looking cells; loss of normal architecture; <b>nuclear pleomorphism</b> (size/shape variation), increased nuclear-to-cytoplasm ratio. Still confined to the tissue. Often reversible if cause removed.</td></tr>
+  <tr><td><b>Carcinoma in situ</b></td><td>Severely dysplastic cells fill the full thickness of the epithelium but have NOT yet broken through the basement membrane. "Pre-invasive cancer."</td></tr>
+  <tr><td><b>Invasive carcinoma</b></td><td>Tumor cells breach the basement membrane and invade surrounding stroma. Capable of metastasis from this point.</td></tr>
+  <tr><td><b>Metastatic disease</b></td><td>Tumor cells reach distant sites via lymphatic or hematogenous spread.</td></tr>
+</table>
+
+<div class="box mech">
+<b>What the basement membrane crossing means.</b> Once tumor cells break through the basement membrane, they have access to lymphatics and blood vessels. <b>Crossing the basement membrane is the defining event that converts pre-invasive dysplasia/CIS into "real" cancer</b> — and it requires acquiring the ability to make matrix-degrading enzymes (matrix metalloproteinases).
+</div>
+
+<div class="box miss">
+<b>"Dysplasia is cancer."</b> Not yet — dysplasia is pre-cancerous, often reversible. <b>Carcinoma in situ</b> is the immediate precursor. <b>Invasive carcinoma</b> is the first stage that meets the definition of cancer (basement membrane crossed).
+</div>
+
+<h3 id="u1-q">Practice Questions — Biology of Cancer</h3>
+
+<div class="q">
+<div class="qhead">Q1. <b>Select all that apply.</b> Which findings are consistent with oncogene activation?</div>
+<div class="opts">
+A. HER2 receptor overexpression in breast cancer<br>
+B. RAS gene point mutation producing constitutive growth signaling<br>
+C. Both alleles of TP53 inactivated<br>
+D. BCR-ABL translocation in chronic myeloid leukemia<br>
+E. Loss of function of BRCA1
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>A, B, D.</b> All gain-of-function changes in proto-oncogenes. C (TP53 loss) and E (BRCA1 loss) are tumor-suppressor inactivations — the opposite mechanism, requiring both alleles to be lost.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q2. <b>Matching.</b> Match each gene category to its function.</div>
+<table>
+<tr><th>Gene type</th><th>Function</th></tr>
+<tr><td>Proto-oncogene</td><td>___</td></tr>
+<tr><td>Tumor suppressor</td><td>___</td></tr>
+<tr><td>DNA repair gene</td><td>___</td></tr>
+</table>
+<div class="opts">Choices: Repairs DNA damage; loss → mutation accumulation &nbsp;·&nbsp; Promotes cell proliferation; gain of function → uncontrolled growth &nbsp;·&nbsp; Inhibits cell proliferation; loss of function → no brakes</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>Proto-oncogene → promotes proliferation, gain of function = uncontrolled growth · Tumor suppressor → inhibits proliferation, loss of function = no brakes · DNA repair gene → repairs damage, loss = mutation accumulation.</b></div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q3. <b>Order.</b> Place the stages of cancer development in correct order:</div>
+<div class="opts">
+— Carcinoma in situ<br>
+— Invasive carcinoma<br>
+— Hyperplasia<br>
+— Metastatic carcinoma<br>
+— Dysplasia
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>Hyperplasia → dysplasia → carcinoma in situ → invasive carcinoma → metastatic.</b> Crossing the basement membrane separates CIS from invasive disease.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q4. A pancreatic biopsy shows disorganized cells with marked variation in nuclear size and shape. The tumor has not breached the basement membrane. Which best describes this finding?</div>
+<div class="opts">
+A. Hyperplasia<br>
+B. Dysplasia / carcinoma in situ<br>
+C. Invasive adenocarcinoma<br>
+D. Metastatic disease
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Disorganized cells with nuclear pleomorphism = dysplasia. If those cells span the full epithelium without basement-membrane breach, that's CIS. Basement-membrane crossing is the gateway to "invasive."</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q5. <b>Select all that apply.</b> Which mechanisms can activate a proto-oncogene?</div>
+<div class="opts">
+A. Point mutation producing a constitutively active protein<br>
+B. Gene amplification (extra copies)<br>
+C. Chromosomal translocation that places the gene under an active promoter<br>
+D. Loss of both alleles<br>
+E. Inability to repair DNA damage
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>A, B, C.</b> D (loss of both alleles) is the mechanism for tumor suppressor inactivation, not oncogene activation. E describes a DNA repair gene defect.</div>
+</details>
+</div>
+
+</section>
+
+<!-- ========================= UNIT 2 ========================= -->
+<section id="u2" class="unit2">
+<h2>Unit 2 &nbsp;•&nbsp; Tumor Behavior — Spread, Angiogenesis, Cachexia &nbsp;<span class="chip c2">LO1</span></h2>
+
+<h3 id="u2-spread">2.1 Invasion and Metastasis</h3>
+
+<div class="flow">
+Tumor at primary site <span class="arr">→</span> degrades basement membrane (matrix metalloproteinases) <span class="arr">→</span> invades local stroma <span class="arr">→</span> enters lymphatic or blood vessel <span class="arr">→</span> survives in circulation <span class="arr">→</span> arrests in distant capillary bed <span class="arr">→</span> extravasates into new tissue <span class="arr">→</span> grows new colony at distant site
+</div>
+
+<div class="box mech">
+<b>Metastasis</b> = the ability to seed new tumors in distant tissues. This is the property that makes cancer lethal. Without it, even large primary tumors can often be removed surgically. Cells must acquire all of the following: ability to detach from neighbors, degrade matrix, intravasate into vessels, survive shear forces and immune attack, and proliferate in foreign tissue.
+</div>
+
+<table>
+  <tr><th>Route</th><th>Typical for</th><th>Common destinations</th></tr>
+  <tr><td><b>Lymphatic</b></td><td>Most carcinomas</td><td>Regional lymph nodes first, then central nodes</td></tr>
+  <tr><td><b>Hematogenous (blood)</b></td><td>Sarcomas; many late-stage carcinomas</td><td><b>Liver, lung, bone, brain</b> — the "big four" metastatic sites</td></tr>
+  <tr><td><b>Direct extension</b></td><td>Most tumors</td><td>Adjacent organs and structures</td></tr>
+  <tr><td><b>Seeding</b></td><td>Tumors of body cavities (ovarian, gastric)</td><td>Peritoneum, pleura</td></tr>
+</table>
+
+<div class="box tip">
+<b>"Which characteristic of tumor cells directly allows spread to distant organs?"</b> The answer is the ability to <b>invade through the basement membrane and enter blood or lymphatic vessels</b>. Without invasion, there is no metastasis.
+</div>
+
+<h3 id="u2-angio">2.2 Angiogenesis</h3>
+
+<div class="box mech">
+A tumor larger than ~1–2 mm cannot survive on diffusion alone — it must build new blood vessels (angiogenesis) to deliver oxygen and nutrients and remove waste. Tumors secrete <b>vascular endothelial growth factor (VEGF)</b> and other angiogenic factors that recruit endothelial cells from existing capillaries to form new vessels.
+</div>
+
+<div class="box why">
+<b>Why anti-angiogenic drugs work in cancer.</b> Drugs like bevacizumab (anti-VEGF) starve tumors by blocking the new-vessel signal. Tumors cannot grow past the diffusion limit without their own vasculature, and without growth, metastasis is also limited.
+</div>
+
+<h3 id="u2-cachex">2.3 Cancer Cachexia and Paraneoplastic Syndromes</h3>
+
+<div class="box path">
+<b>Cancer cachexia</b> = the wasting syndrome of advanced cancer. Severe weight loss, muscle loss, fatigue, and weakness <i>despite adequate caloric intake</i>. Driven by tumor- and host-derived <b>inflammatory cytokines</b> — TNF-α, IL-1, IL-6 — which:
+<ul>
+  <li>Suppress appetite (anorexia)</li>
+  <li>Increase resting metabolic rate</li>
+  <li>Promote skeletal muscle protein breakdown (proteolysis)</li>
+  <li>Promote lipid breakdown (lipolysis)</li>
+  <li>Cause insulin resistance</li>
+</ul>
+The tumor itself also competes for nutrients, but the cytokine-driven hypermetabolism is the key reason eating more does not fix the wasting.
+</div>
+
+<div class="box why">
+<b>Why patients lose weight despite eating.</b> The body is in a <i>catabolic</i> state — breaking down muscle and fat faster than food can replace. Caloric supplementation alone cannot overcome the inflammatory drive. Best management requires treating the underlying cancer plus supportive nutrition.
+</div>
+
+<h4>Paraneoplastic syndromes — tumor effects unrelated to direct invasion</h4>
+<table>
+  <tr><th>Syndrome</th><th>Cancer</th><th>Mechanism</th></tr>
+  <tr><td>SIADH (low Na, concentrated urine)</td><td>Small-cell lung cancer</td><td>Ectopic ADH production</td></tr>
+  <tr><td>Cushing syndrome</td><td>Small-cell lung cancer</td><td>Ectopic ACTH production</td></tr>
+  <tr><td>Hypercalcemia</td><td>Squamous cell lung cancer, multiple myeloma, breast cancer with bone mets</td><td>PTH-related peptide; bone destruction</td></tr>
+  <tr><td>Lambert-Eaton syndrome</td><td>Small-cell lung cancer</td><td>Antibodies vs presynaptic Ca²⁺ channel at NMJ</td></tr>
+  <tr><td>Polycythemia</td><td>Renal cell carcinoma</td><td>Ectopic erythropoietin</td></tr>
+</table>
+
+<div class="box tip">
+<b>"Bystander mutations"</b> — a melanoma sample with many mutations that don't change tumor behavior is showing <b>passenger mutations</b>. Cancers accumulate hundreds of incidental mutations alongside the few "driver" mutations that actually fuel growth. Recognizing this distinction matters for understanding tumor genomics.
+</div>
+
+<h3 id="u2-q">Practice Questions — Tumor Behavior</h3>
+
+<div class="q">
+<div class="qhead">Q6. Which characteristic of tumor cells most directly allows spread to distant organs?</div>
+<div class="opts">
+A. Increased size of tumor cells<br>
+B. Ability to invade through the basement membrane and enter blood or lymphatic vessels<br>
+C. Slower-than-normal cell division<br>
+D. Increased oxygen consumption
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Crossing the basement membrane and entering vessels is the gateway to metastasis. Without invasion, tumors stay local.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q7. A lung tumor shows extensive new blood vessel formation on biopsy. Which process most directly accounts for this?</div>
+<div class="opts">
+A. Apoptosis<br>
+B. Angiogenesis driven by tumor-released VEGF<br>
+C. Necrosis of stromal cells<br>
+D. Inflammatory edema
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> VEGF and other tumor-secreted angiogenic factors recruit endothelial cells to build new vessels — without them, tumors cannot grow past 1–2 mm.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q8. <b>Select all that apply.</b> A patient with metastatic breast cancer has weight loss, muscle loss, and high inflammatory markers. Which mechanisms explain cachexia in this patient?</div>
+<div class="opts">
+A. TNF-α, IL-1, and IL-6 drive proteolysis and lipolysis<br>
+B. Hypermetabolism increases caloric expenditure<br>
+C. Cytokines suppress appetite<br>
+D. The tumor itself uses energy and nutrients<br>
+E. The patient is simply not eating enough food
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>A, B, C, D.</b> E is incorrect — patients with cachexia often eat normally; cytokine-driven catabolism is the dominant mechanism. Just adding calories is not sufficient.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q9. A breast biopsy shows marked HER2 overexpression. Which gene mechanism is responsible?</div>
+<div class="opts">
+A. Loss of both copies of a tumor suppressor<br>
+B. Gain of function in a proto-oncogene through gene amplification<br>
+C. Mutation of a DNA repair gene<br>
+D. Translocation of HER2 onto chromosome 22
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> HER2 amplification produces extra copies of the gene → overexpression of the receptor → unchecked growth signaling. Targeted therapy (trastuzumab) blocks this receptor.</div>
+</details>
+</div>
+
+</section>
+
+<!-- ========================= UNIT 3 ========================= -->
+<section id="u3" class="unit3">
+<h2>Unit 3 &nbsp;•&nbsp; Naming, Grading & Staging &nbsp;<span class="chip c3">LO1</span></h2>
+
+<h3>3.1 Naming Conventions</h3>
+
+<table>
+  <tr><th>Tissue of origin</th><th>Benign</th><th>Malignant</th></tr>
+  <tr><td>Epithelium</td><td>-oma (e.g., adenoma, papilloma)</td><td><b>-carcinoma</b> (adenocarcinoma, squamous cell carcinoma)</td></tr>
+  <tr><td>Connective tissue (bone, muscle, fat, cartilage)</td><td>-oma (lipoma, chondroma, leiomyoma)</td><td><b>-sarcoma</b> (osteosarcoma, liposarcoma, rhabdomyosarcoma)</td></tr>
+  <tr><td>Hematopoietic (blood-forming)</td><td>—</td><td><b>Leukemia</b> (in blood/marrow); <b>lymphoma</b> (in lymph nodes/tissue)</td></tr>
+  <tr><td>Embryonic / "blast" cells</td><td>—</td><td>-blastoma (neuroblastoma, retinoblastoma, hepatoblastoma)</td></tr>
+</table>
+
+<div class="box miss">
+<b>"All -omas are benign."</b> Watch out for these malignancies that end in -oma despite being malignant: <b>lymphoma, melanoma, hepatoma (hepatocellular carcinoma), seminoma</b>. Memorize this short list.
+</div>
+
+<h3>3.2 Grading vs Staging — Don't Confuse Them</h3>
+
+<table>
+  <tr><th></th><th>Grading</th><th>Staging</th></tr>
+  <tr><td>What it measures</td><td>How <i>differentiated</i> (how much the cells resemble normal tissue)</td><td>How far the cancer has <i>spread</i></td></tr>
+  <tr><td>Source</td><td>Microscopic appearance (pathologist looking at biopsy)</td><td>Clinical exam, imaging, surgical findings</td></tr>
+  <tr><td>Scale</td><td>Grade I (well-differentiated, looks like normal) → Grade IV (poorly differentiated, anaplastic)</td><td>TNM: <b>T</b>umor size · <b>N</b>odes · <b>M</b>etastasis. Combined into stages 0–IV.</td></tr>
+  <tr><td>What it predicts</td><td>How aggressive the tumor cells are intrinsically</td><td>Prognosis and treatment plan (usually predicts outcome better than grade)</td></tr>
+</table>
+
+<div class="box acro">
+<b>"Stage = Spread, Grade = Grossness."</b><br>
+Stage answers "where is it?" Grade answers "how ugly is it under the microscope?"
+</div>
+
+<div class="box tip">
+For most cancers, <b>stage predicts prognosis better than grade</b>. A small, low-stage but high-grade tumor often has a better outcome than a large, widely metastatic but low-grade tumor.
+</div>
+
+<h3 id="u3-q">Practice Questions — Naming, Grading, Staging</h3>
+
+<div class="q">
+<div class="qhead">Q10. <b>Matching.</b> Match each tumor type to its description.</div>
+<table>
+<tr><th>Tumor name</th><th>Description</th></tr>
+<tr><td>Adenocarcinoma</td><td>___</td></tr>
+<tr><td>Osteosarcoma</td><td>___</td></tr>
+<tr><td>Leukemia</td><td>___</td></tr>
+<tr><td>Lipoma</td><td>___</td></tr>
+</table>
+<div class="opts">Choices: Benign tumor of fat tissue &nbsp;·&nbsp; Malignant blood-forming cell cancer in marrow &nbsp;·&nbsp; Malignant epithelial gland tumor &nbsp;·&nbsp; Malignant bone tumor</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>Adenocarcinoma → malignant epithelial gland tumor · Osteosarcoma → malignant bone tumor · Leukemia → malignant blood-forming cell cancer in marrow · Lipoma → benign fat tumor.</b></div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q11. A patient has a 5-cm pulmonary mass with regional lymph nodes involved but no distant metastasis. Which staging element captures the lymph involvement?</div>
+<div class="opts">
+A. T (tumor size)<br>
+B. N (regional nodes)<br>
+C. M (distant metastasis)<br>
+D. Grade
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> TNM: T = primary tumor size and extent, N = regional lymph node involvement, M = distant metastasis. Grade is a separate measure (differentiation), not part of TNM.</div>
+</details>
+</div>
+
+</section>
+
+<!-- ========================= UNIT 4 ========================= -->
+<section id="u4" class="unit4">
+<h2>Unit 4 &nbsp;•&nbsp; Cancer Epidemiology — Risk Factors & Prevention &nbsp;<span class="chip c4">LO2</span></h2>
+
+<h3 id="u4-risk">4.1 Modifiable Risk Factors</h3>
+
+<table>
+  <tr><th>Exposure</th><th>Cancers most associated</th><th>Mechanism</th></tr>
+  <tr><td><b>Tobacco / smoking</b></td><td>Lung, larynx, oral, esophagus, bladder, kidney, pancreas, cervix</td><td>Carcinogens in smoke (nitrosamines, polycyclic aromatic hydrocarbons) cause DNA damage; chronic inflammation; metaplasia → dysplasia → cancer</td></tr>
+  <tr><td><b>Chronic alcohol use</b></td><td>Oral cavity, pharynx, larynx, esophagus, liver, breast, colorectal</td><td>Alcohol metabolism produces <b>acetaldehyde</b> — a highly toxic, carcinogenic metabolite that damages DNA</td></tr>
+  <tr><td><b>Obesity / metabolic syndrome</b></td><td>Endometrial, postmenopausal breast, colorectal, kidney, esophageal adenocarcinoma, pancreatic, liver</td><td>Chronic inflammation, insulin resistance, hyperinsulinemia, ↑ estrogen from adipose tissue</td></tr>
+  <tr><td><b>UV radiation (sun, tanning beds)</b></td><td>Basal cell, squamous cell, melanoma</td><td>UV-induced pyrimidine dimers in skin DNA → mutations in TP53 and other genes; cumulative damage with age</td></tr>
+  <tr><td><b>Ionizing radiation</b></td><td>Leukemia, thyroid, breast</td><td>Direct DNA strand breaks</td></tr>
+  <tr><td><b>HPV infection</b></td><td>Cervical, anal, oropharyngeal</td><td>Viral E6 inactivates p53; E7 inactivates Rb (tumor suppressors)</td></tr>
+  <tr><td><b>Hepatitis B/C</b></td><td>Hepatocellular carcinoma</td><td>Chronic inflammation → cirrhosis → cancer</td></tr>
+  <tr><td><b>H. pylori</b></td><td>Gastric, MALT lymphoma</td><td>Chronic gastritis → atrophy → metaplasia → dysplasia → cancer</td></tr>
+  <tr><td><b>Diethylstilbestrol (DES)</b></td><td>Clear cell adenocarcinoma of the vagina/cervix in daughters of mothers who took DES</td><td>Transplacental hormonal disruption of müllerian development</td></tr>
+</table>
+
+<div class="box why">
+<b>Why smoking causes lung cancer.</b> Each cigarette delivers thousands of carcinogens that damage bronchial DNA. The bronchial epithelium first undergoes metaplasia (ciliated columnar → squamous), then dysplasia, then carcinoma in situ, and finally invasive cancer. The progression takes years. Stopping smoking reduces risk over time but never returns it to the never-smoker baseline.
+</div>
+
+<div class="box why">
+<b>Why obesity increases cancer risk.</b> Adipose tissue is metabolically active — it produces inflammatory cytokines (IL-6, TNF-α), aromatizes androgens to estrogen (raising postmenopausal breast and endometrial cancer risk), and drives insulin resistance with hyperinsulinemia (a growth signal for tumor cells). Metabolic syndrome links these together: central obesity, hypertension, dyslipidemia, hyperglycemia, hyperinsulinemia.
+</div>
+
+<div class="box path">
+<b>Alcohol and acetaldehyde.</b> Ethanol → alcohol dehydrogenase → <b>acetaldehyde</b> → aldehyde dehydrogenase → acetate. Acetaldehyde is the carcinogenic intermediate. Patients with reduced ALDH activity (common in some Asian populations) accumulate more acetaldehyde and have higher cancer risk per drink.
+</div>
+
+<h3 id="u4-genetic">4.2 Hereditary Cancer Syndromes</h3>
+
+<table>
+  <tr><th>Syndrome</th><th>Gene</th><th>Major cancers</th></tr>
+  <tr><td><b>Hereditary breast/ovarian</b></td><td>BRCA1, BRCA2</td><td>Breast, ovarian, prostate, pancreatic</td></tr>
+  <tr><td><b>Lynch syndrome (HNPCC)</b></td><td>MLH1, MSH2 (DNA mismatch repair)</td><td>Colorectal, endometrial, ovarian, gastric</td></tr>
+  <tr><td><b>Familial adenomatous polyposis (FAP)</b></td><td>APC</td><td>Colorectal (100s of polyps; nearly 100% cancer risk by age 40 if untreated)</td></tr>
+  <tr><td><b>Li-Fraumeni</b></td><td>TP53</td><td>Many — sarcomas, breast, brain, leukemia, adrenal</td></tr>
+  <tr><td><b>Retinoblastoma</b></td><td>RB1</td><td>Retinoblastoma, osteosarcoma</td></tr>
+  <tr><td><b>MEN syndromes</b></td><td>RET (MEN2), MEN1</td><td>Endocrine tumors</td></tr>
+</table>
+
+<div class="box tip">
+<b>"Mother and sister with breast cancer"</b> stems should make you think <b>BRCA1/BRCA2</b>. These are autosomal dominant; first-degree relatives of carriers should be offered genetic counseling. Risk-reducing strategies include enhanced screening, prophylactic mastectomy, oophorectomy, and chemoprevention.
+</div>
+
+<h3 id="u4-q">Practice Questions — Epidemiology</h3>
+
+<div class="q">
+<div class="qhead">Q12. <b>Select all that apply.</b> Which exposures increase cancer risk?</div>
+<div class="opts">
+A. Long-term tobacco smoking<br>
+B. Chronic alcohol use<br>
+C. Daily moderate exercise<br>
+D. Cumulative UV radiation exposure<br>
+E. Chronic HPV infection<br>
+F. Obesity with metabolic syndrome
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>A, B, D, E, F.</b> C is protective. The other five are major modifiable cancer risk factors.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q13. Why does long-term sun exposure increase the risk of skin cancer?</div>
+<div class="opts">
+A. Sunlight increases vitamin D, which is carcinogenic<br>
+B. UV radiation creates pyrimidine dimers in skin DNA, leading to mutations in TP53 and other genes<br>
+C. Sunlight directly burns away tumor suppressor genes<br>
+D. UV radiation increases skin pigmentation, which is itself cancer
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> UVB radiation produces pyrimidine dimers in DNA, which if not repaired produce mutations including in TP53. Cumulative damage drives basal cell, squamous cell, and melanoma development.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q14. A patient with long-term alcohol use develops liver disease and is told she is at higher cancer risk. Which highly toxic metabolite contributes most directly?</div>
+<div class="opts">
+A. Methanol<br>
+B. Acetaldehyde<br>
+C. Glucose<br>
+D. Lactate
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Alcohol → acetaldehyde → acetate. Acetaldehyde is the carcinogenic intermediate that damages DNA in the liver, oral cavity, esophagus, and beyond.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q15. A 24-year-old presents with abnormal vaginal bleeding. Her mother took DES during pregnancy. Which cancer is she at increased risk for?</div>
+<div class="opts">
+A. Squamous cell carcinoma of the cervix<br>
+B. Clear cell adenocarcinoma of the vagina or cervix<br>
+C. Endometrial adenocarcinoma<br>
+D. Ovarian serous carcinoma
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Daughters of mothers who took DES (an estrogen used to prevent miscarriage from the 1940s–70s) have an elevated risk of clear cell adenocarcinoma of the vagina/cervix — a classic transplacental carcinogen example.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q16. A patient with central obesity, elevated fasting glucose, elevated fasting insulin, and increased waist circumference is at increased risk for which cancers?</div>
+<div class="opts">
+A. Breast (premenopausal only)<br>
+B. Endometrial, postmenopausal breast, colorectal, and kidney cancers<br>
+C. Acute leukemia<br>
+D. None — metabolic syndrome is purely cardiovascular
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Metabolic syndrome and obesity drive multiple cancers via inflammation, insulin/IGF signaling, and aromatase-mediated estrogen excess.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q17. A patient has a mother and sister with breast cancer. The most appropriate genetic concern is:</div>
+<div class="opts">
+A. Trisomy 21<br>
+B. BRCA1 or BRCA2 mutation<br>
+C. Klinefelter syndrome<br>
+D. Lynch syndrome
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Two first-degree relatives with breast cancer should prompt BRCA testing referral. BRCA1/2 mutations are autosomal dominant tumor-suppressor losses associated with breast and ovarian cancer (and others).</div>
+</details>
+</div>
+
+</section>
+
+<!-- ========================= UNIT 5 ========================= -->
+<section id="u5" class="unit5">
+<h2>Unit 5 &nbsp;•&nbsp; Pediatric Cancers &nbsp;<span class="chip c5">LO3</span></h2>
+
+<div class="box mech">
+Childhood cancers are biologically different from adult cancers. They more often arise from <b>embryonal tissue</b> ("-blastomas"), are more often associated with germline genetic predisposition, and tend to involve the blood, brain, and abdominal organs more than the epithelial sites that drive adult cancers.
+</div>
+
+<div class="box why">
+<b>Why leukemia is the most common childhood cancer.</b> Children's bone marrow is highly proliferative — building red cells, white cells, and platelets at high rates throughout growth. Highly proliferating tissues are more vulnerable to mutations during DNA replication. Add limited exposure to environmental carcinogens that drive adult epithelial cancers, and the result is a disease pattern dominated by hematopoietic malignancies.
+</div>
+
+<h3 id="u5-leuk">5.1 Acute Lymphoblastic Leukemia (ALL)</h3>
+
+<div class="box path">
+ALL is the most common childhood cancer. Peak age 2–5. Driven by accumulation of immature lymphoblasts in the marrow that crowd out normal hematopoiesis.
+</div>
+
+<p><b>Classic presentation:</b></p>
+<ul>
+  <li><b>Anemia</b> → fatigue, pallor</li>
+  <li><b>Thrombocytopenia</b> → bruising, petechiae, mucosal bleeding</li>
+  <li><b>Neutropenia</b> → frequent or severe infections, fever</li>
+  <li><b>Lymphadenopathy and hepatosplenomegaly</b></li>
+  <li>Bone pain (especially limp or refusal to walk)</li>
+  <li>Lab: high WBC with many <b>blasts</b>, low Hgb, low platelets</li>
+</ul>
+
+<div class="box tip">
+<b>"4-year-old with fatigue, fever, frequent infections, pallor, and petechiae + anemia, thrombocytopenia, and increased immature WBCs"</b> = ALL, classic stem.
+</div>
+
+<h3 id="u5-cns">5.2 CNS Tumors — Second Most Common Childhood Cancer</h3>
+
+<div class="box mech">
+In contrast to adults (where most brain tumors are supratentorial), most childhood brain tumors arise <b>infratentorially</b> — in the cerebellum or brainstem. The most common pediatric CNS tumor is <b>medulloblastoma</b> of the cerebellum.
+</div>
+
+<p><b>Classic presentation of pediatric posterior fossa tumor:</b></p>
+<ul>
+  <li>Morning headaches, vomiting (especially on waking)</li>
+  <li><b>Cerebellar signs</b> — unsteady gait, ataxia, dysmetria, intention tremor</li>
+  <li>Obstructive hydrocephalus from 4th ventricle compression — papilledema, increased head circumference in infants</li>
+  <li>Cranial nerve palsies if brainstem involvement</li>
+</ul>
+
+<h3 id="u5-emb">5.3 Embryonal Tumors — The "-blastomas"</h3>
+
+<table>
+  <tr><th>Tumor</th><th>Origin / location</th><th>Classic age</th><th>Hallmark presentation</th></tr>
+  <tr><td><b>Wilms tumor (nephroblastoma)</b></td><td>Kidney</td><td>2–5 years</td><td>Painless <b>unilateral abdominal mass</b>, sometimes with hematuria; the tumor stays confined to the kidney early</td></tr>
+  <tr><td><b>Neuroblastoma</b></td><td>Adrenal medulla / sympathetic chain</td><td>&lt; 5 years (often &lt; 2)</td><td>Abdominal mass <b>with calcifications</b>, irritability, hypertension, may cross the midline; high urinary catecholamine metabolites (HVA, VMA)</td></tr>
+  <tr><td><b>Retinoblastoma</b></td><td>Retina (RB1 gene)</td><td>&lt; 5 years</td><td><b>Leukocoria</b> ("white pupil reflex"), strabismus; can be hereditary (germline RB1 mutation, often bilateral) or sporadic</td></tr>
+  <tr><td><b>Hepatoblastoma</b></td><td>Liver</td><td>&lt; 3 years</td><td>Abdominal mass, ↑ AFP</td></tr>
+</table>
+
+<div class="box tip">
+<b>The abdominal mass distinction:</b><br>
+<b>Wilms</b> = kidney, unilateral, does NOT cross midline.<br>
+<b>Neuroblastoma</b> = adrenal/sympathetic, often crosses midline, calcifications on imaging, urinary HVA/VMA elevated.<br>
+This pair shows up on every pediatric oncology test.
+</div>
+
+<div class="box acro">
+<b>"Leukocoria = retinoblastoma."</b> White pupil reflex on a flash photograph in a young child is retinoblastoma until proven otherwise. Examine the other eye too — bilateral disease suggests a germline RB1 mutation and additional cancer risk later in life.
+</div>
+
+<div class="box path">
+<b>Common features of childhood cancer</b> compared to adult cancer:
+<ul>
+  <li>More often arise from embryonal tissues</li>
+  <li>More often associated with germline predisposition</li>
+  <li>Generally <b>more chemo-sensitive</b> and curable</li>
+  <li>Less linked to environmental carcinogen exposure</li>
+  <li>Lymphoma, leukemia, and CNS tumors dominate the case list</li>
+</ul>
+</div>
+
+<h3 id="u5-q">Practice Questions — Pediatric Cancers</h3>
+
+<div class="q">
+<div class="qhead">Q18. A 4-year-old has fatigue, fever, frequent infections, pallor, petechiae. CBC shows anemia, thrombocytopenia, and increased immature white blood cells. Most likely diagnosis?</div>
+<div class="opts">
+A. Wilms tumor<br>
+B. Neuroblastoma<br>
+C. Acute lymphoblastic leukemia (ALL)<br>
+D. Medulloblastoma
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>C.</b> Marrow infiltration by lymphoblasts → pancytopenia + circulating blasts → anemia (fatigue, pallor), thrombocytopenia (petechiae), neutropenia (infection). Classic ALL.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q19. A 3-year-old presents with a firm unilateral abdominal mass and hematuria. Imaging shows the tumor is confined to the kidney. Most likely diagnosis?</div>
+<div class="opts">
+A. Neuroblastoma<br>
+B. Wilms tumor (nephroblastoma)<br>
+C. Hepatoblastoma<br>
+D. Lymphoma
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Painless unilateral abdominal mass + hematuria + tumor confined to kidney = Wilms tumor. Does not cross the midline.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q20. A 2-year-old has abdominal swelling and irritability. Imaging shows an adrenal mass with calcifications. Best diagnosis?</div>
+<div class="opts">
+A. Wilms tumor<br>
+B. Neuroblastoma<br>
+C. Medulloblastoma<br>
+D. Retinoblastoma
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Adrenal location + calcifications + young child = neuroblastoma. May cross midline; urinary catecholamine metabolites (HVA, VMA) elevated.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q21. <b>Dropdown.</b> A child has a white pupil reflection (leukocoria). The tumor is [select: retinoblastoma / neuroblastoma / glioblastoma], which originates from [select: retinal cells / sympathetic ganglia / glial cells].</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>Retinoblastoma · retinal cells.</b> Leukocoria is the cardinal sign. The RB1 gene is the prototypical tumor suppressor (Knudson two-hit hypothesis).</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q22. A child has morning headaches, vomiting, unsteady gait, and poor coordination. Imaging shows a posterior fossa mass. Best diagnosis?</div>
+<div class="opts">
+A. Wilms tumor<br>
+B. Cerebellar tumor (most commonly medulloblastoma)<br>
+C. Neuroblastoma<br>
+D. Acute leukemia
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Headache + vomiting + ataxia + posterior fossa mass = cerebellar tumor; medulloblastoma is the most common pediatric CNS tumor and classically presents this way.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q23. <b>Select all that apply.</b> Which features are common in childhood cancers?</div>
+<div class="opts">
+A. Frequent origin from embryonal tissue (-blastomas)<br>
+B. Often associated with germline predisposition<br>
+C. Tend to be more chemo-responsive than adult cancers<br>
+D. Driven primarily by long-term carcinogen exposure (smoking, alcohol)<br>
+E. Hematopoietic and CNS malignancies are particularly common
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>A, B, C, E.</b> D is incorrect — childhood cancers are usually NOT driven by accumulated environmental exposures, which is one reason they're biologically different from adult cancers.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q24. <b>Order.</b> Place these events of neuroblastoma development in correct order:</div>
+<div class="opts">
+— Mass effect on adjacent structures and metastasis<br>
+— Mutations accumulate in neural crest progenitor cells<br>
+— Abnormal proliferation of immature neuroblasts in the adrenal medulla or sympathetic chain<br>
+— Tumor enlarges with calcifications and produces excess catecholamines
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>Correct order:</b> Mutations accumulate in neural crest progenitors → abnormal proliferation in adrenal/sympathetic chain → tumor enlarges with calcifications and catecholamine excess → mass effect and metastasis.</div>
+</details>
+</div>
+
+</section>
+
+<!-- ========================= UNIT 6 ========================= -->
+<section id="u6" class="unit6">
+<h2>Unit 6 &nbsp;•&nbsp; Adolescent Cancers &nbsp;<span class="chip c6">LO3</span></h2>
+
+<h3 id="u6-bone">6.1 Primary Bone Tumors</h3>
+
+<table>
+  <tr><th>Tumor</th><th>Age</th><th>Location</th><th>Imaging clue</th></tr>
+  <tr><td><b>Osteosarcoma</b></td><td>10–20 years (peak)</td><td>Metaphysis of long bones — distal femur, proximal tibia, proximal humerus</td><td>"Sunburst" pattern, Codman triangle (periosteal reaction); destructive lesion</td></tr>
+  <tr><td><b>Ewing sarcoma</b></td><td>5–25 years</td><td>Diaphysis of long bones; pelvis</td><td>"Onion-skin" periosteal reaction; t(11;22) translocation</td></tr>
+  <tr><td><b>Osteoid osteoma</b></td><td>10–20 years</td><td>Long bones (often femur/tibia)</td><td>Small lucent nidus; pain relieved by NSAIDs (benign)</td></tr>
+</table>
+
+<div class="box path">
+<b>Classic osteosarcoma vignette:</b> "Adolescent with persistent knee or upper-arm pain and swelling; imaging reveals destructive lesion of distal femur or proximal humerus with periosteal reaction." Survivors of hereditary retinoblastoma are at much higher risk of osteosarcoma later — both involve RB1.
+</div>
+
+<h3 id="u6-lymph">6.2 Lymphomas</h3>
+
+<table>
+  <tr><th></th><th>Hodgkin lymphoma</th><th>Non-Hodgkin lymphoma</th></tr>
+  <tr><td>Age peak</td><td>Bimodal: 15–35 and &gt;55</td><td>All ages, increases with age</td></tr>
+  <tr><td>Spread</td><td>Contiguous, predictable from one node group to next</td><td>Non-contiguous, often extranodal</td></tr>
+  <tr><td>Histology</td><td><b>Reed-Sternberg cells</b> (bilobed "owl-eye" cells)</td><td>Various — diffuse large B-cell, follicular, Burkitt, etc.</td></tr>
+  <tr><td>Symptoms</td><td>Painless cervical lymphadenopathy, fever, night sweats, weight loss ("B symptoms")</td><td>Painless lymphadenopathy; B symptoms in aggressive types</td></tr>
+  <tr><td>Prognosis</td><td>Very good with treatment</td><td>Highly variable; depends on subtype</td></tr>
+</table>
+
+<div class="box tip">
+<b>"Adolescent with painless neck swelling, fever, and night sweats"</b> = think Hodgkin lymphoma. Confirm with lymph node biopsy looking for Reed-Sternberg cells. Treatment is highly effective.
+</div>
+
+<div class="box acro">
+<b>B symptoms:</b> drenching night sweats, fevers, unexplained weight loss &gt; 10% in 6 months. Their presence stages the disease as "B" (vs "A" without them) and signals more aggressive disease.
+</div>
+
+<h4>Soft tissue sarcomas in young patients</h4>
+<ul>
+  <li><b>Rhabdomyosarcoma</b> — malignant tumor of skeletal muscle origin; most common soft tissue sarcoma in children. Head/neck, GU tract, extremities.</li>
+  <li><b>Liposarcoma, leiomyosarcoma, fibrosarcoma</b> — older patients more typically.</li>
+  <li>Sarcomas tend to spread <b>hematogenously</b> (often to lung) rather than lymphatically.</li>
+</ul>
+
+<h3 id="u6-q">Practice Questions — Adolescent Cancers</h3>
+
+<div class="q">
+<div class="qhead">Q25. A 14-year-old has persistent bone pain and swelling in the upper arm. Imaging shows a destructive lesion of the humerus with periosteal reaction. Most likely diagnosis?</div>
+<div class="opts">
+A. Ewing sarcoma<br>
+B. Osteosarcoma<br>
+C. Osteoid osteoma<br>
+D. Multiple myeloma
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Adolescent + metaphysis of long bone (proximal humerus) + destructive lesion with periosteal reaction = osteosarcoma. Ewing typically arises from the diaphysis and shows onion-skin periosteum.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q26. A 17-year-old has painless neck swelling, fever, night sweats. Most likely diagnosis?</div>
+<div class="opts">
+A. Acute myeloid leukemia<br>
+B. Hodgkin lymphoma<br>
+C. Wilms tumor<br>
+D. Medulloblastoma
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Painless lymphadenopathy + B symptoms (fever, night sweats, weight loss) in an adolescent = Hodgkin lymphoma. Biopsy shows Reed-Sternberg cells.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q27. <b>Select all that apply.</b> Which cancers develop from muscle or other soft tissues?</div>
+<div class="opts">
+A. Rhabdomyosarcoma<br>
+B. Leiomyosarcoma<br>
+C. Liposarcoma<br>
+D. Hodgkin lymphoma<br>
+E. Adenocarcinoma
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>A, B, C.</b> Rhabdomyosarcoma (skeletal muscle), leiomyosarcoma (smooth muscle), liposarcoma (adipose). D is hematopoietic; E is epithelial.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q28. <b>Select all that apply.</b> Which cancers are blood or immune system malignancies seen in adolescents?</div>
+<div class="opts">
+A. Acute lymphoblastic leukemia<br>
+B. Acute myeloid leukemia<br>
+C. Hodgkin lymphoma<br>
+D. Non-Hodgkin lymphoma<br>
+E. Osteosarcoma
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>A, B, C, D.</b> E (osteosarcoma) is a bone tumor, not a blood/immune system malignancy.</div>
+</details>
+</div>
+
+</section>
+
+<!-- ========================= APPENDIX ========================= -->
+<section id="appx">
+<h2 style="background:#374151;">Appendix &nbsp;•&nbsp; Top Missteps & Master Mnemonics</h2>
+
+<h3 style="color:#374151;border-bottom-color:#9ca3af;">Top 15 Week 3 Missteps</h3>
+<table>
+<tr><th>#</th><th>The trap</th><th>What's actually true</th></tr>
+<tr><td>1</td><td>"Oncogene activation needs both alleles."</td><td>Only ONE allele needs to be activated (gain of function = dominant). Tumor suppressors need both lost.</td></tr>
+<tr><td>2</td><td>"All -omas are benign."</td><td>Lymphoma, melanoma, hepatoma, seminoma are malignant despite the "-oma" suffix.</td></tr>
+<tr><td>3</td><td>"Dysplasia is cancer."</td><td>Pre-cancerous, often reversible. Carcinoma in situ is the immediate precursor; invasive crosses the basement membrane.</td></tr>
+<tr><td>4</td><td>"Stage and grade are the same."</td><td>Grade = differentiation (microscope). Stage = spread (TNM).</td></tr>
+<tr><td>5</td><td>"Cachexia is just not eating enough."</td><td>Cytokine-driven hypermetabolism — proteolysis, lipolysis, anorexia, insulin resistance. Eating more does not fix it.</td></tr>
+<tr><td>6</td><td>"Wilms and neuroblastoma are the same."</td><td>Wilms = kidney, doesn't cross midline. Neuroblastoma = adrenal/sympathetic, often crosses midline, calcifications, ↑ HVA/VMA.</td></tr>
+<tr><td>7</td><td>"Leukocoria is harmless."</td><td>Leukocoria = retinoblastoma until proven otherwise. Urgent referral.</td></tr>
+<tr><td>8</td><td>"Childhood cancers are caused by smoking."</td><td>Children's cancers are largely <b>not</b> driven by environmental carcinogens; they often arise from embryonal tissue with germline factors.</td></tr>
+<tr><td>9</td><td>"Hodgkin and non-Hodgkin lymphoma are clinically identical."</td><td>Hodgkin spreads contiguously, has Reed-Sternberg cells, and has bimodal age distribution.</td></tr>
+<tr><td>10</td><td>"Osteosarcoma occurs in the diaphysis."</td><td>Osteosarcoma = <b>metaphysis</b> (distal femur, proximal tibia, proximal humerus). Ewing = diaphysis.</td></tr>
+<tr><td>11</td><td>"VEGF blockers cure cancer."</td><td>Anti-VEGF therapy slows angiogenesis but is one tool among many; resistance develops.</td></tr>
+<tr><td>12</td><td>"BRCA1/2 mutations only matter for breast cancer."</td><td>Also raise risk for ovarian, prostate, pancreatic, and others.</td></tr>
+<tr><td>13</td><td>"Acetaldehyde is a harmless byproduct."</td><td>It's the <b>carcinogenic intermediate</b> of alcohol metabolism that damages DNA.</td></tr>
+<tr><td>14</td><td>"DES affects the mother only."</td><td>Daughters of DES-exposed mothers have ↑ risk of clear cell vaginal/cervical cancer.</td></tr>
+<tr><td>15</td><td>"Obesity is a cardiovascular issue only."</td><td>Obesity drives endometrial, postmenopausal breast, colorectal, kidney, esophageal, pancreatic, and liver cancers.</td></tr>
+</table>
+
+<h3 style="color:#374151;border-bottom-color:#9ca3af;">Master Mnemonic Sheet</h3>
+<table>
+<tr><th>Mnemonic</th><th>Meaning</th></tr>
+<tr><td><b>"Gas vs Brake"</b></td><td>Oncogenes are stuck-on gas pedals; tumor suppressors are broken brakes</td></tr>
+<tr><td><b>Knudson 2-hit</b></td><td>Tumor suppressors require both alleles inactivated (recessive at the cell level)</td></tr>
+<tr><td><b>"Stage = Spread, Grade = Grossness"</b></td><td>Stage = TNM (extent). Grade = differentiation (microscopic appearance).</td></tr>
+<tr><td><b>"Big 4 mets"</b></td><td>Most common hematogenous metastasis sites: liver, lung, bone, brain</td></tr>
+<tr><td><b>"-carcinoma vs -sarcoma vs leukemia/lymphoma vs -blastoma"</b></td><td>Epithelial vs connective vs hematopoietic vs embryonal malignancies</td></tr>
+<tr><td><b>Malignant -omas</b></td><td>Lymphoma, melanoma, hepatoma, seminoma — exceptions to "-oma = benign" rule</td></tr>
+<tr><td><b>"Wilms = kidney, doesn't cross midline"</b></td><td>vs neuroblastoma which crosses midline and has calcifications</td></tr>
+<tr><td><b>Leukocoria = retinoblastoma</b></td><td>White pupil reflex in young child</td></tr>
+<tr><td><b>"Sunburst metaphysis"</b></td><td>Osteosarcoma imaging</td></tr>
+<tr><td><b>"Onion-skin diaphysis"</b></td><td>Ewing sarcoma imaging</td></tr>
+<tr><td><b>Reed-Sternberg = Hodgkin</b></td><td>Bilobed "owl-eye" cells on biopsy</td></tr>
+<tr><td><b>B symptoms</b></td><td>Drenching night sweats, fever, weight loss &gt; 10% in 6 months</td></tr>
+<tr><td><b>Acetaldehyde = alcohol's bad metabolite</b></td><td>Driver of alcohol-related carcinogenesis</td></tr>
+<tr><td><b>HPV E6 = p53, E7 = Rb</b></td><td>How HPV inactivates two tumor suppressors</td></tr>
+</table>
+
+<h3 style="color:#374151;border-bottom-color:#9ca3af;">Pediatric Cancer Quick Reference</h3>
+<table>
+<tr><th>Pattern</th><th>Cancer</th></tr>
+<tr><td>4yo with fatigue, fever, petechiae, blasts on CBC</td><td>ALL</td></tr>
+<tr><td>3yo with painless unilateral abdominal mass, hematuria</td><td>Wilms tumor</td></tr>
+<tr><td>2yo with adrenal mass + calcifications, ↑ HVA/VMA</td><td>Neuroblastoma</td></tr>
+<tr><td>Toddler with white pupil reflex</td><td>Retinoblastoma</td></tr>
+<tr><td>Child with morning headache, vomiting, ataxia</td><td>Cerebellar tumor (medulloblastoma)</td></tr>
+<tr><td>Adolescent with knee pain, distal femur lesion</td><td>Osteosarcoma</td></tr>
+<tr><td>Teen with diaphyseal bone lesion, onion-skin periosteum</td><td>Ewing sarcoma</td></tr>
+<tr><td>Teen with painless cervical lymphadenopathy + B symptoms</td><td>Hodgkin lymphoma</td></tr>
+</table>
+
+<h3 style="color:#374151;border-bottom-color:#9ca3af;">Week 3 Study Strategy</h3>
+<ul>
+  <li><b>Drill the gas-vs-brake gene framework first.</b> Half the LO1 questions decompose to oncogene vs tumor suppressor logic.</li>
+  <li><b>Memorize the development cascade.</b> Hyperplasia → dysplasia → CIS → invasive → metastatic. Basement membrane crossing is the milestone.</li>
+  <li><b>Understand cachexia is cytokine-driven, not anorexia.</b> SATA traps will include "the patient is just not eating." That's wrong.</li>
+  <li><b>Pair every risk factor with its mechanism.</b> Smoking → carcinogens + metaplasia. Alcohol → acetaldehyde. Obesity → inflammation + insulin + estrogen.</li>
+  <li><b>Match each pediatric tumor to its single best diagnostic clue.</b> Crossing the midline (neuroblastoma), confined to kidney (Wilms), white pupil (retinoblastoma), posterior fossa ataxia (medulloblastoma).</li>
+  <li><b>Know which "-omas" are malignant.</b> Lymphoma, melanoma, hepatoma, seminoma. Easy points if you have it.</li>
+  <li><b>For adolescent cancers, lock down osteosarcoma vs Ewing</b> and Hodgkin lymphoma's classic vignette.</li>
+</ul>
+
+<p class="small" style="margin-top:16px;">SCI225 Week 3 Study Guide — built from the Week 3 learning objectives covering cancer biology, tumor behavior, naming/grading/staging, cancer epidemiology, and pediatric and adolescent cancers. Made by Dr. Vidya Aggrawal to teach the concepts tested, not the exam questions themselves. Same color-coded format as the Week 1, 2, 4, and 5 guides. Print for paper, or use in-browser with collapsible practice answers.</p>
+</section>
+
+</main>
+</div>
+</body>
+</html>

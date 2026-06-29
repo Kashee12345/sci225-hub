@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SCI225 Week 10 &middot; Pulmonary System Study Guide &middot; Dr. Vidya</title>
+<style>
+  :root{
+    --ink:#1B2733; --muted:#5A6573; --line:#DCE3EA; --bg:#F4F7FA;
+    --pri:#1565C0; --pri-dk:#0D47A1; --pri-lt:#E3F2FD;
+    --s1:#1565C0; --s1lt:#E3F2FD;
+    --s2:#00838F; --s2lt:#E0F7FA;
+    --s3:#2E7D32; --s3lt:#E8F5E9;
+    --amber:#B7791F; --amberlt:#FBF1DD;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0; font-family:"Segoe UI",Arial,Helvetica,sans-serif; color:var(--ink); background:var(--bg); line-height:1.62;}
+  .wrap{max-width:1000px; margin:0 auto; padding:0 18px 80px;}
+  a{color:var(--pri);}
+  h1,h2,h3,h4{line-height:1.22;}
+
+  header.hero{background:linear-gradient(135deg,#0D47A1 0%,#1565C0 55%,#1E88E5 100%); color:#fff; border-radius:0 0 22px 22px; padding:46px 36px 40px; margin:0 -18px 8px; position:relative; overflow:hidden; box-shadow:0 10px 30px rgba(13,71,161,.32);}
+  header.hero .blob{position:absolute; border-radius:50%; background:rgba(255,255,255,.07);}
+  .kicker{font-size:12px; letter-spacing:3px; font-weight:700; opacity:.92; margin-bottom:10px;}
+  header.hero h1{margin:0 0 10px; font-size:38px;}
+  header.hero p{margin:0; font-size:17px; opacity:.96; max-width:660px;}
+  .herometa{margin-top:18px; display:flex; flex-wrap:wrap; gap:8px;}
+  .chip{display:inline-block; background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.28); padding:5px 12px; border-radius:20px; font-size:12.5px; font-weight:600;}
+
+  .toolbar{display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between; margin:18px 0 6px;}
+  .btn{display:inline-block; border:none; cursor:pointer; text-decoration:none; font-weight:700; border-radius:30px; padding:11px 22px; font-size:14px; box-shadow:0 4px 12px rgba(0,0,0,.16);}
+  .btn-print{background:linear-gradient(135deg,#0D47A1,#1565C0); color:#fff;}
+  .btn-light{background:#fff; color:var(--pri); border:1.5px solid var(--pri);}
+  .btn:hover{filter:brightness(1.06);}
+
+  .toc{background:#fff; border:1px solid var(--line); border-radius:14px; padding:18px 20px; margin:14px 0 26px; box-shadow:0 2px 10px rgba(0,0,0,.04);}
+  .toc h2{margin:0 0 12px; font-size:16px; letter-spacing:.5px; text-transform:uppercase; color:var(--muted);}
+  .toc-grid{display:grid; grid-template-columns:1fr 1fr 1fr; gap:18px;}
+  .toc-col h3{margin:0 0 8px; font-size:14px;}
+  .toc-col.c1 h3{color:var(--s1);} .toc-col.c2 h3{color:var(--s2);} .toc-col.c3 h3{color:var(--s3);}
+  .toc a{display:block; color:var(--ink); text-decoration:none; font-size:13.4px; padding:4px 8px; border-radius:6px;}
+  .toc a:hover{background:var(--pri-lt);}
+  @media (max-width:760px){ .toc-grid{grid-template-columns:1fr;} }
+
+  .sec{margin:40px 0 6px; padding:14px 20px; border-radius:12px; color:#fff; display:flex; align-items:center; gap:14px;}
+  .sec.one{background:linear-gradient(135deg,#1565C0,#0D47A1);}
+  .sec.two{background:linear-gradient(135deg,#00838F,#005662);}
+  .sec.three{background:linear-gradient(135deg,#2E7D32,#1B5E20);}
+  .sec .num{font-size:13px; font-weight:800; letter-spacing:2px; background:rgba(255,255,255,.2); padding:6px 12px; border-radius:8px; white-space:nowrap;}
+  .sec h2{margin:0; font-size:22px;}
+  .sec p{margin:3px 0 0; font-size:13.5px; opacity:.95;}
+
+  details.topic{background:#fff; border:1px solid var(--line); border-left-width:5px; border-radius:10px; margin:12px 0; overflow:hidden; box-shadow:0 1px 6px rgba(0,0,0,.04);}
+  details.topic.one{border-left-color:var(--s1);}
+  details.topic.two{border-left-color:var(--s2);}
+  details.topic.three{border-left-color:var(--s3);}
+  details.topic > summary{cursor:pointer; list-style:none; padding:16px 20px; font-weight:700; font-size:16.5px; display:flex; align-items:center; gap:12px;}
+  details.topic > summary::-webkit-details-marker{display:none;}
+  details.topic > summary .tnum{font-size:12.5px; font-weight:800; color:#fff; border-radius:7px; padding:4px 9px; white-space:nowrap;}
+  details.topic.one > summary .tnum{background:var(--s1);}
+  details.topic.two > summary .tnum{background:var(--s2);}
+  details.topic.three > summary .tnum{background:var(--s3);}
+  details.topic > summary .arrow{margin-left:auto; transition:transform .2s; color:var(--muted); font-size:14px;}
+  details.topic[open] > summary .arrow{transform:rotate(90deg);}
+  details.topic[open] > summary{border-bottom:1px solid var(--line);}
+  .body{padding:6px 22px 20px;}
+  .body h4{margin:18px 0 6px; font-size:15.5px; color:var(--pri-dk);}
+  .body p{margin:8px 0;}
+  .body ul{margin:8px 0 8px; padding-left:20px;}
+  .body li{margin:5px 0;}
+
+  .keyidea{background:var(--pri-lt); border-left:4px solid var(--pri); border-radius:0 8px 8px 0; padding:12px 16px; margin:14px 0; font-size:14.5px;}
+  .pearl{background:var(--amberlt); border-left:4px solid var(--amber); border-radius:0 8px 8px 0; padding:12px 16px; margin:14px 0; font-size:14.5px;}
+  .mnem{background:#ECF6F1; border:1px dashed #2E9E78; border-radius:8px; padding:10px 14px; margin:14px 0; font-size:14px;}
+  .mnem .lbl{font-weight:800; color:#1E7A57; letter-spacing:.5px; font-size:12px; text-transform:uppercase;}
+
+  table.dt{width:100%; border-collapse:collapse; margin:14px 0; font-size:13.7px;}
+  table.dt th{background:#1F3242; color:#fff; text-align:left; padding:9px 11px; font-weight:600;}
+  table.dt td{border:1px solid var(--line); padding:9px 11px; vertical-align:top;}
+  table.dt tr:nth-child(even) td{background:#F7FAFC;}
+  .up{color:#C62828; font-weight:800;} .dn{color:#1565C0; font-weight:800;} .nl{color:#5A6573;}
+
+  .practice{background:#FBFCFE; border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin:16px 0;}
+  .practice .ptag{display:inline-block; background:var(--s2); color:#fff; font-size:11px; font-weight:800; letter-spacing:1px; padding:3px 10px; border-radius:20px; text-transform:uppercase;}
+  .q{font-weight:600; margin:10px 0 6px;}
+  .opts{margin:6px 0 6px; padding-left:6px;}
+  .opts div{padding:3px 0;}
+  .reveal{cursor:pointer; border:none; background:var(--s2); color:#fff; font-weight:700; font-size:12.5px; padding:7px 14px; border-radius:20px; margin-top:6px;}
+  .reveal:hover{filter:brightness(1.08);}
+  .ans{display:none; margin-top:10px; background:#EEF7F1; border-left:4px solid #2E9E78; border-radius:0 8px 8px 0; padding:11px 14px; font-size:14px;}
+  .ans.show{display:block;}
+  .ans .correct{font-weight:800; color:#1E7A57;}
+
+  .fig{background:#fff; border:1px solid var(--line); border-radius:10px; padding:14px; margin:16px 0; text-align:center;}
+  .fig figcaption{font-size:12.5px; color:var(--muted); margin-top:8px;}
+
+  .cheat{background:#fff; border:2px solid var(--pri); border-radius:14px; padding:8px 22px 22px; margin:14px 0;}
+  .gloss dt{font-weight:700; color:var(--pri-dk); margin-top:12px;}
+  .gloss dd{margin:2px 0 0; padding-left:0;}
+
+  footer.foot{text-align:center; color:var(--muted); font-size:13px; margin-top:50px; padding-top:22px; border-top:1px solid var(--line);}
+
+  @media print{
+    body{background:#fff;} .toolbar,.toc{display:none;}
+    details.topic{break-inside:avoid; box-shadow:none;}
+    header.hero{box-shadow:none;}
+    .ans{display:block !important;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="blob" style="width:230px;height:230px;right:-40px;top:-50px;"></div>
+    <div class="blob" style="width:150px;height:150px;right:130px;bottom:-60px;"></div>
+    <div class="kicker">SCI225 &middot; PATHOPHYSIOLOGY &middot; WEEK 10 &middot; NIGHTINGALE COLLEGE</div>
+    <h1>The Pulmonary System</h1>
+    <p>Ventilation, gas exchange, and the disorders that disrupt them &mdash; from V/Q mismatch and ABGs to obstructive vs restrictive disease, pediatric airways, and the bedside signs that follow.</p>
+    <div class="herometa">
+      <span class="chip">Dr. Vidya Aggrawal</span>
+      <span class="chip">Module 10</span>
+      <span class="chip">Structure &middot; Alterations &middot; Pediatric</span>
+      <span class="chip">9 topics + cheat sheet</span>
+    </div>
+  </header>
+
+  <div class="toolbar">
+    <div style="font-size:13.5px;color:var(--muted);">Click any topic to expand. Try each practice question <b>before</b> revealing the answer.</div>
+    <div style="display:flex;gap:10px;">
+      <button class="btn btn-light" onclick="toggleAll()" id="toggleBtn">Expand all</button>
+      <button class="btn btn-print" onclick="savePDF()">&#128424;&nbsp; Save as PDF</button>
+    </div>
+  </div>
+
+  <nav class="toc">
+    <h2>What's inside</h2>
+    <div class="toc-grid">
+      <div class="toc-col c1">
+        <h3>1 &middot; Structure &amp; Function</h3>
+        <a href="#t1">1. Ventilation &amp; gas exchange</a>
+        <a href="#t2">2. Control of breathing &amp; chemoreceptors</a>
+        <a href="#t3">3. CO&#8322;, carbonic acid &amp; ABGs</a>
+      </div>
+      <div class="toc-col c2">
+        <h3>2 &middot; Alterations</h3>
+        <a href="#t4">4. Obstructive vs restrictive disease</a>
+        <a href="#t5">5. Hypoxemia &amp; V/Q mismatch</a>
+        <a href="#t6">6. Alveolar &amp; pleural disorders</a>
+        <a href="#t7">7. Systemic consequences</a>
+      </div>
+      <div class="toc-col c3">
+        <h3>3 &middot; Pediatric &amp; Clinical</h3>
+        <a href="#t8">8. Neonatal respiratory distress</a>
+        <a href="#t9">9. Pediatric airway &amp; environment</a>
+        <a href="#cheat">&#11088; Cheat sheet</a>
+        <a href="#gloss">&#128218; Glossary</a>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- SECTION 1 -->
+  <div class="sec one" id="sec1"><span class="num">SECTION 1</span><div><h2>Structure &amp; Function</h2><p>How air moves, how gases cross the membrane, and how breathing is controlled &mdash; the baseline every disorder disrupts.</p></div></div>
+
+  <!-- T1 -->
+  <details class="topic one" id="t1">
+    <summary><span class="tnum">1</span> Ventilation &amp; Gas Exchange <span class="arrow">&#9654;</span></summary>
+    <div class="body">
+      <p>Two jobs: <b>ventilation</b> (moving air in/out) and <b>gas exchange</b> (O&#8322; in, CO&#8322; out across the <b>alveolar&ndash;capillary membrane</b>). Both must work, and both must be <b>matched</b> &mdash; ventilation (air) needs perfusion (blood) right next to it.</p>
+      <figure class="fig">
+        <svg viewBox="0 0 680 150" width="100%" style="max-width:640px" role="img" aria-label="Alveolar-capillary membrane diffusion">
+          <g font-family="Segoe UI,Arial" font-size="12">
+            <ellipse cx="160" cy="75" rx="120" ry="58" fill="#E3F2FD" stroke="#1565C0"/>
+            <text x="160" y="58" text-anchor="middle" font-weight="700" fill="#0D47A1">Alveolus (air)</text>
+            <text x="160" y="78" text-anchor="middle">O&#8322; in &rarr;</text>
+            <text x="160" y="96" text-anchor="middle">&larr; CO&#8322; out</text>
+            <rect x="300" y="50" width="30" height="50" fill="#FFE0B2" stroke="#B7791F"/>
+            <text x="315" y="120" text-anchor="middle" font-size="10" fill="#8A5A00">membrane</text>
+            <ellipse cx="470" cy="75" rx="120" ry="58" fill="#FCE4EC" stroke="#C2185B"/>
+            <text x="470" y="58" text-anchor="middle" font-weight="700" fill="#AD1457">Capillary (blood)</text>
+            <text x="470" y="80" text-anchor="middle">picks up O&#8322;</text>
+            <text x="470" y="98" text-anchor="middle">drops off CO&#8322;</text>
+            <line x1="282" y1="75" x2="300" y2="75" stroke="#1565C0" stroke-width="2"/>
+            <line x1="330" y1="75" x2="348" y2="75" stroke="#C2185B" stroke-width="2"/>
+            <text x="340" y="20" text-anchor="middle" fill="#1B2733" font-weight="700">Gas exchange depends on a THIN, dry membrane with big surface area</text>
+          </g>
+        </svg>
+        <figcaption>Anything that <b>thickens</b> the membrane, <b>fills it with fluid</b>, or <b>reduces surface area</b> slows diffusion and causes hypoxemia.</figcaption>
+      </figure>
+      <h4>What slows diffusion (&rarr; hypoxemia)</h4>
+      <table class="dt">
+        <tr><th>Problem</th><th>What changes</th><th>Example</th></tr>
+        <tr><td><b>Thickened membrane</b></td><td>O&#8322; takes longer to cross</td><td>Pulmonary fibrosis</td></tr>
+        <tr><td><b>Fluid in the way</b></td><td>&uarr; diffusion distance</td><td>Pulmonary edema, pneumonia exudate</td></tr>
+        <tr><td><b>Lost surface area</b></td><td>Fewer working alveoli</td><td>Emphysema, atelectasis, lung compression</td></tr>
+        <tr><td><b>Low inspired O&#8322;</b></td><td>&darr; alveolar O&#8322; to begin with</td><td>High altitude (low FiO&#8322;)</td></tr>
+      </table>
+      <div class="keyidea"><b>Key idea:</b> the membrane works best when it is <b>thin, dry, and large</b>. Fibrosis thickens it; edema and pneumonia put <b>fluid</b> in the path (increasing diffusion distance); emphysema and atelectasis <b>destroy or collapse</b> surface area. All roads lead to <b>hypoxemia</b>.</div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q1. A patient with pulmonary fibrosis develops hypoxemia. Which mechanism explains it?</p>
+        <div class="opts"><div>A. Impaired diffusion across a thickened alveolar&ndash;capillary membrane</div><div>B. Increased alveolar elasticity speeding O&#8322; diffusion</div><div>C. Decreased membrane thickness</div><div>D. Better ventilation overcoming the problem</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Fibrosis <b>thickens</b> and stiffens the membrane, slowing O&#8322; transfer into the blood. It reduces (not increases) elasticity, and ventilation can't overcome a diffusion barrier.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q2. Why does pulmonary edema reduce oxygenation?</p>
+        <div class="opts"><div>A. Alveolar fluid increases the diffusion distance for O&#8322;</div><div>B. Alveolar fluid shortens the diffusion distance</div><div>C. Less interstitial fluid</div><div>D. Increased surfactant</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Fluid in and around the alveoli lengthens the path O&#8322; must travel into the capillary, slowing diffusion &rarr; hypoxemia and dyspnea. (Pneumonia does the same with inflammatory <b>exudate</b>.)</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- T2 -->
+  <details class="topic one" id="t2">
+    <summary><span class="tnum">2</span> Control of Breathing &amp; Chemoreceptors <span class="arrow">&#9654;</span></summary>
+    <div class="body">
+      <p>The <b>respiratory center</b> in the brainstem sets the rate and depth of breathing, guided by chemoreceptors that sense the blood.</p>
+      <ul>
+        <li><b>Central chemoreceptors</b> (brainstem) &mdash; mainly sense <b>CO&#8322;/pH</b>; the strongest day-to-day driver of breathing.</li>
+        <li><b>Peripheral chemoreceptors</b> (carotid &amp; aortic bodies) &mdash; sense <b>low O&#8322;</b> (hypoxemia); they kick in to drive breathing when oxygen falls.</li>
+      </ul>
+      <div class="keyidea"><b>Key idea &mdash; the hypoxemia response:</b> when arterial O&#8322; drops, the <b>peripheral chemoreceptors</b> fire, telling the brainstem to <b>increase rate and depth</b> &rarr; <b>hyperventilation / tachypnea</b>. It's a compensation to pull in more oxygen.</div>
+      <div class="pearl"><b>Pearl:</b> tachypnea, nasal flaring, and accessory-muscle use are all signs of <b>increased respiratory drive / work of breathing</b> &mdash; the body trying to fix a gas-exchange problem. A <i>falling</i> rate in a tiring patient is ominous (drive is failing).</div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q1. A patient with hypoxemia begins to hyperventilate. Which mechanism explains this?</p>
+        <div class="opts"><div>A. Increased stimulation of peripheral chemoreceptors</div><div>B. Decreased chemoreceptor stimulation</div><div>C. Reduced chemoreceptor sensitivity</div><div>D. Impaired chemoreceptor signaling</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Low arterial O&#8322; stimulates the peripheral chemoreceptors (carotid/aortic bodies), which signal the brainstem to raise rate and depth &rarr; hyperventilation. The other options would <i>blunt</i> the response.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q2. A patient at high altitude develops hypoxemia. Which mechanism explains it?</p>
+        <div class="opts"><div>A. Decreased inspired O&#8322; concentration lowering alveolar O&#8322;</div><div>B. Increased inspired O&#8322;</div><div>C. Increased pulmonary perfusion</div><div>D. Impaired ventilation raising alveolar O&#8322;</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> At altitude the <b>fraction of inspired O&#8322; (FiO&#8322;) and barometric pressure are lower</b>, so alveolar O&#8322; falls &mdash; the lungs are normal, but there's less oxygen to load. The body responds by hyperventilating.</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- T3 -->
+  <details class="topic one" id="t3">
+    <summary><span class="tnum">3</span> CO&#8322;, Carbonic Acid &amp; Reading ABGs <span class="arrow">&#9654;</span></summary>
+    <div class="body">
+      <p>The lungs are a major <b>acid&ndash;base</b> organ because <b>CO&#8322; is an acid</b>. Dissolved CO&#8322; + water &rarr; <b>carbonic acid</b>, which lowers pH. So how much you breathe directly sets your blood acidity.</p>
+      <div class="keyidea"><b>The core relationship:</b> <b>Hypoventilation &rarr; CO&#8322; retained &rarr; more carbonic acid &rarr; pH falls = respiratory ACIDOSIS.</b> &nbsp; <b>Hyperventilation &rarr; CO&#8322; blown off &rarr; less acid &rarr; pH rises = respiratory ALKALOSIS.</b></div>
+      <h4>Normal ABG values</h4>
+      <table class="dt">
+        <tr><th>Value</th><th>Normal range</th><th>Meaning</th></tr>
+        <tr><td><b>pH</b></td><td>7.35 &ndash; 7.45</td><td>&lt;7.35 acidosis, &gt;7.45 alkalosis</td></tr>
+        <tr><td><b>PaCO&#8322;</b></td><td>35 &ndash; 45 mmHg</td><td>The <b>respiratory</b> number (CO&#8322; = acid)</td></tr>
+        <tr><td><b>PaO&#8322;</b></td><td>80 &ndash; 100 mmHg</td><td>Oxygenation; &lt;80 = hypoxemia</td></tr>
+        <tr><td><b>HCO&#8322;&#8323;</b></td><td>22 &ndash; 26 mEq/L</td><td>The <b>metabolic</b> (kidney) number</td></tr>
+      </table>
+      <table class="dt">
+        <tr><th>Pattern</th><th>pH</th><th>PaCO&#8322;</th><th>Cause</th></tr>
+        <tr><td><b>Respiratory acidosis</b></td><td class="dn">&darr;</td><td class="up">&uarr;</td><td>Hypoventilation (COPD, sedation, fatigue) retains CO&#8322;</td></tr>
+        <tr><td><b>Respiratory alkalosis</b></td><td class="up">&uarr;</td><td class="dn">&darr;</td><td>Hyperventilation (anxiety, early hypoxemia, pain) blows off CO&#8322;</td></tr>
+      </table>
+      <div class="pearl"><b>Pearl &mdash; early vs late hypoxemia:</b> early on, a hypoxemic patient <b>hyperventilates</b> &rarr; CO&#8322; drops &rarr; respiratory <b>alkalosis</b>. As they tire or the airway obstructs, CO&#8322; <b>climbs</b> &rarr; respiratory <b>acidosis</b> &mdash; a danger sign that the patient is failing.</div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q1. A patient with hypoventilation has an elevated PaCO&#8322;. Which change drops the blood pH?</p>
+        <div class="opts"><div>A. Increased carbonic acid formation from retained CO&#8322;</div><div>B. Decreased carbonic acid from retained CO&#8322;</div><div>C. Increased carbonic acid from reduced CO&#8322;</div><div>D. Decreased carbonic acid from reduced CO&#8322;</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Retained CO&#8322; combines with water to form more carbonic acid, lowering pH &mdash; respiratory acidosis.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q2. ABG: pH 7.32, PaCO&#8322; 48, PaO&#8322; 60. Which interpretation fits?</p>
+        <div class="opts"><div>A. Reduced alveolar ventilation causing hypoxemia and respiratory acidosis</div><div>B. Excess ventilation causing hypocapnia and respiratory alkalosis</div><div>C. Isolated diffusion problem with normal CO&#8322;</div><div>D. Metabolic acidosis with normal CO&#8322;</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Low pH + <b>high PaCO&#8322;</b> = respiratory acidosis from hypoventilation, and the low PaO&#8322; shows hypoxemia. (This is Elena's stage-3 ABG in the case study &mdash; her lung was being compressed by pleural fluid.)</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- SECTION 2 -->
+  <div class="sec two" id="sec2"><span class="num">SECTION 2</span><div><h2>Alterations of Pulmonary Function</h2><p>Obstructive vs restrictive disease, the mechanisms of hypoxemia, alveolar/pleural disorders, and the systemic signs that follow.</p></div></div>
+
+  <!-- T4 -->
+  <details class="topic two" id="t4">
+    <summary><span class="tnum">4</span> Obstructive vs Restrictive Lung Disease <span class="arrow">&#9654;</span></summary>
+    <div class="body">
+      <p>The master split. <b>Obstructive</b> = trouble getting air <b>out</b> (high resistance). <b>Restrictive</b> = trouble getting air <b>in</b> (low compliance/stiff lungs).</p>
+      <table class="dt">
+        <tr><th></th><th>Obstructive</th><th>Restrictive</th></tr>
+        <tr><td><b>Problem</b></td><td>&uarr; airway <b>resistance</b> &mdash; can't exhale fully</td><td>&darr; lung <b>compliance</b> &mdash; can't expand fully</td></tr>
+        <tr><td><b>Examples</b></td><td>Asthma, COPD (chronic bronchitis, emphysema), bronchiolitis</td><td>Pulmonary fibrosis, ARDS, atelectasis, pleural effusion, chest-wall problems</td></tr>
+        <tr><td><b>Hallmarks</b></td><td>Wheeze, <b>prolonged expiration</b>, air trapping, barrel chest, pursed-lip breathing</td><td><b>Rapid, shallow</b> breaths (tachypnea), &darr; lung volumes</td></tr>
+        <tr><td><b>Airflow</b></td><td>Air gets in easier than it gets out &rarr; <b>air trapping</b></td><td>Lungs resist filling; breaths are small</td></tr>
+      </table>
+      <h4>Asthma vs emphysema &mdash; the obstruction mechanism</h4>
+      <ul>
+        <li><b>Asthma:</b> reversible <b>bronchial smooth-muscle constriction</b> (+ inflammation, mucus) narrows the lumen &rarr; wheeze and prolonged expiration.</li>
+        <li><b>Emphysema (COPD):</b> <b>destruction of alveolar walls</b> &rarr; loss of elastic recoil &rarr; small airways collapse on exhalation &rarr; <b>air trapping</b>, barrel chest, pursed-lip breathing.</li>
+      </ul>
+      <div class="keyidea"><b>Key idea:</b> obstructive disease raises <b>resistance</b> (the problem is <b>exhaling</b> &mdash; prolonged expiration, air trapping). Restrictive disease lowers <b>compliance</b> (the problem is <b>inhaling</b> &mdash; stiff lungs force rapid, shallow breaths). Severe obstruction traps CO&#8322; &rarr; <b>hypercapnia</b>.</div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q1. A 70-year-old with a 50-pack-year history has a barrel chest, pursed-lip breathing, and prolonged expiration. Which process most directly causes the airflow limitation?</p>
+        <div class="opts"><div>A. Destruction of alveolar walls and narrowing/collapse of small airways</div><div>B. Increased elastic recoil improving expiration</div><div>C. Excess surfactant</div><div>D. Acute reversible bronchospasm only</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> This is emphysema/COPD (Marcus in the case study). Alveolar-wall destruction <b>reduces elastic recoil</b>, so airways collapse on exhalation &rarr; air trapping and chronic obstruction. COPD is chronic, not a single acute bronchospasm.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q2. A patient with restrictive lung disease develops tachypnea. Which mechanism explains it?</p>
+        <div class="opts"><div>A. Decreased lung compliance forcing rapid, shallow breaths</div><div>B. Increased lung compliance</div><div>C. Reduced airway resistance</div><div>D. Improved gas exchange</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Stiff (low-compliance) lungs are hard to expand, so the patient compensates with fast, shallow breathing to move enough air.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q3. A patient with asthma has wheezing and prolonged expiration. The main mechanism is:</p>
+        <div class="opts"><div>A. Bronchial smooth-muscle constriction narrowing the lumen</div><div>B. Decreased airway inflammation</div><div>C. Airway widening</div><div>D. Increased compliance</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Bronchoconstriction (with inflammation and mucus) raises airway resistance, producing wheeze and a prolonged expiratory phase.</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- T5 -->
+  <details class="topic two" id="t5">
+    <summary><span class="tnum">5</span> Hypoxemia Mechanisms &amp; V/Q Mismatch <span class="arrow">&#9654;</span></summary>
+    <div class="body">
+      <p><b>Hypoxemia</b> = low arterial O&#8322;. Gas exchange needs <b>ventilation (V)</b> and <b>perfusion (Q)</b> matched. When they're out of balance, oxygen suffers.</p>
+      <table class="dt">
+        <tr><th>Mechanism</th><th>What happens</th><th>Classic example</th></tr>
+        <tr><td><b>V/Q mismatch</b></td><td>Air &amp; blood not matched in the same area</td><td>Most lung disease</td></tr>
+        <tr><td><b>Dead space</b> (V without Q)</td><td>Alveoli <b>ventilated but not perfused</b></td><td><b>Pulmonary embolism</b> (blocked perfusion)</td></tr>
+        <tr><td><b>Shunt</b> (Q without V)</td><td>Blood passes <b>unventilated</b> alveoli</td><td>Pneumonia, atelectasis, edema (filled/collapsed alveoli)</td></tr>
+        <tr><td><b>Diffusion defect</b></td><td>Thick/fluid-filled membrane</td><td>Fibrosis, edema</td></tr>
+        <tr><td><b>Low inspired O&#8322;</b></td><td>Less O&#8322; to begin with</td><td>High altitude</td></tr>
+        <tr><td><b>Hypoventilation</b></td><td>Not enough air moved</td><td>Sedation, COPD, neuromuscular weakness</td></tr>
+      </table>
+      <div class="keyidea"><b>Key idea &mdash; pulmonary embolism:</b> a clot blocks <b>perfusion</b> to a lung region. Those alveoli are still ventilated but get <b>no blood flow</b> (dead space) &rarr; V/Q mismatch &rarr; hypoxemia. The problem is <b>perfusion, not ventilation</b> &mdash; a favorite exam point.</div>
+      <div class="pearl"><b>Pearl:</b> chronic hypoxemia triggers <b>hypoxic pulmonary vasoconstriction</b> &mdash; vessels in low-oxygen lung clamp down to redirect blood. Over the whole lung (e.g., COPD), this raises pulmonary pressures &rarr; <b>pulmonary hypertension</b> (Topic 7).</div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q1. A patient develops a pulmonary embolism with hypoxemia. Which mechanism explains it?</p>
+        <div class="opts"><div>A. Decreased perfusion causing ventilation&ndash;perfusion mismatch</div><div>B. Increased perfusion causing mismatch</div><div>C. Decreased ventilation as the primary cause</div><div>D. Uniform perfusion causing mismatch</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> The embolus blocks blood flow, so ventilated alveoli aren't perfused (dead space) &rarr; V/Q mismatch &rarr; hypoxemia. PE primarily affects <b>perfusion</b>.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q2. A patient with chronic hypoxemia develops pulmonary hypertension. Which mechanism explains it?</p>
+        <div class="opts"><div>A. Increased pulmonary vasoconstriction</div><div>B. Decreased pulmonary vasoconstriction</div><div>C. Increased pulmonary blood flow</div><div>D. Reduced pulmonary vascular resistance</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Sustained low O&#8322; causes widespread hypoxic pulmonary vasoconstriction, raising pulmonary arterial pressure over time.</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- T6 -->
+  <details class="topic two" id="t6">
+    <summary><span class="tnum">6</span> Alveolar &amp; Pleural Disorders <span class="arrow">&#9654;</span></summary>
+    <div class="body">
+      <p>These conditions fill, collapse, or compress the alveoli &mdash; cutting surface area and oxygenation.</p>
+      <table class="dt">
+        <tr><th>Disorder</th><th>What happens</th><th>Result</th></tr>
+        <tr><td><b>Pulmonary edema</b></td><td>Fluid floods alveoli (often from left heart failure or capillary injury)</td><td>&uarr; diffusion distance &rarr; dyspnea, crackles, hypoxemia</td></tr>
+        <tr><td><b>ARDS</b></td><td>Diffuse alveolar injury &rarr; <b>&uarr; capillary permeability</b> &rarr; protein-rich fluid floods alveoli</td><td>Severe refractory hypoxemia; triggers: sepsis, <b>aspiration</b>, toxic gas, trauma</td></tr>
+        <tr><td><b>Atelectasis</b></td><td>Alveolar <b>collapse</b> (obstruction, compression, or surfactant loss)</td><td>&darr; ventilation in that area &rarr; shunt &rarr; hypoxemia</td></tr>
+        <tr><td><b>Pneumonia</b></td><td>Infection fills alveoli with inflammatory <b>exudate</b></td><td>&uarr; diffusion distance &rarr; hypoxemia, productive cough, fever</td></tr>
+        <tr><td><b>Pleural effusion / empyema</b></td><td>Fluid (or infected pus = empyema) in the <b>pleural space</b> compresses lung</td><td>Restricts expansion &rarr; decreased breath sounds, dyspnea</td></tr>
+      </table>
+      <div class="keyidea"><b>Key idea &mdash; ARDS:</b> the injury (sepsis, aspiration of gastric contents, toxic gas) makes the alveolar&ndash;capillary membrane <b>leaky</b> (increased permeability). Protein-rich fluid floods the alveoli, causing diffuse injury, stiff lungs, and severe hypoxemia that's hard to reverse with oxygen alone.</div>
+      <div class="pearl"><b>Pearl &mdash; pleuritic pain:</b> sharp chest pain that <b>worsens with deep breaths</b> comes from inflammation of the <b>parietal pleura</b> (it has pain fibers; the lung itself doesn't). An infected effusion that becomes thick and purulent is an <b>empyema</b> &mdash; bacteria seed the pleural space with exudate and fibrin (Elena's case).</div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q1. After aspirating gastric contents, a patient develops dyspnea, crackles, and diffuse alveolar injury. Which mechanism best explains it?</p>
+        <div class="opts"><div>A. Increased inflammatory response injuring the alveolar&ndash;capillary membrane</div><div>B. Decreased inflammation</div><div>C. Reduced membrane defense</div><div>D. Impaired alveolar repair</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Aspiration triggers intense inflammation that damages the membrane and floods alveoli with fluid &mdash; the ARDS pattern.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q2. A 64-year-old with pneumonia develops sharp left chest pain worse with inspiration; CXR shows a large pleural fluid collection compressing the lung. What explains the pain?</p>
+        <div class="opts"><div>A. Inflammation of the parietal pleura (pleuritic pain)</div><div>B. Airway obstruction with hyperinflation</div><div>C. Surfactant deficiency causing collapse</div><div>D. Increased pulmonary blood flow</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Pleural inflammation stimulates pain fibers in the parietal pleura, which stretch during lung expansion &mdash; sharp pain that worsens with deep breaths (Elena, Stage 1).</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q3 (SATA). Which reflect worsening alveolar gas exchange when pleural fluid compresses the lung? (a) reduced alveolar ventilation from restricted expansion, (b) less alveolar surface area, (c) V/Q mismatch in compressed regions, (d) increased diffusion distance from fluid compression.</p>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">a, b, c, and d are all correct.</span> Compression restricts expansion (less ventilation), reduces working surface area, mismatches V/Q, and adds a fluid barrier &mdash; together driving hypoxemia.</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- T7 -->
+  <details class="topic two" id="t7">
+    <summary><span class="tnum">7</span> Systemic Consequences: Cyanosis, Clubbing &amp; Cor Pulmonale <span class="arrow">&#9654;</span></summary>
+    <div class="body">
+      <p>Chronic lung disease shows up across the body. These are the recognizable downstream signs.</p>
+      <table class="dt">
+        <tr><th>Sign</th><th>Mechanism</th></tr>
+        <tr><td><b>Cyanosis</b></td><td>&uarr; <b>deoxygenated hemoglobin</b> in capillary blood &rarr; bluish skin/mucous membranes</td></tr>
+        <tr><td><b>Clubbing</b></td><td>Chronic hypoxemia &rarr; <b>growth factors</b> stimulate tissue/vascular proliferation in the fingertips</td></tr>
+        <tr><td><b>Pulmonary hypertension</b></td><td>Chronic hypoxic vasoconstriction &rarr; high pulmonary artery pressure</td></tr>
+        <tr><td><b>Cor pulmonale</b></td><td>The right ventricle fails against chronic pulmonary hypertension &rarr; JVD, edema, hepatomegaly</td></tr>
+      </table>
+      <div class="keyidea"><b>Key idea:</b> <b>cyanosis</b> is about the <b>amount of deoxygenated hemoglobin</b>, not just saturation &mdash; it appears when deoxy-Hb rises enough to look blue. <b>Clubbing</b> is a <i>chronic</i> hypoxemia sign (growth-factor&ndash;driven tissue growth), so it points to long-standing disease.</div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q1. A patient with hypoxemia develops cyanosis. Which mechanism explains it?</p>
+        <div class="opts"><div>A. Increased deoxygenated hemoglobin</div><div>B. Decreased deoxygenated hemoglobin</div><div>C. Increased oxygen saturation</div><div>D. Reduced hemoglobin concentration</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Cyanosis appears when the amount of deoxygenated hemoglobin rises enough to give a bluish color. Higher saturation would reduce it.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q2. A patient with chronic hypoxemia develops finger clubbing. Which mechanism explains it?</p>
+        <div class="opts"><div>A. Increased growth factors causing distal tissue proliferation</div><div>B. Decreased growth factors causing tissue loss</div><div>C. Reduced tissue growth</div><div>D. Impaired growth signals</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Chronic low oxygen drives growth-factor&ndash;mediated vascular and tissue proliferation at the fingertips, producing clubbing.</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- SECTION 3 -->
+  <div class="sec three" id="sec3"><span class="num">SECTION 3</span><div><h2>Pediatric &amp; Clinical Application</h2><p>Why children's lungs fail differently, the neonatal and pediatric airway emergencies, and the environmental triggers in the headlines.</p></div></div>
+
+  <!-- T8 -->
+  <details class="topic three" id="t8">
+    <summary><span class="tnum">8</span> Neonatal Respiratory Distress &amp; Work of Breathing <span class="arrow">&#9654;</span></summary>
+    <div class="body">
+      <p><b>Surfactant</b> lowers surface tension and keeps alveoli open at the end of each breath. Premature infants haven't made enough &mdash; the core of <b>neonatal respiratory distress syndrome (RDS)</b>.</p>
+      <div class="keyidea"><b>Key idea &mdash; RDS:</b> immature type II cells &rarr; <b>surfactant deficiency</b> &rarr; <b>high surface tension</b> &rarr; alveoli <b>collapse</b> on exhalation (atelectasis) &rarr; impaired gas exchange and hypoxemia. More surfactant would <i>prevent</i> collapse, so the answer is always "decreased surfactant &rarr; increased surface tension."</div>
+      <h4>Signs of increased work of breathing (any age, vivid in infants)</h4>
+      <ul>
+        <li><b>Retractions</b> &mdash; greater inspiratory effort makes intrathoracic pressure <b>more negative</b>; a child's <b>compliant chest wall</b> gets pulled inward.</li>
+        <li><b>Nasal flaring</b> and <b>accessory-muscle use</b> &mdash; recruiting extra muscles to move air.</li>
+        <li><b>Tachypnea</b> &mdash; faster breathing to compensate for hypoxemia.</li>
+        <li>Premature infants may also <b>hypoventilate</b> (immature drive/muscles) &rarr; CO&#8322; retention (hypercapnia).</li>
+      </ul>
+      <div class="pearl"><b>Pearl &mdash; why kids show retractions:</b> children have a <b>more compliant (softer) chest wall</b> than adults. When they work hard to inhale against an obstruction, the soft tissues between/under the ribs suck inward. <i>Stiffer</i> chest walls would be <i>less</i> likely to retract.</div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q1. A premature infant develops RDS with alveolar collapse. Which mechanism explains it?</p>
+        <div class="opts"><div>A. Impaired surfactant production increasing surface tension</div><div>B. Increased surfactant decreasing surface tension</div><div>C. Decreased surfactant decreasing surface tension</div><div>D. Surfactant excess</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Too little surfactant raises surface tension, so alveoli collapse on exhalation (atelectasis), impairing gas exchange.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q2. An infant with airway obstruction develops chest retractions. Which mechanism explains it?</p>
+        <div class="opts"><div>A. Increased negative intrathoracic pressure pulling the compliant chest wall inward</div><div>B. Decreased negative intrathoracic pressure pushing it outward</div><div>C. Increased positive intrathoracic pressure</div><div>D. A stiff, non-compliant chest wall</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Harder inspiratory effort against obstruction makes intrathoracic pressure more negative; the child's compliant chest wall is drawn inward &rarr; retractions.</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- T9 -->
+  <details class="topic three" id="t9">
+    <summary><span class="tnum">9</span> Pediatric Airway Disease &amp; Environmental Triggers <span class="arrow">&#9654;</span></summary>
+    <div class="body">
+      <p>Children's airways are <b>smaller</b>, so the same swelling causes far more obstruction. Know the classic patterns.</p>
+      <table class="dt">
+        <tr><th>Condition</th><th>Where / cause</th><th>Hallmark</th></tr>
+        <tr><td><b>Croup</b></td><td><b>Upper</b> airway &mdash; subglottic inflammation/edema (viral)</td><td><b>Barking cough + inspiratory stridor</b>, hoarse voice</td></tr>
+        <tr><td><b>Bronchiolitis</b> (RSV)</td><td><b>Lower</b> small airways &mdash; inflammation, edema, mucus</td><td>Wheeze, <b>air trapping</b> (can't fully exhale), respiratory distress in infants</td></tr>
+        <tr><td><b>Foreign-body aspiration</b></td><td>Object lodges in an airway</td><td>Complete block &rarr; trapped air absorbs &rarr; <b>atelectasis</b>; partial block &rarr; air trapping</td></tr>
+        <tr><td><b>Pneumonia</b></td><td>Alveoli fill with exudate</td><td>Hypoxemia, fever, focal findings</td></tr>
+      </table>
+      <h4>Why the airway sounds differ</h4>
+      <p><b>Stridor</b> (harsh, on inspiration) = <b>upper</b> airway narrowing &rarr; turbulent airflow (croup). <b>Wheeze</b> (on expiration) = <b>lower</b> airway narrowing (bronchiolitis, asthma). Narrowing raises resistance and makes airflow turbulent and noisy.</p>
+      <h4>Environmental &amp; "current events" triggers</h4>
+      <ul>
+        <li><b>Air pollution / urban air</b> &rarr; airway <b>inflammation</b> and bronchial hyperresponsiveness &rarr; more asthma exacerbations (bronchoconstriction).</li>
+        <li><b>Wildfire smoke</b> &rarr; airway irritation &rarr; tachypnea (raised respiratory drive).</li>
+        <li><b>Viral outbreaks</b> &rarr; more pediatric pneumonia/bronchiolitis &rarr; alveolar exudate or small-airway obstruction &rarr; hypoxemia.</li>
+        <li><b>Rising prematurity</b> &rarr; more surfactant-deficiency RDS.</li>
+      </ul>
+      <div class="keyidea"><b>Key idea &mdash; air trapping in bronchiolitis:</b> inflamed, narrowed small airways let air <b>in</b> more easily than <b>out</b>, so air gets trapped distally (hyperinflation). The unifying mechanism is <b>airway obstruction preventing full expiration</b>.</div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q1. A 6-year-old has a barking cough and inspiratory stridor that worsened overnight, with a hoarse voice. What is the primary mechanism?</p>
+        <div class="opts"><div>A. Subglottic airway inflammation and edema narrowing the upper airway</div><div>B. Surfactant deficiency in the lower airways</div><div>C. Alveolar fluid impairing oxygen exchange</div><div>D. Bronchial smooth-muscle constriction limiting expiration</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> This is croup (Noah's case). Subglottic edema narrows the <b>upper</b> airway &rarr; turbulent inspiratory airflow = stridor and a barking cough. Bronchospasm causes <i>wheeze</i>, not stridor.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q2. A child aspirates a foreign body and develops atelectasis. Which mechanism explains it?</p>
+        <div class="opts"><div>A. Complete obstruction &rarr; trapped distal air is absorbed &rarr; alveolar collapse</div><div>B. Partial obstruction causing hyperinflation only</div><div>C. Open airway maintaining ventilation</div><div>D. Widened airway increasing ventilation</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> When an object fully blocks an airway, the air beyond it is gradually absorbed into the blood, and the unventilated alveoli collapse (resorption atelectasis).</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q3. Urban air pollution increases a child's asthma exacerbations. The airflow limitation is mainly from:</p>
+        <div class="opts"><div>A. Bronchial smooth-muscle constriction narrowing the airway</div><div>B. Smooth-muscle relaxation widening the airway</div><div>C. Pleural stiffening</div><div>D. Reduced diaphragm contraction</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Pollutants irritate the airways and trigger hyperresponsiveness &rarr; bronchoconstriction, which raises resistance and limits airflow.</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- CHEAT SHEET -->
+  <div class="sec one" id="cheat" style="background:linear-gradient(135deg,#0D47A1,#1565C0);"><span class="num">&#11088; EXAM</span><div><h2>Pulmonary Cheat Sheet</h2><p>The highest-yield patterns &mdash; review the night before.</p></div></div>
+  <div class="cheat">
+    <h4 style="color:var(--pri-dk);">ABG one-liners</h4>
+    <table class="dt">
+      <tr><th>Pattern</th><th>pH / PaCO&#8322;</th><th>Cause</th></tr>
+      <tr><td><b>Respiratory acidosis</b></td><td><span class="dn">&darr;</span> pH, <span class="up">&uarr;</span> CO&#8322;</td><td>Hypoventilation (COPD, sedation, tiring patient)</td></tr>
+      <tr><td><b>Respiratory alkalosis</b></td><td><span class="up">&uarr;</span> pH, <span class="dn">&darr;</span> CO&#8322;</td><td>Hyperventilation (anxiety, pain, early hypoxemia)</td></tr>
+      <tr><td>Normal</td><td>7.35&ndash;7.45 / 35&ndash;45</td><td>PaO&#8322; 80&ndash;100; &lt;80 = hypoxemia</td></tr>
+    </table>
+    <h4 style="color:var(--pri-dk);">Don't-miss facts</h4>
+    <ul>
+      <li><b>CO&#8322; is acid:</b> retain CO&#8322; &rarr; acidosis; blow off CO&#8322; &rarr; alkalosis.</li>
+      <li><b>Hypoxemia &rarr; peripheral chemoreceptors fire &rarr; hyperventilation/tachypnea.</b></li>
+      <li><b>Obstructive</b> = &uarr; resistance, can't exhale (asthma, COPD; wheeze, prolonged expiration, air trapping). <b>Restrictive</b> = &darr; compliance, can't inhale (fibrosis, ARDS; rapid shallow breaths).</li>
+      <li><b>Emphysema:</b> alveolar-wall destruction &rarr; lost recoil &rarr; air trapping, barrel chest, pursed-lip breathing.</li>
+      <li><b>PE</b> = blocked <b>perfusion</b> &rarr; dead space &rarr; V/Q mismatch &rarr; hypoxemia.</li>
+      <li><b>Pneumonia/edema</b> = fluid/exudate &rarr; &uarr; diffusion distance. <b>Atelectasis</b> = collapse &rarr; shunt.</li>
+      <li><b>ARDS</b> = &uarr; capillary permeability (sepsis, aspiration, toxic gas) &rarr; alveoli flood &rarr; severe hypoxemia.</li>
+      <li><b>Pleuritic pain</b> = parietal pleura inflammation; <b>empyema</b> = infected (pus) pleural fluid.</li>
+      <li><b>Cyanosis</b> = &uarr; deoxygenated Hb. <b>Clubbing</b> = chronic hypoxemia (growth factors).</li>
+      <li><b>Chronic hypoxemia &rarr; hypoxic vasoconstriction &rarr; pulmonary HTN &rarr; cor pulmonale</b> (right heart failure).</li>
+      <li><b>RDS</b> (premature) = &darr; surfactant &rarr; &uarr; surface tension &rarr; collapse. <b>Croup</b> = stridor (upper). <b>Bronchiolitis</b> = wheeze + air trapping (lower). <b>Retractions</b> = compliant chest wall + &uarr; work of breathing.</li>
+    </ul>
+  </div>
+
+  <!-- GLOSSARY -->
+  <div class="sec two" id="gloss" style="background:linear-gradient(135deg,#00838F,#005662);"><span class="num">&#128218; TERMS</span><div><h2>Glossary</h2><p>Quick definitions of the Week 10 vocabulary.</p></div></div>
+  <div class="cheat" style="border-color:var(--s2);">
+    <dl class="gloss">
+      <dt>Ventilation</dt><dd>Movement of air in and out of the lungs.</dd>
+      <dt>Perfusion</dt><dd>Blood flow through the pulmonary capillaries.</dd>
+      <dt>V/Q mismatch</dt><dd>Imbalance between ventilation and perfusion; the most common cause of hypoxemia.</dd>
+      <dt>Dead space</dt><dd>Ventilated alveoli that are <b>not perfused</b> (e.g., pulmonary embolism).</dd>
+      <dt>Shunt</dt><dd>Perfused alveoli that are <b>not ventilated</b> (e.g., pneumonia, atelectasis).</dd>
+      <dt>Hypoxemia / Hypercapnia</dt><dd>Low arterial O&#8322; / high arterial CO&#8322;.</dd>
+      <dt>Compliance</dt><dd>How easily the lungs stretch; <b>low</b> in restrictive disease.</dd>
+      <dt>Airway resistance</dt><dd>Opposition to airflow; <b>high</b> in obstructive disease.</dd>
+      <dt>Surfactant</dt><dd>Substance that lowers alveolar surface tension and prevents collapse; deficient in neonatal RDS.</dd>
+      <dt>Atelectasis</dt><dd>Collapse of alveoli &rarr; reduced ventilation and hypoxemia.</dd>
+      <dt>ARDS</dt><dd>Acute respiratory distress syndrome &mdash; diffuse alveolar injury with increased capillary permeability and severe hypoxemia.</dd>
+      <dt>Pleural effusion / Empyema</dt><dd>Fluid in the pleural space / infected (purulent) pleural fluid.</dd>
+      <dt>Stridor</dt><dd>Harsh inspiratory sound from <b>upper</b> airway narrowing (e.g., croup).</dd>
+      <dt>Cor pulmonale</dt><dd>Right-heart failure caused by chronic pulmonary hypertension.</dd>
+      <dt>Clubbing</dt><dd>Bulbous fingertip change from chronic hypoxemia.</dd>
+    </dl>
+  </div>
+
+
+  <footer class="foot">
+    SCI225 Pathophysiology &middot; Week 10 &mdash; The Pulmonary System &middot; Dr. Vidya Aggrawal &middot; Nightingale College<br>
+    <span style="font-size:12px;">Study guide for educational use. Built from the Week 10 learning objectives, pre-assessment, and case studies.</span>
+  </footer>
+
+</div>
+
+<script>
+  function toggleAll(){
+    var ds=document.querySelectorAll('details.topic');
+    var btn=document.getElementById('toggleBtn');
+    var anyClosed=Array.prototype.some.call(ds,function(d){return !d.open;});
+    ds.forEach(function(d){d.open=anyClosed;});
+    btn.textContent=anyClosed?'Collapse all':'Expand all';
+  }
+  function savePDF(){
+    document.querySelectorAll('details.topic').forEach(function(d){d.open=true;});
+    document.querySelectorAll('.ans').forEach(function(a){a.classList.add('show');});
+    setTimeout(function(){window.print();},250);
+  }
+  function reveal(btn){
+    var ans=btn.nextElementSibling;
+    ans.classList.toggle('show');
+    btn.textContent=ans.classList.contains('show')?'Hide answer':'Show answer';
+  }
+</script>
+</body>
+</html>

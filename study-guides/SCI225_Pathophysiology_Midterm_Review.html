@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SCI225 Pathophysiology — Midterm High-Yield Review</title>
+<style>
+  :root {
+    --u1: #0891b2; --u1-bg: #ecfeff; --u1-brd: #67e8f9;
+    --u2: #ea580c; --u2-bg: #fff7ed; --u2-brd: #fdba74;
+    --u3: #dc2626; --u3-bg: #fef2f2; --u3-brd: #fca5a5;
+    --u4: #4f46e5; --u4-bg: #eef2ff; --u4-brd: #a5b4fc;
+    --u5: #7c3aed; --u5-bg: #faf5ff; --u5-brd: #c4b5fd;
+    --u6: #059669; --u6-bg: #ecfdf5; --u6-brd: #6ee7b7;
+    --mech: #1d4ed8; --mech-bg: #eff6ff;
+    --why: #b45309; --why-bg: #fffbeb;
+    --comp: #047857; --comp-bg: #f0fdf4;
+    --path: #be123c; --path-bg: #fff1f2;
+    --text: #111827; --muted: #4b5563; --line: #d1d5db;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    font-size: 10.5pt; line-height: 1.4; color: var(--text);
+    margin: 0; padding: 0; background: #f9fafb;
+  }
+  .layout { display: grid; grid-template-columns: 220px 1fr; max-width: 1100px; margin: 0 auto; }
+  nav.toc {
+    position: sticky; top: 0; align-self: start; max-height: 100vh; overflow-y: auto;
+    background: #fff; border-right: 1px solid var(--line); padding: 14px 12px; font-size: 9.5pt;
+  }
+  nav.toc h3 { font-size: 10pt; margin: 6px 0 8px; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; }
+  nav.toc a { display: block; padding: 3px 6px; color: var(--text); text-decoration: none; border-radius: 3px; margin-bottom: 1px; }
+  nav.toc a:hover { background: #f3f4f6; }
+  nav.toc .u1 { border-left: 3px solid var(--u1); }
+  nav.toc .u2 { border-left: 3px solid var(--u2); }
+  nav.toc .u3 { border-left: 3px solid var(--u3); }
+  nav.toc .u4 { border-left: 3px solid var(--u4); }
+  nav.toc .u5 { border-left: 3px solid var(--u5); }
+  nav.toc .u6 { border-left: 3px solid var(--u6); }
+  main { padding: 20px 28px; background: #fff; }
+  h1 { font-size: 20pt; margin: 0 0 4px; }
+  h2 { font-size: 15pt; margin: 18px 0 6px; padding: 6px 10px; border-radius: 4px; color: #fff; }
+  h3 { font-size: 12pt; margin: 12px 0 4px; padding-bottom: 2px; border-bottom: 1px solid var(--line); }
+  h4 { font-size: 10.8pt; margin: 8px 0 3px; color: var(--muted); }
+  .unit1 h2 { background: var(--u1); } .unit2 h2 { background: var(--u2); }
+  .unit3 h2 { background: var(--u3); } .unit4 h2 { background: var(--u4); }
+  .unit5 h2 { background: var(--u5); } .unit6 h2 { background: var(--u6); }
+  .unit1 h3 { color: var(--u1); border-bottom-color: var(--u1-brd); }
+  .unit2 h3 { color: var(--u2); border-bottom-color: var(--u2-brd); }
+  .unit3 h3 { color: var(--u3); border-bottom-color: var(--u3-brd); }
+  .unit4 h3 { color: var(--u4); border-bottom-color: var(--u4-brd); }
+  .unit5 h3 { color: var(--u5); border-bottom-color: var(--u5-brd); }
+  .unit6 h3 { color: var(--u6); border-bottom-color: var(--u6-brd); }
+  p { margin: 4px 0; }
+  ul, ol { margin: 4px 0 6px 20px; padding: 0; }
+  li { margin: 1px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 9.8pt; margin: 6px 0 8px; }
+  th, td { border: 1px solid var(--line); padding: 4px 6px; text-align: left; vertical-align: top; }
+  th { background: #f3f4f6; font-weight: 600; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+  .box { border-left: 4px solid; padding: 6px 10px; margin: 6px 0; border-radius: 3px; font-size: 10pt; }
+  .mech { border-color: var(--mech); background: var(--mech-bg); }
+  .mech::before { content: "MECHANISM "; font-weight: 700; color: var(--mech); font-size: 8.5pt; letter-spacing: .5px; }
+  .why { border-color: var(--why); background: var(--why-bg); }
+  .why::before { content: "WHY "; font-weight: 700; color: var(--why); font-size: 8.5pt; letter-spacing: .5px; }
+  .comp { border-color: var(--comp); background: var(--comp-bg); }
+  .comp::before { content: "COMPENSATION "; font-weight: 700; color: var(--comp); font-size: 8.5pt; letter-spacing: .5px; }
+  .path { border-color: var(--path); background: var(--path-bg); }
+  .path::before { content: "PATHOLOGY "; font-weight: 700; color: var(--path); font-size: 8.5pt; letter-spacing: .5px; }
+  .flow { background: #f9fafb; border: 1px solid var(--line); padding: 8px 10px; border-radius: 4px; font-size: 9.8pt; margin: 6px 0; font-family: "Consolas", monospace; }
+  .flow .arr { color: #6b7280; margin: 0 3px; }
+  .q { background: #fafafa; border: 1px solid var(--line); border-radius: 4px; padding: 8px 10px; margin: 6px 0; font-size: 10pt; }
+  .q .qhead { font-weight: 600; margin-bottom: 3px; }
+  .q .opts { margin: 3px 0 4px 0; }
+  .q .ans { background: #ecfdf5; border-left: 3px solid var(--comp); padding: 4px 8px; margin-top: 4px; font-size: 9.8pt; }
+  .q .ans b { color: var(--comp); }
+  details summary { cursor: pointer; color: var(--mech); font-size: 9.5pt; font-weight: 600; }
+  .hero { padding: 14px 18px; background: linear-gradient(135deg, #1e3a8a, #7c3aed); color: #fff; border-radius: 6px; margin-bottom: 14px; }
+  .hero h1 { color: #fff; }
+  .hero p { margin: 4px 0; font-size: 10pt; opacity: .95; }
+  .spine { background: rgba(255,255,255,.15); padding: 6px 10px; border-radius: 4px; margin-top: 6px; font-size: 9.8pt; }
+  .legend { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 10px; font-size: 9pt; }
+  .legend span { padding: 2px 8px; border-radius: 3px; border: 1px solid; }
+  .lg-mech { color: var(--mech); background: var(--mech-bg); border-color: var(--mech); }
+  .lg-why { color: var(--why); background: var(--why-bg); border-color: var(--why); }
+  .lg-comp { color: var(--comp); background: var(--comp-bg); border-color: var(--comp); }
+  .lg-path { color: var(--path); background: var(--path-bg); border-color: var(--path); }
+  .pageBreak { page-break-before: always; }
+  .small { font-size: 9.2pt; color: var(--muted); }
+  .chip { display: inline-block; padding: 1px 6px; border-radius: 10px; font-size: 8.5pt; margin-right: 3px; color: #fff; }
+  .c1 { background: var(--u1); } .c2 { background: var(--u2); } .c3 { background: var(--u3); }
+  .c4 { background: var(--u4); } .c5 { background: var(--u5); } .c6 { background: var(--u6); }
+  .btns { margin: 10px 0; }
+  .btns button { background: #1e3a8a; color: #fff; border: 0; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 9.5pt; margin-right: 6px; }
+  .btns button:hover { background: #1e40af; }
+
+  @media print {
+    body { background: #fff; font-size: 9.8pt; }
+    .layout { display: block; max-width: none; }
+    nav.toc, .btns { display: none; }
+    main { padding: 0; }
+    h2 { page-break-after: avoid; }
+    h3, h4 { page-break-after: avoid; }
+    .q, .box, .flow, table { page-break-inside: avoid; }
+    .pageBreak { page-break-before: always; }
+    details { display: block; }
+    details summary { display: none; }
+    details[open] > *, details > * { display: block !important; }
+    .hero { background: #1e3a8a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    h2 { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .chip, .box, .q .ans, th { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+<div class="layout">
+
+<nav class="toc">
+  <h3>Contents</h3>
+  <a href="#intro">Study Spine & Legend</a>
+  <a href="#u1" class="u1"><b>Unit 1.</b> Cell & Genetics</a>
+  <a href="#u1-cell" class="u1">&nbsp;&nbsp;Cell biology</a>
+  <a href="#u1-gen" class="u1">&nbsp;&nbsp;Genetics</a>
+  <a href="#u1-adapt" class="u1">&nbsp;&nbsp;Adaptation</a>
+  <a href="#u1-inj" class="u1">&nbsp;&nbsp;Cell injury</a>
+  <a href="#u1-q" class="u1">&nbsp;&nbsp;Practice Qs</a>
+  <a href="#u2" class="u2"><b>Unit 2.</b> Immunity</a>
+  <a href="#u2-innate" class="u2">&nbsp;&nbsp;Innate</a>
+  <a href="#u2-adapt" class="u2">&nbsp;&nbsp;Adaptive</a>
+  <a href="#u2-infl" class="u2">&nbsp;&nbsp;Inflammation</a>
+  <a href="#u2-hyp" class="u2">&nbsp;&nbsp;Hypersensitivity</a>
+  <a href="#u2-auto" class="u2">&nbsp;&nbsp;Autoimmune/ID</a>
+  <a href="#u2-infx" class="u2">&nbsp;&nbsp;Infection & stress</a>
+  <a href="#u2-q" class="u2">&nbsp;&nbsp;Practice Qs</a>
+  <a href="#u3" class="u3"><b>Unit 3.</b> Oncology</a>
+  <a href="#u3-bm" class="u3">&nbsp;&nbsp;Benign vs malignant</a>
+  <a href="#u3-hall" class="u3">&nbsp;&nbsp;Hallmarks & genes</a>
+  <a href="#u3-spread" class="u3">&nbsp;&nbsp;Staging & spread</a>
+  <a href="#u3-q" class="u3">&nbsp;&nbsp;Practice Qs</a>
+  <a href="#u4" class="u4"><b>Unit 4.</b> Neuro Structure</a>
+  <a href="#u4-anat" class="u4">&nbsp;&nbsp;CNS/PNS & neuron</a>
+  <a href="#u4-trans" class="u4">&nbsp;&nbsp;Transmission</a>
+  <a href="#u4-supp" class="u4">&nbsp;&nbsp;CSF, BBB, circ.</a>
+  <a href="#u4-q" class="u4">&nbsp;&nbsp;Practice Qs</a>
+  <a href="#u5" class="u5"><b>Unit 5.</b> Neuro Disorders</a>
+  <a href="#u5-icp" class="u5">&nbsp;&nbsp;ICP & stroke</a>
+  <a href="#u5-tbi" class="u5">&nbsp;&nbsp;TBI & seizures</a>
+  <a href="#u5-degen" class="u5">&nbsp;&nbsp;Degenerative</a>
+  <a href="#u5-nmj" class="u5">&nbsp;&nbsp;NMJ & PNS</a>
+  <a href="#u5-peds" class="u5">&nbsp;&nbsp;Pediatric</a>
+  <a href="#u5-q" class="u5">&nbsp;&nbsp;Practice Qs</a>
+  <a href="#u6" class="u6"><b>Unit 6.</b> Endocrine</a>
+  <a href="#u6-reg" class="u6">&nbsp;&nbsp;Regulation</a>
+  <a href="#u6-pit" class="u6">&nbsp;&nbsp;Pituitary</a>
+  <a href="#u6-thy" class="u6">&nbsp;&nbsp;Thyroid/Parathyroid</a>
+  <a href="#u6-adr" class="u6">&nbsp;&nbsp;Adrenal</a>
+  <a href="#u6-dm" class="u6">&nbsp;&nbsp;Diabetes</a>
+  <a href="#u6-q" class="u6">&nbsp;&nbsp;Practice Qs</a>
+  <a href="#appx">Appendix: Why-Statements</a>
+</nav>
+
+<main>
+
+<div class="btns">
+  <button onclick="window.print()">Print / Save as PDF</button>
+  <button onclick="document.querySelectorAll('details').forEach(d=>d.open=true)">Expand All</button>
+  <button onclick="document.querySelectorAll('details').forEach(d=>d.open=false)">Collapse All</button>
+</div>
+
+<section id="intro">
+<div class="hero">
+  <h1>SCI225 Pathophysiology — Midterm High-Yield Review</h1>
+  <p>Units 1–6 • Chapters 1, 2, 4, 6, 9, 11, 14, 16–20</p>
+  <div class="spine"><b>Study Spine — ask 3 questions about every finding:</b><br>
+  1. What physiologic change is happening? &nbsp; 2. What mechanism caused it? &nbsp; 3. Is there a compensatory response?</div>
+</div>
+<div class="legend">
+  <span class="lg-mech">MECHANISM (how it happens)</span>
+  <span class="lg-why">WHY (cause → effect)</span>
+  <span class="lg-comp">COMPENSATION (body's response)</span>
+  <span class="lg-path">PATHOLOGY (clinical result)</span>
+</div>
+</section>
+
+<!-- ========================= UNIT 1 ========================= -->
+<section id="u1" class="unit1">
+<h2>Unit 1 &nbsp;•&nbsp; Cellular Biology, Genetics, Adaptation & Injury &nbsp;<span class="chip c1">Ch 1, 2, 4</span></h2>
+
+<h3 id="u1-cell">1.1 Cell Biology — Fast Reference</h3>
+<div class="two-col">
+<table>
+<tr><th>Organelle</th><th>Function</th></tr>
+<tr><td>Nucleus</td><td>DNA storage; transcription</td></tr>
+<tr><td>Mitochondria</td><td>ATP via oxidative phosphorylation; apoptosis trigger</td></tr>
+<tr><td>Ribosomes</td><td>Protein synthesis (translation)</td></tr>
+<tr><td>Rough ER</td><td>Protein synthesis/folding</td></tr>
+<tr><td>Smooth ER</td><td>Lipid synthesis, detox, Ca²⁺ storage</td></tr>
+<tr><td>Golgi</td><td>Modify/package proteins</td></tr>
+<tr><td>Lysosome</td><td>Intracellular digestion</td></tr>
+<tr><td>Peroxisome</td><td>Detox reactive species</td></tr>
+</table>
+<table>
+<tr><th>Transport</th><th>Key idea</th></tr>
+<tr><td>Passive diffusion</td><td>Down gradient, no ATP</td></tr>
+<tr><td>Facilitated diffusion</td><td>Via protein channel, no ATP</td></tr>
+<tr><td>Active transport</td><td>Against gradient, needs ATP (Na⁺/K⁺ pump)</td></tr>
+<tr><td>Osmosis</td><td>Water moves to higher solute</td></tr>
+<tr><td>Endo/exocytosis</td><td>Bulk transport with vesicles</td></tr>
+</table>
+</div>
+<div class="box mech">DNA → <i>transcription</i> → mRNA → <i>translation (ribosome)</i> → Protein. Disrupt any step → abnormal or absent protein → disease.</div>
+
+<h3 id="u1-gen">1.2 Genetics — Mutation, Inheritance, Chromosomes</h3>
+<table>
+<tr><th>Pattern</th><th>Key features</th><th>Example</th></tr>
+<tr><td>Autosomal Dominant</td><td>One copy → disease; affects every generation; 50% offspring risk</td><td>Huntington, Marfan, familial hypercholesterolemia</td></tr>
+<tr><td>Autosomal Recessive</td><td>Both copies needed; carriers unaffected; skips generations</td><td>Cystic fibrosis, sickle cell, PKU, Tay-Sachs</td></tr>
+<tr><td>X-linked Recessive</td><td>Males affected; mother carrier; no male-to-male transmission</td><td>Hemophilia A, Duchenne MD, color blindness</td></tr>
+<tr><td>Multifactorial</td><td>Genes + environment</td><td>HTN, DM2, neural tube defects</td></tr>
+</table>
+<table>
+<tr><th>Chromosomal (Nondisjunction)</th><th>Karyotype</th><th>Hallmarks</th></tr>
+<tr><td>Down syndrome</td><td>Trisomy 21</td><td>Intellectual disability, flat facies, cardiac defects</td></tr>
+<tr><td>Turner syndrome</td><td>45, XO</td><td>Short stature, webbed neck, ovarian failure (female)</td></tr>
+<tr><td>Klinefelter</td><td>47, XXY</td><td>Tall, hypogonadism, gynecomastia (male)</td></tr>
+<tr><td>Cri-du-chat</td><td>5p deletion</td><td>High-pitched cry, microcephaly</td></tr>
+</table>
+<div class="box why"><b>Cystic fibrosis</b> — CFTR gene defect → impaired Cl⁻ transport across epithelium → water doesn't follow → thick mucus → airway obstruction, pancreatic insufficiency, infertility.</div>
+<div class="box mech"><b>Epigenetics:</b> heritable changes <i>without</i> altering DNA sequence. <b>DNA methylation</b> silences genes; <b>histone modification</b> (acetylation) loosens chromatin → more expression. Key in cancer and development.</div>
+
+<h3 id="u1-adapt">1.3 Cellular Adaptation — 5 Types</h3>
+<table>
+<tr><th>Type</th><th>Change</th><th>Trigger</th><th>Example</th></tr>
+<tr><td>Atrophy</td><td>↓ cell size</td><td>Disuse, denervation, ↓ hormone/nutrients</td><td>Casted limb muscle</td></tr>
+<tr><td>Hypertrophy</td><td>↑ cell size</td><td>↑ workload</td><td>Cardiac muscle in HTN; skeletal muscle in athletes</td></tr>
+<tr><td>Hyperplasia</td><td>↑ cell number</td><td>Hormonal or compensatory</td><td>Endometrium in pregnancy; liver regeneration</td></tr>
+<tr><td>Metaplasia</td><td>One adult cell type → another (reversible)</td><td>Chronic irritation</td><td>Smoker's bronchus: ciliated columnar → squamous</td></tr>
+<tr><td>Dysplasia</td><td>Disordered growth, size/shape variation</td><td>Chronic injury → pre-cancer</td><td>Cervical dysplasia (HPV)</td></tr>
+</table>
+
+<h3 id="u1-inj">1.4 Cell Injury, Necrosis & Apoptosis</h3>
+<div class="flow"><b>Hypoxic injury cascade</b><br>
+↓ O₂ <span class="arr">→</span> ↓ ATP <span class="arr">→</span> Na⁺/K⁺ pump fails <span class="arr">→</span> Na⁺ + H₂O into cell <span class="arr">→</span> <b>cell swelling</b> (reversible) <span class="arr">→</span> Ca²⁺ influx <span class="arr">→</span> enzyme activation (phospholipases, proteases) <span class="arr">→</span> membrane damage <span class="arr">→</span> <b>necrosis</b> (irreversible)
+</div>
+<div class="two-col">
+<table>
+<tr><th colspan="2">Necrosis subtypes</th></tr>
+<tr><td>Coagulative</td><td>Solid organ ischemia (MI, kidney)</td></tr>
+<tr><td>Liquefactive</td><td>Brain infarct, abscess</td></tr>
+<tr><td>Caseous</td><td>TB granuloma — "cheese-like"</td></tr>
+<tr><td>Fat</td><td>Pancreatitis, trauma to breast</td></tr>
+<tr><td>Fibrinoid</td><td>Vessel walls (vasculitis, malignant HTN)</td></tr>
+<tr><td>Gangrenous</td><td>Limb ischemia (dry/wet)</td></tr>
+</table>
+<table>
+<tr><th>Necrosis</th><th>Apoptosis</th></tr>
+<tr><td>Unregulated</td><td>Regulated, programmed</td></tr>
+<tr><td>Cell swells/bursts</td><td>Cell shrinks into bodies</td></tr>
+<tr><td>Inflammation yes</td><td>Inflammation no</td></tr>
+<tr><td>Pathologic</td><td>Physiologic or pathologic</td></tr>
+</table>
+</div>
+<div class="box mech"><b>Apoptosis pathways:</b> <u>Intrinsic</u> — mitochondrial; cytochrome c release → caspase cascade (DNA damage, withdrawal of growth factors). <u>Extrinsic</u> — death receptors (Fas/TNF) → caspase cascade.</div>
+<div class="box why"><b>Free radicals</b> (ROS: O₂⁻, H₂O₂, OH•) damage membranes via lipid peroxidation, denature proteins, break DNA. Defenses: SOD, catalase, glutathione, vitamins C/E. Overwhelm → ischemia-reperfusion injury, aging, cancer.</div>
+
+<h3 id="u1-q">1.5 Practice Questions</h3>
+<div class="q">
+<div class="qhead">Q1. A smoker's biopsy shows replacement of ciliated columnar epithelium with stratified squamous cells. This is:</div>
+<div class="opts">A. Atrophy &nbsp; B. Hyperplasia &nbsp; C. Metaplasia &nbsp; D. Dysplasia</div>
+<details><summary>Show answer & rationale</summary>
+<div class="ans"><b>C. Metaplasia.</b> One mature cell type replaced by another to tolerate chronic stress. Reversible if stimulus removed; can progress to dysplasia/cancer. A = size ↓. B = number ↑. D = disordered (pre-malignant) but cells don't change type.</div>
+</details>
+</div>
+<div class="q">
+<div class="qhead">Q2. In hypoxic injury, cell swelling occurs because:</div>
+<div class="opts">A. ATP ↑ forces water in &nbsp; B. Na⁺/K⁺ pump fails → Na⁺ and water accumulate &nbsp; C. Membrane permeability ↓ &nbsp; D. Ca²⁺ efflux</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> No ATP → pump stops → intracellular Na⁺ rises → water follows osmotically → swelling. This is still <i>reversible</i> until membrane damage.</div>
+</details>
+</div>
+<div class="q">
+<div class="qhead">Q3 (SATA). Which are consistent with apoptosis (not necrosis)? Select all.</div>
+<div class="opts">A. Cell shrinkage &nbsp; B. Surrounding inflammation &nbsp; C. Caspase activation &nbsp; D. Membrane rupture &nbsp; E. Programmed, ATP-dependent</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>A, C, E.</b> Apoptosis is orderly, non-inflammatory, caspase-mediated. B and D describe necrosis.</div>
+</details>
+</div>
+<div class="q">
+<div class="qhead">Q4. A child has Trisomy 21. The most likely cause is:</div>
+<div class="opts">A. Autosomal recessive inheritance &nbsp; B. Nondisjunction during meiosis &nbsp; C. X-linked mutation &nbsp; D. Mitochondrial inheritance</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Failure of chromosome pairs to separate during meiosis → gamete with extra chromosome → Trisomy 21.</div>
+</details>
+</div>
+</section>
+
+<!-- ========================= UNIT 2 ========================= -->
+<section id="u2" class="unit2 pageBreak">
+<h2>Unit 2 &nbsp;•&nbsp; Immunity, Inflammation, Infection &nbsp;<span class="chip c2">Ch 6, 7, 8, 9</span></h2>
+
+<h3 id="u2-innate">2.1 Innate Immunity (nonspecific, immediate)</h3>
+<table>
+<tr><th>Line</th><th>Components</th><th>Role</th></tr>
+<tr><td>1st</td><td>Skin, mucous membranes, cilia, normal flora, pH, lysozyme in tears</td><td>Physical/chemical barrier — keep pathogens out</td></tr>
+<tr><td>2nd</td><td>Phagocytes (neutrophils, macrophages), NK cells, complement, inflammation, fever, cytokines</td><td>Rapid nonspecific response; no memory</td></tr>
+</table>
+<div class="box mech"><b>Complement</b> (classical/alternative/lectin) → opsonization (C3b), chemotaxis (C5a), membrane attack complex (C5b–9 → lyse microbe), inflammation.</div>
+
+<h3 id="u2-adapt">2.2 Adaptive Immunity (specific, slower, has memory)</h3>
+<table>
+<tr><th></th><th>Humoral (B cells)</th><th>Cell-mediated (T cells)</th></tr>
+<tr><td>Target</td><td>Extracellular pathogens, toxins</td><td>Intracellular pathogens, tumor, transplant</td></tr>
+<tr><td>Effector</td><td>Plasma cells → antibodies</td><td>CD4 helper, CD8 cytotoxic</td></tr>
+<tr><td>MHC</td><td>MHC II presents to CD4</td><td>MHC I presents to CD8</td></tr>
+</table>
+<table>
+<tr><th>Ig</th><th>Key role</th></tr>
+<tr><td>IgG</td><td>Most abundant; crosses placenta; secondary response</td></tr>
+<tr><td>IgM</td><td>Largest; first produced; primary response</td></tr>
+<tr><td>IgA</td><td>Mucosal surfaces, breast milk</td></tr>
+<tr><td>IgE</td><td>Allergy/parasites; binds mast cells</td></tr>
+<tr><td>IgD</td><td>B-cell receptor (activation)</td></tr>
+</table>
+<div class="box why"><b>Active</b> immunity = you make your own antibodies (infection or vaccine); long-lasting. <b>Passive</b> = you receive them (placenta, breast milk, Ig injection); temporary.</div>
+
+<h3 id="u2-infl">2.3 Acute Inflammation & Wound Healing</h3>
+<div class="flow"><b>Acute inflammation cascade</b><br>
+Injury <span class="arr">→</span> mast cell degranulation <span class="arr">→</span> histamine, prostaglandins, bradykinin <span class="arr">→</span> vasodilation (redness, warmth) + ↑ permeability (edema) <span class="arr">→</span> leukocyte margination → diapedesis → chemotaxis <span class="arr">→</span> phagocytosis <span class="arr">→</span> resolution or chronic inflammation
+</div>
+<table>
+<tr><th>Cardinal sign</th><th>Mechanism</th></tr>
+<tr><td>Redness (rubor)</td><td>Vasodilation ↑ blood flow</td></tr>
+<tr><td>Heat (calor)</td><td>↑ blood flow</td></tr>
+<tr><td>Swelling (tumor)</td><td>↑ capillary permeability → fluid/protein leak</td></tr>
+<tr><td>Pain (dolor)</td><td>Bradykinin, prostaglandins, pressure on nerves</td></tr>
+<tr><td>Loss of function</td><td>Swelling + pain</td></tr>
+</table>
+<table>
+<tr><th>Wound healing phase</th><th>What happens</th><th>Timing</th></tr>
+<tr><td>Hemostasis</td><td>Vasoconstriction, clot forms</td><td>Min–hrs</td></tr>
+<tr><td>Inflammatory</td><td>Neutrophils → macrophages; debride</td><td>0–3 days</td></tr>
+<tr><td>Proliferative</td><td>Fibroblasts, collagen, angiogenesis, granulation</td><td>3–21 days</td></tr>
+<tr><td>Remodeling</td><td>Collagen reorganizes; scar matures</td><td>Wks–yrs</td></tr>
+</table>
+<div class="box path"><b>Dysfunctional healing:</b> keloid (excess collagen), contracture (scar shortening limits motion), dehiscence (wound separation), evisceration (organ protrusion).</div>
+
+<h3 id="u2-hyp">2.4 Hypersensitivity — All Four Types</h3>
+<table>
+<tr><th>Type</th><th>Mediator</th><th>Timing</th><th>Examples</th></tr>
+<tr><td>I — Immediate</td><td>IgE on mast cells → histamine</td><td>Min</td><td>Anaphylaxis, asthma, hay fever, food allergy</td></tr>
+<tr><td>II — Cytotoxic</td><td>IgG/IgM vs cell-surface antigen</td><td>Min–hrs</td><td>Hemolytic transfusion reaction, Graves, myasthenia gravis, Goodpasture</td></tr>
+<tr><td>III — Immune complex</td><td>Ag-Ab complexes deposit</td><td>Hrs</td><td>SLE, serum sickness, post-strep GN, RA</td></tr>
+<tr><td>IV — Delayed/T-cell</td><td>Sensitized T cells (no antibody)</td><td>2–3 days</td><td>TB skin test (PPD), contact dermatitis (poison ivy), transplant rejection</td></tr>
+</table>
+<div class="box mech"><b>Anaphylaxis (Type I):</b> allergen cross-links IgE on mast cells → massive histamine release → systemic vasodilation (↓ BP), ↑ permeability (edema), bronchoconstriction → hypotension + airway obstruction. Treat: epinephrine.</div>
+
+<h3 id="u2-auto">2.5 Autoimmune & Immunodeficiency</h3>
+<table>
+<tr><th>Autoimmune</th><th>Target</th></tr>
+<tr><td>SLE</td><td>Anti-dsDNA, ANA — multisystem (skin, kidneys, joints)</td></tr>
+<tr><td>Rheumatoid arthritis</td><td>Synovium → joint destruction (pannus)</td></tr>
+<tr><td>Myasthenia gravis</td><td>Anti-ACh receptor at NMJ (Type II)</td></tr>
+<tr><td>Multiple sclerosis</td><td>CNS myelin (Type IV)</td></tr>
+<tr><td>Hashimoto / Graves</td><td>Thyroid (see Unit 6)</td></tr>
+<tr><td>Type 1 DM</td><td>β-cell destruction</td></tr>
+</table>
+<table>
+<tr><th>Immunodeficiency</th><th>Defect</th></tr>
+<tr><td>Primary (congenital)</td><td>Genetic — SCID (B+T), Bruton's (B cells), DiGeorge (thymus/T cells)</td></tr>
+<tr><td>Secondary (acquired)</td><td>HIV (CD4 destruction), chemo, steroids, malnutrition, aging</td></tr>
+</table>
+<div class="box why"><b>HIV</b> targets CD4 helper T cells → progressive loss → impaired coordination of both humoral and cell-mediated immunity → opportunistic infections at CD4 &lt; 200 (AIDS).</div>
+
+<h3 id="u2-infx">2.6 Infection & Stress Response</h3>
+<div class="flow"><b>Infection sequence</b><br>
+Encounter <span class="arr">→</span> entry <span class="arr">→</span> colonization <span class="arr">→</span> invasion <span class="arr">→</span> multiplication <span class="arr">→</span> tissue damage (toxins, host inflammation)
+</div>
+<div class="box mech"><b>Fever:</b> pyrogens (LPS, IL-1, TNF, IL-6) → hypothalamus raises thermoregulatory set point → shivering/vasoconstriction until new set point reached. Benefits: slows bacterial growth, enhances immune function.</div>
+<div class="box why"><b>Stress response (Selye GAS):</b> Alarm (sympathetic + epi) → Resistance (HPA axis: CRH → ACTH → cortisol; ↑ glucose, ↓ inflammation, ↓ immune) → Exhaustion (if chronic → ↑ infection, HTN, DM, depression).</div>
+
+<h3 id="u2-q">2.7 Practice Questions</h3>
+<div class="q">
+<div class="qhead">Q5. A bee sting causes hypotension, hives, and wheezing within minutes. This is mediated by:</div>
+<div class="opts">A. IgG complement fixation &nbsp; B. IgE on mast cells releasing histamine &nbsp; C. T-cell cytotoxicity &nbsp; D. Immune complex deposition</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Type I hypersensitivity/anaphylaxis — IgE cross-linking triggers mast cell degranulation → histamine → vasodilation, permeability, bronchoconstriction.</div>
+</details>
+</div>
+<div class="q">
+<div class="qhead">Q6 (SATA). Early acute inflammation involves:</div>
+<div class="opts">A. Vasodilation &nbsp; B. ↑ capillary permeability &nbsp; C. Neutrophil migration &nbsp; D. Memory B-cell proliferation &nbsp; E. Histamine release</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>A, B, C, E.</b> D is adaptive immunity — not the early driver of acute inflammation.</div>
+</details>
+</div>
+<div class="q">
+<div class="qhead">Q7. A patient receives a TB skin test and develops induration at 48 hours. This is:</div>
+<div class="opts">A. Type I &nbsp; B. Type II &nbsp; C. Type III &nbsp; D. Type IV</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>D. Type IV delayed T-cell hypersensitivity.</b> No antibodies involved; sensitized T cells react 24–72 hours after exposure.</div>
+</details>
+</div>
+<div class="q">
+<div class="qhead">Q8 (cloze). In anaphylaxis, the allergen binds ____ on mast cells; the mediator released is ____.</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>IgE ; histamine.</b></div>
+</details>
+</div>
+</section>
+
+<!-- ========================= UNIT 3 ========================= -->
+<section id="u3" class="unit3 pageBreak">
+<h2>Unit 3 &nbsp;•&nbsp; Oncology &nbsp;<span class="chip c3">Ch 11, 12, 13</span></h2>
+
+<h3 id="u3-bm">3.1 Benign vs Malignant</h3>
+<table>
+<tr><th></th><th>Benign</th><th>Malignant</th></tr>
+<tr><td>Growth</td><td>Slow, encapsulated</td><td>Rapid, invasive</td></tr>
+<tr><td>Differentiation</td><td>Well differentiated (resemble origin)</td><td>Poorly differentiated / anaplastic</td></tr>
+<tr><td>Metastasis</td><td>No</td><td>Yes</td></tr>
+<tr><td>Recurrence</td><td>Rare after removal</td><td>Common</td></tr>
+<tr><td>Naming</td><td>tissue + "-oma" (lipoma, adenoma)</td><td>carcinoma (epithelial), sarcoma (connective), leukemia/lymphoma (blood)</td></tr>
+</table>
+
+<h3 id="u3-hall">3.2 Hallmarks of Cancer & Key Genes</h3>
+<ul>
+<li>Self-sufficient proliferation signaling (oncogenes)</li>
+<li>Insensitivity to anti-growth signals (tumor suppressor loss)</li>
+<li>Evasion of apoptosis</li>
+<li>Limitless replicative potential (telomerase)</li>
+<li>Sustained angiogenesis</li>
+<li>Invasion & metastasis</li>
+<li>Altered metabolism (Warburg) &amp; immune evasion</li>
+</ul>
+<table>
+<tr><th>Gene type</th><th>Normal role</th><th>In cancer</th><th>Examples</th></tr>
+<tr><td>Oncogene</td><td>Drives cell division (accelerator)</td><td>Gain-of-function mutation → constant "on"</td><td>RAS, MYC, HER2, BCR-ABL</td></tr>
+<tr><td>Tumor suppressor</td><td>Brakes division, repairs DNA, triggers apoptosis</td><td>Loss-of-function → no brakes</td><td>p53 ("guardian of genome"), RB, BRCA1/2, APC</td></tr>
+<tr><td>DNA repair genes</td><td>Fix errors</td><td>Loss → mutations accumulate</td><td>MLH1, MSH2 (Lynch)</td></tr>
+</table>
+<div class="box why"><b>Angiogenesis</b> — tumors &gt;1–2 mm need new vessels (VEGF-driven) to receive nutrients/O₂; without it, cancer cells can't grow or spread.</div>
+
+<h3 id="u3-spread">3.3 Spread, Staging, Systemic Effects</h3>
+<div class="flow"><b>Metastasis</b><br>
+Local invasion <span class="arr">→</span> intravasation (enter vessel/lymph) <span class="arr">→</span> circulation <span class="arr">→</span> extravasation <span class="arr">→</span> seed new organ <span class="arr">→</span> angiogenesis at new site
+</div>
+<table>
+<tr><th>Grading</th><th>Staging (TNM)</th></tr>
+<tr><td>How abnormal the cells look (differentiation).<br>G1 = well differentiated; G4 = anaplastic.</td><td>How far spread. <b>T</b> tumor size, <b>N</b> nodes, <b>M</b> metastasis.<br>Stage 0 = in situ; Stage IV = distant spread.</td></tr>
+</table>
+<div class="box path"><b>Cachexia</b> — progressive loss of muscle/fat despite intake. Driven by TNF, IL-6, tumor metabolism. Worsens prognosis.</div>
+<div class="box path"><b>Paraneoplastic syndromes</b> — remote effects from tumor-secreted substances: SIADH (small-cell lung), hypercalcemia (squamous lung, PTHrP), Cushing (ACTH-secreting), polycythemia (RCC).</div>
+<table>
+<tr><th>Carcinogens</th><th>Example cancer</th></tr>
+<tr><td>Tobacco</td><td>Lung, bladder, oral</td></tr>
+<tr><td>UV radiation</td><td>Skin (melanoma, SCC, BCC)</td></tr>
+<tr><td>HPV</td><td>Cervical, oropharyngeal</td></tr>
+<tr><td>Hepatitis B/C</td><td>Hepatocellular</td></tr>
+<tr><td>EBV</td><td>Burkitt, nasopharyngeal</td></tr>
+<tr><td>H. pylori</td><td>Gastric</td></tr>
+<tr><td>Asbestos</td><td>Mesothelioma</td></tr>
+</table>
+
+<h3 id="u3-q">3.4 Practice Questions</h3>
+<div class="q">
+<div class="qhead">Q9. A tumor biopsy shows overexpression of growth factor receptors and continuous proliferative signaling. Which mechanism is active?</div>
+<div class="opts">A. Tumor suppressor gain of function &nbsp; B. Oncogene activation &nbsp; C. Restored differentiation &nbsp; D. Enhanced apoptosis</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Oncogenes are "gain-of-function" — activated drive continuous growth signals. Tumor suppressors go the other way (loss).</div>
+</details>
+</div>
+<div class="q">
+<div class="qhead">Q10. A small tumor cannot grow past 2 mm without:</div>
+<div class="opts">A. Apoptosis &nbsp; B. Angiogenesis &nbsp; C. Differentiation &nbsp; D. Cell cycle arrest</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B. Angiogenesis</b> — new vessels (VEGF) supply O₂ and nutrients; diffusion alone supports only very small tumors.</div>
+</details>
+</div>
+<div class="q">
+<div class="qhead">Q11. TNM staging assesses:</div>
+<div class="opts">A. Cell differentiation grade &nbsp; B. Tumor size, node involvement, metastasis &nbsp; C. Mutation burden &nbsp; D. Apoptotic index</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Staging = how far it has spread; grading = how abnormal cells look.</div>
+</details>
+</div>
+</section>
+
+<!-- ========================= UNIT 4 ========================= -->
+<section id="u4" class="unit4 pageBreak">
+<h2>Unit 4 &nbsp;•&nbsp; Structure & Function of the Nervous System &nbsp;<span class="chip c4">Ch 14</span></h2>
+
+<h3 id="u4-anat">4.1 CNS / PNS & the Neuron</h3>
+<div class="two-col">
+<table>
+<tr><th>CNS</th><th>PNS</th></tr>
+<tr><td>Brain + spinal cord</td><td>Cranial nn, spinal nn, ganglia</td></tr>
+<tr><td>Oligodendrocytes myelinate</td><td>Schwann cells myelinate</td></tr>
+<tr><td>No regen (mostly)</td><td>Can regenerate</td></tr>
+</table>
+<table>
+<tr><th>Neuron part</th><th>Role</th></tr>
+<tr><td>Dendrites</td><td>Receive input</td></tr>
+<tr><td>Soma</td><td>Cell body</td></tr>
+<tr><td>Axon</td><td>Conducts AP away</td></tr>
+<tr><td>Myelin / nodes of Ranvier</td><td>Saltatory conduction</td></tr>
+<tr><td>Axon terminal</td><td>Release NT</td></tr>
+</table>
+</div>
+<table>
+<tr><th>Brain region</th><th>Function</th></tr>
+<tr><td>Frontal</td><td>Executive, motor, personality, Broca's (speech prod.)</td></tr>
+<tr><td>Parietal</td><td>Somatosensory</td></tr>
+<tr><td>Temporal</td><td>Auditory, memory, Wernicke's (speech comp.)</td></tr>
+<tr><td>Occipital</td><td>Vision</td></tr>
+<tr><td>Cerebellum</td><td>Balance, coordination</td></tr>
+<tr><td>Brainstem</td><td>Cardio-respiratory centers, CN nuclei</td></tr>
+<tr><td>Hypothalamus</td><td>Homeostasis, hormones, temperature</td></tr>
+</table>
+
+<h3 id="u4-trans">4.2 Action Potentials & Neurotransmission</h3>
+<div class="flow"><b>Action potential</b><br>
+Resting (−70 mV) <span class="arr">→</span> stimulus opens Na⁺ channels <span class="arr">→</span> depolarization <span class="arr">→</span> threshold reached <span class="arr">→</span> Na⁺ rushes in (spike) <span class="arr">→</span> K⁺ out (repolarization) <span class="arr">→</span> hyperpolarization <span class="arr">→</span> Na⁺/K⁺ pump restores
+</div>
+<div class="box mech"><b>Saltatory conduction:</b> AP jumps node → node along myelinated axon → faster, energy-efficient. Demyelination (MS, Guillain-Barré) slows conduction → weakness, numbness.</div>
+<table>
+<tr><th>Neurotransmitter</th><th>Effect / Clinical link</th></tr>
+<tr><td>Acetylcholine (ACh)</td><td>NMJ, parasympathetic; ↓ in Alzheimer's, blocked in myasthenia</td></tr>
+<tr><td>Dopamine</td><td>Reward, motor control; ↓ Parkinson's, ↑ schizophrenia</td></tr>
+<tr><td>Serotonin</td><td>Mood, sleep; ↓ depression</td></tr>
+<tr><td>Norepinephrine</td><td>Arousal, sympathetic</td></tr>
+<tr><td>GABA</td><td>Main inhibitory; ↓ seizures</td></tr>
+<tr><td>Glutamate</td><td>Main excitatory; excitotoxicity in stroke</td></tr>
+<tr><td>Endorphins</td><td>Endogenous pain suppression</td></tr>
+</table>
+<div class="flow"><b>Reflex arc (monosynaptic)</b><br>
+Stimulus <span class="arr">→</span> receptor <span class="arr">→</span> sensory (afferent) neuron <span class="arr">→</span> spinal cord <span class="arr">→</span> motor (efferent) neuron <span class="arr">→</span> effector muscle <span class="arr">→</span> contraction
+</div>
+
+<h3 id="u4-supp">4.3 CSF, BBB & Cerebral Circulation</h3>
+<div class="box mech"><b>CSF</b> produced by choroid plexus of ventricles → flows through lateral → 3rd → 4th → subarachnoid space → absorbed by arachnoid villi. Cushions brain, delivers nutrients, removes waste.</div>
+<div class="box mech"><b>Blood-Brain Barrier:</b> tight endothelial junctions + astrocyte foot processes. Selectively permeable — excludes most pathogens/drugs; allows O₂, CO₂, glucose, lipid-soluble molecules.</div>
+<div class="box why"><b>Cerebral autoregulation</b> maintains flow across MAP 60–160 mmHg. Below → ischemia; above → edema/hemorrhage. Brain uses ~20% of cardiac output despite being 2% of body weight — very vulnerable to hypoxia.</div>
+
+<h3 id="u4-q">4.4 Practice Questions</h3>
+<div class="q">
+<div class="qhead">Q12. In MS, slowed impulse conduction is due to:</div>
+<div class="opts">A. Axon severance &nbsp; B. Disrupted saltatory conduction from demyelination &nbsp; C. Blocked synaptic vesicles &nbsp; D. ACh receptor blockade</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> MS = autoimmune destruction of CNS myelin → loss of saltatory conduction → slow/incomplete APs.</div>
+</details>
+</div>
+<div class="q">
+<div class="qhead">Q13 (order). Arrange the reflex arc:</div>
+<div class="opts">1. Motor neuron &nbsp; 2. Receptor detects stimulus &nbsp; 3. Sensory neuron &nbsp; 4. Muscle contracts</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>2 → 3 → 1 → 4.</b></div>
+</details>
+</div>
+</section>
+
+<!-- ========================= UNIT 5 ========================= -->
+<section id="u5" class="unit5 pageBreak">
+<h2>Unit 5 &nbsp;•&nbsp; Disorders of the Nervous System &nbsp;<span class="chip c5">Ch 16, 17, 18</span></h2>
+
+<h3 id="u5-icp">5.1 Increased ICP, Stroke</h3>
+<div class="box mech"><b>Monro-Kellie:</b> skull is rigid with 3 fixed contents (brain 80%, blood 10%, CSF 10%). If one ↑, another must ↓ or ICP rises. Normal ICP &lt; 15 mmHg.</div>
+<div class="flow"><b>Increased ICP cascade</b><br>
+↑ ICP <span class="arr">→</span> ↓ cerebral perfusion pressure (CPP = MAP − ICP) <span class="arr">→</span> ischemia <span class="arr">→</span> edema <span class="arr">→</span> further ↑ ICP <span class="arr">→</span> herniation → death
+</div>
+<div class="box path"><b>Cushing's triad</b> (late, ominous sign of ↑ ICP): HTN (widened pulse pressure) + bradycardia + irregular respirations. Reflects brainstem compression.</div>
+<table>
+<tr><th></th><th>Ischemic stroke (~85%)</th><th>Hemorrhagic stroke (~15%)</th></tr>
+<tr><td>Cause</td><td>Thrombus or embolus blocks artery</td><td>Vessel rupture (HTN, aneurysm, AVM)</td></tr>
+<tr><td>Mechanism</td><td>↓ blood flow → ↓ ATP → Na⁺/K⁺ fail → glutamate excitotoxicity → neuronal death</td><td>Blood compresses tissue + ↑ ICP</td></tr>
+<tr><td>Onset</td><td>Sudden focal deficit</td><td>Sudden worst-headache, ↓ LOC</td></tr>
+<tr><td>Tx window</td><td>tPA ≤ 4.5 hr if no bleed</td><td>Control BP, surgery; tPA contraindicated</td></tr>
+</table>
+<div class="box why"><b>Why focal deficits in stroke:</b> specific artery territory loses O₂ → neurons in that region fail → symptoms map to function (MCA → contralateral face/arm weakness, aphasia if left hemisphere).</div>
+
+<h3 id="u5-tbi">5.2 TBI & Seizures</h3>
+<table>
+<tr><th>TBI type</th><th>Description</th></tr>
+<tr><td>Concussion</td><td>Transient altered consciousness, no structural damage on imaging</td></tr>
+<tr><td>Contusion</td><td>Bruise; coup (impact site) and/or contrecoup (opposite side)</td></tr>
+<tr><td>DAI (diffuse axonal injury)</td><td>Shearing of white matter from rotational forces → severe, often coma</td></tr>
+<tr><td>Epidural hematoma</td><td>Arterial (middle meningeal); "lucid interval" then deterioration</td></tr>
+<tr><td>Subdural hematoma</td><td>Venous (bridging veins); slower, common in elderly/alcoholics</td></tr>
+<tr><td>Subarachnoid hemorrhage</td><td>Ruptured aneurysm; "thunderclap" headache</td></tr>
+</table>
+<table>
+<tr><th>Seizure type</th><th>Features</th></tr>
+<tr><td>Focal (partial)</td><td>One hemisphere; simple (conscious) or complex (impaired)</td></tr>
+<tr><td>Generalized tonic-clonic</td><td>LOC, stiffening (tonic) then jerking (clonic), postictal</td></tr>
+<tr><td>Absence</td><td>Brief staring spells (children)</td></tr>
+<tr><td>Status epilepticus</td><td>&gt; 5 min or repeated without recovery — emergency</td></tr>
+</table>
+<div class="box mech"><b>Seizure</b> = abnormal, excessive synchronous neuronal firing. Imbalance of glutamate (↑ excitatory) vs GABA (↓ inhibitory). Causes: idiopathic, trauma, stroke, tumor, electrolyte, fever, withdrawal.</div>
+
+<h3 id="u5-degen">5.3 Degenerative & Demyelinating Disorders</h3>
+<table>
+<tr><th>Disorder</th><th>Pathophysiology</th><th>Hallmarks</th></tr>
+<tr><td>Alzheimer's</td><td>Amyloid plaques + tau tangles; ↓ ACh</td><td>Progressive memory loss, cortical atrophy</td></tr>
+<tr><td>Parkinson's</td><td>Loss of dopaminergic neurons in substantia nigra</td><td>Resting tremor, rigidity, bradykinesia, postural instability</td></tr>
+<tr><td>Huntington's</td><td>AD — CAG trinucleotide repeat → atrophy of caudate/putamen</td><td>Chorea, dementia, psychiatric</td></tr>
+<tr><td>Multiple Sclerosis</td><td>Autoimmune demyelination CNS (Type IV)</td><td>Relapsing-remitting; optic neuritis, weakness, paresthesias</td></tr>
+<tr><td>ALS</td><td>Both upper + lower motor neuron degeneration</td><td>Progressive weakness, atrophy, fasciculations; cognition spared</td></tr>
+</table>
+
+<h3 id="u5-nmj">5.4 NMJ, PNS, Meningitis, Spinal Cord</h3>
+<table>
+<tr><th>Disorder</th><th>Mechanism</th><th>Clinical</th></tr>
+<tr><td>Myasthenia gravis</td><td>Anti-ACh receptor antibodies (Type II)</td><td>Fatigable weakness, worse with use, ocular first (ptosis, diplopia)</td></tr>
+<tr><td>Guillain-Barré</td><td>Autoimmune demyelination of PNS (often post-infection)</td><td>Ascending paralysis, areflexia, risk of respiratory failure</td></tr>
+<tr><td>Bacterial meningitis</td><td>Inflammation of meninges (S. pneumo, N. meningitidis)</td><td>Fever, stiff neck, photophobia, ↓ LOC; ↑ WBC/↑ protein/↓ glucose CSF</td></tr>
+<tr><td>Viral meningitis</td><td>Enteroviruses</td><td>Milder; normal glucose</td></tr>
+</table>
+<table>
+<tr><th>SCI level</th><th>Result</th></tr>
+<tr><td>C1–C4</td><td>Tetraplegia + loss of diaphragm (ventilator)</td></tr>
+<tr><td>C5–C8</td><td>Tetraplegia, some arm function</td></tr>
+<tr><td>T1–T12</td><td>Paraplegia, trunk/leg loss</td></tr>
+<tr><td>Lumbosacral</td><td>Variable leg/bladder/bowel</td></tr>
+</table>
+<div class="box path"><b>Spinal shock</b> — immediate areflexia and flaccid paralysis below injury; resolves over weeks. <b>Autonomic dysreflexia</b> (injury above T6) — stimulus below injury → massive SNS → severe HTN, bradycardia, headache. <b>Emergency</b>: sit upright, find trigger (often bladder distention).</div>
+
+<h3 id="u5-peds">5.5 Pediatric Neurology</h3>
+<table>
+<tr><th>Condition</th><th>Key point</th></tr>
+<tr><td>Hydrocephalus</td><td>CSF accumulation → ↑ head circumference, bulging fontanel, sunset eyes. Sutures not yet fused allow expansion.</td></tr>
+<tr><td>Neural tube defects</td><td>Failure of neural tube closure; folate deficiency. Spina bifida, meningocele, myelomeningocele, anencephaly.</td></tr>
+<tr><td>Cerebral palsy</td><td>Non-progressive motor disorder from prenatal/perinatal brain injury; spastic most common.</td></tr>
+<tr><td>Febrile seizures</td><td>6 mo–5 yr; rapid temp rise; usually benign.</td></tr>
+<tr><td>Reye syndrome</td><td>Encephalopathy + liver failure after viral illness + aspirin in children.</td></tr>
+</table>
+
+<h3 id="u5-q">5.6 Practice Questions</h3>
+<div class="q">
+<div class="qhead">Q14 (case). 68-year-old with sudden right-sided weakness + slurred speech, CT no bleed. Mechanism?</div>
+<div class="opts">A. CSF excess compressing cortex &nbsp; B. Autoimmune demyelination &nbsp; C. ↓ cerebral blood flow → neuronal hypoxia &nbsp; D. Peripheral motor neuron degeneration</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>C. Ischemic stroke.</b> ↓ flow → ↓ ATP → ion pump failure → glutamate excitotoxicity → focal neuronal death.</div>
+</details>
+</div>
+<div class="q">
+<div class="qhead">Q15. 24-year-old with weakness that worsens through the day, improves with rest, sensation intact. Mechanism?</div>
+<div class="opts">A. CNS demyelination &nbsp; B. Basal ganglia dopamine loss &nbsp; C. Impaired ACh receptor function at NMJ &nbsp; D. Cortical ischemia</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>C. Myasthenia gravis.</b> Anti-ACh receptor antibodies → fatigable weakness, ocular first. Sensation intact.</div>
+</details>
+</div>
+<div class="q">
+<div class="qhead">Q16 (matrix). Match mechanism to finding:</div>
+<div class="opts">1. ↑ vascular permeability → ? &nbsp; 2. ↓ cerebral flow → ? &nbsp; 3. ACh receptor blockade → ? &nbsp; 4. Angiogenesis → ?</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>1—Edema, 2—Focal neuro deficit, 3—Fatigable weakness, 4—Tumor growth support.</b></div>
+</details>
+</div>
+<div class="q">
+<div class="qhead">Q17. Infant with rapidly enlarging head + bulging fontanel. Cause?</div>
+<div class="opts">A. CSF accumulating in ventricles &nbsp; B. NMJ antibody block &nbsp; C. PNS demyelination &nbsp; D. Synaptic vesicle failure</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>A. Hydrocephalus.</b> Unfused sutures allow cranial expansion.</div>
+</details>
+</div>
+</section>
+
+<!-- ========================= UNIT 6 ========================= -->
+<section id="u6" class="unit6 pageBreak">
+<h2>Unit 6 &nbsp;•&nbsp; Endocrine System &nbsp;<span class="chip c6">Ch 19, 20</span></h2>
+
+<h3 id="u6-reg">6.1 Hormonal Regulation Principles</h3>
+<table>
+<tr><th>Concept</th><th>Key point</th></tr>
+<tr><td>Negative feedback</td><td>High hormone inhibits its own stimulus (maintains homeostasis)</td></tr>
+<tr><td>Positive feedback</td><td>Amplifies (oxytocin in labor, LH surge)</td></tr>
+<tr><td>Water-soluble</td><td>Peptides/catecholamines → bind <b>surface</b> receptors → 2nd messenger (cAMP) → fast</td></tr>
+<tr><td>Lipid-soluble</td><td>Steroids/thyroid → enter cell → <b>intracellular/nuclear</b> receptors → alter gene transcription → slower, longer</td></tr>
+<tr><td>Up-regulation</td><td>Low hormone → ↑ receptors → ↑ sensitivity</td></tr>
+<tr><td>Down-regulation</td><td>High hormone → ↓ receptors → ↓ sensitivity (e.g., insulin resistance in T2DM)</td></tr>
+</table>
+<div class="flow"><b>HPT axis (example)</b><br>
+Low T3/T4 <span class="arr">→</span> Hypothalamus TRH ↑ <span class="arr">→</span> Pituitary TSH ↑ <span class="arr">→</span> Thyroid T3/T4 ↑ <span class="arr">→</span> Negative feedback shuts off TRH/TSH
+</div>
+
+<h3 id="u6-pit">6.2 Pituitary — SIADH vs Diabetes Insipidus</h3>
+<table>
+<tr><th></th><th>SIADH (too much ADH)</th><th>DI (too little ADH or renal resistance)</th></tr>
+<tr><td>Mechanism</td><td>↑ water reabsorption</td><td>↓ water reabsorption</td></tr>
+<tr><td>Serum Na⁺</td><td>Low (dilutional hyponatremia)</td><td>High</td></tr>
+<tr><td>Urine</td><td>Concentrated, low volume</td><td>Dilute, huge volumes (polyuria)</td></tr>
+<tr><td>Symptoms</td><td>Water intoxication, HA, seizures</td><td>Polydipsia, dehydration</td></tr>
+<tr><td>Causes</td><td>Small-cell lung Ca, CNS injury, meds</td><td>Central (pituitary) or nephrogenic</td></tr>
+</table>
+<div class="box path"><b>Acromegaly / Gigantism</b> — GH excess (usually adenoma). Before growth plates close → gigantism; after → acromegaly (enlarged hands/feet/jaw, organomegaly, insulin resistance).</div>
+
+<h3 id="u6-thy">6.3 Thyroid & Parathyroid</h3>
+<table>
+<tr><th></th><th>Hyperthyroidism (Graves)</th><th>Hypothyroidism (Hashimoto)</th></tr>
+<tr><td>Mechanism</td><td>TSI antibody stimulates TSH receptor (Type II)</td><td>Autoimmune destruction of thyroid</td></tr>
+<tr><td>TSH / T4</td><td>TSH ↓, T4 ↑</td><td>TSH ↑, T4 ↓ (primary)</td></tr>
+<tr><td>Metabolism</td><td>↑ — weight loss, heat intol., tachy, tremor, diarrhea, exophthalmos</td><td>↓ — weight gain, cold intol., brady, fatigue, constipation, dry skin</td></tr>
+<tr><td>Crisis</td><td>Thyroid storm — fever, tachyarrhythmia, delirium</td><td>Myxedema coma — hypothermia, ↓ LOC, hypoventilation</td></tr>
+</table>
+<table>
+<tr><th>Parathyroid</th><th>Effect</th></tr>
+<tr><td>Hyperparathyroidism</td><td>↑ PTH → ↑ Ca²⁺ (bones, stones, groans, psychiatric overtones)</td></tr>
+<tr><td>Hypoparathyroidism</td><td>↓ PTH → ↓ Ca²⁺ → tetany, Chvostek/Trousseau signs, seizures</td></tr>
+</table>
+
+<h3 id="u6-adr">6.4 Adrenal Disorders</h3>
+<table>
+<tr><th></th><th>Cushing (↑ cortisol)</th><th>Addison (↓ all adrenal hormones)</th></tr>
+<tr><td>Cause</td><td>Pituitary adenoma (ACTH ↑), adrenal tumor, exogenous steroids</td><td>Autoimmune destruction of cortex (primary)</td></tr>
+<tr><td>Cortisol</td><td>↑</td><td>↓</td></tr>
+<tr><td>BP / glucose</td><td>HTN, hyperglycemia</td><td>Hypotension, hypoglycemia</td></tr>
+<tr><td>Appearance</td><td>Moon face, buffalo hump, central obesity, striae, easy bruising</td><td>Hyperpigmentation (↑ AChT), weight loss, fatigue</td></tr>
+<tr><td>Electrolytes</td><td>↑ Na⁺, ↓ K⁺ (some aldosterone effect)</td><td>↓ Na⁺, ↑ K⁺ (loss of aldosterone)</td></tr>
+<tr><td>Crisis</td><td>—</td><td>Addisonian crisis — shock, hypoglycemia</td></tr>
+</table>
+<div class="box path"><b>Pheochromocytoma</b> — catecholamine-secreting adrenal medulla tumor → episodic HTN, HA, palpitations, diaphoresis ("5 P's").</div>
+
+<h3 id="u6-dm">6.5 Diabetes Mellitus</h3>
+<table>
+<tr><th></th><th>Type 1</th><th>Type 2</th></tr>
+<tr><td>Mechanism</td><td>Autoimmune β-cell destruction → absolute insulin deficiency</td><td>Insulin resistance + relative deficiency (receptor down-regulation)</td></tr>
+<tr><td>Onset</td><td>Child/young adult, abrupt</td><td>Adult, gradual (obesity link)</td></tr>
+<tr><td>Body habitus</td><td>Thin</td><td>Often obese</td></tr>
+<tr><td>Ketosis</td><td>Prone (DKA)</td><td>Resistant (HHS more typical)</td></tr>
+<tr><td>Treatment</td><td>Insulin (always)</td><td>Lifestyle, oral agents, eventually insulin</td></tr>
+</table>
+<div class="box why"><b>Classic 3 P's</b> (both types): <i>polyuria</i> (glucose osmotic diuresis), <i>polydipsia</i> (dehydration), <i>polyphagia</i> (cells starved despite high glucose).</div>
+<table>
+<tr><th></th><th>DKA</th><th>HHS</th></tr>
+<tr><td>Who</td><td>T1 (usually)</td><td>T2 (usually)</td></tr>
+<tr><td>Glucose</td><td>&gt; 250</td><td>&gt; 600</td></tr>
+<tr><td>Ketones</td><td>Present (fat breakdown → ketoacids)</td><td>Minimal (residual insulin blocks ketogenesis)</td></tr>
+<tr><td>pH</td><td>&lt; 7.3 (metabolic acidosis)</td><td>Normal</td></tr>
+<tr><td>Signs</td><td>Kussmaul breathing, fruity breath, N/V, abd pain</td><td>Severe dehydration, ↓ LOC, focal deficits</td></tr>
+<tr><td>Tx</td><td>IV fluids, insulin, K⁺ replacement</td><td>IV fluids (massive), insulin</td></tr>
+</table>
+<div class="box path"><b>Chronic DM complications:</b> micro (retinopathy, nephropathy, neuropathy) + macro (CAD, stroke, PAD). Driven by glycation end-products + vascular damage.</div>
+
+<h3 id="u6-q">6.6 Practice Questions</h3>
+<div class="q">
+<div class="qhead">Q18. A patient exposed to chronically elevated hormone levels will most likely show:</div>
+<div class="opts">A. Up-regulation + ↑ sensitivity &nbsp; B. Down-regulation + ↓ sensitivity &nbsp; C. Permanent loss of 2nd messenger &nbsp; D. Loss of carrier proteins</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Persistent excess → ↓ receptor number/affinity → insulin resistance is a classic example.</div>
+</details>
+</div>
+<div class="q">
+<div class="qhead">Q19 (cloze). When T3/T4 fall, hypothalamus releases ____ and anterior pituitary releases ____.</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>TRH ; TSH.</b></div>
+</details>
+</div>
+<div class="q">
+<div class="qhead">Q20. A patient with weight gain, moon face, hyperglycemia, and HTN most likely has:</div>
+<div class="opts">A. Addison's &nbsp; B. Cushing's &nbsp; C. Hashimoto's &nbsp; D. Pheochromocytoma</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B. Cushing's.</b> Cortisol excess → central obesity, moon face, hyperglycemia, HTN, immunosuppression.</div>
+</details>
+</div>
+<div class="q">
+<div class="qhead">Q21. A T1 diabetic presents with Kussmaul breathing, fruity breath, glucose 420, pH 7.15. Mechanism?</div>
+<div class="opts">A. HHS — severe dehydration without ketosis &nbsp; B. DKA — absolute insulin deficiency → fat breakdown → ketoacids &nbsp; C. Hypoglycemia &nbsp; D. SIADH</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B. DKA.</b> No insulin → cells can't use glucose → lipolysis → ketones → metabolic acidosis → Kussmaul compensatory hyperventilation.</div>
+</details>
+</div>
+<div class="q">
+<div class="qhead">Q22 (SATA). Which findings fit primary Addison's disease?</div>
+<div class="opts">A. Hyperpigmentation &nbsp; B. Hypertension &nbsp; C. Hyponatremia &nbsp; D. Hyperkalemia &nbsp; E. Moon face</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>A, C, D.</b> Loss of cortisol + aldosterone → ↓ BP, ↓ Na⁺, ↑ K⁺. ↑ ACTH drives pigmentation. B + E = Cushing.</div>
+</details>
+</div>
+</section>
+
+<!-- ========================= APPENDIX ========================= -->
+<section id="appx" class="pageBreak">
+<h2 style="background:#374151;">Appendix &nbsp;•&nbsp; High-Yield "Why" Statements & Compensation Summary</h2>
+
+<h3>Every "Why" You Need</h3>
+<table>
+<tr><th>Finding</th><th>Why it happens</th></tr>
+<tr><td>Edema</td><td>↑ capillary permeability OR ↑ hydrostatic pressure OR ↓ oncotic pressure → fluid into interstitium</td></tr>
+<tr><td>Fever</td><td>Pyrogens (IL-1, TNF, IL-6) reset hypothalamic set point upward</td></tr>
+<tr><td>Cell swelling in hypoxia</td><td>↓ ATP → Na⁺/K⁺ pump fails → Na⁺ + water accumulate intracellularly</td></tr>
+<tr><td>Cancer metastasis</td><td>Loss of adhesion + enzymatic invasion + angiogenesis + vascular entry + distant seeding</td></tr>
+<tr><td>Stroke focal deficits</td><td>Specific arterial territory loses O₂ → specific function fails</td></tr>
+<tr><td>Hormone target specificity</td><td>Only cells with matching receptor respond</td></tr>
+<tr><td>Down-regulation</td><td>Chronic high hormone → fewer/less sensitive receptors</td></tr>
+<tr><td>Insulin resistance (T2DM)</td><td>Chronic hyperinsulinemia → receptor down-regulation + post-receptor defects</td></tr>
+<tr><td>Myasthenia weakness that worsens with use</td><td>ACh receptors already reduced; repeated stimulation depletes remaining signaling</td></tr>
+<tr><td>Demyelination slows conduction</td><td>No myelin = no saltatory jumping → AP travels continuously (slow)</td></tr>
+<tr><td>Cushing's triad in ↑ ICP</td><td>Brainstem compression → SNS surge (HTN) → baroreflex bradycardia + irregular respirations</td></tr>
+<tr><td>Kussmaul breathing in DKA</td><td>Respiratory compensation blows off CO₂ to offset metabolic acidosis</td></tr>
+<tr><td>Polyuria in DM</td><td>Glucose in filtrate exceeds reabsorption → osmotic diuresis</td></tr>
+<tr><td>Hyperpigmentation in Addison's</td><td>Low cortisol → ↑ ACTH → ACTH precursor stimulates melanocytes</td></tr>
+<tr><td>Anaphylactic hypotension</td><td>Massive histamine → systemic vasodilation + plasma leak → ↓ preload/afterload</td></tr>
+</table>
+
+<h3>Compensation Cheat Sheet</h3>
+<table>
+<tr><th>Stressor</th><th>Compensation</th></tr>
+<tr><td>↓ BP (hemorrhage, anaphylaxis)</td><td>SNS: ↑ HR, vasoconstriction; RAAS: Na⁺/water retention</td></tr>
+<tr><td>↓ O₂ (hypoxia)</td><td>↑ RR, ↑ HR, ↑ EPO → RBC production</td></tr>
+<tr><td>Metabolic acidosis</td><td>Kussmaul breathing (↓ CO₂), renal ↑ HCO₃⁻ reabsorption</td></tr>
+<tr><td>↑ ICP</td><td>Displace CSF, then venous blood; eventually fails → herniation</td></tr>
+<tr><td>↓ Thyroid hormone</td><td>TRH ↑ → TSH ↑ (tries to stimulate gland)</td></tr>
+<tr><td>↑ Hormone chronic</td><td>Receptor down-regulation</td></tr>
+<tr><td>Infection</td><td>Fever + ↑ WBC + inflammation + adaptive immunity</td></tr>
+<tr><td>Tissue injury</td><td>Vasodilation, permeability, leukocytes, healing phases</td></tr>
+</table>
+
+<h3>Final Study Tips</h3>
+<ul>
+<li><b>Explain out loud.</b> If you can say <i>why</i> each finding happens, you're ready.</li>
+<li><b>Follow the cascade.</b> Most questions ask you to trace stimulus → mechanism → result → compensation.</li>
+<li><b>Watch for triads.</b> Cushing's triad (ICP), 3 P's (DM), classic anaphylaxis triad (hypotension + airway + skin).</li>
+<li><b>Differentiate look-alikes.</b> DKA vs HHS; Cushing vs Addison; Hashimoto vs Graves; SIADH vs DI; ischemic vs hemorrhagic stroke.</li>
+<li><b>Up vs down.</b> Low hormone → up-regulation ↑ sensitivity; high hormone → down-regulation ↓ sensitivity.</li>
+</ul>
+
+<p class="small" style="margin-top:16px;">SCI225 Pathophysiology Midterm High-Yield Review — built from your Unit 1–6 review, expanded to fill content gaps in adaptive immunity, autoimmune disease, specific cancers, neurologic disorders, endocrine diseases including diabetes, Cushing/Addison, SIADH/DI, thyroid, and pediatric neuro.</p>
+</section>
+
+</main>
+</div>
+</body>
+</html>

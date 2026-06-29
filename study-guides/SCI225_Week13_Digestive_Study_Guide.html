@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SCI225 Week 13 &middot; Digestive System Study Guide &middot; Dr. Vidya</title>
+<style>
+  :root{
+    --ink:#21261C; --muted:#5C6657; --line:#E1E7DC; --bg:#F6F8F3;
+    --pri:#2E7D32; --pri-dk:#1B5E20; --pri-lt:#E8F5E9;
+    --s1:#2E7D32; --s1lt:#E8F5E9;
+    --s2:#E65100; --s2lt:#FFF3E0;
+    --s3:#00838F; --s3lt:#E0F7FA;
+    --amber:#B7791F; --amberlt:#FBF1DD;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0; font-family:"Segoe UI",Arial,Helvetica,sans-serif; color:var(--ink); background:var(--bg); line-height:1.62;}
+  .wrap{max-width:1000px; margin:0 auto; padding:0 18px 80px;}
+  a{color:var(--pri);}
+  h1,h2,h3,h4{line-height:1.22;}
+
+  header.hero{background:linear-gradient(135deg,#1B5E20 0%,#2E7D32 50%,#43A047 100%); color:#fff; border-radius:0 0 22px 22px; padding:46px 36px 40px; margin:0 -18px 8px; position:relative; overflow:hidden; box-shadow:0 10px 30px rgba(27,94,32,.30);}
+  header.hero .blob{position:absolute; border-radius:50%; background:rgba(255,255,255,.07);}
+  .kicker{font-size:12px; letter-spacing:3px; font-weight:700; opacity:.92; margin-bottom:10px;}
+  header.hero h1{margin:0 0 10px; font-size:38px;}
+  header.hero p{margin:0; font-size:17px; opacity:.96; max-width:660px;}
+  .herometa{margin-top:18px; display:flex; flex-wrap:wrap; gap:8px;}
+  .chip{display:inline-block; background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.28); padding:5px 12px; border-radius:20px; font-size:12.5px; font-weight:600;}
+
+  .toolbar{display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between; margin:18px 0 6px;}
+  .btn{display:inline-block; border:none; cursor:pointer; text-decoration:none; font-weight:700; border-radius:30px; padding:11px 22px; font-size:14px; box-shadow:0 4px 12px rgba(0,0,0,.16);}
+  .btn-print{background:linear-gradient(135deg,#1B5E20,#2E7D32); color:#fff;}
+  .btn-light{background:#fff; color:var(--pri); border:1.5px solid var(--pri);}
+  .btn:hover{filter:brightness(1.06);}
+
+  .toc{background:#fff; border:1px solid var(--line); border-radius:14px; padding:18px 20px; margin:14px 0 26px; box-shadow:0 2px 10px rgba(0,0,0,.04);}
+  .toc h2{margin:0 0 12px; font-size:16px; letter-spacing:.5px; text-transform:uppercase; color:var(--muted);}
+  .toc-grid{display:grid; grid-template-columns:1fr 1fr 1fr; gap:18px;}
+  .toc-col h3{margin:0 0 8px; font-size:14px;}
+  .toc-col.c1 h3{color:var(--s1);} .toc-col.c2 h3{color:var(--s2);} .toc-col.c3 h3{color:var(--s3);}
+  .toc a{display:block; color:var(--ink); text-decoration:none; font-size:13.4px; padding:4px 8px; border-radius:6px;}
+  .toc a:hover{background:var(--pri-lt);}
+  @media (max-width:760px){ .toc-grid{grid-template-columns:1fr;} }
+
+  .sec{margin:40px 0 6px; padding:14px 20px; border-radius:12px; color:#fff; display:flex; align-items:center; gap:14px;}
+  .sec.one{background:linear-gradient(135deg,#2E7D32,#1B5E20);}
+  .sec.two{background:linear-gradient(135deg,#E65100,#BF360C);}
+  .sec.three{background:linear-gradient(135deg,#00838F,#005662);}
+  .sec .num{font-size:13px; font-weight:800; letter-spacing:2px; background:rgba(255,255,255,.2); padding:6px 12px; border-radius:8px; white-space:nowrap;}
+  .sec h2{margin:0; font-size:22px;}
+  .sec p{margin:3px 0 0; font-size:13.5px; opacity:.95;}
+
+  details.topic{background:#fff; border:1px solid var(--line); border-left-width:5px; border-radius:10px; margin:12px 0; overflow:hidden; box-shadow:0 1px 6px rgba(0,0,0,.04);}
+  details.topic.one{border-left-color:var(--s1);}
+  details.topic.two{border-left-color:var(--s2);}
+  details.topic.three{border-left-color:var(--s3);}
+  details.topic > summary{cursor:pointer; list-style:none; padding:16px 20px; font-weight:700; font-size:16.5px; display:flex; align-items:center; gap:12px;}
+  details.topic > summary::-webkit-details-marker{display:none;}
+  details.topic > summary .tnum{font-size:12.5px; font-weight:800; color:#fff; border-radius:7px; padding:4px 9px; white-space:nowrap;}
+  details.topic.one > summary .tnum{background:var(--s1);}
+  details.topic.two > summary .tnum{background:var(--s2);}
+  details.topic.three > summary .tnum{background:var(--s3);}
+  details.topic > summary .arrow{margin-left:auto; transition:transform .2s; color:var(--muted); font-size:14px;}
+  details.topic[open] > summary .arrow{transform:rotate(90deg);}
+  details.topic[open] > summary{border-bottom:1px solid var(--line);}
+  .body{padding:6px 22px 20px;}
+  .body h4{margin:18px 0 6px; font-size:15.5px; color:var(--pri-dk);}
+  .body p{margin:8px 0;}
+  .body ul{margin:8px 0 8px; padding-left:20px;}
+  .body li{margin:5px 0;}
+
+  .keyidea{background:var(--pri-lt); border-left:4px solid var(--pri); border-radius:0 8px 8px 0; padding:12px 16px; margin:14px 0; font-size:14.5px;}
+  .pearl{background:var(--amberlt); border-left:4px solid var(--amber); border-radius:0 8px 8px 0; padding:12px 16px; margin:14px 0; font-size:14.5px;}
+  .mnem{background:#ECF6F1; border:1px dashed #2E9E78; border-radius:8px; padding:10px 14px; margin:14px 0; font-size:14px;}
+  .mnem .lbl{font-weight:800; color:#1E7A57; letter-spacing:.5px; font-size:12px; text-transform:uppercase;}
+
+  table.dt{width:100%; border-collapse:collapse; margin:14px 0; font-size:13.7px;}
+  table.dt th{background:#1F3242; color:#fff; text-align:left; padding:9px 11px; font-weight:600;}
+  table.dt td{border:1px solid var(--line); padding:9px 11px; vertical-align:top;}
+  table.dt tr:nth-child(even) td{background:#F7FAFC;}
+  .up{color:#C62828; font-weight:800;} .dn{color:#1565C0; font-weight:800;} .nl{color:#5A6573;}
+
+  .practice{background:#FBFCFE; border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin:16px 0;}
+  .practice .ptag{display:inline-block; background:var(--s2); color:#fff; font-size:11px; font-weight:800; letter-spacing:1px; padding:3px 10px; border-radius:20px; text-transform:uppercase;}
+  .q{font-weight:600; margin:10px 0 6px;}
+  .opts{margin:6px 0 6px; padding-left:6px;}
+  .opts div{padding:3px 0;}
+  .reveal{cursor:pointer; border:none; background:var(--s2); color:#fff; font-weight:700; font-size:12.5px; padding:7px 14px; border-radius:20px; margin-top:6px;}
+  .reveal:hover{filter:brightness(1.08);}
+  .ans{display:none; margin-top:10px; background:#EEF7F1; border-left:4px solid #2E9E78; border-radius:0 8px 8px 0; padding:11px 14px; font-size:14px;}
+  .ans.show{display:block;}
+  .ans .correct{font-weight:800; color:#1E7A57;}
+
+  .fig{background:#fff; border:1px solid var(--line); border-radius:10px; padding:14px; margin:16px 0; text-align:center;}
+  .fig figcaption{font-size:12.5px; color:var(--muted); margin-top:8px;}
+
+  .cheat{background:#fff; border:2px solid var(--pri); border-radius:14px; padding:8px 22px 22px; margin:14px 0;}
+  .gloss dt{font-weight:700; color:var(--pri-dk); margin-top:12px;}
+  .gloss dd{margin:2px 0 0; padding-left:0;}
+
+  footer.foot{text-align:center; color:var(--muted); font-size:13px; margin-top:50px; padding-top:22px; border-top:1px solid var(--line);}
+
+  @media print{
+    body{background:#fff;} .toolbar,.toc{display:none;}
+    details.topic{break-inside:avoid; box-shadow:none;}
+    header.hero{box-shadow:none;}
+    .ans{display:block !important;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="blob" style="width:230px;height:230px;right:-40px;top:-50px;"></div>
+    <div class="blob" style="width:150px;height:150px;right:130px;bottom:-60px;"></div>
+    <div class="kicker">SCI225 &middot; PATHOPHYSIOLOGY &middot; WEEK 13 &middot; NIGHTINGALE COLLEGE</div>
+    <h1>The Digestive System</h1>
+    <p>From motility and digestion to the disorders that disrupt them &mdash; GERD and ulcers, IBD and obstruction, jaundice and cirrhosis, pancreatitis, and the pediatric GI emergencies.</p>
+    <div class="herometa">
+      <span class="chip">Dr. Vidya Aggrawal</span>
+      <span class="chip">Module 13</span>
+      <span class="chip">Function &middot; Disorders &middot; Hepatobiliary</span>
+      <span class="chip">9 topics + cheat sheet</span>
+    </div>
+  </header>
+
+  <div class="toolbar">
+    <div style="font-size:13.5px;color:var(--muted);">Click any topic to expand. Try each practice question <b>before</b> revealing the answer.</div>
+    <div style="display:flex;gap:10px;">
+      <button class="btn btn-light" onclick="toggleAll()" id="toggleBtn">Expand all</button>
+      <button class="btn btn-print" onclick="savePDF()">&#128424;&nbsp; Save as PDF</button>
+    </div>
+  </div>
+
+  <nav class="toc">
+    <h2>What's inside</h2>
+    <div class="toc-grid">
+      <div class="toc-col c1">
+        <h3>1 &middot; Structure &amp; Function</h3>
+        <a href="#t1">1. Motility &amp; the GI tract</a>
+        <a href="#t2">2. Secretion &amp; digestion</a>
+        <a href="#t3">3. Absorption &amp; malabsorption</a>
+      </div>
+      <div class="toc-col c2">
+        <h3>2 &middot; GI Disorders</h3>
+        <a href="#t4">4. Upper GI: GERD, ulcers &amp; bleeding</a>
+        <a href="#t5">5. Inflammatory &amp; IBD</a>
+        <a href="#t6">6. Bowel obstruction</a>
+      </div>
+      <div class="toc-col c3">
+        <h3>3 &middot; Hepatobiliary &amp; Pediatric</h3>
+        <a href="#t7">7. Liver: jaundice &amp; cirrhosis</a>
+        <a href="#t8">8. Gallbladder &amp; pancreas</a>
+        <a href="#t9">9. Pediatric GI</a>
+        <a href="#cheat">&#11088; Cheat sheet</a>
+        <a href="#gloss">&#128218; Glossary</a>
+      </div>
+    </div>
+  </nav>
+
+
+  
+
+  <!-- SECTION 1 -->
+  <div class="sec one" id="sec1"><span class="num">SECTION 1</span><div><h2>Structure &amp; Function</h2><p>How food moves, gets broken down, and is absorbed &mdash; and the digestive juices that make it happen.</p></div></div>
+
+  <!-- T1 -->
+  <details class="topic one" id="t1">
+    <summary><span class="tnum">1</span> Motility &amp; the GI Tract <span class="arrow">&#9654;</span></summary>
+    <div class="body">
+      <p>Food is moved by <b>peristalsis</b> &mdash; coordinated waves of smooth-muscle contraction &mdash; from mouth to anus. Sphincters control passage between segments.</p>
+      <table class="dt">
+        <tr><th>Process</th><th>Mechanism</th></tr>
+        <tr><td><b>Swallowing / esophageal transit</b></td><td><b>Peristalsis</b> (smooth-muscle waves) pushes the bolus down</td></tr>
+        <tr><td><b>Gastric emptying</b></td><td>A <b>high-fat meal slows emptying</b> (fat triggers CCK, which delays the stomach to allow digestion)</td></tr>
+        <tr><td><b>Defecation reflex</b></td><td>Rectal stretch triggers the urge; an <b>impaired reflex</b> (e.g., nerve damage) reduces the urge &rarr; retention/constipation</td></tr>
+        <tr><td><b>Autonomic control</b></td><td>Parasympathetic stimulates GI activity; <b>anticholinergics block it</b> &rarr; dry mouth, slowed motility</td></tr>
+      </table>
+      <div class="keyidea"><b>Key idea:</b> the GI tract is a muscular tube run by the autonomic nervous system. <b>Parasympathetic = "rest and digest"</b> (more secretion and motility). <b>Anticholinergic drugs block parasympathetic signals</b> &rarr; dry mouth, slowed gut, constipation &mdash; because acetylcholine drives salivation and peristalsis.</div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q1. Which mechanism allows food to move through the esophagus?</p>
+        <div class="opts"><div>A. Peristalsis (waves of smooth-muscle contraction)</div><div>B. Gravity alone</div><div>C. Segmentation in the stomach</div><div>D. Bile secretion</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Coordinated peristaltic waves propel the bolus down the esophagus &mdash; which is why swallowing works even lying down.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q2. A patient on an anticholinergic medication reports dry mouth. Which mechanism explains it?</p>
+        <div class="opts"><div>A. Blocked parasympathetic (acetylcholine) signaling reduces salivation</div><div>B. Increased parasympathetic activity</div><div>C. Excess salivary secretion</div><div>D. Increased peristalsis</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Anticholinergics block acetylcholine, the parasympathetic transmitter that drives salivation and gut motility &mdash; so the mouth goes dry and the gut slows.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q3. A patient has delayed gastric emptying after a high-fat meal. What contributes to the delay?</p>
+        <div class="opts"><div>A. Fat in the duodenum triggers signals (CCK) that slow gastric emptying</div><div>B. Fat speeds gastric emptying</div><div>C. Fat increases peristalsis in the stomach</div><div>D. Fat is absorbed in the stomach</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Fat entering the duodenum triggers CCK, which slows gastric emptying so there's time to digest and absorb the fat.</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- T2 -->
+  <details class="topic one" id="t2">
+    <summary><span class="tnum">2</span> Secretion &amp; Digestion <span class="arrow">&#9654;</span></summary>
+    <div class="body">
+      <p>Digestion runs on secretions &mdash; acid, enzymes, bicarbonate, and bile &mdash; each from a specific source.</p>
+      <table class="dt">
+        <tr><th>Secretion (source)</th><th>Job</th></tr>
+        <tr><td><b>Gastric acid + intrinsic factor</b> (parietal cells)</td><td>Acid digests/sterilizes; <b>intrinsic factor</b> is needed to absorb <b>vitamin B12</b></td></tr>
+        <tr><td><b>Pancreatic enzymes</b></td><td>Digest carbs, protein, and fat in the duodenum</td></tr>
+        <tr><td><b>Pancreatic bicarbonate</b></td><td><b>Neutralizes stomach acid</b> entering the duodenum (protects the lining; lets enzymes work)</td></tr>
+        <tr><td><b>Bile</b> (liver; stored in gallbladder)</td><td><b>Emulsifies fat</b> &mdash; breaks large fat globules into droplets so enzymes can digest them</td></tr>
+        <tr><td><b>Gut microbiome</b></td><td>Supports digestion, vitamin production, and immune balance; <b>low diversity</b> impairs these</td></tr>
+      </table>
+      <div class="keyidea"><b>Key idea &mdash; parietal cells:</b> they make both <b>acid</b> and <b>intrinsic factor</b>. Damage them and you get <b>low acid</b> <i>and</i> <b>B12 malabsorption</b> (intrinsic factor is required to absorb B12 in the ileum) &rarr; pernicious anemia.</div>
+      <div class="pearl"><b>Pearl &mdash; bicarbonate &amp; bile:</b> pancreatic <b>bicarbonate</b> neutralizes acid in the duodenum &mdash; lose it and the duodenum becomes too acidic (enzymes fail, lining is injured). <b>Bile emulsifies fat</b> &mdash; without it, fat isn't digested/absorbed &rarr; fatty stools (steatorrhea).</div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q1. A patient has damage to gastric parietal cells. Which change is expected?</p>
+        <div class="opts"><div>A. Decreased acid and impaired vitamin B12 absorption (loss of intrinsic factor)</div><div>B. Increased acid secretion</div><div>C. Increased intrinsic factor</div><div>D. Improved B12 absorption</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Parietal cells make acid <i>and</i> intrinsic factor; losing them lowers acid and impairs B12 absorption &rarr; pernicious anemia.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q2. What is the role of bile in fat digestion?</p>
+        <div class="opts"><div>A. It emulsifies fat into smaller droplets for enzyme action</div><div>B. It chemically digests fat into fatty acids</div><div>C. It neutralizes stomach acid</div><div>D. It absorbs fat directly</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Bile emulsifies (physically breaks up) fat into droplets, increasing surface area so pancreatic lipase can digest it. It doesn't chemically digest fat itself.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q3. A patient has decreased pancreatic bicarbonate secretion. Which effect occurs in the duodenum?</p>
+        <div class="opts"><div>A. The duodenum becomes too acidic, impairing enzymes and injuring the lining</div><div>B. The duodenum becomes more alkaline</div><div>C. Fat absorption improves</div><div>D. Acid is fully neutralized</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Without bicarbonate to neutralize gastric acid, the duodenum stays acidic &mdash; digestive enzymes work poorly and the mucosa is at risk.</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- T3 -->
+  <details class="topic one" id="t3">
+    <summary><span class="tnum">3</span> Absorption &amp; Malabsorption <span class="arrow">&#9654;</span></summary>
+    <div class="body">
+      <p>The small intestine absorbs nutrients across its huge surface of <b>villi</b>. Damage the villi or the digestive juices, and nutrients pass through unabsorbed.</p>
+      <table class="dt">
+        <tr><th>Disorder</th><th>Mechanism</th><th>Result</th></tr>
+        <tr><td><b>Celiac disease</b></td><td>Immune reaction to gluten <b>flattens/shortens the villi</b></td><td>&darr; absorptive surface &rarr; chronic diarrhea, weight loss, deficiencies</td></tr>
+        <tr><td><b>Cystic fibrosis</b></td><td>Thick secretions block <b>pancreatic ducts</b> &rarr; enzymes can't reach the gut</td><td><b>Fat malabsorption</b> &rarr; steatorrhea, poor growth</td></tr>
+        <tr><td><b>Pancreatic insufficiency</b></td><td>Too few pancreatic enzymes (incl. lipase)</td><td><b>Steatorrhea</b> (fatty, floating, foul stools)</td></tr>
+      </table>
+      <div class="keyidea"><b>Key idea:</b> absorption needs (1) <b>working villi</b> (surface area) and (2) <b>digestive juices</b> (enzymes + bile). <b>Celiac</b> destroys the villi (a <i>surface</i> problem). <b>Cystic fibrosis / pancreatic insufficiency</b> starve the gut of enzymes (a <i>digestion</i> problem) &rarr; especially <b>fat malabsorption (steatorrhea)</b>.</div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q1. A patient with celiac disease has chronic diarrhea and weight loss. Which physiologic outcome from shortened intestinal villi explains it?</p>
+        <div class="opts"><div>A. Reduced absorptive surface area causing malabsorption</div><div>B. Increased surface area for absorption</div><div>C. Increased enzyme secretion</div><div>D. Faster nutrient uptake</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Flattened villi sharply reduce absorptive surface area, so nutrients (and water) aren't absorbed &rarr; diarrhea and weight loss.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q2. Which alteration explains fat malabsorption in cystic fibrosis?</p>
+        <div class="opts"><div>A. Blocked pancreatic ducts prevent digestive enzymes from reaching the intestine</div><div>B. Excess pancreatic enzyme secretion</div><div>C. Increased bile production</div><div>D. Enhanced villous absorption</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Thick secretions plug the pancreatic ducts, so enzymes (including lipase) can't reach the duodenum &rarr; fat isn't digested/absorbed &rarr; steatorrhea.</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- SECTION 2 -->
+  <div class="sec two" id="sec2"><span class="num">SECTION 2</span><div><h2>Gastrointestinal Disorders</h2><p>Upper-GI acid and bleeding problems, the inflammatory bowel diseases, and mechanical obstruction.</p></div></div>
+
+  <!-- T4 -->
+  <details class="topic two" id="t4">
+    <summary><span class="tnum">4</span> Upper GI: GERD, Ulcers &amp; Bleeding <span class="arrow">&#9654;</span></summary>
+    <div class="body">
+      <p>The upper GI story is mostly about <b>acid where it shouldn't be</b> and <b>bleeding</b>.</p>
+      <table class="dt">
+        <tr><th>Disorder</th><th>Mechanism</th></tr>
+        <tr><td><b>GERD</b></td><td><b>Weak/relaxed lower esophageal sphincter (LES)</b> lets acid reflux up into the esophagus. Risk: obesity, hiatal hernia, fatty/large meals, lying down after eating</td></tr>
+        <tr><td><b>Peptic ulcer disease (PUD)</b></td><td>Mucosal defense fails against acid &mdash; mainly <b>H. pylori</b> infection and <b>NSAIDs</b> (also smoking, alcohol, stress)</td></tr>
+        <tr><td><b>Esophageal varices</b></td><td>Portal hypertension swells esophageal veins &rarr; can rupture &rarr; <b>massive bright-red hematemesis</b></td></tr>
+      </table>
+      <h4>Reading GI bleeding</h4>
+      <ul>
+        <li><b>Hematemesis</b> (vomiting blood): <b>bright red</b> = brisk/upper bleeding (e.g., varices); "coffee-ground" = older, acid-exposed blood.</li>
+        <li><b>Melena</b> (black, tarry stool): <b>upper GI bleed</b> &mdash; blood has been digested on its way through.</li>
+        <li><b>Hematochezia</b> (bright red rectal blood): usually a <b>lower GI</b> source.</li>
+      </ul>
+      <div class="keyidea"><b>Key idea:</b> <b>GERD = LES failure</b> (acid refluxes up). <b>PUD = H. pylori + NSAIDs</b> breaking down mucosal defense. For bleeding, location is in the color: <b>black tarry stool (melena) = upper GI bleed</b>; bright-red rectal blood = lower GI.</div>
+      <div class="pearl"><b>Pearl:</b> prolonged vomiting loses stomach acid &rarr; <b>metabolic alkalosis</b> plus fluid/electrolyte loss (a common exam complication of severe vomiting).</div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q1. Which change allows gastric contents to reflux into the esophagus in GERD?</p>
+        <div class="opts"><div>A. A weakened/relaxed lower esophageal sphincter</div><div>B. A tightened LES</div><div>C. Increased esophageal peristalsis</div><div>D. Decreased gastric acid</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> When the LES is weak or relaxes inappropriately, acidic stomach contents flow back up &mdash; the core of GERD.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q2 (SATA). Which factors contribute to peptic ulcer disease?</p>
+        <div class="opts"><div>A. H. pylori infection</div><div>B. NSAID use</div><div>C. Smoking</div><div>D. Increased mucosal protection</div><div>E. Excess acid/stress</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A, B, C, and E are correct.</span> H. pylori, NSAIDs, smoking, and acid/stress all weaken or overwhelm mucosal defense. (D) is wrong &mdash; <i>increased</i> protection would prevent ulcers.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q3. A patient reports black, tarry stools (melena). What does this indicate?</p>
+        <div class="opts"><div>A. An upper GI bleed (blood digested in transit)</div><div>B. A lower GI/rectal bleed</div><div>C. Normal stool</div><div>D. Biliary obstruction</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Melena is black and tarry because blood from an upper GI source is partly digested as it moves through the tract.</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- T5 -->
+  <details class="topic two" id="t5">
+    <summary><span class="tnum">5</span> Inflammatory GI Disease &amp; IBD <span class="arrow">&#9654;</span></summary>
+    <div class="body">
+      <p>Inflammation can be localized (appendicitis, diverticulitis) or chronic (IBD). The dreaded shared complication is <b>peritonitis</b>.</p>
+      <h4>Crohn disease vs ulcerative colitis (IBD)</h4>
+      <table class="dt">
+        <tr><th></th><th>Crohn disease</th><th>Ulcerative colitis (UC)</th></tr>
+        <tr><td><b>Location</b></td><td><b>Anywhere</b> mouth&rarr;anus; <b>skip lesions</b></td><td><b>Colon/rectum only</b>; continuous</td></tr>
+        <tr><td><b>Depth</b></td><td><b>Transmural</b> (full wall) &rarr; fistulas, strictures</td><td><b>Mucosa/submucosa</b> only</td></tr>
+        <tr><td><b>Classic stool</b></td><td>Diarrhea (less bloody)</td><td><b>Bloody diarrhea</b> with urgency</td></tr>
+        <tr><td><b>Cancer risk</b></td><td>Increased</td><td><b>Higher</b> colorectal cancer risk &rarr; surveillance colonoscopy</td></tr>
+      </table>
+      <h4>Localized inflammation &amp; diarrhea</h4>
+      <ul>
+        <li><b>Appendicitis:</b> RLQ pain, fever, nausea. If it ruptures &rarr; <b>peritonitis</b>: diffuse pain, <b>rigid abdomen</b>, rebound tenderness &mdash; an emergency.</li>
+        <li><b>Diverticulitis:</b> <b>LLQ</b> pain, fever, nausea (inflamed colonic outpouchings).</li>
+        <li><b>Secretory diarrhea</b> keeps going <b>even when fasting</b> (the gut actively secretes fluid); osmotic diarrhea stops with fasting.</li>
+        <li><b>Top complication of persistent diarrhea:</b> <b>dehydration and electrolyte imbalance</b>.</li>
+      </ul>
+      <div class="keyidea"><b>Key idea &mdash; Crohn vs UC:</b> <b>Crohn = skip lesions, anywhere, transmural</b> (deep &rarr; fistulas). <b>UC = continuous, colon-only, mucosal, bloody diarrhea</b> with higher colorectal-cancer risk. The single best distinguisher: Crohn can affect <i>any</i> part of the GI tract with skip lesions; UC is limited to the colon and is continuous.</div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q1. Which statement distinguishes Crohn disease from ulcerative colitis?</p>
+        <div class="opts"><div>A. Crohn can affect any part of the GI tract with skip lesions; UC is continuous and colon-only</div><div>B. UC affects the entire GI tract; Crohn affects only the rectum</div><div>C. Both are limited to the colon</div><div>D. Crohn is mucosal only</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Crohn = skip lesions anywhere, transmural; UC = continuous, colon/rectum only, mucosal, with bloody diarrhea.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q2. A patient with appendicitis develops severe diffuse abdominal pain, fever, and a rigid abdomen. What happened?</p>
+        <div class="opts"><div>A. The appendix ruptured, causing peritonitis</div><div>B. The appendix healed</div><div>C. A bowel obstruction resolved</div><div>D. Gallbladder inflammation</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Rupture spills contents into the peritoneum &rarr; peritonitis: diffuse pain, rigid (guarding) abdomen, rebound tenderness, fever &mdash; a surgical emergency.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q3. Which complication poses the highest risk in a patient with persistent large-volume diarrhea?</p>
+        <div class="opts"><div>A. Dehydration and electrolyte imbalance</div><div>B. Weight gain</div><div>C. Hypertension</div><div>D. Polycythemia</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Large fluid and electrolyte losses cause dehydration and imbalances (e.g., hypokalemia) &mdash; the main danger of persistent diarrhea.</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- T6 -->
+  <details class="topic two" id="t6">
+    <summary><span class="tnum">6</span> Bowel Obstruction <span class="arrow">&#9654;</span></summary>
+    <div class="body">
+      <p>When the lumen is blocked, contents back up. The classic picture: <b>distension, cramping pain, vomiting, and no flatus/stool</b>.</p>
+      <table class="dt">
+        <tr><th>Cause</th><th>Mechanism</th></tr>
+        <tr><td><b>Mechanical obstruction</b></td><td>Adhesions, hernia, tumor, etc. block the lumen &rarr; <b>distension, cramping, vomiting, no flatus</b>; bowel sounds first <b>high-pitched/hyperactive</b>, then absent</td></tr>
+        <tr><td><b>Intussusception</b></td><td>One segment <b>telescopes into another</b> &rarr; obstruction + compromised blood flow &rarr; <b>currant-jelly stools</b> (child)</td></tr>
+        <tr><td><b>Hirschsprung disease</b></td><td><b>Absent ganglion cells</b> in a distal colon segment &rarr; no peristalsis there &rarr; functional obstruction &rarr; <b>constipation</b> (newborn)</td></tr>
+      </table>
+      <div class="keyidea"><b>Key idea:</b> obstruction blocks forward flow &rarr; gas and fluid accumulate &rarr; <b>distension, colicky pain, vomiting, and obstipation (no flatus/stool)</b>. Early high-pitched "tinkling" bowel sounds reflect the gut straining against the block. A feared complication is <b>bowel ischemia/perforation &rarr; peritonitis</b>.</div>
+      <div class="pearl"><b>Pearl &mdash; pediatric obstructions:</b> <b>intussusception</b> = telescoping &rarr; "currant-jelly" (blood + mucus) stools. <b>Hirschsprung</b> = <i>missing</i> nerve (ganglion) cells &rarr; that segment can't relax/propel &rarr; constipation from birth.</div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q1. A patient has abdominal distension, vomiting, cramping pain, and no flatus. What process is occurring?</p>
+        <div class="opts"><div>A. Bowel obstruction</div><div>B. Diarrhea</div><div>C. GERD</div><div>D. Normal digestion</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Distension + cramping + vomiting + absent flatus is the classic bowel-obstruction picture (Marco's case). Contents can't move forward, so they back up.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q2. A child has intermittent severe abdominal pain, vomiting, and currant-jelly stools. Which process is most likely?</p>
+        <div class="opts"><div>A. Intussusception (one bowel segment telescopes into another)</div><div>B. GERD</div><div>C. Appendicitis</div><div>D. Celiac disease</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Telescoping bowel obstructs flow and compromises blood supply, producing the classic currant-jelly (blood + mucus) stools.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q3. Which change causes constipation in Hirschsprung disease?</p>
+        <div class="opts"><div>A. Absent ganglion (nerve) cells in a colon segment prevent peristalsis</div><div>B. Excess ganglion cells speed peristalsis</div><div>C. Increased mucus secretion</div><div>D. Shortened villi</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> The aganglionic segment can't relax or propel stool, creating a functional obstruction &rarr; constipation from birth.</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- SECTION 3 -->
+  <div class="sec three" id="sec3"><span class="num">SECTION 3</span><div><h2>Hepatobiliary &amp; Pediatric GI</h2><p>The liver, gallbladder, and pancreas &mdash; plus the pediatric GI conditions you must recognize.</p></div></div>
+
+  <!-- T7 -->
+  <details class="topic three" id="t7">
+    <summary><span class="tnum">7</span> Liver: Jaundice &amp; Cirrhosis <span class="arrow">&#9654;</span></summary>
+    <div class="body">
+      <p>The liver processes <b>bilirubin</b>, makes proteins, and filters portal blood. Its failure shows up as jaundice, fluid shifts, and portal hypertension.</p>
+      <h4>Jaundice &mdash; where bilirubin gets stuck</h4>
+      <table class="dt">
+        <tr><th>Type</th><th>Mechanism</th></tr>
+        <tr><td><b>Pre-hepatic (hemolytic)</b></td><td>Too much RBC breakdown &rarr; <b>excess unconjugated bilirubin</b> overwhelms the liver</td></tr>
+        <tr><td><b>Hepatic</b></td><td>Damaged liver cells can't <b>process/conjugate</b> bilirubin</td></tr>
+        <tr><td><b>Post-hepatic (cholestatic)</b></td><td><b>Blocked bile flow</b> &rarr; conjugated bilirubin backs up &rarr; <b>dark urine, pale stools</b>, and <b>pruritus</b> (bile salts in skin)</td></tr>
+      </table>
+      <h4>Cirrhosis &amp; portal hypertension</h4>
+      <ul>
+        <li><b>Cirrhosis:</b> chronic injury (alcohol, hepatitis, fatty liver) &rarr; repeated inflammation &rarr; <b>fibrosis/scarring</b> replaces functional liver &rarr; progressive failure.</li>
+        <li><b>Portal hypertension:</b> scarring (or portal vein obstruction) blocks blood flow through the liver &rarr; back-pressure in the portal system &rarr; <b>esophageal varices, splenomegaly, ascites</b>.</li>
+        <li><b>Ascites:</b> fluid in the abdomen from <b>high portal pressure + low albumin</b> (failing liver makes less albumin &rarr; low oncotic pressure).</li>
+      </ul>
+      <div class="keyidea"><b>Key idea:</b> jaundice = bilirubin backing up somewhere along its path (overproduction, liver can't process it, or bile is blocked). <b>Cholestasis</b> (blocked bile) gives the triad <b>yellow skin + dark urine + pale stools</b>, plus <b>itching</b> from bile salts. Cirrhosis &rarr; portal hypertension &rarr; varices + ascites; low albumin worsens the ascites.</div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q1. A patient reports yellowing skin, dark urine, and pale stools. Which mechanism explains it?</p>
+        <div class="opts"><div>A. Blocked bile flow backs up conjugated bilirubin (cholestasis)</div><div>B. Increased bile excretion</div><div>C. Excess RBC production</div><div>D. Increased albumin</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Obstructed bile flow makes conjugated bilirubin back up into blood (jaundice, dark urine) while it can't reach the gut (pale stools).</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q2. Which mechanism explains hyperbilirubinemia in hemolysis?</p>
+        <div class="opts"><div>A. Excessive RBC breakdown produces more bilirubin than the liver can process</div><div>B. Blocked bile ducts</div><div>C. Reduced RBC production</div><div>D. Increased liver conjugation</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Rapid RBC destruction floods the system with unconjugated bilirubin, overwhelming the liver's processing capacity.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q3. Which mechanism explains ascites in liver failure?</p>
+        <div class="opts"><div>A. Portal hypertension plus low albumin (low oncotic pressure) shift fluid into the abdomen</div><div>B. Increased albumin production</div><div>C. Low portal pressure</div><div>D. Increased bile flow</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> High portal pressure pushes fluid out, and a failing liver makes less albumin (low oncotic pull to keep fluid in vessels) &rarr; ascites.</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- T8 -->
+  <details class="topic three" id="t8">
+    <summary><span class="tnum">8</span> Gallbladder &amp; Pancreas <span class="arrow">&#9654;</span></summary>
+    <div class="body">
+      <p>The gallbladder stores bile; the pancreas makes enzymes and bicarbonate. Both produce classic pain syndromes.</p>
+      <table class="dt">
+        <tr><th>Disorder</th><th>Mechanism &amp; clues</th></tr>
+        <tr><td><b>Cholelithiasis / cholecystitis</b></td><td>Gallstones block bile flow / inflame the gallbladder &rarr; <b>RUQ pain after fatty meals</b>, fever, nausea (fat triggers gallbladder contraction)</td></tr>
+        <tr><td><b>Pancreatitis</b></td><td>Pancreatic enzymes activate <b>inside the pancreas</b> and <b>autodigest</b> it &rarr; severe <b>epigastric pain</b> (often radiating to the back), nausea</td></tr>
+        <tr><td><b>Pancreatic insufficiency</b></td><td>Too few enzymes (incl. lipase) &rarr; fat malabsorption &rarr; <b>steatorrhea</b></td></tr>
+      </table>
+      <div class="keyidea"><b>Key idea &mdash; pancreatitis is autodigestion:</b> enzymes meant for the gut activate prematurely <b>within the pancreas</b> and digest the organ itself &rarr; intense inflammation and pain. Common causes: <b>gallstones and alcohol</b>. If the gland is chronically damaged, it can't secrete enzymes &rarr; <b>steatorrhea</b> (Topic 3 link).</div>
+      <div class="pearl"><b>Pearl &mdash; "after a fatty meal":</b> fat triggers gallbladder contraction (via CCK), so <b>RUQ pain after fatty meals</b> points to gallstones/cholecystitis. <b>Pruritus in cholestasis</b> comes from <b>bile salts</b> deposited in the skin.</div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q1. Which mechanism explains the abdominal pain of pancreatitis?</p>
+        <div class="opts"><div>A. Premature enzyme activation autodigesting the pancreas and causing inflammation</div><div>B. Gallbladder contraction</div><div>C. Decreased pancreatic enzymes</div><div>D. Esophageal reflux</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Enzymes activate inside the pancreas and digest its own tissue &rarr; intense inflammation and pain.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q2. A patient develops RUQ pain after meals with fever and nausea. What is the likely problem?</p>
+        <div class="opts"><div>A. Cholecystitis/gallstones (fatty meals trigger gallbladder contraction)</div><div>B. Appendicitis</div><div>C. Diverticulitis</div><div>D. GERD</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> RUQ pain after fatty meals with fever/nausea is the classic gallbladder pattern &mdash; fat triggers contraction against an obstructing stone.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q3. Which mechanism explains steatorrhea in pancreatic insufficiency?</p>
+        <div class="opts"><div>A. Lack of pancreatic enzymes (lipase) leaves fat undigested and unabsorbed</div><div>B. Excess bile</div><div>C. Increased villous absorption</div><div>D. Too much lipase</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Without lipase, fat isn't digested or absorbed, so it passes into the stool &rarr; fatty, floating, foul-smelling steatorrhea.</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- T9 -->
+  <details class="topic three" id="t9">
+    <summary><span class="tnum">9</span> Pediatric GI <span class="arrow">&#9654;</span></summary>
+    <div class="body">
+      <p>Several GI conditions are classic in newborns and children &mdash; recognize the pattern and the mechanism.</p>
+      <table class="dt">
+        <tr><th>Condition</th><th>Mechanism &amp; hallmark</th></tr>
+        <tr><td><b>Pyloric stenosis</b></td><td>Thickened pyloric muscle obstructs gastric outlet &rarr; <b>forceful, projectile, NON-bilious vomiting</b> in an infant (block is <i>before</i> the bile duct entry)</td></tr>
+        <tr><td><b>Intussusception</b></td><td>Bowel telescopes &rarr; obstruction + ischemia &rarr; <b>currant-jelly stools</b>, intermittent severe pain</td></tr>
+        <tr><td><b>Hirschsprung disease</b></td><td><b>Absent ganglion cells</b> &rarr; no peristalsis in that segment &rarr; <b>constipation/obstruction</b> from birth</td></tr>
+        <tr><td><b>Necrotizing enterocolitis (NEC)</b></td><td><b>Premature</b> infant; bowel inflammation/ischemia &rarr; <b>abdominal distension, feeding intolerance, bloody stools</b> &mdash; emergency</td></tr>
+        <tr><td><b>Cleft palate</b></td><td>Opening in the palate &rarr; <b>difficult feeding, poor weight gain</b> (can't generate suction)</td></tr>
+      </table>
+      <div class="keyidea"><b>Key idea &mdash; "non-bilious" vs "bilious":</b> in <b>pyloric stenosis</b> the obstruction is at the stomach outlet, <i>above</i> where bile enters &rarr; vomit is <b>non-bilious</b> (and projectile). Obstructions <i>below</i> the bile duct produce <b>bilious (green)</b> vomiting. Where the blockage sits tells you the vomit's color.</div>
+      <div class="pearl"><b>Pearl &mdash; NEC:</b> think <b>premature infant + distension + feeding intolerance + bloody stools</b>. Immature gut and immunity make preemies vulnerable to this dangerous bowel inflammation.</div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q1. Which change explains forceful, non-bilious vomiting in an infant?</p>
+        <div class="opts"><div>A. Pyloric muscle thickening obstructs the gastric outlet (above the bile duct)</div><div>B. A lower bowel obstruction</div><div>C. Bile reflux into the stomach</div><div>D. Esophageal sphincter relaxation</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Pyloric stenosis blocks the stomach outlet before bile enters the gut, so vomiting is forceful (projectile) and non-bilious.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q2. A premature infant has abdominal distension, feeding intolerance, and bloody stools. Which condition is most consistent?</p>
+        <div class="opts"><div>A. Necrotizing enterocolitis (NEC)</div><div>B. GERD</div><div>C. Cleft palate</div><div>D. Pyloric stenosis</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Prematurity + distension + feeding intolerance + bloody stools is the classic NEC picture &mdash; a GI emergency.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q3. An infant with cleft palate has difficult feeding and poor weight gain. Why?</p>
+        <div class="opts"><div>A. The palate opening prevents effective suction during feeding</div><div>B. The stomach can't empty</div><div>C. Bile flow is blocked</div><div>D. The villi are flattened</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> A cleft palate prevents the infant from creating the suction/seal needed to feed effectively &rarr; poor intake and weight gain.</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- CHEAT SHEET -->
+  <div class="sec one" id="cheat" style="background:linear-gradient(135deg,#1B5E20,#2E7D32);"><span class="num">&#11088; EXAM</span><div><h2>Digestive Cheat Sheet</h2><p>The highest-yield patterns &mdash; review the night before.</p></div></div>
+  <div class="cheat">
+    <h4 style="color:var(--pri-dk);">Function</h4>
+    <ul>
+      <li><b>Peristalsis</b> moves food; <b>anticholinergics</b> block parasympathetic &rarr; dry mouth, slow gut; <b>high-fat meal</b> slows gastric emptying (CCK).</li>
+      <li><b>Parietal cells</b> = acid + <b>intrinsic factor</b> (needed for B12). <b>Pancreatic bicarbonate</b> neutralizes duodenal acid. <b>Bile emulsifies fat</b>.</li>
+      <li><b>Celiac</b> = flattened villi (surface loss). <b>CF / pancreatic insufficiency</b> = no enzymes &rarr; <b>steatorrhea</b>.</li>
+    </ul>
+    <h4 style="color:#BF360C;">GI disorders</h4>
+    <ul>
+      <li><b>GERD</b> = weak LES &rarr; acid reflux. <b>PUD</b> = H. pylori + NSAIDs.</li>
+      <li><b>Melena</b> (black tarry) = <b>upper</b> GI bleed; bright-red rectal = lower. Bright-red hematemesis = varices.</li>
+      <li><b>Crohn</b> = skip lesions, anywhere, transmural. <b>UC</b> = continuous, colon-only, mucosal, <b>bloody diarrhea</b>, &uarr; colorectal cancer.</li>
+      <li><b>Appendicitis</b> (RLQ) rupture &rarr; <b>peritonitis</b> (rigid abdomen, rebound). <b>Diverticulitis</b> = LLQ.</li>
+      <li><b>Obstruction</b> = distension + cramping + vomiting + no flatus; high-pitched then absent bowel sounds.</li>
+      <li><b>Persistent diarrhea</b> &rarr; dehydration/electrolyte loss. <b>Secretory diarrhea</b> continues when fasting.</li>
+    </ul>
+    <h4 style="color:#005662;">Hepatobiliary &amp; pediatric</h4>
+    <ul>
+      <li><b>Jaundice:</b> overproduction (hemolysis), liver can't process, or blocked bile (cholestasis &rarr; dark urine, pale stools, <b>itching</b>).</li>
+      <li><b>Cirrhosis</b> &rarr; fibrosis &rarr; <b>portal hypertension</b> &rarr; varices + <b>ascites</b> (also low albumin).</li>
+      <li><b>Pancreatitis</b> = autodigestion (gallstones, alcohol). <b>Cholecystitis</b> = RUQ pain after fatty meals.</li>
+      <li><b>Pyloric stenosis</b> = projectile <b>non-bilious</b> vomiting. <b>Intussusception</b> = currant-jelly stools. <b>Hirschsprung</b> = no ganglion cells &rarr; constipation. <b>NEC</b> = premature + distension + bloody stools.</li>
+    </ul>
+  </div>
+
+  <!-- GLOSSARY -->
+  <div class="sec three" id="gloss" style="background:linear-gradient(135deg,#00838F,#005662);"><span class="num">&#128218; TERMS</span><div><h2>Glossary</h2><p>Quick definitions of the Week 13 vocabulary.</p></div></div>
+  <div class="cheat" style="border-color:var(--s3);">
+    <dl class="gloss">
+      <dt>Peristalsis</dt><dd>Waves of smooth-muscle contraction that propel GI contents.</dd>
+      <dt>Intrinsic factor</dt><dd>Parietal-cell protein required to absorb vitamin B12.</dd>
+      <dt>Bile</dt><dd>Liver secretion that emulsifies fat for digestion; stored in the gallbladder.</dd>
+      <dt>Steatorrhea</dt><dd>Fatty, foul, floating stool from fat malabsorption (pancreatic insufficiency, CF).</dd>
+      <dt>GERD</dt><dd>Acid reflux from a weak lower esophageal sphincter.</dd>
+      <dt>Peptic ulcer disease</dt><dd>Mucosal ulceration, mainly from H. pylori and NSAIDs.</dd>
+      <dt>Melena / Hematemesis</dt><dd>Black tarry stool (upper GI bleed) / vomiting blood.</dd>
+      <dt>Crohn vs UC</dt><dd>Crohn: skip lesions, anywhere, transmural. UC: continuous, colon-only, mucosal, bloody diarrhea.</dd>
+      <dt>Peritonitis</dt><dd>Inflammation of the peritoneum (e.g., ruptured appendix) &mdash; rigid abdomen, rebound tenderness.</dd>
+      <dt>Bowel obstruction</dt><dd>Blocked lumen &rarr; distension, cramping, vomiting, no flatus.</dd>
+      <dt>Intussusception</dt><dd>Bowel telescoping into itself &rarr; obstruction and currant-jelly stools (children).</dd>
+      <dt>Hirschsprung disease</dt><dd>Absent colonic ganglion cells &rarr; no peristalsis &rarr; constipation from birth.</dd>
+      <dt>Jaundice</dt><dd>Yellowing from elevated bilirubin (overproduction, hepatic, or obstructive).</dd>
+      <dt>Cirrhosis</dt><dd>Scarring/fibrosis from chronic liver injury &rarr; liver failure and portal hypertension.</dd>
+      <dt>Portal hypertension / Ascites</dt><dd>High pressure in the portal system &rarr; varices, splenomegaly, abdominal fluid (ascites).</dd>
+      <dt>Pancreatitis</dt><dd>Autodigestion of the pancreas by its own prematurely activated enzymes.</dd>
+      <dt>NEC</dt><dd>Necrotizing enterocolitis &mdash; bowel inflammation/ischemia in premature infants.</dd>
+    </dl>
+  </div>
+
+
+
+
+  <footer class="foot">
+    SCI225 Pathophysiology &middot; Week 13 &mdash; The Digestive System &middot; Dr. Vidya Aggrawal &middot; Nightingale College<br>
+    <span style="font-size:12px;">Study guide for educational use. Built from the Week 13 learning objectives, pre-assessment, and case studies.</span>
+  </footer>
+
+</div>
+
+<script>
+  function toggleAll(){
+    var ds=document.querySelectorAll('details.topic');
+    var btn=document.getElementById('toggleBtn');
+    var anyClosed=Array.prototype.some.call(ds,function(d){return !d.open;});
+    ds.forEach(function(d){d.open=anyClosed;});
+    btn.textContent=anyClosed?'Collapse all':'Expand all';
+  }
+  function savePDF(){
+    document.querySelectorAll('details.topic').forEach(function(d){d.open=true;});
+    document.querySelectorAll('.ans').forEach(function(a){a.classList.add('show');});
+    setTimeout(function(){window.print();},250);
+  }
+  function reveal(btn){
+    var ans=btn.nextElementSibling;
+    ans.classList.toggle('show');
+    btn.textContent=ans.classList.contains('show')?'Hide answer':'Show answer';
+  }
+</script>
+</body>
+</html>

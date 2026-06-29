@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SCI225 Week 2 Study Guide — Adaptive Immunity, Hypersensitivity & Infection</title>
+<style>
+  :root {
+    --u1: #1e40af; --u1-bg: #eff6ff; --u1-brd: #93c5fd;
+    --u2: #b91c1c; --u2-bg: #fef2f2; --u2-brd: #fca5a5;
+    --u3: #7c3aed; --u3-bg: #faf5ff; --u3-brd: #c4b5fd;
+    --u4: #c2410c; --u4-bg: #fff7ed; --u4-brd: #fdba74;
+    --u5: #047857; --u5-bg: #ecfdf5; --u5-brd: #6ee7b7;
+    --u6: #be185d; --u6-bg: #fdf2f8; --u6-brd: #f9a8d4;
+    --mech: #1d4ed8; --mech-bg: #eff6ff;
+    --why:  #b45309; --why-bg:  #fffbeb;
+    --comp: #047857; --comp-bg: #f0fdf4;
+    --path: #be123c; --path-bg: #fff1f2;
+    --miss: #991b1b; --miss-bg: #fef2f2;
+    --acro: #6d28d9; --acro-bg: #f5f3ff;
+    --tip:  #0f766e; --tip-bg:  #ecfdf5;
+    --text: #111827; --muted: #4b5563; --line: #d1d5db;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    font-size: 10.5pt; line-height: 1.42; color: var(--text);
+    margin: 0; padding: 0; background: #f9fafb;
+  }
+  .layout { display: grid; grid-template-columns: 240px 1fr; max-width: 1140px; margin: 0 auto; }
+  nav.toc {
+    position: sticky; top: 0; align-self: start; max-height: 100vh; overflow-y: auto;
+    background: #fff; border-right: 1px solid var(--line); padding: 14px 12px; font-size: 9.4pt;
+  }
+  nav.toc h3 { font-size: 10pt; margin: 6px 0 8px; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; }
+  nav.toc a { display: block; padding: 3px 6px; color: var(--text); text-decoration: none; border-radius: 3px; margin-bottom: 1px; }
+  nav.toc a:hover { background: #f3f4f6; }
+  nav.toc .u1 { border-left: 3px solid var(--u1); }
+  nav.toc .u2 { border-left: 3px solid var(--u2); }
+  nav.toc .u3 { border-left: 3px solid var(--u3); }
+  nav.toc .u4 { border-left: 3px solid var(--u4); }
+  nav.toc .u5 { border-left: 3px solid var(--u5); }
+  nav.toc .u6 { border-left: 3px solid var(--u6); }
+  main { padding: 20px 28px; background: #fff; }
+  h1 { font-size: 20pt; margin: 0 0 4px; }
+  h2 { font-size: 15pt; margin: 18px 0 6px; padding: 6px 10px; border-radius: 4px; color: #fff; }
+  h3 { font-size: 12pt; margin: 12px 0 4px; padding-bottom: 2px; border-bottom: 1px solid var(--line); }
+  h4 { font-size: 10.8pt; margin: 8px 0 3px; color: var(--muted); }
+  .unit1 h2 { background: var(--u1); } .unit2 h2 { background: var(--u2); }
+  .unit3 h2 { background: var(--u3); } .unit4 h2 { background: var(--u4); }
+  .unit5 h2 { background: var(--u5); } .unit6 h2 { background: var(--u6); }
+  .unit1 h3 { color: var(--u1); border-bottom-color: var(--u1-brd); }
+  .unit2 h3 { color: var(--u2); border-bottom-color: var(--u2-brd); }
+  .unit3 h3 { color: var(--u3); border-bottom-color: var(--u3-brd); }
+  .unit4 h3 { color: var(--u4); border-bottom-color: var(--u4-brd); }
+  .unit5 h3 { color: var(--u5); border-bottom-color: var(--u5-brd); }
+  .unit6 h3 { color: var(--u6); border-bottom-color: var(--u6-brd); }
+  p { margin: 4px 0; }
+  ul, ol { margin: 4px 0 6px 20px; padding: 0; }
+  li { margin: 1px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 9.8pt; margin: 6px 0 8px; }
+  th, td { border: 1px solid var(--line); padding: 4px 6px; text-align: left; vertical-align: top; }
+  th { background: #f3f4f6; font-weight: 600; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+  .four-col { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 6px; }
+  .box { border-left: 4px solid; padding: 6px 10px; margin: 6px 0; border-radius: 3px; font-size: 10pt; }
+  .mech { border-color: var(--mech); background: var(--mech-bg); }
+  .mech::before { content: "MECHANISM "; font-weight: 700; color: var(--mech); font-size: 8.5pt; letter-spacing: .5px; }
+  .why { border-color: var(--why); background: var(--why-bg); }
+  .why::before { content: "WHY "; font-weight: 700; color: var(--why); font-size: 8.5pt; letter-spacing: .5px; }
+  .comp { border-color: var(--comp); background: var(--comp-bg); }
+  .comp::before { content: "COMPENSATION "; font-weight: 700; color: var(--comp); font-size: 8.5pt; letter-spacing: .5px; }
+  .path { border-color: var(--path); background: var(--path-bg); }
+  .path::before { content: "PATHOLOGY "; font-weight: 700; color: var(--path); font-size: 8.5pt; letter-spacing: .5px; }
+  .miss { border-color: var(--miss); background: var(--miss-bg); }
+  .miss::before { content: "⚠ COMMON MISSTEP "; font-weight: 700; color: var(--miss); font-size: 8.5pt; letter-spacing: .5px; }
+  .acro { border-color: var(--acro); background: var(--acro-bg); }
+  .acro::before { content: "ACRONYM / MNEMONIC "; font-weight: 700; color: var(--acro); font-size: 8.5pt; letter-spacing: .5px; }
+  .tip { border-color: var(--tip); background: var(--tip-bg); }
+  .tip::before { content: "★ EXAM TIP "; font-weight: 700; color: var(--tip); font-size: 8.5pt; letter-spacing: .5px; }
+  .flow { background: #f9fafb; border: 1px solid var(--line); padding: 8px 10px; border-radius: 4px; font-size: 9.8pt; margin: 6px 0; font-family: "Consolas", monospace; }
+  .flow .arr { color: #6b7280; margin: 0 3px; }
+  .q { background: #fafafa; border: 1px solid var(--line); border-radius: 4px; padding: 8px 10px; margin: 6px 0; font-size: 10pt; }
+  .q .qhead { font-weight: 600; margin-bottom: 3px; }
+  .q .opts { margin: 3px 0 4px 0; }
+  .q .ans { background: #ecfdf5; border-left: 3px solid var(--comp); padding: 4px 8px; margin-top: 4px; font-size: 9.8pt; }
+  .q .ans b { color: var(--comp); }
+  details summary { cursor: pointer; color: var(--mech); font-size: 9.5pt; font-weight: 600; }
+  .hero { padding: 14px 18px; background: linear-gradient(135deg, #1e3a8a, #b91c1c, #7c3aed); color: #fff; border-radius: 6px; margin-bottom: 14px; }
+  .hero h1 { color: #fff; }
+  .hero p { margin: 4px 0; font-size: 10pt; opacity: .95; }
+  .spine { background: rgba(255,255,255,.15); padding: 6px 10px; border-radius: 4px; margin-top: 6px; font-size: 9.8pt; }
+  .legend { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 10px; font-size: 9pt; }
+  .legend span { padding: 2px 8px; border-radius: 3px; border: 1px solid; }
+  .lg-mech { color: var(--mech); background: var(--mech-bg); border-color: var(--mech); }
+  .lg-why  { color: var(--why);  background: var(--why-bg);  border-color: var(--why); }
+  .lg-comp { color: var(--comp); background: var(--comp-bg); border-color: var(--comp); }
+  .lg-path { color: var(--path); background: var(--path-bg); border-color: var(--path); }
+  .lg-miss { color: var(--miss); background: var(--miss-bg); border-color: var(--miss); }
+  .lg-acro { color: var(--acro); background: var(--acro-bg); border-color: var(--acro); }
+  .lg-tip  { color: var(--tip);  background: var(--tip-bg);  border-color: var(--tip); }
+  .chip { font-size: 9pt; padding: 2px 8px; border-radius: 3px; color: #fff; font-weight: 600; }
+  .c1 { background: var(--u1); } .c2 { background: var(--u2); } .c3 { background: var(--u3); }
+  .c4 { background: var(--u4); } .c5 { background: var(--u5); } .c6 { background: var(--u6); }
+  .btns { margin: 10px 0; }
+  .btns button { background: #0f172a; color: #fff; border: 0; padding: 6px 12px; border-radius: 4px; font-size: 9.8pt; cursor: pointer; margin-right: 6px; }
+  .small { font-size: 9.3pt; color: var(--muted); }
+  @media print {
+    body { background: #fff; }
+    .layout { display: block; max-width: none; }
+    nav.toc, .btns { display: none; }
+    main { padding: 0.35in 0.4in; }
+    details { page-break-inside: avoid; }
+    details[open] summary { display: none; }
+    details:not([open]) > *:not(summary) { display: block; }
+    .hero, h2, .chip, .box, .q .ans, th { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+<div class="layout">
+<nav class="toc">
+  <h3>Week 2 Study Guide</h3>
+  <a href="#intro"><b>How to use this guide</b></a>
+  <a href="#u1" class="u1"><b>Unit 1.</b> Adaptive Immunity</a>
+  <a href="#u1-cells" class="u1">&nbsp;&nbsp;B & T cells</a>
+  <a href="#u1-igs" class="u1">&nbsp;&nbsp;Immunoglobulins</a>
+  <a href="#u1-vax" class="u1">&nbsp;&nbsp;Active/passive & vaccines</a>
+  <a href="#u1-q" class="u1">&nbsp;&nbsp;Practice Qs</a>
+  <a href="#u2" class="u2"><b>Unit 2.</b> Hypersensitivity I–IV</a>
+  <a href="#u2-1" class="u2">&nbsp;&nbsp;Type I (IgE / anaphylaxis)</a>
+  <a href="#u2-2" class="u2">&nbsp;&nbsp;Type II (cytotoxic)</a>
+  <a href="#u2-3" class="u2">&nbsp;&nbsp;Type III (immune complex)</a>
+  <a href="#u2-4" class="u2">&nbsp;&nbsp;Type IV (delayed / T-cell)</a>
+  <a href="#u2-trans" class="u2">&nbsp;&nbsp;Transplant rejection</a>
+  <a href="#u2-q" class="u2">&nbsp;&nbsp;Practice Qs</a>
+  <a href="#u3" class="u3"><b>Unit 3.</b> Autoimmunity</a>
+  <a href="#u3-q" class="u3">&nbsp;&nbsp;Practice Qs</a>
+  <a href="#u4" class="u4"><b>Unit 4.</b> Immunodeficiencies</a>
+  <a href="#u4-primary" class="u4">&nbsp;&nbsp;Primary (congenital)</a>
+  <a href="#u4-second" class="u4">&nbsp;&nbsp;Secondary / HIV</a>
+  <a href="#u4-q" class="u4">&nbsp;&nbsp;Practice Qs</a>
+  <a href="#u5" class="u5"><b>Unit 5.</b> Infection Process</a>
+  <a href="#u5-stages" class="u5">&nbsp;&nbsp;Stages of infection</a>
+  <a href="#u5-mech" class="u5">&nbsp;&nbsp;Pathogen mechanisms</a>
+  <a href="#u5-q" class="u5">&nbsp;&nbsp;Practice Qs</a>
+  <a href="#u6" class="u6"><b>Unit 6.</b> Stress & Immunity</a>
+  <a href="#u6-q" class="u6">&nbsp;&nbsp;Practice Qs</a>
+  <a href="#appx"><b>Appendix:</b> Missteps & Master Mnemonics</a>
+</nav>
+
+<main>
+
+<div class="btns">
+  <button onclick="window.print()">Print / Save as PDF</button>
+  <button onclick="document.querySelectorAll('details').forEach(d=>d.open=true)">Expand All</button>
+  <button onclick="document.querySelectorAll('details').forEach(d=>d.open=false)">Collapse All</button>
+</div>
+
+<section id="intro">
+<div class="hero">
+  <h1>SCI225 Week 2 — Complete Study Guide</h1>
+  <p><b>Made by Dr. Vidya Aggrawal</b></p>
+  <p>Adaptive Immunity · Hypersensitivity (Types I–IV) · Autoimmunity · Primary & Secondary Immunodeficiency · Infection · Stress & Disease</p>
+  <div class="spine"><b>Study Spine — for every immune topic ask:</b><br>
+  1. Which arm of immunity is involved (antibody or T cell)? &nbsp; 2. What is being attacked? &nbsp; 3. How fast does the reaction develop? &nbsp; 4. What's the classic clinical clue?</div>
+</div>
+
+<div class="legend">
+  <span class="lg-mech">MECHANISM</span>
+  <span class="lg-why">WHY</span>
+  <span class="lg-comp">COMPENSATION</span>
+  <span class="lg-path">PATHOLOGY</span>
+  <span class="lg-miss">MISSTEP</span>
+  <span class="lg-acro">ACRONYM</span>
+  <span class="lg-tip">EXAM TIP</span>
+</div>
+
+<h3>Course alignment</h3>
+<p>This guide maps to the four Week 2 learning objectives:</p>
+<ul>
+  <li><b>LO1</b> — Describe hypersensitivity reactions, immune deficiencies, and their clinical consequences <span class="small">(Units 2, 4)</span></li>
+  <li><b>LO2</b> — Understand the process of adaptive immunity <span class="small">(Unit 1)</span></li>
+  <li><b>LO3</b> — Explain infection and defects in mechanisms of defense <span class="small">(Units 4, 5)</span></li>
+  <li><b>LO4</b> — Understand stress and the consequence of disease <span class="small">(Unit 6)</span></li>
+</ul>
+<p>Every practice question here was written fresh for this guide. None reproduce exam items. The purpose is to <i>teach you to apply</i> the concept, then prove you can.</p>
+</section>
+
+<!-- ========================= UNIT 1 ========================= -->
+<section id="u1" class="unit1">
+<h2>Unit 1 &nbsp;•&nbsp; Adaptive Immunity &nbsp;<span class="chip c1">LO2</span></h2>
+
+<p>Adaptive immunity is <b>slow, specific, and has memory</b>. Unlike innate immunity (fast, nonspecific), adaptive takes days to mount on first exposure but responds within hours on re-exposure — that is the entire reason vaccination works.</p>
+
+<div class="box mech">
+Adaptive immunity has two arms that work together:
+<ul>
+  <li><b>Humoral (B-cell) immunity</b> — B cells differentiate into plasma cells that make antibodies. Antibodies target <i>extracellular</i> threats: bacteria in the bloodstream, toxins, viruses before they enter cells.</li>
+  <li><b>Cell-mediated (T-cell) immunity</b> — T cells directly kill infected cells (CD8 cytotoxic) or coordinate the response (CD4 helper). Needed for <i>intracellular</i> pathogens: viruses already inside cells, intracellular bacteria (TB), tumor cells.</li>
+</ul>
+</div>
+
+<h3 id="u1-cells">1.1 Cells of Adaptive Immunity</h3>
+<table>
+  <tr><th>Cell</th><th>Origin</th><th>Main job</th><th>Key marker</th></tr>
+  <tr><td><b>B cell</b></td><td>Bone marrow (matures there)</td><td>Makes antibodies; becomes plasma cell or memory B cell</td><td>CD19, CD20</td></tr>
+  <tr><td><b>CD4 T helper</b></td><td>Bone marrow → thymus</td><td>Coordinates: secretes cytokines, activates B and CD8 cells</td><td>CD4</td></tr>
+  <tr><td><b>CD8 cytotoxic T cell</b></td><td>Bone marrow → thymus</td><td>Kills virus-infected and tumor cells directly (perforin, granzyme)</td><td>CD8</td></tr>
+  <tr><td><b>Regulatory T cell (T-reg)</b></td><td>Thymus</td><td>Suppresses self-reactive T cells → prevents autoimmunity</td><td>CD4, CD25, FoxP3</td></tr>
+  <tr><td><b>Plasma cell</b></td><td>Terminally differentiated B cell</td><td>Antibody factory — pumps out IgG (and others) for days</td><td>CD138</td></tr>
+  <tr><td><b>Memory B / T cell</b></td><td>Post-exposure B and T cells</td><td>Live for years; respond within hours on re-exposure</td><td>Varies</td></tr>
+</table>
+
+<div class="box tip">
+<b>T cells mature in the <u>T</u>hymus. B cells mature in the <u>B</u>one marrow.</b> This single mnemonic saves a lot of confusion. A child born without a thymus (DiGeorge, Unit 4) has no functional T cells.
+</div>
+
+<h3 id="u1-igs">1.2 The Five Immunoglobulins — MADGE</h3>
+
+<div class="box acro">
+<b>MADGE</b> — the five antibody classes:<br>
+<b>Ig<u>M</u></b> · <b>Ig<u>A</u></b> · <b>Ig<u>D</u></b> · <b>Ig<u>G</u></b> · <b>Ig<u>E</u></b>
+</div>
+
+<table>
+  <tr><th>Ig</th><th>Where / What</th><th>Role</th><th>Clinical clue</th></tr>
+  <tr><td><b>IgM</b></td><td>Pentamer; first to appear</td><td>Initial response, best complement activator</td><td>"Acute or recent infection" — rising IgM</td></tr>
+  <tr><td><b>IgG</b></td><td>Most abundant; crosses placenta</td><td>Long-term immunity, opsonization, memory</td><td>High IgG = past exposure or vaccination</td></tr>
+  <tr><td><b>IgA</b></td><td>Mucosal secretions: saliva, tears, breast milk, GI/respiratory</td><td>Protects mucosal surfaces; passes passive immunity through breast milk</td><td>Recurrent sinus/GI infections → IgA deficiency</td></tr>
+  <tr><td><b>IgE</b></td><td>Bound to mast cells</td><td>Type I hypersensitivity; parasitic infection</td><td>"Allergy, anaphylaxis, asthma, parasites"</td></tr>
+  <tr><td><b>IgD</b></td><td>On naïve B-cell surface</td><td>B-cell receptor; role poorly understood</td><td>Rarely tested clinically</td></tr>
+</table>
+
+<div class="box why">
+<b>Why IgM comes first.</b> B cells initially express IgM without needing help. With help from CD4 T cells, they can "class-switch" to IgG, IgA, or IgE depending on the signal — a more specialized, longer-lasting response. The first wave (IgM) buys time while the class-switched wave (IgG) builds.
+</div>
+
+<h3 id="u1-vax">1.3 Active vs Passive Immunity & Vaccines</h3>
+
+<div class="two-col">
+  <div class="box mech" style="margin:0">
+    <b>ACTIVE IMMUNITY — you make it</b><br>
+    Your own B/T cells mount a response. Slow onset (days), long-lasting (often lifelong), memory formed.<br>
+    <b>Natural:</b> surviving infection.<br>
+    <b>Artificial:</b> vaccination.
+  </div>
+  <div class="box mech" style="margin:0">
+    <b>PASSIVE IMMUNITY — given to you</b><br>
+    Pre-formed antibodies transferred in. Immediate (hours), short-lived (weeks to months), <b>no memory</b>.<br>
+    <b>Natural:</b> maternal IgG across placenta, IgA in breast milk.<br>
+    <b>Artificial:</b> IVIG, rabies immunoglobulin, antivenom, equine antiserum.
+  </div>
+</div>
+
+<div class="box miss">
+<b>"Given" = passive. Always.</b> If the patient received pre-formed antibody (RhoGAM, rabies Ig, monoclonal Ab, maternal IgG, breast milk IgA), they have passive immunity with no memory. If the patient <i>made</i> the antibody (infection, vaccine), it is active with memory.
+</div>
+
+<h4>Vaccine types — quick reference</h4>
+<table>
+  <tr><th>Type</th><th>How it works</th><th>Examples</th><th>Key fact</th></tr>
+  <tr><td><b>Live attenuated</b></td><td>Weakened live pathogen</td><td>MMR, varicella, oral polio, BCG, yellow fever</td><td>Strong, long immunity; <b>avoid in immunocompromised</b> and pregnancy</td></tr>
+  <tr><td><b>Inactivated (killed)</b></td><td>Dead organism</td><td>Influenza (shot), hepatitis A, rabies, polio (IPV)</td><td>Safe for immunocompromised; needs boosters</td></tr>
+  <tr><td><b>Subunit / conjugate</b></td><td>Piece of antigen only</td><td>Hepatitis B, HPV, pertussis, pneumococcal</td><td>Safe, no live organism</td></tr>
+  <tr><td><b>Toxoid</b></td><td>Inactivated toxin</td><td>Tetanus, diphtheria</td><td>Creates antitoxin antibodies</td></tr>
+  <tr><td><b>mRNA</b></td><td>Lipid nanoparticle with mRNA → cell makes antigen</td><td>COVID-19 (Pfizer, Moderna)</td><td>No live virus; rapid design</td></tr>
+</table>
+
+<div class="box tip">
+<b>Live vaccines + immunocompromised = danger.</b> An infant with profound lymphopenia and absent Igs (SCID suspect) who got a live vaccine is at risk of vaccine-derived disseminated infection. This is an exam favorite.
+</div>
+
+<h3 id="u1-q">Practice Questions — Adaptive Immunity</h3>
+
+<div class="q">
+<div class="qhead">Q1. Which statement best distinguishes humoral from cell-mediated immunity?</div>
+<div class="opts">
+A. Humoral targets intracellular pathogens; cell-mediated targets extracellular<br>
+B. Humoral involves antibodies from B-cell-derived plasma cells; cell-mediated involves T cells directly killing infected cells<br>
+C. Humoral is innate; cell-mediated is adaptive<br>
+D. Humoral forms no memory; cell-mediated does
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Humoral = antibody = B cells (for extracellular threats). Cell-mediated = T cells (for intracellular and tumor cells). Both are part of adaptive immunity, both form memory.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q2. A pediatric patient has recurrent sinus and gastrointestinal infections but normal IgG and IgM. Which immunoglobulin is most likely deficient?</div>
+<div class="opts">
+A. IgE<br>
+B. IgA<br>
+C. IgD<br>
+D. IgM
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> IgA lives in mucosal secretions and protects the respiratory and GI tracts. Selective IgA deficiency is the most common primary immunodeficiency and presents this way.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q3. A newborn is born full-term to a fully vaccinated mother and is exclusively breastfed. The infant is protected from many pathogens during the first six months by:</div>
+<div class="opts">
+A. Natural active immunity from in utero infection<br>
+B. Natural passive immunity from maternal IgG across the placenta and IgA in breast milk<br>
+C. Artificial active immunity from vaccination at birth<br>
+D. Innate immunity alone
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> The infant "received" the antibodies → <b>passive</b>. The transfer was physiologic (placenta, breast milk) → <b>natural</b>. No memory is formed, which is why routine vaccination begins around 2 months.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q4. <b>Select all that apply.</b> Which vaccines should be <i>avoided</i> in a patient with severe combined immunodeficiency (SCID)?</div>
+<div class="opts">
+A. MMR (measles, mumps, rubella)<br>
+B. Hepatitis B<br>
+C. Varicella<br>
+D. Inactivated influenza<br>
+E. Oral polio (OPV)
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>A, C, E.</b> All three are <b>live attenuated</b> — contraindicated in SCID because even a "weakened" live virus can cause disseminated infection when T cells are absent. Hep B (subunit) and inactivated influenza are safe.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q5. A patient exposed to rabies receives both the rabies vaccine and rabies immunoglobulin. The immunoglobulin provides:</div>
+<div class="opts">
+A. Artificial active immunity<br>
+B. Artificial passive immunity — immediate but short-lived<br>
+C. Natural passive immunity<br>
+D. Long-term cellular memory
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Pre-formed antibody given = artificial passive = immediate protection, no memory. The vaccine provides the artificial <i>active</i> component for memory. Post-exposure rabies is a classic case for using both together.</div>
+</details>
+</div>
+
+</section>
+
+<!-- ========================= UNIT 2 ========================= -->
+<section id="u2" class="unit2">
+<h2>Unit 2 &nbsp;•&nbsp; Hypersensitivity Types I–IV &nbsp;<span class="chip c2">LO1</span></h2>
+
+<p><b>Hypersensitivity</b> = an immune response that harms the host. The four Gell & Coombs types are grouped by <i>mechanism</i>, not by symptom. Learn the mechanism cold — the exam vignettes vary but the mechanism is fixed.</p>
+
+<div class="box acro">
+<b>"ACID"</b> — the four hypersensitivity types, alphabetized by what drives them:<br>
+<b>A</b>llergic &nbsp;·&nbsp; <b>C</b>ytotoxic &nbsp;·&nbsp; <b>I</b>mmune complex &nbsp;·&nbsp; <b>D</b>elayed<br>
+Or: I = IgE · II = IgG/IgM on a cell surface · III = immune complexes · IV = T cells (no antibody).
+</div>
+
+<table>
+  <tr><th>Type</th><th>Driver</th><th>Timing</th><th>Classic examples</th></tr>
+  <tr><td><b>I — Immediate / anaphylactic</b></td><td>IgE on mast cells</td><td>Minutes</td><td>Anaphylaxis (food, bee sting, latex), allergic rhinitis, atopic asthma, eczema</td></tr>
+  <tr><td><b>II — Cytotoxic / antibody-mediated</b></td><td>IgG or IgM binds cell-surface antigen</td><td>Minutes to hours</td><td>ABO transfusion reaction, hemolytic disease of newborn, Graves, myasthenia gravis, rheumatic fever, hyperacute transplant rejection</td></tr>
+  <tr><td><b>III — Immune complex</b></td><td>Antigen-antibody complexes deposit in tissues → complement activation</td><td>1–3 weeks</td><td>SLE/lupus nephritis, serum sickness, farmer's lung, post-strep glomerulonephritis, Arthus reaction</td></tr>
+  <tr><td><b>IV — Delayed / cell-mediated</b></td><td>Sensitized T cells (no antibody)</td><td>24–72 hours</td><td>TB skin test (PPD), contact dermatitis (poison ivy, nickel, latex), chronic transplant rejection, graft-versus-host, type 1 DM</td></tr>
+</table>
+
+<h3 id="u2-1">2.1 Type I — Immediate / IgE-Mediated</h3>
+
+<div class="box mech">
+<b>First exposure (sensitization):</b> allergen → B cells make IgE → IgE binds Fc receptors on mast cells and basophils. No symptoms yet.<br>
+<b>Second exposure:</b> allergen cross-links two adjacent IgE → mast cell <b>degranulates</b> → histamine + leukotrienes + tryptase released → bronchoconstriction, vasodilation, ↑ capillary permeability.
+</div>
+
+<div class="flow">
+Allergen (2nd exposure) <span class="arr">→</span> cross-links IgE on mast cell <span class="arr">→</span> degranulation <span class="arr">→</span> histamine release <span class="arr">→</span> smooth muscle contraction + vasodilation + capillary leak <span class="arr">→</span> wheezing, hives, hypotension
+</div>
+
+<div class="box path">
+<b>Anaphylaxis</b> is systemic type I — throat/bronchus constriction (airway), hypotension from vasodilation (shock), urticaria/angioedema. Treat with <b>IM epinephrine</b> first (α = vasoconstriction, β1 = cardiac output, β2 = bronchodilation), then antihistamines + steroids as adjuncts.
+</div>
+
+<div class="box tip">
+Timing is the fastest clue. If symptoms appear within <b>minutes</b> and the patient has a prior exposure, think Type I. Bee stings, peanuts, shellfish, pollen, latex, cats, and medications are the classic triggers.
+</div>
+
+<h3 id="u2-2">2.2 Type II — Cytotoxic / Antibody-Mediated</h3>
+
+<div class="box mech">
+IgG or IgM binds an antigen that is <i>attached to a cell surface</i>. This triggers: complement activation (cell lysis), phagocytosis, NK-cell killing (antibody-dependent cellular cytotoxicity), or altered cell function (blocking or stimulating receptors).
+</div>
+
+<p><b>The four flavors of type II</b> — same mechanism, different tissue targets:</p>
+<ul>
+  <li><b>Direct cell destruction</b> — ABO transfusion reaction (anti-A or anti-B antibodies lyse the wrong-type RBCs within minutes)</li>
+  <li><b>Hemolytic disease of the newborn</b> — Rh-negative mom who was previously sensitized makes IgG anti-Rh → crosses placenta → attacks Rh-positive fetal RBCs → fetal anemia and jaundice. <b>RhoGAM</b> prevents sensitization.</li>
+  <li><b>Receptor stimulation</b> — <b>Graves disease</b>: IgG binds TSH receptor on thyroid and <i>activates</i> it → hyperthyroidism</li>
+  <li><b>Receptor blockade</b> — <b>myasthenia gravis</b>: IgG blocks ACh receptors at the neuromuscular junction → fatigable muscle weakness</li>
+  <li><b>Molecular mimicry</b> — <b>rheumatic fever</b>: antibodies made against strep M protein cross-react with heart, joints, and basal ganglia → carditis, arthritis, chorea</li>
+</ul>
+
+<div class="box path">
+<b>Hyperacute transplant rejection</b> is type II: recipient had pre-formed antibodies (from prior transplant, transfusion, or pregnancy) against donor HLA → graft is attacked within <i>minutes of reperfusion</i> → becomes pale and nonfunctioning. A positive pre-transplant crossmatch should prevent this.
+</div>
+
+<h3 id="u2-3">2.3 Type III — Immune Complex</h3>
+
+<div class="box mech">
+Antigen and antibody form <b>soluble immune complexes</b> in the blood. Complexes deposit in small vessels and filtration organs — especially kidneys (glomeruli), joints, and skin. Complement is activated locally → neutrophil recruitment → tissue damage.
+</div>
+
+<p><b>High-yield type III diseases:</b></p>
+<ul>
+  <li><b>SLE (systemic lupus erythematosus)</b> — anti-dsDNA and anti-Sm antibodies form complexes that deposit in glomeruli (lupus nephritis), joints, and skin. Malar butterfly rash, proteinuria, hematuria, low complement.</li>
+  <li><b>Serum sickness</b> — exposure to a foreign protein (classically equine antiserum) → immune complexes form 7–14 days later → fever, rash, joint pain, proteinuria. Self-resolving.</li>
+  <li><b>Post-streptococcal glomerulonephritis</b> — strep antigens form complexes that deposit in glomeruli 1–3 weeks after infection → hematuria, edema, HTN.</li>
+  <li><b>Farmer's lung / hypersensitivity pneumonitis</b> — inhaled moldy hay antigens → complexes in lung → dyspnea, cough hours after exposure.</li>
+  <li><b>Arthus reaction</b> — localized type III at a vaccine injection site: erythema and swelling hours after boosters from preformed antibody + local antigen.</li>
+</ul>
+
+<div class="box tip">
+<b>"Granular" deposits on immunofluorescence</b> = immune complexes = type III. If the stem says "linear deposits," think Goodpasture (which is type II, anti-GBM).
+</div>
+
+<h3 id="u2-4">2.4 Type IV — Delayed / T-Cell-Mediated</h3>
+
+<div class="box mech">
+<b>No antibody involved.</b> Sensitized CD4 T cells release cytokines 24–72 hours after re-exposure to an antigen, recruiting macrophages that cause tissue damage. This is the slowest hypersensitivity by design — not because it's mild, but because it requires T cells to migrate and activate.
+</div>
+
+<p><b>Classic type IV examples:</b></p>
+<ul>
+  <li><b>PPD (tuberculin skin test)</b> — positive reaction is firm induration at 48–72 h in a TB-sensitized patient</li>
+  <li><b>Contact dermatitis</b> — poison ivy (urushiol), nickel jewelry, latex, cosmetics, topical medications. Itchy vesicles 48–72 h after re-exposure.</li>
+  <li><b>Chronic transplant rejection</b> — T cells target donor HLA over months to years; gradual graft dysfunction.</li>
+  <li><b>Graft-versus-host disease</b> — donor T cells attack the recipient (opposite of rejection).</li>
+  <li><b>Type 1 diabetes</b> — T cells destroy pancreatic β-cells.</li>
+  <li><b>Multiple sclerosis, contact-type drug reactions</b>.</li>
+</ul>
+
+<div class="box miss">
+<b>Poison ivy is NOT Type I.</b> Students guess "allergic = IgE = Type I" reflexively. Poison ivy is delayed (hours to days), itch-predominant, T-cell mediated → <b>Type IV</b>. Same for nickel contact dermatitis and PPD tests.
+</div>
+
+<h3 id="u2-trans">2.5 Transplant Rejection — The Three Timelines</h3>
+<table>
+  <tr><th>Rejection</th><th>Timing</th><th>Mechanism</th><th>Clinical</th></tr>
+  <tr><td><b>Hyperacute</b></td><td>Minutes of reperfusion</td><td>Type II — preformed recipient antibody vs donor HLA or ABO</td><td>Graft pale, mottled, nonfunctioning; immediate loss</td></tr>
+  <tr><td><b>Acute</b></td><td>Days to months</td><td>Type IV — recipient T cells attack donor cells</td><td>Graft tenderness, ↑ creatinine, responds to immunosuppression</td></tr>
+  <tr><td><b>Chronic</b></td><td>Months to years</td><td>Type IV (mostly) + vascular antibody damage — fibrosis and vessel narrowing</td><td>Gradual graft dysfunction; poor response to treatment</td></tr>
+</table>
+
+<h3 id="u2-q">Practice Questions — Hypersensitivity</h3>
+
+<div class="q">
+<div class="qhead">Q6. A 7-year-old with a known cat allergy develops wheezing and hives within 5 minutes of entering a home with cats. Which mechanism is most responsible?</div>
+<div class="opts">
+A. IgG and complement deposit in tissues<br>
+B. Cross-linking of IgE on mast cells triggers histamine release<br>
+C. CD8 T cells kill cat-antigen-presenting cells<br>
+D. Immune complexes form in serum
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Rapid onset wheezing + hives in a sensitized patient = type I. Mast-cell degranulation releases histamine and leukotrienes that contract bronchial smooth muscle and raise capillary permeability.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q7. A patient receives the wrong ABO blood type and immediately develops fever, flank pain, and hemoglobinuria. Which hypersensitivity type?</div>
+<div class="opts">
+A. Type I — IgE<br>
+B. Type II — cytotoxic, IgG/IgM vs RBC surface antigens<br>
+C. Type III — immune complex<br>
+D. Type IV — delayed
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Anti-A or anti-B antibodies in the recipient bind to donor RBCs → complement lyses them → intravascular hemolysis (fever, flank pain, hemoglobinuria = free Hb filtered into urine). Type II is always antibody directed at a cell surface antigen.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q8. <b>Matching.</b> Match each clinical scenario to the hypersensitivity type.</div>
+<table>
+<tr><th>Scenario</th><th>Type</th></tr>
+<tr><td>Anaphylaxis to peanuts</td><td>___</td></tr>
+<tr><td>Hemolytic disease of the newborn</td><td>___</td></tr>
+<tr><td>Lupus nephritis</td><td>___</td></tr>
+<tr><td>Poison ivy contact dermatitis</td><td>___</td></tr>
+<tr><td>Serum sickness after equine antiserum</td><td>___</td></tr>
+<tr><td>Positive PPD test</td><td>___</td></tr>
+</table>
+<div class="opts">Choices: I &nbsp;·&nbsp; II &nbsp;·&nbsp; III &nbsp;·&nbsp; IV</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>Peanut anaphylaxis → I · HDN → II · Lupus nephritis → III · Poison ivy → IV · Serum sickness → III · PPD → IV.</b> Remember: timing is your first clue — minutes (I, II), 1–3 weeks (III), 24–72 h (IV).</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q9. A nursing student develops a firm, raised, red induration 48 hours after a TB skin test. Which hypersensitivity type?</div>
+<div class="opts">
+A. Type I — IgE-mediated<br>
+B. Type II — cytotoxic<br>
+C. Type III — immune complex<br>
+D. Type IV — T-cell mediated
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>D.</b> 48 h delay + induration + no swelling/pruritus = T-cell response, not antibody. This is textbook type IV. Positive PPD indicates prior TB exposure and sensitized T cells.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q10. <b>Order.</b> Place in correct sequence the events of a Type I anaphylactic reaction to peanuts in a previously sensitized child:</div>
+<div class="opts">
+— Histamine, tryptase, and leukotrienes are released<br>
+— Peanut allergen cross-links IgE on mast cell surface<br>
+— Bronchoconstriction, vasodilation, and capillary leak occur<br>
+— Mast cell degranulation
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>Correct order:</b> Peanut allergen cross-links IgE on mast cells → mast cell degranulation → histamine/tryptase/leukotrienes released → bronchoconstriction, vasodilation, capillary leak. The whole cascade takes minutes.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q11. A kidney transplant patient develops a pale, nonfunctioning graft within 10 minutes of reperfusion. Pre-transplant crossmatch had been positive. Which mechanism?</div>
+<div class="opts">
+A. Acute rejection — T cells attack donor HLA<br>
+B. Chronic rejection — fibrosis of vessels<br>
+C. Hyperacute rejection — preformed recipient antibody against donor antigen (Type II)<br>
+D. Graft-versus-host disease
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>C.</b> Minutes + preformed antibody + positive crossmatch = hyperacute rejection. Prevention requires careful ABO/HLA matching and crossmatching before transplant.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q12. <b>Select all that apply.</b> Which are type III hypersensitivity reactions?</div>
+<div class="opts">
+A. Systemic lupus erythematosus (SLE) nephritis<br>
+B. Serum sickness after equine antitoxin<br>
+C. Poison ivy dermatitis<br>
+D. Hypersensitivity pneumonitis (farmer's lung)<br>
+E. Anaphylaxis to bee sting
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>A, B, D.</b> All involve immune-complex deposition. Poison ivy is type IV; anaphylaxis is type I.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q13. A 33-year-old with Graves disease has weight loss, tachycardia, and high T4. The pathophysiology is:</div>
+<div class="opts">
+A. Type I — IgE-mediated destruction of thyroid<br>
+B. Type II — IgG binds and stimulates the TSH receptor<br>
+C. Type III — immune complexes in thyroid<br>
+D. Type IV — T cells destroy β-cells
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Graves is a type II hypersensitivity of receptor <i>stimulation</i>. The IgG mimics TSH and drives the thyroid to overproduce hormone. Contrast with Hashimoto (type IV, T-cell destruction of thyroid → hypothyroid).</div>
+</details>
+</div>
+
+</section>
+
+<!-- ========================= UNIT 3 ========================= -->
+<section id="u3" class="unit3">
+<h2>Unit 3 &nbsp;•&nbsp; Autoimmunity &nbsp;<span class="chip c3">LO1</span></h2>
+
+<p><b>Autoimmunity</b> = immune system attacks the body's own tissues because it failed to distinguish self from non-self. Mechanisms overlap heavily with hypersensitivity types II, III, and IV — in fact, most named autoimmune diseases ARE one of those types targeting a specific tissue.</p>
+
+<div class="box mech">
+<b>How tolerance breaks down:</b>
+<ul>
+  <li><b>Molecular mimicry</b> — a pathogen antigen resembles a self-antigen; antibodies cross-react (rheumatic fever after strep).</li>
+  <li><b>Loss of regulatory T cells</b> — fewer T-regs means self-reactive lymphocytes escape suppression.</li>
+  <li><b>Release of sequestered antigens</b> — trauma exposes antigens normally hidden from the immune system (sympathetic ophthalmia after eye injury).</li>
+  <li><b>Genetic predisposition</b> — certain HLA types raise risk (HLA-B27 in ankylosing spondylitis, HLA-DR3/DR4 in T1DM).</li>
+</ul>
+</div>
+
+<h4>High-yield autoimmune diseases at a glance</h4>
+<table>
+  <tr><th>Disease</th><th>Target</th><th>Mechanism</th><th>Clinical hallmarks</th></tr>
+  <tr><td><b>Systemic lupus erythematosus (SLE)</b></td><td>DNA, cell nuclei, many tissues</td><td>Type III (immune complex) — anti-dsDNA, anti-Sm</td><td>Malar butterfly rash, joint pain, lupus nephritis (proteinuria, hematuria), fatigue, low complement</td></tr>
+  <tr><td><b>Rheumatoid arthritis</b></td><td>Synovial joints</td><td>Type III + Type IV</td><td>Symmetric polyarthritis (MCP, PIP, wrist), morning stiffness &gt; 1 hr, rheumatoid factor, anti-CCP</td></tr>
+  <tr><td><b>Myasthenia gravis</b></td><td>ACh receptor at NMJ</td><td>Type II — IgG blocks the receptor</td><td>Fatigable weakness worsening with use, ptosis, diplopia, positive AChR antibody test</td></tr>
+  <tr><td><b>Graves disease</b></td><td>TSH receptor on thyroid</td><td>Type II — IgG stimulates the receptor</td><td>Hyperthyroidism, goiter, exophthalmos, pretibial myxedema</td></tr>
+  <tr><td><b>Hashimoto thyroiditis</b></td><td>Thyroid follicular cells</td><td>Type IV — lymphocytic destruction</td><td>Hypothyroidism, goiter, anti-TPO antibodies</td></tr>
+  <tr><td><b>Type 1 diabetes</b></td><td>Pancreatic β-cells</td><td>Type IV — T cells destroy β-cells</td><td>Young onset, absolute insulin deficiency, DKA-prone</td></tr>
+  <tr><td><b>Rheumatic fever</b></td><td>Heart valves, joints, skin, brain</td><td>Type II — antibodies vs strep M protein cross-react (molecular mimicry)</td><td>2 weeks post strep: carditis (mitral regurg), arthritis, chorea, erythema marginatum, subcutaneous nodules</td></tr>
+  <tr><td><b>Multiple sclerosis</b></td><td>CNS myelin</td><td>Type IV — T cells demyelinate</td><td>Relapsing neuro deficits across "time and space" — optic neuritis, weakness, sensory loss</td></tr>
+  <tr><td><b>Goodpasture</b></td><td>Basement membrane of lung alveoli + renal glomeruli</td><td>Type II — anti-GBM antibodies (<b>linear</b> deposits)</td><td>Hemoptysis + hematuria</td></tr>
+</table>
+
+<div class="box why">
+<b>Why women get most autoimmune disease.</b> SLE, RA, MS, Graves, Hashimoto, and myasthenia all skew female — estrogen is immunostimulatory, X chromosome carries many immune genes, and women mount stronger immune responses overall. This helps pregnancy (mom's immunity tolerates the fetus) but raises autoimmune risk.
+</div>
+
+<div class="box miss">
+<b>Graves vs Hashimoto.</b> Same gland, opposite directions.<br>
+Graves = IgG <b>stimulates</b> TSH receptor → <b>hyper</b>thyroid. Type II.<br>
+Hashimoto = T cells <b>destroy</b> the gland → <b>hypo</b>thyroid. Type IV.
+</div>
+
+<div class="box tip">
+<b>"Molecular mimicry" keywords</b> on the exam: "rheumatic fever after strep," "antibodies cross-react with heart." These point to type II autoimmunity triggered by infection.
+</div>
+
+<h3 id="u3-q">Practice Questions — Autoimmunity</h3>
+
+<div class="q">
+<div class="qhead">Q14. A patient presents with fatigable muscle weakness worsening with use, ptosis, and diplopia. Which antibody is most likely positive?</div>
+<div class="opts">
+A. Anti-dsDNA<br>
+B. Anti-ACh receptor<br>
+C. Anti-TPO<br>
+D. Anti-CCP
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Myasthenia gravis — IgG blocks ACh receptors at the NMJ, so muscles fatigue quickly with repeated use (type II blockade).</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q15. A patient with SLE develops proteinuria, hematuria, and granular immune complex deposits on kidney biopsy. The hypersensitivity type is:</div>
+<div class="opts">
+A. Type I<br>
+B. Type II<br>
+C. Type III<br>
+D. Type IV
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>C.</b> Lupus nephritis is the textbook type III autoimmune disease. "Granular" = immune complex; "linear" = type II anti-GBM (Goodpasture).</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q16. A child develops rheumatic fever two weeks after an untreated strep throat. Which principle best explains this?</div>
+<div class="opts">
+A. Direct bacterial invasion of the heart<br>
+B. Molecular mimicry — antibodies against strep M protein cross-react with cardiac tissue<br>
+C. IgE-mediated response to strep antigen<br>
+D. Immune complex deposition in joints only
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> The antibodies made against strep are the same antibodies now attacking heart, joints, skin, and basal ganglia. This is the classic molecular-mimicry type II autoimmune reaction.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q17. <b>Select all that apply.</b> Which findings are typical of SLE?</div>
+<div class="opts">
+A. Malar "butterfly" rash<br>
+B. Proteinuria from lupus nephritis<br>
+C. Positive anti-dsDNA antibody<br>
+D. High serum complement<br>
+E. Arthralgia and fatigue
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>A, B, C, E.</b> D is wrong — SLE <i>consumes</i> complement (C3 and C4 are typically <b>low</b> during active disease as immune complexes activate the cascade).</div>
+</details>
+</div>
+
+</section>
+
+<!-- ========================= UNIT 4 ========================= -->
+<section id="u4" class="unit4">
+<h2>Unit 4 &nbsp;•&nbsp; Immunodeficiencies &nbsp;<span class="chip c4">LO1, LO3</span></h2>
+
+<div class="two-col">
+  <div class="box mech" style="margin:0">
+    <b>PRIMARY (congenital)</b><br>
+    You are born with it. Usually genetic. Presents in infancy or childhood with recurrent infections.
+  </div>
+  <div class="box mech" style="margin:0">
+    <b>SECONDARY (acquired)</b><br>
+    Caused by something else. Most common cause worldwide = <b>HIV/AIDS</b>. Others: malnutrition, chemotherapy, steroids, aging, splenectomy, diabetes, CKD.
+  </div>
+</div>
+
+<h3 id="u4-primary">4.1 Primary Immunodeficiencies</h3>
+
+<table>
+  <tr><th>Disease</th><th>Defect</th><th>Arm affected</th><th>Clinical clue</th></tr>
+  <tr><td><b>Selective IgA deficiency</b></td><td>Low/absent IgA</td><td>Humoral (mucosal)</td><td>Recurrent sinus and GI infections; most common primary immunodeficiency; anaphylaxis to blood products containing IgA</td></tr>
+  <tr><td><b>X-linked (Bruton's) agammaglobulinemia</b></td><td>BTK mutation; no mature B cells</td><td>Humoral (all Igs)</td><td>Boys; recurrent bacterial infections after ~6 months (maternal IgG wanes); low/absent all immunoglobulins</td></tr>
+  <tr><td><b>Common variable immunodeficiency (CVID)</b></td><td>Poor antibody production</td><td>Humoral</td><td>Adult onset (20s–30s), recurrent sinopulmonary infections, ↑ autoimmunity and lymphoma risk</td></tr>
+  <tr><td><b>DiGeorge syndrome (22q11.2 deletion)</b></td><td>Thymic and parathyroid hypoplasia</td><td>Cellular (T cells)</td><td>"CATCH-22": Cardiac defects, Abnormal facies, Thymic aplasia, Cleft palate, Hypocalcemia (tetany); 22q deletion</td></tr>
+  <tr><td><b>SCID (severe combined immunodeficiency)</b></td><td>T and B cell defects (multiple genes, e.g. adenosine deaminase)</td><td>Both</td><td>Infant with failure to thrive, chronic diarrhea, opportunistic infections, profound lymphopenia; live vaccines deadly</td></tr>
+  <tr><td><b>Complement deficiency (C5–C9)</b></td><td>Late complement components</td><td>Complement</td><td>Recurrent <i>Neisseria</i> infections (meningococcal, gonococcal)</td></tr>
+</table>
+
+<div class="box acro">
+<b>CATCH-22</b> for DiGeorge syndrome (chromosome 22q11.2):<br>
+<b>C</b>ardiac defects · <b>A</b>bnormal facies · <b>T</b>hymic aplasia · <b>C</b>left palate · <b>H</b>ypocalcemia (from parathyroid aplasia → tetany).
+</div>
+
+<div class="box tip">
+<b>The pattern of infection tells you which arm is broken:</b>
+<ul>
+  <li>Recurrent pyogenic bacteria (Strep, Staph, H. flu) → <b>B-cell / antibody</b> problem</li>
+  <li>Opportunistic viruses, fungi, <i>Pneumocystis</i> → <b>T-cell</b> problem</li>
+  <li>Recurrent <i>Neisseria</i> → <b>complement</b> problem</li>
+  <li>Bacterial infections at skin and mucous membranes → <b>phagocyte</b> problem</li>
+</ul>
+</div>
+
+<h3 id="u4-second">4.2 Secondary Immunodeficiency — HIV / AIDS</h3>
+
+<div class="box mech">
+<b>HIV</b> is a retrovirus that binds <b>gp120 → CD4 receptor</b> on helper T cells → enters and integrates into the host genome. Over years, CD4 count drops. When CD4 &lt; 200/mm³ <i>or</i> an AIDS-defining opportunistic infection/malignancy occurs, the patient has <b>AIDS</b>.
+</div>
+
+<p><b>AIDS-defining conditions</b> (partial list): <i>Pneumocystis jirovecii</i> pneumonia, esophageal candidiasis, Kaposi sarcoma, CMV retinitis, cryptococcal meningitis, toxoplasmosis, TB.</p>
+
+<table>
+  <tr><th>CD4 range</th><th>Risk</th></tr>
+  <tr><td>&gt; 500/mm³</td><td>Normal immune function</td></tr>
+  <tr><td>200–500</td><td>Early symptoms: thrush, shingles, TB reactivation</td></tr>
+  <tr><td>50–200</td><td>AIDS-defining: PCP, candidiasis (esophageal), Kaposi</td></tr>
+  <tr><td>&lt; 50</td><td>End-stage: CMV, MAC, CNS toxoplasmosis, lymphoma</td></tr>
+</table>
+
+<div class="box path">
+<b>Why HIV is so destructive.</b> CD4 helpers coordinate BOTH arms of adaptive immunity. Lose them and the humoral arm weakens (B cells don't class-switch well), and the cellular arm collapses (CD8 T cells need CD4 help). Innate immunity and mucosal barriers remain — but once those fail, opportunistic infections take over.
+</div>
+
+<div class="box miss">
+<b>"HIV kills the patient."</b> No — HIV destroys CD4 cells. <i>Opportunistic infections</i> (PCP, cryptococcus, CMV) are what kill AIDS patients.
+</div>
+
+<h3 id="u4-q">Practice Questions — Immunodeficiency</h3>
+
+<div class="q">
+<div class="qhead">Q18. An infant with DiGeorge syndrome has tetany, hypocalcemia, and recurrent viral infections. The tetany is caused by:</div>
+<div class="opts">
+A. Thymic aplasia → T-cell deficiency<br>
+B. Parathyroid aplasia → hypocalcemia<br>
+C. Cardiac defect → low cardiac output<br>
+D. Cleft palate → feeding difficulty
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> DiGeorge = 22q11.2 deletion → thymic AND parathyroid hypoplasia. Low Ca²⁺ raises nerve excitability → tetany. Viral infections are from the separate T-cell problem (thymic aplasia).</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q19. An adolescent has recurrent sinusitis and GI infections with undetectable IgA but normal IgG and IgM. The most likely diagnosis is:</div>
+<div class="opts">
+A. SCID<br>
+B. X-linked agammaglobulinemia<br>
+C. Selective IgA deficiency<br>
+D. HIV infection
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>C.</b> Isolated low IgA + mucosal infections = selective IgA deficiency. SCID has both T and B deficits; Bruton's lacks all immunoglobulins; HIV shows CD4 loss. Selective IgA is the most common primary immunodeficiency.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q20. A patient with recurrent Neisseria meningitidis infections and normal immunoglobulins has which most likely defect?</div>
+<div class="opts">
+A. B-cell deficiency<br>
+B. T-cell deficiency<br>
+C. Phagocyte defect<br>
+D. Complement deficiency (late components C5–C9)
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>D.</b> Late complement (C5–C9) forms the membrane attack complex needed for lysing Neisseria. Without it, these Gram-negative cocci cause recurrent disease even with normal antibodies.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q21. A patient with HIV has oral thrush, a CD4 of 180/mm³, and elevated viral load. Which condition does the patient have?</div>
+<div class="opts">
+A. HIV infection without AIDS<br>
+B. AIDS (CD4 &lt; 200 or AIDS-defining illness)<br>
+C. Primary immunodeficiency<br>
+D. Acute HIV seroconversion
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> CD4 &lt; 200 defines AIDS regardless of symptoms. Oral candidiasis confirms the cellular immunity is already impaired. ART is started immediately.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q22. An infant with profound lymphopenia and absent IgM and IgA was just given a live vaccine. The most dangerous risk is:</div>
+<div class="opts">
+A. Type I allergic reaction to the vaccine<br>
+B. Disseminated vaccine-derived infection from the live organism<br>
+C. Local pain at injection site<br>
+D. Loss of future memory immunity
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> SCID is suspected. Without T and B cells, the attenuated organism can replicate unchecked and cause systemic disease. Live vaccines are absolutely contraindicated in SCID.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q23. <b>Select all that apply.</b> Which conditions cause secondary (acquired) immunodeficiency?</div>
+<div class="opts">
+A. Long-term corticosteroid therapy<br>
+B. HIV infection<br>
+C. Chemotherapy<br>
+D. Severe malnutrition<br>
+E. DiGeorge syndrome<br>
+F. Splenectomy
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>A, B, C, D, F.</b> DiGeorge (E) is primary/congenital. Everything else acquires the deficiency secondarily.</div>
+</details>
+</div>
+
+</section>
+
+<!-- ========================= UNIT 5 ========================= -->
+<section id="u5" class="unit5">
+<h2>Unit 5 &nbsp;•&nbsp; Infection Process &nbsp;<span class="chip c5">LO3</span></h2>
+
+<h3 id="u5-stages">5.1 The Four Stages of Clinical Infection</h3>
+
+<div class="flow">
+Incubation <span class="arr">→</span> Prodromal <span class="arr">→</span> Illness (acute) <span class="arr">→</span> Convalescence
+</div>
+
+<table>
+  <tr><th>Stage</th><th>What's happening</th><th>Key features</th></tr>
+  <tr><td><b>1. Incubation</b></td><td>Pathogen multiplies but no symptoms yet</td><td>Patient may be contagious; length varies (common cold 1–3 days, HIV years)</td></tr>
+  <tr><td><b>2. Prodromal</b></td><td>Vague, early symptoms as immune response begins</td><td>Fatigue, low-grade fever, malaise; patient is highly contagious</td></tr>
+  <tr><td><b>3. Illness (acute)</b></td><td>Full clinical disease</td><td>Characteristic symptoms; peak pathology; immune response in full swing</td></tr>
+  <tr><td><b>4. Convalescence</b></td><td>Recovery as pathogen is cleared</td><td>Symptoms resolve; memory forming; possible post-infectious complications (GN, rheumatic fever)</td></tr>
+</table>
+
+<h3 id="u5-mech">5.2 How Pathogens Cause Injury</h3>
+<ul>
+  <li><b>Direct tissue invasion</b> — bacteria or viruses physically enter and damage cells (Shigella, influenza).</li>
+  <li><b>Exotoxins</b> — proteins <i>secreted</i> by (usually Gram-positive) bacteria. Specific, potent, often heat-labile. Tetanus toxin, botulinum toxin, diphtheria toxin, cholera toxin.</li>
+  <li><b>Endotoxins</b> — lipopolysaccharide (LPS) in the Gram-negative outer membrane, <i>released when bacteria lyse</i>. Drives septic shock via TNF-α, IL-1.</li>
+  <li><b>Immune evasion</b> — capsules (pneumococcus), antigenic variation (HIV, influenza), intracellular hiding (TB, listeria), IgA protease (gonorrhea).</li>
+  <li><b>Adherence</b> — pili, fimbriae let bacteria stick to mucosa.</li>
+  <li><b>Trigger pathologic immune response</b> — superantigens (toxic shock), molecular mimicry (rheumatic fever).</li>
+</ul>
+
+<div class="box tip">
+<b>Exo vs endo toxin</b> — the simple split:<br>
+<b>Exo</b>toxin = <b>ex</b>creted by bacteria, mostly Gram-<b>positive</b>, protein, heat-<b>labile</b>, often <b>vaccine-preventable</b> (tetanus, diphtheria toxoid vaccines).<br>
+<b>Endo</b>toxin = <b>in</b>side the cell wall, Gram-<b>negative</b>, LPS, heat-<b>stable</b>, no specific vaccine, drives septic shock.
+</div>
+
+<div class="box miss">
+<b>"The patient is febrile but not contagious."</b> Usually wrong during infection stages. Prodromal is when patients are often <i>most</i> contagious because they don't know they're sick. Practice public-health reasoning: "when do we isolate?"
+</div>
+
+<h3 id="u5-q">Practice Questions — Infection</h3>
+
+<div class="q">
+<div class="qhead">Q24. <b>Order.</b> Place the stages of clinical infection in the correct sequence:</div>
+<div class="opts">
+— Illness stage with full characteristic symptoms<br>
+— Convalescence<br>
+— Incubation period<br>
+— Prodromal stage
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>Correct order:</b> Incubation → Prodromal → Illness → Convalescence. Memorize this and the fact that patients are often contagious during incubation and especially during prodromal stages.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q25. <b>Select all that apply.</b> Which are mechanisms pathogens use to cause infection or cell injury?</div>
+<div class="opts">
+A. Release of exotoxins<br>
+B. Endotoxin-triggered cytokine storm<br>
+C. Direct cell invasion and lysis<br>
+D. Antigenic variation to evade antibodies<br>
+E. Production of IgA protease<br>
+F. Activation of host regulatory T cells
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>A, B, C, D, E.</b> F is protective, not harmful — pathogens don't usually boost T-reg function to cause disease. The rest are classic virulence mechanisms.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q26. A student is learning about vaccines. Which statement indicates a need for further teaching?</div>
+<div class="opts">
+A. "Live attenuated vaccines give the strongest immunity but are avoided in immunocompromised patients."<br>
+B. "Toxoid vaccines contain inactivated toxins that create antitoxin antibodies."<br>
+C. "Passive immunity from IVIG gives immediate but temporary protection with no memory."<br>
+D. "An mRNA vaccine works by inserting a piece of viral DNA permanently into my genome."
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>D.</b> mRNA vaccines deliver mRNA (not DNA) that is translated transiently in the cytoplasm and degraded — it does NOT integrate into DNA. The other statements are correct.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q27. A patient in septic shock from a Gram-negative bacteremia has hypotension and a rising lactate. Which toxin is most responsible for the shock?</div>
+<div class="opts">
+A. Tetanus exotoxin<br>
+B. Lipopolysaccharide (LPS) endotoxin<br>
+C. Diphtheria exotoxin<br>
+D. Botulinum exotoxin
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Gram-negative septic shock = endotoxin (LPS) → massive TNF-α/IL-1 release → vasodilation, ↑ capillary permeability, hypotension. The other three are exotoxins from Gram-positive organisms.</div>
+</details>
+</div>
+
+</section>
+
+<!-- ========================= UNIT 6 ========================= -->
+<section id="u6" class="unit6">
+<h2>Unit 6 &nbsp;•&nbsp; Stress & Immunity &nbsp;<span class="chip c6">LO4</span></h2>
+
+<div class="box mech">
+<b>Chronic psychological stress</b> → activation of the HPA axis → sustained elevation of <b>cortisol</b>. Cortisol has many actions, but the relevant ones here are:
+<ul>
+  <li>Suppression of lymphocyte proliferation and cytokine release</li>
+  <li>Redistribution of immune cells away from circulating blood</li>
+  <li>Decreased antibody production</li>
+  <li>Impaired wound healing (↓ collagen synthesis, ↓ fibroblast activity)</li>
+</ul>
+The result: more infections, slower wound healing, reactivation of latent viruses (HSV, VZV), and poorer response to vaccines.
+</div>
+
+<div class="flow">
+Chronic stress <span class="arr">→</span> HPA axis <span class="arr">→</span> ↑ cortisol <span class="arr">→</span> ↓ lymphocyte function + ↓ antibodies + ↓ wound healing <span class="arr">→</span> ↑ infection, slow healing
+</div>
+
+<h4>Conditions and states that weaken host defense (acquired / situational)</h4>
+<ul>
+  <li><b>Chronic psychological stress</b> — cortisol-mediated immunosuppression</li>
+  <li><b>Severe malnutrition</b> — protein-energy deficit → impaired T and B cell function</li>
+  <li><b>Sleep deprivation</b> — reduces NK cell activity, T-cell responses</li>
+  <li><b>Diabetes mellitus</b> — hyperglycemia impairs neutrophil chemotaxis and phagocytosis</li>
+  <li><b>Advanced age</b> — immunosenescence</li>
+  <li><b>Chronic alcohol use</b> — impairs multiple immune pathways; worsens malnutrition</li>
+  <li><b>Chemotherapy / immunosuppressants / corticosteroids</b> — direct suppression</li>
+  <li><b>Chronic illness (CKD, cirrhosis, heart failure)</b> — multiple pathways</li>
+  <li><b>Splenectomy</b> — loss of defense against encapsulated organisms (pneumococcus, H. flu, meningococcus)</li>
+</ul>
+
+<div class="box why">
+<b>Why wound healing slows under stress.</b> Cortisol suppresses fibroblasts, reduces collagen synthesis, and dampens the inflammatory response needed for tissue repair. A chronically stressed surgical patient heals more slowly and is more vulnerable to wound infection than a calm one.
+</div>
+
+<div class="box tip">
+<b>Stress + infection + slow healing</b> — when a vignette lists all three, the answer is almost always "chronic stress → cortisol → immunosuppression."
+</div>
+
+<h3 id="u6-q">Practice Questions — Stress & Immunity</h3>
+
+<div class="q">
+<div class="qhead">Q28. A patient under prolonged psychological stress develops frequent infections and a wound that heals slowly. Which explanation best accounts for this?</div>
+<div class="opts">
+A. Stress raises histamine, triggering allergies<br>
+B. Chronic stress elevates cortisol, which suppresses lymphocyte function and impairs wound healing<br>
+C. Stress increases complement activation<br>
+D. Stress only affects psychological health, not immunity
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Chronic HPA axis activation → ↑ cortisol → immunosuppression. Acute stress is mildly immune-boosting; it's the <i>chronic</i> pattern that impairs defense.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q29. <b>Select all that apply.</b> Which states weaken host defenses and raise infection risk?</div>
+<div class="opts">
+A. Chronic sleep loss<br>
+B. Poorly controlled diabetes<br>
+C. Daily aerobic exercise of moderate intensity<br>
+D. Protein-energy malnutrition<br>
+E. Prolonged high-dose corticosteroid therapy<br>
+F. Splenectomy
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>A, B, D, E, F.</b> Moderate regular exercise actually <i>improves</i> immune function; all the others impair it. Splenectomized patients need pneumococcal, meningococcal, and H. flu vaccines.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q30. A 72-year-old on chronic prednisone for rheumatoid arthritis develops shingles. Which mechanism best explains reactivation?</div>
+<div class="opts">
+A. Direct antiviral effect of prednisone<br>
+B. Corticosteroid suppression of T-cell surveillance allowing latent VZV to reactivate<br>
+C. New primary varicella infection<br>
+D. Allergic reaction to the medication
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> T-cell surveillance normally holds latent viruses (HSV, VZV, CMV, EBV) in check. Steroid suppression lets VZV reactivate along a dermatome → shingles. Aging further increases risk — shingles vaccine is recommended age 50+.</div>
+</details>
+</div>
+
+</section>
+
+<!-- ========================= APPENDIX ========================= -->
+<section id="appx">
+<h2 style="background:#374151;">Appendix &nbsp;•&nbsp; Top Missteps & Master Mnemonics</h2>
+
+<h3 style="color:#374151;border-bottom-color:#9ca3af;">Top 15 Week 2 Missteps</h3>
+<table>
+<tr><th>#</th><th>The trap</th><th>What's actually true</th></tr>
+<tr><td>1</td><td>"Poison ivy is type I allergy."</td><td>It's <b>type IV</b> — delayed T-cell. 48–72 h onset, no IgE involved.</td></tr>
+<tr><td>2</td><td>"Graves and Hashimoto are both type II."</td><td>Graves is type II (IgG stimulates TSH-R). Hashimoto is type IV (T-cell destruction). Opposite gland outcomes.</td></tr>
+<tr><td>3</td><td>"Given antibodies = active immunity."</td><td>Given = <b>passive</b>, always. No memory.</td></tr>
+<tr><td>4</td><td>"SLE has high complement."</td><td>SLE has <b>low</b> C3/C4 — immune complexes consume complement during flares.</td></tr>
+<tr><td>5</td><td>"IgE is most abundant."</td><td>IgG is. IgE is the least abundant and is the allergy / parasite antibody.</td></tr>
+<tr><td>6</td><td>"Hyperacute rejection is T-cell mediated."</td><td>It's antibody-mediated type II (preformed antibodies vs donor HLA or ABO). T-cell = acute/chronic rejection.</td></tr>
+<tr><td>7</td><td>"HIV directly kills the patient."</td><td>HIV depletes CD4. <b>Opportunistic infections</b> kill AIDS patients.</td></tr>
+<tr><td>8</td><td>"Live vaccines are safe for everyone."</td><td>Contraindicated in SCID, AIDS, pregnancy, and chemotherapy.</td></tr>
+<tr><td>9</td><td>"CD4 &lt; 500 = AIDS."</td><td>AIDS is CD4 &lt; 200 <i>or</i> an AIDS-defining illness.</td></tr>
+<tr><td>10</td><td>"Rheumatic fever is direct strep invasion of the heart."</td><td>It's molecular mimicry — antibodies to strep M protein cross-react with heart.</td></tr>
+<tr><td>11</td><td>"ABO transfusion reaction is anaphylaxis."</td><td>It's type II cytotoxic (antibodies vs RBC surface antigens). Anaphylaxis requires IgE.</td></tr>
+<tr><td>12</td><td>"Selective IgA deficiency is rare."</td><td>It is the <b>most common</b> primary immunodeficiency.</td></tr>
+<tr><td>13</td><td>"Acute stress weakens immunity."</td><td>Acute stress is mildly immune-boosting. Only <b>chronic</b> stress → cortisol → immunosuppression.</td></tr>
+<tr><td>14</td><td>"Exotoxins are Gram-negative."</td><td>Exotoxins = mostly Gram-<b>positive</b>. Endotoxin (LPS) = Gram-negative.</td></tr>
+<tr><td>15</td><td>"Myasthenia gravis is receptor stimulation."</td><td>MG is receptor <b>blockade</b>. Graves is the stimulation one.</td></tr>
+</table>
+
+<h3 style="color:#374151;border-bottom-color:#9ca3af;">Master Mnemonic Sheet</h3>
+<table>
+<tr><th>Mnemonic</th><th>Meaning</th></tr>
+<tr><td><b>MADGE</b></td><td>The 5 immunoglobulin classes: IgM, IgA, IgD, IgG, IgE</td></tr>
+<tr><td><b>ACID</b></td><td>4 hypersensitivity types: Allergic, Cytotoxic, Immune complex, Delayed</td></tr>
+<tr><td><b>I (IgE) · II (IgG on cell) · III (complex) · IV (T cell)</b></td><td>Mechanism by type</td></tr>
+<tr><td><b>CATCH-22</b></td><td>DiGeorge: Cardiac, Abnormal facies, Thymic aplasia, Cleft palate, Hypocalcemia, chr 22q11.2</td></tr>
+<tr><td><b>T in Thymus, B in Bone marrow</b></td><td>Where each cell matures</td></tr>
+<tr><td><b>"Linear = Goodpasture"</b></td><td>Linear IF = type II anti-GBM; granular = type III immune complex</td></tr>
+<tr><td><b>"Given" = Passive</b></td><td>Pre-formed antibody transfer — no memory</td></tr>
+<tr><td><b>CD4 &lt; 200 = AIDS</b></td><td>Cutoff regardless of symptoms</td></tr>
+<tr><td><b>"Exo = excreted, Endo = inside wall"</b></td><td>Bacterial toxin split</td></tr>
+<tr><td><b>"Minutes, hours, days, weeks"</b></td><td>Approximate timing of hypersensitivity types I, II, IV, III respectively</td></tr>
+</table>
+
+<h3 style="color:#374151;border-bottom-color:#9ca3af;">Quick Reference — Which arm is broken?</h3>
+<table>
+<tr><th>Recurrent infection pattern</th><th>Likely defect</th></tr>
+<tr><td>Pyogenic bacteria (Strep, Staph, H. flu)</td><td>B-cell / antibody</td></tr>
+<tr><td>Viruses, fungi, <i>Pneumocystis</i>, opportunistic</td><td>T-cell</td></tr>
+<tr><td>Recurrent <i>Neisseria</i></td><td>Late complement (C5–C9)</td></tr>
+<tr><td>Skin and mucosal bacterial infections</td><td>Phagocyte</td></tr>
+<tr><td>Sinopulmonary + GI, isolated</td><td>IgA deficiency</td></tr>
+<tr><td>Encapsulated organisms</td><td>Splenectomy or sickle cell (functional asplenia)</td></tr>
+</table>
+
+<h3 style="color:#374151;border-bottom-color:#9ca3af;">Week 2 Study Strategy</h3>
+<ul>
+  <li><b>Own the hypersensitivity types cold.</b> If you can name the mechanism and one classic example for all four, you have the majority of Week 2's exam points.</li>
+  <li><b>Learn by timing.</b> Minutes → Type I or hyperacute II. Hours → exotoxin, sepsis. 24–72 h → Type IV. Weeks → Type III, post-infectious autoimmunity.</li>
+  <li><b>Pair autoimmune disease to its hypersensitivity type.</b> Every autoimmune disease in this week is one of the four types — know which.</li>
+  <li><b>Match infection pattern → defective arm.</b> If a vignette describes recurrent <i>Neisseria</i>, think complement. Recurrent viruses and fungi, think T-cells.</li>
+  <li><b>Don't mix Graves and Hashimoto.</b> Same organ, opposite direction, opposite hypersensitivity type.</li>
+  <li><b>Respect the CD4 numbers.</b> 500 = normal floor. 200 = AIDS threshold. 50 = end-stage. These get asked directly.</li>
+  <li><b>Live vaccine + immunocompromise = no.</b> If you see SCID, HIV advanced, chemotherapy, pregnancy, or organ transplant + a live vaccine option — it's the wrong answer.</li>
+</ul>
+
+<p class="small" style="margin-top:16px;">SCI225 Week 2 Study Guide — built from the Week 2 learning objectives covering adaptive immunity, hypersensitivity (Types I–IV), autoimmunity, primary and secondary immunodeficiency, infection, and stress. Made by Dr. Vidya Aggrawal to teach the concepts tested, not the exam questions themselves. Uses the same color-coded format as the Week 1 guide and the midterm review. Print for a paper copy, or use in-browser with collapsible practice answers.</p>
+</section>
+
+</main>
+</div>
+</body>
+</html>

@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SCI225 Week 1 Study Guide — Genetics, Epigenetics & Altered Cell Biology</title>
+<style>
+  :root {
+    --u1: #1e40af; --u1-bg: #eff6ff; --u1-brd: #93c5fd;
+    --u2: #7c3aed; --u2-bg: #faf5ff; --u2-brd: #c4b5fd;
+    --u3: #c2410c; --u3-bg: #fff7ed; --u3-brd: #fdba74;
+    --u4: #047857; --u4-bg: #ecfdf5; --u4-brd: #6ee7b7;
+    --u5: #b91c1c; --u5-bg: #fef2f2; --u5-brd: #fca5a5;
+    --mech: #1d4ed8; --mech-bg: #eff6ff;
+    --why:  #b45309; --why-bg:  #fffbeb;
+    --comp: #047857; --comp-bg: #f0fdf4;
+    --path: #be123c; --path-bg: #fff1f2;
+    --miss: #991b1b; --miss-bg: #fef2f2;
+    --acro: #6d28d9; --acro-bg: #f5f3ff;
+    --tip:  #0f766e; --tip-bg:  #ecfdf5;
+    --text: #111827; --muted: #4b5563; --line: #d1d5db;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    font-size: 10.5pt; line-height: 1.42; color: var(--text);
+    margin: 0; padding: 0; background: #f9fafb;
+  }
+  .layout { display: grid; grid-template-columns: 240px 1fr; max-width: 1140px; margin: 0 auto; }
+  nav.toc {
+    position: sticky; top: 0; align-self: start; max-height: 100vh; overflow-y: auto;
+    background: #fff; border-right: 1px solid var(--line); padding: 14px 12px; font-size: 9.4pt;
+  }
+  nav.toc h3 { font-size: 10pt; margin: 6px 0 8px; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; }
+  nav.toc a { display: block; padding: 3px 6px; color: var(--text); text-decoration: none; border-radius: 3px; margin-bottom: 1px; }
+  nav.toc a:hover { background: #f3f4f6; }
+  nav.toc .u1 { border-left: 3px solid var(--u1); }
+  nav.toc .u2 { border-left: 3px solid var(--u2); }
+  nav.toc .u3 { border-left: 3px solid var(--u3); }
+  nav.toc .u4 { border-left: 3px solid var(--u4); }
+  nav.toc .u5 { border-left: 3px solid var(--u5); }
+  main { padding: 20px 28px; background: #fff; }
+  h1 { font-size: 20pt; margin: 0 0 4px; }
+  h2 { font-size: 15pt; margin: 18px 0 6px; padding: 6px 10px; border-radius: 4px; color: #fff; }
+  h3 { font-size: 12pt; margin: 12px 0 4px; padding-bottom: 2px; border-bottom: 1px solid var(--line); }
+  h4 { font-size: 10.8pt; margin: 8px 0 3px; color: var(--muted); }
+  .unit1 h2 { background: var(--u1); } .unit2 h2 { background: var(--u2); }
+  .unit3 h2 { background: var(--u3); } .unit4 h2 { background: var(--u4); }
+  .unit5 h2 { background: var(--u5); }
+  .unit1 h3 { color: var(--u1); border-bottom-color: var(--u1-brd); }
+  .unit2 h3 { color: var(--u2); border-bottom-color: var(--u2-brd); }
+  .unit3 h3 { color: var(--u3); border-bottom-color: var(--u3-brd); }
+  .unit4 h3 { color: var(--u4); border-bottom-color: var(--u4-brd); }
+  .unit5 h3 { color: var(--u5); border-bottom-color: var(--u5-brd); }
+  p { margin: 4px 0; }
+  ul, ol { margin: 4px 0 6px 20px; padding: 0; }
+  li { margin: 1px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 9.8pt; margin: 6px 0 8px; }
+  th, td { border: 1px solid var(--line); padding: 4px 6px; text-align: left; vertical-align: top; }
+  th { background: #f3f4f6; font-weight: 600; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+  .box { border-left: 4px solid; padding: 6px 10px; margin: 6px 0; border-radius: 3px; font-size: 10pt; }
+  .mech { border-color: var(--mech); background: var(--mech-bg); }
+  .mech::before { content: "MECHANISM "; font-weight: 700; color: var(--mech); font-size: 8.5pt; letter-spacing: .5px; }
+  .why { border-color: var(--why); background: var(--why-bg); }
+  .why::before { content: "WHY "; font-weight: 700; color: var(--why); font-size: 8.5pt; letter-spacing: .5px; }
+  .comp { border-color: var(--comp); background: var(--comp-bg); }
+  .comp::before { content: "COMPENSATION "; font-weight: 700; color: var(--comp); font-size: 8.5pt; letter-spacing: .5px; }
+  .path { border-color: var(--path); background: var(--path-bg); }
+  .path::before { content: "PATHOLOGY "; font-weight: 700; color: var(--path); font-size: 8.5pt; letter-spacing: .5px; }
+  .miss { border-color: var(--miss); background: var(--miss-bg); }
+  .miss::before { content: "⚠ COMMON MISSTEP "; font-weight: 700; color: var(--miss); font-size: 8.5pt; letter-spacing: .5px; }
+  .acro { border-color: var(--acro); background: var(--acro-bg); }
+  .acro::before { content: "ACRONYM / MNEMONIC "; font-weight: 700; color: var(--acro); font-size: 8.5pt; letter-spacing: .5px; }
+  .tip { border-color: var(--tip); background: var(--tip-bg); }
+  .tip::before { content: "★ EXAM TIP "; font-weight: 700; color: var(--tip); font-size: 8.5pt; letter-spacing: .5px; }
+  .flow { background: #f9fafb; border: 1px solid var(--line); padding: 8px 10px; border-radius: 4px; font-size: 9.8pt; margin: 6px 0; font-family: "Consolas", monospace; }
+  .flow .arr { color: #6b7280; margin: 0 3px; }
+  .q { background: #fafafa; border: 1px solid var(--line); border-radius: 4px; padding: 8px 10px; margin: 6px 0; font-size: 10pt; }
+  .q .qhead { font-weight: 600; margin-bottom: 3px; }
+  .q .opts { margin: 3px 0 4px 0; }
+  .q .ans { background: #ecfdf5; border-left: 3px solid var(--comp); padding: 4px 8px; margin-top: 4px; font-size: 9.8pt; }
+  .q .ans b { color: var(--comp); }
+  details summary { cursor: pointer; color: var(--mech); font-size: 9.5pt; font-weight: 600; }
+  .hero { padding: 14px 18px; background: linear-gradient(135deg, #1e3a8a, #7c3aed, #be185d); color: #fff; border-radius: 6px; margin-bottom: 14px; }
+  .hero h1 { color: #fff; }
+  .hero p { margin: 4px 0; font-size: 10pt; opacity: .95; }
+  .spine { background: rgba(255,255,255,.15); padding: 6px 10px; border-radius: 4px; margin-top: 6px; font-size: 9.8pt; }
+  .legend { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 10px; font-size: 9pt; }
+  .legend span { padding: 2px 8px; border-radius: 3px; border: 1px solid; }
+  .lg-mech { color: var(--mech); background: var(--mech-bg); border-color: var(--mech); }
+  .lg-why  { color: var(--why);  background: var(--why-bg);  border-color: var(--why); }
+  .lg-comp { color: var(--comp); background: var(--comp-bg); border-color: var(--comp); }
+  .lg-path { color: var(--path); background: var(--path-bg); border-color: var(--path); }
+  .lg-miss { color: var(--miss); background: var(--miss-bg); border-color: var(--miss); }
+  .lg-acro { color: var(--acro); background: var(--acro-bg); border-color: var(--acro); }
+  .lg-tip  { color: var(--tip);  background: var(--tip-bg);  border-color: var(--tip); }
+  .chip { font-size: 9pt; padding: 2px 8px; border-radius: 3px; color: #fff; font-weight: 600; }
+  .c1 { background: var(--u1); } .c2 { background: var(--u2); } .c3 { background: var(--u3); }
+  .c4 { background: var(--u4); } .c5 { background: var(--u5); }
+  .btns { margin: 10px 0; }
+  .btns button { background: #0f172a; color: #fff; border: 0; padding: 6px 12px; border-radius: 4px; font-size: 9.8pt; cursor: pointer; margin-right: 6px; }
+  .small { font-size: 9.3pt; color: var(--muted); }
+  @media print {
+    body { background: #fff; }
+    .layout { display: block; max-width: none; }
+    nav.toc, .btns { display: none; }
+    main { padding: 0.35in 0.4in; }
+    details { page-break-inside: avoid; }
+    details[open] summary { display: none; }
+    details:not([open]) > *:not(summary) { display: block; }
+    .hero, h2, .chip, .box, .q .ans, th { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    h2 { page-break-before: auto; }
+  }
+</style>
+</head>
+<body>
+<div class="layout">
+<nav class="toc">
+  <h3>Week 1 Study Guide</h3>
+  <a href="#intro"><b>How to use this guide</b></a>
+  <a href="#u1" class="u1"><b>Unit 1.</b> Genes & Genetic Diseases</a>
+  <a href="#u1-chrom" class="u1">&nbsp;&nbsp;Chromosomal disorders</a>
+  <a href="#u1-single" class="u1">&nbsp;&nbsp;Single-gene disorders</a>
+  <a href="#u1-multi" class="u1">&nbsp;&nbsp;Multifactorial</a>
+  <a href="#u1-q" class="u1">&nbsp;&nbsp;Practice Qs</a>
+  <a href="#u2" class="u2"><b>Unit 2.</b> Epigenetics</a>
+  <a href="#u2-q" class="u2">&nbsp;&nbsp;Practice Qs</a>
+  <a href="#u3" class="u3"><b>Unit 3.</b> Cellular Adaptation & Injury</a>
+  <a href="#u3-adapt" class="u3">&nbsp;&nbsp;Adaptations</a>
+  <a href="#u3-injury" class="u3">&nbsp;&nbsp;Injury & death</a>
+  <a href="#u3-q" class="u3">&nbsp;&nbsp;Practice Qs</a>
+  <a href="#u4" class="u4"><b>Unit 4.</b> Fluids & Electrolytes</a>
+  <a href="#u4-fluid" class="u4">&nbsp;&nbsp;Fluid balance</a>
+  <a href="#u4-lytes" class="u4">&nbsp;&nbsp;Na / K / Ca</a>
+  <a href="#u4-q" class="u4">&nbsp;&nbsp;Practice Qs</a>
+  <a href="#u5" class="u5"><b>Unit 5.</b> Acid–Base</a>
+  <a href="#u5-abg" class="u5">&nbsp;&nbsp;ABG interpretation</a>
+  <a href="#u5-dis" class="u5">&nbsp;&nbsp;4 disorders</a>
+  <a href="#u5-q" class="u5">&nbsp;&nbsp;Practice Qs</a>
+  <a href="#appx"><b>Appendix:</b> Missteps & Master Mnemonics</a>
+</nav>
+
+<main>
+
+<div class="btns">
+  <button onclick="window.print()">Print / Save as PDF</button>
+  <button onclick="document.querySelectorAll('details').forEach(d=>d.open=true)">Expand All</button>
+  <button onclick="document.querySelectorAll('details').forEach(d=>d.open=false)">Collapse All</button>
+</div>
+
+<section id="intro">
+<div class="hero">
+  <h1>SCI225 Week 1 — Complete Study Guide</h1>
+  <p><b>Made by Dr. Vidya Aggrawal</b></p>
+  <p>Chapters 2, 3, 4 · Genes & Genetic Diseases · Epigenetics · Altered Cellular & Tissue Biology · Fluids, Electrolytes & Acid–Base</p>
+  <div class="spine"><b>Study Spine — for every concept ask:</b><br>
+  1. What is it? &nbsp; 2. What causes it? &nbsp; 3. How does it present? &nbsp; 4. What's the common student trap?</div>
+</div>
+
+<div class="legend">
+  <span class="lg-mech">MECHANISM</span>
+  <span class="lg-why">WHY</span>
+  <span class="lg-comp">COMPENSATION</span>
+  <span class="lg-path">PATHOLOGY</span>
+  <span class="lg-miss">MISSTEP</span>
+  <span class="lg-acro">ACRONYM</span>
+  <span class="lg-tip">EXAM TIP</span>
+</div>
+
+<h3>Course alignment</h3>
+<p>This guide maps directly to the three learning objectives that anchor the Week 1 exam:</p>
+<ul>
+  <li><b>LO2</b> — Understand the vast array of human genes and genetic diseases <span class="small">(Units 1)</span></li>
+  <li><b>LO3</b> — Define epigenetic and related genetic diseases <span class="small">(Unit 2)</span></li>
+  <li><b>LO4</b> — Define altered states of both cellular and tissue biology <span class="small">(Units 3–5, including fluids, electrolytes, and acid–base)</span></li>
+</ul>
+<p>Every practice question in this guide was written for teaching. They mirror the <i>style</i> and <i>depth</i> of NCLEX-format items (single-best answer, select-all-that-apply, ordering, matching, drop-down) but are not copies of exam questions. Use them to test whether you can apply the concept, not memorize it.</p>
+</section>
+
+<!-- ========================= UNIT 1 ========================= -->
+<section id="u1" class="unit1">
+<h2>Unit 1 &nbsp;•&nbsp; Genes & Genetic Diseases &nbsp;<span class="chip c1">Ch 2 · LO2</span></h2>
+
+<h3 id="u1-chrom">1.1 Chromosomal Disorders — Numbers vs Structure</h3>
+<p>Human cells normally have <b>46 chromosomes (23 pairs)</b>: 22 autosomes + 1 sex pair. Abnormalities are either in <b>number</b> (aneuploidy) or in <b>structure</b> (deletion, duplication, translocation, inversion).</p>
+
+<div class="box mech">
+<b>Nondisjunction</b> is the single most important genetic concept for this exam. It is the <i>failure of homologous chromosomes (meiosis I) or sister chromatids (meiosis II) to separate</i>. The resulting gamete carries either an extra chromosome (n+1) or is missing one (n−1). After fertilization, the embryo is trisomic (3 copies) or monosomic (1 copy).
+</div>
+
+<div class="box why">
+<b>Why maternal age matters so much.</b> Oocytes start meiosis <i>before birth</i> and arrest at prophase I. They can sit paused for 30–45 years before being ovulated. The longer the arrest, the more the meiotic spindle degrades. Older spindles = more nondisjunction = higher trisomy risk. This is why maternal age is the #1 risk factor for trisomy 21, not paternal age.
+</div>
+
+<h4>The four chromosomal disorders you must know</h4>
+<table>
+  <tr><th>Disorder</th><th>Karyotype</th><th>Key features</th><th>Classic exam clue</th></tr>
+  <tr><td><b>Down syndrome</b> (Trisomy 21)</td><td>47,XX +21 or 47,XY +21</td><td>Intellectual disability, flat facial profile, epicanthic folds, protruding tongue, low-set ears, single palmar (simian) crease, congenital heart defects (AV canal)</td><td>"Child with developmental delay, epicanthic folds, protruding tongue"</td></tr>
+  <tr><td><b>Turner syndrome</b> (Monosomy X)</td><td>45,X</td><td>Female, short stature, webbed neck, coarctation of aorta, streak ovaries → infertility, no/delayed puberty</td><td>"14-year-old girl with short stature and delayed puberty"</td></tr>
+  <tr><td><b>Klinefelter syndrome</b></td><td>47,XXY</td><td>Tall male, small firm testes, gynecomastia, infertility, learning difficulties, delayed puberty</td><td>"14-year-old adolescent evaluated for delayed puberty, tall, gynecomastia"</td></tr>
+  <tr><td><b>Patau</b> (Trisomy 13) / <b>Edwards</b> (Trisomy 18)</td><td>47 +13 / 47 +18</td><td>Severe defects, most die in infancy; cleft lip/palate (13), rocker-bottom feet (18)</td><td>"Newborn with multiple anomalies, short survival"</td></tr>
+</table>
+
+<div class="box acro">
+<b>The Trisomy Rule of Sex + Age:</b>
+<ul>
+  <li>Autosomal trisomy (13, 18, 21) → severe; 21 is most survivable</li>
+  <li>Sex chromosome aneuploidy (XXY, X, XYY, XXX) → milder; often diagnosed at puberty</li>
+  <li><b>Maternal age ↑</b> → nondisjunction ↑ → trisomy risk ↑</li>
+</ul>
+</div>
+
+<div class="box miss">
+<b>Three traps students fall into:</b>
+<ol>
+  <li>Confusing <b>deletion</b> (missing piece) with <b>trisomy</b> (extra chromosome). Down syndrome is an <i>extra</i> chromosome, not a deletion.</li>
+  <li>Confusing <b>single-gene mutation</b> with <b>chromosomal trisomy</b>. Trisomy 21 is not a mutation in one gene — it's a whole extra chromosome.</li>
+  <li>Thinking Turner is "a girl with extra X" — no, Turner is <b>45,X</b> (missing one). Klinefelter is the "extra X in a male" (47,XXY).</li>
+</ol>
+</div>
+
+<h3 id="u1-single">1.2 Single-Gene Disorders — Inheritance Patterns</h3>
+
+<div class="two-col">
+  <div>
+    <h4>Autosomal Recessive (AR)</h4>
+    <ul>
+      <li>Both parents are typically <b>unaffected carriers</b></li>
+      <li>25% affected · 50% carrier · 25% unaffected</li>
+      <li>Affects <b>both sexes equally</b></li>
+      <li>Often "skips" generations</li>
+      <li><b>Examples:</b> Cystic fibrosis (CFTR), sickle cell, Tay-Sachs, PKU, albinism</li>
+    </ul>
+  </div>
+  <div>
+    <h4>Autosomal Dominant (AD)</h4>
+    <ul>
+      <li>Only <b>one affected allele needed</b></li>
+      <li>Each child of affected parent has 50% chance</li>
+      <li>Affected in <b>every generation</b></li>
+      <li><b>Examples:</b> Huntington, Marfan, familial hypercholesterolemia, neurofibromatosis, polycystic kidney disease (adult)</li>
+    </ul>
+  </div>
+</div>
+
+<div class="two-col">
+  <div>
+    <h4>X-Linked Recessive</h4>
+    <ul>
+      <li>Gene on X chromosome</li>
+      <li><b>Males express it fully</b> (only one X — hemizygous)</li>
+      <li>Females are usually <b>carriers</b> (rarely affected unless both X's are mutated)</li>
+      <li><b>No male-to-male transmission</b> — fathers pass Y, not X, to sons</li>
+      <li><b>Examples:</b> Duchenne muscular dystrophy, hemophilia A & B, color blindness, G6PD deficiency</li>
+    </ul>
+  </div>
+  <div>
+    <h4>Key reasoning pattern</h4>
+    <ul>
+      <li>Mostly males affected, mom is healthy carrier → <b>X-linked recessive</b></li>
+      <li>Disease skips a generation, affects both sexes → <b>autosomal recessive</b></li>
+      <li>Every generation affected → <b>autosomal dominant</b></li>
+      <li>"Mom's brother died of the same disease" is the classic X-linked giveaway</li>
+    </ul>
+  </div>
+</div>
+
+<h4>High-yield single-gene diseases</h4>
+<table>
+  <tr><th>Disease</th><th>Pattern</th><th>Defective gene / product</th><th>Clinical hallmarks</th></tr>
+  <tr><td><b>Cystic fibrosis</b></td><td>AR</td><td>CFTR chloride channel</td><td>Thick mucus → recurrent lung infections, pancreatic insufficiency, salty sweat, infertility</td></tr>
+  <tr><td><b>Phenylketonuria (PKU)</b></td><td>AR</td><td>Phenylalanine hydroxylase</td><td>↑ phenylalanine → intellectual disability, musty odor; treat with Phe-restricted diet</td></tr>
+  <tr><td><b>Sickle cell</b></td><td>AR</td><td>Hemoglobin S (β-globin)</td><td>Sickling under hypoxia → vaso-occlusion, hemolytic anemia, pain crises</td></tr>
+  <tr><td><b>Tay-Sachs / Lysosomal storage</b></td><td>AR</td><td>Hexosaminidase A (and many others)</td><td>Enzyme deficiency → material builds up inside lysosomes → cells die</td></tr>
+  <tr><td><b>Huntington disease</b></td><td>AD</td><td>HTT gene (CAG repeats)</td><td>Mid-adult onset: chorea, psychiatric symptoms, dementia; anticipation in later generations</td></tr>
+  <tr><td><b>Duchenne MD</b></td><td>X-linked R</td><td>Dystrophin protein</td><td>Boys only, progressive proximal weakness (Gower sign), calf pseudohypertrophy</td></tr>
+  <tr><td><b>Hemophilia A</b></td><td>X-linked R</td><td>Factor VIII</td><td>Boys, bleeding into joints, prolonged aPTT</td></tr>
+</table>
+
+<div class="box mech">
+<b>Cystic fibrosis — follow the chain.</b> The exam loves this sequence:<br>
+<div class="flow">
+CFTR gene mutation <span class="arr">→</span> defective chloride channel in epithelium <span class="arr">→</span> abnormal Cl<sup>−</sup>/water transport <span class="arr">→</span> thick, dehydrated mucus <span class="arr">→</span> impaired mucociliary clearance <span class="arr">→</span> recurrent lung infection
+</div>
+Know this order. Ordering questions love this exact cascade.
+</div>
+
+<div class="box tip">
+If you see <i>"mom's brother died of the same disease"</i> → think <b>X-linked recessive</b>. The disease came through the unaffected (carrier) mother. If you see <i>"both parents healthy carriers"</i> → <b>autosomal recessive</b>. If you see <i>"every generation affected, adult onset"</i> → <b>autosomal dominant</b>.
+</div>
+
+<h3 id="u1-multi">1.3 Multifactorial Inheritance</h3>
+<p>Many common diseases are caused by <b>multiple genes + environment</b>, not a single mutation. These cluster in families but do not follow Mendelian ratios.</p>
+
+<div class="box mech">
+Multifactorial conditions have a <i>threshold of liability</i>: you need both enough genetic predisposition AND enough environmental trigger. Genes alone aren't destiny; lifestyle alone isn't destiny either.
+</div>
+
+<p><b>Common multifactorial conditions:</b> hypertension, type 2 diabetes, coronary artery disease, cleft lip/palate, neural tube defects, schizophrenia, most congenital heart defects.</p>
+
+<div class="box miss">
+If a vignette says "his father and two siblings also developed HTN as adults," the answer is <b>multifactorial inheritance</b> — NOT autosomal dominant, even though it clusters in the family. Multifactorial = genes + environment interacting.
+</div>
+
+<h3 id="u1-q">Practice Questions — Genetic Diseases</h3>
+
+<div class="q">
+<div class="qhead">Q1. A 35-year-old primigravida asks about her risk of having a child with Down syndrome compared with a 25-year-old. The best explanation is:</div>
+<div class="opts">
+A. A 35-year-old has a higher chance of producing sperm with chromosome errors<br>
+B. Aging oocytes spent longer arrested in meiosis, and their spindle apparatus is more error-prone<br>
+C. Older mothers have more environmental DNA damage during pregnancy<br>
+D. Down syndrome is autosomal recessive, and older parents are more likely to be carriers
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Oocytes begin meiosis in fetal life and arrest at prophase I until ovulation. Decades of arrest degrade the meiotic spindle, raising nondisjunction risk. A (sperm) is wrong — maternal, not paternal, age is the driver. C (environment) is not the primary mechanism. D is wrong — Down syndrome is a trisomy, not recessive inheritance.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q2. A 16-year-old girl presents with short stature, a webbed neck, and absent breast development. Karyotype is 45,X. Which pathophysiologic process produced her condition?</div>
+<div class="opts">
+A. A gene mutation on the X chromosome<br>
+B. Failure of sex chromosomes to separate during meiosis, producing a gamete with no X<br>
+C. Genomic imprinting silenced the maternal X<br>
+D. A translocation moved part of the X onto an autosome
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Turner syndrome is monosomy X from nondisjunction. A is wrong (not a single-gene problem). C is irrelevant to Turner. D describes a different structural rearrangement. Always connect 45,X → missing one sex chromosome → nondisjunction.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q3. A couple who are both unaffected cystic fibrosis carriers ask about the chance of having an affected child. The best answer is:</div>
+<div class="opts">
+A. 0% — both parents are healthy<br>
+B. 25%<br>
+C. 50%<br>
+D. 100%
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B — 25%.</b> In autosomal recessive disease with two carriers: 25% affected (both mutant alleles), 50% carriers (one mutant), 25% unaffected (neither). Memorize the 1:2:1 Punnett pattern for any AR cross.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q4. <b>Select all that apply.</b> Which features are expected in Duchenne muscular dystrophy?</div>
+<div class="opts">
+A. X-linked recessive inheritance<br>
+B. Affects predominantly males<br>
+C. Carrier mothers are usually unaffected<br>
+D. Affected fathers pass the condition to their sons<br>
+E. Caused by a defective dystrophin protein
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>A, B, C, E.</b> D is wrong — fathers pass the Y to sons (no X-linked disease goes father→son). Carrier mothers usually have one normal X, so they're unaffected. Dystrophin loss → progressive muscle fiber breakdown.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q5. <b>Order.</b> Place these events in sequence as they occur in a child with cystic fibrosis, starting with the root cause:</div>
+<div class="opts">
+— Thick mucus blocks the airways<br>
+— Repeated lung infections develop<br>
+— Mutation in the CFTR gene<br>
+— Abnormal chloride and water transport at the epithelial surface
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>Correct order:</b><br>1. Mutation in the CFTR gene<br>2. Abnormal chloride and water transport at the epithelial surface<br>3. Thick mucus blocks the airways<br>4. Repeated lung infections develop<br>Gene → protein → transport → mucus → infection. Always start at the DNA level for ordering questions.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q6. <b>Matching.</b> Pair each condition with its karyotype.</div>
+<table>
+<tr><th>Condition</th><th>Karyotype</th></tr>
+<tr><td>Down syndrome</td><td>___</td></tr>
+<tr><td>Turner syndrome</td><td>___</td></tr>
+<tr><td>Klinefelter syndrome</td><td>___</td></tr>
+<tr><td>Trisomy 18 (Edwards)</td><td>___</td></tr>
+</table>
+<div class="opts">Choices: 45,X &nbsp;·&nbsp; 47,XX +18 &nbsp;·&nbsp; 47,XY +21 &nbsp;·&nbsp; 47,XXY</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>Down → 47,XY +21 · Turner → 45,X · Klinefelter → 47,XXY · Edwards → 47,XX +18.</b> Trick: Turner is the only <i>monosomy</i> compatible with life; Klinefelter is "extra X in a male."</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q7. A 50-year-old man has severe hypertension. His father, brother, and sister were all diagnosed with HTN as adults. This pattern most likely reflects:</div>
+<div class="opts">
+A. Autosomal dominant inheritance<br>
+B. X-linked recessive inheritance<br>
+C. Multifactorial inheritance<br>
+D. Chromosomal trisomy
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>C.</b> HTN clusters in families but doesn't follow Mendelian ratios — multiple genes + diet + stress + obesity all contribute. The trap is picking "autosomal dominant" because it runs in the family. Familial clustering alone ≠ AD.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q8. <b>Dropdown.</b> A child has a deficiency of a lysosomal enzyme. Inside cells, [ select: mucus / fluid / substrate material / DNA ] accumulates, leading to [ select: apoptosis / swelling and death of many cells / cell membrane repair / enhanced growth ].</div>
+<details><summary>Show answer</summary>
+<div class="ans">Dropdown 1: <b>substrate material.</b> Dropdown 2: <b>swelling and death of many cells.</b> Lysosomes normally break substrates down; missing the enzyme = the material that should have been digested just builds up inside lysosomes until cells rupture. Tay-Sachs is the classic example.</div>
+</details>
+</div>
+
+</section>
+
+<!-- ========================= UNIT 2 ========================= -->
+<section id="u2" class="unit2">
+<h2>Unit 2 &nbsp;•&nbsp; Epigenetics &nbsp;<span class="chip c2">Ch 3 · LO3</span></h2>
+
+<p><b>Epigenetics</b> = heritable changes in gene <i>expression</i> that do <b>not</b> alter the DNA sequence. The code stays the same; which genes are turned on or off changes.</p>
+
+<div class="box mech">
+<b>The three main epigenetic mechanisms:</b>
+<ol>
+  <li><b>DNA methylation</b> — methyl groups attached to cytosines (especially at gene promoters) usually <i>silence</i> gene expression.</li>
+  <li><b>Histone modification</b> — chemical tags on histones change how tightly DNA wraps around them, affecting gene accessibility.</li>
+  <li><b>Non-coding RNA</b> — small RNAs (like miRNA) regulate which mRNAs get translated.</li>
+</ol>
+</div>
+
+<div class="box why">
+<b>Why epigenetics matters clinically:</b> Environment (diet, toxins, stress, hormones) can change gene <i>expression</i> without changing the gene itself. These changes can be inherited across cell divisions, and some can even cross generations. Identical twins with the same DNA can develop different diseases because they accumulated different epigenetic marks.
+</div>
+
+<h3>Genomic Imprinting</h3>
+<div class="box mech">
+Normal cells have two copies of most genes — one from mom, one from dad. <b>Imprinting</b> means only <i>one parental copy</i> is expressed; the other is silenced by methylation. If the active copy is lost or inactivated, there is no functional gene at all in that region — even though one copy "looks" intact.
+</div>
+
+<p><b>Two textbook examples from opposite parents, same region (chr 15):</b></p>
+<table>
+  <tr><th>Disorder</th><th>Deleted from</th><th>Features</th></tr>
+  <tr><td><b>Prader-Willi syndrome</b></td><td>Paternal chr 15 (maternal copy was already silenced by imprinting)</td><td>Hypotonia, hyperphagia → obesity, short stature, intellectual disability, hypogonadism</td></tr>
+  <tr><td><b>Angelman syndrome</b></td><td>Maternal chr 15 (paternal copy was already silenced)</td><td>"Happy puppet" — severe intellectual disability, ataxia, inappropriate laughter, seizures</td></tr>
+</table>
+
+<div class="box tip">
+Think of imprinting like a light switch wired with only one working input. If the wire that actually carries current gets cut, the switch does nothing — even though the other wire still exists. That's why <i>which parent</i> contributed the deletion decides which disease you get.
+</div>
+
+<h3>Developmental Programming (the fetus and long-term epigenetics)</h3>
+<div class="box path">
+<b>Maternal diabetes in pregnancy.</b> Hyperglycemia crosses the placenta → fetal pancreas produces more insulin → excess growth, increased adipose tissue (macrosomia). Beyond birth, the fetus's <i>epigenome is reprogrammed</i>, increasing lifetime risk of obesity, metabolic syndrome, and type 2 diabetes. This is a clinically important case of epigenetic inheritance of disease risk without a DNA mutation.
+</div>
+
+<div class="box why">
+Environmental exposures during early pregnancy (air pollution, famine, toxins) can alter fetal DNA methylation without causing a mutation. The baby's gene expression is altered for life. This is why "did not cause a genetic mutation" does not mean "had no effect" — the exam will test this distinction.
+</div>
+
+<h3>Epigenetics in Cancer</h3>
+<div class="box path">
+<b>Silencing of tumor suppressor genes.</b> Many cancers <i>don't delete</i> tumor suppressor genes — they silence them by hypermethylation of the promoter. The gene is still present in the DNA, but it's not expressed. Without tumor suppressors, damaged cells escape apoptosis and proliferate.
+</div>
+
+<div class="box miss">
+<b>"Epigenetics = genetic mutation."</b> No — that's the most common trap. In epigenetics, the DNA sequence is unchanged; only gene <i>expression</i> is altered. On SATA questions, distractors that say "the baby's DNA was mutated" are almost always wrong when the stem specifies "epigenetic change."
+</div>
+
+<div class="box acro">
+<b>"SAME DNA, DIFFERENT LIVES."</b> Use this for any identical-twin question where one twin develops disease and the other doesn't. The answer is almost always <b>epigenetic modification</b> from different environmental exposures, not a new mutation.
+</div>
+
+<h3 id="u2-q">Practice Questions — Epigenetics</h3>
+
+<div class="q">
+<div class="qhead">Q9. Identical twins have the same DNA. One develops type 2 diabetes at age 45; the other does not. Which explanation best accounts for this difference?</div>
+<div class="opts">
+A. One twin's DNA mutated after birth<br>
+B. Different environmental exposures produced different epigenetic marks that altered gene expression<br>
+C. One twin inherited a new gene the other did not<br>
+D. The twins are not truly identical
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Same DNA + different lives = epigenetic divergence (methylation, histone modification, miRNA) altering which genes are expressed. A is wrong because the DNA sequence does not change. C is impossible — identical twins start with identical DNA. D contradicts the stem.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q10. A patient's lung cancer biopsy shows that a tumor suppressor gene is no longer expressed, but the gene itself is present and not mutated. Which mechanism best explains this?</div>
+<div class="opts">
+A. A translocation moved the gene to a different chromosome<br>
+B. The promoter region became heavily methylated, silencing transcription<br>
+C. The gene was deleted entirely<br>
+D. Nondisjunction produced an extra chromosome
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Promoter methylation is a classic <i>epigenetic</i> mechanism of tumor suppressor silencing — the gene is intact, but expression is shut off. A and C involve structural DNA change. D would cause aneuploidy, not loss of one gene's expression.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q11. A pregnant patient with poorly controlled type 2 diabetes is told that her infant may be at lifelong increased risk for obesity and diabetes. Which statement best explains this?</div>
+<div class="opts">
+A. High maternal glucose causes DNA mutations in the fetus<br>
+B. Maternal hyperglycemia alters fetal gene expression through epigenetic programming<br>
+C. Insulin crosses the placenta and directly mutates fetal DNA<br>
+D. Maternal diabetes always causes Down syndrome
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> This is <i>developmental programming</i>: intrauterine environment reshapes fetal DNA methylation and gene expression, raising lifelong metabolic disease risk. No mutation is required.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q12. A child has Prader-Willi syndrome from a deletion of the paternal chromosome 15. Which principle best explains the disease?</div>
+<div class="opts">
+A. X-inactivation<br>
+B. Nondisjunction<br>
+C. Genomic imprinting — gene expression depends on parent of origin<br>
+D. Translocation
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>C.</b> The maternal copy of the critical chr 15 region is already silenced by imprinting. If the paternal copy is deleted, no functional gene is left. Same deletion on the maternal side would cause Angelman syndrome instead.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q13. A pregnant patient exposed to heavy air pollution asks how the exposure could affect her baby even if it does not cause a genetic mutation. The best answer is:</div>
+<div class="opts">
+A. "There is no effect unless the DNA is mutated."<br>
+B. "Exposures can change which fetal genes are expressed, through epigenetic modifications like methylation, without changing the DNA sequence."<br>
+C. "Only large radiation exposures matter in early pregnancy."<br>
+D. "Air pollution only affects maternal health, not fetal development."
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> The question tests whether you understand that <i>epigenetic</i> effects are real, heritable, and do not require DNA sequence changes.</div>
+</details>
+</div>
+
+</section>
+
+<!-- ========================= UNIT 3 ========================= -->
+<section id="u3" class="unit3">
+<h2>Unit 3 &nbsp;•&nbsp; Cellular Adaptation & Injury &nbsp;<span class="chip c3">Ch 4 · LO4</span></h2>
+
+<p>Cells respond to stress in predictable ways. If the stress is mild and gradual, cells <b>adapt</b>. If the stress is severe or sustained, cells become <b>injured</b> and may die. The exam heavily tests this progression.</p>
+
+<h3 id="u3-adapt">3.1 The Four Cellular Adaptations</h3>
+
+<div class="three-col">
+  <div class="box mech" style="margin:0">
+    <b>HYPERTROPHY</b><br>
+    Cells get <i>bigger</i> (same number).<br>
+    Trigger: ↑ functional demand or hormonal stimulation.<br>
+    Examples: cardiac muscle with HTN (LVH), skeletal muscle with weight training, pregnant uterus.
+  </div>
+  <div class="box mech" style="margin:0">
+    <b>HYPERPLASIA</b><br>
+    Cells get <i>more numerous</i> (same size each).<br>
+    Trigger: hormonal or compensatory.<br>
+    Examples: breast tissue in pregnancy, endometrium (estrogen), liver regeneration, BPH.
+  </div>
+  <div class="box mech" style="margin:0">
+    <b>ATROPHY</b><br>
+    Cells get <i>smaller</i> (and/or fewer).<br>
+    Triggers: disuse, denervation, loss of blood supply, loss of hormonal stimulation, aging.<br>
+    Examples: casted limb, post-stroke paralysis, prolonged ventilation, postmenopausal endometrium.
+  </div>
+</div>
+
+<div class="box mech">
+<b>METAPLASIA</b> — one differentiated cell type is replaced by another, in response to chronic stress. Reversible but often maladaptive.<br>
+<b>Classic example:</b> chronic smoker — normal ciliated columnar epithelium in the bronchi is replaced by stratified squamous. Squamous cells are tougher but can't clear mucus. <i>Barrett esophagus</i> is another (squamous → columnar in response to chronic acid reflux).
+</div>
+
+<div class="box path">
+<b>DYSPLASIA</b> — disordered, abnormal-looking cells. Not a normal adaptation. Often the step that precedes cancer (e.g., cervical dysplasia → cervical carcinoma in situ → invasive).
+</div>
+
+<div class="box acro">
+<b>AHHAM the 5 responses:</b><br>
+<b>A</b>trophy (smaller) · <b>H</b>ypertrophy (bigger cells) · <b>H</b>yperplasia (more cells) · <b>A</b>daptive metaplasia · <b>M</b>aladaptive dysplasia (toward cancer).<br>
+Or remember the direction: <i>size (hypertrophy/atrophy), number (hyperplasia), type (metaplasia), order (dysplasia)</i>.
+</div>
+
+<div class="box miss">
+<ul>
+  <li><b>"Hypertrophy and hyperplasia are the same."</b> No — size vs number. Cardiac and skeletal muscle cannot hyperplase (they are post-mitotic), so they can only hypertrophy.</li>
+  <li><b>"Atrophy is always pathologic."</b> No — thymic atrophy with age and uterine atrophy after menopause are physiologic.</li>
+  <li><b>"Metaplasia is cancer."</b> Not yet — it's adaptive and reversible. Dysplasia is the step that starts drifting toward malignancy.</li>
+</ul>
+</div>
+
+<h3 id="u3-injury">3.2 Cellular Injury and Death</h3>
+
+<div class="box mech">
+<b>Hypoxia is the #1 cause of cell injury.</b> ↓ O₂ delivery → mitochondria can't make ATP → membrane pumps fail → Na<sup>+</sup> and water enter → cell swelling (reversible). If hypoxia continues → Ca²⁺ floods in → enzymes activate → membranes rupture → irreversible injury → necrosis.
+</div>
+
+<div class="flow">
+Hypoxia <span class="arr">→</span> ↓ ATP <span class="arr">→</span> Na/K pump fails <span class="arr">→</span> cell swells <span class="arr">→</span> anaerobic metabolism <span class="arr">→</span> ↑ lactate, ↓ pH <span class="arr">→</span> mitochondrial Ca²⁺ influx <span class="arr">→</span> membrane rupture <span class="arr">→</span> necrosis
+</div>
+
+<h4>Necrosis vs Apoptosis — the high-yield comparison</h4>
+<table>
+  <tr><th>Feature</th><th>Necrosis</th><th>Apoptosis</th></tr>
+  <tr><td>Trigger</td><td>Injury (ischemia, toxin, trauma)</td><td>Programmed — developmental, immune, DNA damage</td></tr>
+  <tr><td>Cell membrane</td><td>Ruptures, contents spill</td><td>Stays intact, forms apoptotic bodies</td></tr>
+  <tr><td>Inflammation</td><td>Yes (because contents leak)</td><td>No (neighbors phagocytose bodies quietly)</td></tr>
+  <tr><td>ATP requirement</td><td>No — ATP is depleted</td><td>Yes — ATP required (it's active!)</td></tr>
+  <tr><td>Examples</td><td>MI, stroke infarct, gangrene, pancreatitis</td><td>Embryonic web removal, menstrual shedding, CD8 killing a virus-infected cell</td></tr>
+</table>
+
+<div class="box tip">
+<b>Apoptosis is "clean" death.</b> The cell dismantles itself neatly without inflaming the neighborhood. Necrosis is "messy" death with inflammation. This is why most textbook disease processes cause necrosis — the inflammation is part of the clinical picture.
+</div>
+
+<div class="box why">
+Lactate rises in <b>hypoxic cells</b> because the cell shifts from aerobic to anaerobic metabolism. High lactate on a lab report is a red flag for tissue hypoperfusion and impending irreversible injury — often seen in septic or cardiogenic shock.
+</div>
+
+<h3 id="u3-q">Practice Questions — Adaptation & Injury</h3>
+
+<div class="q">
+<div class="qhead">Q14. A patient with long-standing hypertension has thickening of the left ventricular wall on echocardiogram. This change represents:</div>
+<div class="opts">
+A. Hyperplasia<br>
+B. Hypertrophy<br>
+C. Metaplasia<br>
+D. Atrophy
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Cardiac myocytes are post-mitotic — they cannot divide, so they respond to chronic pressure load by enlarging (hypertrophy). Hyperplasia (A) can't happen in cardiac muscle for this reason.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q15. A chronic smoker's bronchial biopsy shows replacement of ciliated columnar epithelium with stratified squamous epithelium. This is:</div>
+<div class="opts">
+A. Hypertrophy<br>
+B. Hyperplasia<br>
+C. Metaplasia<br>
+D. Dysplasia
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>C.</b> One differentiated cell type replaced by another = metaplasia. It's reversible if the smoker quits. If it progresses to disordered cells, that's dysplasia and increases cancer risk.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q16. A 68-year-old mechanically ventilated for three weeks has lost significant skeletal muscle mass. This reflects which cellular adaptation?</div>
+<div class="opts">
+A. Atrophy from disuse and decreased nerve stimulation<br>
+B. Hypertrophy from mechanical strain<br>
+C. Metaplasia of muscle to connective tissue<br>
+D. Apoptosis due to denervation
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>A.</b> Disuse + loss of neural input = atrophy. Skeletal muscle is particularly prone because movement is required to maintain mass. Stroke-related paralysis is another classic example.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q17. <b>Select all that apply.</b> Which are features of apoptosis (NOT necrosis)?</div>
+<div class="opts">
+A. Requires ATP<br>
+B. Cell membrane stays intact<br>
+C. Causes surrounding inflammation<br>
+D. Occurs normally during embryologic development<br>
+E. Caused by ischemia
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>A, B, D.</b> Apoptosis is active (needs ATP), "quiet" (no inflammation), and physiologic (development, menstrual shedding). C and E describe necrosis.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q18. A patient has severe shock with elevated serum lactate and metabolic acidosis. Which best explains the lactate elevation?</div>
+<div class="opts">
+A. Cells are producing extra lactate as fuel<br>
+B. Hypoxia forces cells into anaerobic metabolism, which produces lactate as an end product<br>
+C. The kidneys cannot secrete lactate<br>
+D. Lactate is being absorbed from the GI tract
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Without O₂, pyruvate is converted to lactate so glycolysis can continue. Rising lactate = tissue hypoperfusion and a warning that cells are near irreversible injury.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q19. <b>Order.</b> Arrange the following hypoxic injury events in order:</div>
+<div class="opts">
+— Mitochondrial Ca²⁺ influx and membrane rupture<br>
+— Na/K pump failure and cell swelling<br>
+— Oxygen delivery falls<br>
+— ATP production decreases<br>
+— Anaerobic metabolism produces lactate
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>Correct order:</b> O₂ delivery falls → ATP ↓ → Na/K pump fails + swelling → anaerobic metabolism + lactate → Ca²⁺ influx + membrane rupture. Order questions love this cascade — memorize it.</div>
+</details>
+</div>
+
+</section>
+
+<!-- ========================= UNIT 4 ========================= -->
+<section id="u4" class="unit4">
+<h2>Unit 4 &nbsp;•&nbsp; Fluids & Electrolytes &nbsp;<span class="chip c4">Ch 4 · LO4</span></h2>
+
+<h3 id="u4-fluid">4.1 Fluid Balance & Edema</h3>
+
+<div class="box mech">
+Total body water ≈ 60% of body weight. <b>⅔ is inside cells (ICF); ⅓ is outside (ECF).</b> ECF is split into interstitial fluid (¾) and plasma (¼). Water moves between compartments by osmosis — it follows solute.
+</div>
+
+<p>Fluid movement at capillaries is governed by four forces (Starling):</p>
+<ul>
+  <li>Capillary <b>hydrostatic</b> pressure — pushes water OUT of the vessel</li>
+  <li>Capillary <b>oncotic</b> pressure (from albumin) — pulls water IN</li>
+  <li>Interstitial hydrostatic + interstitial oncotic — opposite directions</li>
+</ul>
+
+<div class="box why">
+<b>Four classic causes of edema</b> — each is a Starling force gone wrong:
+<ol>
+  <li><b>↑ hydrostatic pressure</b> — heart failure (congestion), venous obstruction</li>
+  <li><b>↓ oncotic pressure</b> — low albumin (liver failure, nephrotic syndrome, malnutrition)</li>
+  <li><b>↑ capillary permeability</b> — inflammation, burns, sepsis</li>
+  <li><b>Lymphatic obstruction</b> — post-mastectomy, filariasis</li>
+</ol>
+</div>
+
+<div class="box path">
+<b>Liver failure + edema.</b> The liver makes albumin. Failing liver → ↓ serum albumin → ↓ capillary oncotic pressure → fluid leaks into interstitium → generalized edema and ascites. This is tested often.
+</div>
+
+<h4>Dehydration</h4>
+<div class="flow">
+Fluid loss (vomit, diarrhea, sweat, diuretic) <span class="arr">→</span> ↓ plasma volume <span class="arr">→</span> ↓ BP <span class="arr">→</span> baroreceptors + RAAS + ADH activate <span class="arr">→</span> vasoconstriction + Na/water retention <span class="arr">→</span> attempt to restore volume
+</div>
+
+<h3 id="u4-lytes">4.2 Electrolyte Imbalances — The Big Three</h3>
+<table>
+  <tr><th>Electrolyte</th><th>Normal</th><th>Critical role</th></tr>
+  <tr><td>Sodium (Na<sup>+</sup>)</td><td>135–145 mEq/L</td><td>Main ECF cation → controls osmolarity and water distribution → affects neuro</td></tr>
+  <tr><td>Potassium (K<sup>+</sup>)</td><td>3.5–5.0 mEq/L</td><td>Main ICF cation → controls membrane excitability → affects heart</td></tr>
+  <tr><td>Calcium (Ca²⁺)</td><td>8.5–10.5 mg/dL</td><td>Bone, muscle contraction, clotting → affects neuromuscular excitability</td></tr>
+</table>
+
+<h4>Sodium</h4>
+<table>
+  <tr><th></th><th>Hyponatremia (&lt;135)</th><th>Hypernatremia (&gt;145)</th></tr>
+  <tr><td>Causes</td><td>Excess water (water intoxication, SIADH), GI loss, diuretics</td><td>Water loss without electrolyte replacement, DI, burns</td></tr>
+  <tr><td>Symptoms</td><td>Nausea, headache, confusion, seizures → <b>cerebral edema</b></td><td>Thirst, dry mucosa, lethargy, irritability, seizures</td></tr>
+</table>
+
+<h4>Potassium — always think the heart</h4>
+<table>
+  <tr><th></th><th>Hypokalemia (&lt;3.5)</th><th>Hyperkalemia (&gt;5.0)</th></tr>
+  <tr><td>Causes</td><td>GI loss (vomit, diarrhea), diuretics, insulin/β-agonists</td><td>Renal failure (CKD), K-sparing diuretics, acidosis, tissue breakdown</td></tr>
+  <tr><td>ECG</td><td>Flattened T waves, U waves, ST depression, PVCs</td><td><b>Peaked T waves</b>, wide QRS, sine wave, V-fib/arrest</td></tr>
+  <tr><td>Neuromuscular</td><td>Weakness, cramps, paralysis, ↓ reflexes</td><td>Weakness, paresthesia, flaccid paralysis</td></tr>
+</table>
+
+<div class="box tip">
+<b>Peaked T waves</b> → hyperkalemia. <b>U waves</b> → hypokalemia. These are the two ECG findings most likely on the exam. Both can cause fatal arrhythmias; hyperkalemia can arrest the heart in diastole.
+</div>
+
+<div class="box path">
+<b>CKD patient with K 6.2 mEq/L.</b> CKD kidneys can't excrete potassium efficiently. Hyperkalemia is a leading cause of death in CKD. Expect peaked T waves on ECG.
+</div>
+
+<h4>Calcium — mirror image neuromuscular effects</h4>
+<table>
+  <tr><th></th><th>Hypocalcemia (&lt;8.5)</th><th>Hypercalcemia (&gt;10.5)</th></tr>
+  <tr><td>Causes</td><td>Hypoparathyroidism, renal failure (↓ vit D activation), pancreatitis</td><td>Hyperparathyroidism, malignancy (paraneoplastic), immobility</td></tr>
+  <tr><td>Symptoms</td><td><b>Tetany</b>, Chvostek sign (facial twitch), Trousseau sign (carpopedal spasm), paresthesias</td><td><b>"Stones, bones, groans, psychiatric moans"</b> — kidney stones, bone pain, abdominal pain, confusion</td></tr>
+</table>
+
+<div class="box miss">
+<b>Three electrolyte traps:</b>
+<ul>
+  <li><b>Hyponatremia from overhydration ≠ dehydration.</b> Drinking too much water dilutes Na; the patient is overloaded, not dry.</li>
+  <li><b>Hyperkalemia's classic ECG sign is peaked T waves</b> — students often reverse this with U waves (which belong to hypokalemia).</li>
+  <li><b>Hypocalcemia causes tetany; hypercalcemia causes sedation</b> — NOT the other way around. Low Ca raises neuronal excitability.</li>
+</ul>
+</div>
+
+<h3 id="u4-q">Practice Questions — Fluids & Electrolytes</h3>
+
+<div class="q">
+<div class="qhead">Q20. A patient with liver failure develops generalized edema. Laboratory studies show markedly reduced serum albumin. Which Starling force best explains the edema?</div>
+<div class="opts">
+A. Increased capillary hydrostatic pressure<br>
+B. Decreased capillary oncotic pressure<br>
+C. Increased tissue oncotic pressure<br>
+D. Lymphatic obstruction
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Low albumin → low plasma oncotic pressure → water is not pulled back into the vessels → interstitium expands → edema/ascites.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q21. A CKD patient has K<sup>+</sup> 6.3 mEq/L. Which ECG finding is most expected?</div>
+<div class="opts">
+A. U waves<br>
+B. Prolonged PR with flat T waves<br>
+C. Peaked T waves<br>
+D. Q waves in leads II, III, aVF
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>C.</b> Peaked T waves are the classic early sign of hyperkalemia. A (U waves) belongs to hypokalemia. D (Q waves) is MI.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q22. A patient with K<sup>+</sup> 2.8 mEq/L reports muscle weakness. The nurse notes PVCs on the monitor. The best explanation is:</div>
+<div class="opts">
+A. Hypokalemia lowers the resting membrane potential threshold, increasing cardiac ectopy<br>
+B. Hypokalemia directly destroys the SA node<br>
+C. Hypokalemia mimics hypercalcemia<br>
+D. Hypokalemia increases ATP production in the heart
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>A.</b> Low K makes cardiac cells hyperpolarized and more excitable — PVCs and arrhythmias are typical. Severe hypokalemia can cause torsades.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q23. A patient drinks large volumes of plain water after prolonged exertion and develops Na<sup>+</sup> 122 mEq/L with confusion. The pathophysiologic change is:</div>
+<div class="opts">
+A. Sodium loss from sweat alone<br>
+B. Dilutional hyponatremia from excess free water with no electrolyte replacement<br>
+C. Renal failure acutely<br>
+D. Hyperaldosteronism
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Overhydration dilutes the ECF sodium. Low Na draws water into brain cells → cerebral edema → confusion or seizure. This is why sports drinks exist.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q24. <b>Matching.</b> Match each electrolyte imbalance to its characteristic manifestation.</div>
+<table>
+<tr><th>Imbalance</th><th>Manifestation</th></tr>
+<tr><td>Hyperkalemia</td><td>___</td></tr>
+<tr><td>Hypokalemia</td><td>___</td></tr>
+<tr><td>Hypercalcemia</td><td>___</td></tr>
+<tr><td>Hypocalcemia</td><td>___</td></tr>
+</table>
+<div class="opts">Choices: Tetany, Chvostek sign &nbsp;·&nbsp; Peaked T waves &nbsp;·&nbsp; U waves, flat T &nbsp;·&nbsp; Kidney stones, confusion</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>HyperK → peaked T waves · HypoK → U waves, flat T · HyperCa → kidney stones, confusion · HypoCa → tetany, Chvostek.</b></div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q25. A 76-year-old man has 3 days of vomiting and diarrhea and now presents confused. Which electrolyte pattern is most expected?</div>
+<div class="opts">
+A. Low K, low Na, metabolic acidosis from diarrhea and metabolic alkalosis from vomiting (mixed)<br>
+B. High Na and high K<br>
+C. Low Ca only<br>
+D. No electrolyte change
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>A.</b> Vomiting loses HCl (alkalosis, low K, low Cl) and diarrhea loses HCO₃ (acidosis, low K). Both deplete K and volume, so this patient classically has mixed electrolyte and acid-base abnormalities plus dehydration.</div>
+</details>
+</div>
+
+</section>
+
+<!-- ========================= UNIT 5 ========================= -->
+<section id="u5" class="unit5">
+<h2>Unit 5 &nbsp;•&nbsp; Acid–Base Balance &nbsp;<span class="chip c5">Ch 4 · LO4</span></h2>
+
+<h3 id="u5-abg">5.1 ABG Fundamentals</h3>
+<table>
+  <tr><th>Value</th><th>Normal</th><th>What it tells you</th></tr>
+  <tr><td>pH</td><td>7.35–7.45</td><td>Overall blood acidity. &lt;7.35 = acidemia; &gt;7.45 = alkalemia</td></tr>
+  <tr><td>PaCO₂</td><td>35–45 mm Hg</td><td><b>Respiratory</b> component. ↑ CO₂ = respiratory acidosis; ↓ CO₂ = respiratory alkalosis</td></tr>
+  <tr><td>HCO₃<sup>−</sup></td><td>22–26 mEq/L</td><td><b>Metabolic</b> component. ↓ HCO₃ = metabolic acidosis; ↑ HCO₃ = metabolic alkalosis</td></tr>
+  <tr><td>PaO₂</td><td>80–100 mm Hg</td><td>Oxygenation (often tracks SaO₂)</td></tr>
+</table>
+
+<div class="box acro">
+<b>ROME</b> — the quickest way to interpret ABGs:<br>
+<b>R</b>espiratory <b>O</b>pposite — pH and CO₂ move in <i>opposite</i> directions.<br>
+<b>M</b>etabolic <b>E</b>qual — pH and HCO₃ move in the <i>same</i> direction.<br>
+<br>
+Example: pH ↓ 7.22, CO₂ ↑ 55 → both moving opposite → respiratory acidosis.<br>
+Example: pH ↓ 7.22, HCO₃ ↓ 12 → both moving equal → metabolic acidosis.
+</div>
+
+<h4>A 3-step method you can use on any ABG</h4>
+<ol>
+  <li><b>Look at the pH.</b> Is it acidemia or alkalemia?</li>
+  <li><b>Match pH direction to CO₂ or HCO₃.</b> Whichever moves with the pH (in the same disease direction) is the primary problem.</li>
+  <li><b>Check compensation.</b> Is the opposite system moving the right direction to pull pH toward normal?</li>
+</ol>
+
+<h3 id="u5-dis">5.2 The Four Acid–Base Disorders</h3>
+<table>
+  <tr><th>Disorder</th><th>pH</th><th>Primary change</th><th>Compensation</th><th>Classic causes</th></tr>
+  <tr><td><b>Respiratory acidosis</b></td><td>↓</td><td>↑ PaCO₂</td><td>Kidneys retain HCO₃ (slow, days)</td><td>COPD, opioid overdose, neuromuscular weakness, hypoventilation</td></tr>
+  <tr><td><b>Respiratory alkalosis</b></td><td>↑</td><td>↓ PaCO₂</td><td>Kidneys excrete HCO₃</td><td>Anxiety, PE, high altitude, pain, early sepsis, mechanical over-ventilation</td></tr>
+  <tr><td><b>Metabolic acidosis</b></td><td>↓</td><td>↓ HCO₃</td><td>Lungs blow off CO₂ (Kussmaul breathing)</td><td>DKA, lactic acidosis (shock), diarrhea, renal failure, aspirin toxicity</td></tr>
+  <tr><td><b>Metabolic alkalosis</b></td><td>↑</td><td>↑ HCO₃</td><td>Lungs retain CO₂ (slow breathing)</td><td>Vomiting (loss of HCl), nasogastric suction, diuretics, antacid abuse</td></tr>
+</table>
+
+<div class="box path">
+<b>DKA</b> — a classic metabolic acidosis. Insulin deficiency → fat breakdown → ketoacids → ↓ HCO₃ → ↓ pH. Compensation: deep, rapid <b>Kussmaul breathing</b> blows off CO₂ to raise pH. Expect glucose &gt;300, HCO₃ &lt;18, pH &lt;7.30, positive ketones, fruity breath.
+</div>
+
+<div class="box path">
+<b>COPD exacerbation</b> — a classic respiratory acidosis. Airway obstruction traps CO₂ → ↑ PaCO₂ → ↓ pH → confusion, somnolence. Chronic COPD patients compensate by retaining HCO₃ over days; acutely on chronic, pH drops further.
+</div>
+
+<div class="box why">
+<b>Why does a person breathe fast and deep in DKA?</b> The metabolic acidosis (low HCO₃) drives the body to blow off CO₂ through the lungs. Lower CO₂ pulls pH up toward normal. Kussmaul breathing is a <i>compensation</i>, not the cause.
+</div>
+
+<div class="box miss">
+<b>Common ABG traps:</b>
+<ul>
+  <li><b>DKA patient breathing fast is NOT respiratory alkalosis.</b> It's metabolic acidosis with respiratory compensation. Always look at pH and HCO₃ first.</li>
+  <li><b>Vomiting causes metabolic alkalosis</b> (losing HCl), NOT acidosis. Diarrhea is the one that causes metabolic acidosis (losing HCO₃).</li>
+  <li><b>COPD = respiratory acidosis</b> (CO₂ retention). Students sometimes pick alkalosis because "the patient is sick" — read the PaCO₂.</li>
+</ul>
+</div>
+
+<h3 id="u5-q">Practice Questions — Acid–Base</h3>
+
+<div class="q">
+<div class="qhead">Q26. A patient with DKA has pH 7.22, PaCO₂ 26, HCO₃ 10. The acid–base disturbance is:</div>
+<div class="opts">
+A. Respiratory acidosis with metabolic compensation<br>
+B. Respiratory alkalosis with metabolic compensation<br>
+C. Metabolic acidosis with respiratory compensation<br>
+D. Metabolic alkalosis with respiratory compensation
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>C.</b> pH is low (acidosis). HCO₃ is low (matches pH, so metabolic — ROME). Low PaCO₂ is the lungs compensating by blowing off CO₂ (Kussmaul breathing).</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q27. A 65-year-old with COPD is admitted confused, shallow breathing, SaO₂ 88%. ABG: pH 7.28, PaCO₂ 62, HCO₃ 30. The disturbance is:</div>
+<div class="opts">
+A. Respiratory acidosis<br>
+B. Respiratory alkalosis<br>
+C. Metabolic acidosis<br>
+D. Metabolic alkalosis
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>A.</b> pH ↓ and PaCO₂ ↑ → respiratory acidosis (ROME: opposite directions). The mildly elevated HCO₃ is renal compensation. COPD patients retain CO₂ as airway obstruction worsens.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q28. <b>Order.</b> Place these events in the correct order during respiratory failure in a patient who cannot eliminate enough CO₂:</div>
+<div class="opts">
+— pH decreases<br>
+— PaCO₂ rises<br>
+— Ventilation is inadequate<br>
+— Kidneys begin retaining HCO₃ over days
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>Correct order:</b> Ventilation inadequate → PaCO₂ rises → pH decreases → kidneys retain HCO₃ (renal compensation over days). The respiratory failure causes the acidosis; renal compensation is slow.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q29. A patient with prolonged vomiting presents with pH 7.49, HCO₃ 34, PaCO₂ 44. The disturbance is:</div>
+<div class="opts">
+A. Metabolic alkalosis from loss of HCl<br>
+B. Respiratory alkalosis from hyperventilation<br>
+C. Metabolic acidosis from dehydration<br>
+D. Respiratory acidosis from hypoventilation
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>A.</b> pH ↑ and HCO₃ ↑ → metabolic alkalosis (ROME: same direction). Cause: loss of gastric HCl. Always pair vomiting with metabolic alkalosis.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q30. A healthy 20-year-old is having a panic attack, breathing rapidly. ABG: pH 7.52, PaCO₂ 26, HCO₃ 24. The disturbance is:</div>
+<div class="opts">
+A. Metabolic alkalosis<br>
+B. Respiratory alkalosis<br>
+C. Metabolic acidosis<br>
+D. Respiratory acidosis
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> pH ↑ and PaCO₂ ↓ → respiratory alkalosis (opposite = respiratory). Cause: hyperventilation blows off too much CO₂. Normal HCO₃ confirms acute, uncompensated.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q31. A patient with severe diarrhea has pH 7.30, HCO₃ 16, PaCO₂ 30. The disturbance and likely cause is:</div>
+<div class="opts">
+A. Respiratory acidosis from hypoventilation<br>
+B. Metabolic acidosis from bicarbonate loss in stool<br>
+C. Metabolic alkalosis from dehydration<br>
+D. Respiratory alkalosis from fever
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Diarrhea loses HCO₃ → metabolic acidosis. Low PaCO₂ = lungs compensating. Contrast with vomiting (loses HCl → metabolic alkalosis).</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q32. <b>Dropdown.</b> In Kussmaul breathing, the patient breathes [ select: fast and deep / slow and shallow / normal rate ] because the body is trying to [ select: raise CO₂ / lower CO₂ / raise HCO₃ ], which [ select: compensates for metabolic acidosis / causes metabolic alkalosis / has no effect ].</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>Fast and deep · lower CO₂ · compensates for metabolic acidosis.</b> Blowing off CO₂ reduces acid load and pulls pH up toward normal in DKA or severe metabolic acidosis.</div>
+</details>
+</div>
+
+</section>
+
+<!-- ========================= APPENDIX ========================= -->
+<section id="appx">
+<h2 style="background:#374151;">Appendix &nbsp;•&nbsp; Top Missteps & Master Mnemonics</h2>
+
+<h3 style="color:#374151;border-bottom-color:#9ca3af;">Top 15 Week 1 Missteps</h3>
+<table>
+<tr><th>#</th><th>The trap</th><th>What's actually true</th></tr>
+<tr><td>1</td><td>"Down syndrome is a single-gene mutation."</td><td>It's a <b>trisomy</b> (entire extra chromosome 21) from meiotic nondisjunction.</td></tr>
+<tr><td>2</td><td>"Paternal age drives Down syndrome risk."</td><td>Maternal age does — prolonged oocyte meiotic arrest.</td></tr>
+<tr><td>3</td><td>"Klinefelter is 45,X."</td><td>Klinefelter is <b>47,XXY</b>. Turner is 45,X.</td></tr>
+<tr><td>4</td><td>"Carrier mothers of Duchenne are affected."</td><td>They're usually unaffected (heterozygous X). Affected boys present; brothers/uncles on mom's side may also be affected.</td></tr>
+<tr><td>5</td><td>"Familial HTN = autosomal dominant."</td><td>It's <b>multifactorial</b> (genes + environment). Running in a family doesn't prove Mendelian.</td></tr>
+<tr><td>6</td><td>"Epigenetic change = DNA mutation."</td><td>No — sequence is unchanged; only <b>expression</b> is altered (methylation, histone, miRNA).</td></tr>
+<tr><td>7</td><td>"Hypertrophy and hyperplasia are the same."</td><td>Size vs number. Cardiac muscle cannot hyperplase.</td></tr>
+<tr><td>8</td><td>"Metaplasia = cancer."</td><td>It's adaptive and reversible. Dysplasia is the step toward malignancy.</td></tr>
+<tr><td>9</td><td>"Apoptosis causes inflammation."</td><td>Apoptosis is <b>silent and ATP-requiring</b>. Necrosis causes inflammation.</td></tr>
+<tr><td>10</td><td>"Hyperkalemia causes U waves."</td><td>Hyperkalemia = <b>peaked T waves</b>. U waves = hypokalemia.</td></tr>
+<tr><td>11</td><td>"Low Ca sedates; high Ca excites."</td><td>Opposite. Low Ca = <b>tetany</b> (excitable). High Ca = lethargy and confusion.</td></tr>
+<tr><td>12</td><td>"Liver failure edema is from high hydrostatic pressure."</td><td>It's from <b>low oncotic</b> pressure — the liver can't make albumin.</td></tr>
+<tr><td>13</td><td>"DKA is respiratory alkalosis because they breathe fast."</td><td>DKA is <b>metabolic acidosis</b>; Kussmaul is compensation, not cause.</td></tr>
+<tr><td>14</td><td>"Vomiting causes acidosis."</td><td>Vomiting loses HCl → <b>metabolic alkalosis</b>. Diarrhea causes acidosis.</td></tr>
+<tr><td>15</td><td>"Overhydration = dehydration on labs."</td><td>Drinking too much plain water causes <b>dilutional hyponatremia</b>, not dehydration.</td></tr>
+</table>
+
+<h3 style="color:#374151;border-bottom-color:#9ca3af;">Master Mnemonic Sheet</h3>
+<table>
+<tr><th>Mnemonic</th><th>Meaning</th></tr>
+<tr><td><b>ROME</b></td><td><b>R</b>espiratory <b>O</b>pposite (pH vs CO₂), <b>M</b>etabolic <b>E</b>qual (pH vs HCO₃)</td></tr>
+<tr><td><b>AHHAM / AHH-AD</b></td><td><b>A</b>trophy, <b>H</b>ypertrophy, <b>H</b>yperplasia, <b>A</b>daptive Metaplasia, <b>D</b>ysplasia (abnormal)</td></tr>
+<tr><td><b>"Peaks K"</b></td><td>Peaked T waves = hyperKalemia</td></tr>
+<tr><td><b>"U have low K"</b></td><td>U waves = hypoKalemia</td></tr>
+<tr><td><b>Stones / Bones / Groans / Moans</b></td><td>Hypercalcemia: kidney stones, bone pain, GI pain, psychiatric</td></tr>
+<tr><td><b>"CATs go numb"</b></td><td>Hypo<b>Ca</b>lcemia causes paresthesia and <b>T</b>etany (Chvostek, Trousseau)</td></tr>
+<tr><td><b>Kussmaul = compensate</b></td><td>Deep, rapid breathing in metabolic acidosis (classic: DKA)</td></tr>
+<tr><td><b>CFTR cascade</b></td><td>Gene → Cl<sup>−</sup> channel → water transport → mucus → infection</td></tr>
+<tr><td><b>Hypoxia cascade</b></td><td>↓O₂ → ↓ATP → pump failure → swelling → lactate → Ca²⁺ → rupture → necrosis</td></tr>
+<tr><td><b>"Same DNA, different lives"</b></td><td>Identical twin disease discordance = epigenetic</td></tr>
+</table>
+
+<h3 style="color:#374151;border-bottom-color:#9ca3af;">Normal Values Quick Reference</h3>
+<table>
+<tr><td><b>pH</b> 7.35–7.45</td><td><b>PaCO₂</b> 35–45</td><td><b>HCO₃</b> 22–26</td><td><b>PaO₂</b> 80–100</td></tr>
+<tr><td><b>Na</b> 135–145</td><td><b>K</b> 3.5–5.0</td><td><b>Ca</b> 8.5–10.5</td><td><b>Glucose</b> 70–110 fasting</td></tr>
+<tr><td><b>Albumin</b> 3.5–5.0 g/dL</td><td><b>Lactate</b> &lt;2 mmol/L</td><td><b>BUN</b> 7–20 mg/dL</td><td><b>Creatinine</b> 0.6–1.3 mg/dL</td></tr>
+</table>
+
+<h3 style="color:#374151;border-bottom-color:#9ca3af;">Final Study Strategy for Week 1</h3>
+<ul>
+  <li><b>Build the inheritance tree first.</b> Before any patho, you should be able to look at a pedigree and call AD vs AR vs X-linked in ten seconds. That skill carries the whole genetics section.</li>
+  <li><b>Learn adaptations in pairs.</b> Hypertrophy ↔ atrophy (size), hyperplasia ↔ atrophy (number), metaplasia ↔ dysplasia (quality).</li>
+  <li><b>Memorize two cascades cold.</b> CFTR → mucus → infection, and hypoxia → ATP → pump fail → necrosis. Ordering questions will draw from these.</li>
+  <li><b>Use ROME on every ABG.</b> Don't overthink. pH direction + opposite/same = diagnosis.</li>
+  <li><b>Learn one classic vignette per disorder.</b> DKA = young T1, fruity breath, Kussmaul. COPD = older, shallow, confused. Vomiting = alkalosis. Diarrhea = acidosis.</li>
+  <li><b>Practice ECG electrolyte signs by sight.</b> Peaked T, flat T with U, wide QRS, prolonged QT (hypoCa).</li>
+</ul>
+
+<p class="small" style="margin-top:16px;">SCI225 Week 1 Study Guide — built from the Week 1 learning objectives covering Chapters 2, 3, and 4. Made by Dr. Vidya Aggrawal to teach the concepts tested, not the exam questions themselves. Uses the same color-coded format as the midterm review guide. Print for a paper copy, or use in-browser with collapsible practice answers.</p>
+</section>
+
+</main>
+</div>
+</body>
+</html>

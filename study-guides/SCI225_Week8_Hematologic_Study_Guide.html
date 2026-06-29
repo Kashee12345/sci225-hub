@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SCI225 Week 8 &middot; Hematologic System Study Guide &middot; Dr. Vidya</title>
+<style>
+  :root{
+    --ink:#22272E; --muted:#5A6573; --line:#E3E0E6; --bg:#F6F4F7;
+    --blood:#B3122B; --blood-dk:#7E0C20; --blood-lt:#FCE9EC;
+    --s1:#C62828; --s1lt:#FCEBEA;
+    --s2:#6A1B9A; --s2lt:#F3E9F8;
+    --s3:#00695C; --s3lt:#E2F1EF;
+    --amber:#B7791F; --amberlt:#FBF1DD;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0; font-family:"Segoe UI",Arial,Helvetica,sans-serif; color:var(--ink); background:var(--bg); line-height:1.62;}
+  .wrap{max-width:1000px; margin:0 auto; padding:0 18px 80px;}
+  a{color:var(--blood);}
+  h1,h2,h3,h4{line-height:1.22;}
+
+  /* HERO */
+  header.hero{background:linear-gradient(135deg,#7E0C20 0%,#B3122B 55%,#5C0617 100%); color:#fff; border-radius:0 0 22px 22px; padding:46px 36px 40px; margin:0 -18px 8px; position:relative; overflow:hidden; box-shadow:0 10px 30px rgba(126,12,32,.32);}
+  header.hero .blob{position:absolute; border-radius:50%; background:rgba(255,255,255,.07);}
+  .kicker{font-size:12px; letter-spacing:3px; font-weight:700; opacity:.92; margin-bottom:10px;}
+  header.hero h1{margin:0 0 10px; font-size:38px;}
+  header.hero p{margin:0; font-size:17px; opacity:.96; max-width:660px;}
+  .herometa{margin-top:18px; display:flex; flex-wrap:wrap; gap:8px;}
+  .chip{display:inline-block; background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.28); padding:5px 12px; border-radius:20px; font-size:12.5px; font-weight:600;}
+
+  /* TOOLBAR */
+  .toolbar{display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between; margin:18px 0 6px;}
+  .btn{display:inline-block; border:none; cursor:pointer; text-decoration:none; font-weight:700; border-radius:30px; padding:11px 22px; font-size:14px; box-shadow:0 4px 12px rgba(0,0,0,.16);}
+  .btn-print{background:linear-gradient(135deg,#7E0C20,#B3122B); color:#fff;}
+  .btn-light{background:#fff; color:var(--blood); border:1.5px solid var(--blood);}
+  .btn:hover{filter:brightness(1.06);}
+
+  /* NAV */
+  .toc{background:#fff; border:1px solid var(--line); border-radius:14px; padding:18px 20px; margin:14px 0 26px; box-shadow:0 2px 10px rgba(0,0,0,.04);}
+  .toc h2{margin:0 0 12px; font-size:16px; letter-spacing:.5px; text-transform:uppercase; color:var(--muted);}
+  .toc-grid{display:grid; grid-template-columns:1fr 1fr 1fr; gap:18px;}
+  .toc-col h3{margin:0 0 8px; font-size:14px;}
+  .toc-col.c1 h3{color:var(--s1);} .toc-col.c2 h3{color:var(--s2);} .toc-col.c3 h3{color:var(--s3);}
+  .toc a{display:block; color:var(--ink); text-decoration:none; font-size:13.4px; padding:4px 8px; border-radius:6px;}
+  .toc a:hover{background:var(--blood-lt);}
+  @media (max-width:760px){ .toc-grid{grid-template-columns:1fr;} }
+
+  /* SECTION HEADERS */
+  .sec{margin:40px 0 6px; padding:14px 20px; border-radius:12px; color:#fff; display:flex; align-items:center; gap:14px;}
+  .sec.one{background:linear-gradient(135deg,#C62828,#8E1B1B);}
+  .sec.two{background:linear-gradient(135deg,#6A1B9A,#451266);}
+  .sec.three{background:linear-gradient(135deg,#00695C,#004A40);}
+  .sec .num{font-size:13px; font-weight:800; letter-spacing:2px; background:rgba(255,255,255,.2); padding:6px 12px; border-radius:8px; white-space:nowrap;}
+  .sec h2{margin:0; font-size:22px;}
+  .sec p{margin:3px 0 0; font-size:13.5px; opacity:.95;}
+
+  /* TOPIC CARDS */
+  details.topic{background:#fff; border:1px solid var(--line); border-left-width:5px; border-radius:10px; margin:12px 0; overflow:hidden; box-shadow:0 1px 6px rgba(0,0,0,.04);}
+  details.topic.one{border-left-color:var(--s1);}
+  details.topic.two{border-left-color:var(--s2);}
+  details.topic.three{border-left-color:var(--s3);}
+  details.topic > summary{cursor:pointer; list-style:none; padding:16px 20px; font-weight:700; font-size:16.5px; display:flex; align-items:center; gap:12px;}
+  details.topic > summary::-webkit-details-marker{display:none;}
+  details.topic > summary .tnum{font-size:12.5px; font-weight:800; color:#fff; border-radius:7px; padding:4px 9px; white-space:nowrap;}
+  details.topic.one > summary .tnum{background:var(--s1);}
+  details.topic.two > summary .tnum{background:var(--s2);}
+  details.topic.three > summary .tnum{background:var(--s3);}
+  details.topic > summary .arrow{margin-left:auto; transition:transform .2s; color:var(--muted); font-size:14px;}
+  details.topic[open] > summary .arrow{transform:rotate(90deg);}
+  details.topic[open] > summary{border-bottom:1px solid var(--line);}
+  .body{padding:6px 22px 20px;}
+  .body h4{margin:18px 0 6px; font-size:15.5px; color:var(--blood-dk);}
+  .body p{margin:8px 0;}
+  .body ul{margin:8px 0 8px; padding-left:20px;}
+  .body li{margin:5px 0;}
+
+  .keyidea{background:var(--blood-lt); border-left:4px solid var(--blood); border-radius:0 8px 8px 0; padding:12px 16px; margin:14px 0; font-size:14.5px;}
+  .pearl{background:var(--amberlt); border-left:4px solid var(--amber); border-radius:0 8px 8px 0; padding:12px 16px; margin:14px 0; font-size:14.5px;}
+  .pearl b, .keyidea b{color:inherit;}
+  .mnem{background:#ECF6F1; border:1px dashed #2E9E78; border-radius:8px; padding:10px 14px; margin:14px 0; font-size:14px;}
+  .mnem .lbl{font-weight:800; color:#1E7A57; letter-spacing:.5px; font-size:12px; text-transform:uppercase;}
+
+  /* TABLES */
+  table.dt{width:100%; border-collapse:collapse; margin:14px 0; font-size:13.7px;}
+  table.dt th{background:#33272B; color:#fff; text-align:left; padding:9px 11px; font-weight:600;}
+  table.dt td{border:1px solid var(--line); padding:9px 11px; vertical-align:top;}
+  table.dt tr:nth-child(even) td{background:#FAF8F9;}
+  .up{color:#C62828; font-weight:800;} .dn{color:#1565C0; font-weight:800;} .nl{color:#5A6573;}
+
+  /* PRACTICE */
+  .practice{background:#FBFAFC; border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin:16px 0;}
+  .practice .ptag{display:inline-block; background:var(--s2); color:#fff; font-size:11px; font-weight:800; letter-spacing:1px; padding:3px 10px; border-radius:20px; text-transform:uppercase;}
+  .q{font-weight:600; margin:10px 0 6px;}
+  .opts{margin:6px 0 6px; padding-left:6px;}
+  .opts div{padding:3px 0;}
+  .reveal{cursor:pointer; border:none; background:var(--s2); color:#fff; font-weight:700; font-size:12.5px; padding:7px 14px; border-radius:20px; margin-top:6px;}
+  .reveal:hover{filter:brightness(1.08);}
+  .ans{display:none; margin-top:10px; background:#EEF7F1; border-left:4px solid #2E9E78; border-radius:0 8px 8px 0; padding:11px 14px; font-size:14px;}
+  .ans.show{display:block;}
+  .ans .correct{font-weight:800; color:#1E7A57;}
+
+  /* SVG figure */
+  .fig{background:#fff; border:1px solid var(--line); border-radius:10px; padding:14px; margin:16px 0; text-align:center;}
+  .fig figcaption{font-size:12.5px; color:var(--muted); margin-top:8px;}
+
+  /* cheat / glossary */
+  .cheat{background:#fff; border:2px solid var(--blood); border-radius:14px; padding:8px 22px 22px; margin:14px 0;}
+  .gloss dt{font-weight:700; color:var(--blood-dk); margin-top:12px;}
+  .gloss dd{margin:2px 0 0; padding-left:0;}
+
+  footer.foot{text-align:center; color:var(--muted); font-size:13px; margin-top:50px; padding-top:22px; border-top:1px solid var(--line);}
+
+  @media print{
+    body{background:#fff;} .toolbar,.toc{display:none;}
+    details.topic{break-inside:avoid; box-shadow:none;}
+    header.hero{box-shadow:none;}
+    .ans{display:block !important;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ===================== HERO ===================== -->
+  <header class="hero">
+    <div class="blob" style="width:230px;height:230px;right:-40px;top:-50px;"></div>
+    <div class="blob" style="width:150px;height:150px;right:130px;bottom:-60px;"></div>
+    <div class="kicker">SCI225 &middot; PATHOPHYSIOLOGY &middot; WEEK 8 &middot; NIGHTINGALE COLLEGE</div>
+    <h1>The Hematologic System</h1>
+    <p>Blood components, the anemias, sickle cell disease, and the bleeding-versus-clotting framework that shapes nursing care &mdash; built around the lab signatures you will use at the bedside.</p>
+    <div class="herometa">
+      <span class="chip">Dr. Vidya Aggrawal</span>
+      <span class="chip">Chapters 27 &ndash; 29</span>
+      <span class="chip">Structure &middot; Alterations &middot; Clinical</span>
+      <span class="chip">21 topics + cheat sheet</span>
+    </div>
+  </header>
+
+  <!-- ===================== TOOLBAR ===================== -->
+  <div class="toolbar">
+    <div style="font-size:13.5px;color:var(--muted);">Click any topic to expand. Try each practice question <b>before</b> revealing the answer.</div>
+    <div style="display:flex;gap:10px;">
+      <button class="btn btn-light" onclick="toggleAll()" id="toggleBtn">Expand all</button>
+      <button class="btn btn-print" onclick="savePDF()">&#128424;&nbsp; Save as PDF</button>
+    </div>
+  </div>
+
+  <!-- ===================== TOC ===================== -->
+  <nav class="toc">
+    <h2>What's inside</h2>
+    <div class="toc-grid">
+      <div class="toc-col c1">
+        <h3>1 &middot; Structure &amp; Function</h3>
+        <a href="#t1">1. Components of blood &amp; plasma</a>
+        <a href="#t2">2. Erythrocytes &amp; hemoglobin</a>
+        <a href="#t3">3. Erythropoiesis &amp; the EPO loop</a>
+        <a href="#t4">4. Hemostasis &mdash; primary &amp; secondary</a>
+        <a href="#t5">5. Coagulation cascade &amp; the labs</a>
+        <a href="#t6">6. Leukocytes &mdash; defense</a>
+      </div>
+      <div class="toc-col c2">
+        <h3>2 &middot; Alterations</h3>
+        <a href="#t7">7. Anemia &mdash; overview &amp; compensation</a>
+        <a href="#t8">8. Microcytic anemias</a>
+        <a href="#t9">9. Macrocytic anemias</a>
+        <a href="#t10">10. Normocytic anemias</a>
+        <a href="#t11">11. Sickle cell disease</a>
+        <a href="#t12">12. Polycythemia</a>
+        <a href="#t13">13. Bleeding disorders</a>
+        <a href="#t14">14. Clotting disorders</a>
+        <a href="#t15">15. DIC &amp; the lab-signature framework</a>
+        <a href="#t16">16. Leukocyte disorders</a>
+      </div>
+      <div class="toc-col c3">
+        <h3>3 &middot; Clinical Application</h3>
+        <a href="#t17">17. Anemia at the bedside</a>
+        <a href="#t18">18. Sickle cell crisis care</a>
+        <a href="#t19">19. Managing DIC</a>
+        <a href="#t20">20. Transfusion reactions</a>
+        <a href="#t21">21. Pediatric hematology</a>
+        <a href="#cheat">&#11088; Lab-signature cheat sheet</a>
+        <a href="#gloss">&#128218; Glossary</a>
+      </div>
+    </div>
+  </nav>
+
+<!-- ===================== CONTENT INSERTED BELOW ===================== -->
+
+  <!-- ===================== SECTION 1 ===================== -->
+  <div class="sec one" id="sec1">
+    <span class="num">SECTION 1</span>
+    <div><h2>Structure &amp; Function</h2><p>Blood components, erythrocyte design, hemoglobin, erythropoiesis, and hemostasis &mdash; the foundation for every disorder.</p></div>
+  </div>
+
+  <!-- T1 -->
+  <details class="topic one" id="t1">
+    <summary><span class="tnum">1</span> Components of Blood &amp; Plasma Proteins <span class="arrow">&#9654;</span></summary>
+    <div class="body">
+      <p>Blood is about <b>55% plasma</b> (the liquid) and <b>45% formed elements</b> (the cells and fragments). Each component has one job &mdash; and each one, when it fails, produces a predictable disease pattern.</p>
+      <table class="dt">
+        <tr><th>Component</th><th>What it is</th><th>Primary function</th><th>When it fails&hellip;</th></tr>
+        <tr><td><b>Plasma</b></td><td>92% water + albumin, globulins, fibrinogen, electrolytes</td><td>Transport, oncotic pressure, clotting, immunity</td><td>Low albumin &rarr; edema</td></tr>
+        <tr><td><b>Erythrocytes</b> (RBCs)</td><td>Biconcave, anucleate; packed with hemoglobin</td><td>Carry O&#8322; and CO&#8322;</td><td>Anemia &rarr; tissue hypoxia, fatigue</td></tr>
+        <tr><td><b>Leukocytes</b> (WBCs)</td><td>Neutrophils, lymphocytes, monocytes, eosinophils, basophils</td><td>Immune defense &amp; inflammation</td><td>Leukopenia &rarr; infection risk</td></tr>
+        <tr><td><b>Platelets</b> (thrombocytes)</td><td>Cell fragments from megakaryocytes</td><td>Hemostasis &mdash; the first plug</td><td>Thrombocytopenia &rarr; bleeding</td></tr>
+      </table>
+      <h4>Plasma proteins &mdash; why albumin matters</h4>
+      <p>Albumin is the most abundant plasma protein and the main driver of <b>plasma oncotic (colloid osmotic) pressure</b> &mdash; the &ldquo;pull&rdquo; that keeps fluid inside the vessels. Albumin is made by the liver.</p>
+      <div class="keyidea"><b>Key idea &mdash; the liver-disease connection:</b> In severe liver disease the liver makes less albumin. Plasma oncotic pressure falls, so fluid leaks out of the capillaries into the interstitium &rarr; <b>generalized edema</b>. (Not increased permeability, not venous pressure &mdash; the primary problem is low oncotic pull.)</div>
+      <p>Match each problem to the right cell line: oxygen problems = RBCs; infection problems = WBCs; bleeding problems = platelets; fluid-balance problems = plasma proteins. This single matching habit answers a surprising number of exam items.</p>
+      <div class="practice">
+        <span class="ptag">Practice</span>
+        <p class="q">Q1. A patient with severe liver disease develops generalized edema. Which physiologic change best accounts for this finding?</p>
+        <div class="opts">
+          <div>A. Decreased albumin synthesis reducing plasma oncotic pressure</div>
+          <div>B. Increased venous pressure increasing capillary hydrostatic pressure</div>
+          <div>C. Decreased lymphatic drainage reducing interstitial fluid removal</div>
+          <div>D. Increased capillary permeability increasing outward fluid movement</div>
+        </div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> A failing liver synthesizes less albumin, lowering plasma oncotic pressure so fluid shifts into the interstitial space. B and D can cause edema in other settings (heart failure, inflammation) but are not the primary mechanism in liver disease; C describes lymphedema.</div>
+      </div>
+      <div class="practice">
+        <span class="ptag">Practice</span>
+        <p class="q">Q2. Which function is primarily associated with platelets in hemostasis?</p>
+        <div class="opts">
+          <div>A. Supporting vessel constriction and forming temporary plugs</div>
+          <div>B. Carrying respiratory gases and delivering oxygen</div>
+          <div>C. Producing immune proteins and targeting pathogens</div>
+          <div>D. Maintaining plasma pressure and supporting fluid balance</div>
+        </div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Platelets form the primary plug and support clotting. B is the RBC role, C belongs to lymphocytes/leukocytes, and D is the role of plasma proteins such as albumin.</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- T2 -->
+  <details class="topic one" id="t2">
+    <summary><span class="tnum">2</span> Erythrocyte Design &amp; Hemoglobin <span class="arrow">&#9654;</span></summary>
+    <div class="body">
+      <p>The red blood cell is a specialist &mdash; every structural feature exists to move oxygen efficiently.</p>
+      <h4>Why the RBC is shaped the way it is</h4>
+      <ul>
+        <li><b>Biconcave disc</b> &mdash; maximizes surface area for gas diffusion and lets the cell deform to squeeze through narrow capillaries.</li>
+        <li><b>No nucleus</b> &mdash; frees up room for more hemoglobin; the trade-off is that a mature RBC <b>cannot divide</b>.</li>
+        <li><b>No mitochondria</b> &mdash; the RBC runs on anaerobic glycolysis, so it will not burn the very oxygen it is carrying.</li>
+        <li><b>Lifespan ~120 days</b> &mdash; aged cells are removed by macrophages in the <b>spleen</b> (the reticuloendothelial system).</li>
+        <li>~270 million hemoglobin molecules per cell, each able to bind up to <b>4 O&#8322;</b>.</li>
+      </ul>
+      <h4>Hemoglobin structure</h4>
+      <p>Adult hemoglobin (HbA) has <b>four globin chains</b> (2 alpha, 2 beta). Each chain holds one <b>heme</b> group with one iron atom in the <b>ferrous (Fe&#178;&#8314;)</b> state, and only ferrous iron can bind oxygen. Cooperative binding gives the familiar S-shaped (sigmoidal) oxygen&ndash;dissociation curve.</p>
+      <table class="dt">
+        <tr><th>What can go wrong</th><th>Mechanism</th><th>Result</th></tr>
+        <tr><td><b>Carbon monoxide</b></td><td>Binds Hb ~250&times; more tightly than O&#8322; &rarr; carboxyhemoglobin</td><td>O&#8322; cannot board; tissue hypoxia despite &ldquo;normal&rdquo; SpO&#8322;</td></tr>
+        <tr><td><b>Methemoglobinemia</b></td><td>Iron oxidized Fe&#178;&#8314; &rarr; <b>Fe&#179;&#8314;</b> (ferric)</td><td>Ferric iron cannot bind O&#8322;</td></tr>
+        <tr><td><b>Sickle Hb (HbS)</b></td><td>Point mutation; polymerizes when deoxygenated</td><td>Rigid, sickled cells</td></tr>
+        <tr><td><b>Thalassemia</b></td><td>Reduced globin-chain production</td><td>Microcytic anemia</td></tr>
+      </table>
+      <div class="pearl"><b>Pearl &mdash; CO vs. methemoglobin:</b> Carbon monoxide <i>occupies</i> the binding site (carboxyhemoglobin). Methemoglobinemia <i>changes the iron</i> to the ferric form so it cannot bind at all. Both lower oxygen delivery, but by different mechanisms &mdash; a favorite exam distinction.</div>
+      <div class="practice">
+        <span class="ptag">Practice</span>
+        <p class="q">Q1. Which characteristic of erythrocytes supports efficient oxygen exchange?</p>
+        <div class="opts"><div>A. Biconcave shape</div><div>B. Nuclear content</div><div>C. Mitochondrial activity</div><div>D. Cell division</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> The biconcave shape increases surface area and diffusion efficiency. Mature RBCs deliberately <i>lack</i> a nucleus and mitochondria and cannot divide &mdash; all of which maximize hemoglobin capacity.</div>
+      </div>
+      <div class="practice">
+        <span class="ptag">Practice</span>
+        <p class="q">Q2. A patient exposed to carbon monoxide shows decreased oxygen delivery. Which mechanism explains this effect?</p>
+        <div class="opts"><div>A. Carbon monoxide binds hemoglobin with high affinity</div><div>B. Carbon monoxide oxidizes hemoglobin iron to the ferric form</div><div>C. Carbon monoxide lowers oxygen release from hemoglobin</div><div>D. Carbon monoxide blocks oxygen diffusion in alveoli</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> CO binds hemoglobin far more strongly than oxygen, forming carboxyhemoglobin and occupying the binding sites. Oxidation of iron to the ferric form (B) describes methemoglobinemia, a different problem.</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- T3 -->
+  <details class="topic one" id="t3">
+    <summary><span class="tnum">3</span> Erythropoiesis &amp; the EPO Loop <span class="arrow">&#9654;</span></summary>
+    <div class="body">
+      <p>The body keeps oxygen delivery steady through a tight feedback loop centered on the kidney and the hormone <b>erythropoietin (EPO)</b>.</p>
+      <figure class="fig">
+        <svg viewBox="0 0 760 150" width="100%" style="max-width:720px" role="img" aria-label="Erythropoiesis feedback loop">
+          <defs><marker id="ar" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#C62828"/></marker></defs>
+          <g font-family="Segoe UI,Arial" font-size="12">
+            <rect x="8" y="40" width="150" height="66" rx="9" fill="#FCEBEA" stroke="#C62828"/>
+            <text x="83" y="64" text-anchor="middle" font-weight="700">1. Hypoxia</text>
+            <text x="83" y="84" text-anchor="middle">Tissue O&#8322; falls</text>
+            <text x="83" y="99" text-anchor="middle" fill="#5A6573">altitude, anemia, lung dz</text>
+            <line x1="160" y1="73" x2="198" y2="73" stroke="#C62828" stroke-width="2" marker-end="url(#ar)"/>
+            <rect x="200" y="40" width="150" height="66" rx="9" fill="#FCEBEA" stroke="#C62828"/>
+            <text x="275" y="64" text-anchor="middle" font-weight="700">2. Kidney senses</text>
+            <text x="275" y="84" text-anchor="middle">releases <tspan font-weight="700">EPO</tspan></text>
+            <text x="275" y="99" text-anchor="middle" fill="#5A6573">peritubular cells</text>
+            <line x1="352" y1="73" x2="390" y2="73" stroke="#C62828" stroke-width="2" marker-end="url(#ar)"/>
+            <rect x="392" y="40" width="150" height="66" rx="9" fill="#FCEBEA" stroke="#C62828"/>
+            <text x="467" y="64" text-anchor="middle" font-weight="700">3. Marrow</text>
+            <text x="467" y="84" text-anchor="middle">EPO drives precursors</text>
+            <text x="467" y="99" text-anchor="middle" fill="#5A6573">needs Fe, B12, folate</text>
+            <line x1="544" y1="73" x2="582" y2="73" stroke="#C62828" stroke-width="2" marker-end="url(#ar)"/>
+            <rect x="584" y="40" width="168" height="66" rx="9" fill="#FCEBEA" stroke="#C62828"/>
+            <text x="668" y="60" text-anchor="middle" font-weight="700">4. RBCs released</text>
+            <text x="668" y="80" text-anchor="middle">reticulocytes mature</text>
+            <text x="668" y="96" text-anchor="middle" fill="#5A6573">O&#8322; delivery restored</text>
+            <path d="M668,40 C668,16 83,16 83,38" fill="none" stroke="#7E0C20" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#ar)"/>
+            <text x="375" y="13" text-anchor="middle" fill="#7E0C20" font-size="11">negative feedback &mdash; restored O&#8322; turns EPO off</text>
+          </g>
+        </svg>
+        <figcaption>The erythropoietin feedback loop: low oxygen is the trigger, the kidney is the sensor, EPO is the messenger.</figcaption>
+      </figure>
+      <div class="keyidea"><b>Key idea:</b> <b>Low oxygen &mdash; not low blood, not low iron &mdash; is the trigger.</b> Hypoxia (high altitude, chronic lung disease, anemia, hemorrhage, after blood donation) makes the kidney release EPO, which stimulates the marrow. This explains the high hematocrit of high-altitude dwellers and the reticulocyte rise after bleeding.</div>
+      <h4>Required raw materials</h4>
+      <p>Even with plenty of EPO, the marrow needs <b>iron, vitamin B12, folate, and protein</b>. Missing any one disrupts production &mdash; the basis for the nutritional anemias in Section 2.</p>
+      <div class="pearl"><b>Clinical link:</b> Diseased kidneys make less EPO &rarr; the <b>anemia of chronic kidney disease</b>, treated with synthetic EPO. A premature newborn&rsquo;s immature kidneys also under-produce EPO &rarr; anemia of prematurity.</div>
+      <div class="practice">
+        <span class="ptag">Practice</span>
+        <p class="q">Q1. A patient living at high altitude develops increased red blood cell production. Which mechanism drives this change?</p>
+        <div class="opts"><div>A. Renal hypoxia triggers erythropoietin secretion</div><div>B. Hemoconcentration raises measured hematocrit values</div><div>C. Hyperventilation lowers arterial carbon dioxide</div><div>D. Sympathetic output raises heart rate response</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Low oxygen tension causes renal hypoxia, stimulating EPO release and true RBC production. B raises the <i>measured</i> hematocrit by concentrating the blood but makes no new cells; C and D are other altitude responses, not the erythropoietic driver.</div>
+      </div>
+      <div class="practice">
+        <span class="ptag">Practice</span>
+        <p class="q">Q2. After blood donation, which mechanism restores the red blood cell count?</p>
+        <div class="opts"><div>A. Kidney release of erythropoietin increases marrow production</div><div>B. Splenic removal of erythrocytes increases blood oxygenation</div><div>C. Platelet activation in vessels increases clotting efficiency</div><div>D. Plasma protein synthesis in the liver increases fluid retention</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> The drop in oxygen-carrying capacity is sensed as hypoxia, the kidney releases EPO, and the marrow makes new RBCs. The spleen <i>removes</i> cells, platelets handle hemostasis, and plasma proteins handle fluid balance &mdash; none replaces lost RBCs.</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- T4 -->
+  <details class="topic one" id="t4">
+    <summary><span class="tnum">4</span> Hemostasis &mdash; Primary &amp; Secondary <span class="arrow">&#9654;</span></summary>
+    <div class="body">
+      <p>Hemostasis stops bleeding in an orderly sequence. Splitting it into <b>primary</b> (platelets) and <b>secondary</b> (clotting factors) is the key to reading the lab panel later.</p>
+      <figure class="fig">
+        <svg viewBox="0 0 760 130" width="100%" style="max-width:720px" role="img" aria-label="Steps of hemostasis">
+          <defs><marker id="ar2" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#7E0C20"/></marker></defs>
+          <g font-family="Segoe UI,Arial" font-size="11.5">
+            <rect x="6" y="34" width="172" height="70" rx="9" fill="#FFF" stroke="#C62828"/>
+            <text x="92" y="55" text-anchor="middle" font-weight="700">1. Vascular spasm</text>
+            <text x="92" y="73" text-anchor="middle">vessel constricts</text>
+            <text x="92" y="90" text-anchor="middle" fill="#5A6573">seconds; limits loss</text>
+            <line x1="180" y1="69" x2="214" y2="69" stroke="#7E0C20" stroke-width="2" marker-end="url(#ar2)"/>
+            <rect x="216" y="34" width="172" height="70" rx="9" fill="#FCEBEA" stroke="#C62828"/>
+            <text x="302" y="52" text-anchor="middle" font-weight="700">2. Platelet plug</text>
+            <text x="302" y="69" text-anchor="middle">adhere via vWF, aggregate</text>
+            <text x="302" y="87" text-anchor="middle" fill="#1E7A57" font-weight="700">PRIMARY hemostasis</text>
+            <line x1="390" y1="69" x2="424" y2="69" stroke="#7E0C20" stroke-width="2" marker-end="url(#ar2)"/>
+            <rect x="426" y="34" width="172" height="70" rx="9" fill="#F3E9F8" stroke="#6A1B9A"/>
+            <text x="512" y="52" text-anchor="middle" font-weight="700">3. Coagulation</text>
+            <text x="512" y="69" text-anchor="middle">factors &rarr; fibrin mesh</text>
+            <text x="512" y="87" text-anchor="middle" fill="#6A1B9A" font-weight="700">SECONDARY hemostasis</text>
+            <line x1="600" y1="69" x2="634" y2="69" stroke="#7E0C20" stroke-width="2" marker-end="url(#ar2)"/>
+            <rect x="636" y="34" width="118" height="70" rx="9" fill="#FFF" stroke="#C62828"/>
+            <text x="695" y="52" text-anchor="middle" font-weight="700">4. Fibrinolysis</text>
+            <text x="695" y="70" text-anchor="middle">plasmin clears clot</text>
+            <text x="695" y="88" text-anchor="middle" fill="#5A6573">makes D-dimer</text>
+          </g>
+        </svg>
+        <figcaption>Four steps: spasm &rarr; platelet plug (primary) &rarr; fibrin clot (secondary) &rarr; controlled breakdown.</figcaption>
+      </figure>
+      <h4>Primary hemostasis &mdash; the platelet plug</h4>
+      <p>Platelets <b>adhere</b> to exposed subendothelial collagen using <b>von Willebrand factor (vWF)</b> as the bridge, then <b>activate</b> and release ADP and thromboxane A&#8322; to recruit more platelets, and finally <b>aggregate</b> as <b>GPIIb/IIIa</b> receptors bind fibrinogen between platelets. The result is a soft &ldquo;primary plug.&rdquo; Defects here cause <b>mucosal bleeding, petechiae, and a prolonged bleeding time</b>.</p>
+      <h4>Secondary hemostasis &mdash; the fibrin mesh</h4>
+      <p>The clotting cascade converts <b>fibrinogen into fibrin</b>, which stabilizes the platelet plug into a firm clot. Defects here (clotting-factor problems) cause <b>deeper bleeding</b> &mdash; into joints and muscles.</p>
+      <div class="pearl"><b>Pearl &mdash; the on/off signals:</b> Intact endothelium is <b>antithrombotic</b> (nitric oxide and prostacyclin keep platelets calm). Injury exposes collagen and tissue factor, flipping the surface to <b>prothrombotic</b>. Nitric oxide therefore <i>inhibits</i> clotting &mdash; a classic distractor.</div>
+      <div class="practice">
+        <span class="ptag">Practice</span>
+        <p class="q">Q1. Which event occurs during secondary hemostasis?</p>
+        <div class="opts"><div>A. Conversion of fibrinogen into fibrin strands</div><div>B. Constriction of vessels to reduce blood flow</div><div>C. Adhesion of platelets to exposed collagen</div><div>D. Release of nitric oxide from vessel walls</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Secondary hemostasis is the cascade that produces fibrin to stabilize the clot. B is the initial vascular response, C is primary hemostasis, and D actually <i>inhibits</i> clotting.</div>
+      </div>
+      <div class="practice">
+        <span class="ptag">Practice</span>
+        <p class="q">Q2 (Select all). Which events directly strengthen platelet plug formation at the injury site?</p>
+        <div class="opts"><div>A. ADP release recruits additional platelets locally</div><div>B. Thromboxane A&#8322; promotes vasoconstriction and activation</div><div>C. Nitric oxide exposure increases platelet aggregation</div><div>D. GPIIb/IIIa activation allows fibrinogen bridging between platelets</div><div>E. Tissue plasminogen activator preserves the early plug</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A, B, and D are correct.</span> ADP recruits platelets, thromboxane A&#8322; drives vasoconstriction and activation, and GPIIb/IIIa binds fibrinogen to bridge platelets. C is wrong &mdash; nitric oxide <i>inhibits</i> activation; E is wrong &mdash; tPA promotes fibrinolysis, breaking the plug down.</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- T5 -->
+  <details class="topic one" id="t5">
+    <summary><span class="tnum">5</span> Coagulation Cascade &amp; the Lab Panel <span class="arrow">&#9654;</span></summary>
+    <div class="body">
+      <p>You do not need to memorize every factor &mdash; you need to know <b>which pathway each lab measures</b>. Four numbers (PT, aPTT, platelets, D-dimer) decode most coagulopathies.</p>
+      <table class="dt">
+        <tr><th>Pathway / test</th><th>Trigger &amp; key factors</th><th>Lab &amp; what it monitors</th></tr>
+        <tr><td><b>Intrinsic</b></td><td>Damage to blood; factors XII, XI, IX, VIII</td><td><b>aPTT</b> &middot; monitors <b>heparin</b></td></tr>
+        <tr><td><b>Extrinsic</b></td><td>Tissue injury; factor VII + tissue factor</td><td><b>PT / INR</b> &middot; monitors <b>warfarin</b></td></tr>
+        <tr><td><b>Common</b></td><td>Factors X, V, II (prothrombin), I (fibrinogen)</td><td>Both PT <i>and</i> aPTT prolonged</td></tr>
+        <tr><td><b>Platelet count</b></td><td>Primary hemostasis &mdash; adhesion &amp; plug</td><td>Low &rarr; bleeding (petechiae, purpura)</td></tr>
+        <tr><td><b>D-dimer</b></td><td>Fibrin breakdown product</td><td>Elevated in DVT, PE, DIC</td></tr>
+      </table>
+      <div class="mnem"><span class="lbl">Memory hook</span><br><b>Pi<u>TT</u> = intrinsic &rarr; a<u>PTT</u></b> &nbsp;&middot;&nbsp; <b>Pe<u>T</u> = extrinsic &rarr; <u>PT</u></b>. Also: <b>warf</b>arin lengthens the <b>P</b>T (both have a long &ldquo;a&rdquo; sound), <b>h</b>eparin lengthens the aP<b>TT</b>.</div>
+      <div class="keyidea"><b>Reading the panel:</b> Isolated long <b>aPTT</b> &rarr; intrinsic (hemophilia, heparin, vWD). Isolated long <b>PT</b> &rarr; extrinsic (warfarin, vitamin&nbsp;K deficiency, early liver disease). <b>Both</b> long &rarr; common pathway or liver disease. Low <b>platelets</b> with normal PT/aPTT &rarr; a platelet problem (ITP). This framework returns in Topic 15.</div>
+      <div class="practice">
+        <span class="ptag">Practice</span>
+        <p class="q">Q1. A patient on heparin needs monitoring. Which test reflects heparin&rsquo;s effect on the intrinsic pathway?</p>
+        <div class="opts"><div>A. aPTT</div><div>B. PT / INR</div><div>C. Platelet count</div><div>D. D-dimer</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> aPTT monitors the intrinsic pathway and heparin therapy. PT/INR monitors the extrinsic pathway and warfarin; platelet count and D-dimer measure different things entirely.</div>
+      </div>
+      <div class="practice">
+        <span class="ptag">Practice</span>
+        <p class="q">Q2. A patient&rsquo;s D-dimer is markedly elevated. What does this finding indicate?</p>
+        <div class="opts"><div>A. Active fibrin breakdown, as in DVT, PE, or DIC</div><div>B. A deficiency of vitamin K</div><div>C. Reduced platelet production in the marrow</div><div>D. Impaired oxygen transport by hemoglobin</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> D-dimer is a fibrin-degradation product; a high level signals that clot is forming and being broken down somewhere &mdash; classically DVT, PE, or DIC.</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- T6 -->
+  <details class="topic one" id="t6">
+    <summary><span class="tnum">6</span> Leukocytes &mdash; The Defense Cells <span class="arrow">&#9654;</span></summary>
+    <div class="body">
+      <p>White blood cells defend the body. For Week 8 you need their core jobs and what happens when their numbers fall.</p>
+      <table class="dt">
+        <tr><th>Leukocyte</th><th>Main role</th></tr>
+        <tr><td><b>Neutrophils</b></td><td>First responders; <b>phagocytosis</b> of bacteria (most numerous WBC)</td></tr>
+        <tr><td><b>Lymphocytes</b></td><td>Adaptive immunity &mdash; B cells make antibodies, T cells kill/coordinate</td></tr>
+        <tr><td><b>Monocytes / macrophages</b></td><td>Phagocytosis + antigen presentation; recycle old RBCs in the spleen</td></tr>
+        <tr><td><b>Eosinophils</b></td><td>Parasites and allergic responses</td></tr>
+        <tr><td><b>Basophils</b></td><td>Release histamine; drive inflammation/allergy</td></tr>
+      </table>
+      <h4>Key defense actions</h4>
+      <ul>
+        <li><b>Phagocytosis</b> &mdash; engulfing and digesting a pathogen; the action that <i>directly eliminates</i> microorganisms.</li>
+        <li><b>Chemotaxis</b> &mdash; movement <i>toward</i> the infection (guides cells in, but does not kill).</li>
+        <li><b>Antigen presentation</b> &mdash; activates other immune cells (support, not direct killing).</li>
+        <li><b>Degranulation</b> &mdash; releases mediators that amplify inflammation.</li>
+      </ul>
+      <div class="keyidea"><b>Key idea &mdash; leukopenia:</b> A low WBC count weakens the body&rsquo;s ability to recognize and eliminate pathogens, so <b>infection risk rises</b>. This is the central danger in chemotherapy, leukemia (marrow crowding), and radiation-induced marrow suppression.</div>
+      <div class="practice">
+        <span class="ptag">Practice</span>
+        <p class="q">Q1. Which leukocyte function is most directly responsible for eliminating invading microorganisms?</p>
+        <div class="opts"><div>A. Phagocytosis</div><div>B. Degranulation</div><div>C. Antigen presentation</div><div>D. Chemotaxis</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Phagocytosis directly engulfs and digests the pathogen. Degranulation amplifies inflammation, antigen presentation activates other cells, and chemotaxis only guides cells to the site.</div>
+      </div>
+      <div class="practice">
+        <span class="ptag">Practice</span>
+        <p class="q">Q2. A patient receiving chemotherapy develops a low white blood cell count. Which mechanism explains the increased risk of infection?</p>
+        <div class="opts"><div>A. Impaired leukocyte defense</div><div>B. Impaired erythrocyte transport</div><div>C. Impaired platelet function</div><div>D. Impaired plasma protein balance</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Leukopenia means fewer white cells to defend against pathogens. Erythrocytes (B) carry oxygen, platelets (C) handle clotting, and plasma proteins (D) handle fluid balance &mdash; none explains infection risk.</div>
+      </div>
+    </div>
+  </details>
+
+
+  <!-- ===================== SECTION 2 ===================== -->
+  <div class="sec two" id="sec2">
+    <span class="num">SECTION 2</span>
+    <div><h2>Alterations of Hematologic Function</h2><p>The anemias, sickle cell disease, polycythemia, and the bleeding-versus-clotting framework &mdash; each anchored to its lab signature.</p></div>
+  </div>
+
+  <!-- T7 -->
+  <details class="topic two" id="t7">
+    <summary><span class="tnum">7</span> Anemia &mdash; Overview, Classification &amp; Compensation <span class="arrow">&#9654;</span></summary>
+    <div class="body">
+      <p><b>Anemia</b> = reduced oxygen-carrying capacity of the blood, defined as <b>Hb &lt; 13 g/dL (men)</b> or <b>&lt; 12 g/dL (women)</b>, or reduced RBC mass. It is a <i>sign</i> of an underlying problem, not a diagnosis by itself.</p>
+      <h4>General symptoms (any anemia)</h4>
+      <p>Fatigue, pallor, tachycardia, dyspnea on exertion, and cold extremities &mdash; all stem from one root cause: <b>less oxygen reaching the tissues</b>.</p>
+      <h4>Two ways to classify &mdash; learn both</h4>
+      <p><b>By size (MCV)</b> &mdash; the most useful first cut on a lab report:</p>
+      <figure class="fig">
+        <svg viewBox="0 0 720 120" width="100%" style="max-width:680px" role="img" aria-label="Anemia classification by MCV">
+          <g font-family="Segoe UI,Arial" font-size="12.5">
+            <rect x="10" y="30" width="222" height="74" rx="10" fill="#E3F2FD" stroke="#1565C0"/>
+            <text x="121" y="54" text-anchor="middle" font-weight="700" fill="#0D47A1">Microcytic</text>
+            <text x="121" y="73" text-anchor="middle">MCV &lt; 80</text>
+            <text x="121" y="92" text-anchor="middle" fill="#5A6573">small cells &mdash; iron, thalassemia</text>
+            <rect x="248" y="30" width="222" height="74" rx="10" fill="#F3E9F8" stroke="#6A1B9A"/>
+            <text x="359" y="54" text-anchor="middle" font-weight="700" fill="#4A148C">Normocytic</text>
+            <text x="359" y="73" text-anchor="middle">MCV 80&ndash;100</text>
+            <text x="359" y="92" text-anchor="middle" fill="#5A6573">normal size &mdash; bleed, hemolysis</text>
+            <rect x="486" y="30" width="224" height="74" rx="10" fill="#FFF3E0" stroke="#B7791F"/>
+            <text x="598" y="54" text-anchor="middle" font-weight="700" fill="#8A5A00">Macrocytic</text>
+            <text x="598" y="73" text-anchor="middle">MCV &gt; 100</text>
+            <text x="598" y="92" text-anchor="middle" fill="#5A6573">large cells &mdash; B12, folate</text>
+            <text x="360" y="18" text-anchor="middle" font-weight="700" fill="#22272E">Classify anemia by mean corpuscular volume (MCV)</text>
+          </g>
+        </svg>
+        <figcaption>MCV splits the anemias into three buckets &mdash; the fastest route to the cause.</figcaption>
+      </figure>
+      <p><b>By mechanism</b> &mdash; (1) decreased production (nutrient, EPO, or marrow problems), (2) increased destruction (hemolysis), or (3) blood loss.</p>
+      <h4>How the body compensates</h4>
+      <p>When oxygen delivery drops, the body responds quickly and slowly:</p>
+      <ul>
+        <li><b>Fast:</b> sympathetic drive raises <b>heart rate</b> and cardiac output; respiratory rate rises; hemoglobin unloads more oxygen to tissues.</li>
+        <li><b>Slow:</b> the kidney releases <b>EPO</b>, pushing the marrow to raise the <b>reticulocyte</b> count.</li>
+        <li>Fewer RBCs also lower blood <b>viscosity</b>, so blood flows faster &mdash; another way to move oxygen.</li>
+      </ul>
+      <div class="keyidea"><b>Key idea:</b> The fatigue and dyspnea of anemia come from <b>reduced oxygen delivery to tissues</b> &mdash; not lost plasma volume, not a diffusion problem in the lungs. Compensation (tachycardia, tachypnea, EPO, increased reticulocytes) is the body trying to fix that single deficit.</div>
+      <div class="practice">
+        <span class="ptag">Practice</span>
+        <p class="q">Q1. A patient with anemia reports persistent fatigue. Which pathophysiologic change explains this symptom?</p>
+        <div class="opts"><div>A. Reduced oxygen delivery to tissues</div><div>B. Reduced carbon dioxide removal</div><div>C. Reduced oncotic pressure</div><div>D. Reduced platelet activity</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Fewer functional RBCs lower oxygen-carrying capacity, causing tissue hypoxia and fatigue. CO&#8322; removal, oncotic pressure, and platelet activity are unrelated to oxygen transport.</div>
+      </div>
+      <div class="practice">
+        <span class="ptag">Practice</span>
+        <p class="q">Q2. Which compensatory response helps maintain tissue oxygen delivery in a patient with anemia?</p>
+        <div class="opts"><div>A. Increased heart rate</div><div>B. Increased platelet count</div><div>C. Decreased respiratory rate</div><div>D. Decreased plasma volume</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> The body raises cardiac output (heart rate) to compensate for reduced oxygen delivery. Respiratory rate <i>increases</i> rather than decreases, and platelets/plasma volume are not compensatory for oxygen transport.</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- T8 -->
+  <details class="topic two" id="t8">
+    <summary><span class="tnum">8</span> Microcytic Anemias (MCV &lt; 80) <span class="arrow">&#9654;</span></summary>
+    <div class="body">
+      <p>Small, often pale (hypochromic) cells. The unifying theme is <b>too little hemoglobin per cell</b> &mdash; usually an iron or globin problem.</p>
+      <table class="dt">
+        <tr><th>Type</th><th>Cause</th><th>Key labs / clues</th></tr>
+        <tr><td><b>Iron-deficiency</b></td><td>Blood loss, poor intake, malabsorption, pregnancy</td><td><span class="dn">&darr;</span> ferritin, <span class="dn">&darr;</span> serum iron, <span class="up">&uarr;</span> TIBC; pica, spoon nails</td></tr>
+        <tr><td><b>Thalassemia</b></td><td>Inherited reduction in globin-chain production</td><td><b>Normal</b> iron studies, target cells, family history</td></tr>
+        <tr><td><b>Anemia of chronic disease/inflammation</b></td><td>Inflammation traps iron in macrophages (hepcidin)</td><td><span class="up">&uarr;</span> ferritin, <span class="dn">&darr;</span> serum iron, <span class="dn">&darr;</span> TIBC</td></tr>
+        <tr><td><b>Sideroblastic</b></td><td>Defective heme synthesis</td><td>Ringed sideroblasts on marrow biopsy</td></tr>
+      </table>
+      <div class="keyidea"><b>The hepcidin story (anemia of chronic inflammation):</b> Inflammatory cytokines raise <b>hepcidin</b>, which degrades ferroportin and <b>traps iron inside macrophages and gut cells</b>. Serum iron falls even though total-body iron (ferritin) is normal or high &mdash; iron is present but <i>unavailable</i>. This is exactly Elena&rsquo;s case study: low serum iron, low transferrin saturation, <i>high</i> ferritin.</div>
+      <div class="pearl"><b>Ferritin is the discriminator:</b> Iron-deficiency &rarr; ferritin <b>LOW</b> (stores empty). Anemia of chronic disease &rarr; ferritin <b>HIGH</b> (stores full but locked away). Same small cells, opposite ferritin.</div>
+      <div class="practice">
+        <span class="ptag">Practice</span>
+        <p class="q">Q1. A patient has microcytic, hypochromic erythrocytes. Which mechanism best explains this finding?</p>
+        <div class="opts"><div>A. Decreased hemoglobin synthesis leading to smaller, pale erythrocytes</div><div>B. Increased erythrocyte destruction leading to larger, fragile cells</div><div>C. Increased plasma volume diluting normal erythrocytes</div><div>D. Decreased DNA synthesis producing larger, immature cells</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Iron deficiency reduces hemoglobin production, producing small, pale cells. Decreased DNA synthesis (D) makes <i>macrocytic</i> cells; hemolysis and dilution do not create microcytosis.</div>
+      </div>
+      <div class="practice">
+        <span class="ptag">Practice</span>
+        <p class="q">Q2. A patient with chronic inflammation develops anemia despite adequate iron stores. Which alteration explains this finding?</p>
+        <div class="opts"><div>A. Increased hepcidin activity trapping iron in storage sites</div><div>B. Decreased iron availability despite normal total body iron</div><div>C. Increased transferrin activity delivering iron to marrow</div><div>D. Decreased cytokine activity reducing marrow suppression</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Chronic inflammation raises hepcidin, which traps iron in storage and limits iron for erythropoiesis despite adequate stores. B describes the <i>effect</i> rather than the specific mechanism; C and D would <i>improve</i> erythropoiesis.</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- T9 -->
+  <details class="topic two" id="t9">
+    <summary><span class="tnum">9</span> Macrocytic Anemias (MCV &gt; 100) <span class="arrow">&#9654;</span></summary>
+    <div class="body">
+      <p>Large, immature cells. The shared defect is <b>impaired DNA synthesis</b>: the nucleus matures too slowly while the cytoplasm keeps growing, so cells get big before they can divide (megaloblastic anemia).</p>
+      <table class="dt">
+        <tr><th>Cause</th><th>Why</th><th>Distinguishing feature</th></tr>
+        <tr><td><b>Vitamin B12 deficiency</b></td><td>Pernicious anemia (autoimmune loss of intrinsic factor), strict vegan diet, ileal disease</td><td><b>Neurologic</b> signs: paresthesias, ataxia</td></tr>
+        <tr><td><b>Folate deficiency</b></td><td>Alcoholism, malnutrition, pregnancy, methotrexate</td><td><b>No</b> neurologic signs</td></tr>
+      </table>
+      <p>Shared lab clues: <b>elevated MCV, hypersegmented neutrophils,</b> and a low B12 or folate level.</p>
+      <div class="pearl"><b>Pearl &mdash; the deciding question:</b> Both cause big cells. Only <b>B12 deficiency causes neurologic symptoms</b> (the myelin needs B12). Numbness, tingling, and unsteady gait point to B12, not folate.</div>
+      <div class="keyidea"><b>Mechanism in one line:</b> No B12/folate &rarr; no DNA &rarr; nucleus lags behind cytoplasm &rarr; large, immature RBCs. Contrast with iron deficiency, where the problem is too little <i>hemoglobin</i> (small cells).</div>
+      <div class="practice">
+        <span class="ptag">Practice</span>
+        <p class="q">Q1. A patient with vitamin B12 deficiency develops large, immature red blood cells. Which mechanism explains this finding?</p>
+        <div class="opts"><div>A. Reduced DNA synthesis delaying nuclear maturation</div><div>B. Increased iron absorption increasing hemoglobin production</div><div>C. Reduced membrane flexibility increasing cell destruction</div><div>D. Increased erythropoietin accelerating cell release</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> B12 is required for DNA synthesis; without it, nuclear maturation and division lag while the cell keeps growing, producing large, immature RBCs. The other options describe unrelated processes.</div>
+      </div>
+      <div class="practice">
+        <span class="ptag">Practice</span>
+        <p class="q">Q2. Which clinical feature best distinguishes vitamin B12 deficiency from folate deficiency?</p>
+        <div class="opts"><div>A. Neurologic symptoms such as paresthesias and ataxia</div><div>B. A markedly elevated MCV</div><div>C. The presence of hypersegmented neutrophils</div><div>D. Fatigue and pallor</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Neurologic involvement is unique to B12 deficiency. Elevated MCV, hypersegmented neutrophils, fatigue, and pallor occur in <i>both</i> and cannot separate them.</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- T10 -->
+  <details class="topic two" id="t10">
+    <summary><span class="tnum">10</span> Normocytic Anemias (MCV 80&ndash;100) <span class="arrow">&#9654;</span></summary>
+    <div class="body">
+      <p>Cells are normal-sized; the problem is loss, destruction, or under-production &mdash; not a size defect.</p>
+      <table class="dt">
+        <tr><th>Type</th><th>Mechanism</th><th>Clinical clue</th></tr>
+        <tr><td><b>Acute blood loss</b></td><td>Hemorrhage; Hb falls after volume is replaced</td><td>Trauma, GI bleed, postpartum</td></tr>
+        <tr><td><b>Hemolytic</b></td><td>Premature RBC destruction</td><td><span class="up">&uarr;</span> reticulocytes, <span class="up">&uarr;</span> LDH, <span class="up">&uarr;</span> indirect bilirubin, <span class="dn">&darr;</span> haptoglobin</td></tr>
+        <tr><td><b>Aplastic</b></td><td>Bone marrow failure &rarr; pancytopenia</td><td>Drugs, radiation, idiopathic</td></tr>
+        <tr><td><b>Chronic kidney disease</b></td><td><span class="dn">&darr;</span> EPO production</td><td>Treat with synthetic EPO</td></tr>
+      </table>
+      <h4>Hemolytic anemia &mdash; recognize the signature</h4>
+      <p>When RBCs are destroyed faster than they are made, heme breakdown releases <b>indirect (unconjugated) bilirubin</b> &rarr; <b>jaundice</b>, and the marrow ramps up <b>reticulocytes</b>. Destruction can be <i>extravascular</i> (spleen traps abnormal cells &mdash; e.g., spherocytes) or intravascular.</p>
+      <div class="keyidea"><b>Key idea &mdash; the spleen as filter:</b> The spleen removes abnormal/aged RBCs. <b>After splenectomy</b>, defective cells persist in circulation longer because that clearance is gone. In hereditary spherocytosis, rigid spherocytes are trapped in the splenic cords and destroyed &mdash; classic <b>extravascular hemolysis</b> (Iris&rsquo;s case study).</div>
+      <div class="pearl"><b>Aplastic vs. hemolytic:</b> Aplastic anemia = marrow makes too <i>few</i> of everything (pancytopenia, <b>low</b> reticulocytes). Hemolytic = marrow works overtime (<b>high</b> reticulocytes) but cells are destroyed. Radiation and certain drugs cause the aplastic/pancytopenic picture.</div>
+      <div class="practice">
+        <span class="ptag">Practice</span>
+        <p class="q">Q1. A patient presents with anemia, jaundice, and elevated indirect bilirubin. Which alteration explains this condition?</p>
+        <div class="opts"><div>A. Accelerated breakdown of erythrocytes</div><div>B. Reduced formation of leukocytes</div><div>C. Accelerated formation of platelets</div><div>D. Reduced synthesis of plasma proteins</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Hemolytic anemia destroys RBCs faster than they are produced; heme breakdown raises indirect bilirubin, producing jaundice. Leukocytes, platelets, and plasma proteins do not explain this triad.</div>
+      </div>
+      <div class="practice">
+        <span class="ptag">Practice</span>
+        <p class="q">Q2. A patient with radiation exposure develops pancytopenia. Which mechanism explains this condition?</p>
+        <div class="opts"><div>A. Damage to bone marrow affecting production of all blood cells</div><div>B. Altered erythrocyte membrane affecting oxygen transport</div><div>C. Disrupted platelet activation affecting clot formation</div><div>D. Modified leukocyte signaling affecting immune response</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Radiation damages the marrow, reducing RBCs, WBCs, <i>and</i> platelets together (pancytopenia). The other options each describe only one cell line and cannot explain a drop in all three.</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- T11 -->
+  <details class="topic two" id="t11">
+    <summary><span class="tnum">11</span> Sickle Cell Disease <span class="arrow">&#9654;</span></summary>
+    <div class="body">
+      <p>An inherited hemoglobinopathy with a single, memorable molecular cause and a high-yield set of crisis triggers.</p>
+      <h4>Pathophysiology</h4>
+      <ul>
+        <li>Single <b>point mutation</b>: glutamic acid &rarr; valine at position 6 of the <b>beta-globin</b> chain.</li>
+        <li>The abnormal hemoglobin (<b>HbS</b>) <b>polymerizes when deoxygenated</b>, deforming the cell into a rigid sickle shape.</li>
+        <li>Sickled cells <b>occlude the microvasculature</b> &rarr; ischemia and pain (vaso-occlusion).</li>
+        <li>RBC lifespan shortens to ~10&ndash;20 days &rarr; chronic <b>hemolytic anemia</b>.</li>
+      </ul>
+      <h4>Crisis triggers &mdash; anything that promotes deoxygenation or sludging</h4>
+      <p><b>Hypoxia, dehydration, infection, cold, acidosis, and stress.</b> Recognizing these guides both prevention and the &ldquo;what made this worse&rdquo; exam question.</p>
+      <div class="keyidea"><b>Why it hurts:</b> rigid sickled cells physically block small vessels, cutting off blood flow &rarr; tissue ischemia &rarr; the severe pain of a <b>vaso-occlusive crisis</b> (often bones, chest, abdomen). <b>Acute chest syndrome</b> (fever + chest pain + new infiltrate) is a medical emergency.</div>
+      <div class="practice">
+        <span class="ptag">Practice</span>
+        <p class="q">Q1. A child with sickle cell disease develops recurrent pain episodes. Which pathophysiologic mechanism explains this finding?</p>
+        <div class="opts"><div>A. Rigid red cells obstruct vessels and reduce tissue perfusion</div><div>B. Fewer red cells reduce viscosity and increase tissue perfusion</div><div>C. Large red cells carry more oxygen and lower tissue ischemia</div><div>D. Fragile red cells raise plasma volume and improve circulation</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Sickled, rigid cells block small vessels, causing ischemia and recurrent vaso-occlusive pain. The other options describe improved flow or oxygenation, the opposite of what occurs.</div>
+      </div>
+      <div class="practice">
+        <span class="ptag">Practice</span>
+        <p class="q">Q2. Which condition is most likely to trigger a sickle cell vaso-occlusive crisis?</p>
+        <div class="opts"><div>A. Dehydration and hypoxia</div><div>B. Overhydration and rest</div><div>C. Warm ambient temperature</div><div>D. Mild alkalosis</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Dehydration and hypoxia (along with infection, cold, acidosis, and stress) promote HbS polymerization and sickling. Hydration, warmth, and rest help <i>prevent</i> crises.</div>
+      </div>
+    </div>
+  </details>
+
+
+  <!-- T12 -->
+  <details class="topic two" id="t12">
+    <summary><span class="tnum">12</span> Polycythemia &mdash; Too Many RBCs <span class="arrow">&#9654;</span></summary>
+    <div class="body">
+      <p>The mirror image of anemia: an <b>excess</b> of red cells that thickens the blood and raises clot risk.</p>
+      <table class="dt">
+        <tr><th>Type</th><th>Mechanism</th><th>EPO level</th></tr>
+        <tr><td><b>Primary (polycythemia vera)</b></td><td><b>JAK2</b> mutation &rarr; marrow autonomously overproduces RBCs (often WBCs &amp; platelets too)</td><td><span class="dn">&darr;</span> EPO (suppressed)</td></tr>
+        <tr><td><b>Secondary</b></td><td>Appropriate response to chronic hypoxia &mdash; high altitude, COPD, heart disease, smoking</td><td><span class="up">&uarr;</span> EPO (elevated)</td></tr>
+      </table>
+      <p><b>Symptoms:</b> ruddy complexion, headache, <b>pruritus after a warm shower</b> (classic for PV), and hyperviscosity &rarr; <b>thrombosis risk</b>. <b>Treatment:</b> phlebotomy, low-dose aspirin, and treating the underlying hypoxia in secondary cases.</p>
+      <div class="keyidea"><b>Key idea &mdash; why clots:</b> more red cells &rarr; <b>higher viscosity</b> &rarr; sluggish flow &rarr; thrombosis. The EPO level separates the two types: <b>low</b> EPO = primary (the marrow is the problem); <b>high</b> EPO = secondary (the marrow is responding correctly to hypoxia).</div>
+      <div class="practice">
+        <span class="ptag">Practice</span>
+        <p class="q">Q1. A patient with polycythemia has an increased risk of thrombosis. Which mechanism directly explains this risk?</p>
+        <div class="opts"><div>A. Increased blood viscosity slows flow and promotes clotting</div><div>B. Decreased blood viscosity speeds flow and promotes clotting</div><div>C. Increased plasma volume dilutes clotting factors</div><div>D. Decreased platelet activity impairs clot formation</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> A higher RBC count thickens the blood, slowing circulation and promoting clot formation. Viscosity <i>increases</i> (not decreases) in polycythemia, and platelet activity is normal or increased.</div>
+      </div>
+      <div class="practice">
+        <span class="ptag">Practice</span>
+        <p class="q">Q2. Which finding suggests <i>secondary</i> rather than primary polycythemia?</p>
+        <div class="opts"><div>A. Elevated EPO from chronic hypoxia (e.g., COPD or high altitude)</div><div>B. A JAK2 mutation with suppressed EPO</div><div>C. Autonomous marrow overproduction of all cell lines</div><div>D. Pruritus after a warm shower</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Secondary polycythemia is an appropriate marrow response to hypoxia, so EPO is <i>elevated</i>. The JAK2 mutation, suppressed EPO, multi-line overproduction, and post-shower pruritus all point to <i>primary</i> polycythemia vera.</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- T13 -->
+  <details class="topic two" id="t13">
+    <summary><span class="tnum">13</span> Bleeding Disorders &mdash; &ldquo;Not Enough Glue&rdquo; <span class="arrow">&#9654;</span></summary>
+    <div class="body">
+      <p>When hemostasis fails, the patient <b>bleeds</b>. The lab signature tells you whether the problem is platelets (primary) or clotting factors (secondary).</p>
+      <table class="dt">
+        <tr><th>Disorder</th><th>Defect</th><th>Lab signature</th></tr>
+        <tr><td><b>Hemophilia A</b></td><td>X-linked deficiency of <b>factor VIII</b></td><td><span class="up">&uarr;</span> aPTT, normal PT, normal platelets</td></tr>
+        <tr><td><b>Hemophilia B</b></td><td>X-linked deficiency of <b>factor IX</b></td><td><span class="up">&uarr;</span> aPTT, normal PT, normal platelets</td></tr>
+        <tr><td><b>Von Willebrand disease</b></td><td>Deficient/defective vWF &rarr; poor platelet adhesion</td><td><span class="up">&uarr;</span> aPTT, prolonged bleeding time, normal platelet count</td></tr>
+        <tr><td><b>Thrombocytopenia (ITP)</b></td><td>Autoimmune platelet destruction</td><td><span class="dn">&darr;</span> platelets, normal PT/aPTT, petechiae &amp; purpura</td></tr>
+        <tr><td><b>Vitamin K deficiency</b></td><td>Impaired factors II, VII, IX, X</td><td><span class="up">&uarr;</span> PT &gt; <span class="up">&uarr;</span> aPTT; responds to vitamin K</td></tr>
+      </table>
+      <div class="keyidea"><b>Bleeding pattern tells the level:</b> <b>Platelet/vWF problems</b> &rarr; <i>superficial mucosal</i> bleeding &mdash; petechiae, easy bruising, nosebleeds, heavy menses, prolonged bleeding time (Sofia&rsquo;s case study = von Willebrand disease). <b>Clotting-factor problems</b> (hemophilia) &rarr; <i>deep</i> bleeding into joints and muscles, with a prolonged aPTT.</div>
+      <div class="pearl"><b>vWF does double duty:</b> it bridges platelets to collagen (primary hemostasis) <i>and</i> stabilizes factor VIII. That is why von Willebrand disease prolongs the <b>bleeding time</b> <i>and</i> can mildly prolong the <b>aPTT</b>.</div>
+      <div class="practice">
+        <span class="ptag">Practice</span>
+        <p class="q">Q1. A patient with thrombocytopenia experiences prolonged bleeding. Which mechanism explains this effect?</p>
+        <div class="opts"><div>A. Reduced platelet count impairs early plug formation</div><div>B. Increased clotting factors accelerate fibrin formation</div><div>C. Reduced vascular leakage limits platelet activation</div><div>D. Increased erythrocyte count disrupts clot formation</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Too few platelets weaken primary hemostasis, so the initial plug forms poorly and bleeding is prolonged. The other options would not impair the early platelet plug.</div>
+      </div>
+      <div class="practice">
+        <span class="ptag">Practice</span>
+        <p class="q">Q2. A 19-year-old has lifelong nosebleeds, easy bruising, heavy menses, petechiae, prolonged bleeding time, and a mildly prolonged aPTT with a normal platelet count. Which defect best explains this?</p>
+        <div class="opts"><div>A. Low von Willebrand factor activity impairing platelet adhesion</div><div>B. Low GPIIb/IIIa activity impairing aggregation</div><div>C. Low factor X activity impairing thrombin formation</div><div>D. Low plasmin activity impairing fibrin breakdown</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> vWF deficiency impairs platelet adhesion <i>and</i> destabilizes factor VIII, fitting the mucosal-bleeding pattern, prolonged bleeding time, and mildly prolonged aPTT with normal platelet count. C affects secondary hemostasis; D impairs clot breakdown, not formation.</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- T14 -->
+  <details class="topic two" id="t14">
+    <summary><span class="tnum">14</span> Clotting Disorders &mdash; &ldquo;Too Much Glue, Wrong Place&rdquo; <span class="arrow">&#9654;</span></summary>
+    <div class="body">
+      <p>Here the problem is pathologic <b>thrombosis</b> &mdash; clots forming where they should not.</p>
+      <table class="dt">
+        <tr><th>Disorder</th><th>Mechanism</th><th>Clinical clue</th></tr>
+        <tr><td><b>DVT</b></td><td><b>Virchow&rsquo;s triad:</b> stasis + endothelial injury + hypercoagulability</td><td>Unilateral leg swelling, warmth, pain; <span class="up">&uarr;</span> D-dimer</td></tr>
+        <tr><td><b>Pulmonary embolism</b></td><td>DVT embolizes to the pulmonary circulation</td><td>Sudden dyspnea, pleuritic chest pain, hypoxia; <span class="up">&uarr;</span> D-dimer</td></tr>
+        <tr><td><b>Factor V Leiden</b></td><td>Factor V resists inactivation by protein C</td><td>Inherited; recurrent VTE; family history</td></tr>
+        <tr><td><b>Antiphospholipid syndrome</b></td><td>Autoantibodies promote thrombosis</td><td>Recurrent miscarriage; arterial &amp; venous clots</td></tr>
+        <tr><td><b>HIT</b></td><td>Antibodies activate platelets after heparin exposure</td><td>Platelet drop 5&ndash;10 days after heparin; paradoxical clotting</td></tr>
+      </table>
+      <div class="keyidea"><b>Virchow&rsquo;s triad &mdash; the master key:</b> nearly every clotting scenario reduces to <b>stasis</b> (immobility, long flights), <b>endothelial injury</b> (trauma, surgery), or <b>hypercoagulability</b> (cancer, pregnancy, inherited thrombophilia). Immobility &rarr; venous stasis &rarr; DVT is the most tested example.</div>
+      <div class="pearl"><b>HIT paradox:</b> heparin is given to <i>prevent</i> clots, but in HIT it triggers antibodies that <i>activate</i> platelets &rarr; the platelet count drops <i>and</i> the patient clots. Stop the heparin.</div>
+      <div class="practice">
+        <span class="ptag">Practice</span>
+        <p class="q">Q1. A patient who has been immobile for several days develops thrombosis. Which mechanism best explains this condition?</p>
+        <div class="opts"><div>A. Slowed circulation (venous stasis)</div><div>B. Damaged vessel lining</div><div>C. Reduced clot breakdown</div><div>D. Increased platelet binding</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Immobility promotes venous stasis (one arm of Virchow&rsquo;s triad), slowing venous return and raising clot risk. Endothelial injury and platelet adhesion matter more in injury-related clotting.</div>
+      </div>
+      <div class="practice">
+        <span class="ptag">Practice</span>
+        <p class="q">Q2. Which set of findings best fits a pulmonary embolism?</p>
+        <div class="opts"><div>A. Sudden dyspnea, pleuritic chest pain, hypoxia, and elevated D-dimer</div><div>B. Petechiae, low platelets, and normal PT/aPTT</div><div>C. Jaundice, elevated indirect bilirubin, and high reticulocytes</div><div>D. Microcytic cells with low ferritin</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> A PE classically presents with abrupt dyspnea, pleuritic pain, hypoxia, and a raised D-dimer. B is ITP, C is hemolytic anemia, and D is iron-deficiency anemia.</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- T15 -->
+  <details class="topic two" id="t15">
+    <summary><span class="tnum">15</span> DIC &amp; the Lab-Signature Framework <span class="arrow">&#9654;</span></summary>
+    <div class="body">
+      <p><b>Disseminated intravascular coagulation (DIC)</b> is the paradox where the patient <b>clots and bleeds at the same time</b> &mdash; and the capstone of the whole unit.</p>
+      <h4>Pathophysiology</h4>
+      <p>A trigger causes <b>systemic activation of coagulation</b> &rarr; widespread microthrombi form throughout small vessels &rarr; this <b>consumes platelets and clotting factors</b> faster than they can be replaced &rarr; severe <b>bleeding</b> follows.</p>
+      <p><b>Triggers:</b> sepsis (most common), trauma, obstetric complications (placental abruption, amniotic fluid embolism), malignancy, and transfusion reactions.</p>
+      <p><b>Lab signature:</b> <span class="up">&uarr;</span> PT, <span class="up">&uarr;</span> aPTT, <span class="dn">&darr;</span> platelets, <span class="dn">&darr;</span> fibrinogen, <span class="up">&uarr;&uarr;</span> D-dimer. <b>Signs:</b> oozing from IV sites, hematuria, purpura, and organ dysfunction from microthrombi.</p>
+      <h4>The lab-signature framework &mdash; four numbers solve most coagulopathies</h4>
+      <table class="dt">
+        <tr><th>Pattern</th><th>PT &middot; aPTT &middot; Plt &middot; D-dimer</th><th>Most likely diagnosis</th></tr>
+        <tr><td>Isolated <span class="up">&uarr;</span> aPTT</td><td>nl &middot; <span class="up">&uarr;</span> &middot; nl &middot; nl</td><td>Hemophilia, heparin, vWD</td></tr>
+        <tr><td>Isolated <span class="up">&uarr;</span> PT</td><td><span class="up">&uarr;</span> &middot; nl &middot; nl &middot; nl</td><td>Warfarin, vitamin K deficiency, early liver disease</td></tr>
+        <tr><td>Both prolonged</td><td><span class="up">&uarr;</span> &middot; <span class="up">&uarr;</span> &middot; nl &middot; nl</td><td>Liver disease, common-pathway defect</td></tr>
+        <tr><td>Low platelets only</td><td>nl &middot; nl &middot; <span class="dn">&darr;</span> &middot; nl</td><td>ITP, drug-induced, marrow failure</td></tr>
+        <tr><td><b>Everything off</b></td><td><span class="up">&uarr;</span> &middot; <span class="up">&uarr;</span> &middot; <span class="dn">&darr;</span> &middot; <span class="up">&uarr;&uarr;</span></td><td><b>DIC</b></td></tr>
+        <tr><td>Isolated <span class="up">&uarr;</span> D-dimer</td><td>nl &middot; nl &middot; nl &middot; <span class="up">&uarr;</span></td><td>DVT, PE</td></tr>
+      </table>
+      <div class="keyidea"><b>How to spot DIC instantly:</b> it is the only entry where <b>everything is abnormal at once</b> &mdash; both clotting times prolonged, platelets and fibrinogen consumed (low), and D-dimer sky-high &mdash; in a sick patient (sepsis, trauma, obstetric event) who is both bleeding and clotting.</div>
+      <div class="practice">
+        <span class="ptag">Practice</span>
+        <p class="q">Q1 (Select all). A patient with sepsis develops oozing from IV sites, &uarr;PT, &uarr;aPTT, low platelets, low fibrinogen, and very high D-dimer. Which findings support DIC?</p>
+        <div class="opts"><div>A. Bleeding from multiple sites</div><div>B. Both PT and aPTT are prolonged</div><div>C. Platelet count is decreased</div><div>D. Fibrinogen is elevated</div><div>E. D-dimer is markedly elevated</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A, B, C, and E are correct.</span> DIC consumes factors and platelets (prolonged PT/aPTT, low platelets) while massively raising D-dimer, and bleeding appears at multiple sites. D is wrong &mdash; fibrinogen is <i>consumed</i>, so it falls, not rises.</div>
+      </div>
+      <div class="practice">
+        <span class="ptag">Practice</span>
+        <p class="q">Q2. A lab panel shows an isolated prolonged PT with normal aPTT, platelets, and D-dimer. Which is most likely?</p>
+        <div class="opts"><div>A. Warfarin therapy or vitamin K deficiency</div><div>B. Hemophilia A</div><div>C. DIC</div><div>D. Immune thrombocytopenia (ITP)</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> An isolated long PT points to the extrinsic pathway &mdash; warfarin or vitamin K deficiency. Hemophilia prolongs the aPTT, DIC throws everything off, and ITP shows isolated low platelets.</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- T16 -->
+  <details class="topic two" id="t16">
+    <summary><span class="tnum">16</span> Leukocyte Disorders &mdash; Leukopenia &amp; Leukemia <span class="arrow">&#9654;</span></summary>
+    <div class="body">
+      <p>Disorders of white cells affect <b>defense</b>. The two patterns to know are too few functional WBCs (leukopenia) and malignant overgrowth (leukemia).</p>
+      <table class="dt">
+        <tr><th>Disorder</th><th>Mechanism</th><th>Consequence</th></tr>
+        <tr><td><b>Leukopenia</b></td><td>Reduced WBC number (chemo, radiation, marrow suppression)</td><td>Weak defense &rarr; frequent infections</td></tr>
+        <tr><td><b>Leukemia</b></td><td>Malignant cells <b>crowd the marrow</b>, reducing functional neutrophils</td><td>Infection (low functional WBCs), anemia, bleeding (crowded-out RBCs/platelets)</td></tr>
+        <tr><td><b>Pancytopenia</b></td><td>Marrow damage (radiation, aplastic anemia) drops <b>all</b> lines</td><td>Infection + anemia + bleeding together</td></tr>
+      </table>
+      <div class="keyidea"><b>Key idea &mdash; leukemia&rsquo;s infection paradox:</b> the WBC <i>count</i> may look high, but the cells are abnormal and the marrow is so crowded it cannot make <b>functional neutrophils</b>. Fewer working neutrophils &rarr; infection risk &mdash; while crowding-out of RBC and platelet precursors adds anemia and bleeding.</div>
+      <div class="pearl"><b>Environmental link:</b> bone-marrow toxins (benzene, certain chemotherapies) and radiation suppress production &rarr; anemia or full pancytopenia, depending on dose.</div>
+      <div class="practice">
+        <span class="ptag">Practice</span>
+        <p class="q">Q1. A patient with leukopenia develops frequent infections. Which alteration explains this increased risk?</p>
+        <div class="opts"><div>A. Reduced cellular defense against invading organisms</div><div>B. Impaired oxygen transport by erythrocytes</div><div>C. Altered platelet function during vascular injury</div><div>D. Disrupted plasma protein activity</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Fewer leukocytes mean less ability to recognize and eliminate pathogens. Oxygen transport, platelet function, and plasma proteins do not provide immune defense.</div>
+      </div>
+      <div class="practice">
+        <span class="ptag">Practice</span>
+        <p class="q">Q2. A child with leukemia develops frequent infections. Which pathophysiologic change explains this finding?</p>
+        <div class="opts"><div>A. Marrow replacement reducing functional neutrophils</div><div>B. Reduced immunoglobulin synthesis weakening humoral defense</div><div>C. Decreased complement activity weakening opsonization</div><div>D. Impaired cytokine signaling weakening cell recruitment</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Leukemic cells crowd the marrow and reduce production of functional neutrophils, the main driver of infection risk here. The other mechanisms can affect immunity but are not the primary problem in leukemia.</div>
+      </div>
+    </div>
+  </details>
+
+
+  <!-- ===================== SECTION 3 ===================== -->
+  <div class="sec three" id="sec3">
+    <span class="num">SECTION 3</span>
+    <div><h2>Clinical Application</h2><p>How these disorders present at the bedside and how nurses manage anemia, sickle cell crisis, DIC, transfusions, and pediatric hematology.</p></div>
+  </div>
+
+  <!-- T17 -->
+  <details class="topic three" id="t17">
+    <summary><span class="tnum">17</span> Anemia at the Bedside &mdash; Multisystem Presentation <span class="arrow">&#9654;</span></summary>
+    <div class="body">
+      <p>One deficit &mdash; reduced oxygen delivery &mdash; produces findings across <i>every</i> body system. Knowing the spread helps you assess and teach.</p>
+      <table class="dt">
+        <tr><th>System</th><th>Findings</th></tr>
+        <tr><td><b>Cardiopulmonary</b></td><td>Tachycardia, palpitations, dyspnea on exertion, systolic flow murmur, widened pulse pressure</td></tr>
+        <tr><td><b>Neurologic</b></td><td>Headache, dizziness, syncope, poor concentration, paresthesias (B12)</td></tr>
+        <tr><td><b>Skin &amp; mucosa</b></td><td>Pallor (conjunctiva, palms, nail beds), brittle nails, glossitis, cheilosis</td></tr>
+        <tr><td><b>GI</b></td><td>Anorexia, nausea, <b>pica</b> (iron deficiency)</td></tr>
+        <tr><td><b>Functional</b></td><td>Fatigue, cold intolerance, exercise intolerance &mdash; an early teaching target</td></tr>
+      </table>
+      <div class="keyidea"><b>Tie it together:</b> tachycardia and the flow murmur are the heart moving thinner blood faster; pallor is reduced hemoglobin in the tissues; paresthesias flag <b>B12</b> specifically; pica and spoon nails flag <b>iron</b>. The assessment findings <i>are</i> the compensation mechanisms made visible.</div>
+      <div class="practice">
+        <span class="ptag">Practice</span>
+        <p class="q">Q1. A patient with anemia develops fatigue and dyspnea. Which mechanism explains these findings?</p>
+        <div class="opts"><div>A. Low hemoglobin reduces oxygen delivery to tissues</div><div>B. Blood loss reduces the volume of circulating plasma</div><div>C. Hemolysis shortens the lifespan of red blood cells</div><div>D. Marrow failure lowers production of red blood cells</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Anemia lowers oxygen-carrying capacity, decreasing oxygen delivery and causing fatigue and dyspnea. The other options are <i>causes</i> of anemia, not the direct reason for these symptoms.</div>
+      </div>
+      <div class="practice">
+        <span class="ptag">Practice</span>
+        <p class="q">Q2. A patient with anemia has a reduced red blood cell count. Which change in blood properties contributes to altered circulation?</p>
+        <div class="opts"><div>A. Decreased viscosity causing faster blood flow</div><div>B. Increased viscosity causing slower blood flow</div><div>C. Increased osmotic pressure causing edema</div><div>D. Decreased plasma volume causing hypovolemia</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Fewer red cells <i>lower</i> blood viscosity, allowing faster flow &mdash; one compensatory way to move oxygen. Viscosity does not rise in anemia, and osmotic pressure/plasma volume are governed by plasma proteins.</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- T18 -->
+  <details class="topic three" id="t18">
+    <summary><span class="tnum">18</span> Managing a Sickle Cell Vaso-Occlusive Crisis <span class="arrow">&#9654;</span></summary>
+    <div class="body">
+      <p>Crisis care reverses the triggers and treats the pain. Remember it as <b>hydrate, oxygenate, treat pain, watch the chest</b>.</p>
+      <ul>
+        <li><b>Hydration</b> &mdash; IV fluids reverse the dehydration trigger and reduce sickling.</li>
+        <li><b>Oxygen</b> &mdash; supplemental O&#8322; if SpO&#8322; &lt; 95% or symptomatic.</li>
+        <li><b>Pain control</b> &mdash; opioids around the clock; <b>do not undertreat</b>. Believe the patient&rsquo;s pain report.</li>
+        <li><b>Watch for acute chest syndrome</b> &mdash; fever + chest pain + new infiltrate is an emergency; exchange transfusion may be needed.</li>
+        <li><b>Long-term:</b> <b>hydroxyurea</b> raises fetal hemoglobin (HbF) and reduces crisis frequency; plus vaccines and folate supplementation.</li>
+      </ul>
+      <div class="pearl"><b>Why hydroxyurea works:</b> it boosts <b>HbF</b>, which does not sickle, diluting HbS and cutting the frequency of vaso-occlusive crises. Folate supports the high RBC turnover of chronic hemolysis; vaccines guard a functionally asplenic patient.</div>
+      <div class="keyidea"><b>Each intervention undoes a trigger:</b> fluids fix dehydration, oxygen fixes hypoxia, warmth avoids cold-induced sickling, and prompt infection treatment removes another precipitant. The management list <i>is</i> the trigger list, reversed.</div>
+      <div class="practice">
+        <span class="ptag">Practice</span>
+        <p class="q">Q1. Which intervention most directly reverses a primary trigger of sickling during a vaso-occlusive crisis?</p>
+        <div class="opts"><div>A. IV hydration to correct dehydration</div><div>B. Restricting fluids to reduce viscosity</div><div>C. Applying cold packs to painful joints</div><div>D. Withholding opioids to avoid sedation</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Dehydration promotes sickling, so IV fluids directly reverse it. Fluid restriction and cold worsen sickling, and undertreating pain is never appropriate in crisis.</div>
+      </div>
+      <div class="practice">
+        <span class="ptag">Practice</span>
+        <p class="q">Q2. A patient in sickle cell crisis develops fever, chest pain, and a new pulmonary infiltrate. What does this most likely represent?</p>
+        <div class="opts"><div>A. Acute chest syndrome &mdash; a medical emergency</div><div>B. A normal part of every crisis requiring no change</div><div>C. Simple anxiety from pain</div><div>D. A transfusion reaction</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Fever + chest pain + new infiltrate signals acute chest syndrome, an emergency that may require exchange transfusion. It is not a benign or expected finding.</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- T19 -->
+  <details class="topic three" id="t19">
+    <summary><span class="tnum">19</span> Managing DIC &mdash; Treat the Trigger <span class="arrow">&#9654;</span></summary>
+    <div class="body">
+      <p>DIC is always <b>secondary</b> to something else, so the cornerstone is to <b>find and reverse the cause</b> while supporting the patient.</p>
+      <ul>
+        <li><b>Identify and reverse the trigger</b> &mdash; sepsis (antibiotics, source control), obstetric event, trauma, or malignancy.</li>
+        <li><b>Replace what is consumed</b> &mdash; <b>FFP</b> for clotting factors, <b>cryoprecipitate</b> for fibrinogen, <b>platelets</b> for thrombocytopenia, packed RBCs for blood loss.</li>
+        <li><b>Supportive ICU care</b> &mdash; hemodynamic stabilization, vasopressors as needed, organ support.</li>
+        <li><b>Anticoagulation</b> &mdash; controversial; sometimes used in chronic or thrombosis-predominant DIC.</li>
+        <li><b>Monitor</b> &mdash; trends in PT, aPTT, platelets, fibrinogen, and D-dimer guide therapy.</li>
+      </ul>
+      <div class="keyidea"><b>Core principle:</b> you cannot win by only replacing products &mdash; if the trigger (e.g., sepsis) keeps activating coagulation, consumption continues. Treat the cause first; replace factors and platelets to support the patient in the meantime.</div>
+      <div class="practice">
+        <span class="ptag">Practice</span>
+        <p class="q">Q1. What is the most important principle in managing DIC?</p>
+        <div class="opts"><div>A. Identify and treat the underlying trigger</div><div>B. Give anticoagulation to every patient immediately</div><div>C. Withhold all blood products</div><div>D. Restrict fluids aggressively</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> DIC is secondary; reversing the trigger (e.g., sepsis) stops the ongoing consumption. Universal anticoagulation is not standard, and replacement products are given as needed &mdash; not withheld.</div>
+      </div>
+      <div class="practice">
+        <span class="ptag">Practice</span>
+        <p class="q">Q2. Which product correctly replaces fibrinogen in a patient with DIC?</p>
+        <div class="opts"><div>A. Cryoprecipitate</div><div>B. Packed red blood cells</div><div>C. Normal saline</div><div>D. Albumin</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Cryoprecipitate is the concentrated source of fibrinogen. Packed RBCs replace red cells, saline is a crystalloid, and albumin supports oncotic pressure &mdash; none replaces fibrinogen.</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- T20 -->
+  <details class="topic three" id="t20">
+    <summary><span class="tnum">20</span> Transfusion Reactions to Recognize <span class="arrow">&#9654;</span></summary>
+    <div class="body">
+      <p>Whenever a reaction is suspected, the first action is almost always the same: <b>stop the transfusion</b> and keep the line open with normal saline. The timing and mechanism then point to the type.</p>
+      <table class="dt">
+        <tr><th>Reaction</th><th>Onset / mechanism</th><th>Action</th></tr>
+        <tr><td><b>Acute hemolytic</b></td><td>Within minutes &mdash; <b>ABO incompatibility</b></td><td>Stop; saline; notify MD; send blood-bank workup</td></tr>
+        <tr><td><b>Febrile non-hemolytic</b></td><td>1&ndash;6 hr &mdash; recipient antibodies vs. donor WBCs</td><td>Stop; antipyretic; use leukoreduced products</td></tr>
+        <tr><td><b>Allergic / anaphylaxis</b></td><td>Minutes &mdash; donor plasma proteins</td><td>Stop; antihistamine; epinephrine if anaphylactic</td></tr>
+        <tr><td><b>TRALI</b></td><td>Within 6 hr &mdash; donor anti-leukocyte antibodies &rarr; pulmonary edema</td><td>Stop; respiratory support; ICU</td></tr>
+        <tr><td><b>TACO</b></td><td>Volume overload during/after transfusion</td><td>Slow/stop infusion; diuretics; oxygen</td></tr>
+      </table>
+      <div class="pearl"><b>TRALI vs. TACO &mdash; both cause dyspnea:</b> <b>TRALI</b> is an immune lung injury (anti-leukocyte antibodies) &mdash; treat with respiratory support. <b>TACO</b> is circulatory <i>overload</i> (too much volume, too fast) &mdash; treat with diuretics and slowing the infusion. Same symptom, opposite fluid logic.</div>
+      <div class="keyidea"><b>The dreaded one:</b> an <b>acute hemolytic reaction</b> from ABO incompatibility begins within minutes with fever, flank/back pain, and dark urine. Stop immediately &mdash; it can progress to shock and DIC.</div>
+      <div class="practice">
+        <span class="ptag">Practice</span>
+        <p class="q">Q1. Minutes into a transfusion, a patient develops fever, flank pain, and dark urine. What is the priority action?</p>
+        <div class="opts"><div>A. Stop the transfusion immediately and infuse saline</div><div>B. Slow the rate and continue</div><div>C. Give an antipyretic and proceed</div><div>D. Add more units to dilute the reaction</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> These signs suggest an acute hemolytic reaction (ABO incompatibility). Stop the transfusion at once, keep the line open with saline, and notify the provider/blood bank. Continuing is dangerous.</div>
+      </div>
+      <div class="practice">
+        <span class="ptag">Practice</span>
+        <p class="q">Q2. A patient develops dyspnea and pulmonary edema from volume overload during transfusion. Which reaction is this, and what is the treatment?</p>
+        <div class="opts"><div>A. TACO &mdash; slow/stop the infusion, give diuretics and oxygen</div><div>B. TRALI &mdash; give more fluids rapidly</div><div>C. Allergic reaction &mdash; give epinephrine first-line</div><div>D. Febrile non-hemolytic &mdash; give antibiotics</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Transfusion-associated circulatory overload (TACO) is treated by slowing/stopping the infusion, diuresis, and oxygen. TRALI is an immune injury (not treated with more fluids), and the other reactions have different mechanisms.</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- T21 -->
+  <details class="topic three" id="t21">
+    <summary><span class="tnum">21</span> Pediatric &amp; Neonatal Hematology <span class="arrow">&#9654;</span></summary>
+    <div class="body">
+      <p>Newborns and children have unique hematologic patterns that flow directly from the same physiology &mdash; mostly the EPO loop and RBC turnover.</p>
+      <table class="dt">
+        <tr><th>Condition</th><th>Mechanism</th></tr>
+        <tr><td><b>Neonatal polycythemia</b> (high RBCs at birth)</td><td><b>Fetal hypoxia</b> in the low-oxygen womb drives high EPO &rarr; high RBC mass before birth</td></tr>
+        <tr><td><b>Anemia of prematurity</b></td><td><b>Immature kidneys</b> make too little EPO after birth &rarr; under-stimulated marrow; neonatal RBCs also have shorter lifespans</td></tr>
+        <tr><td><b>Neonatal jaundice</b> (&lt; 24 hr)</td><td>Rapid breakdown of fetal RBCs &rarr; high <b>unconjugated bilirubin</b></td></tr>
+        <tr><td><b>Hemolytic disease of the newborn</b></td><td>Maternal antibodies destroy fetal RBCs &rarr; destruction exceeds replacement &rarr; anemia</td></tr>
+        <tr><td><b>Hereditary spherocytosis</b></td><td>Non-deformable <b>spherocytes</b> trapped in the spleen &rarr; extravascular hemolysis, jaundice, gallstones</td></tr>
+      </table>
+      <div class="keyidea"><b>Same loop, different age:</b> the fetus lives in a low-oxygen environment, so EPO runs high &rarr; polycythemia at birth. After birth, oxygen rises and EPO normally falls; in a <b>premature</b> infant the immature kidney under-produces EPO &rarr; anemia. Chronic hemolysis (spherocytosis) keeps reticulocytes high through that same EPO drive (Iris&rsquo;s case: elevated reticulocytes, marrow hyperplasia, spherocytes, high unconjugated bilirubin and urobilinogen, gallstone risk).</div>
+      <div class="practice">
+        <span class="ptag">Practice</span>
+        <p class="q">Q1. A premature infant develops anemia during the first weeks of life. Which mechanism best explains this condition?</p>
+        <div class="opts"><div>A. Reduced erythropoietin from immature kidneys limits RBC production</div><div>B. Maternal antibodies destroy circulating red blood cells</div><div>C. Blood loss lowers the number of circulating red cells</div><div>D. Bone marrow failure limits new red blood cell production</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> In prematurity, immature kidneys produce less EPO, so the marrow is under-stimulated &mdash; the anemia of prematurity. Antibody-mediated destruction (B) is hemolytic disease of the newborn, a different mechanism.</div>
+      </div>
+      <div class="practice">
+        <span class="ptag">Practice</span>
+        <p class="q">Q2. An 8-year-old has jaundice, elevated unconjugated bilirubin, increased urobilinogen, and numerous spherocytes on smear. Which change explains the premature red cell destruction?</p>
+        <div class="opts"><div>A. Loss of deformability traps cells in splenic sinusoids</div><div>B. Loss of hemoglobin lowers tissue oxygen delivery</div><div>C. Loss of ATP weakens membrane pump function</div><div>D. Loss of membrane charge increases clumping</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Spherocytes are rigid and non-deformable, so the spleen traps and removes them (extravascular hemolysis). Lower hemoglobin contributes to anemia symptoms but does not explain splenic trapping.</div>
+      </div>
+    </div>
+  </details>
+
+
+  <!-- ===================== CHEAT SHEET ===================== -->
+  <div class="sec one" id="cheat" style="background:linear-gradient(135deg,#7E0C20,#B3122B);">
+    <span class="num">&#11088; EXAM</span>
+    <div><h2>Lab-Signature Cheat Sheet</h2><p>The highest-yield patterns &mdash; review these the night before.</p></div>
+  </div>
+  <div class="cheat">
+    <h4 style="color:var(--blood-dk);">The four coagulation numbers</h4>
+    <table class="dt">
+      <tr><th>Pattern (PT &middot; aPTT &middot; Plt &middot; D-dimer)</th><th>Think</th></tr>
+      <tr><td>nl &middot; <span class="up">&uarr;</span> &middot; nl &middot; nl</td><td>Hemophilia A/B, heparin, von Willebrand</td></tr>
+      <tr><td><span class="up">&uarr;</span> &middot; nl &middot; nl &middot; nl</td><td>Warfarin, vitamin K deficiency, early liver disease</td></tr>
+      <tr><td><span class="up">&uarr;</span> &middot; <span class="up">&uarr;</span> &middot; nl &middot; nl</td><td>Liver disease, common-pathway defect</td></tr>
+      <tr><td>nl &middot; nl &middot; <span class="dn">&darr;</span> &middot; nl</td><td>ITP, drug-induced, marrow failure</td></tr>
+      <tr><td><span class="up">&uarr;</span> &middot; <span class="up">&uarr;</span> &middot; <span class="dn">&darr;</span> &middot; <span class="up">&uarr;&uarr;</span></td><td><b>DIC</b> (everything off)</td></tr>
+      <tr><td>nl &middot; nl &middot; nl &middot; <span class="up">&uarr;</span></td><td>DVT, PE</td></tr>
+    </table>
+
+    <h4 style="color:var(--blood-dk);">Anemia by size (MCV) + the discriminator</h4>
+    <table class="dt">
+      <tr><th>MCV</th><th>Type</th><th>One-clue discriminator</th></tr>
+      <tr><td><b>&lt; 80</b> micro</td><td>Iron deficiency</td><td>Ferritin <span class="dn">LOW</span>, TIBC <span class="up">high</span>, pica/spoon nails</td></tr>
+      <tr><td><b>&lt; 80</b> micro</td><td>Anemia of chronic disease</td><td>Ferritin <span class="up">HIGH</span> (hepcidin traps iron)</td></tr>
+      <tr><td><b>&lt; 80</b> micro</td><td>Thalassemia</td><td><b>Normal</b> iron studies, target cells, family history</td></tr>
+      <tr><td><b>&gt; 100</b> macro</td><td>B12 deficiency</td><td><b>Neuro</b> signs (paresthesias, ataxia)</td></tr>
+      <tr><td><b>&gt; 100</b> macro</td><td>Folate deficiency</td><td>No neuro signs; alcohol, pregnancy, methotrexate</td></tr>
+      <tr><td><b>80&ndash;100</b> normo</td><td>Hemolytic</td><td><span class="up">&uarr;</span> retics, <span class="up">&uarr;</span> LDH, <span class="up">&uarr;</span> indirect bili, <span class="dn">&darr;</span> haptoglobin</td></tr>
+      <tr><td><b>80&ndash;100</b> normo</td><td>Aplastic / CKD</td><td>Pancytopenia (aplastic) or <span class="dn">&darr;</span> EPO (CKD)</td></tr>
+    </table>
+
+    <h4 style="color:var(--blood-dk);">Don't-miss facts</h4>
+    <ul>
+      <li><b>EPO trigger = low oxygen</b> (altitude, anemia, hemorrhage, lung disease) &mdash; kidney is the sensor.</li>
+      <li><b>CO</b> occupies the Hb site (carboxyhemoglobin); <b>methemoglobin</b> = iron oxidized to ferric (Fe&#179;&#8314;), can't bind O&#8322;.</li>
+      <li><b>Sickle cell</b> = glutamic acid &rarr; valine on beta-globin; HbS polymerizes when <b>deoxygenated</b>. Triggers: hypoxia, dehydration, infection, cold, acidosis, stress.</li>
+      <li><b>Polycythemia:</b> primary (PV) = JAK2, EPO <span class="dn">low</span>; secondary = hypoxia, EPO <span class="up">high</span>. Both clot from hyperviscosity.</li>
+      <li><b>Bleeding (not enough glue):</b> hemophilia (&uarr;aPTT, deep joint/muscle bleeds), vWD (&uarr;bleeding time + mild &uarr;aPTT, mucosal), ITP (low platelets, petechiae).</li>
+      <li><b>Clotting (too much glue):</b> Virchow's triad = stasis + endothelial injury + hypercoagulability. Immobility &rarr; DVT.</li>
+      <li><b>DIC</b> = clots <i>and</i> bleeds; trigger is usually <b>sepsis</b>; treat the trigger + replace (FFP, cryo, platelets).</li>
+      <li><b>Transfusion:</b> any suspected reaction &rarr; <b>STOP + saline</b>. Acute hemolytic = ABO, minutes. TRALI (lung injury, support) vs. TACO (overload, diuretics).</li>
+      <li><b>Liver disease</b> &rarr; low albumin &rarr; low oncotic pressure &rarr; edema; also &uarr;PT/aPTT (factors not made).</li>
+      <li><b>Pediatrics:</b> fetal hypoxia &rarr; polycythemia at birth; prematurity &rarr; low EPO &rarr; anemia; spherocytes &rarr; splenic (extravascular) hemolysis.</li>
+    </ul>
+  </div>
+
+  <!-- ===================== GLOSSARY ===================== -->
+  <div class="sec two" id="gloss" style="background:linear-gradient(135deg,#6A1B9A,#451266);">
+    <span class="num">&#128218; TERMS</span>
+    <div><h2>Glossary</h2><p>Quick definitions of the Week 8 vocabulary.</p></div>
+  </div>
+  <div class="cheat" style="border-color:var(--s2);">
+    <dl class="gloss">
+      <dt>Erythropoietin (EPO)</dt><dd>Kidney hormone released in response to hypoxia; stimulates the marrow to make red blood cells.</dd>
+      <dt>Hematocrit (Hct)</dt><dd>Percentage of blood volume made up of red blood cells.</dd>
+      <dt>Hemoglobin (Hb)</dt><dd>Iron-containing protein in RBCs that carries oxygen; four globin chains, each with one heme group.</dd>
+      <dt>Reticulocyte</dt><dd>Immature red blood cell; a rising count signals active marrow production (e.g., after bleeding or hemolysis).</dd>
+      <dt>MCV (mean corpuscular volume)</dt><dd>Average RBC size; classifies anemia as micro- (&lt;80), normo- (80&ndash;100), or macrocytic (&gt;100).</dd>
+      <dt>Ferritin</dt><dd>Storage form of iron; low in iron deficiency, high in anemia of chronic disease.</dd>
+      <dt>TIBC (total iron-binding capacity)</dt><dd>Reflects transferrin available to carry iron; high in iron deficiency.</dd>
+      <dt>Hepcidin</dt><dd>Inflammatory hormone that traps iron in storage by degrading ferroportin; central to anemia of chronic inflammation.</dd>
+      <dt>Hemostasis</dt><dd>The process of stopping bleeding: vascular spasm, platelet plug (primary), coagulation (secondary), fibrinolysis.</dd>
+      <dt>Primary hemostasis</dt><dd>Platelet adhesion, activation, and aggregation forming the initial plug.</dd>
+      <dt>Secondary hemostasis</dt><dd>The clotting cascade converting fibrinogen to fibrin to stabilize the clot.</dd>
+      <dt>von Willebrand factor (vWF)</dt><dd>Bridges platelets to collagen and stabilizes factor VIII.</dd>
+      <dt>PT / INR</dt><dd>Measures the extrinsic + common pathway; monitors warfarin.</dd>
+      <dt>aPTT</dt><dd>Measures the intrinsic + common pathway; monitors heparin.</dd>
+      <dt>D-dimer</dt><dd>Fibrin breakdown product; elevated in DVT, PE, and DIC.</dd>
+      <dt>Thrombocytopenia</dt><dd>Low platelet count; causes petechiae, purpura, and prolonged bleeding time.</dd>
+      <dt>Hemolysis</dt><dd>Premature destruction of RBCs; raises indirect bilirubin and reticulocytes, lowers haptoglobin.</dd>
+      <dt>Spherocyte</dt><dd>Rigid, sphere-shaped RBC trapped and destroyed by the spleen (extravascular hemolysis).</dd>
+      <dt>Polycythemia</dt><dd>Excess red blood cells; raises viscosity and clot risk. Primary (JAK2/PV) or secondary (hypoxia).</dd>
+      <dt>DIC</dt><dd>Disseminated intravascular coagulation: simultaneous widespread clotting and bleeding from consumed factors and platelets.</dd>
+      <dt>Virchow&rsquo;s triad</dt><dd>The three roots of thrombosis: stasis, endothelial injury, hypercoagulability.</dd>
+      <dt>Carboxyhemoglobin</dt><dd>Hemoglobin bound to carbon monoxide, unable to carry oxygen.</dd>
+      <dt>Methemoglobinemia</dt><dd>Hemoglobin iron oxidized to the ferric (Fe&#179;&#8314;) state, unable to bind oxygen.</dd>
+      <dt>Pancytopenia</dt><dd>Reduction of all three cell lines (RBCs, WBCs, platelets), as in marrow failure or radiation.</dd>
+      <dt>Leukopenia</dt><dd>Low white blood cell count; increases infection risk.</dd>
+    </dl>
+  </div>
+
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="foot">
+    SCI225 Pathophysiology &middot; Week 8 &mdash; The Hematologic System &middot; Dr. Vidya Aggrawal &middot; Nightingale College<br>
+    <span style="font-size:12px;">Study guide for educational use. Built from the Week 8 lecture, pre-assessment, question bank, and case studies (Chapters 27&ndash;29).</span>
+  </footer>
+
+</div>
+
+<script>
+  function toggleAll(){
+    var ds=document.querySelectorAll('details.topic');
+    var btn=document.getElementById('toggleBtn');
+    var anyClosed=Array.prototype.some.call(ds,function(d){return !d.open;});
+    ds.forEach(function(d){d.open=anyClosed;});
+    btn.textContent=anyClosed?'Collapse all':'Expand all';
+  }
+  function savePDF(){
+    var ds=document.querySelectorAll('details.topic');
+    ds.forEach(function(d){d.open=true;});
+    document.querySelectorAll('.ans').forEach(function(a){a.classList.add('show');});
+    setTimeout(function(){window.print();},250);
+  }
+  function reveal(btn){
+    var ans=btn.nextElementSibling;
+    ans.classList.toggle('show');
+    btn.textContent=ans.classList.contains('show')?'Hide answer':'Show answer';
+  }
+</script>
+</body>
+</html>

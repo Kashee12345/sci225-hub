@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SCI225 Week 14 &middot; Musculoskeletal &amp; Integumentary Study Guide &middot; Dr. Vidya</title>
+<style>
+  :root{
+    --ink:#1E2230; --muted:#5A6073; --line:#DEDEEA; --bg:#F5F5FA;
+    --pri:#3949AB; --pri-dk:#283593; --pri-lt:#E8EAF6;
+    --s1:#00838F; --s1lt:#E0F7FA;
+    --s2:#3949AB; --s2lt:#E8EAF6;
+    --s3:#E65100; --s3lt:#FFF3E0;
+    --s4:#AD1457; --s4lt:#FCE4EC;
+    --amber:#B7791F; --amberlt:#FBF1DD;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0; font-family:"Segoe UI",Arial,Helvetica,sans-serif; color:var(--ink); background:var(--bg); line-height:1.62;}
+  .wrap{max-width:1000px; margin:0 auto; padding:0 18px 80px;}
+  a{color:var(--pri);}
+  h1,h2,h3,h4{line-height:1.22;}
+
+  header.hero{background:linear-gradient(120deg,#283593 0%,#3949AB 40%,#00838F 70%,#AD1457 100%); color:#fff; border-radius:0 0 22px 22px; padding:46px 36px 40px; margin:0 -18px 8px; position:relative; overflow:hidden; box-shadow:0 10px 30px rgba(40,53,147,.30);}
+  header.hero .blob{position:absolute; border-radius:50%; background:rgba(255,255,255,.07);}
+  .kicker{font-size:12px; letter-spacing:3px; font-weight:700; opacity:.92; margin-bottom:10px;}
+  header.hero h1{margin:0 0 10px; font-size:38px;}
+  header.hero p{margin:0; font-size:17px; opacity:.96; max-width:660px;}
+  .herometa{margin-top:18px; display:flex; flex-wrap:wrap; gap:8px;}
+  .chip{display:inline-block; background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.28); padding:5px 12px; border-radius:20px; font-size:12.5px; font-weight:600;}
+
+  .toolbar{display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between; margin:18px 0 6px;}
+  .btn{display:inline-block; border:none; cursor:pointer; text-decoration:none; font-weight:700; border-radius:30px; padding:11px 22px; font-size:14px; box-shadow:0 4px 12px rgba(0,0,0,.16);}
+  .btn-print{background:linear-gradient(135deg,#283593,#3949AB); color:#fff;}
+  .btn-light{background:#fff; color:var(--pri); border:1.5px solid var(--pri);}
+  .btn:hover{filter:brightness(1.06);}
+
+  .toc{background:#fff; border:1px solid var(--line); border-radius:14px; padding:18px 20px; margin:14px 0 26px; box-shadow:0 2px 10px rgba(0,0,0,.04);}
+  .toc h2{margin:0 0 12px; font-size:16px; letter-spacing:.5px; text-transform:uppercase; color:var(--muted);}
+  .toc-grid{display:grid; grid-template-columns:1fr 1fr 1fr; gap:18px;}
+  .toc-col h3{margin:0 0 8px; font-size:14px;}
+  .toc-col.c1 h3{color:var(--s1);} .toc-col.c2 h3{color:var(--s2);} .toc-col.c3 h3{color:var(--s3);} .toc-col.c4 h3{color:var(--s4);}
+  .toc a{display:block; color:var(--ink); text-decoration:none; font-size:13.4px; padding:4px 8px; border-radius:6px;}
+  .toc a:hover{background:var(--pri-lt);}
+  @media (max-width:760px){ .toc-grid{grid-template-columns:1fr;} }
+
+  .sec{margin:40px 0 6px; padding:14px 20px; border-radius:12px; color:#fff; display:flex; align-items:center; gap:14px;}
+  .sec.one{background:linear-gradient(135deg,#00838F,#005662);}
+  .sec.two{background:linear-gradient(135deg,#3949AB,#283593);}
+  .sec.three{background:linear-gradient(135deg,#E65100,#BF360C);}
+  .sec.four{background:linear-gradient(135deg,#AD1457,#880E4F);}
+  .sec .num{font-size:13px; font-weight:800; letter-spacing:2px; background:rgba(255,255,255,.2); padding:6px 12px; border-radius:8px; white-space:nowrap;}
+  .sec h2{margin:0; font-size:22px;}
+  .sec p{margin:3px 0 0; font-size:13.5px; opacity:.95;}
+
+  details.topic{background:#fff; border:1px solid var(--line); border-left-width:5px; border-radius:10px; margin:12px 0; overflow:hidden; box-shadow:0 1px 6px rgba(0,0,0,.04);}
+  details.topic.one{border-left-color:var(--s1);}
+  details.topic.two{border-left-color:var(--s2);}
+  details.topic.three{border-left-color:var(--s3);}
+  details.topic.four{border-left-color:var(--s4);}
+  details.topic > summary{cursor:pointer; list-style:none; padding:16px 20px; font-weight:700; font-size:16.5px; display:flex; align-items:center; gap:12px;}
+  details.topic > summary::-webkit-details-marker{display:none;}
+  details.topic > summary .tnum{font-size:12.5px; font-weight:800; color:#fff; border-radius:7px; padding:4px 9px; white-space:nowrap;}
+  details.topic.one > summary .tnum{background:var(--s1);}
+  details.topic.two > summary .tnum{background:var(--s2);}
+  details.topic.three > summary .tnum{background:var(--s3);}
+  details.topic.four > summary .tnum{background:var(--s4);}
+  details.topic > summary .arrow{margin-left:auto; transition:transform .2s; color:var(--muted); font-size:14px;}
+  details.topic[open] > summary .arrow{transform:rotate(90deg);}
+  details.topic[open] > summary{border-bottom:1px solid var(--line);}
+  .body{padding:6px 22px 20px;}
+  .body h4{margin:18px 0 6px; font-size:15.5px; color:var(--pri-dk);}
+  .body p{margin:8px 0;}
+  .body ul{margin:8px 0 8px; padding-left:20px;}
+  .body li{margin:5px 0;}
+
+  .keyidea{background:var(--pri-lt); border-left:4px solid var(--pri); border-radius:0 8px 8px 0; padding:12px 16px; margin:14px 0; font-size:14.5px;}
+  .pearl{background:var(--amberlt); border-left:4px solid var(--amber); border-radius:0 8px 8px 0; padding:12px 16px; margin:14px 0; font-size:14.5px;}
+  .mnem{background:#ECF6F1; border:1px dashed #2E9E78; border-radius:8px; padding:10px 14px; margin:14px 0; font-size:14px;}
+  .mnem .lbl{font-weight:800; color:#1E7A57; letter-spacing:.5px; font-size:12px; text-transform:uppercase;}
+
+  table.dt{width:100%; border-collapse:collapse; margin:14px 0; font-size:13.7px;}
+  table.dt th{background:#1F3242; color:#fff; text-align:left; padding:9px 11px; font-weight:600;}
+  table.dt td{border:1px solid var(--line); padding:9px 11px; vertical-align:top;}
+  table.dt tr:nth-child(even) td{background:#F7FAFC;}
+  .up{color:#C62828; font-weight:800;} .dn{color:#1565C0; font-weight:800;} .nl{color:#5A6573;}
+
+  .practice{background:#FBFCFE; border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin:16px 0;}
+  .practice .ptag{display:inline-block; background:var(--s2); color:#fff; font-size:11px; font-weight:800; letter-spacing:1px; padding:3px 10px; border-radius:20px; text-transform:uppercase;}
+  .q{font-weight:600; margin:10px 0 6px;}
+  .opts{margin:6px 0 6px; padding-left:6px;}
+  .opts div{padding:3px 0;}
+  .reveal{cursor:pointer; border:none; background:var(--s2); color:#fff; font-weight:700; font-size:12.5px; padding:7px 14px; border-radius:20px; margin-top:6px;}
+  .reveal:hover{filter:brightness(1.08);}
+  .ans{display:none; margin-top:10px; background:#EEF7F1; border-left:4px solid #2E9E78; border-radius:0 8px 8px 0; padding:11px 14px; font-size:14px;}
+  .ans.show{display:block;}
+  .ans .correct{font-weight:800; color:#1E7A57;}
+
+  .fig{background:#fff; border:1px solid var(--line); border-radius:10px; padding:14px; margin:16px 0; text-align:center;}
+  .fig figcaption{font-size:12.5px; color:var(--muted); margin-top:8px;}
+
+  .cheat{background:#fff; border:2px solid var(--pri); border-radius:14px; padding:8px 22px 22px; margin:14px 0;}
+  .gloss dt{font-weight:700; color:var(--pri-dk); margin-top:12px;}
+  .gloss dd{margin:2px 0 0; padding-left:0;}
+
+  footer.foot{text-align:center; color:var(--muted); font-size:13px; margin-top:50px; padding-top:22px; border-top:1px solid var(--line);}
+
+  @media print{
+    body{background:#fff;} .toolbar,.toc{display:none;}
+    details.topic{break-inside:avoid; box-shadow:none;}
+    header.hero{box-shadow:none;}
+    .ans{display:block !important;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="blob" style="width:230px;height:230px;right:-40px;top:-50px;"></div>
+    <div class="blob" style="width:150px;height:150px;right:130px;bottom:-60px;"></div>
+    <div class="kicker">SCI225 &middot; PATHOPHYSIOLOGY &middot; WEEK 14 &middot; NIGHTINGALE COLLEGE</div>
+    <h1>Musculoskeletal &amp; Integumentary Systems</h1>
+    <p>Bones, joints, muscles, and skin &mdash; osteoporosis and fractures, arthritis and gout, muscular dystrophy, the pediatric MSK conditions, and skin disorders from burns to childhood rashes.</p>
+    <div class="herometa">
+      <span class="chip">Dr. Vidya Aggrawal</span>
+      <span class="chip">Module 14</span>
+      <span class="chip">Bone &middot; Joint &middot; Muscle &middot; Skin</span>
+      <span class="chip">8 topics + cheat sheet</span>
+    </div>
+  </header>
+
+  <div class="toolbar">
+    <div style="font-size:13.5px;color:var(--muted);">Click any topic to expand. Try each practice question <b>before</b> revealing the answer.</div>
+    <div style="display:flex;gap:10px;">
+      <button class="btn btn-light" onclick="toggleAll()" id="toggleBtn">Expand all</button>
+      <button class="btn btn-print" onclick="savePDF()">&#128424;&nbsp; Save as PDF</button>
+    </div>
+  </div>
+
+  <nav class="toc">
+    <h2>What's inside</h2>
+    <div class="toc-grid">
+      <div class="toc-col c1">
+        <h3>1 &middot; Bone &amp; Fracture</h3>
+        <a href="#t1">1. Bone disorders</a>
+        <a href="#t2">2. Fractures &amp; emergencies</a>
+      </div>
+      <div class="toc-col c2">
+        <h3>2 &middot; Joints &amp; Muscle</h3>
+        <a href="#t3">3. Joint disorders</a>
+        <a href="#t4">4. Muscle disorders</a>
+      </div>
+      <div class="toc-col c3">
+        <h3>3 &middot; Pediatric MSK</h3>
+        <a href="#t5">5. Hip, foot &amp; spine</a>
+        <a href="#t6">6. Growth-plate, bone &amp; joint</a>
+      </div>
+      <div class="toc-col c4">
+        <h3>4 &middot; Skin (Integumentary)</h3>
+        <a href="#t7">7. Skin injury &amp; inflammation</a>
+        <a href="#t8">8. Pediatric &amp; infectious skin</a>
+        <a href="#cheat">&#11088; Cheat sheet</a>
+        <a href="#gloss">&#128218; Glossary</a>
+      </div>
+    </div>
+  </nav>
+
+
+  
+
+  <!-- SECTION 1 -->
+  <div class="sec one" id="sec1"><span class="num">SECTION 1</span><div><h2>Bone &amp; Fracture</h2><p>The metabolic bone diseases, how fractures heal, and the limb-threatening fracture emergencies.</p></div></div>
+
+  <!-- T1 -->
+  <details class="topic one" id="t1">
+    <summary><span class="tnum">1</span> Bone Disorders <span class="arrow">&#9654;</span></summary>
+    <div class="body">
+      <p>Bone is living tissue, constantly broken down (osteoclasts) and rebuilt (osteoblasts). The big disorders differ in <b>what</b> is wrong with the bone.</p>
+      <table class="dt">
+        <tr><th>Disorder</th><th>Defect</th><th>Key clue</th></tr>
+        <tr><td><b>Osteoporosis</b></td><td><b>Loss of bone mass/density</b> (resorption &gt; formation) &mdash; the matrix and mineral are both reduced</td><td>Postmenopausal/elderly; <b>fragility fractures</b> (hip, wrist, <b>vertebral compression</b>); <b>normal serum calcium</b></td></tr>
+        <tr><td><b>Osteomalacia</b> (rickets in kids)</td><td><b>Inadequate mineralization</b> of newly formed bone &mdash; usually <b>vitamin D deficiency</b></td><td>Soft, bendable bone; bone pain</td></tr>
+        <tr><td><b>Osteogenesis imperfecta</b></td><td>Genetic <b>collagen (type I) defect</b> &rarr; brittle bone</td><td>Frequent fractures from birth, blue sclerae</td></tr>
+      </table>
+      <div class="keyidea"><b>Key idea &mdash; osteoporosis vs osteomalacia:</b> <b>osteoporosis = too little bone</b> (normal mineralization of what's there; calcium labs normal). <b>Osteomalacia = poorly mineralized bone</b> (a vitamin-D/mineral problem &mdash; the bone is soft, not just scarce). <b>Osteogenesis imperfecta = bad collagen</b> (the protein scaffold is defective).</div>
+      <div class="pearl"><b>Pearl &mdash; vertebral compression &amp; kyphosis:</b> weak, porous vertebrae collapse under normal load &rarr; loss of height and a forward-curved upper spine (<b>kyphosis</b>). This is Evelyn's case &mdash; postmenopausal, sedentary, low-calcium diet, progressive kyphosis, <b>normal serum calcium</b> despite ongoing demineralization (classic osteoporosis).</div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q1. Which change explains vertebral compression fractures in osteoporosis?</p>
+        <div class="opts"><div>A. Reduced bone mass/density weakens the vertebrae so they collapse under load</div><div>B. Excess bone formation</div><div>C. Defective collagen from birth</div><div>D. Poor mineralization of new bone only</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Osteoporosis reduces overall bone mass, so porous vertebrae fracture and collapse under everyday loads &rarr; height loss and kyphosis.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q2. Which mechanism explains bone softness in osteomalacia?</p>
+        <div class="opts"><div>A. Inadequate mineralization of newly formed bone (e.g., vitamin D deficiency)</div><div>B. Loss of total bone mass</div><div>C. Defective collagen synthesis</div><div>D. Excess osteoclast death</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> In osteomalacia the bone matrix forms but isn't properly mineralized (usually low vitamin D), so the bone is soft and bends.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q3. Which alteration weakens bone in osteogenesis imperfecta and explains frequent fractures?</p>
+        <div class="opts"><div>A. A genetic defect in type I collagen</div><div>B. Vitamin D deficiency</div><div>C. Excess bone density</div><div>D. Cartilage overgrowth</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Defective type I collagen leaves the bone's protein scaffold weak and brittle, causing fractures from minor force (and blue sclerae).</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- T2 -->
+  <details class="topic one" id="t2">
+    <summary><span class="tnum">2</span> Fractures &amp; Emergencies <span class="arrow">&#9654;</span></summary>
+    <div class="body">
+      <p>Fractures heal in stages &mdash; but a few complications are true emergencies.</p>
+      <h4>Indirect fracture healing (the usual sequence)</h4>
+      <ol>
+        <li><b>Hematoma forms</b> first (bleeding at the fracture &mdash; the very first step).</li>
+        <li><b>Soft (fibrocartilage) callus</b> bridges the gap.</li>
+        <li><b>Hard (bony) callus</b> replaces it.</li>
+        <li><b>Remodeling</b> restores normal shape.</li>
+      </ol>
+      <table class="dt">
+        <tr><th>Emergency</th><th>Mechanism</th><th>Clues</th></tr>
+        <tr><td><b>Compartment syndrome</b></td><td>Swelling/bleeding in a closed fascial compartment <b>&uarr; pressure &rarr; limits perfusion &rarr; ischemia/necrosis</b></td><td>Severe pain <b>out of proportion</b>, unrelieved by meds; swelling, numbness; the 6 P's</td></tr>
+        <tr><td><b>Rhabdomyolysis</b></td><td>Muscle breakdown releases <b>myoglobin</b>, which precipitates in renal tubules</td><td><b>Acute kidney injury</b>, dark/tea-colored urine, &uarr; creatine kinase, hyperkalemia</td></tr>
+        <tr><td><b>Fat embolism</b></td><td>Fat from marrow of long-bone fractures enters circulation</td><td>Dyspnea, confusion, petechiae (12&ndash;72 hr after fracture)</td></tr>
+      </table>
+      <div class="keyidea"><b>Key idea &mdash; compartment syndrome:</b> rising pressure inside a tight compartment <b>cuts off blood flow</b> &rarr; ischemia and tissue death. The red flag is <b>pain out of proportion, unrelieved by analgesia,</b> with a tense, swollen limb &mdash; it's a surgical emergency (fasciotomy).</div>
+      <div class="pearl"><b>Pearl &mdash; rhabdomyolysis &rarr; kidneys:</b> crushed/ischemic muscle dumps <b>myoglobin</b>, which clogs the renal tubules &rarr; <b>acute kidney injury</b>. (Released potassium can also cause dysrhythmias.) Compartment syndrome and crush injuries are common triggers.</div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q1. Which process occurs first during indirect fracture healing?</p>
+        <div class="opts"><div>A. Hematoma (blood clot) formation at the fracture site</div><div>B. Bony callus formation</div><div>C. Remodeling</div><div>D. Soft callus formation</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Bleeding forms a hematoma first, which becomes the scaffold for the soft then hard callus, followed by remodeling.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q2. Several hours after a leg fracture, a patient has severe pain unrelieved by medication, increasing swelling, and numbness. Which mechanism explains the injury?</p>
+        <div class="opts"><div>A. Increased compartment pressure limiting perfusion (ischemia)</div><div>B. Increased blood flow to the limb</div><div>C. Nerve regeneration</div><div>D. Bone remodeling</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Compartment syndrome: pressure builds in a closed space, cuts off perfusion, and causes ischemia &mdash; pain out of proportion is the warning sign.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q3. Which substance released during rhabdomyolysis can obstruct renal tubules?</p>
+        <div class="opts"><div>A. Myoglobin</div><div>B. Albumin</div><div>C. Surfactant</div><div>D. Bilirubin</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Myoglobin from broken-down muscle precipitates in the renal tubules and blocks flow &rarr; acute kidney injury.</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- SECTION 2 -->
+  <div class="sec two" id="sec2"><span class="num">SECTION 2</span><div><h2>Joints &amp; Muscle</h2><p>The arthritides (and gout), joint infection, and the muscle diseases.</p></div></div>
+
+  <!-- T3 -->
+  <details class="topic two" id="t3">
+    <summary><span class="tnum">3</span> Joint Disorders <span class="arrow">&#9654;</span></summary>
+    <div class="body">
+      <p>Four joint problems, four different mechanisms &mdash; distinguishing them is high-yield.</p>
+      <table class="dt">
+        <tr><th>Disorder</th><th>Mechanism</th><th>Clues</th></tr>
+        <tr><td><b>Osteoarthritis (OA)</b></td><td><b>"Wear and tear"</b> &mdash; cartilage breakdown/degeneration over time</td><td>Older age, weight-bearing joints, worse with use, brief morning stiffness</td></tr>
+        <tr><td><b>Rheumatoid arthritis (RA)</b></td><td><b>Autoimmune</b> synovial inflammation (pannus) destroys the joint</td><td><b>Symmetric</b> small joints, prolonged morning stiffness, systemic; autoantibodies</td></tr>
+        <tr><td><b>Gout</b></td><td><b>Uric acid (urate) crystals</b> deposit in the joint &rarr; intense inflammation</td><td>Sudden severe pain/redness/swelling, classically the <b>great toe</b></td></tr>
+        <tr><td><b>Septic arthritis</b></td><td><b>Bacterial infection</b> in the joint; enzymes/inflammation destroy cartilage</td><td><b>Hot, swollen, painful</b> joint + <b>fever</b> &mdash; emergency (drain &amp; treat)</td></tr>
+      </table>
+      <div class="keyidea"><b>Key idea &mdash; OA vs RA:</b> <b>OA is mechanical degeneration</b> (cartilage wears out; asymmetric, worse with use). <b>RA is autoimmune inflammation</b> (the immune system attacks the synovium &rarr; pannus &rarr; symmetric joint destruction, systemic symptoms). <b>Gout = crystals</b>; <b>septic arthritis = infection</b> (fever + one hot joint).</div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q1. Which mechanism explains joint degeneration in osteoarthritis?</p>
+        <div class="opts"><div>A. Progressive breakdown of articular cartilage ("wear and tear")</div><div>B. Autoimmune synovial inflammation</div><div>C. Urate crystal deposition</div><div>D. Bacterial joint infection</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> OA is degenerative cartilage loss from mechanical wear; the others describe RA, gout, and septic arthritis.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q2. Which process causes joint damage in rheumatoid arthritis?</p>
+        <div class="opts"><div>A. Autoimmune synovial inflammation (pannus) destroying the joint</div><div>B. Cartilage wear from overuse</div><div>C. Uric acid crystals</div><div>D. A shallow joint socket</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> RA is autoimmune: inflamed synovium forms a destructive pannus that erodes cartilage and bone, typically symmetrically.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q3. A patient develops sudden severe pain, redness, and swelling in the great toe. Which is most likely, and what's the mechanism?</p>
+        <div class="opts"><div>A. Gout &mdash; uric acid (urate) crystal deposition triggers acute inflammation</div><div>B. Osteoarthritis &mdash; cartilage wear</div><div>C. Septic arthritis &mdash; bacteria</div><div>D. Rheumatoid arthritis &mdash; symmetric autoimmune</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Classic gout: urate crystals deposit in the first metatarsophalangeal joint (great toe), causing sudden, intense inflammation.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q4. Which mechanism explains joint damage in septic arthritis?</p>
+        <div class="opts"><div>A. Bacterial infection and inflammatory enzymes destroy cartilage</div><div>B. Crystal deposition</div><div>C. Gradual cartilage wear</div><div>D. Autoantibody attack</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Bacteria in the joint trigger inflammation and release enzymes that rapidly destroy cartilage &mdash; a hot, swollen joint with fever is an emergency.</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- T4 -->
+  <details class="topic two" id="t4">
+    <summary><span class="tnum">4</span> Muscle Disorders <span class="arrow">&#9654;</span></summary>
+    <div class="body">
+      <p>From inherited muscle wasting to acute soft-tissue injury.</p>
+      <table class="dt">
+        <tr><th>Disorder</th><th>Mechanism</th></tr>
+        <tr><td><b>Duchenne muscular dystrophy</b></td><td><b>Absent dystrophin</b> (X-linked) &rarr; muscle-fiber membranes are fragile &rarr; fibers break down and are replaced by fat/fibrosis &rarr; <b>progressive weakness</b></td></tr>
+        <tr><td><b>Spinal muscular atrophy (SMA)</b></td><td><b>Motor neuron degeneration</b> &rarr; muscles lose nerve input &rarr; decreased tone and atrophy</td></tr>
+        <tr><td><b>Strain / sprain</b></td><td>Overstretch/tear of <b>muscle-tendon (strain)</b> or <b>ligament (sprain)</b>; a severe sprain fully tears the ligament &rarr; joint instability</td></tr>
+      </table>
+      <div class="keyidea"><b>Key idea &mdash; Duchenne (Lucas's case):</b> without <b>dystrophin</b>, muscle-cell membranes tear with normal contraction, so fibers are destroyed faster than they're repaired &rarr; weakness that <b>progressively worsens</b>. Classic findings: a young boy, <b>Gowers sign</b> (using hands to "walk up" the legs to stand), <b>pseudohypertrophy</b> of the calves (fat/fibrosis replacing muscle), and a high <b>creatine kinase</b>.</div>
+      <div class="pearl"><b>Pearl:</b> Duchenne is <b>X-linked recessive</b> &mdash; it almost always affects boys (links to your genetics unit). Damaged muscle leaks <b>creatine kinase</b>, so CK is elevated.</div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q1. Which protein deficiency causes muscle-fiber weakness in Duchenne muscular dystrophy?</p>
+        <div class="opts"><div>A. Dystrophin</div><div>B. Collagen</div><div>C. Myoglobin</div><div>D. Albumin</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Absent dystrophin leaves muscle membranes fragile, so fibers are damaged and lost over time.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q2. Why does muscle weakness progressively worsen in Duchenne muscular dystrophy?</p>
+        <div class="opts"><div>A. Muscle fibers break down faster than they can be repaired and are replaced by fat/fibrosis</div><div>B. Bones lose mineral over time</div><div>C. Nerves regenerate abnormally</div><div>D. Cartilage degenerates</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Ongoing membrane fragility destroys fibers progressively; fat and connective tissue replace muscle (pseudohypertrophy), so strength keeps declining.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q3. Which nerve change explains decreased muscle tone in spinal muscular atrophy?</p>
+        <div class="opts"><div>A. Degeneration of motor neurons removes nerve input to muscle</div><div>B. Loss of dystrophin</div><div>C. Cartilage breakdown</div><div>D. Crystal deposition</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> SMA destroys motor neurons, so muscles lose their nerve signal &rarr; low tone, weakness, and atrophy.</div>
+      </div>
+    </div>
+  </details>
+
+
+  <!-- SECTION 3 -->
+  <div class="sec three" id="sec3"><span class="num">SECTION 3</span><div><h2>Pediatric Musculoskeletal</h2><p>The congenital and growth-related MSK conditions &mdash; many hinge on the open growth plate.</p></div></div>
+
+  <!-- T5 -->
+  <details class="topic three" id="t5">
+    <summary><span class="tnum">5</span> Pediatric Hip, Foot &amp; Spine <span class="arrow">&#9654;</span></summary>
+    <div class="body">
+      <table class="dt">
+        <tr><th>Condition</th><th>Mechanism / hallmark</th></tr>
+        <tr><td><b>Developmental dysplasia of the hip (DDH)</b></td><td><b>Shallow hip socket (acetabulum)</b> doesn't hold the femoral head securely &rarr; instability/dislocation in infancy</td></tr>
+        <tr><td><b>Clubfoot</b> (talipes equinovarus)</td><td>Congenital deformity holding the foot in an <b>abnormal inward/downward position</b></td></tr>
+        <tr><td><b>Legg-Calv&eacute;-Perthes disease</b></td><td><b>Loss of blood supply to the femoral head</b> &rarr; avascular <b>necrosis</b> (then re-ossification) in a child</td></tr>
+        <tr><td><b>Scoliosis</b></td><td>Lateral spinal curvature; <b>rapid, uneven growth during a growth spurt</b> can worsen the curve</td></tr>
+      </table>
+      <div class="keyidea"><b>Key idea:</b> <b>DDH = a structural socket problem</b> (the cup is too shallow to hold the ball). <b>Legg-Calv&eacute;-Perthes = a blood-supply problem</b> (femoral-head avascular necrosis). Both affect the hip but the mechanisms are opposite kinds &mdash; structure vs perfusion.</div>
+      <div class="pearl"><b>Pearl &mdash; scoliosis &amp; growth spurts:</b> the curve tends to <b>progress fastest during rapid skeletal growth</b> (adolescent growth spurt), which is why monitoring intensifies during those years.</div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q1. Which alteration reduces femoral-head stability in developmental dysplasia of the hip?</p>
+        <div class="opts"><div>A. A shallow acetabulum (hip socket) that doesn't hold the femoral head securely</div><div>B. Avascular necrosis of the femoral head</div><div>C. A torn ligament</div><div>D. Crystal deposition</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> In DDH the socket is too shallow, so the femoral head isn't held securely &rarr; instability or dislocation.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q2. Which mechanism explains Legg-Calv&eacute;-Perthes disease?</p>
+        <div class="opts"><div>A. Loss of blood supply to the femoral head causing bone necrosis</div><div>B. A shallow hip socket</div><div>C. Inward foot positioning</div><div>D. Uneven spinal growth</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Interrupted blood flow to the femoral head causes avascular necrosis &mdash; the hallmark of Legg-Calv&eacute;-Perthes.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q3. Which mechanism explains scoliosis progression during a growth spurt?</p>
+        <div class="opts"><div>A. Rapid, uneven skeletal growth worsens the spinal curve</div><div>B. A shallow hip socket</div><div>C. Loss of femoral head perfusion</div><div>D. A torn ligament</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> During rapid growth, asymmetric growth can accelerate the curvature, so scoliosis often worsens during adolescent growth spurts.</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- T6 -->
+  <details class="topic three" id="t6">
+    <summary><span class="tnum">6</span> Growth-Plate, Bone &amp; Joint Conditions <span class="arrow">&#9654;</span></summary>
+    <div class="body">
+      <p>Children have <b>open growth plates (physes)</b> and <b>apophyses</b> (where tendons attach) &mdash; sites that are vulnerable to repetitive traction and infection.</p>
+      <table class="dt">
+        <tr><th>Condition</th><th>Mechanism / hallmark</th></tr>
+        <tr><td><b>Osgood-Schlatter disease</b></td><td>Repetitive <b>patellar tendon traction</b> on the <b>tibial tubercle</b> growth area &rarr; pain/swelling below the knee in active adolescents</td></tr>
+        <tr><td><b>Sever disease</b></td><td>Repetitive <b>Achilles traction</b> on the <b>calcaneal (heel) growth area</b> &rarr; heel pain in active children</td></tr>
+        <tr><td><b>Osteomyelitis</b></td><td><b>Bone infection</b> (often via blood) &rarr; fever, localized bone pain, swelling, refusal to bear weight</td></tr>
+        <tr><td><b>Septic arthritis</b> (child)</td><td>Infection <b>in the joint</b> &rarr; hot, swollen, painful joint + fever &mdash; emergency</td></tr>
+        <tr><td><b>Juvenile idiopathic arthritis (JIA)</b></td><td><b>Chronic autoimmune</b> joint inflammation in children</td></tr>
+        <tr><td><b>Ewing sarcoma</b></td><td>Malignant <b>bone tumor</b> of children/adolescents</td></tr>
+        <tr><td><b>Nonaccidental trauma</b></td><td>Suspicious if injuries don't match the story &mdash; e.g., <b>fractures at multiple healing stages</b>, or patterns inconsistent with development</td></tr>
+      </table>
+      <div class="keyidea"><b>Key idea &mdash; traction apophysitis:</b> <b>Osgood-Schlatter (knee/tibial tubercle)</b> and <b>Sever (heel/calcaneus)</b> are the same idea in two places &mdash; a tendon repeatedly pulling on an immature growth area during sports causes inflammation and pain. Both improve with rest as the child matures.</div>
+      <div class="pearl"><b>Pearl &mdash; bone/joint infection:</b> <b>osteomyelitis</b> = infection <i>in the bone</i>; <b>septic arthritis</b> = infection <i>in the joint</i>. A child with <b>fever + severe localized pain + refusal to bear weight</b> needs urgent evaluation. And consider <b>nonaccidental trauma</b> when fractures are in multiple stages of healing or don't fit the reported mechanism.</p></div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q1. Which mechanism explains Osgood-Schlatter disease?</p>
+        <div class="opts"><div>A. Repetitive patellar tendon traction stresses the tibial tubercle growth area</div><div>B. Achilles traction on the heel</div><div>C. Loss of femoral head blood supply</div><div>D. A shallow hip socket</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> The patellar tendon repeatedly pulls on the tibial tubercle's growth area in active adolescents &rarr; pain and swelling below the knee.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q2. Which growth-related stress contributes to Sever disease?</p>
+        <div class="opts"><div>A. Repeated Achilles tendon pull on the calcaneal (heel) growth area</div><div>B. Patellar tendon pull on the knee</div><div>C. Uneven spinal growth</div><div>D. Femoral-head necrosis</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Sever disease is calcaneal apophysitis &mdash; repeated Achilles traction irritates the heel's growth area in active children.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q3. A child has fever, severe leg pain near the knee, swelling, and refuses to bear weight. Which finding suggests nonaccidental trauma in a different child with multiple injuries?</p>
+        <div class="opts"><div>A. Fractures in multiple stages of healing / injuries inconsistent with the reported mechanism</div><div>B. A single fracture matching a witnessed fall</div><div>C. Age-appropriate bruising on the shins</div><div>D. Normal X-rays</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Multiple fractures at different healing stages, or injuries that don't fit the history or the child's developmental level, raise concern for nonaccidental trauma. (The febrile child with localized bone pain and refusal to bear weight suggests <b>osteomyelitis</b>.)</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- SECTION 4 -->
+  <div class="sec four" id="sec4"><span class="num">SECTION 4</span><div><h2>Integumentary System (Skin)</h2><p>Skin injury and inflammation in adults, plus the classic pediatric and infectious rashes.</p></div></div>
+
+  <!-- T7 -->
+  <details class="topic four" id="t7">
+    <summary><span class="tnum">7</span> Skin Injury &amp; Inflammation <span class="arrow">&#9654;</span></summary>
+    <div class="body">
+      <p>The skin is the body's barrier; injury, pressure, infection, and inflammation each break it down differently.</p>
+      <table class="dt">
+        <tr><th>Condition</th><th>Mechanism</th></tr>
+        <tr><td><b>Burns (major)</b></td><td>Injury &rarr; <b>&uarr; capillary permeability</b> &rarr; massive fluid shift out of vessels &rarr; <b>edema + hypotension</b> (burn shock) early on</td></tr>
+        <tr><td><b>UV exposure</b></td><td>UV damages DNA/cells &rarr; sunburn, photoaging, <b>skin cancer risk</b>; melanocytes make more melanin &rarr; <b>tanning</b> (a protective response)</td></tr>
+        <tr><td><b>Cellulitis</b></td><td><b>Bacterial</b> infection of dermis/subcutaneous tissue &rarr; warm, swollen, <b>spreading (diffuse) redness</b>, tenderness</td></tr>
+        <tr><td><b>Dermatitis / atopic dermatitis (eczema)</b></td><td><b>Inflammation</b> (often allergic/barrier dysfunction) &rarr; redness, swelling, itching; atopic type is chronic/relapsing in children</td></tr>
+        <tr><td><b>Psoriasis</b></td><td>Chronic immune-mediated <b>hyperproliferation</b> &rarr; thick, raised, scaly <b>plaques on elbows/knees/scalp</b></td></tr>
+        <tr><td><b>Pressure injury (ulcer)</b></td><td>Sustained <b>pressure limits perfusion</b> &rarr; ischemia &amp; necrosis over bony areas (e.g., <b>sacrum</b> in bedridden patients)</td></tr>
+        <tr><td><b>Diabetic wounds</b></td><td><b>Poor perfusion + neuropathy + high glucose</b> impair healing &rarr; chronic, non-healing wounds</td></tr>
+        <tr><td><b>Calluses / aging skin</b></td><td>Repetitive friction &rarr; thick, hardened skin; aging &rarr; thinner skin, <b>less oil/moisture</b> &rarr; dryness</td></tr>
+        <tr><td><b>Herpes zoster (shingles)</b></td><td>Reactivation of latent <b>varicella-zoster virus</b> &rarr; painful vesicles in a <b>single dermatome</b> (don't cross midline); triggered by stress/immune drop</td></tr>
+      </table>
+      <div class="keyidea"><b>Key idea &mdash; burns &amp; fluid shift:</b> a major burn makes capillaries leaky, so fluid pours into the tissues &rarr; <b>widespread edema and falling blood pressure</b> (hypovolemic/burn shock) in the first hours &mdash; which is why aggressive fluid resuscitation is central to burn care.</div>
+      <div class="pearl"><b>Pearl &mdash; pressure injuries:</b> the mechanism is always <b>pressure &rarr; ischemia &rarr; necrosis</b>. Bony prominences like the <b>sacrum, heels, and hips</b> in immobile patients are highest risk &mdash; relieve pressure and protect perfusion. <b>Shingles (Marisol's case)</b> = reactivated chickenpox virus in one dermatome.</div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q1. A patient with severe burns develops widespread edema and hypotension shortly after injury. Which mechanism explains it?</p>
+        <div class="opts"><div>A. Increased capillary permeability shifting fluid out of the vessels</div><div>B. Decreased capillary permeability</div><div>C. Increased blood volume</div><div>D. Vasoconstriction raising blood pressure</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Burn injury makes capillaries leaky; fluid floods the tissues &rarr; edema and a falling blood pressure (burn shock).</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q2. A bedridden patient develops skin breakdown over the sacrum. Which process explains it?</p>
+        <div class="opts"><div>A. Sustained pressure limits perfusion, causing ischemia and necrosis</div><div>B. Increased blood flow to the area</div><div>C. Bacterial spreading infection</div><div>D. Immune hyperproliferation</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Pressure over the bony sacrum cuts off blood flow &rarr; ischemia and tissue death (a pressure injury).</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q3. A patient develops a warm, swollen area of skin with diffuse spreading redness after a skin injury. Which condition is this?</p>
+        <div class="opts"><div>A. Cellulitis (bacterial infection of the dermis/subcutaneous tissue)</div><div>B. Psoriasis</div><div>C. A pressure injury</div><div>D. Contact dermatitis only</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Spreading warmth, swelling, and redness after a skin break is classic cellulitis &mdash; a bacterial soft-tissue infection.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q4. A patient develops thick, raised, scaly plaques on the elbows and knees from a chronic inflammatory disorder. Which condition?</p>
+        <div class="opts"><div>A. Psoriasis (immune-mediated keratinocyte hyperproliferation)</div><div>B. Cellulitis</div><div>C. A burn</div><div>D. Tinea</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Psoriasis is chronic immune-driven overproduction of skin cells &rarr; thick, scaly plaques on extensor surfaces (elbows, knees, scalp).</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- T8 -->
+  <details class="topic four" id="t8">
+    <summary><span class="tnum">8</span> Pediatric &amp; Infectious Skin Conditions <span class="arrow">&#9654;</span></summary>
+    <div class="body">
+      <p>The childhood rashes have distinctive patterns &mdash; match the description to the cause.</p>
+      <table class="dt">
+        <tr><th>Condition</th><th>Cause</th><th>Hallmark</th></tr>
+        <tr><td><b>Varicella (chickenpox)</b></td><td>Varicella-zoster virus</td><td>Itchy vesicles in <b>multiple stages</b> at once (papules, vesicles, crusts)</td></tr>
+        <tr><td><b>Fifth disease</b> (erythema infectiosum)</td><td>Parvovirus B19</td><td><b>"Slapped-cheek"</b> red face &rarr; later a <b>lacy rash</b> on arms/trunk</td></tr>
+        <tr><td><b>Impetigo</b></td><td>Bacteria (Staph/Strep) entering minor skin breaks</td><td>Weeping lesions with <b>honey-colored crusts</b>, often around the mouth/nose</td></tr>
+        <tr><td><b>Staph scalded-skin syndrome (SSSS)</b></td><td>Staph <b>exfoliative toxin</b></td><td>Toxin <b>weakens epidermal cell connections</b> &rarr; widespread peeling/separation</td></tr>
+        <tr><td><b>Scabies</b></td><td>Mite burrowing in skin</td><td><b>Intense itching, worse at night</b>; spreads among close contacts/family</td></tr>
+        <tr><td><b>Oral thrush</b></td><td><b>Candida</b> (fungal) overgrowth</td><td><b>White patches</b> in the mouth (infants, immunosuppressed)</td></tr>
+        <tr><td><b>Miliaria (heat rash)</b></td><td><b>Blocked sweat ducts</b> trap perspiration</td><td>Small bumps/vesicles in hot, humid conditions</td></tr>
+        <tr><td><b>Tinea</b> (ringworm/capitis)</td><td><b>Fungal</b> infection of skin/scalp</td><td>Ring-shaped scaly patches; scalp hair loss (capitis)</td></tr>
+      </table>
+      <div class="keyidea"><b>Key idea &mdash; match the pattern:</b> <b>multiple stages at once = varicella</b>; <b>slapped cheek + lacy rash = fifth disease</b>; <b>honey-colored crust = impetigo</b>; <b>widespread peeling from toxin = SSSS</b>; <b>night-time itching in a household = scabies</b>; <b>white oral patches = thrush (Candida)</b>; <b>blocked sweat ducts = miliaria</b>.</div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q1. A child has an itchy rash with fluid-filled lesions in multiple stages of healing. Which condition?</p>
+        <div class="opts"><div>A. Varicella (chickenpox)</div><div>B. Impetigo</div><div>C. Fifth disease</div><div>D. Tinea</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Varicella's hallmark is lesions in several stages simultaneously (papules, vesicles, and crusts together).</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q2. A child develops bright red cheeks followed by a lacy rash on the arms and trunk. Which condition?</p>
+        <div class="opts"><div>A. Fifth disease (erythema infectiosum, parvovirus B19)</div><div>B. Roseola</div><div>C. Measles</div><div>D. Scabies</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> The "slapped-cheek" appearance followed by a lacy reticular rash is classic fifth disease (parvovirus B19).</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q3. A child has weeping lesions with honey-colored crusting around the mouth. Which condition, and how does it start?</p>
+        <div class="opts"><div>A. Impetigo &mdash; bacteria invade through minor breaks in the skin</div><div>B. Tinea &mdash; fungal infection</div><div>C. Varicella &mdash; viral</div><div>D. Miliaria &mdash; blocked sweat ducts</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Impetigo is a superficial bacterial infection entering through small skin breaks, producing the classic honey-colored crusts.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q4. What causes epidermal separation in staphylococcal scalded-skin syndrome (SSSS)?</p>
+        <div class="opts"><div>A. A bacterial toxin that weakens connections between epidermal cells</div><div>B. Blocked sweat ducts</div><div>C. Fungal invasion of hair follicles</div><div>D. Excess sebum production</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Staph exfoliative toxin disrupts the proteins holding epidermal cells together, causing widespread superficial peeling.</div>
+      </div>
+      <div class="practice"><span class="ptag">Practice</span>
+        <p class="q">Q5. Several family members develop intense itching that worsens at night. Which mechanism causes miliaria in a different child &mdash; and what causes the family's itching?</p>
+        <div class="opts"><div>A. Miliaria = blocked sweat ducts; the family's night itching = scabies (mite burrowing)</div><div>B. Both are fungal</div><div>C. Both are bacterial</div><div>D. Both are viral</div></div>
+        <button class="reveal" onclick="reveal(this)">Show answer</button>
+        <div class="ans"><span class="correct">A is correct.</span> Miliaria comes from blocked sweat ducts trapping perspiration; the intensely itchy, worse-at-night, household-spreading rash is scabies (a burrowing mite).</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- CHEAT SHEET -->
+  <div class="sec one" id="cheat" style="background:linear-gradient(135deg,#283593,#3949AB);"><span class="num">&#11088; EXAM</span><div><h2>MSK &amp; Skin Cheat Sheet</h2><p>The highest-yield patterns &mdash; review the night before.</p></div></div>
+  <div class="cheat">
+    <h4 style="color:var(--pri-dk);">Bone &amp; fracture</h4>
+    <ul>
+      <li><b>Osteoporosis</b> = &darr; bone mass (normal Ca; fragility/vertebral fractures, kyphosis). <b>Osteomalacia</b> = poor mineralization (vitamin D). <b>Osteogenesis imperfecta</b> = collagen defect.</li>
+      <li><b>Fracture healing:</b> hematoma &rarr; soft callus &rarr; hard callus &rarr; remodel (hematoma is first).</li>
+      <li><b>Compartment syndrome</b> = &uarr; pressure &rarr; ischemia; <b>pain out of proportion</b> &mdash; emergency. <b>Rhabdomyolysis</b> = myoglobin &rarr; renal tubule obstruction (AKI).</li>
+    </ul>
+    <h4 style="color:#283593;">Joints &amp; muscle</h4>
+    <ul>
+      <li><b>OA</b> = cartilage wear (mechanical, asymmetric). <b>RA</b> = autoimmune synovitis/pannus (symmetric, systemic). <b>Gout</b> = urate crystals (great toe). <b>Septic arthritis</b> = infection (hot joint + fever).</li>
+      <li><b>Duchenne MD</b> = absent <b>dystrophin</b> (X-linked boys; Gowers sign, calf pseudohypertrophy, &uarr; CK). <b>SMA</b> = motor-neuron loss. Severe <b>sprain</b> = ligament tear.</li>
+    </ul>
+    <h4 style="color:#BF360C;">Pediatric MSK</h4>
+    <ul>
+      <li><b>DDH</b> = shallow socket. <b>Legg-Calv&eacute;-Perthes</b> = femoral-head avascular necrosis. <b>Clubfoot</b> = inward foot. <b>Scoliosis</b> worsens in growth spurts.</li>
+      <li><b>Osgood-Schlatter</b> = tibial-tubercle traction (knee). <b>Sever</b> = calcaneal traction (heel). <b>Osteomyelitis</b> = bone infection; <b>septic arthritis</b> = joint infection. <b>Nonaccidental trauma</b> = fractures at multiple healing stages / story doesn't fit.</li>
+    </ul>
+    <h4 style="color:#880E4F;">Skin</h4>
+    <ul>
+      <li><b>Burns</b> = &uarr; capillary permeability &rarr; edema + hypotension. <b>Pressure injury</b> = pressure &rarr; ischemia (sacrum). <b>Cellulitis</b> = spreading bacterial redness. <b>Psoriasis</b> = thick plaques (elbows/knees). <b>Shingles</b> = VZV reactivation, one dermatome.</li>
+      <li><b>Varicella</b> = lesions in multiple stages. <b>Fifth disease</b> = slapped cheek + lacy rash. <b>Impetigo</b> = honey crust. <b>SSSS</b> = toxin peels epidermis. <b>Scabies</b> = night itch (family). <b>Thrush</b> = oral Candida. <b>Miliaria</b> = blocked sweat ducts.</li>
+    </ul>
+  </div>
+
+  <!-- GLOSSARY -->
+  <div class="sec four" id="gloss" style="background:linear-gradient(135deg,#AD1457,#880E4F);"><span class="num">&#128218; TERMS</span><div><h2>Glossary</h2><p>Quick definitions of the Week 14 vocabulary.</p></div></div>
+  <div class="cheat" style="border-color:var(--s4);">
+    <dl class="gloss">
+      <dt>Osteoporosis</dt><dd>Reduced bone mass/density &rarr; fragility fractures; serum calcium usually normal.</dd>
+      <dt>Osteomalacia</dt><dd>Defective mineralization of bone (often vitamin D deficiency) &rarr; soft bone.</dd>
+      <dt>Osteogenesis imperfecta</dt><dd>Genetic type I collagen defect &rarr; brittle bones.</dd>
+      <dt>Compartment syndrome</dt><dd>Rising pressure in a closed compartment &rarr; ischemia; pain out of proportion &mdash; emergency.</dd>
+      <dt>Rhabdomyolysis</dt><dd>Muscle breakdown releasing myoglobin that obstructs renal tubules &rarr; acute kidney injury.</dd>
+      <dt>Osteoarthritis</dt><dd>Degenerative "wear-and-tear" cartilage loss.</dd>
+      <dt>Rheumatoid arthritis</dt><dd>Autoimmune synovial inflammation (pannus) destroying joints symmetrically.</dd>
+      <dt>Gout</dt><dd>Urate (uric acid) crystal deposition causing acute joint inflammation (great toe).</dd>
+      <dt>Septic arthritis / Osteomyelitis</dt><dd>Infection of a joint / of bone &mdash; fever + localized pain; emergencies.</dd>
+      <dt>Dystrophin</dt><dd>Muscle membrane protein absent in Duchenne muscular dystrophy.</dd>
+      <dt>Developmental dysplasia of the hip</dt><dd>Shallow acetabulum &rarr; unstable hip in infancy.</dd>
+      <dt>Legg-Calv&eacute;-Perthes</dt><dd>Avascular necrosis of the femoral head in children.</dd>
+      <dt>Osgood-Schlatter / Sever</dt><dd>Traction apophysitis at the tibial tubercle (knee) / calcaneus (heel) in active children.</dd>
+      <dt>Cellulitis</dt><dd>Spreading bacterial infection of dermis/subcutaneous tissue.</dd>
+      <dt>Psoriasis</dt><dd>Chronic immune-mediated keratinocyte hyperproliferation &rarr; scaly plaques.</dd>
+      <dt>Pressure injury</dt><dd>Pressure-induced ischemia and necrosis over a bony area.</dd>
+      <dt>Herpes zoster (shingles)</dt><dd>Reactivated varicella-zoster virus in a single dermatome.</dd>
+      <dt>Impetigo / SSSS</dt><dd>Honey-crusted bacterial skin infection / toxin-mediated epidermal peeling.</dd>
+      <dt>Miliaria</dt><dd>Heat rash from blocked sweat ducts.</dd>
+    </dl>
+  </div>
+
+
+
+
+  <footer class="foot">
+    SCI225 Pathophysiology &middot; Week 14 &mdash; Musculoskeletal &amp; Integumentary Systems &middot; Dr. Vidya Aggrawal &middot; Nightingale College<br>
+    <span style="font-size:12px;">Study guide for educational use. Built from the Week 14 learning objectives and case studies.</span>
+  </footer>
+
+</div>
+
+<script>
+  function toggleAll(){
+    var ds=document.querySelectorAll('details.topic');
+    var btn=document.getElementById('toggleBtn');
+    var anyClosed=Array.prototype.some.call(ds,function(d){return !d.open;});
+    ds.forEach(function(d){d.open=anyClosed;});
+    btn.textContent=anyClosed?'Collapse all':'Expand all';
+  }
+  function savePDF(){
+    document.querySelectorAll('details.topic').forEach(function(d){d.open=true;});
+    document.querySelectorAll('.ans').forEach(function(a){a.classList.add('show');});
+    setTimeout(function(){window.print();},250);
+  }
+  function reveal(btn){
+    var ans=btn.nextElementSibling;
+    ans.classList.toggle('show');
+    btn.textContent=ans.classList.contains('show')?'Hide answer':'Show answer';
+  }
+</script>
+</body>
+</html>

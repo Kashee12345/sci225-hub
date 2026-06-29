@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SCI225 Pathophysiology — Webinar Outlines for Faculty</title>
+<style>
+  :root {
+    --u1:#1e40af; --u1-bg:#eff6ff; --u1-brd:#93c5fd;
+    --u2:#047857; --u2-bg:#ecfdf5; --u2-brd:#6ee7b7;
+    --u3:#b91c1c; --u3-bg:#fef2f2; --u3-brd:#fca5a5;
+    --u4:#7c3aed; --u4-bg:#faf5ff; --u4-brd:#c4b5fd;
+    --u5:#c2410c; --u5-bg:#fff7ed; --u5-brd:#fdba74;
+    --u6:#be185d; --u6-bg:#fdf2f8; --u6-brd:#f9a8d4;
+    --obj:#0f766e; --obj-bg:#ecfdf5;
+    --hook:#b45309; --hook-bg:#fffbeb;
+    --miss:#991b1b; --miss-bg:#fef2f2;
+    --poll:#6d28d9; --poll-bg:#f5f3ff;
+    --text:#111827; --muted:#475569; --line:#d1d5db;
+  }
+  *{box-sizing:border-box}
+  body{
+    font-family:"Segoe UI",Roboto,Arial,sans-serif;
+    font-size:10.8pt;line-height:1.45;color:var(--text);
+    margin:0;padding:0;background:#f9fafb;
+  }
+  .layout{display:grid;grid-template-columns:250px 1fr;max-width:1160px;margin:0 auto}
+  nav.toc{
+    position:sticky;top:0;align-self:start;max-height:100vh;overflow-y:auto;
+    background:#fff;border-right:1px solid var(--line);padding:16px 12px;font-size:9.5pt;
+  }
+  nav.toc h3{font-size:10pt;margin:6px 0 8px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+  nav.toc a{display:block;padding:4px 7px;color:var(--text);text-decoration:none;border-radius:3px;margin-bottom:1px}
+  nav.toc a:hover{background:#f3f4f6}
+  nav.toc .u1{border-left:3px solid var(--u1)}
+  nav.toc .u2{border-left:3px solid var(--u2)}
+  nav.toc .u3{border-left:3px solid var(--u3)}
+  nav.toc .u4{border-left:3px solid var(--u4)}
+  nav.toc .u5{border-left:3px solid var(--u5)}
+  nav.toc .u6{border-left:3px solid var(--u6)}
+  main{padding:22px 30px;background:#fff}
+  h1{font-size:20pt;margin:0 0 4px}
+  h2{font-size:15pt;margin:20px 0 8px;padding:8px 12px;border-radius:4px;color:#fff}
+  h3{font-size:12pt;margin:14px 0 5px;padding:3px 0 3px 10px;border-left:4px solid}
+  h4{font-size:10.8pt;margin:10px 0 4px;color:var(--muted);text-transform:uppercase;letter-spacing:.4px}
+  .unit1 h2{background:var(--u1)} .unit1 h3{border-left-color:var(--u1);color:var(--u1)}
+  .unit2 h2{background:var(--u2)} .unit2 h3{border-left-color:var(--u2);color:var(--u2)}
+  .unit3 h2{background:var(--u3)} .unit3 h3{border-left-color:var(--u3);color:var(--u3)}
+  .unit4 h2{background:var(--u4)} .unit4 h3{border-left-color:var(--u4);color:var(--u4)}
+  .unit5 h2{background:var(--u5)} .unit5 h3{border-left-color:var(--u5);color:var(--u5)}
+  .unit6 h2{background:var(--u6)} .unit6 h3{border-left-color:var(--u6);color:var(--u6)}
+  p{margin:4px 0}
+  ul,ol{margin:4px 0 8px 22px;padding:0}
+  li{margin:2px 0}
+  table{width:100%;border-collapse:collapse;font-size:9.8pt;margin:6px 0 10px}
+  th,td{border:1px solid var(--line);padding:5px 8px;text-align:left;vertical-align:top}
+  th{background:#f3f4f6;font-weight:600}
+  .timetable th{background:#0f172a;color:#fff}
+  .timetable td:first-child{width:90px;font-weight:600;font-family:"Consolas",monospace;white-space:nowrap}
+  .box{border-left:4px solid;padding:7px 11px;margin:8px 0;border-radius:3px;font-size:10pt}
+  .obj{border-color:var(--obj);background:var(--obj-bg)}
+  .obj::before{content:"LEARNING OBJECTIVES ";font-weight:700;color:var(--obj);font-size:8.8pt;letter-spacing:.5px;display:block;margin-bottom:3px}
+  .hook{border-color:var(--hook);background:var(--hook-bg)}
+  .hook::before{content:"OPENING HOOK / CASE ";font-weight:700;color:var(--hook);font-size:8.8pt;letter-spacing:.5px;display:block;margin-bottom:3px}
+  .miss{border-color:var(--miss);background:var(--miss-bg)}
+  .miss::before{content:"⚠ STUDENT MISCONCEPTIONS TO ADDRESS ";font-weight:700;color:var(--miss);font-size:8.8pt;letter-spacing:.5px;display:block;margin-bottom:3px}
+  .poll{border-color:var(--poll);background:var(--poll-bg)}
+  .poll::before{content:"POLL / DISCUSSION PROMPTS ";font-weight:700;color:var(--poll);font-size:8.8pt;letter-spacing:.5px;display:block;margin-bottom:3px}
+  .hero{padding:16px 20px;background:linear-gradient(135deg,#1e3a8a,#7c3aed,#be185d);color:#fff;border-radius:6px;margin-bottom:16px}
+  .hero h1{color:#fff}
+  .hero p{margin:4px 0;font-size:10pt;opacity:.95}
+  .meta{display:flex;gap:12px;flex-wrap:wrap;margin:10px 0;font-size:9.5pt}
+  .meta span{background:#f1f5f9;border:1px solid var(--line);padding:3px 10px;border-radius:20px}
+  .btns{margin:10px 0}
+  .btns button{background:#0f172a;color:#fff;border:0;padding:7px 14px;border-radius:4px;font-size:9.8pt;cursor:pointer;margin-right:6px}
+  .small{font-size:9.3pt;color:var(--muted)}
+  @media print{
+    body{background:#fff}
+    .layout{display:block;max-width:none}
+    nav.toc,.btns{display:none}
+    main{padding:0.4in 0.4in}
+    h2{page-break-before:always;break-before:page}
+    section:first-of-type h2{page-break-before:auto;break-before:auto}
+    .hero,h2,.box,th{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  }
+</style>
+</head>
+<body>
+<div class="layout">
+<nav class="toc">
+  <h3>Webinar Outlines</h3>
+  <a href="#intro"><b>How to use this guide</b></a>
+  <a href="#u1" class="u1"><b>Unit 1.</b> Cell & Genetics</a>
+  <a href="#u2" class="u2"><b>Unit 2.</b> Immunity & Inflammation</a>
+  <a href="#u3" class="u3"><b>Unit 3.</b> Oncology</a>
+  <a href="#u4" class="u4"><b>Unit 4.</b> Neuro Structure</a>
+  <a href="#u5" class="u5"><b>Unit 5.</b> Neuro Disorders</a>
+  <a href="#u6" class="u6"><b>Unit 6.</b> Endocrine</a>
+  <a href="#universal"><b>Universal Checklist</b></a>
+</nav>
+
+<main>
+
+<div class="btns">
+  <button onclick="window.print()">Print / Save as PDF</button>
+</div>
+
+<section id="intro">
+<div class="hero">
+  <h1>SCI225 Pathophysiology — Webinar Outlines for Faculty</h1>
+  <p><b>Prepared by Dr. Garg</b></p>
+  <p>A chapter-by-chapter teaching framework for synchronous webinar sessions. Each unit is scoped for a 90-minute live session but scales to 60 min (trim polls/cases) or 120 min (add the deep-dive extensions noted).</p>
+</div>
+
+<div class="meta">
+  <span><b>Course:</b> SCI225 Pathophysiology</span>
+  <span><b>Format:</b> 6 live webinars, 90 min each</span>
+  <span><b>Audience:</b> Pre-health / nursing / allied</span>
+  <span><b>Companion:</b> <a href="computer://C:\Users\Akash Garg\Desktop\SCI225_Pathophysiology_Midterm_Review.html">SCI225 Midterm Review Guide</a></span>
+</div>
+
+<h3>How to use this guide</h3>
+<p>Every unit outline follows the same spine so students can predict the flow and faculty can swap in/out without rebuilding the lesson plan:</p>
+<ol>
+  <li><b>Learning Objectives</b> — 4–6 measurable outcomes mapped to Bloom's levels. Copy directly into LMS.</li>
+  <li><b>Opening hook / clinical case</b> — 5 min. Grounds the pathophysiology in a real patient before touching a slide.</li>
+  <li><b>Time-blocked outline</b> — the main content flow with suggested minutes per segment.</li>
+  <li><b>Poll / discussion prompts</b> — 2–4 per session. Keep students active; catches misconceptions early.</li>
+  <li><b>Common student misconceptions</b> — call these out explicitly; they are the top wrong answers on assessments.</li>
+  <li><b>Closing + assessment bridge</b> — 5 min. Tie back to the opening case and preview next week.</li>
+</ol>
+
+<div class="box obj" style="border-color:#0f172a;background:#f8fafc">
+  <div style="font-weight:700;color:#0f172a;font-size:8.8pt;letter-spacing:.5px;margin-bottom:3px">ENGAGEMENT PRINCIPLES</div>
+  Use the <b>"rule of three"</b>: no more than 10–12 minutes of lecture before a poll, discussion, or case turn. Students in pathophysiology retain structure → function → failure mode patterns far better than memorized lists — always frame content that way. Reserve the last 10 minutes for Q&A; never end exactly on time or students stop asking by minute 85.
+</div>
+</section>
+
+<!-- ============================ UNIT 1 ============================ -->
+<section id="u1" class="unit1">
+<h2>Unit 1 &nbsp;•&nbsp; Cellular Biology, Genetics, Adaptation & Injury &nbsp;<span style="font-size:10pt;background:rgba(255,255,255,.2);padding:2px 8px;border-radius:3px">Ch 1, 2, 4</span></h2>
+
+<h3>Pre-Webinar Prep (student-facing)</h3>
+<ul>
+  <li>Read Ch 1 (cell structure), Ch 2 (cell injury/adaptation), Ch 4 (genetics) — 90 min reading</li>
+  <li>Watch short pre-recorded video: 4 modes of cellular adaptation (5 min)</li>
+  <li>Bring one example of a disease in their own family or clinical experience that involves cellular adaptation</li>
+</ul>
+
+<div class="box obj">
+By session end, students will be able to:
+<ol>
+  <li>Differentiate the four modes of cellular adaptation (hypertrophy, hyperplasia, atrophy, metaplasia) with an example of each.</li>
+  <li>Distinguish reversible cell injury from irreversible injury and identify the point of no return (mitochondrial permeability).</li>
+  <li>Contrast necrosis and apoptosis across 5 key features (trigger, membrane, inflammation, ATP requirement, clinical context).</li>
+  <li>Apply Mendelian vs multifactorial inheritance to predict offspring risk in a pedigree.</li>
+  <li>Identify one autosomal dominant, one autosomal recessive, and one X-linked disorder and explain the inheritance logic.</li>
+</ol>
+</div>
+
+<div class="box hook">
+<b>Case:</b> A 58-year-old long-time smoker presents with a chronic cough. Biopsy of the bronchial lining shows <i>squamous epithelium</i> replacing the normal ciliated columnar epithelium. <b>Ask:</b> What is this change called? Is it reversible? Protective or pathologic? <i>(Answer: metaplasia — reversible, adaptive, but loses mucociliary clearance and may progress to dysplasia/cancer.)</i> Return to this case at the close.
+</div>
+
+<h3>90-Minute Session Outline</h3>
+<table class="timetable">
+  <tr><th>Time</th><th>Segment</th><th>Key teaching points</th></tr>
+  <tr><td>0:00–0:05</td><td>Welcome + hook case</td><td>Set norms, introduce the smoker case, collect instant predictions</td></tr>
+  <tr><td>0:05–0:20</td><td>Cell structure refresher</td><td>Organelles as "failure points" — mitochondria = ATP, ER = protein folding, lysosomes = autophagy. Frame each organelle as <i>structure → function → what happens when it fails</i>.</td></tr>
+  <tr><td>0:20–0:35</td><td>Cellular adaptation (the big 4)</td><td>Hypertrophy (cell size ↑) vs hyperplasia (cell number ↑) — compare cardiac (HTN) vs endometrial (estrogen). Atrophy: disuse, denervation, ischemia. Metaplasia: Barrett's, smoker's bronchus.</td></tr>
+  <tr><td>0:35–0:40</td><td><b>POLL #1</b></td><td>"Biceps growing with weight training is primarily…" (A) hyperplasia (B) hypertrophy (C) metaplasia (D) dysplasia — discuss why muscle cells are post-mitotic.</td></tr>
+  <tr><td>0:40–0:55</td><td>Cell injury & death</td><td>Hypoxia is #1 cause. Reversible (swelling, fatty change) → irreversible (mitochondrial Ca²⁺ influx, membrane rupture). <b>Necrosis vs apoptosis</b> table — emphasize that apoptosis is ATP-<i>requiring</i> and "quiet."</td></tr>
+  <tr><td>0:55–1:10</td><td>Genetics essentials</td><td>Chromosomes 22+XX/XY, karyotyping, Barr body. Autosomal dominant (Huntington, Marfan) vs recessive (CF, sickle cell) vs X-linked (hemophilia, DMD). Walk through one pedigree live.</td></tr>
+  <tr><td>1:10–1:15</td><td><b>POLL #2</b></td><td>Pedigree problem — 2 unaffected parents, 1 affected son, 1 affected daughter. Most likely inheritance pattern?</td></tr>
+  <tr><td>1:15–1:25</td><td>Chromosomal & multifactorial</td><td>Trisomy 21, Turner (45,X), Klinefelter (47,XXY). Multifactorial: cleft lip, neural tube defects, DM type 2, HTN.</td></tr>
+  <tr><td>1:25–1:30</td><td>Close + case recall + preview</td><td>Return to smoker: metaplasia → dysplasia → carcinoma in situ (teases Unit 3). Assign one practice pedigree.</td></tr>
+</table>
+
+<div class="box poll">
+<b>Poll 1:</b> Which of the following is an example of <i>physiologic</i> hyperplasia? (breast tissue in pregnancy, endometrial hyperplasia, prostatic hyperplasia, compensatory liver regeneration)<br>
+<b>Poll 2:</b> A mother and father are both unaffected carriers of CF. Probability that their child is affected? (25% / 50% / 75% / 100%)<br>
+<b>Discussion:</b> "Why doesn't muscle grow by making new muscle cells?" — gets students to articulate post-mitotic vs labile vs stable tissue categories.<br>
+<b>Think-pair-share:</b> Each student names one adaptive change in their own body from the last year (pregnancy breast changes, muscle growth, callus formation, tonsillar hyperplasia with infection). Short share-out.
+</div>
+
+<div class="box miss">
+<ul>
+  <li><b>"Hypertrophy and hyperplasia are the same."</b> No — size vs number. Cardiac muscle can only hypertrophy (post-mitotic).</li>
+  <li><b>"Apoptosis is just cell death."</b> It is <i>programmed</i> and <i>regulated</i>, requires ATP, does NOT cause inflammation, and is physiologic (embryogenesis, menstrual shedding).</li>
+  <li><b>"Metaplasia is cancer."</b> Not yet — it's adaptive and reversible. Dysplasia is the step toward malignancy.</li>
+  <li><b>"All genetic disease is heritable."</b> Many mutations are <i>somatic</i> (cancer) and not passed on.</li>
+  <li><b>Males are "carriers" of X-linked recessive.</b> No — hemizygous males express it fully. Only heterozygous <i>females</i> are carriers.</li>
+</ul>
+</div>
+
+<h3>Assessment Bridge & Homework</h3>
+<ul>
+  <li>Practice Qs 1–8 from the Midterm Review Guide Unit 1 section.</li>
+  <li>Short case write-up (200 words): a patient with cardiac hypertrophy from untreated hypertension — what adapts first, what fails eventually, and why?</li>
+  <li>Preview: next week's hook is a toddler with recurrent ear infections — we are building toward primary immunodeficiency.</li>
+</ul>
+</section>
+
+<!-- ============================ UNIT 2 ============================ -->
+<section id="u2" class="unit2">
+<h2>Unit 2 &nbsp;•&nbsp; Immunity, Inflammation, Infection &nbsp;<span style="font-size:10pt;background:rgba(255,255,255,.2);padding:2px 8px;border-radius:3px">Ch 6, 7, 8, 9</span></h2>
+
+<h3>Pre-Webinar Prep</h3>
+<ul>
+  <li>Read Ch 6 (innate/adaptive immunity), 7 (inflammation), 8 (infection), 9 (immunopathology) — ~2 hours</li>
+  <li>Watch 3-min animation: "Cardinal signs of inflammation in real time"</li>
+  <li>Fill out a 5-question pre-check (posted in LMS) — results used to tailor emphasis</li>
+</ul>
+
+<div class="box obj">
+<ol>
+  <li>Differentiate innate vs adaptive immunity across speed, specificity, and memory.</li>
+  <li>Sequence the events of acute inflammation and explain each cardinal sign (rubor, tumor, calor, dolor, functio laesa) mechanistically.</li>
+  <li>Classify hypersensitivity reactions I–IV with one prototype disease for each.</li>
+  <li>Contrast active vs passive immunity; predict which applies in common clinical scenarios (vaccine, IVIG, maternal antibody, natural infection).</li>
+  <li>Define autoimmunity and identify three autoimmune diseases with their primary mechanism.</li>
+  <li>Describe how HIV produces AIDS at the cellular level.</li>
+</ol>
+</div>
+
+<div class="box hook">
+<b>Case:</b> A 24-year-old college student arrives at urgent care 30 minutes after eating a peanut-butter cookie with swollen lips, hives, wheezing, and BP 78/42. The epinephrine autoinjector her roommate used is about to run out of effect. <b>Ask:</b> What is happening at the cellular level? Which immunoglobulin? Which hypersensitivity type? Why does the wheeze and the hypotension happen from the <i>same</i> chemical? <i>(Type I, IgE, mast-cell histamine — bronchoconstriction AND systemic vasodilation.)</i>
+</div>
+
+<h3>90-Minute Session Outline</h3>
+<table class="timetable">
+  <tr><th>Time</th><th>Segment</th><th>Key teaching points</th></tr>
+  <tr><td>0:00–0:05</td><td>Welcome + anaphylaxis case</td><td>Live Mentimeter: "What type of reaction is this?" — see baseline, address at close</td></tr>
+  <tr><td>0:05–0:20</td><td>Innate vs adaptive</td><td>Innate = fast/nonspecific (skin, mucus, complement, neutrophils, NK cells). Adaptive = slow/specific/memory (T, B). Draw the timeline: innate acts in hours, adaptive in days.</td></tr>
+  <tr><td>0:20–0:35</td><td>Acute inflammation (5 cardinal signs)</td><td>Walk through vascular (vasodilation → redness, heat) + cellular (leukocyte margination, diapedesis, chemotaxis). Each sign = a specific mechanism, NOT just a symptom list.</td></tr>
+  <tr><td>0:35–0:40</td><td><b>POLL #1</b></td><td>"Which of these is NOT a cause of swelling (tumor)?" Options: ↑ capillary permeability, fluid leak, vasoconstriction, fibrin deposition.</td></tr>
+  <tr><td>0:40–0:55</td><td>Adaptive immunity deep dive</td><td>B cells → antibodies (humoral). T cells → CD4 helper, CD8 cytotoxic. <b>MADGE</b> mnemonic for Igs. Active vs passive — use 4 quick scenarios.</td></tr>
+  <tr><td>0:55–1:10</td><td>Hypersensitivity I–IV</td><td>Type I (IgE/anaphylaxis), II (cytotoxic/blood transfusion reaction), III (immune complex/lupus, serum sickness), IV (delayed T-cell/TB skin test, contact dermatitis). One prototype per type.</td></tr>
+  <tr><td>1:10–1:15</td><td><b>POLL #2</b></td><td>Contact dermatitis from poison ivy = which type? Expect 40% to pick I (allergy). Correct to IV.</td></tr>
+  <tr><td>1:15–1:25</td><td>Autoimmunity + HIV/AIDS</td><td>Loss of self-tolerance. RA, SLE, Hashimoto, Graves, T1DM, MS. HIV: binds CD4 via gp120 → depletes CD4 count → AIDS when &lt;200 or opportunistic infection.</td></tr>
+  <tr><td>1:25–1:30</td><td>Close + case recall + preview</td><td>Return to anaphylaxis. Preview Unit 3 — chronic inflammation is a cancer setup.</td></tr>
+</table>
+
+<div class="box poll">
+<b>Poll 1:</b> Which cell is the <i>first</i> responder at the site of bacterial invasion? (macrophage, neutrophil, lymphocyte, eosinophil)<br>
+<b>Poll 2:</b> A nurse with a positive PPD (TB skin test) demonstrates which hypersensitivity type?<br>
+<b>Discussion:</b> "Is fever helpful or harmful?" — gets students weighing host defense vs organ stress.<br>
+<b>Case branch:</b> Switch the anaphylaxis patient to a post-transfusion hemolysis patient. What type of hypersensitivity now? Why different?
+</div>
+
+<div class="box miss">
+<ul>
+  <li><b>"Inflammation = infection."</b> Inflammation is the response; infection is one trigger among many (trauma, autoimmune, ischemia, neoplasia).</li>
+  <li><b>"Passive immunity lasts long."</b> No — it wanes in weeks to months because YOU aren't making the antibody.</li>
+  <li><b>"Autoimmune disease means weak immune system."</b> It's <i>misdirected</i>, not weak.</li>
+  <li><b>"HIV kills you."</b> HIV destroys CD4 cells; <i>opportunistic infections</i> kill AIDS patients.</li>
+  <li><b>"All allergies are IgE."</b> Only Type I hypersensitivity is IgE-mediated.</li>
+</ul>
+</div>
+
+<h3>Assessment Bridge & Homework</h3>
+<ul>
+  <li>Practice Qs 9–18 from the Midterm Review Guide.</li>
+  <li>Match-the-disease worksheet: 10 diseases → correct hypersensitivity type.</li>
+  <li>Preview: Unit 3 builds directly on this — chronic inflammation and failed apoptosis are the root of cancer.</li>
+</ul>
+</section>
+
+<!-- ============================ UNIT 3 ============================ -->
+<section id="u3" class="unit3">
+<h2>Unit 3 &nbsp;•&nbsp; Oncology &nbsp;<span style="font-size:10pt;background:rgba(255,255,255,.2);padding:2px 8px;border-radius:3px">Ch 11, 12, 13</span></h2>
+
+<h3>Pre-Webinar Prep</h3>
+<ul>
+  <li>Read Ch 11 (neoplasia basics), 12 (specific cancers), 13 (childhood cancers) — ~2 hours</li>
+  <li>Short quiz: TNM staging basics (5 questions, auto-grade)</li>
+  <li>Each student brings one cancer that runs in their family or that they have cared for — used in final discussion.</li>
+</ul>
+
+<div class="box obj">
+<ol>
+  <li>Differentiate benign from malignant neoplasms across 7 features (differentiation, growth rate, invasion, metastasis, recurrence, mortality, nomenclature).</li>
+  <li>Explain carcinogenesis as a multi-step process (initiation → promotion → progression) and name one chemical, physical, and viral carcinogen for each step.</li>
+  <li>Describe TNM staging vs histologic grading and distinguish what each actually measures.</li>
+  <li>Identify paraneoplastic syndromes and why cancer can cause symptoms unrelated to tumor location.</li>
+  <li>Recognize the presentation and key risk factors of the "big five" cancers: lung, breast, colon, prostate, leukemia.</li>
+</ol>
+</div>
+
+<div class="box hook">
+<b>Case:</b> A 67-year-old man with a 45-pack-year smoking history presents with new-onset seizures. CT head shows a solitary brain mass. Biopsy of the brain lesion reveals <i>squamous cell carcinoma</i>. <b>Ask:</b> Did this cancer start in the brain? Why is the histology "squamous"? What does this tell us about prognosis and treatment? <i>(Metastatic lung cancer — primary tumor outside the CNS. Treats the lung, not the brain, as primary.)</i>
+</div>
+
+<h3>90-Minute Session Outline</h3>
+<table class="timetable">
+  <tr><th>Time</th><th>Segment</th><th>Key teaching points</th></tr>
+  <tr><td>0:00–0:05</td><td>Welcome + metastasis hook</td><td>Quick poll: "Is this brain cancer?" Students usually say yes. Revisit at close.</td></tr>
+  <tr><td>0:05–0:20</td><td>Benign vs malignant</td><td>7-feature comparison table. Nomenclature rules: -oma (benign) vs -carcinoma/-sarcoma (malignant). Exceptions: lymphoma, melanoma, hepatoma — all malignant despite "-oma."</td></tr>
+  <tr><td>0:20–0:30</td><td>Carcinogenesis</td><td>Initiation (DNA mutation, irreversible) → promotion (proliferation, reversible) → progression (genetic instability, metastasis). Proto-oncogenes vs tumor suppressors (2-hit hypothesis, Knudson/Rb).</td></tr>
+  <tr><td>0:30–0:35</td><td><b>POLL #1</b></td><td>"Which is always true of a <i>malignant</i> tumor?" Distractors: encapsulated, slow-growing, well-differentiated, can metastasize.</td></tr>
+  <tr><td>0:35–0:50</td><td>Staging vs grading</td><td>TNM: <b>T</b>umor size, <b>N</b>odes, <b>M</b>etastasis. Staging = how far. Grading = how ugly (differentiation). Staging usually predicts prognosis better. Walk through one real patient in TNM.</td></tr>
+  <tr><td>0:50–1:05</td><td>Routes of spread + paraneoplastic</td><td>Direct extension, lymphatic (most carcinomas), hematogenous (sarcomas, liver, lung, bone, brain), seeding. Paraneoplastic: SIADH (small-cell lung), ACTH (lung), hypercalcemia (squamous), Cushing.</td></tr>
+  <tr><td>1:05–1:10</td><td><b>POLL #2</b></td><td>"Patient with lung cancer has low Na and high urine osmolality." Most likely paraneoplastic syndrome?</td></tr>
+  <tr><td>1:10–1:25</td><td>Big five cancers</td><td>Lung (smoking, most common cause of cancer death), breast (BRCA, estrogen), colon (adenoma→carcinoma, screening saves lives), prostate (PSA, older men), leukemia (ALL kids, AML adults, CML Philadelphia chr, CLL older).</td></tr>
+  <tr><td>1:25–1:30</td><td>Close + case recall + preview</td><td>Return to metastatic lung. Preview Unit 4 — neurologic structure before we see MS, stroke, Alzheimer's next.</td></tr>
+</table>
+
+<div class="box poll">
+<b>Poll 1:</b> Which of the following describes a <b>benign</b> tumor? (poorly differentiated, invasive, encapsulated, frequently metastasizes)<br>
+<b>Poll 2:</b> A T2N1M0 breast cancer means…<br>
+<b>Discussion:</b> "Why do cancers preferentially metastasize to certain organs (Paget's 'seed and soil')?"<br>
+<b>Case turn:</b> Swap the lung cancer → colon cancer with liver mets. Route? Stage? How do the symptoms differ from the primary site?
+</div>
+
+<div class="box miss">
+<ul>
+  <li><b>"Benign means harmless."</b> A benign brain tumor in the posterior fossa can kill you. Location + compression matter.</li>
+  <li><b>"Staging = grading."</b> Two entirely different things. Staging = spread; grading = differentiation.</li>
+  <li><b>"All -omas are benign."</b> Lymphoma, melanoma, hepatoma are malignant.</li>
+  <li><b>"Metastatic means treat where it spread."</b> No — primary dictates treatment (breast cancer in the bone is still treated as breast cancer).</li>
+  <li><b>"Cancer grows fast."</b> Many cancers (prostate, some breast) grow slowly. Growth rate is not a reliable malignancy marker.</li>
+</ul>
+</div>
+
+<h3>Assessment Bridge & Homework</h3>
+<ul>
+  <li>Practice Qs 19–28 in the Midterm Review Guide.</li>
+  <li>Students submit one screening recommendation (USPSTF) for one of the big five, with rationale.</li>
+  <li>Preview: Unit 4 is pure structure — learn it cold so Unit 5 diseases make sense.</li>
+</ul>
+</section>
+
+<!-- ============================ UNIT 4 ============================ -->
+<section id="u4" class="unit4">
+<h2>Unit 4 &nbsp;•&nbsp; Structure & Function of the Nervous System &nbsp;<span style="font-size:10pt;background:rgba(255,255,255,.2);padding:2px 8px;border-radius:3px">Ch 14</span></h2>
+
+<h3>Pre-Webinar Prep</h3>
+<ul>
+  <li>Read Ch 14; map out the CNS vs PNS divisions before class</li>
+  <li>Label-the-brain exercise pre-posted: cerebrum, cerebellum, brainstem, diencephalon</li>
+  <li>Short anatomy video review (students often arrive rusty on A&P)</li>
+</ul>
+
+<div class="box obj">
+<ol>
+  <li>Name and locate the four lobes of the cerebrum and one cardinal function of each.</li>
+  <li>Trace the pathway of an action potential across a synapse, identifying the 5 key steps.</li>
+  <li>Differentiate sympathetic ("fight or flight") and parasympathetic ("rest and digest") effects across 6 organ systems.</li>
+  <li>Describe the three meningeal layers and relate them to the three types of intracranial hemorrhage.</li>
+  <li>Explain how the blood-brain barrier both protects and complicates drug delivery.</li>
+</ol>
+</div>
+
+<div class="box hook">
+<b>Case:</b> A 22-year-old is hit in the temple by a line drive at a softball game. She walks off the field, feels fine for an hour, then collapses with a fixed, dilated pupil on the right. <b>Ask:</b> What is bleeding? Which artery, which space, which pattern on CT? Why the lucid interval? <i>(Epidural hematoma — middle meningeal artery, arterial bleed under the skull but above dura, "lens-shaped" on CT.)</i>
+</div>
+
+<h3>90-Minute Session Outline</h3>
+<table class="timetable">
+  <tr><th>Time</th><th>Segment</th><th>Key teaching points</th></tr>
+  <tr><td>0:00–0:05</td><td>Welcome + epidural case</td><td>Poll predictions. Park the lucid interval — explain at minute 70.</td></tr>
+  <tr><td>0:05–0:20</td><td>CNS organization</td><td>Cerebrum (lobes & functions), cerebellum (coordination), brainstem (vital centers), diencephalon (thalamus, hypothalamus). Use a live model or image walk-through.</td></tr>
+  <tr><td>0:20–0:35</td><td>Neurons & synaptic transmission</td><td>Resting → threshold → action potential → Ca²⁺ influx at terminal → neurotransmitter release → receptor binding → reuptake/degradation. Each step is a drug target.</td></tr>
+  <tr><td>0:35–0:40</td><td><b>POLL #1</b></td><td>"SSRIs work by…" choices test whether students grasp the reuptake step.</td></tr>
+  <tr><td>0:40–0:55</td><td>Autonomic nervous system</td><td>Sympathetic (NE, α/β) vs parasympathetic (ACh, muscarinic). Table: heart, lung, GI, bladder, pupil, sweat. Emphasize <i>dual innervation</i>.</td></tr>
+  <tr><td>0:55–1:10</td><td>Meninges, CSF, BBB</td><td>Dura, arachnoid, pia. CSF made by choroid plexus, absorbed by arachnoid villi. BBB = tight junctions + astrocytes; lipid-soluble small molecules cross.</td></tr>
+  <tr><td>1:10–1:20</td><td>Hemorrhage patterns</td><td>Epidural (arterial, lucid interval, lens-shaped) vs subdural (venous, elderly/fall, crescent) vs subarachnoid (aneurysm rupture, "worst headache of my life"). Relate each to the space.</td></tr>
+  <tr><td>1:20–1:25</td><td><b>POLL #2</b></td><td>"71-year-old on warfarin after fall, gradually worsening confusion over 2 weeks." Which hemorrhage?</td></tr>
+  <tr><td>1:25–1:30</td><td>Close + case recall + preview</td><td>Revisit lucid interval. Preview: Unit 5 is pure pathology — stroke, MS, Alzheimer's, epilepsy all layered on this structure.</td></tr>
+</table>
+
+<div class="box poll">
+<b>Poll 1:</b> Which of the following is a <i>parasympathetic</i> effect? (pupil dilation, bronchodilation, ↑ GI motility, ↑ HR)<br>
+<b>Poll 2:</b> A patient needs a drug to act in the CNS. Which property predicts ability to cross the BBB? (large, water-soluble / small, lipid-soluble / protein-bound / ionized)<br>
+<b>Discussion:</b> "Why is the CSF sample more protective than blood for diagnosing meningitis?"<br>
+<b>Think-pair-share:</b> Sympathetic activation before a presentation — students describe their own heart, sweating, pupils, stomach sensations. Maps physiology to lived experience.
+</div>
+
+<div class="box miss">
+<ul>
+  <li><b>"Sympathetic is bad, parasympathetic is good."</b> Both are necessary and balanced. Loss of parasympathetic = tachycardia.</li>
+  <li><b>"The BBB blocks everything."</b> Lipid-soluble drugs (alcohol, most anesthetics) cross freely. That's why they work.</li>
+  <li><b>"Epidural and subdural are the same."</b> Arterial vs venous, lens vs crescent, young vs elderly. Very different clinical pictures.</li>
+  <li><b>"Neurons regenerate like skin cells."</b> CNS neurons do not regenerate. That's why stroke damage is permanent.</li>
+  <li><b>"CSF is made by the brain."</b> Specifically by the <i>choroid plexus</i> in the ventricles, not by neurons.</li>
+</ul>
+</div>
+
+<h3>Assessment Bridge & Homework</h3>
+<ul>
+  <li>Practice Qs 29–36 in the Midterm Review Guide.</li>
+  <li>Anatomy checkpoint quiz due before Unit 5 — 10 label-the-structure questions.</li>
+  <li>Preview: Unit 5 is where structure meets pathology. Come prepared to think in lesions.</li>
+</ul>
+</section>
+
+<!-- ============================ UNIT 5 ============================ -->
+<section id="u5" class="unit5">
+<h2>Unit 5 &nbsp;•&nbsp; Disorders of the Nervous System &nbsp;<span style="font-size:10pt;background:rgba(255,255,255,.2);padding:2px 8px;border-radius:3px">Ch 16, 17, 18</span></h2>
+
+<h3>Pre-Webinar Prep</h3>
+<ul>
+  <li>Read Ch 16 (CNS disorders), 17 (PNS disorders), 18 (pediatric neuro) — densest reading in the course</li>
+  <li>Watch short stroke-scale demonstration video (NIHSS basics)</li>
+  <li>Pre-fill a case comparison worksheet: ischemic stroke vs hemorrhagic stroke on 5 features</li>
+</ul>
+
+<div class="box obj">
+<ol>
+  <li>Differentiate ischemic vs hemorrhagic stroke in presentation, timing, imaging, and treatment window (tPA eligibility).</li>
+  <li>Compare Alzheimer's, Parkinson's, Huntington's, and ALS by onset, affected neurons, cardinal signs, and cognitive vs motor profile.</li>
+  <li>Describe the pathophysiology of multiple sclerosis and explain why symptoms come and go.</li>
+  <li>Classify seizures (focal vs generalized) and identify status epilepticus as an emergency.</li>
+  <li>Recognize bacterial vs viral meningitis on CSF analysis (protein, glucose, cell count, appearance).</li>
+  <li>Describe one pediatric neuro condition (cerebral palsy, neural tube defect, or hydrocephalus) with its cause and clinical picture.</li>
+</ol>
+</div>
+
+<div class="box hook">
+<b>Case:</b> A 68-year-old with atrial fibrillation on no anticoagulation wakes up at 7 AM with right arm weakness and slurred speech. Her husband calls 911 immediately; she arrives at the ED at 7:40 AM. Last known well: 11 PM the night before. <b>Ask:</b> Is she a candidate for tPA? Why or why not? What imaging do we need first? <i>(No — time window is measured from last known well, not symptom recognition. Must exclude hemorrhage with non-contrast CT first.)</i>
+</div>
+
+<h3>90-Minute Session Outline</h3>
+<table class="timetable">
+  <tr><th>Time</th><th>Segment</th><th>Key teaching points</th></tr>
+  <tr><td>0:00–0:05</td><td>Welcome + stroke case</td><td>Poll: tPA yes/no before detail. Revisit at close.</td></tr>
+  <tr><td>0:05–0:20</td><td>Stroke</td><td>Ischemic (~85%: thrombotic vs embolic) vs hemorrhagic (~15%). <b>FAST</b>: Face, Arm, Speech, Time. tPA window 3–4.5 h <i>from last known well</i>. Must rule out bleed first.</td></tr>
+  <tr><td>0:20–0:25</td><td><b>POLL #1</b></td><td>Which is a CONTRAINDICATION to tPA? (recent GI bleed, AFib, HTN 145/90, age 72)</td></tr>
+  <tr><td>0:25–0:45</td><td>Neurodegenerative 4-pack</td><td><b>Alzheimer's</b> (cortex, amnesia, β-amyloid + tau); <b>Parkinson's</b> (substantia nigra, TRAP — tremor, rigidity, akinesia, postural instability); <b>Huntington's</b> (caudate, chorea, autosomal dominant, CAG repeats); <b>ALS</b> (UMN + LMN, progressive weakness, normal cognition).</td></tr>
+  <tr><td>0:45–0:55</td><td>Multiple sclerosis + seizures</td><td>MS: autoimmune demyelination, relapsing-remitting most common; "dissemination in time and space." Seizures: focal (with/without awareness) vs generalized (tonic-clonic, absence). Status epilepticus = &gt;5 min or recurrent without recovery.</td></tr>
+  <tr><td>0:55–1:00</td><td><b>POLL #2</b></td><td>Young adult with recurrent episodes of blurry vision in one eye, resolving over weeks, now presenting with numbness in the opposite leg. Most likely diagnosis?</td></tr>
+  <tr><td>1:00–1:15</td><td>Infection & inflammation</td><td>Meningitis (nuchal rigidity, Kernig, Brudzinski). CSF: bacterial = ↑ WBC (neutrophils), ↑ protein, ↓ glucose, cloudy. Viral = ↑ WBC (lymphocytes), normal/↑ protein, normal glucose, clear. Encephalitis vs meningitis.</td></tr>
+  <tr><td>1:15–1:25</td><td>Pediatric neuro</td><td>CP (non-progressive motor from prenatal/perinatal injury), neural tube defects (folate prevention), hydrocephalus (communicating vs non-communicating).</td></tr>
+  <tr><td>1:25–1:30</td><td>Close + case recall + preview</td><td>Revisit stroke + tPA decision. Preview Unit 6 — endocrine, the final unit.</td></tr>
+</table>
+
+<div class="box poll">
+<b>Poll 1:</b> A patient's tremor is present at rest but improves with movement. Which disease? (Parkinson's, ALS, MS, Huntington's)<br>
+<b>Poll 2:</b> CSF shows ↓ glucose, ↑ protein, ↑ neutrophils. Diagnosis?<br>
+<b>Discussion:</b> "Why does MS come and go, but ALS relentlessly progress?" — gets at demyelination (potentially repairable) vs neuronal death (not).<br>
+<b>Case branch:</b> Switch the stroke patient to a hemorrhagic bleed — same symptoms, CT shows blood. How does treatment flip 180°?
+</div>
+
+<div class="box miss">
+<ul>
+  <li><b>"All strokes get tPA."</b> Only ischemic within the time window, with no contraindications, after hemorrhage is excluded.</li>
+  <li><b>"Parkinson's is a memory disease."</b> It's a movement disorder; dementia can occur late but isn't the cardinal feature.</li>
+  <li><b>"MS is the same as ALS."</b> MS = demyelination, cognitive OK, relapsing. ALS = motor neuron death, cognition preserved, relentless.</li>
+  <li><b>"All seizures are grand mal."</b> Absence, focal, and myoclonic seizures are very different in presentation and treatment.</li>
+  <li><b>"Meningitis always has fever and stiff neck."</b> The elderly and immunocompromised often lack classic signs.</li>
+</ul>
+</div>
+
+<h3>Assessment Bridge & Homework</h3>
+<ul>
+  <li>Practice Qs 37–48 in the Midterm Review Guide.</li>
+  <li>Neurodegenerative disease matrix: students complete a 4x5 table (disease × 5 features) and submit.</li>
+  <li>Preview: Unit 6 closes the course with endocrine disease — the hormones control everything else we've studied.</li>
+</ul>
+</section>
+
+<!-- ============================ UNIT 6 ============================ -->
+<section id="u6" class="unit6">
+<h2>Unit 6 &nbsp;•&nbsp; Endocrine System &nbsp;<span style="font-size:10pt;background:rgba(255,255,255,.2);padding:2px 8px;border-radius:3px">Ch 19, 20</span></h2>
+
+<h3>Pre-Webinar Prep</h3>
+<ul>
+  <li>Read Ch 19 (endocrine regulation), 20 (endocrine disorders) — ~90 min reading</li>
+  <li>Watch 5-min video on hypothalamic-pituitary-target axis (negative feedback)</li>
+  <li>Complete a "normal values" pre-quiz: TSH, glucose, HbA1c, cortisol, Na, K (acts as anchor for the session)</li>
+</ul>
+
+<div class="box obj">
+<ol>
+  <li>Explain the hypothalamic-pituitary-target gland axis using negative feedback.</li>
+  <li>Differentiate type 1 and type 2 diabetes across pathogenesis, typical patient, acute complication, and management.</li>
+  <li>Recognize DKA vs HHS by clinical and laboratory presentation.</li>
+  <li>Identify Cushing syndrome, Addison disease, Graves, Hashimoto, SIADH, and DI by their hallmark features.</li>
+  <li>Interpret paired TSH/T4 patterns to distinguish primary vs secondary thyroid disease.</li>
+  <li>Explain why stopping chronic corticosteroids abruptly can be fatal.</li>
+</ol>
+</div>
+
+<div class="box hook">
+<b>Case:</b> A 16-year-old presents with 3 weeks of polyuria, polydipsia, 12-pound weight loss despite "eating all the time." Today, she's breathing fast and deep, her breath smells like fruit, and she's confused. Glucose 580, pH 7.15, HCO₃ 10, ketones positive. <b>Ask:</b> Which type of diabetes? Which acute complication? Why Kussmaul breathing? What's the fluid and insulin plan? <i>(New-onset T1DM with DKA. Kussmaul = compensation for metabolic acidosis.)</i>
+</div>
+
+<h3>90-Minute Session Outline</h3>
+<table class="timetable">
+  <tr><th>Time</th><th>Segment</th><th>Key teaching points</th></tr>
+  <tr><td>0:00–0:05</td><td>Welcome + DKA hook</td><td>Poll: "Which type of diabetes?" Revisit at end.</td></tr>
+  <tr><td>0:05–0:20</td><td>Endocrine framework</td><td>Hypothalamus → pituitary (ant/post) → target gland → hormone → negative feedback. Draw the loop for cortisol (CRH→ACTH→cortisol→inhibits CRH/ACTH).</td></tr>
+  <tr><td>0:20–0:40</td><td>Diabetes mellitus</td><td>Type 1 (autoimmune β-cell destruction, absolute deficiency, young, ketosis-prone) vs Type 2 (insulin resistance, obesity-linked, adult, HHS). DKA vs HHS table: pH, ketones, glucose range, treatment. Chronic complications: micro (retinopathy, nephropathy, neuropathy) vs macro (CAD, stroke, PAD).</td></tr>
+  <tr><td>0:40–0:45</td><td><b>POLL #1</b></td><td>"T2DM patient with glucose 880, Na 128, normal pH, no ketones, obtunded." Which emergency?</td></tr>
+  <tr><td>0:45–1:00</td><td>Adrenal: Cushing & Addison</td><td>Cushing (↑ cortisol): moon face, buffalo hump, abdominal striae, truncal obesity, HTN, hyperglycemia, osteoporosis. Addison (↓ cortisol + aldo): hyperpigmentation, hypotension, hyperkalemia, hyponatremia, fatigue. <b>Critical teaching:</b> abrupt steroid discontinuation → adrenal crisis.</td></tr>
+  <tr><td>1:00–1:15</td><td>Thyroid</td><td>Graves (hyper, exophthalmos, weight loss, tachycardia, heat intolerance) vs Hashimoto (hypo, weight gain, cold intolerance, fatigue, bradycardia, goiter). Read TSH/T4 patterns: primary, secondary, subclinical. Thyroid storm = emergency.</td></tr>
+  <tr><td>1:15–1:20</td><td><b>POLL #2</b></td><td>"Labs show low TSH and high T4." Interpretation?</td></tr>
+  <tr><td>1:20–1:25</td><td>Posterior pituitary</td><td>SIADH (too much ADH) — dilutional hyponatremia, concentrated urine. DI (too little ADH) — hypernatremia, dilute urine, polyuria. Opposite labs.</td></tr>
+  <tr><td>1:25–1:30</td><td>Close + course wrap-up</td><td>Revisit DKA hook. Midterm preview: question format, topic distribution, study plan. Tie every endocrine disease back to feedback and target-organ effect.</td></tr>
+</table>
+
+<div class="box poll">
+<b>Poll 1:</b> A patient is hypertensive with hypokalemia and metabolic alkalosis. Most likely hormonal cause? (↑ aldosterone, ↑ cortisol, ↓ insulin, ↓ ADH)<br>
+<b>Poll 2:</b> Patient has weight gain, cold intolerance, bradycardia, and elevated TSH. Most likely diagnosis?<br>
+<b>Discussion:</b> "Why do we taper steroids instead of stopping cold?" — negative feedback suppressed adrenal axis needs weeks to recover.<br>
+<b>Case integration:</b> T2DM patient with new weight loss and polyuria — is this still T2, or a "burned out" T2 now insulin-deficient, or a new diagnosis?
+</div>
+
+<div class="box miss">
+<ul>
+  <li><b>"Low TSH = hypothyroid."</b> FALSE in primary hyperthyroidism: low TSH + high T4 = hyper (negative feedback suppressed TSH).</li>
+  <li><b>"Type 2 diabetics don't get DKA."</b> Rare but possible — most present with HHS instead.</li>
+  <li><b>"Cushing and Addison are the same spectrum."</b> Opposite: Cushing = too much cortisol; Addison = too little.</li>
+  <li><b>"SIADH and DI are both water problems."</b> Yes but opposite directions. SIADH retains water (low Na); DI loses water (high Na).</li>
+  <li><b>"Stop steroids when symptoms resolve."</b> Chronic steroids must be tapered — abrupt stop risks adrenal crisis (hypotension, shock, death).</li>
+</ul>
+</div>
+
+<h3>Assessment Bridge & Homework</h3>
+<ul>
+  <li>Practice Qs 49–60 in the Midterm Review Guide.</li>
+  <li>Complete the Midterm cumulative practice set (all units combined).</li>
+  <li>Students complete self-check feedback loop diagrams for thyroid, adrenal, and glucose axes.</li>
+</ul>
+</section>
+
+<!-- ============================ UNIVERSAL ============================ -->
+<section id="universal">
+<h2 style="background:#0f172a;">Universal Webinar Delivery Checklist</h2>
+
+<h3 style="border-left-color:#0f172a;color:#0f172a;">Before the session (faculty)</h3>
+<ul>
+  <li>LMS open, attendance ready, recording permissions confirmed</li>
+  <li>Polling tool (Mentimeter/Poll Everywhere/Zoom poll) pre-loaded with both polls for this unit</li>
+  <li>Case hook slide ready as the first slide shared — not the agenda</li>
+  <li>Review student pre-quiz responses (if used) to tailor emphasis areas</li>
+  <li>Confirm companion review guide section URL in chat ready to drop</li>
+</ul>
+
+<h3 style="border-left-color:#0f172a;color:#0f172a;">During the session</h3>
+<ul>
+  <li>Use the "rule of three" — interaction at least every 10–12 minutes</li>
+  <li>Call on 2–3 students by name per session; encourages presence without cold-calling anxiety</li>
+  <li>Answer questions in chat live when possible; park the rest for the final 10 minutes</li>
+  <li>Watch for the specific misconceptions flagged in each unit — they WILL appear</li>
+  <li>End 2–3 minutes early — questions bloom in the "unofficial" time</li>
+</ul>
+
+<h3 style="border-left-color:#0f172a;color:#0f172a;">After the session</h3>
+<ul>
+  <li>Post recording + poll results + cleaned chat transcript to LMS within 24 h</li>
+  <li>Send summary email linking the relevant section of the review guide and the 2 polls</li>
+  <li>Flag students with &lt;60% on polls for office-hours outreach</li>
+  <li>Update faculty notes on what landed / what fell flat for next offering</li>
+</ul>
+
+<h3 style="border-left-color:#0f172a;color:#0f172a;">Adapting to 60 min or 120 min</h3>
+<table>
+  <tr><th>Format</th><th>Trim / Add</th></tr>
+  <tr><td><b>60 min</b> (condensed)</td><td>Drop one poll, shorten hook to 2 min, skip pediatric/peripheral content, push deeper detail to asynchronous recording</td></tr>
+  <tr><td><b>90 min</b> (baseline)</td><td>Follow outline as written</td></tr>
+  <tr><td><b>120 min</b> (deep-dive)</td><td>Add: breakout rooms for small-group case application (15 min), faculty demo of one image/lab panel (10 min), student-generated question Jeopardy (5 min)</td></tr>
+</table>
+
+<p class="small" style="margin-top:16px;">SCI225 Pathophysiology Webinar Outline Guide — companion to the Midterm Review Study Guide. Prepared by Dr. Garg for faculty use. Structure is deliberately consistent unit-to-unit so students build predictable study habits and faculty can sub-teach any week. Questions, edits, and revisions welcome — this is a living document.</p>
+</section>
+
+</main>
+</div>
+</body>
+</html>

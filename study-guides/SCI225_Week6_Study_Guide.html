@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SCI225 Week 6 Study Guide — Endocrine Regulation, Anatomy & Disorders</title>
+<style>
+  :root {
+    --u1: #1e40af; --u1-bg: #eff6ff; --u1-brd: #93c5fd;
+    --u2: #7c3aed; --u2-bg: #faf5ff; --u2-brd: #c4b5fd;
+    --u3: #c2410c; --u3-bg: #fff7ed; --u3-brd: #fdba74;
+    --u4: #047857; --u4-bg: #ecfdf5; --u4-brd: #6ee7b7;
+    --u5: #b91c1c; --u5-bg: #fef2f2; --u5-brd: #fca5a5;
+    --mech: #1d4ed8; --mech-bg: #eff6ff;
+    --why:  #b45309; --why-bg:  #fffbeb;
+    --comp: #047857; --comp-bg: #f0fdf4;
+    --path: #be123c; --path-bg: #fff1f2;
+    --miss: #991b1b; --miss-bg: #fef2f2;
+    --acro: #6d28d9; --acro-bg: #f5f3ff;
+    --tip:  #0f766e; --tip-bg:  #ecfdf5;
+    --text: #111827; --muted: #4b5563; --line: #d1d5db;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    font-size: 10.5pt; line-height: 1.42; color: var(--text);
+    margin: 0; padding: 0; background: #f9fafb;
+  }
+  .layout { display: grid; grid-template-columns: 240px 1fr; max-width: 1140px; margin: 0 auto; }
+  nav.toc {
+    position: sticky; top: 0; align-self: start; max-height: 100vh; overflow-y: auto;
+    background: #fff; border-right: 1px solid var(--line); padding: 14px 12px; font-size: 9.4pt;
+  }
+  nav.toc h3 { font-size: 10pt; margin: 6px 0 8px; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; }
+  nav.toc a { display: block; padding: 3px 6px; color: var(--text); text-decoration: none; border-radius: 3px; margin-bottom: 1px; }
+  nav.toc a:hover { background: #f3f4f6; }
+  nav.toc .u1 { border-left: 3px solid var(--u1); }
+  nav.toc .u2 { border-left: 3px solid var(--u2); }
+  nav.toc .u3 { border-left: 3px solid var(--u3); }
+  nav.toc .u4 { border-left: 3px solid var(--u4); }
+  nav.toc .u5 { border-left: 3px solid var(--u5); }
+  main { padding: 20px 28px; background: #fff; }
+  h1 { font-size: 20pt; margin: 0 0 4px; }
+  h2 { font-size: 15pt; margin: 18px 0 6px; padding: 6px 10px; border-radius: 4px; color: #fff; }
+  h3 { font-size: 12pt; margin: 12px 0 4px; padding-bottom: 2px; border-bottom: 1px solid var(--line); }
+  h4 { font-size: 10.8pt; margin: 8px 0 3px; color: var(--muted); }
+  .unit1 h2 { background: var(--u1); } .unit2 h2 { background: var(--u2); }
+  .unit3 h2 { background: var(--u3); } .unit4 h2 { background: var(--u4); }
+  .unit5 h2 { background: var(--u5); }
+  .unit1 h3 { color: var(--u1); border-bottom-color: var(--u1-brd); }
+  .unit2 h3 { color: var(--u2); border-bottom-color: var(--u2-brd); }
+  .unit3 h3 { color: var(--u3); border-bottom-color: var(--u3-brd); }
+  .unit4 h3 { color: var(--u4); border-bottom-color: var(--u4-brd); }
+  .unit5 h3 { color: var(--u5); border-bottom-color: var(--u5-brd); }
+  p { margin: 4px 0; }
+  ul, ol { margin: 4px 0 6px 20px; padding: 0; }
+  li { margin: 1px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 9.8pt; margin: 6px 0 8px; }
+  th, td { border: 1px solid var(--line); padding: 4px 6px; text-align: left; vertical-align: top; }
+  th { background: #f3f4f6; font-weight: 600; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+  .box { border-left: 4px solid; padding: 6px 10px; margin: 6px 0; border-radius: 3px; font-size: 10pt; }
+  .mech { border-color: var(--mech); background: var(--mech-bg); }
+  .mech::before { content: "MECHANISM "; font-weight: 700; color: var(--mech); font-size: 8.5pt; letter-spacing: .5px; }
+  .why { border-color: var(--why); background: var(--why-bg); }
+  .why::before { content: "WHY "; font-weight: 700; color: var(--why); font-size: 8.5pt; letter-spacing: .5px; }
+  .comp { border-color: var(--comp); background: var(--comp-bg); }
+  .comp::before { content: "COMPENSATION "; font-weight: 700; color: var(--comp); font-size: 8.5pt; letter-spacing: .5px; }
+  .path { border-color: var(--path); background: var(--path-bg); }
+  .path::before { content: "PATHOLOGY "; font-weight: 700; color: var(--path); font-size: 8.5pt; letter-spacing: .5px; }
+  .miss { border-color: var(--miss); background: var(--miss-bg); }
+  .miss::before { content: "⚠ COMMON MISSTEP "; font-weight: 700; color: var(--miss); font-size: 8.5pt; letter-spacing: .5px; }
+  .acro { border-color: var(--acro); background: var(--acro-bg); }
+  .acro::before { content: "ACRONYM / MNEMONIC "; font-weight: 700; color: var(--acro); font-size: 8.5pt; letter-spacing: .5px; }
+  .tip { border-color: var(--tip); background: var(--tip-bg); }
+  .tip::before { content: "★ EXAM TIP "; font-weight: 700; color: var(--tip); font-size: 8.5pt; letter-spacing: .5px; }
+  .flow { background: #f9fafb; border: 1px solid var(--line); padding: 8px 10px; border-radius: 4px; font-size: 9.8pt; margin: 6px 0; font-family: "Consolas", monospace; }
+  .flow .arr { color: #6b7280; margin: 0 3px; }
+  .q { background: #fafafa; border: 1px solid var(--line); border-radius: 4px; padding: 8px 10px; margin: 6px 0; font-size: 10pt; }
+  .q .qhead { font-weight: 600; margin-bottom: 3px; }
+  .q .opts { margin: 3px 0 4px 0; }
+  .q .ans { background: #ecfdf5; border-left: 3px solid var(--comp); padding: 4px 8px; margin-top: 4px; font-size: 9.8pt; }
+  .q .ans b { color: var(--comp); }
+  details summary { cursor: pointer; color: var(--mech); font-size: 9.5pt; font-weight: 600; }
+  .hero { padding: 14px 18px; background: linear-gradient(135deg, #1e3a8a, #047857, #b91c1c); color: #fff; border-radius: 6px; margin-bottom: 14px; }
+  .hero h1 { color: #fff; }
+  .hero p { margin: 4px 0; font-size: 10pt; opacity: .95; }
+  .spine { background: rgba(255,255,255,.15); padding: 6px 10px; border-radius: 4px; margin-top: 6px; font-size: 9.8pt; }
+  .legend { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 10px; font-size: 9pt; }
+  .legend span { padding: 2px 8px; border-radius: 3px; border: 1px solid; }
+  .lg-mech { color: var(--mech); background: var(--mech-bg); border-color: var(--mech); }
+  .lg-why  { color: var(--why);  background: var(--why-bg);  border-color: var(--why); }
+  .lg-comp { color: var(--comp); background: var(--comp-bg); border-color: var(--comp); }
+  .lg-path { color: var(--path); background: var(--path-bg); border-color: var(--path); }
+  .lg-miss { color: var(--miss); background: var(--miss-bg); border-color: var(--miss); }
+  .lg-acro { color: var(--acro); background: var(--acro-bg); border-color: var(--acro); }
+  .lg-tip  { color: var(--tip);  background: var(--tip-bg);  border-color: var(--tip); }
+  .chip { font-size: 9pt; padding: 2px 8px; border-radius: 3px; color: #fff; font-weight: 600; }
+  .c1 { background: var(--u1); } .c2 { background: var(--u2); } .c3 { background: var(--u3); }
+  .c4 { background: var(--u4); } .c5 { background: var(--u5); }
+  .btns { margin: 10px 0; }
+  .btns button { background: #0f172a; color: #fff; border: 0; padding: 6px 12px; border-radius: 4px; font-size: 9.8pt; cursor: pointer; margin-right: 6px; }
+  .small { font-size: 9.3pt; color: var(--muted); }
+  @media print {
+    body { background: #fff; }
+    .layout { display: block; max-width: none; }
+    nav.toc, .btns { display: none; }
+    main { padding: 0.35in 0.4in; }
+    details { page-break-inside: avoid; }
+    details[open] summary { display: none; }
+    details:not([open]) > *:not(summary) { display: block; }
+    .hero, h2, .chip, .box, .q .ans, th { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+<div class="layout">
+<nav class="toc">
+  <h3>Week 6 Study Guide</h3>
+  <a href="#intro"><b>How to use this guide</b></a>
+  <a href="#u1" class="u1"><b>Unit 1.</b> Hormonal Regulation</a>
+  <a href="#u1-feedback" class="u1">&nbsp;&nbsp;Feedback loops</a>
+  <a href="#u1-axes" class="u1">&nbsp;&nbsp;Hypothalamic-pituitary axes</a>
+  <a href="#u1-q" class="u1">&nbsp;&nbsp;Practice Qs</a>
+  <a href="#u2" class="u2"><b>Unit 2.</b> Endocrine Anatomy</a>
+  <a href="#u2-glands" class="u2">&nbsp;&nbsp;The major glands</a>
+  <a href="#u2-q" class="u2">&nbsp;&nbsp;Practice Qs</a>
+  <a href="#u3" class="u3"><b>Unit 3.</b> Pituitary Disorders</a>
+  <a href="#u3-anterior" class="u3">&nbsp;&nbsp;Anterior pituitary</a>
+  <a href="#u3-posterior" class="u3">&nbsp;&nbsp;Posterior — SIADH & DI</a>
+  <a href="#u3-q" class="u3">&nbsp;&nbsp;Practice Qs</a>
+  <a href="#u4" class="u4"><b>Unit 4.</b> Thyroid Disorders</a>
+  <a href="#u4-graves" class="u4">&nbsp;&nbsp;Graves & hyperthyroidism</a>
+  <a href="#u4-hashi" class="u4">&nbsp;&nbsp;Hashimoto & hypothyroidism</a>
+  <a href="#u4-q" class="u4">&nbsp;&nbsp;Practice Qs</a>
+  <a href="#u5" class="u5"><b>Unit 5.</b> Adrenal Disorders</a>
+  <a href="#u5-cushing" class="u5">&nbsp;&nbsp;Cushing</a>
+  <a href="#u5-addison" class="u5">&nbsp;&nbsp;Addison</a>
+  <a href="#u5-q" class="u5">&nbsp;&nbsp;Practice Qs</a>
+  <a href="#appx"><b>Appendix:</b> Missteps & Mnemonics</a>
+</nav>
+
+<main>
+
+<div class="btns">
+  <button onclick="window.print()">Print / Save as PDF</button>
+  <button onclick="document.querySelectorAll('details').forEach(d=>d.open=true)">Expand All</button>
+  <button onclick="document.querySelectorAll('details').forEach(d=>d.open=false)">Collapse All</button>
+</div>
+
+<section id="intro">
+<div class="hero">
+  <h1>SCI225 Week 6 — Complete Study Guide</h1>
+  <p><b>Made by Dr. Vidya Aggrawal</b></p>
+  <p>Hormonal Regulation · Endocrine Anatomy · Pituitary, Thyroid & Adrenal Disorders</p>
+  <div class="spine"><b>Study Spine — for every endocrine topic ask:</b><br>
+  1. Which axis (HPA, HPT, HPG, GH)? &nbsp; 2. Hypo or hyper? &nbsp; 3. Primary, secondary, or tertiary? &nbsp; 4. What lab pattern proves it?</div>
+</div>
+
+<div class="legend">
+  <span class="lg-mech">MECHANISM</span>
+  <span class="lg-why">WHY</span>
+  <span class="lg-comp">COMPENSATION</span>
+  <span class="lg-path">PATHOLOGY</span>
+  <span class="lg-miss">MISSTEP</span>
+  <span class="lg-acro">ACRONYM</span>
+  <span class="lg-tip">EXAM TIP</span>
+</div>
+
+<h3>Course alignment</h3>
+<ul>
+  <li><b>LO1</b> — Recall the mechanisms of hormonal regulation and why they occur <span class="small">(Unit 1)</span></li>
+  <li><b>LO2</b> — Recall the anatomy of the endocrine system <span class="small">(Unit 2)</span></li>
+  <li><b>LO3</b> — Discuss alterations of hormonal regulation and resultant consequences <span class="small">(Units 3–5)</span></li>
+</ul>
+<p>Every practice question is original — designed to teach you to apply the concept, not to reproduce exam items.</p>
+</section>
+
+<!-- ========================= UNIT 1 ========================= -->
+<section id="u1" class="unit1">
+<h2>Unit 1 &nbsp;•&nbsp; Hormonal Regulation &nbsp;<span class="chip c1">LO1</span></h2>
+
+<h3 id="u1-feedback">1.1 Negative Feedback — The Universal Rule</h3>
+
+<div class="box mech">
+Hormones are kept within tight ranges by <b>negative feedback</b>. The pattern repeats across every axis: hypothalamus releases a "releasing hormone" → anterior pituitary releases a "stimulating hormone" → target gland makes the final hormone → the final hormone <b>shuts off</b> hypothalamus and pituitary. Lose the final hormone, and the upstream signals climb. Have too much, and they fall.
+</div>
+
+<div class="flow">
+Hypothalamus (releasing hormone) <span class="arr">→</span> Anterior pituitary (stimulating hormone) <span class="arr">→</span> Target gland (final hormone) <span class="arr">→</span> Target tissue effects <span class="arr">→</span> Final hormone inhibits hypothalamus & pituitary
+</div>
+
+<div class="box why">
+<b>Why negative feedback matters for the lab patterns.</b> If a final hormone is high <i>because of disease in the target gland itself</i>, the upstream signals (releasing/stimulating hormones) will be <b>low</b> because feedback is intact. If a final hormone is high <i>because the pituitary is making too much stimulating hormone</i>, the stimulating hormone is also high. This is how you tell <b>primary</b> (gland problem) from <b>secondary</b> (pituitary problem) disease.
+</div>
+
+<h3 id="u1-axes">1.2 The Major Hypothalamic-Pituitary Axes</h3>
+
+<table>
+  <tr><th>Axis</th><th>Hypothalamus</th><th>Pituitary</th><th>Target gland</th><th>Final hormone</th></tr>
+  <tr><td><b>Thyroid (HPT)</b></td><td>TRH</td><td>TSH</td><td>Thyroid</td><td>T3, T4</td></tr>
+  <tr><td><b>Adrenal (HPA)</b></td><td>CRH</td><td>ACTH</td><td>Adrenal cortex</td><td>Cortisol</td></tr>
+  <tr><td><b>Gonadal (HPG)</b></td><td>GnRH</td><td>FSH, LH</td><td>Ovary / testis</td><td>Estrogen, progesterone, testosterone</td></tr>
+  <tr><td><b>Growth (GH)</b></td><td>GHRH (+) / Somatostatin (−)</td><td>GH</td><td>Liver</td><td>IGF-1 (somatomedin)</td></tr>
+  <tr><td><b>Prolactin</b></td><td>Dopamine (mostly inhibitory)</td><td>Prolactin</td><td>Breast</td><td>Milk production</td></tr>
+</table>
+
+<div class="box acro">
+<b>FLAT PEG</b> — anterior pituitary hormones:<br>
+<b>F</b>SH · <b>L</b>H · <b>A</b>CTH · <b>T</b>SH · <b>P</b>rolactin · <b>E</b>ndorphins · <b>G</b>H<br>
+The posterior pituitary releases <b>ADH and oxytocin</b> — but doesn't make them. They're produced by the hypothalamus and stored in the posterior pituitary for release.
+</div>
+
+<h3>1.3 Thyroid Hormone Synthesis — High Yield</h3>
+
+<div class="flow">
+Thyroid follicular cell takes up iodide <span class="arr">→</span> oxidizes iodide to iodine <span class="arr">→</span> iodine attaches to tyrosine residues on thyroglobulin (organification) <span class="arr">→</span> coupling to form T3 and T4 <span class="arr">→</span> stored in colloid <span class="arr">→</span> released into blood when TSH stimulates
+</div>
+
+<div class="box mech">
+<b>Iodide uptake</b> is the <i>first</i> step in thyroid hormone synthesis — without iodine, the gland cannot make hormone. Long-term iodine deficiency causes hypothyroidism and a compensatory <b>goiter</b> (the gland grows under chronic TSH stimulation).
+</div>
+
+<div class="box why">
+<b>Why goiter forms.</b> If T4 is low (any reason — iodine deficiency, autoimmune destruction, etc.), the pituitary senses it and pumps out more TSH. TSH is a growth signal for the thyroid → the gland enlarges trying to make more hormone. The same mechanism produces goiter in <i>both</i> hypothyroidism (compensating) and hyperthyroidism (Graves auto-antibody activates the TSH receptor and drives growth).
+</div>
+
+<h3>1.4 Posterior Pituitary Hormones</h3>
+
+<table>
+  <tr><th>Hormone</th><th>Made in</th><th>Released by</th><th>Action</th></tr>
+  <tr><td><b>ADH (vasopressin)</b></td><td>Hypothalamus</td><td>Posterior pituitary</td><td>Acts on collecting duct → reabsorbs water → concentrated urine, normal serum osmolality</td></tr>
+  <tr><td><b>Oxytocin</b></td><td>Hypothalamus</td><td>Posterior pituitary</td><td>Uterine contraction at labor; milk ejection (let-down) reflex</td></tr>
+</table>
+
+<div class="box tip">
+<b>The posterior pituitary stores. The anterior pituitary makes.</b> When pituitary stalk damage shuts down hormone release, anterior pituitary hormones (TSH, ACTH, FSH/LH, GH, prolactin) all drop because they require hypothalamic releasing hormones. Posterior pituitary function depends on the still-functional hypothalamic neurons.
+</div>
+
+<h3 id="u1-q">Practice Questions — Hormonal Regulation</h3>
+
+<div class="q">
+<div class="qhead">Q1. Which step occurs first in normal thyroid hormone synthesis?</div>
+<div class="opts">
+A. Coupling of iodinated tyrosines into T3 and T4<br>
+B. Iodide uptake by thyroid follicular cells<br>
+C. Storage of T3/T4 in the colloid<br>
+D. Release of T4 into the blood
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Iodide must be taken up first; without iodine, no hormone can be made. Then oxidation, organification onto thyroglobulin, coupling, storage, release.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q2. Which structure releases the hormone that initiates the thyroid hormone regulatory pathway?</div>
+<div class="opts">
+A. Anterior pituitary<br>
+B. Hypothalamus (TRH)<br>
+C. Thyroid gland<br>
+D. Adrenal cortex
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Hypothalamus releases TRH → pituitary releases TSH → thyroid releases T3/T4. The cascade always starts with the hypothalamus.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q3. A 52-year-old has a traumatic brain injury that damages the pituitary stalk. Over the next few days, TSH, ACTH, and LH all become very low. Which mechanism best explains this?</div>
+<div class="opts">
+A. Direct destruction of the thyroid, adrenal, and gonads<br>
+B. Loss of hypothalamic releasing hormones reaching the anterior pituitary, causing decreased pituitary hormone release<br>
+C. Negative feedback from elevated peripheral hormones<br>
+D. Posterior pituitary failure
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Stalk damage interrupts the portal blood flow that delivers TRH, CRH, GnRH and other releasing factors from hypothalamus to anterior pituitary. The pituitary becomes "deaf" to upstream signals → broad anterior pituitary hormone deficiency (panhypopituitarism).</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q4. <b>Dropdown.</b> In normal feedback, when serum cortisol is high, [select: CRH and ACTH increase / CRH and ACTH decrease / cortisol release increases further], which represents [select: positive feedback / negative feedback / sympathetic compensation].</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>CRH and ACTH decrease · negative feedback.</b> Final hormones turn off the upstream signals to maintain a set point.</div>
+</details>
+</div>
+
+</section>
+
+<!-- ========================= UNIT 2 ========================= -->
+<section id="u2" class="unit2">
+<h2>Unit 2 &nbsp;•&nbsp; Endocrine Anatomy &nbsp;<span class="chip c2">LO2</span></h2>
+
+<h3 id="u2-glands">2.1 The Major Endocrine Glands and Where They Live</h3>
+
+<table>
+  <tr><th>Gland</th><th>Location</th><th>What it makes</th></tr>
+  <tr><td><b>Hypothalamus</b></td><td>Base of the brain, <b>directly above the pituitary</b></td><td>Releasing hormones (TRH, CRH, GnRH, GHRH, dopamine, somatostatin); makes ADH and oxytocin (stored in posterior pituitary)</td></tr>
+  <tr><td><b>Pituitary gland</b></td><td>Sella turcica at base of brain, just below the hypothalamus and just below the optic chiasm</td><td>Anterior: FSH, LH, ACTH, TSH, prolactin, endorphins, GH (FLAT PEG). Posterior: stores ADH and oxytocin.</td></tr>
+  <tr><td><b>Pineal gland</b></td><td>Roof of the third ventricle in the diencephalon</td><td>Melatonin (sleep-wake cycle)</td></tr>
+  <tr><td><b>Thyroid</b></td><td><b>Butterfly-shaped</b>, anterior to the trachea, just below the larynx</td><td>T3, T4 (metabolism); calcitonin (lowers serum Ca²⁺)</td></tr>
+  <tr><td><b>Parathyroid glands</b></td><td>Four small glands embedded on the <b>posterior surface of the thyroid</b></td><td>Parathyroid hormone (PTH) — raises serum Ca²⁺</td></tr>
+  <tr><td><b>Thymus</b></td><td>Upper anterior chest, behind the sternum (mediastinum)</td><td>Thymosin — supports T-cell maturation in childhood; involutes after puberty</td></tr>
+  <tr><td><b>Adrenal glands</b></td><td>Sit on top of each kidney</td><td><i>Cortex (outer)</i>: aldosterone, cortisol, androgens. <i>Medulla (inner)</i>: epinephrine, norepinephrine.</td></tr>
+  <tr><td><b>Pancreas</b></td><td>Behind the stomach in the upper abdomen; <b>islets of Langerhans</b> contain endocrine cells</td><td>Beta cells: insulin · Alpha cells: glucagon · Delta cells: somatostatin</td></tr>
+  <tr><td><b>Ovaries</b></td><td>Pelvis, female</td><td>Estrogen, progesterone</td></tr>
+  <tr><td><b>Testes</b></td><td>Scrotum, male</td><td>Testosterone</td></tr>
+</table>
+
+<div class="box acro">
+<b>"Adrenal cortex makes the 3 S's"</b> — <b>S</b>alt (aldosterone), <b>S</b>ugar (cortisol), <b>S</b>ex (androgens). Outer to inner cortical zones: zona glomerulosa → mineralocorticoids; zona fasciculata → glucocorticoids; zona reticularis → androgens. The inner medulla produces catecholamines.
+</div>
+
+<div class="box tip">
+<b>Pattern recognition for anatomy questions:</b>
+<ul>
+  <li>"Butterfly-shaped, anterior to trachea" = thyroid</li>
+  <li>"Small glands behind the thyroid that regulate calcium" = parathyroids</li>
+  <li>"Sits on top of each kidney" = adrenal</li>
+  <li>"Upper anterior chest, immune cell maturation" = thymus</li>
+  <li>"Cells responsible for insulin secretion" = islet beta cells in the pancreas</li>
+  <li>"Above the pituitary, releases regulatory hormones" = hypothalamus</li>
+  <li>"Small endocrine gland released by brain stalk that controls other glands" = pituitary</li>
+</ul>
+</div>
+
+<h3 id="u2-q">Practice Questions — Anatomy</h3>
+
+<div class="q">
+<div class="qhead">Q5. <b>Select all that apply.</b> Which statements correctly match endocrine glands with their locations?</div>
+<div class="opts">
+A. Pituitary gland sits in the sella turcica at the base of the brain<br>
+B. Thyroid is anterior to the trachea, just below the larynx<br>
+C. Parathyroid glands are inside the kidney<br>
+D. Adrenal glands sit on top of each kidney<br>
+E. Thymus is in the upper anterior chest<br>
+F. Pancreas lies behind the stomach
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>A, B, D, E, F.</b> C is wrong — parathyroids are on the <i>posterior surface of the thyroid</i>, not in the kidney.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q6. A tumor is found in endocrine cells responsible for insulin secretion. Which structure is involved?</div>
+<div class="opts">
+A. Adrenal medulla<br>
+B. Pituitary<br>
+C. Beta cells of the pancreatic islets of Langerhans<br>
+D. Thyroid follicular cells
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>C.</b> Insulin comes from beta cells in the pancreatic islets. An insulinoma causes recurrent hypoglycemia from inappropriately high insulin.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q7. <b>Select all that apply.</b> Which statements correctly describe the adrenal glands?</div>
+<div class="opts">
+A. Sit on top of each kidney<br>
+B. The cortex makes aldosterone, cortisol, and androgens<br>
+C. The medulla makes epinephrine and norepinephrine<br>
+D. The cortex makes insulin<br>
+E. Cortisol production is regulated by ACTH from the anterior pituitary
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>A, B, C, E.</b> D is wrong — insulin comes from pancreatic beta cells. The 3 S's of cortex: salt, sugar, sex.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q8. Imaging shows a mass located above the kidney in an endocrine gland that produces corticosteroid hormones. Which gland?</div>
+<div class="opts">
+A. Pituitary<br>
+B. Thymus<br>
+C. Adrenal<br>
+D. Thyroid
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>C.</b> "Above the kidney" + corticosteroids = adrenal. The cortex produces glucocorticoids, mineralocorticoids, and adrenal androgens.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q9. Small endocrine glands located behind the thyroid regulate calcium levels. Which glands?</div>
+<div class="opts">
+A. Adrenal medulla<br>
+B. Parathyroid glands<br>
+C. Pineal gland<br>
+D. Islets of Langerhans
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Four small parathyroid glands sit on the posterior thyroid and secrete PTH, which raises serum calcium.</div>
+</details>
+</div>
+
+</section>
+
+<!-- ========================= UNIT 3 ========================= -->
+<section id="u3" class="unit3">
+<h2>Unit 3 &nbsp;•&nbsp; Pituitary Disorders &nbsp;<span class="chip c3">LO3</span></h2>
+
+<h3 id="u3-anterior">3.1 Anterior Pituitary Disorders</h3>
+
+<table>
+  <tr><th>Disorder</th><th>Mechanism</th><th>Clinical picture</th></tr>
+  <tr><td><b>Acromegaly</b></td><td>Pituitary adenoma secreting <b>excess GH</b> in adults (after epiphyses close)</td><td>Slowly progressive enlargement of <b>hands, feet, jaw, facial bones</b>; coarse features; large tongue; HTN; insulin resistance; diabetes; sleep apnea</td></tr>
+  <tr><td><b>Gigantism</b></td><td>Excess GH in <b>children</b> (before epiphyses close)</td><td>Excessive linear growth, very tall stature</td></tr>
+  <tr><td><b>Prolactinoma</b></td><td>Pituitary adenoma producing prolactin</td><td>Galactorrhea, amenorrhea, infertility, decreased libido; in men: erectile dysfunction</td></tr>
+  <tr><td><b>Hypopituitarism</b></td><td>Surgery, trauma, tumor, Sheehan syndrome (postpartum pituitary necrosis), radiation</td><td>Multiple hormone deficiencies: low TSH, ACTH, LH/FSH, GH; cold intolerance, fatigue, low BP, infertility, hypoglycemia</td></tr>
+  <tr><td><b>Pituitary mass effect</b></td><td>Macroadenoma compresses adjacent structures</td><td>Compression of <b>optic chiasm</b> → <b>bitemporal hemianopsia</b> (loss of peripheral visual fields); headaches</td></tr>
+</table>
+
+<div class="box path">
+<b>Acromegaly classic vignette:</b> "Slowly progressive enlargement of the hands and facial bones; pituitary tumor releasing growth hormone." GH stimulates the liver to release IGF-1, which drives the growth of soft tissue, organs, and remaining cartilage. Diagnosis: elevated IGF-1, oral glucose suppression test (GH should suppress; in acromegaly it does not). Treatment: transsphenoidal resection.
+</div>
+
+<div class="box tip">
+<b>Bitemporal hemianopsia</b> = the visual field defect caused by a pituitary macroadenoma pressing upward on the optic chiasm. The crossing fibers from the nasal halves of each retina (which carry temporal vision) are compressed → loss of peripheral vision in both eyes.
+</div>
+
+<div class="box why">
+<b>Hypopituitarism's broad effects.</b> When the anterior pituitary fails, every downstream gland it controls quiets down. Patients lose stress response (low cortisol from low ACTH), get cold and slow (low T4 from low TSH), lose fertility (low LH/FSH), lose growth signaling (low GH), and may not lactate (low prolactin). The thyroid and adrenal effects are usually most clinically threatening.
+</div>
+
+<h3 id="u3-posterior">3.2 Posterior Pituitary — SIADH vs Diabetes Insipidus</h3>
+
+<table>
+  <tr><th></th><th>SIADH (too much ADH)</th><th>Diabetes Insipidus (too little ADH)</th></tr>
+  <tr><td><b>Mechanism</b></td><td>Excess ADH → kidneys reabsorb too much water</td><td>Inadequate ADH → kidneys can't concentrate urine</td></tr>
+  <tr><td><b>Causes</b></td><td>Small-cell lung cancer (paraneoplastic), CNS disease, drugs (SSRIs, carbamazepine), pulmonary disease</td><td>Central: pituitary surgery, trauma, tumor. Nephrogenic: lithium, hypercalcemia, kidney disease.</td></tr>
+  <tr><td><b>Serum sodium</b></td><td><b>LOW</b> (dilutional hyponatremia)</td><td><b>HIGH</b> (free water loss)</td></tr>
+  <tr><td><b>Serum osmolality</b></td><td>LOW</td><td>HIGH</td></tr>
+  <tr><td><b>Urine</b></td><td><b>Concentrated</b> (high osmolality), low volume</td><td><b>Dilute</b> (low osmolality), large volume (polyuria)</td></tr>
+  <tr><td><b>Symptoms</b></td><td>Confusion, weakness, seizures (from hyponatremia and brain swelling)</td><td>Severe thirst, polyuria, dehydration if no access to water</td></tr>
+  <tr><td><b>Treatment</b></td><td>Fluid restriction, treat cause; vaptans for severe cases</td><td>Central: desmopressin (synthetic ADH). Nephrogenic: treat cause.</td></tr>
+</table>
+
+<div class="box acro">
+<b>"S = Soaked, D = Dry"</b> — and remember they have <b>opposite labs</b>:<br>
+<b>S</b>IADH = Soaked, low Na, concentrated urine.<br>
+<b>D</b>I = Dry, high Na, dilute urine.
+</div>
+
+<div class="box miss">
+<b>Don't reverse the urine pattern.</b> SIADH retains water → urine has nowhere to dump it → urine is concentrated. DI loses water → urine is dilute. Beginners often pick the opposite because "high Na means concentrated" feels intuitive but is wrong here — what matters is what the kidney is doing with water, not the serum number.
+</div>
+
+<h3 id="u3-q">Practice Questions — Pituitary Disorders</h3>
+
+<div class="q">
+<div class="qhead">Q10. A patient has slowly developed enlarged hands and facial bones over years. Imaging shows a pituitary tumor releasing growth hormone. Which diagnosis?</div>
+<div class="opts">
+A. Gigantism<br>
+B. Acromegaly<br>
+C. Cushing disease<br>
+D. Prolactinoma
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Excess GH in adulthood (post-epiphyseal closure) → bone widening rather than lengthening = acromegaly. Gigantism would be the same hormone but in a child.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q11. A patient with lung cancer develops confusion. Labs: Na 118, low serum osmolality, concentrated urine. Most likely diagnosis?</div>
+<div class="opts">
+A. Diabetes insipidus<br>
+B. SIADH (paraneoplastic from small-cell lung cancer)<br>
+C. Hypothyroidism<br>
+D. Adrenal insufficiency
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Small-cell lung cancer is the textbook paraneoplastic SIADH cause. Excess ADH retains water → dilutional hyponatremia → confusion. Treat with fluid restriction.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q12. After pituitary surgery, a patient develops thirst, polyuria, hypernatremia, and dilute urine. Best diagnosis?</div>
+<div class="opts">
+A. SIADH<br>
+B. Central diabetes insipidus<br>
+C. Adrenal insufficiency<br>
+D. Hypothyroidism
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Pituitary surgery → loss of ADH release → kidneys can't reabsorb water → polyuria, dilute urine, hypernatremia. Treat with desmopressin.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q13. A patient previously had pituitary tumor surgery. Labs now show low T4 and low TSH. Which best explains the picture?</div>
+<div class="opts">
+A. Primary hypothyroidism (Hashimoto's)<br>
+B. Secondary (central) hypothyroidism from pituitary failure<br>
+C. Subclinical hyperthyroidism<br>
+D. Iodine deficiency
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Both T4 and TSH are low → the gland is making less hormone because the pituitary is no longer signaling it. In primary hypothyroidism, T4 is low but TSH is HIGH (intact feedback).</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q14. A patient has a pituitary macroadenoma growing upward toward the optic chiasm. The expected visual deficit is:</div>
+<div class="opts">
+A. Monocular blindness<br>
+B. Bitemporal hemianopsia (loss of peripheral fields in both eyes)<br>
+C. Central scotoma<br>
+D. Homonymous hemianopsia
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> The chiasm crossing fibers carry temporal visual fields; compressing them loses peripheral vision bilaterally — classic pituitary macroadenoma sign.</div>
+</details>
+</div>
+
+</section>
+
+<!-- ========================= UNIT 4 ========================= -->
+<section id="u4" class="unit4">
+<h2>Unit 4 &nbsp;•&nbsp; Thyroid Disorders &nbsp;<span class="chip c4">LO3</span></h2>
+
+<h3 id="u4-graves">4.1 Hyperthyroidism — Graves Disease</h3>
+
+<div class="box mech">
+<b>Graves disease</b> is the most common cause of hyperthyroidism. It's a <b>type II hypersensitivity</b>: IgG autoantibodies bind the TSH receptor on thyroid cells and <b>activate</b> it (mimicking TSH). The gland makes too much T3/T4 regardless of feedback. Result: high T4, suppressed TSH (because feedback is intact and pituitary senses too much T4).
+</div>
+
+<p><b>Classic Graves features:</b></p>
+<ul>
+  <li>Weight loss despite increased appetite</li>
+  <li>Heat intolerance, sweating</li>
+  <li>Tremor, anxiety, irritability</li>
+  <li>Tachycardia, palpitations, atrial fibrillation</li>
+  <li><b>Diffuse goiter</b> (auto-antibodies stimulate growth of the whole gland)</li>
+  <li><b>Exophthalmos / proptosis</b> (bulging eyes — orbital infiltration unique to Graves)</li>
+  <li>Pretibial myxedema (some patients)</li>
+  <li>Lab: ↑ T3/T4, ↓ TSH, positive anti-TSH receptor antibodies</li>
+</ul>
+
+<div class="box path">
+<b>Thyroid storm</b> = life-threatening hyperthyroidism. Fever, tachycardia (often AF), agitation, delirium, possible cardiac collapse. Triggered by surgery, infection, or stopping antithyroid drugs. Treatment: beta blockers, methimazole/PTU, iodide, supportive care.
+</div>
+
+<h4>Physiologic effects of excess thyroid hormone</h4>
+<ul>
+  <li>↑ basal metabolic rate, ↑ heat production, heat intolerance</li>
+  <li>↑ heart rate, ↑ contractility, palpitations, AF risk</li>
+  <li>↑ GI motility (diarrhea, weight loss)</li>
+  <li>↑ CNS excitability (anxiety, tremor, insomnia)</li>
+  <li>↑ bone turnover (osteoporosis with chronic hyperthyroidism)</li>
+</ul>
+
+<h3 id="u4-hashi">4.2 Hypothyroidism — Hashimoto Thyroiditis</h3>
+
+<div class="box mech">
+<b>Hashimoto thyroiditis</b> is the most common cause of hypothyroidism in iodine-replete countries. It's a <b>type IV hypersensitivity</b>: T cells gradually destroy thyroid follicles. Antibodies (anti-TPO, anti-thyroglobulin) are markers but not the main destructive force. Result: low T4, high TSH (pituitary trying to drive a failing gland).
+</div>
+
+<p><b>Classic hypothyroidism features:</b></p>
+<ul>
+  <li>Weight gain, fatigue, cold intolerance</li>
+  <li>Bradycardia, hypotension</li>
+  <li>Constipation</li>
+  <li>Dry skin, brittle hair/nails, hair loss</li>
+  <li>Slowed mentation, depression, lethargy</li>
+  <li>Goiter (compensatory growth from chronic TSH stimulation)</li>
+  <li>Menstrual irregularity, infertility</li>
+  <li>Lab: ↑ TSH, ↓ T4, positive anti-TPO antibodies</li>
+</ul>
+
+<div class="box path">
+<b>Myxedema coma</b> = severe untreated hypothyroidism with profound bradycardia, hypotension, hypothermia, and altered mental status. Mortality is high without prompt IV levothyroxine.
+</div>
+
+<div class="box why">
+<b>Why TSH is the best screening test for thyroid disease.</b> Even small changes in T4 produce large changes in TSH (the hypothalamic-pituitary axis is very sensitive to feedback). TSH high → primary hypothyroidism. TSH low + high T4 → primary hyperthyroidism. TSH low + low T4 → secondary (pituitary) hypothyroidism.
+</div>
+
+<div class="box acro">
+<b>The TSH-T4 reading rule:</b><br>
+TSH ↓ + T4 ↑ → primary HYPER (Graves)<br>
+TSH ↑ + T4 ↓ → primary HYPO (Hashimoto)<br>
+TSH ↓ + T4 ↓ → secondary HYPO (pituitary failure)<br>
+TSH ↑ + T4 ↑ → very rare TSH-secreting pituitary tumor
+</div>
+
+<h3 id="u4-q">Practice Questions — Thyroid</h3>
+
+<div class="q">
+<div class="qhead">Q15. A patient has tremor, weight loss, and bulging eyes. Labs: high T3/T4, low TSH. Which best explains the findings?</div>
+<div class="opts">
+A. Hashimoto thyroiditis<br>
+B. Iodine deficiency<br>
+C. Graves disease — IgG antibodies stimulate the TSH receptor<br>
+D. Secondary hypothyroidism
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>C.</b> High T4, low TSH (intact feedback), exophthalmos, and goiter = Graves. The anti-TSH receptor antibodies activate the receptor independently of TSH.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q16. A patient has weight loss, heat intolerance, palpitations, and a diffuse goiter. The findings support an autoimmune thyroid disorder. Which mechanism best explains the disorder?</div>
+<div class="opts">
+A. Antibody activation of TSH receptors → unregulated T3/T4 production<br>
+B. T-cell destruction of thyroid follicles<br>
+C. Pituitary failure<br>
+D. Iodine excess
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>A.</b> Graves disease — autoantibodies stimulate the TSH receptor. B describes Hashimoto (hypo). The clinical picture (heat intolerance, weight loss, diffuse goiter) fits Graves.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q17. <b>Select all that apply.</b> Which physiologic responses occur when thyroid hormone levels DECREASE?</div>
+<div class="opts">
+A. Decreased basal metabolic rate<br>
+B. Cold intolerance<br>
+C. Bradycardia<br>
+D. Increased GI motility (diarrhea)<br>
+E. Constipation<br>
+F. Weight gain
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>A, B, C, E, F.</b> D (diarrhea) goes with HYPER. Hypothyroidism slows everything: metabolism, heart rate, GI motility, mentation.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q18. <b>Select all that apply.</b> Which physiologic consequences occur with EXCESS thyroid hormone?</div>
+<div class="opts">
+A. Tachycardia and atrial fibrillation<br>
+B. Heat intolerance and sweating<br>
+C. Increased basal metabolic rate<br>
+D. Weight gain<br>
+E. Tremor and anxiety<br>
+F. Increased GI motility / diarrhea
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>A, B, C, E, F.</b> D (weight gain) is hypo. Hyper speeds everything up — metabolism, heart, gut, brain.</div>
+</details>
+</div>
+
+</section>
+
+<!-- ========================= UNIT 5 ========================= -->
+<section id="u5" class="unit5">
+<h2>Unit 5 &nbsp;•&nbsp; Adrenal Disorders &nbsp;<span class="chip c5">LO3</span></h2>
+
+<h3 id="u5-cushing">5.1 Cushing Syndrome (Excess Cortisol)</h3>
+
+<div class="box mech">
+Excess cortisol exposure — from any source. Cortisol's normal jobs (stress response, gluconeogenesis, immune suppression, blood pressure support) become pathologic when amplified.<br>
+<b>Causes:</b> exogenous corticosteroid therapy (most common), pituitary adenoma making ACTH (Cushing <i>disease</i>, specifically), adrenal adenoma, ectopic ACTH (small-cell lung cancer).
+</div>
+
+<p><b>Classic Cushing features:</b></p>
+<ul>
+  <li><b>Central (truncal) obesity</b>, thin extremities</li>
+  <li><b>Moon face, buffalo hump</b>, supraclavicular fat pads</li>
+  <li><b>Purple striae</b> on abdomen, breasts, thighs</li>
+  <li>Skin thinning, easy bruising, poor wound healing</li>
+  <li>Hyperglycemia, secondary diabetes</li>
+  <li>Hypertension</li>
+  <li>Osteoporosis, proximal muscle weakness</li>
+  <li>Mood changes, depression, psychosis</li>
+  <li>Infection susceptibility</li>
+  <li>Lab: elevated cortisol that does not suppress on dexamethasone test</li>
+</ul>
+
+<div class="box path">
+<b>"Cortisol stays high despite normal feedback signals."</b> When the source of excess cortisol is autonomous (adrenal tumor or exogenous steroids), cortisol does not respond to the normal negative feedback — ACTH cannot turn it off. This is the lab finding that distinguishes Cushing from a normal stress response.
+</div>
+
+<h3 id="u5-addison">5.2 Addison Disease (Primary Adrenal Insufficiency)</h3>
+
+<div class="box mech">
+<b>Loss of adrenal cortex function</b> — most often autoimmune destruction in developed countries; TB worldwide. Loss of all three cortical zones means low cortisol AND low aldosterone AND low androgens. Pituitary responds to low cortisol with high ACTH.
+</div>
+
+<p><b>Classic Addison features:</b></p>
+<ul>
+  <li><b>Fatigue, weight loss, weakness</b></li>
+  <li><b>Hypotension, especially orthostatic</b> — from aldosterone loss + cortisol loss</li>
+  <li><b>Hyperpigmentation</b> of skin, gums, palmar creases — high ACTH stimulates melanocytes (POMC precursor includes MSH)</li>
+  <li><b>Hyperkalemia, hyponatremia</b> from aldosterone deficiency</li>
+  <li>Hypoglycemia (cortisol normally raises glucose)</li>
+  <li>Salt craving</li>
+  <li>Anorexia, nausea, vomiting</li>
+  <li>Lab: low cortisol, high ACTH, hyperkalemia, hyponatremia</li>
+</ul>
+
+<div class="box path">
+<b>Addisonian crisis</b> = acute adrenal insufficiency. Triggers include surgery, infection, trauma, or sudden steroid withdrawal in a chronically treated patient. Profound hypotension, hyponatremia, hyperkalemia, hypoglycemia. Give IV hydrocortisone immediately.
+</div>
+
+<div class="box miss">
+<b>"You can stop chronic steroids whenever you want."</b> No — chronic exogenous steroids suppress the HPA axis. The adrenal cortex atrophies. Abrupt withdrawal can trigger Addisonian crisis. Always taper.
+</div>
+
+<div class="box acro">
+<b>Cushing vs Addison — opposite directions:</b><br>
+<b>Cushing</b> = too much cortisol → high BP, high glucose, weight gain, moon face, striae, low K, immunosuppression.<br>
+<b>Addison</b> = too little cortisol + aldosterone → low BP, low glucose, weight loss, hyperpigmentation, high K, low Na.
+</div>
+
+<h3 id="u5-q">Practice Questions — Adrenal</h3>
+
+<div class="q">
+<div class="qhead">Q19. Lab testing shows elevated cortisol that remains high despite normal negative feedback. Imaging reveals a tumor in the adrenal gland. Which diagnosis?</div>
+<div class="opts">
+A. Addison disease<br>
+B. Cushing syndrome from autonomous adrenal tumor<br>
+C. Hypothyroidism<br>
+D. SIADH
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Adrenal tumor making cortisol independently of feedback = Cushing syndrome. ACTH would be suppressed in this case (negative feedback works on a tumor that doesn't listen to it but the pituitary still responds to high cortisol by lowering ACTH).</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q20. A patient with adrenal insufficiency develops fatigue, weight loss, and hypotension. <b>Dropdown:</b> These symptoms occur because decreased secretion of [select: cortisol / TSH / aldosterone alone] results in a reduced stress response and impaired [select: blood pressure / sodium / oxygen] regulation.</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>Cortisol · blood pressure.</b> Cortisol supports vascular tone and the stress response. Aldosterone loss compounds the BP problem by depleting sodium and volume.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q21. Which change is expected in Addison disease?</div>
+<div class="opts">
+A. Hyperkalemia and hyponatremia from aldosterone deficiency<br>
+B. Hypokalemia and hypernatremia<br>
+C. Hyperglycemia<br>
+D. Suppressed ACTH
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>A.</b> Loss of aldosterone → kidney can't retain Na or excrete K → low Na, high K. ACTH is HIGH (pituitary trying to drive failing adrenal). Cortisol loss causes hypoglycemia, not hyperglycemia.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q22. <b>Select all that apply.</b> Which physiologic changes are associated with common endocrine disorders?</div>
+<div class="opts">
+A. SIADH causes hyponatremia<br>
+B. Diabetes insipidus causes hypernatremia<br>
+C. Cushing causes truncal obesity, striae, and hyperglycemia<br>
+D. Addison causes hyperpigmentation, hyperkalemia, and hypotension<br>
+E. Graves disease causes weight gain and bradycardia
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>A, B, C, D.</b> E is wrong — Graves causes weight LOSS and tachycardia (hyperthyroid). Hashimoto would cause weight gain and bradycardia.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q23. A patient has long-term elevation of corticosteroid levels that disrupts normal hormone regulation. Which finding is most expected?</div>
+<div class="opts">
+A. Hyperpigmentation and hypotension<br>
+B. Truncal obesity, moon face, striae, hyperglycemia, and hypertension<br>
+C. Hyponatremia and confusion<br>
+D. Diffuse goiter and exophthalmos
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Cushing syndrome from chronic glucocorticoid excess. A is Addison; C is SIADH; D is Graves.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q24. A pediatric patient has been on chronic prednisone for nephrotic syndrome and abruptly stops the medication after a respiratory infection. The patient develops profound hypotension, hyperkalemia, hyponatremia, and altered mental status. Best explanation?</div>
+<div class="opts">
+A. Acute SIADH from infection<br>
+B. Addisonian crisis from acute adrenal insufficiency after sudden steroid withdrawal<br>
+C. Graves crisis<br>
+D. Diabetes insipidus
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Chronic exogenous steroids suppress the HPA axis. Abrupt withdrawal in a stressed patient with an atrophied adrenal cortex = adrenal crisis. Give IV hydrocortisone immediately.</div>
+</details>
+</div>
+
+</section>
+
+<!-- ========================= APPENDIX ========================= -->
+<section id="appx">
+<h2 style="background:#374151;">Appendix &nbsp;•&nbsp; Top Missteps & Master Mnemonics</h2>
+
+<h3 style="color:#374151;border-bottom-color:#9ca3af;">Top 15 Week 6 Missteps</h3>
+<table>
+<tr><th>#</th><th>The trap</th><th>What's actually true</th></tr>
+<tr><td>1</td><td>"Low TSH = hypothyroid."</td><td>Low TSH + HIGH T4 = primary HYPERthyroid (negative feedback suppressing TSH).</td></tr>
+<tr><td>2</td><td>"SIADH = dilute urine."</td><td>SIADH = <b>concentrated</b> urine (kidney holding water). DI = dilute urine.</td></tr>
+<tr><td>3</td><td>"Posterior pituitary makes ADH and oxytocin."</td><td>It <b>stores</b> them; the hypothalamus makes them.</td></tr>
+<tr><td>4</td><td>"Acromegaly causes excessive linear growth."</td><td>Excess GH AFTER epiphyseal closure → bone widening (hands, feet, jaw). Gigantism = before closure.</td></tr>
+<tr><td>5</td><td>"Pituitary stalk damage drops only one hormone."</td><td>It typically drops MOST anterior pituitary hormones (TSH, ACTH, LH/FSH, GH).</td></tr>
+<tr><td>6</td><td>"Graves is destruction of the thyroid."</td><td>Graves is <b>activation</b> by TSH receptor antibodies. Hashimoto is destruction.</td></tr>
+<tr><td>7</td><td>"Cushing causes weight loss."</td><td>Cushing = central <b>weight gain</b>, moon face, buffalo hump.</td></tr>
+<tr><td>8</td><td>"Addison causes hypokalemia."</td><td>Addison = <b>hyper</b>kalemia, hyponatremia (aldosterone loss).</td></tr>
+<tr><td>9</td><td>"Steroids can be stopped abruptly when you feel better."</td><td>Chronic steroids must be tapered to avoid Addisonian crisis.</td></tr>
+<tr><td>10</td><td>"Goiter only happens in hyperthyroidism."</td><td>Goiter happens in <b>both</b> hyper- and hypothyroidism — chronic TSH stimulation in either.</td></tr>
+<tr><td>11</td><td>"Bitemporal hemianopsia is a stroke."</td><td>Classic for pituitary macroadenoma compressing the optic chiasm.</td></tr>
+<tr><td>12</td><td>"Insulin comes from the adrenal."</td><td>Insulin = pancreatic beta cells in islets of Langerhans.</td></tr>
+<tr><td>13</td><td>"DI and SIADH are both water gain."</td><td>DI = water loss (high Na). SIADH = water gain (low Na). Opposite directions.</td></tr>
+<tr><td>14</td><td>"Parathyroid is one big gland."</td><td>Four small glands on the posterior surface of the thyroid.</td></tr>
+<tr><td>15</td><td>"Hyperpigmentation in adrenal disease means Cushing."</td><td>Hyperpigmentation = <b>Addison</b> (high ACTH stimulates melanocytes via MSH).</td></tr>
+</table>
+
+<h3 style="color:#374151;border-bottom-color:#9ca3af;">Master Mnemonic Sheet</h3>
+<table>
+<tr><th>Mnemonic</th><th>Meaning</th></tr>
+<tr><td><b>FLAT PEG</b></td><td>Anterior pituitary: FSH, LH, ACTH, TSH, Prolactin, Endorphins, GH</td></tr>
+<tr><td><b>"Posterior stores, anterior makes"</b></td><td>Posterior pituitary stores ADH and oxytocin produced in the hypothalamus</td></tr>
+<tr><td><b>3 S's of adrenal cortex</b></td><td>Salt (aldosterone), Sugar (cortisol), Sex (androgens) — outer to inner</td></tr>
+<tr><td><b>"S = Soaked, D = Dry"</b></td><td>SIADH retains water (low Na, concentrated urine); DI loses water (high Na, dilute urine)</td></tr>
+<tr><td><b>TSH ↓ + T4 ↑ = primary hyper</b></td><td>Graves: feedback works, both move</td></tr>
+<tr><td><b>TSH ↑ + T4 ↓ = primary hypo</b></td><td>Hashimoto: pituitary tries to drive failing thyroid</td></tr>
+<tr><td><b>TSH ↓ + T4 ↓ = central / pituitary hypo</b></td><td>Pituitary not stimulating</td></tr>
+<tr><td><b>"Cushing = too much, Addison = too little"</b></td><td>Cortisol direction</td></tr>
+<tr><td><b>Hyperpigmentation = Addison</b></td><td>High ACTH → MSH activity → melanocyte stimulation</td></tr>
+<tr><td><b>Bitemporal hemianopsia = pituitary tumor</b></td><td>Compression of crossing fibers at optic chiasm</td></tr>
+<tr><td><b>"Iodide first" in thyroid synthesis</b></td><td>Uptake → oxidation → organification → coupling → storage → release</td></tr>
+<tr><td><b>Goiter = TSH stimulation, either direction</b></td><td>Chronic high TSH grows the gland</td></tr>
+</table>
+
+<h3 style="color:#374151;border-bottom-color:#9ca3af;">Lab Pattern Quick Reference</h3>
+<table>
+<tr><th>Picture</th><th>Diagnosis</th></tr>
+<tr><td>Low Na, low serum osm, concentrated urine</td><td>SIADH</td></tr>
+<tr><td>High Na, polyuria, dilute urine</td><td>Diabetes insipidus</td></tr>
+<tr><td>High T4, low TSH, exophthalmos, diffuse goiter</td><td>Graves disease</td></tr>
+<tr><td>Low T4, high TSH, weight gain, cold intolerance</td><td>Hashimoto / primary hypothyroidism</td></tr>
+<tr><td>Low T4, low TSH</td><td>Central (secondary) hypothyroidism</td></tr>
+<tr><td>High cortisol that doesn't suppress on dexamethasone</td><td>Cushing syndrome</td></tr>
+<tr><td>Low cortisol, high ACTH, hyperK, hyponatremia, hyperpigmentation</td><td>Addison disease (primary adrenal insufficiency)</td></tr>
+<tr><td>Enlarging hands/face/jaw + pituitary mass + ↑ IGF-1</td><td>Acromegaly</td></tr>
+<tr><td>Bitemporal hemianopsia + pituitary mass</td><td>Macroadenoma compressing optic chiasm</td></tr>
+</table>
+
+<h3 style="color:#374151;border-bottom-color:#9ca3af;">Week 6 Study Strategy</h3>
+<ul>
+  <li><b>Drill negative feedback first.</b> If you can read TSH/T4 or ACTH/cortisol pairs and call primary vs secondary, half the unit is yours.</li>
+  <li><b>Pair every disorder with its lab fingerprint.</b> Graves = ↑T4 ↓TSH. Hashimoto = ↓T4 ↑TSH. Cushing = ↑ cortisol no suppression. Addison = ↓ cortisol ↑ ACTH.</li>
+  <li><b>Lock down SIADH vs DI as opposites.</b> Soaked vs Dry. They will be on the test side by side.</li>
+  <li><b>Memorize the FLAT PEG anterior hormones</b> and the posterior pair (ADH, oxytocin).</li>
+  <li><b>Cushing vs Addison side by side.</b> Cortisol direction dictates everything else (BP, glucose, K, weight, pigmentation).</li>
+  <li><b>"Acromegaly = adults; gigantism = children."</b> Same hormone, different growth plate status.</li>
+  <li><b>Anatomy patterns are easy points.</b> Butterfly = thyroid. Top of kidneys = adrenal. Behind thyroid = parathyroid. Above pituitary = hypothalamus. Anterior chest = thymus.</li>
+</ul>
+
+<p class="small" style="margin-top:16px;">SCI225 Week 6 Study Guide — built from the Week 6 learning objectives covering hormonal regulation, endocrine anatomy, and alterations of pituitary, thyroid, and adrenal function. Made by Dr. Vidya Aggrawal to teach the concepts tested, not the exam questions themselves. Same color-coded format as Weeks 1–5. Print for paper, or use in-browser with collapsible practice answers.</p>
+</section>
+
+</main>
+</div>
+</body>
+</html>

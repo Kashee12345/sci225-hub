@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SCI225 Week 5 Study Guide — CNS/PNS Disorders, NMJ & Pediatric Neuro</title>
+<style>
+  :root {
+    --u1: #b91c1c; --u1-bg: #fef2f2; --u1-brd: #fca5a5;
+    --u2: #1e40af; --u2-bg: #eff6ff; --u2-brd: #93c5fd;
+    --u3: #c2410c; --u3-bg: #fff7ed; --u3-brd: #fdba74;
+    --u4: #047857; --u4-bg: #ecfdf5; --u4-brd: #6ee7b7;
+    --u5: #7c3aed; --u5-bg: #faf5ff; --u5-brd: #c4b5fd;
+    --u6: #be185d; --u6-bg: #fdf2f8; --u6-brd: #f9a8d4;
+    --mech: #1d4ed8; --mech-bg: #eff6ff;
+    --why:  #b45309; --why-bg:  #fffbeb;
+    --comp: #047857; --comp-bg: #f0fdf4;
+    --path: #be123c; --path-bg: #fff1f2;
+    --miss: #991b1b; --miss-bg: #fef2f2;
+    --acro: #6d28d9; --acro-bg: #f5f3ff;
+    --tip:  #0f766e; --tip-bg:  #ecfdf5;
+    --text: #111827; --muted: #4b5563; --line: #d1d5db;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    font-size: 10.5pt; line-height: 1.42; color: var(--text);
+    margin: 0; padding: 0; background: #f9fafb;
+  }
+  .layout { display: grid; grid-template-columns: 240px 1fr; max-width: 1140px; margin: 0 auto; }
+  nav.toc {
+    position: sticky; top: 0; align-self: start; max-height: 100vh; overflow-y: auto;
+    background: #fff; border-right: 1px solid var(--line); padding: 14px 12px; font-size: 9.4pt;
+  }
+  nav.toc h3 { font-size: 10pt; margin: 6px 0 8px; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; }
+  nav.toc a { display: block; padding: 3px 6px; color: var(--text); text-decoration: none; border-radius: 3px; margin-bottom: 1px; }
+  nav.toc a:hover { background: #f3f4f6; }
+  nav.toc .u1 { border-left: 3px solid var(--u1); }
+  nav.toc .u2 { border-left: 3px solid var(--u2); }
+  nav.toc .u3 { border-left: 3px solid var(--u3); }
+  nav.toc .u4 { border-left: 3px solid var(--u4); }
+  nav.toc .u5 { border-left: 3px solid var(--u5); }
+  nav.toc .u6 { border-left: 3px solid var(--u6); }
+  main { padding: 20px 28px; background: #fff; }
+  h1 { font-size: 20pt; margin: 0 0 4px; }
+  h2 { font-size: 15pt; margin: 18px 0 6px; padding: 6px 10px; border-radius: 4px; color: #fff; }
+  h3 { font-size: 12pt; margin: 12px 0 4px; padding-bottom: 2px; border-bottom: 1px solid var(--line); }
+  h4 { font-size: 10.8pt; margin: 8px 0 3px; color: var(--muted); }
+  .unit1 h2 { background: var(--u1); } .unit2 h2 { background: var(--u2); }
+  .unit3 h2 { background: var(--u3); } .unit4 h2 { background: var(--u4); }
+  .unit5 h2 { background: var(--u5); } .unit6 h2 { background: var(--u6); }
+  .unit1 h3 { color: var(--u1); border-bottom-color: var(--u1-brd); }
+  .unit2 h3 { color: var(--u2); border-bottom-color: var(--u2-brd); }
+  .unit3 h3 { color: var(--u3); border-bottom-color: var(--u3-brd); }
+  .unit4 h3 { color: var(--u4); border-bottom-color: var(--u4-brd); }
+  .unit5 h3 { color: var(--u5); border-bottom-color: var(--u5-brd); }
+  .unit6 h3 { color: var(--u6); border-bottom-color: var(--u6-brd); }
+  p { margin: 4px 0; }
+  ul, ol { margin: 4px 0 6px 20px; padding: 0; }
+  li { margin: 1px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 9.8pt; margin: 6px 0 8px; }
+  th, td { border: 1px solid var(--line); padding: 4px 6px; text-align: left; vertical-align: top; }
+  th { background: #f3f4f6; font-weight: 600; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+  .box { border-left: 4px solid; padding: 6px 10px; margin: 6px 0; border-radius: 3px; font-size: 10pt; }
+  .mech { border-color: var(--mech); background: var(--mech-bg); }
+  .mech::before { content: "MECHANISM "; font-weight: 700; color: var(--mech); font-size: 8.5pt; letter-spacing: .5px; }
+  .why { border-color: var(--why); background: var(--why-bg); }
+  .why::before { content: "WHY "; font-weight: 700; color: var(--why); font-size: 8.5pt; letter-spacing: .5px; }
+  .comp { border-color: var(--comp); background: var(--comp-bg); }
+  .comp::before { content: "COMPENSATION "; font-weight: 700; color: var(--comp); font-size: 8.5pt; letter-spacing: .5px; }
+  .path { border-color: var(--path); background: var(--path-bg); }
+  .path::before { content: "PATHOLOGY "; font-weight: 700; color: var(--path); font-size: 8.5pt; letter-spacing: .5px; }
+  .miss { border-color: var(--miss); background: var(--miss-bg); }
+  .miss::before { content: "⚠ COMMON MISSTEP "; font-weight: 700; color: var(--miss); font-size: 8.5pt; letter-spacing: .5px; }
+  .acro { border-color: var(--acro); background: var(--acro-bg); }
+  .acro::before { content: "ACRONYM / MNEMONIC "; font-weight: 700; color: var(--acro); font-size: 8.5pt; letter-spacing: .5px; }
+  .tip { border-color: var(--tip); background: var(--tip-bg); }
+  .tip::before { content: "★ EXAM TIP "; font-weight: 700; color: var(--tip); font-size: 8.5pt; letter-spacing: .5px; }
+  .flow { background: #f9fafb; border: 1px solid var(--line); padding: 8px 10px; border-radius: 4px; font-size: 9.8pt; margin: 6px 0; font-family: "Consolas", monospace; }
+  .flow .arr { color: #6b7280; margin: 0 3px; }
+  .q { background: #fafafa; border: 1px solid var(--line); border-radius: 4px; padding: 8px 10px; margin: 6px 0; font-size: 10pt; }
+  .q .qhead { font-weight: 600; margin-bottom: 3px; }
+  .q .opts { margin: 3px 0 4px 0; }
+  .q .ans { background: #ecfdf5; border-left: 3px solid var(--comp); padding: 4px 8px; margin-top: 4px; font-size: 9.8pt; }
+  .q .ans b { color: var(--comp); }
+  details summary { cursor: pointer; color: var(--mech); font-size: 9.5pt; font-weight: 600; }
+  .hero { padding: 14px 18px; background: linear-gradient(135deg, #b91c1c, #7c3aed, #be185d); color: #fff; border-radius: 6px; margin-bottom: 14px; }
+  .hero h1 { color: #fff; }
+  .hero p { margin: 4px 0; font-size: 10pt; opacity: .95; }
+  .spine { background: rgba(255,255,255,.15); padding: 6px 10px; border-radius: 4px; margin-top: 6px; font-size: 9.8pt; }
+  .legend { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 10px; font-size: 9pt; }
+  .legend span { padding: 2px 8px; border-radius: 3px; border: 1px solid; }
+  .lg-mech { color: var(--mech); background: var(--mech-bg); border-color: var(--mech); }
+  .lg-why  { color: var(--why);  background: var(--why-bg);  border-color: var(--why); }
+  .lg-comp { color: var(--comp); background: var(--comp-bg); border-color: var(--comp); }
+  .lg-path { color: var(--path); background: var(--path-bg); border-color: var(--path); }
+  .lg-miss { color: var(--miss); background: var(--miss-bg); border-color: var(--miss); }
+  .lg-acro { color: var(--acro); background: var(--acro-bg); border-color: var(--acro); }
+  .lg-tip  { color: var(--tip);  background: var(--tip-bg);  border-color: var(--tip); }
+  .chip { font-size: 9pt; padding: 2px 8px; border-radius: 3px; color: #fff; font-weight: 600; }
+  .c1 { background: var(--u1); } .c2 { background: var(--u2); } .c3 { background: var(--u3); }
+  .c4 { background: var(--u4); } .c5 { background: var(--u5); } .c6 { background: var(--u6); }
+  .btns { margin: 10px 0; }
+  .btns button { background: #0f172a; color: #fff; border: 0; padding: 6px 12px; border-radius: 4px; font-size: 9.8pt; cursor: pointer; margin-right: 6px; }
+  .small { font-size: 9.3pt; color: var(--muted); }
+  @media print {
+    body { background: #fff; }
+    .layout { display: block; max-width: none; }
+    nav.toc, .btns { display: none; }
+    main { padding: 0.35in 0.4in; }
+    details { page-break-inside: avoid; }
+    details[open] summary { display: none; }
+    details:not([open]) > *:not(summary) { display: block; }
+    .hero, h2, .chip, .box, .q .ans, th { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+<div class="layout">
+<nav class="toc">
+  <h3>Week 5 Study Guide</h3>
+  <a href="#intro"><b>How to use this guide</b></a>
+  <a href="#u1" class="u1"><b>Unit 1.</b> Stroke & Cerebrovascular</a>
+  <a href="#u1-isch" class="u1">&nbsp;&nbsp;Ischemic vs hemorrhagic</a>
+  <a href="#u1-cascade" class="u1">&nbsp;&nbsp;Ischemic cascade</a>
+  <a href="#u1-q" class="u1">&nbsp;&nbsp;Practice Qs</a>
+  <a href="#u2" class="u2"><b>Unit 2.</b> CNS Disorders</a>
+  <a href="#u2-ms" class="u2">&nbsp;&nbsp;Multiple sclerosis</a>
+  <a href="#u2-park" class="u2">&nbsp;&nbsp;Parkinson's</a>
+  <a href="#u2-seiz" class="u2">&nbsp;&nbsp;Seizures</a>
+  <a href="#u2-icp" class="u2">&nbsp;&nbsp;ICP & herniation</a>
+  <a href="#u2-q" class="u2">&nbsp;&nbsp;Practice Qs</a>
+  <a href="#u3" class="u3"><b>Unit 3.</b> Spinal Cord & PNS</a>
+  <a href="#u3-sci" class="u3">&nbsp;&nbsp;Spinal cord injury</a>
+  <a href="#u3-shock" class="u3">&nbsp;&nbsp;Neurogenic shock & AD</a>
+  <a href="#u3-disk" class="u3">&nbsp;&nbsp;Disk herniation</a>
+  <a href="#u3-q" class="u3">&nbsp;&nbsp;Practice Qs</a>
+  <a href="#u4" class="u4"><b>Unit 4.</b> Meningitis</a>
+  <a href="#u4-q" class="u4">&nbsp;&nbsp;Practice Qs</a>
+  <a href="#u5" class="u5"><b>Unit 5.</b> Neuromuscular Junction</a>
+  <a href="#u5-nmj" class="u5">&nbsp;&nbsp;NMJ structure</a>
+  <a href="#u5-mg" class="u5">&nbsp;&nbsp;Myasthenia gravis</a>
+  <a href="#u5-bot" class="u5">&nbsp;&nbsp;Botulism</a>
+  <a href="#u5-q" class="u5">&nbsp;&nbsp;Practice Qs</a>
+  <a href="#u6" class="u6"><b>Unit 6.</b> Pediatric Neuro</a>
+  <a href="#u6-hydro" class="u6">&nbsp;&nbsp;Hydrocephalus</a>
+  <a href="#u6-ntd" class="u6">&nbsp;&nbsp;Neural tube defects</a>
+  <a href="#u6-cp" class="u6">&nbsp;&nbsp;Cerebral palsy</a>
+  <a href="#u6-mening" class="u6">&nbsp;&nbsp;Pediatric meningitis</a>
+  <a href="#u6-q" class="u6">&nbsp;&nbsp;Practice Qs</a>
+  <a href="#appx"><b>Appendix:</b> Missteps & Mnemonics</a>
+</nav>
+
+<main>
+
+<div class="btns">
+  <button onclick="window.print()">Print / Save as PDF</button>
+  <button onclick="document.querySelectorAll('details').forEach(d=>d.open=true)">Expand All</button>
+  <button onclick="document.querySelectorAll('details').forEach(d=>d.open=false)">Collapse All</button>
+</div>
+
+<section id="intro">
+<div class="hero">
+  <h1>SCI225 Week 5 — Complete Study Guide</h1>
+  <p><b>Made by Dr. Vidya Aggrawal</b></p>
+  <p>CNS & PNS Disorders · Neuromuscular Junction · Pediatric Neurologic Conditions</p>
+  <div class="spine"><b>Study Spine — for every disorder ask:</b><br>
+  1. Where is the lesion (CNS / PNS / NMJ)? &nbsp; 2. What is the mechanism? &nbsp; 3. Acute or chronic? &nbsp; 4. What's the time-critical action?</div>
+</div>
+
+<div class="legend">
+  <span class="lg-mech">MECHANISM</span>
+  <span class="lg-why">WHY</span>
+  <span class="lg-comp">COMPENSATION</span>
+  <span class="lg-path">PATHOLOGY</span>
+  <span class="lg-miss">MISSTEP</span>
+  <span class="lg-acro">ACRONYM</span>
+  <span class="lg-tip">EXAM TIP</span>
+</div>
+
+<h3>Course alignment</h3>
+<ul>
+  <li><b>LO1</b> — Discuss the disorders of the Central and Peripheral Nervous System <span class="small">(Units 1–4)</span></li>
+  <li><b>LO2</b> — Examine the Neuromuscular Junction and why it is important to Pathophysiology <span class="small">(Unit 5)</span></li>
+  <li><b>LO3</b> — Understand potential alterations of neurologic function in children <span class="small">(Unit 6)</span></li>
+</ul>
+<p>Every practice question in this guide is original — written to help you apply the concept, not to reproduce exam items.</p>
+</section>
+
+<!-- ========================= UNIT 1 ========================= -->
+<section id="u1" class="unit1">
+<h2>Unit 1 &nbsp;•&nbsp; Stroke & Cerebrovascular Disease &nbsp;<span class="chip c1">LO1</span></h2>
+
+<h3 id="u1-isch">1.1 Ischemic vs Hemorrhagic Stroke</h3>
+
+<table>
+  <tr><th></th><th>Ischemic (~85%)</th><th>Hemorrhagic (~15%)</th></tr>
+  <tr><td><b>Mechanism</b></td><td>Vessel blocked → no blood downstream</td><td>Vessel ruptures → blood floods brain tissue</td></tr>
+  <tr><td><b>Subtypes</b></td><td>Thrombotic (atherosclerotic), embolic (often AFib), lacunar (small penetrating vessels)</td><td>Intracerebral (HTN), subarachnoid (aneurysm)</td></tr>
+  <tr><td><b>Risk factors</b></td><td>HTN, AFib, atherosclerosis, diabetes, smoking, hyperlipidemia, obesity, prior TIA</td><td>HTN (intracerebral), berry aneurysm/AVM (subarachnoid), anticoagulant use</td></tr>
+  <tr><td><b>Onset</b></td><td>Sudden focal deficit; may have warning TIA; thrombotic often awakens with deficit</td><td>Sudden severe headache, vomiting, possible loss of consciousness</td></tr>
+  <tr><td><b>Imaging</b></td><td>CT often normal early; MRI shows infarct hours later; CT must be done to <i>exclude</i> bleed before tPA</td><td>CT shows blood immediately</td></tr>
+  <tr><td><b>Treatment</b></td><td>tPA within 3–4.5 h of last known well; mechanical thrombectomy up to 24 h in select patients</td><td><b>tPA contraindicated</b>; control BP, reverse anticoagulation, surgical decompression if needed</td></tr>
+</table>
+
+<div class="box acro">
+<b>FAST</b> for stroke recognition:<br>
+<b>F</b>ace drooping &nbsp;·&nbsp; <b>A</b>rm weakness &nbsp;·&nbsp; <b>S</b>peech difficulty &nbsp;·&nbsp; <b>T</b>ime to call 911<br>
+"Time is brain" — every minute, ~2 million neurons die during ischemic stroke.
+</div>
+
+<h3 id="u1-cascade">1.2 The Ischemic Cascade — Why Neurons Die</h3>
+
+<div class="flow">
+Vessel occlusion <span class="arr">→</span> ↓ O₂ + glucose <span class="arr">→</span> ↓ ATP <span class="arr">→</span> Na/K pump fails <span class="arr">→</span> cell swelling + depolarization <span class="arr">→</span> excessive glutamate release <span class="arr">→</span> Ca²⁺ influx <span class="arr">→</span> activation of destructive enzymes <span class="arr">→</span> free-radical injury <span class="arr">→</span> neuron death
+</div>
+
+<div class="box why">
+<b>The primary reason neurons die during a stroke is energy failure</b> — without ATP, cells cannot maintain ion gradients. The neuron depolarizes, dumps glutamate, and gets flooded with calcium. This is "excitotoxicity." The penumbra (the area around the core infarct) is salvageable if perfusion is restored quickly — that's the window tPA targets.
+</div>
+
+<div class="box path">
+<b>Stroke risk factors students must know cold:</b>
+<ul>
+  <li><b>Atrial fibrillation</b> — clots form in left atrium, travel to brain (embolic stroke)</li>
+  <li><b>Hypertension</b> — accelerates atherosclerosis and is the #1 modifiable risk factor</li>
+  <li><b>Diabetes</b> — accelerates vascular disease</li>
+  <li><b>Smoking</b> — endothelial dysfunction, hypercoagulability</li>
+  <li><b>Hyperlipidemia / atherosclerosis</b> — plaque rupture and embolism</li>
+  <li><b>Prior TIA</b> — major warning sign; ~10–15% risk of stroke in following 90 days</li>
+  <li><b>Carotid stenosis</b>, sickle cell disease, oral contraceptives + smoking</li>
+</ul>
+</div>
+
+<div class="box tip">
+<b>TIA = "warning stroke."</b> Same mechanism as ischemic stroke but symptoms resolve completely (typically &lt; 1 hour, by definition &lt; 24 h). Treat aggressively — antiplatelet, statin, BP control, AFib management — to prevent the next event.
+</div>
+
+<h3 id="u1-q">Practice Questions — Stroke</h3>
+
+<div class="q">
+<div class="qhead">Q1. A 70-year-old with atrial fibrillation suddenly develops right arm weakness and slurred speech. Which mechanism is most likely?</div>
+<div class="opts">
+A. Subarachnoid hemorrhage from berry aneurysm<br>
+B. Embolic ischemic stroke from a left atrial clot<br>
+C. Hypertensive intracerebral hemorrhage<br>
+D. Brain tumor
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> AFib + sudden focal deficit = embolic stroke until proven otherwise. Atrial stasis allows clot formation; clot embolizes to a cerebral artery. Anticoagulation (warfarin or DOAC) prevents this in AFib.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q2. What is the primary reason neurons begin to die during a stroke?</div>
+<div class="opts">
+A. Bacterial infection of the brain<br>
+B. Loss of ATP causes ion-pump failure, excitotoxic glutamate release, and calcium-mediated cell injury<br>
+C. The brain becomes too acidic from increased breathing<br>
+D. Antibodies attack neurons
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Ischemia → energy failure → ion gradient collapse → excitotoxicity → Ca²⁺ influx → enzyme activation → cell death. Restoring perfusion quickly is the only way to save the penumbra.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q3. <b>Select all that apply.</b> Which findings are associated with increased stroke risk?</div>
+<div class="opts">
+A. Atrial fibrillation<br>
+B. Hypertension<br>
+C. Diabetes mellitus<br>
+D. Daily moderate exercise<br>
+E. Carotid artery stenosis<br>
+F. Prior transient ischemic attack
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>A, B, C, E, F.</b> D is protective. The other five are major modifiable or addressable risk factors.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q4. A patient awakens with a unilateral facial droop, arm weakness, and slurred speech. Last seen normal 7 hours ago. Which intervention is most appropriate first?</div>
+<div class="opts">
+A. Administer tPA immediately<br>
+B. Obtain a non-contrast CT head to exclude hemorrhage and assess eligibility for thrombolysis or thrombectomy<br>
+C. Begin therapeutic anticoagulation<br>
+D. Discharge with antiplatelet therapy
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Always image first to exclude hemorrhage. tPA window is 3–4.5 h from last known well — this patient is past the window for tPA but may still be a thrombectomy candidate up to 24 h with eligible imaging.</div>
+</details>
+</div>
+
+</section>
+
+<!-- ========================= UNIT 2 ========================= -->
+<section id="u2" class="unit2">
+<h2>Unit 2 &nbsp;•&nbsp; Other CNS Disorders &nbsp;<span class="chip c2">LO1</span></h2>
+
+<h3 id="u2-ms">2.1 Multiple Sclerosis</h3>
+
+<div class="box mech">
+MS is a chronic autoimmune demyelinating disease of the <b>CNS</b>. T cells attack <b>oligodendrocytes</b>, stripping myelin from axons in the brain, spinal cord, and optic nerves. Lesions accumulate in different locations over time → "<b>dissemination in time and space</b>."
+</div>
+
+<p><b>Classic MS features:</b></p>
+<ul>
+  <li>Optic neuritis (painful monocular vision loss) — often the first symptom</li>
+  <li>Sensory symptoms: numbness, tingling, Lhermitte's sign (electric shock with neck flexion)</li>
+  <li>Motor: weakness, spasticity, hyperreflexia, Babinski (UMN signs)</li>
+  <li>Cerebellar: ataxia, intention tremor, scanning speech</li>
+  <li>Bladder dysfunction, fatigue, cognitive changes</li>
+  <li>Heat intolerance (Uhthoff phenomenon — symptoms worsen with elevated body temperature)</li>
+  <li>Relapsing-remitting most common pattern; primary or secondary progressive in some</li>
+</ul>
+
+<div class="box tip">
+<b>"Young woman with episodes of vision loss and limb weakness, with a normal neuro exam between episodes"</b> = MS until proven otherwise. F:M ratio is roughly 3:1; onset typically 20–40.
+</div>
+
+<h3 id="u2-park">2.2 Parkinson's Disease</h3>
+
+<div class="box mech">
+Loss of dopamine-producing neurons in the <b>substantia nigra</b> (part of the basal ganglia). Dopamine normally facilitates voluntary movement; without it, the basal ganglia over-inhibit motor cortex output → <b>bradykinesia and rigidity</b>.
+</div>
+
+<div class="box acro">
+<b>TRAP</b> — Parkinson's cardinal features:<br>
+<b>T</b>remor (resting, "pill-rolling," 4–6 Hz)<br>
+<b>R</b>igidity (cogwheel)<br>
+<b>A</b>kinesia / bradykinesia (slow movement initiation)<br>
+<b>P</b>ostural instability (falls, shuffling gait, stooped posture)<br>
+Plus: mask-like face, micrographia, hypophonia
+</div>
+
+<div class="box why">
+<b>Why levodopa works.</b> Dopamine itself can't cross the BBB. Levodopa (L-DOPA) does, and is converted to dopamine in the brain. It's combined with carbidopa to prevent peripheral conversion (which would cause nausea and reduce CNS delivery).
+</div>
+
+<h3 id="u2-seiz">2.3 Seizures</h3>
+
+<div class="box mech">
+A seizure is a sudden, abnormal, <b>excessive</b> and <b>synchronous</b> electrical discharge of cortical neurons. The clinical manifestation depends on which area of cortex is firing.
+</div>
+
+<table>
+  <tr><th>Type</th><th>Features</th></tr>
+  <tr><td><b>Generalized tonic-clonic ("grand mal")</b></td><td>Sudden loss of consciousness → tonic (stiffening) → clonic (rhythmic jerking) → postictal confusion. May have tongue biting, incontinence.</td></tr>
+  <tr><td><b>Absence ("petit mal")</b></td><td>Brief staring spells (5–10 sec), no postictal phase. Children. EEG: 3-Hz spike-and-wave.</td></tr>
+  <tr><td><b>Focal aware ("simple partial")</b></td><td>Localized motor or sensory phenomenon, awareness preserved.</td></tr>
+  <tr><td><b>Focal impaired awareness ("complex partial")</b></td><td>Often temporal lobe; automatisms (lip-smacking), staring, postictal confusion.</td></tr>
+  <tr><td><b>Status epilepticus</b></td><td>Seizure &gt; 5 min OR repeated without recovery between. Medical emergency.</td></tr>
+</table>
+
+<div class="box path">
+<b>Common seizure triggers:</b> fever (febrile seizures in children), hypoglycemia, hyponatremia, alcohol withdrawal, illicit drugs (cocaine, methamphetamine), sleep deprivation, head injury, stroke, brain tumor, infection, missed antiepileptic doses.
+</div>
+
+<h3 id="u2-icp">2.4 Increased ICP — How It Injures Neurons</h3>
+
+<div class="box mech">
+Rising ICP injures neurons by <b>direct compression</b> and by <b>reducing cerebral perfusion pressure (CPP)</b>:<br>
+<b>CPP = MAP − ICP</b><br>
+As ICP climbs toward MAP, CPP falls toward zero — and neurons are starved of blood flow even though large vessels are still patent. Sustained low CPP causes ischemic neuronal death; severe ICP elevation causes herniation and brainstem death.
+</div>
+
+<div class="box tip">
+Recall the Cushing triad from Week 4: <b>HTN + bradycardia + irregular respirations</b> = late ICP elevation. Restlessness, confusion, behavior change come earlier.
+</div>
+
+<h3 id="u2-q">Practice Questions — CNS Disorders</h3>
+
+<div class="q">
+<div class="qhead">Q5. <b>Select all that apply.</b> Which findings are commonly associated with multiple sclerosis?</div>
+<div class="opts">
+A. Optic neuritis with painful vision loss<br>
+B. Spasticity and hyperreflexia<br>
+C. Sensory disturbances and numbness<br>
+D. Heat intolerance (Uhthoff phenomenon)<br>
+E. Mid-adult-onset chorea<br>
+F. Fatigue and bladder dysfunction
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>A, B, C, D, F.</b> E (chorea) is Huntington disease. MS produces UMN signs from CNS demyelination, and symptoms classically worsen with heat (Uhthoff).</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q6. A patient with Parkinson's has resting tremor and progressive difficulty initiating movement. Which structural and biochemical change is responsible?</div>
+<div class="opts">
+A. Loss of acetylcholine in the cortex<br>
+B. Loss of dopamine-producing neurons in the substantia nigra<br>
+C. Loss of GABA in the basal ganglia<br>
+D. Loss of serotonin in the brainstem
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Substantia nigra dopamine loss is the defining lesion of Parkinson's. Levodopa-carbidopa replaces the missing transmitter.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q7. A patient develops sudden loss of awareness with rhythmic jerking of all four extremities, then becomes confused for 20 minutes. Which type of seizure?</div>
+<div class="opts">
+A. Absence seizure<br>
+B. Focal aware seizure<br>
+C. Generalized tonic-clonic seizure<br>
+D. Myoclonic seizure
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>C.</b> Loss of consciousness + rhythmic jerking + postictal confusion = tonic-clonic. Absence has no postictal phase. Focal aware preserves awareness.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q8. Which mechanism most directly causes neuron injury when intracranial pressure rises?</div>
+<div class="opts">
+A. Increased oxygen delivery to neurons<br>
+B. Reduced cerebral perfusion pressure → ischemia<br>
+C. Excess CSF nutrition of neurons<br>
+D. Increased lymphatic drainage
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> CPP = MAP − ICP. As ICP climbs, perfusion falls. Neurons that don't receive blood die. Direct compression also contributes, especially with herniation.</div>
+</details>
+</div>
+
+</section>
+
+<!-- ========================= UNIT 3 ========================= -->
+<section id="u3" class="unit3">
+<h2>Unit 3 &nbsp;•&nbsp; Spinal Cord & Peripheral Nerve Disorders &nbsp;<span class="chip c3">LO1</span></h2>
+
+<h3 id="u3-sci">3.1 Spinal Cord Injury — Phases & Sequelae</h3>
+
+<div class="flow">
+Acute trauma <span class="arr">→</span> primary mechanical damage <span class="arr">→</span> secondary injury (edema, hemorrhage, ischemia, glutamate excitotoxicity, free radicals) <span class="arr">→</span> spinal shock (areflexia) <span class="arr">→</span> reflex return <span class="arr">→</span> spasticity (chronic UMN-type)
+</div>
+
+<div class="box mech">
+SCI involves a primary injury (mechanical) and a more damaging <b>secondary injury cascade</b>: vasogenic edema, hemorrhage, ischemia, calcium-mediated cell death, and inflammation. This secondary phase enlarges the lesion over hours to days — which is why minimizing inflammation and maintaining perfusion matters in early management.
+</div>
+
+<div class="box why">
+<b>Why SCI recovery is slow and incomplete.</b> CNS axons do not regenerate effectively. Adult neurons have limited proliferative capacity, scar tissue (gliosis) blocks regrowth, and inhibitory molecules in the CNS environment actively prevent axon extension. PNS injuries can recover; CNS ones largely cannot.
+</div>
+
+<h3 id="u3-shock">3.2 Spinal Shock vs Neurogenic Shock vs Autonomic Dysreflexia</h3>
+
+<table>
+  <tr><th></th><th>Spinal shock</th><th>Neurogenic shock</th><th>Autonomic dysreflexia</th></tr>
+  <tr><td><b>Timing</b></td><td>Immediately after SCI; lasts days to weeks</td><td>Immediately after high SCI (T6 or above)</td><td>Weeks to years after SCI at T6 or above</td></tr>
+  <tr><td><b>Mechanism</b></td><td>Loss of all reflex activity below the lesion (transient)</td><td>Loss of sympathetic tone below lesion → unopposed parasympathetic</td><td>Painful or noxious stimulus below the lesion (full bladder, fecal impaction) triggers massive sympathetic surge below; reflex parasympathetic response above</td></tr>
+  <tr><td><b>Findings</b></td><td>Flaccid paralysis, areflexia, no autonomic compromise required</td><td><b>Hypotension, bradycardia, warm/dry skin</b> below lesion</td><td><b>Severe HTN, pounding headache, bradycardia, flushing/sweating above lesion, pale/cool below</b></td></tr>
+  <tr><td><b>Treatment</b></td><td>Supportive; reflexes return on their own</td><td>Fluids + vasopressors; atropine for bradycardia</td><td><b>Find and remove the stimulus immediately</b> (catheterize, disimpact); raise head; antihypertensive</td></tr>
+</table>
+
+<div class="box path">
+<b>Neurogenic shock is the only "warm shock" of the bunch.</b> Hypovolemic, cardiogenic, and obstructive shock all show <i>cold</i> skin from compensatory vasoconstriction. Neurogenic shock has lost sympathetic vasoconstriction — vessels dilate, skin is warm and dry, BP and HR are both LOW (vs other shocks where HR is high).
+</div>
+
+<div class="box miss">
+<b>"All shock has tachycardia."</b> No — neurogenic shock has bradycardia (loss of sympathetic input to the heart). This is a frequent test trap.
+</div>
+
+<h3 id="u3-disk">3.3 Disk Herniation & Radiculopathy</h3>
+
+<div class="box mech">
+The intervertebral disk has a tough outer ring (annulus fibrosus) and a gel-like center (nucleus pulposus). Lifting injuries or aging can cause the nucleus to herniate posteriorly through the annulus, compressing a spinal nerve root → <b>radiculopathy</b> — pain, numbness, weakness in that nerve's distribution.
+</div>
+
+<p><b>The classic lumbar disk herniation:</b> L4-L5 or L5-S1 → nerve root compression → "<b>sciatica</b>" — back pain radiating down the back of the leg, often into the foot, with dermatomal sensory loss and possibly weakness.</p>
+
+<div class="box tip">
+<b>Cauda equina syndrome</b> is a surgical emergency: large central lumbar herniation compresses the cauda equina. Look for: saddle anesthesia, urinary retention/incontinence, bilateral leg weakness, loss of anal sphincter tone. Decompress within 24–48 h.
+</div>
+
+<h3 id="u3-q">Practice Questions — Spinal Cord & PNS</h3>
+
+<div class="q">
+<div class="qhead">Q9. <b>Order.</b> Place the events of secondary spinal cord injury in correct sequence:</div>
+<div class="opts">
+— Free radical generation and inflammation worsen tissue damage<br>
+— Mechanical trauma to the spinal cord<br>
+— Calcium influx activates destructive enzymes<br>
+— Local ischemia and hemorrhage develop<br>
+— Cells fail to maintain ion gradients and depolarize
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>Correct order:</b> Mechanical trauma → ischemia and hemorrhage → cells lose ion gradients and depolarize → Ca²⁺ influx activates enzymes → free radical generation and inflammation. Same energy-failure cascade as stroke, played out in cord tissue.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q10. A patient with a C5 spinal cord injury has BP 78/45, HR 52, warm dry skin, and paralysis below the lesion. Which best explains this?</div>
+<div class="opts">
+A. Hypovolemic shock from blood loss<br>
+B. Cardiogenic shock<br>
+C. Neurogenic shock from disrupted sympathetic outflow<br>
+D. Septic shock
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>C.</b> High SCI knocks out sympathetic tone → vasodilation → hypotension, warm skin, and bradycardia (no sympathetic input to the heart). Treat with fluids and vasopressors; atropine for bradycardia.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q11. A patient asks why recovery from spinal cord injury is often slow and incomplete. Best response:</div>
+<div class="opts">
+A. "Spinal nerves regenerate quickly within days."<br>
+B. "Adult CNS neurons have limited regenerative capacity, and scar tissue plus inhibitory factors prevent axon regrowth."<br>
+C. "Recovery depends on diet alone."<br>
+D. "Recovery is complete within 2 weeks for most patients."
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> CNS axons cannot regrow effectively because of intrinsic neuron limitations, glial scar formation, and inhibitory molecules in the CNS environment. PNS nerves can regrow; CNS largely cannot.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q12. A patient lifts a heavy box and develops back pain that radiates down the back of one leg with numbness in a dermatomal pattern. Which mechanism best explains the leg symptoms?</div>
+<div class="opts">
+A. Stroke in the spinal cord<br>
+B. Compression of a lumbar nerve root by herniated disk material<br>
+C. Cerebellar lesion<br>
+D. Peripheral neuropathy from diabetes
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Lumbar disk herniation → nerve root compression → radiculopathy in that root's distribution. This is sciatica — a textbook presentation.</div>
+</details>
+</div>
+
+</section>
+
+<!-- ========================= UNIT 4 ========================= -->
+<section id="u4" class="unit4">
+<h2>Unit 4 &nbsp;•&nbsp; Meningitis &nbsp;<span class="chip c4">LO1</span></h2>
+
+<div class="box mech">
+<b>Meningitis</b> = inflammation of the meninges (especially arachnoid and pia) and the CSF in the subarachnoid space. Most often infectious (bacterial, viral, fungal). Inflammation drives the classic clinical syndrome: <b>fever, headache, neck stiffness</b> (nuchal rigidity).
+</div>
+
+<h4>Classic findings</h4>
+<ul>
+  <li><b>Fever</b> — almost universal</li>
+  <li><b>Severe headache</b> — diffuse, worsening</li>
+  <li><b>Nuchal rigidity</b> — patient cannot touch chin to chest</li>
+  <li><b>Photophobia</b></li>
+  <li><b>Altered mental status / decreased alertness</b></li>
+  <li><b>Kernig sign</b> — pain with knee extension when hip is flexed</li>
+  <li><b>Brudzinski sign</b> — hip/knee flex involuntarily when neck is flexed</li>
+  <li><b>Petechial / purpuric rash</b> in meningococcal disease</li>
+</ul>
+
+<h4>CSF analysis — bacterial vs viral vs fungal</h4>
+<table>
+  <tr><th></th><th>Bacterial</th><th>Viral</th><th>Fungal/TB</th></tr>
+  <tr><td>Appearance</td><td>Cloudy/turbid</td><td>Clear</td><td>Clear or slightly cloudy</td></tr>
+  <tr><td>WBC predominance</td><td><b>Neutrophils</b> ↑↑</td><td><b>Lymphocytes</b> ↑</td><td><b>Lymphocytes</b> ↑</td></tr>
+  <tr><td>Glucose</td><td><b>Low</b> (bacteria consume it)</td><td>Normal</td><td>Low</td></tr>
+  <tr><td>Protein</td><td>↑↑</td><td>Normal or mildly ↑</td><td>↑</td></tr>
+  <tr><td>Opening pressure</td><td>↑</td><td>Normal</td><td>↑</td></tr>
+</table>
+
+<div class="box tip">
+<b>Bacterial meningitis is a medical emergency.</b> Antibiotics within 1 hour. Don't wait for LP results to start treatment if clinical suspicion is high — give empirical IV antibiotics + dexamethasone, then image and LP.
+</div>
+
+<div class="box path">
+<b>Common pathogens by age:</b>
+<ul>
+  <li><b>Newborn (&lt; 1 mo):</b> Group B Strep, E. coli, Listeria</li>
+  <li><b>Infants/children:</b> Streptococcus pneumoniae, Neisseria meningitidis, Haemophilus influenzae type b (Hib — much less common now thanks to vaccine)</li>
+  <li><b>Young adults / college:</b> N. meningitidis (dorm outbreaks)</li>
+  <li><b>Older adults:</b> S. pneumoniae, Listeria</li>
+</ul>
+</div>
+
+<h3 id="u4-q">Practice Questions — Meningitis</h3>
+
+<div class="q">
+<div class="qhead">Q13. A patient develops fever, severe headache, neck stiffness, and decreased alertness. CSF shows ↑ WBC with neutrophil predominance, ↓ glucose, and ↑ protein. Which diagnosis?</div>
+<div class="opts">
+A. Viral meningitis<br>
+B. Fungal meningitis<br>
+C. Bacterial meningitis<br>
+D. Migraine
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>C.</b> Neutrophilic CSF + low glucose + high protein = bacterial meningitis. Start empirical antibiotics immediately.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q14. <b>Select all that apply.</b> Which findings are consistent with meningitis in a child?</div>
+<div class="opts">
+A. Fever<br>
+B. Severe headache<br>
+C. Nuchal rigidity<br>
+D. Photophobia<br>
+E. Increased deep tendon reflexes only on one side<br>
+F. Petechial rash (meningococcal)
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>A, B, C, D, F.</b> E (unilateral hyperreflexia) is more typical of focal CNS lesions like stroke. The other five are classic meningitis findings.</div>
+</details>
+</div>
+
+</section>
+
+<!-- ========================= UNIT 5 ========================= -->
+<section id="u5" class="unit5">
+<h2>Unit 5 &nbsp;•&nbsp; Neuromuscular Junction (NMJ) &nbsp;<span class="chip c5">LO2</span></h2>
+
+<h3 id="u5-nmj">5.1 NMJ Anatomy & Function</h3>
+
+<div class="flow">
+Action potential reaches motor neuron terminal <span class="arr">→</span> voltage-gated Ca²⁺ channels open <span class="arr">→</span> Ca²⁺ entry triggers vesicle fusion <span class="arr">→</span> <b>acetylcholine (ACh)</b> released into synaptic cleft <span class="arr">→</span> ACh binds <b>nicotinic ACh receptors</b> on muscle <span class="arr">→</span> Na⁺ influx → muscle depolarization → contraction
+</div>
+
+<div class="box mech">
+<b>Acetylcholinesterase</b> in the synaptic cleft rapidly degrades ACh, ending the signal. This allows precise control of muscle contraction. Drugs that <i>block</i> acetylcholinesterase (like pyridostigmine) leave more ACh in the cleft and improve transmission — useful in myasthenia gravis.
+</div>
+
+<table>
+  <tr><th>Step at NMJ</th><th>What goes wrong → disease</th></tr>
+  <tr><td>Ca²⁺ entry into nerve terminal</td><td>Lambert-Eaton syndrome (autoimmune; antibodies vs voltage-gated Ca²⁺ channel)</td></tr>
+  <tr><td>ACh release</td><td><b>Botulism</b> (botulinum toxin blocks ACh release)</td></tr>
+  <tr><td>Postsynaptic ACh receptor</td><td><b>Myasthenia gravis</b> (autoantibodies block AChR)</td></tr>
+  <tr><td>Acetylcholinesterase</td><td>Organophosphate poisoning (inhibits enzyme → ACh excess → cholinergic crisis)</td></tr>
+</table>
+
+<h3 id="u5-mg">5.2 Myasthenia Gravis (MG)</h3>
+
+<div class="box mech">
+<b>Autoimmune disease</b> — IgG antibodies bind and block <b>acetylcholine receptors</b> on the postsynaptic muscle membrane. The released ACh has nowhere to bind (or fewer functional receptors), so each muscle action potential is weaker. With repeated activity, ACh stores deplete and weakness progresses; rest restores transmission. This is type II hypersensitivity (receptor blockade).
+</div>
+
+<p><b>Hallmark presentation:</b></p>
+<ul>
+  <li><b>Fatigable muscle weakness</b> — worsens with use, improves with rest</li>
+  <li><b>Ptosis</b> (drooping eyelids) and <b>diplopia</b> (double vision) — often the first symptoms</li>
+  <li>Weak chewing, swallowing, speech (bulbar muscles)</li>
+  <li>Generalized weakness — proximal &gt; distal; respiratory muscles in severe disease (myasthenic crisis)</li>
+</ul>
+
+<div class="box tip">
+<b>"Patient brushes hair or holds objects overhead and gets weaker; rest helps"</b> — that exam vignette is myasthenia gravis. Confirm with anti-AChR antibodies, edrophonium (Tensilon) test, EMG (decremental response).
+</div>
+
+<div class="box path">
+<b>MG association with the thymus.</b> About 75% of MG patients have thymic abnormalities (hyperplasia or thymoma). Thymectomy can improve symptoms. Treatments: pyridostigmine (acetylcholinesterase inhibitor), corticosteroids, immunosuppressants, IVIG/plasmapheresis for crisis.
+</div>
+
+<div class="box why">
+<b>Why pyridostigmine helps.</b> By blocking acetylcholinesterase, pyridostigmine slows ACh breakdown — more ACh stays in the cleft, raising the chance of binding the (limited) functional receptors. It treats symptoms; it doesn't fix the autoimmunity.
+</div>
+
+<h3 id="u5-bot">5.3 Botulism</h3>
+
+<div class="box mech">
+<b>Botulinum toxin</b> (from Clostridium botulinum) is one of the most potent toxins known. It enters motor nerve terminals and cleaves the SNARE proteins required for ACh vesicle fusion → <b>blocks ACh release</b>. No ACh in the cleft → no muscle activation → flaccid paralysis.
+</div>
+
+<p><b>Classic presentation:</b></p>
+<ul>
+  <li>Sources: improperly canned/preserved foods (adult botulism), honey in infants &lt; 1 year (infant botulism), wound contamination</li>
+  <li><b>Descending</b> symmetric flaccid paralysis (opposite of GBS, which ascends)</li>
+  <li>Cranial nerves first: <b>blurred vision, diplopia, ptosis, dysphagia, dysarthria</b></li>
+  <li>Progresses to respiratory muscle weakness — <b>respiratory failure is the killer</b></li>
+  <li>No sensory loss; mental status preserved</li>
+</ul>
+
+<div class="box miss">
+<b>"Botulism causes spasms."</b> Wrong — botulism causes <b>flaccid</b> paralysis (no ACh = no muscle activation). Tetanus, by contrast, causes <i>spasms</i> (it blocks inhibitory neurotransmitters in the spinal cord).
+</div>
+
+<div class="box acro">
+<b>"4 D's of botulism" (cranial nerves)</b>: <b>D</b>iplopia, <b>D</b>ysphagia, <b>D</b>ysarthria, <b>D</b>ysphonia. Plus <b>D</b>escending paralysis.
+</div>
+
+<h3 id="u5-q">Practice Questions — NMJ</h3>
+
+<div class="q">
+<div class="qhead">Q15. A patient has fluctuating muscle weakness that worsens with activity and improves with rest. Diagnostic testing reveals autoantibodies. Which mechanism best explains the symptoms?</div>
+<div class="opts">
+A. Antibodies block postsynaptic acetylcholine receptors at the NMJ<br>
+B. Antibodies destroy CNS myelin<br>
+C. Toxin prevents ACh release<br>
+D. Mutation alters dystrophin protein
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>A.</b> Myasthenia gravis. Autoantibodies block AChR → fewer functional receptors → fatigable weakness. Rest replenishes ACh and partial transmission resumes.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q16. After eating improperly canned food, a patient develops blurred vision, dysphagia, and progressive descending muscle weakness. The toxin prevents the release of acetylcholine. Which diagnosis?</div>
+<div class="opts">
+A. Myasthenia gravis<br>
+B. Botulism<br>
+C. Guillain-Barré syndrome<br>
+D. Multiple sclerosis
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Descending flaccid paralysis + canned food + cranial nerve symptoms first = botulism. Treatment: antitoxin + supportive care including ventilation.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q17. A patient with myasthenia gravis is prescribed pyridostigmine. The drug improves muscle strength because it:</div>
+<div class="opts">
+A. Increases ACh production in the nerve terminal<br>
+B. Inhibits acetylcholinesterase, leaving more ACh in the synaptic cleft<br>
+C. Blocks ACh receptors directly<br>
+D. Removes anti-AChR antibodies
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> AChE inhibitors prolong ACh activity in the cleft, raising the chance it binds the still-functional receptors. They treat symptoms; immunosuppression treats the underlying autoimmunity.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q18. <b>Matching.</b> Match each NMJ change to its effect.</div>
+<table>
+<tr><th>Change</th><th>Effect</th></tr>
+<tr><td>Botulinum toxin</td><td>___</td></tr>
+<tr><td>Acetylcholinesterase inhibitor</td><td>___</td></tr>
+<tr><td>Anti-AChR antibody</td><td>___</td></tr>
+<tr><td>Voltage-gated Ca²⁺ channel antibody (Lambert-Eaton)</td><td>___</td></tr>
+</table>
+<div class="opts">Choices: ↓ ACh release at nerve terminal &nbsp;·&nbsp; Blocks postsynaptic receptors &nbsp;·&nbsp; Prevents ACh breakdown &nbsp;·&nbsp; Blocks Ca²⁺ entry → ↓ ACh release</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>Botulinum → ↓ ACh release · AChE inhibitor → prevents ACh breakdown · Anti-AChR → blocks receptors · Lambert-Eaton → blocks Ca²⁺ entry → ↓ release.</b></div>
+</details>
+</div>
+
+</section>
+
+<!-- ========================= UNIT 6 ========================= -->
+<section id="u6" class="unit6">
+<h2>Unit 6 &nbsp;•&nbsp; Pediatric Neurologic Disorders &nbsp;<span class="chip c6">LO3</span></h2>
+
+<h3 id="u6-hydro">6.1 Hydrocephalus in Children</h3>
+
+<div class="box mech">
+Excess CSF accumulation in the ventricles. In infants (skull bones not yet fused), this enlarges the head; in older children with closed sutures, it raises ICP.<br>
+<b>Communicating</b> = absorption fails (post-meningitis, post-bleed, congenital).<br>
+<b>Non-communicating (obstructive)</b> = flow blocked, often at the cerebral aqueduct (aqueductal stenosis is the most common congenital cause).
+</div>
+
+<p><b>Classic findings in infant hydrocephalus:</b></p>
+<ul>
+  <li><b>Rapid head growth</b> — head circumference crosses percentiles</li>
+  <li><b>Bulging fontanelle</b> with widened sutures</li>
+  <li><b>"Sunset eyes"</b> — downward eye deviation from pressure on the upper midbrain</li>
+  <li>Poor feeding, vomiting, irritability or lethargy</li>
+  <li>High-pitched cry, scalp vein engorgement</li>
+</ul>
+
+<div class="box path">
+<b>Untreated hydrocephalus causes permanent brain injury</b> by compressing brain tissue against the skull and reducing perfusion. Even if CSF pressure is later relieved, the damaged white matter and cortex don't recover. <b>Early shunt placement</b> (VP shunt) prevents progression.
+</div>
+
+<div class="box tip">
+<b>Late ICP signs in young children</b> — vomiting, irritability, bradycardia, irregular breathing, decreased alertness — should prompt urgent imaging, not just a "wait and see." This is the pediatric Cushing-triad analog.
+</div>
+
+<h3 id="u6-ntd">6.2 Neural Tube Defects</h3>
+
+<div class="box mech">
+The neural tube closes between weeks <b>3 and 4</b> of embryonic development. Failure of closure produces a spectrum of defects depending on level and severity.
+</div>
+
+<table>
+  <tr><th>Defect</th><th>Description</th><th>Severity</th></tr>
+  <tr><td><b>Spina bifida occulta</b></td><td>Vertebral arch fails to fuse; spinal cord and meninges intact; tuft of hair or dimple over the area</td><td>Often asymptomatic</td></tr>
+  <tr><td><b>Meningocele</b></td><td>Meninges protrude through the vertebral defect; spinal cord intact</td><td>Mild to moderate</td></tr>
+  <tr><td><b>Myelomeningocele</b></td><td>Meninges <b>and spinal cord</b> protrude → motor/sensory deficits, bowel/bladder dysfunction, frequently associated with hydrocephalus and Chiari II malformation</td><td>Severe</td></tr>
+  <tr><td><b>Anencephaly</b></td><td>Failure of cranial neural tube closure; absent brain development</td><td>Incompatible with life</td></tr>
+</table>
+
+<div class="box why">
+<b>Folic acid prevention.</b> Adequate folate before conception and through the first trimester reduces neural tube defects by 50–70%. Recommendation: 400 mcg daily for women of childbearing age; 4 mg daily for women with a prior affected pregnancy. The critical window is the first month — often <i>before</i> a woman knows she's pregnant — which is why supplementation is recommended for all women who could become pregnant.
+</div>
+
+<h3 id="u6-cp">6.3 Cerebral Palsy</h3>
+
+<div class="box mech">
+<b>Non-progressive</b> motor disorder caused by injury to the developing brain. Causes include prematurity, hypoxic-ischemic injury at birth, intrauterine infection, kernicterus, postnatal stroke or trauma, and congenital brain malformation.
+</div>
+
+<p><b>Cardinal features:</b></p>
+<ul>
+  <li>Motor impairment present from infancy/early childhood</li>
+  <li>Most common type: <b>spastic</b> (UMN signs — increased tone, hyperreflexia, scissoring gait)</li>
+  <li>Other types: dyskinetic (chorea, athetosis), ataxic (cerebellar)</li>
+  <li>Often associated with intellectual disability, seizures, vision/hearing problems, learning disorders — but cognitive function may also be entirely normal</li>
+  <li><b>Non-progressive</b> — the brain injury itself doesn't worsen, though musculoskeletal problems may evolve with growth</li>
+</ul>
+
+<div class="box miss">
+<b>"Cerebral palsy is progressive."</b> No — the brain injury is fixed (occurred prenatally, perinatally, or in early childhood). The clinical picture may evolve as the child grows, but the lesion itself is static. Contrast with neurodegenerative diseases.
+</div>
+
+<h3 id="u6-mening">6.4 Pediatric Meningitis</h3>
+
+<div class="box path">
+Children with meningitis present similarly to adults: <b>fever, headache, vomiting, neck stiffness, photophobia</b>. CSF analysis is the same (neutrophil-predominant low-glucose CSF in bacterial). Petechial rash strongly suggests meningococcal disease — call infection control. Vaccines (pneumococcal, Hib, meningococcal) have dramatically reduced incidence.
+</div>
+
+<div class="box tip">
+In <b>infants</b>, the classic neck stiffness is often absent. Look for: poor feeding, lethargy, irritability, bulging fontanelle, fever or hypothermia, seizures. A high index of suspicion is needed.
+</div>
+
+<h3 id="u6-q">Practice Questions — Pediatric Neuro</h3>
+
+<div class="q">
+<div class="qhead">Q19. An infant has rapid head growth, poor feeding, a bulging fontanelle, and downward eye deviation. Most likely diagnosis?</div>
+<div class="opts">
+A. Cerebral palsy<br>
+B. Hydrocephalus<br>
+C. Spina bifida occulta<br>
+D. Febrile seizure
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> Bulging fontanelle + sunset eyes + rapid head growth = infant hydrocephalus. Imaging confirms; VP shunt is the typical treatment.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q20. <b>Order.</b> Place the events of obstructive hydrocephalus in correct sequence:</div>
+<div class="opts">
+— ICP rises and brain tissue is compressed<br>
+— Lateral and third ventricles enlarge<br>
+— CSF flow is blocked at the cerebral aqueduct<br>
+— CSF cannot reach the fourth ventricle for absorption
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>Correct order:</b> CSF flow blocked at aqueduct → CSF cannot reach 4th ventricle → lateral and 3rd ventricles enlarge → ICP rises and brain tissue is compressed.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q21. A pregnant patient asks when neural tube defects occur during development. Best response:</div>
+<div class="opts">
+A. "During the third trimester."<br>
+B. "Before week 3 of pregnancy, neural tube defects do not occur."<br>
+C. "Around weeks 3–4 of embryonic development, when the neural tube normally closes."<br>
+D. "Only after exposure to certain medications late in pregnancy."
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>C.</b> Neural tube closure happens between weeks 3 and 4. This is why folic acid supplementation is recommended <i>before</i> conception — by the time most women know they're pregnant, the critical window has passed.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q22. <b>Select all that apply.</b> Which findings are consistent with cerebral palsy?</div>
+<div class="opts">
+A. Motor impairment present from early childhood<br>
+B. Spasticity and hyperreflexia in the most common subtype<br>
+C. Progressive worsening of the underlying brain lesion<br>
+D. Often associated with seizures and learning disorders<br>
+E. Caused by intrauterine infection, perinatal hypoxia, or prematurity
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>A, B, D, E.</b> C is wrong — CP is <b>non-progressive</b>. The brain injury is fixed; the clinical presentation may evolve with growth but the lesion does not worsen.</div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q23. <b>Matching.</b> Match each pediatric condition to its main mechanism.</div>
+<table>
+<tr><th>Condition</th><th>Mechanism</th></tr>
+<tr><td>Hydrocephalus</td><td>___</td></tr>
+<tr><td>Spina bifida</td><td>___</td></tr>
+<tr><td>Cerebral palsy</td><td>___</td></tr>
+<tr><td>Bacterial meningitis</td><td>___</td></tr>
+</table>
+<div class="opts">Choices: Failed neural tube closure &nbsp;·&nbsp; CSF accumulation in ventricles &nbsp;·&nbsp; Bacterial inflammation of meninges &nbsp;·&nbsp; Non-progressive brain injury affecting motor function</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>Hydrocephalus → CSF accumulation in ventricles · Spina bifida → failed neural tube closure · Cerebral palsy → non-progressive brain injury · Bacterial meningitis → bacterial inflammation of meninges.</b></div>
+</details>
+</div>
+
+<div class="q">
+<div class="qhead">Q24. A young child has vomiting, irritability, bradycardia, irregular breathing, and enlarged ventricles on imaging. Which best explains the bradycardia and breathing pattern?</div>
+<div class="opts">
+A. Beginning sepsis<br>
+B. Late ICP elevation (Cushing reflex equivalent) from hydrocephalus<br>
+C. Allergic reaction<br>
+D. Hyperglycemia
+</div>
+<details><summary>Show answer</summary>
+<div class="ans"><b>B.</b> The triad of bradycardia + irregular respirations + altered mental status, in the setting of enlarged ventricles, indicates dangerous ICP elevation. Urgent decompression is needed.</div>
+</details>
+</div>
+
+</section>
+
+<!-- ========================= APPENDIX ========================= -->
+<section id="appx">
+<h2 style="background:#374151;">Appendix &nbsp;•&nbsp; Top Missteps & Master Mnemonics</h2>
+
+<h3 style="color:#374151;border-bottom-color:#9ca3af;">Top 15 Week 5 Missteps</h3>
+<table>
+<tr><th>#</th><th>The trap</th><th>What's actually true</th></tr>
+<tr><td>1</td><td>"All strokes get tPA."</td><td>Only ischemic, within 3–4.5 h of last known well, hemorrhage excluded, no contraindications.</td></tr>
+<tr><td>2</td><td>"Atrial fibrillation causes hemorrhagic stroke."</td><td>AFib → embolic <b>ischemic</b> stroke (clot from atrium).</td></tr>
+<tr><td>3</td><td>"Neurogenic shock is hot and tachycardic."</td><td>It's hot but <b>bradycardic</b> — sympathetic outflow lost.</td></tr>
+<tr><td>4</td><td>"Spinal shock is permanent."</td><td>Temporary phase. Spasticity follows as reflex arcs reorganize.</td></tr>
+<tr><td>5</td><td>"Disk herniation is a brain problem."</td><td>It's PNS — root compression below the cord level.</td></tr>
+<tr><td>6</td><td>"Bacterial meningitis CSF has lymphocytes."</td><td>Bacterial = <b>neutrophils</b>. Lymphocytes = viral or fungal/TB.</td></tr>
+<tr><td>7</td><td>"Myasthenia gravis is muscle weakness from low calcium."</td><td>It's autoantibodies blocking AChR at the NMJ. Type II hypersensitivity.</td></tr>
+<tr><td>8</td><td>"Botulism causes spasms."</td><td>Botulism = <b>flaccid</b>, descending paralysis. Tetanus causes spasms.</td></tr>
+<tr><td>9</td><td>"GBS and botulism are the same."</td><td>GBS ascends; botulism descends. GBS is autoimmune demyelination; botulism blocks ACh release at NMJ.</td></tr>
+<tr><td>10</td><td>"Cerebral palsy is progressive."</td><td><b>Non-progressive</b> brain injury from before/around birth.</td></tr>
+<tr><td>11</td><td>"Folic acid late in pregnancy prevents neural tube defects."</td><td>Closure is at weeks 3–4. Folic acid must be on board <b>before</b> conception.</td></tr>
+<tr><td>12</td><td>"Hydrocephalus = too much CSF production."</td><td>Usually impaired flow or absorption, not overproduction.</td></tr>
+<tr><td>13</td><td>"Pyridostigmine cures myasthenia."</td><td>It treats <i>symptoms</i> by inhibiting AChE. Doesn't fix the autoimmunity.</td></tr>
+<tr><td>14</td><td>"Sciatica is a CNS disorder."</td><td>It's a <b>radiculopathy</b> from PNS root compression.</td></tr>
+<tr><td>15</td><td>"Infant meningitis presents with neck stiffness."</td><td>Classic neck stiffness is often absent in infants. Look for irritability, bulging fontanelle, poor feeding, fever or hypothermia.</td></tr>
+</table>
+
+<h3 style="color:#374151;border-bottom-color:#9ca3af;">Master Mnemonic Sheet</h3>
+<table>
+<tr><th>Mnemonic</th><th>Meaning</th></tr>
+<tr><td><b>FAST</b></td><td>Stroke recognition: Face, Arm, Speech, Time</td></tr>
+<tr><td><b>"Time is brain"</b></td><td>~2 million neurons die per minute in stroke</td></tr>
+<tr><td><b>TRAP</b></td><td>Parkinson's: Tremor, Rigidity, Akinesia, Postural instability</td></tr>
+<tr><td><b>"Ascending = GBS, Descending = Botulism, Fatigable = MG"</b></td><td>Three flaccid paralyses by direction/pattern</td></tr>
+<tr><td><b>4 D's of botulism</b></td><td>Diplopia, Dysphagia, Dysarthria, Dysphonia + Descending</td></tr>
+<tr><td><b>CPP = MAP − ICP</b></td><td>As ICP rises, perfusion falls → ischemia</td></tr>
+<tr><td><b>"Warm shock = neurogenic"</b></td><td>Loss of sympathetic vasoconstriction; the only "warm" shock</td></tr>
+<tr><td><b>"Bacterial = cloudy + low glucose + neutrophils"</b></td><td>CSF profile of bacterial meningitis</td></tr>
+<tr><td><b>Sunset eyes + bulging fontanelle</b></td><td>Infant hydrocephalus</td></tr>
+<tr><td><b>"Folate before pregnancy"</b></td><td>Neural tube closes at weeks 3–4</td></tr>
+<tr><td><b>"Static, not progressive"</b></td><td>Cerebral palsy</td></tr>
+<tr><td><b>Anti-AChR = MG</b></td><td>Diagnostic antibody for myasthenia gravis</td></tr>
+</table>
+
+<h3 style="color:#374151;border-bottom-color:#9ca3af;">NMJ Disease Quick Reference</h3>
+<table>
+<tr><th>Disease</th><th>Defect</th><th>Direction of weakness</th><th>Hallmark</th></tr>
+<tr><td>Myasthenia gravis</td><td>Anti-AChR (postsynaptic block)</td><td>Fluctuates, fatigable</td><td>Ptosis, diplopia, fatigable weakness improved by rest</td></tr>
+<tr><td>Botulism</td><td>Toxin blocks ACh release</td><td>Descending, flaccid</td><td>4 D's after canned food / wound / infant honey</td></tr>
+<tr><td>Lambert-Eaton</td><td>Anti-VGCC (presynaptic)</td><td>Improves with use</td><td>Often paraneoplastic (small-cell lung cancer)</td></tr>
+<tr><td>Organophosphate poisoning</td><td>Inhibits AChE → ACh excess</td><td>Cholinergic crisis</td><td>SLUDGE (Salivation, Lacrimation, Urination, Defecation, GI distress, Emesis)</td></tr>
+</table>
+
+<h3 style="color:#374151;border-bottom-color:#9ca3af;">Week 5 Study Strategy</h3>
+<ul>
+  <li><b>Lock down stroke first.</b> Ischemic vs hemorrhagic mechanism, FAST, tPA window, AFib → embolism — all guaranteed test points.</li>
+  <li><b>Memorize the SCI shocks.</b> Spinal shock (areflexia phase), neurogenic shock (warm + brady), autonomic dysreflexia (massive HTN above lesion). Each has a different timeline and management.</li>
+  <li><b>Learn the meningitis CSF profile cold.</b> Bacterial vs viral vs fungal — neutrophils vs lymphocytes, glucose, protein.</li>
+  <li><b>Drill the NMJ direction-of-weakness pattern.</b> MG fatigable, botulism descending, GBS ascending. These three trip students up regularly.</li>
+  <li><b>For pediatric topics, connect timing to mechanism.</b> Neural tube defects = weeks 3–4. CP = peri/postnatal injury. Hydrocephalus = any age, depending on cause.</li>
+  <li><b>"Static vs progressive"</b> — cerebral palsy is the textbook static lesion. Don't miss it.</li>
+  <li><b>Recognize folic-acid-before-conception teaching.</b> Frequent SATA distractor.</li>
+</ul>
+
+<p class="small" style="margin-top:16px;">SCI225 Week 5 Study Guide — built from the Week 5 learning objectives covering CNS and PNS disorders, the neuromuscular junction, and pediatric neurologic alterations. Made by Dr. Vidya Aggrawal to teach the concepts tested, not the exam questions themselves. Same color-coded format as previous weekly guides. Print for paper, or use in-browser with collapsible practice answers.</p>
+</section>
+
+</main>
+</div>
+</body>
+</html>

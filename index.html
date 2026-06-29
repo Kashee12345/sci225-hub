@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0c3a44">
+<title>SCI 225 · Pathophysiology — Nightingale College</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1f2d33; --muted:#7c8990; --faint:#9aa6ac; --line:#e8edef; --bg:#f8fafa; --card:#ffffff;
+    --accent:#0c7283; --accent-dk:#0c3a44; --gold:#c79234;
+    --shadow:0 1px 3px rgba(20,40,46,.05);
+    --r:14px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;font-family:"Inter",system-ui,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:780px;margin:0 auto;padding:0 18px 90px;}
+
+  /* TOP NOTICE */
+  .notice{background:linear-gradient(180deg,#fcf3df,#faeed4);border-bottom:1px solid #eedcb2;}
+  .notice .ni{max-width:780px;margin:0 auto;padding:16px 20px;display:flex;gap:14px;align-items:flex-start;}
+  .notice .nx{font-size:26px;line-height:1;flex:0 0 auto;}
+  .notice .nt{color:#6f571b;}
+  .notice .nt strong{display:block;font-family:"Fraunces",serif;font-weight:600;font-size:18.5px;color:#5b4715;margin-bottom:3px;letter-spacing:-.2px;}
+  .notice .nt span{font-size:14px;line-height:1.5;}
+
+  /* HEADER */
+  header.hero{text-align:center;padding:48px 20px 30px;}
+  header.hero .lamp{font-size:34px;line-height:1;}
+  .kicker{font-size:11.5px;letter-spacing:3px;font-weight:700;color:var(--accent);text-transform:uppercase;margin:12px 0 8px;}
+  header.hero h1{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:clamp(28px,5.5vw,40px);margin:0 0 10px;letter-spacing:-.5px;color:var(--accent-dk);}
+  header.hero p.sub{margin:0 auto;max-width:520px;font-size:15px;color:var(--muted);}
+  header.hero .by{margin-top:14px;font-size:13px;color:var(--faint);font-weight:600;}
+
+  .divline{height:1px;background:var(--line);margin:6px 0 24px;}
+
+  /* SECTION LABEL */
+  .sl{font-size:11.5px;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;color:var(--faint);margin:30px 4px 12px;display:flex;align-items:center;justify-content:space-between;}
+  .sl .tog{display:flex;gap:14px;}
+  .sl .tog button{background:none;border:none;font:inherit;font-size:11.5px;letter-spacing:.5px;color:var(--accent);cursor:pointer;padding:0;text-transform:none;font-weight:600;}
+  .sl .tog button:hover{text-decoration:underline;}
+
+  /* GAMES */
+  .games{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  @media(max-width:560px){.games{grid-template-columns:1fr;}}
+  .game{display:flex;align-items:center;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px;box-shadow:var(--shadow);transition:border-color .15s, transform .15s;}
+  .game:hover{border-color:var(--accent);transform:translateY(-2px);}
+  .game .ico{flex:0 0 auto;width:46px;height:46px;border-radius:12px;display:grid;place-items:center;font-size:24px;background:#eef5f6;}
+  .game.main .ico{background:#f6efe0;}
+  .game h3{margin:0;font-size:16px;font-weight:700;display:flex;align-items:center;gap:8px;}
+  .game .mtag{font-size:9.5px;letter-spacing:.5px;font-weight:800;color:var(--gold);border:1px solid var(--gold);padding:2px 6px;border-radius:10px;text-transform:uppercase;}
+  .game p{margin:2px 0 0;font-size:12.5px;color:var(--muted);}
+
+  /* WEEK ACCORDION */
+  #weeks{display:flex;flex-direction:column;gap:8px;}
+  details.week{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden;}
+  details.week>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:14px;padding:15px 18px;}
+  details.week>summary::-webkit-details-marker{display:none;}
+  .wn{flex:0 0 auto;font-size:11px;font-weight:700;letter-spacing:.5px;color:var(--accent);background:#eef5f6;padding:5px 10px;border-radius:8px;min-width:74px;text-align:center;}
+  details.week.mid .wn{color:var(--gold);background:#f6efe0;}
+  .wt{flex:1 1 auto;font-size:15.5px;font-weight:600;}
+  .wc{flex:0 0 auto;font-size:12px;color:var(--faint);font-weight:500;}
+  .chev{flex:0 0 auto;color:var(--faint);font-size:16px;transition:transform .2s;}
+  details.week[open] .chev{transform:rotate(90deg);}
+  details.week[open]>summary{border-bottom:1px solid var(--line);}
+
+  .wbody{padding:6px 18px 16px;display:flex;flex-direction:column;}
+  .rrow{display:flex;gap:12px;padding:9px 0;border-bottom:1px solid #f1f5f6;align-items:baseline;}
+  .rrow:last-child{border-bottom:none;}
+  .rlab{flex:0 0 auto;width:108px;font-size:11.5px;font-weight:700;letter-spacing:.3px;color:var(--muted);display:flex;align-items:center;gap:7px;}
+  .rlab .ic{font-size:14px;}
+  .ritems{flex:1 1 auto;font-size:13.5px;display:flex;flex-wrap:wrap;gap:4px 0;align-items:baseline;}
+  .ritems a{color:var(--accent);font-weight:500;padding:1px 0;}
+  .ritems a:hover{text-decoration:underline;}
+  .ritems .sep{color:var(--line);margin:0 9px;}
+  .ext{font-size:9px;color:var(--faint);vertical-align:super;}
+  .soon{font-size:13px;color:var(--faint);font-style:italic;padding:8px 0;}
+
+  /* TOOL GUIDE */
+  .gintro{font-size:14px;color:var(--muted);margin:0 4px 14px;}
+  .guide{display:flex;flex-direction:column;gap:9px;}
+  .tool{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:15px 18px;display:flex;gap:14px;align-items:flex-start;}
+  .tool .tico{flex:0 0 auto;width:42px;height:42px;border-radius:11px;background:#eef5f6;display:grid;place-items:center;font-size:21px;}
+  .tool.gm .tico{background:#f6efe0;}
+  .tool h4{margin:0 0 4px;font-size:15px;font-weight:700;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;}
+  .tool h4 .where{font-size:11px;font-weight:600;color:var(--faint);text-transform:uppercase;letter-spacing:.4px;}
+  .tool p{margin:0;font-size:13.5px;color:var(--muted);line-height:1.55;}
+  .flow{background:#eef5f6;border:1px solid #dbe9eb;border-radius:var(--r);padding:16px 20px 16px;margin-top:12px;}
+  .flow h4{margin:0 0 8px;font-size:14px;font-weight:700;color:var(--accent-dk);}
+  .flow ol{margin:0;padding-left:20px;}
+  .flow li{font-size:13.5px;color:var(--ink);margin:5px 0;}
+  .flow li b{color:var(--accent-dk);}
+
+  footer{text-align:center;color:var(--faint);font-size:12.5px;margin-top:44px;}
+  footer .lampf{font-size:20px;opacity:.7;}
+</style>
+</head>
+<body>
+
+<div class="notice"><div class="ni">
+  <div class="nx">🚧</div>
+  <div class="nt">
+    <strong>This hub is being updated all term long — please be patient!</strong>
+    <span>New podcasts, books, workbooks, study guides, and games are added every week. If something is missing or marked "coming soon," it's on the way. Thanks for bearing with me as it grows! 🙏</span>
+  </div>
+</div></div>
+
+<header class="hero">
+  <div class="lamp">🪔</div>
+  <div class="kicker">Nightingale College</div>
+  <h1>SCI 225 · Pathophysiology</h1>
+  <p class="sub">Every resource for the course in one place. Pick a week to open its podcasts, books, workbooks, Kahoots, study guide, and slides.</p>
+  <div class="by">Dr. Vidya Aggrawal</div>
+</header>
+
+<div class="wrap">
+  <div class="divline"></div>
+
+  <!-- GAMES -->
+  <div class="sl">Games</div>
+  <div class="games">
+    <a class="game main" href="games/the-chase.html">
+      <div class="ico">🏃</div>
+      <div><h3>The Chase <span class="mtag">Main</span></h3><p>Dr. Vidya's Quiz Show — 1,062 questions across the whole course.</p></div>
+    </a>
+    <a class="game" href="games/pathoquest.html">
+      <div class="ico">🗺️</div>
+      <div><h3>PathoQuest</h3><p>Battle disease bosses across a pixel-art world.</p></div>
+    </a>
+  </div>
+
+  <!-- WEEKS -->
+  <div class="sl">By Week
+    <span class="tog"><button onclick="setAll(true)">Expand all</button><button onclick="setAll(false)">Collapse all</button></span>
+  </div>
+  <div id="weeks"></div>
+
+  <!-- TOOL GUIDE -->
+  <div class="sl">Guide to the Tools</div>
+  <p class="gintro">New here? Here's what each resource is and how to get the most out of it. Every tool covers the same material in a different way — mix and match to whatever helps it stick.</p>
+  <div class="guide">
+
+    <div class="tool"><div class="tico">🎧</div><div>
+      <h4>Podcasts <span class="where">on Spotify</span></h4>
+      <p>Short audio episodes that talk through each week's big ideas like a conversation. Put one on in the car, on a walk, or at the gym — they're perfect for absorbing the material hands-free and for a quick refresher right before an exam.</p>
+    </div></div>
+
+    <div class="tool"><div class="tico">📚</div><div>
+      <h4>Interactive Books <span class="where">on H5P</span></h4>
+      <p>More than reading. These digital books have questions, clickable images, and activities built right in, checking your understanding as you go and giving you instant feedback. Move at your own pace and redo any section until it clicks.</p>
+    </div></div>
+
+    <div class="tool"><div class="tico">🎨</div><div>
+      <h4>Illustrated Workbooks <span class="where">flipbooks</span></h4>
+      <p>Page-turning, heavily illustrated workbooks that turn dense pathophysiology into clear pictures and step-by-step diagrams. Ideal if you learn best by <em>seeing</em> a process laid out rather than reading about it.</p>
+    </div></div>
+
+    <div class="tool"><div class="tico">🎮</div><div>
+      <h4>Kahoots <span class="where">quiz game</span></h4>
+      <p>Fast, fun multiple-choice quiz games. Use one to gut-check whether you really know a topic, race the clock on your own, or play with classmates. A quick, low-stakes way to find your weak spots before they cost you on a test.</p>
+    </div></div>
+
+    <div class="tool"><div class="tico">📝</div><div>
+      <h4>Study Guides <span class="where">view or PDF</span></h4>
+      <p>Your complete review for the week — every concept organized with mechanisms, "why it matters" notes, exam tips, mnemonics, and practice questions. Read it in your browser, or download the PDF to print and highlight.</p>
+    </div></div>
+
+    <div class="tool"><div class="tico">📊</div><div>
+      <h4>Slides <span class="where">download</span></h4>
+      <p>The actual lecture slide decks, yours to keep. Follow along during class, review what was covered, or use them to fill the gaps in your own notes.</p>
+    </div></div>
+
+    <div class="tool gm"><div class="tico">🏃</div><div>
+      <h4>The Chase <span class="where">game · main</span></h4>
+      <p>A quiz-show game where you race a bot through NCLEX-style questions — right answers sprint you ahead, wrong ones let it catch up. Build streaks, earn lifelines, and clear all 13 weeks. The chase pressure mirrors test-day recall, which makes it a surprisingly powerful (and addictive) way to drill.</p>
+    </div></div>
+
+    <div class="tool gm"><div class="tico">🗺️</div><div>
+      <h4>PathoQuest <span class="where">game</span></h4>
+      <p>A pixel-art adventure where you battle disease "bosses" to master each body system. Explore the world, defeat themed enemies using what you've learned, and collect rewards along the way. It's serious review disguised as a quest.</p>
+    </div></div>
+
+  </div>
+
+  <div class="flow">
+    <h4>📈 A simple way to study each week</h4>
+    <ol>
+      <li>Meet the concepts with the <b>Interactive Book</b> or <b>Slides</b>.</li>
+      <li>Hear them explained another way with the <b>Podcast</b>.</li>
+      <li>See the visuals in the <b>Illustrated Workbook</b>.</li>
+      <li>Tie it all together with the <b>Study Guide</b>.</li>
+      <li>Test yourself with the <b>Kahoot</b>.</li>
+      <li>Lock it in by playing <b>The Chase</b> and <b>PathoQuest</b>.</li>
+    </ol>
+  </div>
+
+  <footer>
+    <div class="lampf">🪔</div>
+    SCI 225 · Pathophysiology — Nightingale College · Dr. Vidya Aggrawal
+  </footer>
+</div>
+
+<script>
+/* ---------- DATA ---------- */
+const H5P="https://akashgarg.h5p.com/content/";
+const SPOT="https://open.spotify.com/episode/";
+const FLIP="https://online.fliphtml5.com/okqmf/";
+const SG="study-guides/";
+const DK="decks/";
+
+const WEEKS=[
+ {n:"1",topic:"Foundations · The Cell",color:"",
+  podcasts:[["Week 1",SPOT+"6xih4pNmOfC0uYRnIt121Q"],["Week 1.5",SPOT+"3quWWCdfV7jQv8OEZvOLV3"]],
+  books:[["The Cell",H5P+"1292790644567052418"],["ABG & Genetics",H5P+"1292794478503353138"],["Foundations · ABGs (2026)",H5P+"1292907277613460708"]],
+  workbooks:[["Workbook 1",FLIP+"kclm/"],["Workbook 1.5",FLIP+"ephz/"]],
+  kahoots:[["Cell","https://create.kahoot.it/share/sci-225-kahoot/5c8dce84-43a5-44e6-b422-07cb9fc8cd02"],["ABG & Genetics","https://create.kahoot.it/details/2316d275-a397-4775-a321-ebd36a337702"]],
+  guide:["SCI225_Week1_Study_Guide.html","SCI225_Week1_Study_Guide.pdf"],
+  deck:"SCI225 Week 01.pptx"},
+
+ {n:"2",topic:"Immunity & Inflammation",
+  podcasts:[["Week 2",SPOT+"3toKraV2bEqY0g4gowImrM"]],
+  books:[["Hypersensitivity Rxns",H5P+"1292799405610596428"],["Immunity & Inflammation (2026)",H5P+"1292907302292331638"]],
+  workbooks:[["Workbook 2",FLIP+"guvv/"]],
+  kahoots:[["Immunity","https://create.kahoot.it/details/2d9f9a8a-51ee-4c5d-aeb9-902317d6e330"]],
+  guide:["SCI225_Week2_Study_Guide.html","SCI225_Week2_Study_Guide.pdf"],
+  deck:"SCI225 Week 02.pptx"},
+
+ {n:"3",topic:"Oncology",
+  podcasts:[["Week 3",SPOT+"5Equ1WMcENqTFdysIgT8ne"]],
+  books:[["Oncology",H5P+"1292803992287866018"],["Oncology (2026)",H5P+"1292907287144031018"]],
+  workbooks:[["Workbook 3",FLIP+"rkut/"]],
+  kahoots:[["Oncology","https://create.kahoot.it/share/sci-225-cancer-week3/be934634-a73f-4631-b91c-c88a50839976"]],
+  guide:["SCI225_Week3_Study_Guide.html","SCI225_Week3_Study_Guide.pdf"],
+  deck:"SCI225 Week 03.pptx"},
+
+ {n:"4",topic:"Pain",
+  podcasts:[["Week 4",SPOT+"54OIHpulQhEfrCKyYNdAar"]],
+  books:[["Pain",H5P+"1292810903230322458"]],
+  workbooks:[["Workbook 4",FLIP+"kiqi/"]],
+  kahoots:[["Pain","https://create.kahoot.it/details/9de3400e-977d-45ca-9ecf-46c81bdffab6"]],
+  guide:["SCI225_Week4_Study_Guide.html","SCI225_Week4_Study_Guide.pdf"],
+  deck:"SCI225 Week 04.pptx"},
+
+ {n:"5",topic:"Neurology",
+  podcasts:[["Week 5",SPOT+"1JehJJO3Pggbbn4CvkcjjC"]],
+  books:[["Neurology",H5P+"1292815213812016518"]],
+  workbooks:[["Workbook 5",FLIP+"sgrr/"]],
+  kahoots:[["Neurology","https://create.kahoot.it/details/3d24bab9-8ddc-42d4-ad5b-a08f03e93438"]],
+  guide:["SCI225_Week5_Study_Guide.html","SCI225_Week5_Study_Guide.pdf"],
+  deck:"SCI225 Week 05.pptx"},
+
+ {n:"6",topic:"Neurology 2",
+  podcasts:[["Week 6",SPOT+"1GBD4bPzgo7VSyvIWTIk6Y"]],
+  books:[["Neurology 2",H5P+"1292822850993468028"]],
+  workbooks:[],
+  kahoots:[["Neurology 2","https://create.kahoot.it/details/b50e4d9a-93e4-4a8e-9b97-a57440cb3d76"]],
+  guide:["SCI225_Week6_Study_Guide.html","SCI225_Week6_Study_Guide.pdf"],
+  deck:"SCI225 Week 06.pptx"},
+
+ {n:"Midterm",mid:true,topic:"Review & consolidate",
+  podcasts:[["Midterm",SPOT+"31e6j038jegtWYkfHanBJG"]],
+  books:[],
+  workbooks:[["Midterm Workbook",FLIP+"uppb/"]],
+  kahoots:[],
+  guide:["SCI225_Pathophysiology_Midterm_Review.html","SCI225_Pathophysiology_Midterm_Review.pdf"],
+  deck:null},
+
+ {n:"8",topic:"Hematology",
+  podcasts:[["Week 8",SPOT+"2R05Vx3wQWkFEoCf2yL6kd"]],
+  books:[["Hematology",H5P+"1292841206178526968"]],
+  workbooks:[],
+  kahoots:[["Hematology","https://create.kahoot.it/details/04c74554-f5a3-4e88-9960-1d6a6934ef6d"]],
+  guide:["SCI225_Week8_Hematologic_Study_Guide.html","SCI225_Week8_Hematologic_Study_Guide.pdf"],
+  deck:"SCI225 Week 08.pptx"},
+
+ {n:"9",topic:"Cardiovascular",
+  podcasts:[["Week 9",SPOT+"38RKb1GJVJm1ovlKv6PwaL"]],
+  books:[["Cardio",H5P+"1292841203618131258"]],
+  workbooks:[["Workbook 9",FLIP+"mvqa/"]],
+  kahoots:[["Cardio 1","https://create.kahoot.it/details/d6bb6938-81c1-4a6e-9512-2c4f521f1700"]],
+  guide:["SCI225_Week9_Study_Guide.html","SCI225_Week9_Study_Guide.pdf"],
+  deck:"SCI225 Week 09.pptx"},
+
+ {n:"10",topic:"Pulmonary",
+  podcasts:[["Week 10",SPOT+"5TffObvnjwWTIrGKpOHRAh"]],
+  books:[["Pulmonology",H5P+"1292847027518607528"]],
+  workbooks:[],
+  kahoots:[],
+  guide:["SCI225_Week10_Pulmonary_Study_Guide.html","SCI225_Week10_Pulmonary_Study_Guide.pdf"],
+  deck:"SCI225 Week 10.pptx"},
+
+ {n:"11",topic:"Renal / Urology",construction:true,
+  podcasts:[["Week 11",SPOT+"3QR1GsQw4oQJdYPEfCTSr8"]],
+  books:[["Renal / Urology",H5P+"1292856691134877508"]],
+  workbooks:[],kahoots:[],guide:null,deck:null},
+
+ {n:"12",topic:"Reproductive",
+  podcasts:[],books:[],workbooks:[],kahoots:[],
+  guide:["SCI225_Week12_Reproductive_Study_Guide.html","SCI225_Week12_Reproductive_Study_Guide.pdf"],
+  deck:"SCI225 Week 12.pptx"},
+
+ {n:"13",topic:"Digestive",
+  podcasts:[],books:[],workbooks:[],kahoots:[],
+  guide:["SCI225_Week13_Digestive_Study_Guide.html","SCI225_Week13_Digestive_Study_Guide.pdf"],
+  deck:"SCI225 Week 13.pptx"},
+
+ {n:"14",topic:"Musculoskeletal & Integumentary",
+  podcasts:[],books:[],workbooks:[],kahoots:[],
+  guide:["SCI225_Week14_Musculoskeletal_Integumentary_Study_Guide.html","SCI225_Week14_Musculoskeletal_Integumentary_Study_Guide.pdf"],
+  deck:"SCI225 Week 14.pptx"}
+];
+
+/* ---------- RENDER ---------- */
+function enc(p){return encodeURI(p);}
+function link(label,href,ext){return '<a href="'+href+'"'+(ext?' target="_blank" rel="noopener"':'')+'>'+label+(ext?'<span class="ext">↗</span>':'')+'</a>';}
+function row(ic,lab,links){
+  if(!links.length) return '';
+  return '<div class="rrow"><span class="rlab"><span class="ic">'+ic+'</span>'+lab+'</span><span class="ritems">'+links.join('<span class="sep">·</span>')+'</span></div>';
+}
+
+const weeksEl=document.getElementById('weeks');
+
+WEEKS.forEach(w=>{
+  let rows='';
+  rows+=row('🎧','Podcast', w.podcasts.map(p=>link(p[0],p[1],true)));
+  rows+=row('📚','Book', w.books.map(b=>link(b[0],b[1],true)));
+  rows+=row('🎨','Workbook', w.workbooks.map(b=>link(b[0],b[1],true)));
+  rows+=row('🎮','Kahoot', w.kahoots.map(k=>link(k[0],k[1],true)));
+  if(w.guide) rows+=row('📝','Study Guide', [link('View',SG+enc(w.guide[0]),false),link('PDF',SG+enc(w.guide[1]),false)]);
+  if(w.deck) rows+=row('📊','Slides', [link('Download',DK+enc(w.deck),false)]);
+  if(!rows) rows='<div class="soon">'+(w.construction?'🚧 Under construction — coming soon.':'Resources coming soon.')+'</div>';
+
+  const count = w.podcasts.length + w.books.length + w.workbooks.length + w.kahoots.length + (w.guide?1:0) + (w.deck?1:0);
+  const label = w.mid ? 'Midterm' : 'Week '+w.n;
+  const countTxt = w.construction ? 'in progress' : count+' item'+(count===1?'':'s');
+
+  weeksEl.insertAdjacentHTML('beforeend',
+    '<details class="week'+(w.mid?' mid':'')+'">'+
+      '<summary><span class="wn">'+label+'</span><span class="wt">'+w.topic+'</span><span class="wc">'+countTxt+'</span><span class="chev">›</span></summary>'+
+      '<div class="wbody">'+rows+'</div>'+
+    '</details>');
+});
+
+function setAll(open){document.querySelectorAll('details.week').forEach(d=>d.open=open);}
+</script>
+</body>
+</html>

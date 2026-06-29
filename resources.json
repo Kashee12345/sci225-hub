@@ -1,0 +1,70 @@
+{
+  "course": "SCI 225 · Pathophysiology · Nightingale College",
+  "instructor": "Dr. Akash Garg",
+  "glide_app": "https://sci-225-6ybs.glide.page",
+  "interactive_books_h5p": [
+    { "title": "Week 1 — The Cell", "url": "https://akashgarg.h5p.com/content/1292790644567052418" },
+    { "title": "Week 1 — ABG and Genetics", "url": "https://akashgarg.h5p.com/content/1292794478503353138" },
+    { "title": "Week 2 — Hypersensitivity Rxns", "url": "https://akashgarg.h5p.com/content/1292799405610596428" },
+    { "title": "Week 3 — Oncology", "url": "https://akashgarg.h5p.com/content/1292803992287866018" },
+    { "title": "Week 4 — Pain", "url": "https://akashgarg.h5p.com/content/1292810903230322458" },
+    { "title": "Week 5 — Neurology", "url": "https://akashgarg.h5p.com/content/1292815213812016518" },
+    { "title": "Week 6 — Neurology 2", "url": "https://akashgarg.h5p.com/content/1292822850993468028" },
+    { "title": "Week 8 — Hematology", "url": "https://akashgarg.h5p.com/content/1292841206178526968" },
+    { "title": "Week 9 — Cardio", "url": "https://akashgarg.h5p.com/content/1292841203618131258" },
+    { "title": "Week 10 — Pulmonology", "url": "https://akashgarg.h5p.com/content/1292847027518607528" },
+    { "title": "Week 11 — Renal/Urology", "url": "https://akashgarg.h5p.com/content/1292856691134877508" },
+    { "title": "Week 1 — Foundations of Pathophysiology · ABG's (NEW FORMAT 2026)", "url": "https://akashgarg.h5p.com/content/1292907277613460708" },
+    { "title": "Week 2 — Immunity and Inflammation (NEW FORMAT 2026)", "url": "https://akashgarg.h5p.com/content/1292907302292331638" },
+    { "title": "Week 3 — Oncology (NEW FORMAT 2026)", "url": "https://akashgarg.h5p.com/content/1292907287144031018" }
+  ],
+  "illustrated_workbooks_fliphtml5": [
+    { "title": "Illustrated Workbook 1", "url": "https://online.fliphtml5.com/okqmf/kclm/" },
+    { "title": "Illustrated Workbook 1.5", "url": "https://online.fliphtml5.com/okqmf/ephz/" },
+    { "title": "Illustrated Workbook 2", "url": "https://online.fliphtml5.com/okqmf/guvv/" },
+    { "title": "Illustrated Workbook 3", "url": "https://online.fliphtml5.com/okqmf/rkut/" },
+    { "title": "Illustrated Workbook 4", "url": "https://online.fliphtml5.com/okqmf/kiqi/" },
+    { "title": "Illustrated Workbook 5", "url": "https://online.fliphtml5.com/okqmf/sgrr/" },
+    { "title": "Illustrated Workbook 6", "url": "" },
+    { "title": "Midterm Workbook", "url": "https://online.fliphtml5.com/okqmf/uppb/" },
+    { "title": "Illustrated Workbook 8", "url": "" },
+    { "title": "Illustrated Workbook 9", "url": "https://online.fliphtml5.com/okqmf/mvqa/" }
+  ],
+  "kahoots": [
+    { "title": "Week 1 — Cell", "url": "https://create.kahoot.it/share/sci-225-kahoot/5c8dce84-43a5-44e6-b422-07cb9fc8cd02" },
+    { "title": "Week 1 — ABG and Genetics", "url": "https://create.kahoot.it/details/2316d275-a397-4775-a321-ebd36a337702" },
+    { "title": "Week 2 — Immunity", "url": "https://create.kahoot.it/details/2d9f9a8a-51ee-4c5d-aeb9-902317d6e330" },
+    { "title": "Week 3 — Oncology", "url": "https://create.kahoot.it/share/sci-225-cancer-week3/be934634-a73f-4631-b91c-c88a50839976" },
+    { "title": "Week 4 — Pain", "url": "https://create.kahoot.it/details/9de3400e-977d-45ca-9ecf-46c81bdffab6" },
+    { "title": "Week 5 — Neurology", "url": "https://create.kahoot.it/details/3d24bab9-8ddc-42d4-ad5b-a08f03e93438" },
+    { "title": "Week 6 — Neurology 2", "url": "https://create.kahoot.it/details/b50e4d9a-93e4-4a8e-9b97-a57440cb3d76" },
+    { "title": "Week 8 — Hematology", "url": "https://create.kahoot.it/details/04c74554-f5a3-4e88-9960-1d6a6934ef6d" },
+    { "title": "Week 9 — Cardio 1", "url": "https://create.kahoot.it/details/d6bb6938-81c1-4a6e-9512-2c4f521f1700" },
+    { "title": "Week 10 — Pulmonology", "url": "" }
+  ],
+  "podcasts_spotify": [
+    { "title": "Week 1", "url": "https://open.spotify.com/episode/6xih4pNmOfC0uYRnIt121Q" },
+    { "title": "Week 1.5", "url": "https://open.spotify.com/episode/3quWWCdfV7jQv8OEZvOLV3" },
+    { "title": "Week 2", "url": "https://open.spotify.com/episode/3toKraV2bEqY0g4gowImrM" },
+    { "title": "Week 3", "url": "https://open.spotify.com/episode/5Equ1WMcENqTFdysIgT8ne" },
+    { "title": "Week 4", "url": "https://open.spotify.com/episode/54OIHpulQhEfrCKyYNdAar" },
+    { "title": "Week 5", "url": "https://open.spotify.com/episode/1JehJJO3Pggbbn4CvkcjjC" },
+    { "title": "Week 6", "url": "https://open.spotify.com/episode/1GBD4bPzgo7VSyvIWTIk6Y" },
+    { "title": "Midterm", "url": "https://open.spotify.com/episode/31e6j038jegtWYkfHanBJG" },
+    { "title": "Week 8", "url": "https://open.spotify.com/episode/2R05Vx3wQWkFEoCf2yL6kd" },
+    { "title": "Week 9", "url": "https://open.spotify.com/episode/38RKb1GJVJm1ovlKv6PwaL" },
+    { "title": "Week 10", "url": "https://open.spotify.com/episode/5TffObvnjwWTIrGKpOHRAh" },
+    { "title": "Week 11", "url": "https://open.spotify.com/episode/3QR1GsQw4oQJdYPEfCTSr8" }
+  ],
+  "study_guides": "LOCAL — Nightingale_Beacon_Suite/04_source/SCI225/study_guides (HTML+PDF all weeks)",
+  "powerpoints": "LOCAL — Nightingale_Beacon_Suite/04_source/SCI225/slide_decks (12 decks)",
+  "games": [
+    { "title": "The Chase — Dr. Vidya's Quiz Show (SCI 225)", "type": "chase", "primary": true, "source_local": "Nightingale_Beacon_Suite/01_games/04_BIO_DrVidya_QuizShow_NC_v3.html", "host": "in-hub" },
+    { "title": "PathoQuest — Nightingale College SCI 225", "type": "quest-rpg", "primary": false, "source_local": "Nightingale_Beacon_Suite/01_games/03_BIO_PathoQuest_NC_v3_EXEMPLAR.html", "host": "in-hub" }
+  ],
+  "gaps": [
+    "Week 10 Kahoot — no link",
+    "Illustrated Workbook 6 — no link",
+    "Illustrated Workbook 8 — no link"
+  ]
+}
