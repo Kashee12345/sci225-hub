@@ -472,8 +472,9 @@ body::after{
 
 /* Feedback */
 #bov-fb{
-  display:none;margin-top:10px;padding:10px;
-  font-size:6px;line-height:2;border:1px solid;border-radius:2px;
+  display:none;margin-top:10px;padding:11px 13px;
+  font-family:"Segoe UI",system-ui,Arial,sans-serif;
+  font-size:14px;line-height:1.5;border:1px solid;border-radius:4px;
 }
 #bov-fb.show{display:block}
 #bov-fb.ok{border-color:#44cc44;color:#88ff88;background:rgba(30,90,40,.2)}
@@ -708,7 +709,7 @@ body::after{
 /* ═══ TITLE SCREEN ═══ */
 #title-screen{
   position:fixed;inset:0;z-index:9998;
-  background:#1c4020;
+  background:#010805;
   display:flex;flex-direction:column;
   align-items:center;justify-content:flex-start;
   overflow-y:auto;overflow-x:hidden;
@@ -5556,7 +5557,7 @@ function loadQ(){
   const fb2=document.getElementById("bov-fb");
   if(selectedCharId==='freshman'){
     const q2=battleQuestions[curQ%battleQuestions.length];
-    fb2.innerHTML='<span style="color:#a0c8ff;font-size:5px">💡 FRESHMAN HINT: '+q2.tip+'</span>';
+    fb2.innerHTML='<span style="color:#a0c8ff;font-size:13px;font-family:system-ui,Arial,sans-serif">💡 FRESHMAN HINT: '+q2.tip+'</span>';
     fb2.className="bov-fb show ok";
     fb2.style.opacity='0.75';
   } else {
@@ -5579,7 +5580,7 @@ function checkA(chosen){
   });
 
   const fb=document.getElementById("bov-fb");
-  fb.textContent=(ok?"&#10003; CORRECT! ":"&#10007; NOT QUITE. ")+q.tip;
+  fb.textContent=(ok?"✓ CORRECT! ":"✗ NOT QUITE. ")+q.tip;
   fb.className="bov-fb show "+(ok?"ok":"bad");
 
   if(ok){
