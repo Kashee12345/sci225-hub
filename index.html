@@ -8,6 +8,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-220BDD92BL"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-220BDD92BL');</script>
 <style>
   :root{
     --ink:#1f2d33; --muted:#7c8990; --faint:#9aa6ac; --line:#e8edef; --bg:#f8fafa; --card:#ffffff;
@@ -275,6 +278,7 @@
   <footer>
     <div class="lampf">🪔</div>
     SCI 225 · Pathophysiology — Nightingale College · Dr. Vidya Aggrawal
+    <div style="font-size:11px;color:var(--faint);margin-top:8px;">This site uses Google Analytics to understand which resources help learners most.</div>
   </footer>
 </div>
 
@@ -422,6 +426,33 @@ WEEKS.forEach(w=>{
 });
 
 function setAll(open){document.querySelectorAll('details.week').forEach(d=>d.open=open);}
+</script>
+
+<script>
+/* ---------- Usage analytics: track which games & resources learners open ---------- */
+(function(){
+  document.addEventListener('click', function(e){
+    if(typeof gtag!=='function') return;
+    var a = e.target.closest ? e.target.closest('a[href]') : null;
+    if(!a) return;
+    var href = a.getAttribute('href') || '';
+    var gm = href.match(/games\/([a-z0-9-]+)\.html/i);
+    if(gm){ gtag('event','game_open',{ game: gm[1] }); return; }
+    var row = a.closest('.rrow');
+    if(row){
+      var det = a.closest('details.week');
+      var wnEl = det ? det.querySelector('.wn') : null;
+      var wk = wnEl ? wnEl.textContent.trim() : '';
+      var labEl = row.querySelector('.rlab');
+      var type = labEl ? labEl.textContent.replace(/[^A-Za-z &/]/g,'').trim() : '';
+      gtag('event','resource_open',{
+        resource_type: type,
+        week: wk,
+        resource_name: a.textContent.replace(/↗/g,'').trim()
+      });
+    }
+  }, true);
+})();
 </script>
 </body>
 </html>
