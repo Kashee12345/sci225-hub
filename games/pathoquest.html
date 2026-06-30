@@ -4833,10 +4833,14 @@ function update(ts){
     player.x=Math.max(TILE,Math.min(player.x+mx,(WW-2)*TILE));
     player.y=Math.max(TILE,Math.min(player.y+my,(WH-2)*TILE));
   }else{player.moving=false;player.frame=0;player.idleT+=dt;}
-  cam.x=Math.max(0,Math.min(player.x-VW/2,WW*TILE-VW));
+  // smooth camera: ease toward the centered target, frame-rate-independent (no snap, minimal lag)
+  const _tcx=Math.max(0,Math.min(player.x-VW/2,WW*TILE-VW));
+  const _tcy=Math.max(0,Math.min(player.y-VH/2,WH*TILE-VH));
+  const _ck=1-Math.pow(0.78,moveF);   // ~22% catch-up per 60fps frame, dt-adjusted
+  cam.x+=(_tcx-cam.x)*_ck;
+  cam.y+=(_tcy-cam.y)*_ck;
   checkShopEntry();
   checkTrophyEntry();
-  cam.y=Math.max(0,Math.min(player.y-VH/2,WH*TILE-VH));
   if(popupTimer>0)return;
   if(exitCooldown>0){exitCooldown--;inZone=null;return;}
   const ptx=Math.floor(player.x/TILE),pty=Math.floor(player.y/TILE);
