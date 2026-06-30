@@ -56,6 +56,24 @@
   .game .mtag{font-size:9.5px;letter-spacing:.5px;font-weight:800;color:var(--gold);border:1px solid var(--gold);padding:2px 6px;border-radius:10px;text-transform:uppercase;}
   .game p{margin:2px 0 0;font-size:12.5px;color:var(--muted);}
 
+  /* GAME HOW-TO DROPDOWNS */
+  .gdrops{display:flex;flex-direction:column;gap:8px;margin-top:12px;}
+  details.gdrop{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden;}
+  details.gdrop>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:11px;padding:13px 18px;font-weight:700;font-size:15px;}
+  details.gdrop>summary::-webkit-details-marker{display:none;}
+  details.gdrop .gico{font-size:20px;flex:0 0 auto;}
+  details.gdrop .gtag{font-size:9.5px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold);padding:2px 7px;border-radius:10px;}
+  details.gdrop .chev{margin-left:auto;color:var(--faint);font-size:16px;transition:transform .2s;}
+  details.gdrop[open] .chev{transform:rotate(90deg);}
+  details.gdrop[open]>summary{border-bottom:1px solid var(--line);}
+  .gdrop .gbody{padding:8px 18px 16px;}
+  .gdrop .gbody p{margin:8px 0 4px;font-size:13.5px;color:var(--muted);line-height:1.55;}
+  .gdrop .gbody ol{margin:6px 0 0;padding-left:20px;}
+  .gdrop .gbody li{font-size:13.5px;color:var(--ink);margin:6px 0;line-height:1.55;}
+  .gdrop .gbody li b{color:var(--accent-dk);}
+  .gdrop .playbtn{display:inline-block;margin-top:14px;background:var(--accent);color:#fff;font-weight:700;font-size:13px;padding:9px 18px;border-radius:24px;}
+  .gdrop .playbtn:hover{filter:brightness(1.07);}
+
   /* WEEK ACCORDION */
   #weeks{display:flex;flex-direction:column;gap:8px;}
   details.week{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden;}
@@ -142,6 +160,63 @@
     </a>
   </div>
 
+  <div class="gdrops">
+    <details class="gdrop">
+      <summary><span class="gico">🏃</span> How to play · The Chase <span class="gtag">main</span><span class="chev">›</span></summary>
+      <div class="gbody">
+        <p>Dr. Vidya's Quiz Show is a TV-style race against the Quiz-Bot 3000 — outrun the bot across 1,062 NCLEX-style questions covering every week of the course.</p>
+        <ol>
+          <li><b>Choose a mode.</b> From the start screen pick a single week, the <b>Midterm Chase</b> (Weeks 1–6), the <b>Final Chase</b> (Weeks 8–14), <b>Adaptive Review</b> (drills the topics you miss most), or the <b>Daily Challenge</b> (a fresh 20-question set each day).</li>
+          <li><b>Set difficulty &amp; length.</b> Pick Easy, Standard, or Hard — this changes your head-start, lifelines, timer, and scoring — then a round length: Quick 10, Standard 20, or Marathon 30.</li>
+          <li><b>Answer to run.</b> Each correct answer sprints your contestant a step toward 🏁 safety; a wrong answer — or letting the timer run out — lets the Quiz-Bot surge a step closer. Stay ahead to win the round.</li>
+          <li><b>Select-all-that-apply.</b> Some questions need every correct option — choose them all, then press <b>Lock in answer</b> (it's all-or-nothing).</li>
+          <li><b>Earn &amp; use lifelines.</b> Build streaks to earn <b>50:50</b> (removes two wrong choices), <b>❄️ Freeze</b> (blocks one bot step), and <b>⏱️ Slow-Mo</b> (adds time). Spend them when a question stumps you.</li>
+          <li><b>Build streak combos.</b> Consecutive correct answers escalate through tiers (×3 → ×15) for bonus points and confetti — keep the chain alive.</li>
+          <li><b>Learn from every answer.</b> After each question, read the full rationale and tap the 📖 slide reference to review that exact topic.</li>
+          <li><b>Clear the boss.</b> Each chapter has a themed boss; beat it to earn mastery stamps, then review the end-of-round analytics — accuracy by topic and exactly what to study next.</li>
+          <li><b>Extras.</b> Spend earned coins in the <b>Shop</b>, browse the <b>Bestiary</b> of bosses, chase <b>achievements</b>, and <b>save &amp; resume</b> any round — close the tab and pick up later.</li>
+        </ol>
+        <a class="playbtn" href="games/the-chase.html">▶ Play The Chase</a>
+      </div>
+    </details>
+
+    <details class="gdrop">
+      <summary><span class="gico">🗺️</span> How to play · PathoQuest<span class="chev">›</span></summary>
+      <div class="gbody">
+        <p>A pixel-art adventure RPG where each body system is a zone guarded by a disease boss. Travel the world and battle your way to mastery.</p>
+        <ol>
+          <li><b>Move around.</b> On a computer use the <b>arrow keys</b> (or WASD); on a tablet or phone use the on-screen <b>D-pad</b>. Walk your character across the world map.</li>
+          <li><b>Enter a zone.</b> Each zone is a body system — step onto it to begin its challenge.</li>
+          <li><b>Battle by answering.</b> Enemies and the zone boss attack with NCLEX-style questions. <b>Answer correctly to damage them and earn XP;</b> a wrong answer lets the enemy strike back and you lose health.</li>
+          <li><b>Read the teaching tip</b> shown after each question — absorbing those is the whole point.</li>
+          <li><b>Defeat the boss</b> to clear the zone, earn rewards and cards, and pass the mastery gate that unlocks the next area.</li>
+          <li><b>Mind your health.</b> If it runs low, answer carefully to survive and recover.</li>
+          <li><b>Collect &amp; progress.</b> Grow your card collection, track XP and mastery, and work through every zone to complete the quest.</li>
+          <li><b>Controls recap:</b> move with arrows / WASD / D-pad; pick an answer by tapping or clicking it (or D-pad + confirm).</li>
+        </ol>
+        <a class="playbtn" href="games/pathoquest.html">▶ Play PathoQuest</a>
+      </div>
+    </details>
+
+    <details class="gdrop">
+      <summary><span class="gico">🩺</span> How to play · Medical Mystery<span class="chev">›</span></summary>
+      <div class="gbody">
+        <p>You're the clinician. Work a real patient case inside an EHR: gather evidence, reach a diagnosis, then prove you understand the pathophysiology and the nursing priorities.</p>
+        <ol>
+          <li><b>Read the patient banner.</b> Name, demographics, chief complaint, and vital signs sit at the top — just like a real chart.</li>
+          <li><b>Work the EHR.</b> Use the tabs to <b>interview</b> the patient, do a <b>physical exam</b>, <b>order labs</b>, and <b>request imaging</b>. Each action costs <b>diagnostic points</b>, so gather what you need without wasting moves.</li>
+          <li><b>Build your case.</b> Watch how each finding narrows the differential — order strategically instead of everything at once.</li>
+          <li><b>Submit a diagnosis.</b> When you have enough evidence, open the differential and choose the best fit. If you're wrong, the attending nudges you — you get up to <b>3 attempts</b>.</li>
+          <li><b>🧬 Patho Mode.</b> After diagnosing, explain the pathophysiology in your own words; you're scored on how many key concepts you include, so be thorough.</li>
+          <li><b>📋 NCLEX Mode.</b> Then prioritize nursing interventions (<b>what do you do FIRST?</b>), choose the right medications, and answer an NCLEX-style question — scored on clinical judgment and priority.</li>
+          <li><b>Get your grade.</b> You're scored on <b>Diagnosis</b>, <b>Efficiency</b> (point use), and <b>Pathophysiology</b>. Nail all three — correct diagnosis + strong patho + an efficient workup — to earn <b>Outstanding</b>.</li>
+          <li><b>Replay</b> cases to sharpen your efficiency and reasoning.</li>
+        </ol>
+        <a class="playbtn" href="games/medical-mystery.html">▶ Play Medical Mystery</a>
+      </div>
+    </details>
+  </div>
+
   <!-- WEEKS -->
   <div class="sl">By Week
     <span class="tog"><button onclick="setAll(true)">Expand all</button><button onclick="setAll(false)">Collapse all</button></span>
@@ -181,42 +256,6 @@
     <div class="tool"><div class="tico">📊</div><div>
       <h4>Slides <span class="where">download</span></h4>
       <p>The actual lecture slide decks, yours to keep. Follow along during class, review what was covered, or use them to fill the gaps in your own notes.</p>
-    </div></div>
-
-    <div class="tool gm"><div class="tico">🏃</div><div>
-      <h4>The Chase <span class="where">game · main</span></h4>
-      <p>A TV-style quiz-show race against the Quiz-Bot through <b>1,062 NCLEX-style questions</b> covering every week. Play a single week, the <b>Midterm Chase</b> (Weeks 1–6), or the <b>Final Chase</b> (Weeks 8–14). Every miss lets the bot close in, so it turns recall into a heart-pounding race — a powerful (and genuinely addictive) way to drill for exams.</p>
-      <div class="howto"><b>How to play</b><ol>
-        <li>Pick a week, the Midterm Chase, or the Final Chase — then choose round length (10/20/30) and difficulty.</li>
-        <li>Answer before the timer runs out: correct answers sprint you toward safety; wrong answers or timeouts let the Quiz-Bot gain a step.</li>
-        <li>Build answer streaks to earn lifelines — 50:50, ❄️ Freeze, and ⏱️ Slow-Mo.</li>
-        <li>After each answer, read the full rationale and tap the slide reference to review that topic.</li>
-        <li>Stay ahead of the bot to win, then check your end-of-round analytics (accuracy by topic + what to review) and unlock achievements.</li>
-      </ol></div>
-    </div></div>
-
-    <div class="tool gm"><div class="tico">🗺️</div><div>
-      <h4>PathoQuest <span class="where">game</span></h4>
-      <p>A pixel-art adventure RPG where each body system is a zone guarded by a themed disease "boss." Explore a top-down world and battle bosses using your pathophysiology knowledge, collecting cards and rewards as you go — serious review disguised as a quest.</p>
-      <div class="howto"><b>How to play</b><ol>
-        <li>Move your character around the world map — D-pad on a tablet, or arrow keys on a computer — and step into a zone.</li>
-        <li>Each zone is a body system with its own boss; the battle is a set of NCLEX-style questions.</li>
-        <li>Correct answers damage the boss; wrong answers trigger its attack — read the tip after each one.</li>
-        <li>Defeat the boss to clear the zone, earn cards and rewards, and unlock the next area.</li>
-        <li>Work through every zone to finish the quest.</li>
-      </ol></div>
-    </div></div>
-
-    <div class="tool gm"><div class="tico">🩺</div><div>
-      <h4>Medical Mystery <span class="where">game</span></h4>
-      <p>A clinical diagnostic-reasoning simulation — <b>you're the clinician</b> working real patient cases inside an EHR. Interview the patient, examine, order labs and imaging, reach a diagnosis, then prove you understand the underlying pathophysiology and the nursing priorities. It's how these concepts actually show up at the bedside.</p>
-      <div class="howto"><b>How to play</b><ol>
-        <li>Each patient arrives with a chief complaint and vitals. Use the EHR tabs to interview, examine, order labs, and request imaging — but every action costs diagnostic points, so spend wisely.</li>
-        <li>When you've gathered enough evidence, submit your diagnosis from the differential. Wrong? The attending nudges you — up to 3 attempts.</li>
-        <li>🧬 <b>Patho Mode:</b> explain the pathophysiology in your own words; you're scored on how many key concepts you hit.</li>
-        <li>📋 <b>NCLEX Mode:</b> prioritize nursing interventions (what do you do FIRST?), choose the right medications, and answer an NCLEX-style question.</li>
-        <li>You're graded on Diagnosis, Efficiency, and Pathophysiology — aim for "Outstanding": correct diagnosis + strong patho + efficient point use.</li>
-      </ol></div>
     </div></div>
 
   </div>
