@@ -33,7 +33,12 @@
   .notice .nt span{font-size:14px;line-height:1.5;}
 
   /* HEADER */
-  header.hero{text-align:center;padding:48px 20px 30px;}
+  header.hero{text-align:center;padding:48px 20px 30px;position:relative;overflow:hidden;}
+  header.hero>*{position:relative;z-index:1;}
+  #hubAurora{position:absolute;inset:-10% -5% 0;z-index:0;opacity:.5;pointer-events:none;
+    -webkit-mask:radial-gradient(130% 100% at 50% 0,#000 45%,transparent 100%);
+            mask:radial-gradient(130% 100% at 50% 0,#000 45%,transparent 100%);}
+  @media(prefers-reduced-motion:reduce){#hubAurora{display:none;}}
   header.hero .lamp{font-size:34px;line-height:1;}
   .kicker{font-size:11.5px;letter-spacing:3px;font-weight:700;color:var(--accent);text-transform:uppercase;margin:12px 0 8px;}
   header.hero h1{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:clamp(28px,5.5vw,40px);margin:0 0 10px;letter-spacing:-.5px;color:var(--accent-dk);}
@@ -58,6 +63,17 @@
   .game h3{margin:0;font-size:16px;font-weight:700;display:flex;align-items:center;gap:8px;}
   .game .mtag{font-size:9.5px;letter-spacing:.5px;font-weight:800;color:var(--gold);border:1px solid var(--gold);padding:2px 6px;border-radius:10px;text-transform:uppercase;}
   .game p{margin:2px 0 0;font-size:12.5px;color:var(--muted);}
+
+  /* FLASHCARDS BANNER */
+  .flashbanner{display:flex;align-items:center;gap:16px;background:linear-gradient(135deg,#0c3a44 0%,#0c7283 62%,#4a9db0 100%);color:#fff;border-radius:var(--r);padding:18px 20px;box-shadow:0 8px 22px rgba(12,58,68,.28);transition:transform .15s, box-shadow .15s;position:relative;overflow:hidden;}
+  .flashbanner:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(12,58,68,.34);}
+  .flashbanner .fb-ic{flex:0 0 auto;width:52px;height:52px;border-radius:13px;background:rgba(255,255,255,.14);display:grid;place-items:center;font-size:27px;}
+  .flashbanner .fb-txt{flex:1 1 auto;}
+  .flashbanner h3{margin:0 0 3px;font-size:17px;font-weight:700;display:flex;align-items:center;gap:9px;flex-wrap:wrap;}
+  .flashbanner .fb-tag{font-size:9.5px;letter-spacing:.5px;font-weight:800;color:#ffe3ac;border:1px solid #e6c88a;padding:2px 7px;border-radius:10px;text-transform:uppercase;}
+  .flashbanner p{margin:0;font-size:12.8px;opacity:.95;line-height:1.5;}
+  .flashbanner .fb-go{flex:0 0 auto;background:var(--gold);color:#3a2a08;font-weight:800;font-size:13px;padding:10px 16px;border-radius:24px;white-space:nowrap;}
+  @media(max-width:560px){.flashbanner{flex-wrap:wrap;}.flashbanner .fb-go{width:100%;text-align:center;}}
 
   /* GAME HOW-TO DROPDOWNS */
   .gdrops{display:flex;flex-direction:column;gap:8px;margin-top:12px;}
@@ -136,6 +152,7 @@
 </div></div>
 
 <header class="hero">
+  <div id="hubAurora" aria-hidden="true"></div>
   <div class="lamp">🪔</div>
   <div class="kicker">Nightingale College</div>
   <h1>SCI 225 · Pathophysiology</h1>
@@ -220,6 +237,17 @@
     </details>
   </div>
 
+  <!-- FLASHCARDS -->
+  <div class="sl">Flashcards</div>
+  <a class="flashbanner" href="flashcards.html">
+    <div class="fb-ic">🃏</div>
+    <div class="fb-txt">
+      <h3>Pathophysiology Flashcards <span class="fb-tag">910 cards</span></h3>
+      <p>Flip through <strong>70 cards for every week</strong>, grade yourself Again / Got&nbsp;it, and watch each deck fill up — plus a daily 20-question challenge with streaks. Like Quizlet, built for SCI&nbsp;225.</p>
+    </div>
+    <div class="fb-go">Study&nbsp;→</div>
+  </a>
+
   <!-- WEEKS -->
   <div class="sl">By Week
     <span class="tog"><button onclick="setAll(true)">Expand all</button><button onclick="setAll(false)">Collapse all</button></span>
@@ -261,6 +289,11 @@
       <p>The actual lecture slide decks, yours to keep. Follow along during class, review what was covered, or use them to fill the gaps in your own notes.</p>
     </div></div>
 
+    <div class="tool gm"><div class="tico">🃏</div><div>
+      <h4>Flashcards <span class="where">in-hub</span></h4>
+      <p>Seventy self-test cards for every week — flip, rate yourself Again or Got&nbsp;it, and each deck tracks what you&rsquo;ve mastered. A date-seeded daily challenge quizzes you across all weeks and keeps a streak. The fastest way to drill terms and mechanisms before an exam.</p>
+    </div></div>
+
   </div>
 
   <div class="flow">
@@ -270,6 +303,7 @@
       <li>Hear them explained another way with the <b>Podcast</b>.</li>
       <li>See the visuals in the <b>Illustrated Workbook</b>.</li>
       <li>Tie it all together with the <b>Study Guide</b>.</li>
+      <li>Drill the terms with the <b>Flashcards</b> and take the daily challenge.</li>
       <li>Test yourself with the <b>Kahoot</b>.</li>
       <li>Lock it in by playing <b>The Chase</b> and <b>PathoQuest</b>.</li>
     </ol>
@@ -452,6 +486,147 @@ function setAll(open){document.querySelectorAll('details.week').forEach(d=>d.ope
       });
     }
   }, true);
+})();
+</script>
+<!-- ===== WensityFX toolkit (vanilla effects) — drop-in block ===== -->
+<script id="wensity-fx">
+/* WensityFX v1 — vanilla effects toolkit. No dependencies. CSS auto-injected once.
+   Namespaced wfx- / WensityFX. */
+(function(){
+  if(window.WensityFX) return;
+  var FX = {};
+  (function injectCSS(){
+    if(document.getElementById('wfx-css')) return;
+    var s=document.createElement('style'); s.id='wfx-css';
+    s.textContent =
+      '.wfx-confetti-layer{position:fixed;inset:0;pointer-events:none;z-index:99999}'+
+      '.wfx-toast{position:fixed;top:22px;left:50%;transform:translateX(-50%) scale(.6);'+
+        'background:#0c0c0c;color:#fff;border-radius:999px;padding:12px 22px;z-index:99998;'+
+        'display:flex;align-items:center;gap:10px;font-family:inherit;font-size:16px;white-space:nowrap;'+
+        'box-shadow:0 8px 30px rgba(0,0,0,.55),inset 0 0 0 1px rgba(255,255,255,.08);'+
+        'opacity:0;pointer-events:none;transition:transform .5s cubic-bezier(.2,1.3,.3,1),opacity .35s}'+
+      '.wfx-toast.wfx-in{opacity:1;transform:translateX(-50%) scale(1)}'+
+      '.wfx-toast .wfx-dot{width:26px;height:26px;border-radius:50%;flex:none;display:grid;'+
+        'place-items:center;font-size:15px;box-shadow:0 0 12px currentColor}'+
+      '.wfx-holo{position:relative;transform-style:preserve-3d;transition:transform .1s ease-out;'+
+        'will-change:transform;overflow:hidden}'+
+      '.wfx-holo-sheen{position:absolute;inset:0;pointer-events:none;mix-blend-mode:screen;opacity:0;'+
+        'transition:opacity .2s;background:'+
+        'radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.55),transparent 40%),'+
+        'repeating-linear-gradient(115deg,rgba(255,0,140,.14) 0 8px,rgba(0,200,255,.14) 8px 16px,'+
+        'rgba(120,255,90,.14) 16px 24px,rgba(255,210,68,.14) 24px 32px)}'+
+      '.wfx-holo:hover .wfx-holo-sheen{opacity:1}';
+    (document.head||document.documentElement).appendChild(s);
+  })();
+  function el(sel){ return typeof sel==='string' ? document.querySelector(sel) : sel; }
+  var TAU = Math.PI*2;
+
+  FX.confetti = function(o){
+    o = o||{};
+    var count=o.count||120, x=o.x!=null?o.x:innerWidth/2, y=o.y!=null?o.y:innerHeight/2,
+        angle=(o.angle!=null?o.angle:-90)*Math.PI/180, spread=(o.spread||360)*Math.PI/180,
+        power=o.power||14, gravity=o.gravity!=null?o.gravity:0.35, drag=o.drag!=null?o.drag:0.985,
+        colors=o.colors||['#f0c840','#ffe27a','#ff6cb6','#5ec8ff','#7ed85a','#fff'],
+        shapes=o.shapes||['rect','circle'];
+    var layer=document.createElement('canvas'); layer.className='wfx-confetti-layer';
+    layer.width=innerWidth; layer.height=innerHeight; document.body.appendChild(layer);
+    var ctx=layer.getContext('2d'), P=[];
+    for(var i=0;i<count;i++){ var a=angle+(Math.random()-0.5)*spread, v=power*(0.5+Math.random());
+      P.push({x:x,y:y,vx:Math.cos(a)*v,vy:Math.sin(a)*v,rot:Math.random()*TAU,vr:(Math.random()-0.5)*0.4,
+        size:5+Math.random()*7,life:0,ttl:60+Math.random()*50,color:colors[(Math.random()*colors.length)|0],
+        shape:shapes[(Math.random()*shapes.length)|0]}); }
+    (function frame(){ ctx.clearRect(0,0,layer.width,layer.height); var alive=false;
+      for(var i=0;i<P.length;i++){ var p=P[i]; if(p.life>=p.ttl) continue; alive=true;
+        p.vx*=drag; p.vy=p.vy*drag+gravity; p.x+=p.vx; p.y+=p.vy; p.rot+=p.vr; p.life++;
+        ctx.save(); ctx.globalAlpha=1-p.life/p.ttl; ctx.translate(p.x,p.y); ctx.rotate(p.rot); ctx.fillStyle=p.color;
+        if(p.shape==='circle'){ ctx.beginPath(); ctx.arc(0,0,p.size/2,0,TAU); ctx.fill(); }
+        else if(p.shape==='star'){ star(ctx,p.size*0.7); }
+        else { ctx.fillRect(-p.size/2,-p.size/2,p.size,p.size*0.6); } ctx.restore(); }
+      if(alive) requestAnimationFrame(frame); else layer.remove();
+    })();
+    function star(c,r){ c.beginPath(); for(var k=0;k<5;k++){ var a=k*TAU/5-Math.PI/2;
+        c.lineTo(Math.cos(a)*r,Math.sin(a)*r); var a2=a+TAU/10; c.lineTo(Math.cos(a2)*r*0.45,Math.sin(a2)*r*0.45);
+      } c.closePath(); c.fill(); }
+  };
+
+  FX.aurora = function(target,o){
+    o=o||{}; var host=el(target); if(!host) return function(){};
+    if(host._wfxAurora){ host._wfxAurora(); }
+    var colors=o.colors||['#f0c840','#ff6cb6','#5ec8ff'], speed=o.speed||1, n=o.blobs||3, running=true;
+    var cv=document.createElement('canvas');
+    cv.style.cssText='position:absolute;inset:0;width:100%;height:100%;display:block;filter:blur(60px) saturate(1.4)';
+    host.appendChild(cv); var ctx=cv.getContext('2d');
+    function size(){ cv.width=host.clientWidth||innerWidth; cv.height=host.clientHeight||innerHeight; }
+    size(); addEventListener('resize',size);
+    var blobs=[]; for(var i=0;i<n;i++) blobs.push({p:Math.random()*TAU,sp:(0.002+Math.random()*0.004)*speed,
+      rx:0.25+Math.random()*0.25,ry:0.25+Math.random()*0.25,r:0.35+Math.random()*0.25,color:colors[i%colors.length]});
+    (function frame(){ if(!running) return; ctx.clearRect(0,0,cv.width,cv.height); ctx.globalCompositeOperation='lighter';
+      for(var i=0;i<blobs.length;i++){ var b=blobs[i]; b.p+=b.sp;
+        var cx=cv.width*(0.5+Math.cos(b.p)*b.rx), cy=cv.height*(0.5+Math.sin(b.p*1.3)*b.ry), rad=Math.min(cv.width,cv.height)*b.r;
+        var g=ctx.createRadialGradient(cx,cy,0,cx,cy,rad); g.addColorStop(0,b.color); g.addColorStop(1,'rgba(0,0,0,0)');
+        ctx.fillStyle=g; ctx.beginPath(); ctx.arc(cx,cy,rad,0,TAU); ctx.fill(); }
+      requestAnimationFrame(frame);
+    })();
+    var stop=function(){ running=false; removeEventListener('resize',size); cv.remove(); host._wfxAurora=null; };
+    host._wfxAurora=stop; return stop;
+  };
+
+  FX.toast = function(msg,o){
+    o=o||{}; var icon=o.icon||'✓', color=o.color||'#7ed85a', ttl=o.duration||2600;
+    var t=document.createElement('div'); t.className='wfx-toast';
+    var dot=document.createElement('span'); dot.className='wfx-dot'; dot.style.color=color;
+    dot.style.background='rgba(255,255,255,.06)'; dot.textContent=icon;
+    var span=document.createElement('span'); span.textContent=msg;
+    t.appendChild(dot); t.appendChild(span); document.body.appendChild(t);
+    requestAnimationFrame(function(){ t.classList.add('wfx-in'); });
+    setTimeout(function(){ t.classList.remove('wfx-in'); setTimeout(function(){ t.remove(); }, 500); }, ttl);
+    return t;
+  };
+
+  FX.holo = function(target,o){
+    o=o||{}; var e=el(target); if(!e||e._wfxHolo) return; var max=o.max||10;
+    e.classList.add('wfx-holo'); var sheen=document.createElement('div'); sheen.className='wfx-holo-sheen'; e.appendChild(sheen);
+    function move(ev){ var r=e.getBoundingClientRect(); var px=(ev.clientX-r.left)/r.width, py=(ev.clientY-r.top)/r.height;
+      e.style.transform='perspective(700px) rotateY('+((px-0.5)*2*max)+'deg) rotateX('+((0.5-py)*2*max)+'deg)';
+      sheen.style.setProperty('--mx',(px*100)+'%'); sheen.style.setProperty('--my',(py*100)+'%'); }
+    function leave(){ e.style.transform='perspective(700px) rotateY(0) rotateX(0)'; }
+    e.addEventListener('mousemove',move); e.addEventListener('mouseleave',leave);
+    e._wfxHolo={move:move,leave:leave,sheen:sheen};
+  };
+
+  window.WensityFX = FX;
+})();
+</script>
+
+<!-- ===== WensityFX wiring for the SCI 225 hub (theme-tuned, tasteful) ===== -->
+<script>
+(function(){
+  if(!window.WensityFX) return;
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+  /* Soft teal/gold aurora behind the hero header */
+  if(!reduce) WensityFX.aurora('#hubAurora',{colors:['#0c7283','#c79234','#4a9db0'],speed:0.5});
+
+  /* Gentle 3D holo tilt on the three game cards (the playful part) */
+  document.querySelectorAll('.games .game').forEach(function(card){ WensityFX.holo(card,{max:7}); });
+
+  /* Toast confirmation + once-per-session confetti when a learner opens a resource */
+  var ICONS={Podcast:'🎧',Book:'📚',Workbook:'🎨',Kahoot:'🎮','Study Guide':'📝',Slides:'📊'};
+  document.addEventListener('click', function(e){
+    var a = e.target.closest ? e.target.closest('a[href]') : null; if(!a) return;
+    if(a.getAttribute('target')!=='_blank') return;      /* only new-tab opens keep this page visible */
+    var row = a.closest('.rrow'); if(!row) return;
+    var det = a.closest('details.week');
+    var wk = det && det.querySelector('.wn') ? det.querySelector('.wn').textContent.trim() : '';
+    var labEl = row.querySelector('.rlab');
+    var type = labEl ? labEl.textContent.replace(/[^A-Za-z &/]/g,'').trim() : 'Resource';
+    WensityFX.toast((wk?wk+' · ':'')+type, {icon:ICONS[type]||'✓', color:'#0c7283', duration:2200});
+    if(!reduce && !sessionStorage.getItem('sci225_fx_pop')){
+      sessionStorage.setItem('sci225_fx_pop','1');
+      WensityFX.confetti({x:e.clientX, y:e.clientY, angle:-90, spread:110, count:70, power:12,
+        colors:['#0c7283','#c79234','#4a9db0','#ffffff'], shapes:['rect','circle']});
+    }
+  });
 })();
 </script>
 </body>
