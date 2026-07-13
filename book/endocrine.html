@@ -113,6 +113,25 @@
   dl.terms{max-width:718px;margin:18px 0;}
   dl.terms dt{font-family:var(--ui);font-weight:700;color:var(--accent-dk);font-size:15px;margin-top:15px;}
   dl.terms dd{margin:3px 0 0;color:var(--soft);}
+  /* flashcard drill widget */
+  .fc{max-width:718px;margin:20px 0;}
+  .fc-card{perspective:1600px;height:236px;cursor:pointer;margin-bottom:14px;}
+  .fc-inner{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .55s cubic-bezier(.4,.2,.2,1);}
+  .fc-card.flip .fc-inner{transform:rotateY(180deg);}
+  .fc-face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border:1px solid var(--line);border-radius:16px;padding:26px 30px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:12px;box-shadow:0 8px 26px rgba(20,40,46,.09);overflow:auto;}
+  .fc-front{background:linear-gradient(180deg,#fffdf7,#eef5f6);}
+  .fc-back{background:linear-gradient(180deg,#fbf3e2,#f3e6c9);transform:rotateY(180deg);border-color:#e6d3a6;}
+  .fc-side{position:absolute;top:12px;left:16px;font-family:var(--ui);font-size:10px;font-weight:800;letter-spacing:1.3px;text-transform:uppercase;color:var(--faint);}
+  .fc-back .fc-side{color:var(--gold);}
+  .fc-q{font-family:var(--disp);font-weight:600;font-size:19px;line-height:1.35;color:var(--accent-dk);}
+  .fc-a{font-family:var(--serif);font-weight:600;font-size:17px;line-height:1.45;color:var(--ink);}
+  .fc-hint{position:absolute;bottom:11px;left:0;right:0;font-family:var(--ui);font-size:11.5px;color:var(--faint);}
+  .fc-nav{display:flex;gap:9px;align-items:center;}
+  .fc-count{flex:1;text-align:center;font-family:var(--ui);font-size:13px;color:var(--muted);font-weight:600;}
+  .fc-btn{font-family:var(--ui);font-size:13px;font-weight:700;color:var(--accent);background:#eef5f6;border:1px solid #d3e5e7;border-radius:20px;padding:8px 13px;cursor:pointer;}
+  .fc-btn:hover{background:#e2eff0;}
+  .fc-full{display:block;margin-top:14px;text-align:center;font-family:var(--ui);font-size:13.5px;font-weight:700;background:var(--accent-dk);color:#eaf3f4;border-radius:12px;padding:12px;}
+  .fc-full:hover{text-decoration:none;filter:brightness(1.12);}
 </style>
 </head>
 <body>
@@ -137,6 +156,7 @@
         <a href="#adh">6 &middot; ADH &mdash; water balance</a>
         <a href="#summary">The chapter in one breath</a>
         <a href="#glossary">Words worth knowing</a>
+        <a href="#cards">Flashcards</a>
         <a href="#quiz">Check yourself</a>
       </nav>
     </aside>
@@ -381,7 +401,25 @@
 
       <h2 id="glossary"><span class="num">Reference</span>Words worth knowing</h2>
       <p>A quick reference for the terms in this chapter &mdash; skim it now, or circle back whenever a word trips you up.</p>
-      <dl class="terms"><dt>Aldosterone</dt><dd>A mineralocorticoid hormone from the adrenal cortex that tells the kidneys to reabsorb sodium and water while excreting potassium, thereby raising blood volume and blood pressure.</dd><dt>Aquaporin</dt><dd>A water-channel protein inserted into kidney tubule membranes under the influence of antidiuretic hormone, letting water be reabsorbed and concentrating the urine.</dd><dt>Catecholamines</dt><dd>The fight-or-flight hormones epinephrine and norepinephrine released by the adrenal medulla that increase heart rate, blood pressure, and blood glucose.</dd><dt>Cortisol</dt><dd>The main glucocorticoid from the adrenal cortex that raises blood glucose, mobilizes fat and protein, and suppresses inflammation as part of the stress response.</dd><dt>Exophthalmos</dt><dd>Abnormal forward bulging of the eyeballs, classically seen in Graves disease when immune-driven tissue swelling pushes the eyes outward.</dd><dt>Goiter</dt><dd>A visible enlargement of the thyroid gland, which can occur whether thyroid hormone output is high, low, or normal.</dd><dt>Hyperpigmentation</dt><dd>Darkening of the skin that occurs in primary adrenal insufficiency because high ACTH also stimulates melanin-producing cells.</dd><dt>IGF-1</dt><dd>Insulin-like growth factor 1, a hormone made mainly by the liver in response to growth hormone that carries out most of growth hormone's effects on tissue growth.</dd><dt>Insulin resistance</dt><dd>A condition in which body cells respond poorly to insulin, so the pancreas must secrete more of it to keep blood glucose controlled.</dd><dt>Ketoacidosis</dt><dd>A dangerous metabolic state, typical of type 1 diabetes, in which severe insulin lack forces fat breakdown into acidic ketones that lower blood pH.</dd><dt>Myxedema</dt><dd>The severe, advanced form of hypothyroidism marked by non-pitting facial and tissue swelling from mucopolysaccharide buildup, and in crisis by profound slowing of body functions.</dd><dt>Negative feedback</dt><dd>The self-regulating loop in which a rising hormone level signals its own source to shut down further release, keeping the hormone within a stable range.</dd><dt>Osmotic diuresis</dt><dd>Excessive urine production that happens when high blood glucose spills into the urine and pulls water along with it, causing dehydration.</dd><dt>Primary vs secondary endocrine disorder</dt><dd>A primary disorder arises from a defect in the hormone-producing gland itself, whereas a secondary disorder arises from the pituitary (too little stimulating hormone) and a tertiary disorder from the hypothalamus above it - many nursing texts group both as secondary.</dd><dt>Thyroid storm</dt><dd>A life-threatening surge of thyroid hormone activity producing high fever, racing heart, agitation, and possible cardiovascular collapse.</dd><dt>Tropic hormone</dt><dd>A hormone, usually from the pituitary, whose target is another endocrine gland that it stimulates to release its own hormone.</dd></dl>
+      <dl class="terms"><dt>Aldosterone</dt><dd>A mineralocorticoid hormone from the adrenal cortex that tells the kidneys to reabsorb sodium and water while excreting potassium, thereby raising blood volume and blood pressure.</dd><dt>Aquaporin</dt><dd>A water-channel protein inserted into kidney tubule membranes under the influence of antidiuretic hormone, letting water be reabsorbed and concentrating the urine.</dd><dt>Catecholamines</dt><dd>The fight-or-flight hormones epinephrine and norepinephrine released by the adrenal medulla that increase heart rate, blood pressure, and blood glucose.</dd><dt>Cortisol</dt><dd>The main glucocorticoid from the adrenal cortex that raises blood glucose, mobilizes fat and protein, and suppresses inflammation as part of the stress response.</dd><dt>Exophthalmos</dt><dd>Abnormal forward bulging of the eyeballs, classically seen in Graves disease when immune-driven tissue swelling pushes the eyes outward.</dd><dt>Goiter</dt><dd>A visible enlargement of the thyroid gland, which can occur whether thyroid hormone output is high, low, or normal.</dd><dt>Hyperpigmentation</dt><dd>Darkening of the skin that occurs in primary adrenal insufficiency because high ACTH also stimulates melanin-producing cells.</dd><dt>IGF-1</dt><dd>Insulin-like growth factor 1, a hormone made mainly by the liver in response to growth hormone that carries out most of growth hormone's effects on tissue growth.</dd><dt>Insulin resistance</dt><dd>A condition in which body cells respond poorly to insulin, so the pancreas must secrete more of it to keep blood glucose controlled.</dd><dt>Ketoacidosis</dt><dd>A dangerous metabolic state, typical of type 1 diabetes, in which severe insulin lack forces fat breakdown into acidic ketones that lower blood pH.</dd><dt>Myxedema</dt><dd>The severe, advanced form of hypothyroidism marked by non-pitting facial and tissue swelling from mucopolysaccharide buildup, and in crisis by profound slowing of body functions.</dd><dt>Negative feedback</dt><dd>The self-regulating loop in which a rising hormone level signals its own source to shut down further release, keeping the hormone within a stable range.</dd><dt>Osmotic diuresis</dt><dd>Excessive urine production that happens when high blood glucose spills into the urine and pulls water along with it, causing dehydration.</dd><dt>Primary vs secondary endocrine disorder</dt><dd>A primary disorder arises from a defect in the hormone-producing gland itself, whereas a secondary disorder arises from the pituitary (too little stimulating hormone) and a tertiary disorder from the hypothalamus above it - many nursing texts group both under secondary.</dd><dt>Thyroid storm</dt><dd>A life-threatening surge of thyroid hormone activity producing high fever, racing heart, agitation, and possible cardiovascular collapse.</dd><dt>Tropic hormone</dt><dd>A hormone, usually from the pituitary, whose target is another endocrine gland that it stimulates to release its own hormone.</dd></dl>
+
+      <h2 id="cards"><span class="num">Drill</span>Flashcards for this unit</h2>
+      <p>These are the <b>Week 6</b> cards &mdash; the same deck as the hub, pulled in here so you can review the moment you finish reading. Tap the card to flip it; hit <em>Shuffle</em> to mix them up. To grade yourself and track mastery across the whole deck, open the <a href="../flashcards.html">full flashcards page</a>.</p>
+      <div class="fc" id="fc">
+        <div class="fc-card" id="fcCard" onclick="fcFlip()">
+          <div class="fc-inner">
+            <div class="fc-face fc-front"><span class="fc-side">Question</span><div class="fc-q" id="fcQ"></div><div class="fc-hint">Tap to reveal the answer</div></div>
+            <div class="fc-face fc-back"><span class="fc-side">Answer</span><div class="fc-a" id="fcA"></div><div class="fc-hint">Tap to flip back</div></div>
+          </div>
+        </div>
+        <div class="fc-nav">
+          <button class="fc-btn" type="button" onclick="fcPrev(event)">&larr; Prev</button>
+          <span class="fc-count" id="fcCount">&mdash;</span>
+          <button class="fc-btn" type="button" onclick="fcNext(event)">Next &rarr;</button>
+          <button class="fc-btn" type="button" onclick="fcShuffle(event)">&#128256; Shuffle</button>
+        </div>
+        <a class="fc-full" href="../flashcards.html">Open the full Week 6 deck &mdash; grade yourself &amp; track mastery &uarr;</a>
+      </div>
 
       <div class="quiz">
         <h2 id="quiz">Check yourself</h2>
@@ -457,6 +495,25 @@
     for(var i=0;i<secs.length;i++){ if(secs[i] && secs[i].offsetTop<=y) cur=i; }
     links.forEach(function(a,i){a.classList.toggle('on',i===cur);});}
   addEventListener('scroll',spy,{passive:true}); spy();
+</script>
+
+<script src="../flashcards/w6.js"></script>
+<script>
+(function(){
+  var WK="6";
+  var cards=(window.SCI225_CARDS&&window.SCI225_CARDS[WK])||[];
+  var fc=document.getElementById("fc"); if(!fc) return;
+  if(!cards.length){ fc.style.display="none"; return; }
+  var order=cards.map(function(_,i){return i;}), pos=0;
+  function dec(s){return String(s).replace(/&amp;/g,"&").replace(/&lt;/g,"<").replace(/&gt;/g,">").replace(/&nbsp;/g," ");}
+  var card=document.getElementById("fcCard"), q=document.getElementById("fcQ"), a=document.getElementById("fcA"), cnt=document.getElementById("fcCount");
+  function show(){ card.classList.remove("flip"); var c=cards[order[pos]]; q.textContent=dec(c.q); a.textContent=dec(c.a)+(c.exp?"  \u2014  "+dec(c.exp):""); cnt.textContent=(pos+1)+" / "+cards.length; }
+  window.fcFlip=function(){ card.classList.toggle("flip"); };
+  window.fcNext=function(e){ if(e&&e.stopPropagation)e.stopPropagation(); pos=(pos+1)%cards.length; show(); };
+  window.fcPrev=function(e){ if(e&&e.stopPropagation)e.stopPropagation(); pos=(pos-1+cards.length)%cards.length; show(); };
+  window.fcShuffle=function(e){ if(e&&e.stopPropagation)e.stopPropagation(); for(var i=order.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=order[i];order[i]=order[j];order[j]=t;} pos=0; show(); };
+  show();
+})();
 </script>
 </body>
 </html>
