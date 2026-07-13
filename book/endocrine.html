@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0c3a44">
+<title>The Endocrine System — Pathophysiology · Dr. Vidya</title>
+<meta name="description" content="A student-friendly, exact pathophysiology chapter on the endocrine system — feedback loops, adrenal, thyroid, diabetes, growth hormone, and ADH — with the concept explained plainly and an interactive to play with in every section.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#22312f; --soft:#4a5a58; --muted:#7c8a88; --faint:#9aa8a6; --line:#e6e2d6;
+    --paper:#faf8f2; --card:#fffdf7; --accent:#0c7283; --accent-dk:#0c3a44; --gold:#b8862f;
+    --serif:"Source Serif 4",Georgia,"Times New Roman",serif; --disp:"Fraunces",Georgia,serif; --ui:"Inter",system-ui,sans-serif;
+    --shadow:0 1px 3px rgba(20,40,46,.06);
+  }
+  *{box-sizing:border-box;} html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:18px;line-height:1.7;-webkit-font-smoothing:antialiased;}
+  a{color:var(--accent);text-decoration:none;} a:hover{text-decoration:underline;}
+
+  /* top bar + progress */
+  .topbar{position:sticky;top:0;z-index:50;background:rgba(250,248,242,.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+  .topbar .row{max-width:1120px;margin:0 auto;padding:11px 20px;display:flex;align-items:center;gap:14px;font-family:var(--ui);}
+  .topbar a.home{font-size:13.5px;font-weight:600;color:var(--soft);white-space:nowrap;}
+  .topbar a.home:hover{color:var(--accent);text-decoration:none;}
+  .topbar .ct{font-size:13px;color:var(--faint);font-weight:600;margin-left:auto;white-space:nowrap;}
+  .progress{height:3px;background:transparent;} .progress .bar{height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--gold));transition:width .1s;}
+
+  .layout{max-width:1120px;margin:0 auto;padding:0 20px;display:grid;grid-template-columns:230px 1fr;gap:30px;}
+  /* sidebar TOC */
+  aside{font-family:var(--ui);padding-top:34px;}
+  aside .toc{position:sticky;top:74px;}
+  aside .toc h4{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--faint);margin:0 0 12px;font-weight:700;}
+  aside .toc a{display:block;font-size:13.5px;color:var(--soft);padding:6px 10px;border-left:2px solid var(--line);line-height:1.35;}
+  aside .toc a:hover{color:var(--accent);text-decoration:none;border-left-color:var(--accent);}
+  aside .toc a.on{color:var(--accent-dk);font-weight:700;border-left-color:var(--gold);background:#f3efe3;border-radius:0 8px 8px 0;}
+
+  .reading{max-width:1040px;padding:30px 0 70px;min-width:0;}
+  .reading .col{max-width:718px;}
+  /* opener */
+  .kicker{font-family:var(--ui);font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:700;}
+  h1{font-family:var(--disp);font-weight:600;font-size:clamp(32px,5.2vw,46px);line-height:1.08;letter-spacing:-.5px;color:var(--accent-dk);margin:10px 0 6px;max-width:718px;}
+  .lede{font-size:20px;line-height:1.6;color:var(--soft);max-width:718px;margin:14px 0 0;}
+  h2{font-family:var(--disp);font-weight:600;font-size:27px;letter-spacing:-.3px;color:var(--accent-dk);margin:52px 0 4px;scroll-margin-top:70px;max-width:718px;}
+  h2 .num{font-family:var(--ui);font-size:13px;font-weight:700;color:var(--gold);letter-spacing:1px;display:block;margin-bottom:4px;text-transform:uppercase;}
+  h3{font-family:var(--disp);font-weight:600;font-size:20px;color:var(--accent-dk);margin:26px 0 2px;max-width:718px;}
+  p{margin:14px 0;max-width:718px;} p b,li b{color:var(--accent-dk);font-weight:600;}
+  .reading ul,.reading ol{max-width:718px;padding-left:24px;} .reading li{margin:7px 0;}
+
+  .objectives{max-width:718px;background:#f2efe4;border:1px solid #e4ddc8;border-radius:14px;padding:18px 22px;margin:24px 0;font-family:var(--ui);}
+  .objectives h4{margin:0 0 8px;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--gold);font-weight:700;}
+  .objectives ul{margin:0;padding-left:20px;} .objectives li{font-size:14.5px;line-height:1.5;color:var(--soft);margin:6px 0;font-family:var(--serif);}
+
+  .kp{max-width:718px;background:#eef5f6;border:1px solid #d3e5e7;border-left:5px solid var(--accent);border-radius:0 12px 12px 0;padding:14px 20px;margin:22px 0;font-family:var(--ui);}
+  .kp .t{font-size:11.5px;letter-spacing:1px;text-transform:uppercase;color:var(--accent-dk);font-weight:700;margin-bottom:6px;}
+  .kp ul{margin:0;padding-left:18px;} .kp li{font-size:14.5px;line-height:1.55;color:var(--ink);margin:5px 0;font-family:var(--serif);}
+  .pearl{max-width:718px;background:#fbf3e2;border:1px solid #ecd9ac;border-left:5px solid var(--gold);border-radius:0 12px 12px 0;padding:13px 20px;margin:22px 0;font-family:var(--serif);font-size:15px;line-height:1.6;color:#6a5320;}
+  .pearl b{color:#5a4212;}
+
+  /* interactive embed (breaks out wider than prose) */
+  .embed{max-width:1040px;margin:26px 0 30px;}
+  .embed .cap{font-family:var(--ui);font-size:12.5px;font-weight:600;color:var(--muted);margin:0 0 8px;display:flex;align-items:center;gap:8px;}
+  .embed .cap .tag{background:var(--accent);color:#fff;font-size:10.5px;letter-spacing:.5px;text-transform:uppercase;font-weight:700;padding:3px 9px;border-radius:20px;}
+  .embed .frame{border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 8px 26px rgba(20,40,46,.09);background:#fff;}
+  .embed iframe{display:block;width:100%;height:640px;border:0;}
+  .embed .cap a{font-family:var(--ui);margin-left:auto;font-size:12.5px;font-weight:600;}
+
+  /* summary + quiz */
+  .summary{max-width:718px;background:var(--accent-dk);color:#eaf3f4;border-radius:16px;padding:24px 26px;margin:50px 0 30px;font-family:var(--serif);}
+  .summary h2{color:#fff;margin:0 0 6px;font-size:24px;}
+  .summary ul{margin:10px 0 0;padding-left:20px;} .summary li{margin:8px 0;font-size:15.5px;line-height:1.55;color:#dcebec;}
+  .summary li b{color:#fff;}
+  .quiz{max-width:718px;margin:36px 0;}
+  .quiz h2{margin-top:0;}
+  .q{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin:12px 0;box-shadow:var(--shadow);}
+  .q .qq{font-weight:600;color:var(--accent-dk);font-family:var(--serif);}
+  .q button{margin-top:10px;font-family:var(--ui);font-size:13px;font-weight:700;color:var(--accent);background:#eef5f6;border:1px solid #d3e5e7;border-radius:20px;padding:7px 15px;cursor:pointer;}
+  .q button:hover{background:#e2eff0;}
+  .q .ans{display:none;margin-top:12px;padding-top:12px;border-top:1px dashed var(--line);font-size:15.5px;color:var(--soft);}
+  .q .ans .a{font-weight:700;color:var(--accent-dk);}
+  .q.show .ans{display:block;} .q.show button{display:none;}
+
+  .chapnav{max-width:718px;display:flex;justify-content:space-between;gap:12px;margin:44px 0 0;font-family:var(--ui);}
+  .chapnav a,.chapnav span{flex:1;border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:13.5px;background:var(--card);}
+  .chapnav a{color:var(--accent-dk);font-weight:600;} .chapnav a:hover{border-color:var(--accent);text-decoration:none;}
+  .chapnav .k{display:block;font-size:11px;color:var(--faint);text-transform:uppercase;letter-spacing:.5px;margin-bottom:2px;}
+  .chapnav .next{text-align:right;} .chapnav .disabled{color:var(--faint);}
+
+  footer{font-family:var(--ui);text-align:center;color:var(--faint);font-size:12.5px;border-top:1px solid var(--line);padding:26px 20px 50px;margin-top:30px;}
+  footer b{color:var(--soft);}
+
+  @media(max-width:860px){
+    .layout{grid-template-columns:1fr;gap:0;}
+    aside{padding-top:16px;} aside .toc{position:static;}
+    aside .toc{border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:var(--card);}
+    aside .toc a{border-left:none;padding:6px 4px;}
+    aside .toc a.on{background:none;}
+    .reading{padding-top:16px;}
+    .embed iframe{height:660px;}
+  }
+</style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="row">
+      <a class="home" href="index.html">📖 Contents</a>
+      <a class="home" href="../index.html">· Hub</a>
+      <span class="ct">Chapter · The Endocrine System</span>
+    </div>
+    <div class="progress"><div class="bar" id="bar"></div></div>
+  </div>
+
+  <div class="layout">
+    <aside>
+      <nav class="toc">
+        <h4>In this chapter</h4>
+        <a href="#wiring" class="on">1 · The chain of command</a>
+        <a href="#adrenal">2 · Adrenal — cortisol</a>
+        <a href="#thyroid">3 · Thyroid — metabolism</a>
+        <a href="#diabetes">4 · Diabetes mellitus</a>
+        <a href="#gh">5 · Growth hormone</a>
+        <a href="#adh">6 · ADH — water balance</a>
+        <a href="#summary">Summary</a>
+        <a href="#quiz">Check yourself</a>
+      </nav>
+    </aside>
+
+    <main class="reading">
+      <div class="kicker">Pathophysiology · Chapter</div>
+      <h1>The Endocrine System</h1>
+      <p class="lede">The endocrine system is the body's <b>chemical messaging service</b> — slower than nerves, but with reach that lasts hours to days. When one gland makes too much or too little of a hormone, the ripple effects show up everywhere: blood sugar, heart rate, blood pressure, mood, growth, and water balance. This chapter gives you the one idea that unlocks all of it — <b>feedback</b> — and then walks each major gland from healthy to what goes wrong.</p>
+
+      <div class="objectives">
+        <h4>By the end of this chapter you can</h4>
+        <ul>
+          <li>Trace how the hypothalamus and pituitary command the other glands.</li>
+          <li>Use <b>negative feedback</b> to predict a lab (e.g., what TSH does when T4 is low).</li>
+          <li>Contrast the <b>too-much</b> vs <b>too-little</b> state for the adrenal, thyroid, and ADH.</li>
+          <li>Explain why Type 1 and Type 2 diabetes are different diseases, and tell <b>DKA</b> from <b>HHS</b>.</li>
+          <li>Recognize growth-hormone excess by <b>timing</b> (before vs after the growth plates close).</li>
+        </ul>
+      </div>
+
+      <h2 id="wiring"><span class="num">Section 1</span>The chain of command</h2>
+      <p>Think of the endocrine system as a company. The <b>hypothalamus</b> is the executive — it reads the body's status and decides what needs to change. It rarely acts directly; instead it sends orders to its manager, the <b>pituitary gland</b>, which sits just beneath it.</p>
+      <p>The pituitary has two very different halves. The <b>anterior pituitary</b> is a factory — it <em>makes</em> six hormones, and several of them are "tropic," meaning their whole job is to tell another gland what to do: <b>TSH</b> → thyroid, <b>ACTH</b> → adrenal cortex, <b>FSH &amp; LH</b> → ovaries and testes, plus <b>GH</b> (growth) and <b>prolactin</b> (milk). The <b>posterior pituitary</b> is a storage locker — it doesn't make hormones, it just <em>stores and releases</em> two the hypothalamus made: <b>ADH</b> (holds onto water) and <b>oxytocin</b> (labor and milk let-down).</p>
+      <p>Here is the single most important idea in this chapter. The system regulates itself with <b>negative feedback</b>, exactly like a thermostat. When the final hormone rises high enough, it <b>switches off the signals that told it to rise</b>. Turn this around and it becomes a lab-reading superpower: if a target gland fails and its hormone falls, the pituitary senses the shortage and <b>cranks its stimulating hormone up</b> to compensate. Low thyroid hormone → high TSH. You'll use that in Section 3.</p>
+
+      <div class="embed">
+        <div class="cap"><span class="tag">Interactive</span> Click through the hypothalamus → pituitary → gland chain and see feedback in action. <a href="../patho/EndocrinePituitary.html" target="_blank" rel="noopener">Open full ↗</a></div>
+        <div class="frame"><iframe src="../patho/EndocrinePituitary.html" loading="lazy" title="Endocrine command center interactive"></iframe></div>
+      </div>
+
+      <div class="kp"><div class="t">Key points</div><ul>
+        <li>Hypothalamus commands; <b>anterior pituitary makes</b> (GH, PRL, ACTH, TSH, FSH, LH); <b>posterior pituitary stores</b> (ADH, oxytocin).</li>
+        <li><b>Negative feedback</b> shuts the signal off when the end hormone is high — and ramps it up when the end hormone is low.</li>
+      </ul></div>
+
+      <h2 id="adrenal"><span class="num">Section 2</span>Adrenal glands — the cortisol problem</h2>
+      <p>The adrenal glands sit on top of the kidneys. The outer <b>cortex</b> makes the <b>corticosteroids</b>: <b>glucocorticoids</b> (cortisol), <b>mineralocorticoids</b> (aldosterone), and a small amount of androgens. The inner <b>medulla</b> makes the "fight-or-flight" catecholamines (epinephrine, norepinephrine). Two classic diseases are simply <em>too much</em> and <em>too little</em> cortisol.</p>
+      <h3>Cushing's syndrome — too much cortisol</h3>
+      <p>Most often the cause is <b>taking steroid medication</b> (like prednisone) long-term; less often an adrenal or pituitary tumor. Sustained high cortisol produces a recognizable picture: <b>high blood sugar</b>, weight gain that is <b>central</b> (round "moon" face, a "buffalo hump," and a heavy trunk with thin arms and legs), <b>thin, fragile skin</b> that bruises easily, <b>high blood pressure</b>, and a <b>suppressed immune system</b> that raises infection risk.</p>
+      <h3>Addison's disease — too little cortisol</h3>
+      <p>Here the adrenal gland is <b>destroyed</b>, usually by an autoimmune attack, so both cortisol <em>and</em> aldosterone fall. Low aldosterone drops blood pressure and blood volume; the person is <b>hypotensive, fatigued, and losing weight</b>, often craving salt. A classic early clue is <b>bronze, hyperpigmented skin</b> — because the pituitary, sensing low cortisol, pours out ACTH (feedback again), and ACTH stimulates skin pigment.</p>
+      <div class="pearl"><b>Never stop steroids abruptly.</b> Long-term steroid medication suppresses the body's own cortisol production. Quit cold-turkey and there's a dangerous gap before natural production restarts — an <b>Addisonian crisis</b>. Steroids are always <b>tapered</b> down.</div>
+      <p>A third, rarer adrenal problem lives in the medulla: a <b>pheochromocytoma</b>, a tumor that dumps catecholamines in surges — producing <b>episodic spikes of high blood pressure, pounding headache, palpitations, and sweating</b>.</p>
+
+      <div class="embed">
+        <div class="cap"><span class="tag">Interactive</span> Compare Cushing's, Addison's, and pheochromocytoma side by side. <a href="../patho/AdrenalDisorders.html" target="_blank" rel="noopener">Open full ↗</a></div>
+        <div class="frame"><iframe src="../patho/AdrenalDisorders.html" loading="lazy" title="Adrenal disorders interactive"></iframe></div>
+      </div>
+
+      <div class="kp"><div class="t">Key points</div><ul>
+        <li><b>Cushing's = hyper</b>cortisol: central obesity, hyperglycemia, thin skin, hypertension, infection risk.</li>
+        <li><b>Addison's = hypo</b>cortisol/aldosterone: hypotension, weight loss, fatigue, salt craving, bronze skin.</li>
+        <li>Feedback check: an adrenal tumor making its own cortisol drives ACTH <b>down</b>; a failed adrenal gland drives ACTH <b>up</b>.</li>
+      </ul></div>
+
+      <h2 id="thyroid"><span class="num">Section 3</span>Thyroid — the metabolic thermostat</h2>
+      <p>Thyroid hormone sets the body's <b>metabolic speed</b> — heart rate, temperature, weight, and energy all track with it. So thyroid disease comes in two mirror-image forms.</p>
+      <h3>Hypothyroidism — everything slows down</h3>
+      <p>Too little thyroid hormone means a sluggish metabolism: <b>fatigue, weight gain, cold intolerance, a slow heart rate (bradycardia), dry skin, and constipation</b>. The most common cause is <b>Hashimoto's thyroiditis</b>, an autoimmune condition; iodine deficiency and congenital cases also occur.</p>
+      <h3>Hyperthyroidism — everything speeds up</h3>
+      <p>Too much thyroid hormone revs the metabolism: <b>weight loss, heat intolerance, a fast heart (tachycardia), anxiety, and tremor</b>. The most common cause is <b>Graves' disease</b> (also autoimmune), which can push the eyes forward (<b>exophthalmos</b>). A <b>goiter</b> — a visibly enlarged thyroid — can appear in <em>either</em> direction, so a goiter alone just tells you to look closer.</p>
+      <div class="pearl"><b>The TSH trick (a favorite exam question).</b> Remember negative feedback: if thyroid hormone (T4) is <b>low</b>, the pituitary senses the shortage and pumps out <b>more TSH</b> to push the gland. So in primary hypothyroidism, <b>T4 is low and TSH is high</b>. When you see low T4, expect high TSH.</div>
+      <div class="pearl"><b>Watch the parathyroids.</b> The four tiny parathyroid glands sit right behind the thyroid. After <b>thyroid surgery</b>, they can be bumped or removed — so watch for <b>hypocalcemia</b> (numbness, tingling, and carpal spasm — a positive Trousseau or Chvostek sign).</div>
+
+      <div class="embed">
+        <div class="cap"><span class="tag">Interactive</span> Watch the whole body speed up or slow down — and see the goiter. <a href="../patho/ThyroidDisorders.html" target="_blank" rel="noopener">Open full ↗</a></div>
+        <div class="frame"><iframe src="../patho/ThyroidDisorders.html" loading="lazy" title="Thyroid disorders interactive"></iframe></div>
+      </div>
+
+      <div class="kp"><div class="t">Key points</div><ul>
+        <li><b>Hypo</b>thyroid = slow (tired, cold, heavy, bradycardic) — often Hashimoto's. <b>Low T4, high TSH.</b></li>
+        <li><b>Hyper</b>thyroid = fast (thin, hot, anxious, tachycardic) — often Graves' with exophthalmos. <b>High T4, low TSH.</b></li>
+        <li>A goiter can occur in <b>either</b> state; after thyroid surgery, watch for <b>hypocalcemia</b>.</li>
+      </ul></div>
+
+      <h2 id="diabetes"><span class="num">Section 4</span>Diabetes mellitus</h2>
+      <p>Insulin is the <b>key that lets glucose into cells</b>. In diabetes that fails, so glucose piles up in the blood while the cells starve. There are two very different reasons the key stops working.</p>
+      <h3>Type 1 — no insulin</h3>
+      <p>An <b>autoimmune attack destroys the insulin-making beta cells</b> of the pancreas, so the body makes essentially <b>no insulin</b>. Glucose can't enter cells, so it spills into the urine and drags water with it — producing the classic triad of <b>polyuria</b> (peeing a lot), <b>polydipsia</b> (thirst), and <b>polyphagia</b> (hunger), plus <b>weight loss</b> and blurry vision. With no insulin at all, the body burns fat for fuel, and fat breakdown releases <b>ketones</b> (acids) — this is how Type 1 tips into <b>diabetic ketoacidosis</b>.</p>
+      <h3>Type 2 — insulin resistance</h3>
+      <p>Here insulin <em>is</em> present, but the cells have become <b>resistant</b> to it, so glucose still can't get in efficiently. It develops gradually, is strongly linked to <b>obesity and older age</b>, and often has few symptoms early. The dangerous acute complication is <b>HHS</b> (below). <b>Gestational diabetes</b> is a related insulin-resistance problem of pregnancy that can lead to an oversized baby (macrosomia).</p>
+      <h3>The two emergencies — DKA vs HHS</h3>
+      <p>Both are hyperglycemic crises, but they belong to different types and look different:</p>
+      <ul>
+        <li><b>DKA</b> (Type 1): blood sugar usually <b>&gt; 250 mg/dL</b>, <b>ketones present</b> causing a metabolic <b>acidosis</b>, and deep, rapid <b>Kussmaul breathing</b> as the lungs try to blow off acid.</li>
+        <li><b>HHS</b> (Type 2): blood sugar <b>very high — often &gt; 600 mg/dL</b> — with <b>profound dehydration</b> and thickened blood, but <b>little or no ketosis</b>.</li>
+      </ul>
+
+      <div class="embed">
+        <div class="cap"><span class="tag">Interactive</span> See whether insulin is present and whether glucose can get in — plus DKA vs HHS. <a href="../patho/Diabetes.html" target="_blank" rel="noopener">Open full ↗</a></div>
+        <div class="frame"><iframe src="../patho/Diabetes.html" loading="lazy" title="Diabetes interactive"></iframe></div>
+      </div>
+
+      <div class="kp"><div class="t">Key points</div><ul>
+        <li><b>Type 1</b> = autoimmune, <b>no insulin</b>, prone to <b>DKA</b> (ketones, acidosis, Kussmaul).</li>
+        <li><b>Type 2</b> = <b>insulin resistance</b>, gradual, prone to <b>HHS</b> (very high glucose, severe dehydration, no ketones).</li>
+        <li>Both crises are hyperglycemic emergencies; the presence of <b>ketones and acidosis</b> is what separates DKA from HHS.</li>
+      </ul></div>
+
+      <h2 id="gh"><span class="num">Section 5</span>Growth hormone — timing is everything</h2>
+      <p>Growth hormone (GH, also called somatotropin) comes from the anterior pituitary and drives the growth of bone, muscle, and tissue. Too little GH in a child causes <b>short stature</b> with normal, proportional body features (and metabolic problems in adults). Too much GH is more interesting, because <b>when</b> it happens changes the disease entirely.</p>
+      <p>The deciding factor is whether the <b>growth plates</b> — the growing ends of the long bones — are still open. Excess GH <b>before</b> the plates close (in childhood) lets the whole skeleton keep lengthening, producing <b>gigantism</b> — a person who grows abnormally tall. Excess GH <b>after</b> the plates have fused (in adulthood) can no longer lengthen bone, so bone instead <b>thickens</b>: this is <b>acromegaly</b>, with enlarged hands and feet, a protruding jaw and brow, and coarsening features. Both are usually caused by a <b>GH-secreting pituitary tumor</b>.</p>
+
+      <div class="embed">
+        <div class="cap"><span class="tag">Interactive</span> Compare deficiency, gigantism, and acromegaly — and see why timing matters. <a href="../patho/GrowthHormone.html" target="_blank" rel="noopener">Open full ↗</a></div>
+        <div class="frame"><iframe src="../patho/GrowthHormone.html" loading="lazy" title="Growth hormone interactive"></iframe></div>
+      </div>
+
+      <div class="kp"><div class="t">Key points</div><ul>
+        <li>Too little GH in kids → <b>short, proportional stature</b>.</li>
+        <li>Too much GH <b>before</b> plates close → <b>gigantism</b> (tall all over); <b>after</b> they close → <b>acromegaly</b> (thickened hands, feet, jaw).</li>
+      </ul></div>
+
+      <h2 id="adh"><span class="num">Section 6</span>ADH — the body's water valve</h2>
+      <p>Antidiuretic hormone (ADH) does one job: it tells the kidneys to <b>hold on to water</b>. Its two disorders are exact opposites, which makes them easy to keep straight.</p>
+      <h3>SIADH — too much ADH</h3>
+      <p>In the <b>syndrome of inappropriate ADH</b>, the body makes too much ADH, so the kidneys reabsorb too much water. The blood becomes <b>diluted</b>: sodium falls (<b>hyponatremia</b>), the person is <b>fluid-overloaded</b> and may gain weight, and the urine is <b>small in volume and concentrated</b>. Memory hook: SIADH → <b>S</b>oaked, <b>S</b>odium low.</p>
+      <h3>Diabetes insipidus — too little ADH</h3>
+      <p>In <b>diabetes insipidus</b> there's too little ADH (or the kidney can't respond to it), so the body <b>can't hold water</b>. The result is <b>huge volumes of dilute urine</b>, <b>dehydration</b>, a <b>rising sodium (hypernatremia)</b>, and intense thirst. Despite the name, it has nothing to do with blood sugar — "insipidus" means <em>tasteless</em> urine, as opposed to the sweet urine of diabetes <em>mellitus</em>.</p>
+
+      <div class="embed">
+        <div class="cap"><span class="tag">Interactive</span> Watch the body hold water in (SIADH) or flush it out (DI). <a href="../patho/ADHDisorders.html" target="_blank" rel="noopener">Open full ↗</a></div>
+        <div class="frame"><iframe src="../patho/ADHDisorders.html" loading="lazy" title="ADH disorders interactive"></iframe></div>
+      </div>
+
+      <div class="kp"><div class="t">Key points</div><ul>
+        <li><b>SIADH = too much ADH</b> → retain water → <b>low sodium</b>, fluid overload, concentrated urine.</li>
+        <li><b>DI = too little ADH</b> → lose water → <b>high sodium</b>, dehydration, large volumes of dilute urine.</li>
+      </ul></div>
+
+      <div class="summary">
+        <h2 id="summary">The chapter in one breath</h2>
+        <ul>
+          <li><b>Feedback is the master key.</b> A low target hormone drives its pituitary signal <b>up</b> (low T4 → high TSH); a high one shuts it off.</li>
+          <li><b>Adrenal:</b> Cushing's is <b>too much</b> cortisol (round, high sugar, thin skin, HTN); Addison's is <b>too little</b> (low BP, weight loss, bronze skin). Never stop steroids abruptly.</li>
+          <li><b>Thyroid:</b> hypo = slow, hyper = fast; a goiter can be either. After thyroid surgery, watch calcium.</li>
+          <li><b>Diabetes:</b> Type 1 = no insulin → <b>DKA</b>; Type 2 = resistance → <b>HHS</b>. Ketones separate them.</li>
+          <li><b>Growth hormone:</b> excess <b>before</b> plates close = gigantism; <b>after</b> = acromegaly.</li>
+          <li><b>ADH:</b> too much = SIADH (retain water, low Na); too little = DI (lose water, high Na).</li>
+        </ul>
+      </div>
+
+      <div class="quiz">
+        <h2 id="quiz">Check yourself</h2>
+        <div class="q"><div class="qq">1. A client is tired, gaining weight, always cold, and has a heart rate of 55. Labs show a low T4. What do you expect the TSH to be?</div>
+          <button onclick="this.parentNode.classList.add('show')">Reveal answer</button>
+          <div class="ans"><span class="a">High (above normal).</span> This is hypothyroidism. By negative feedback, the pituitary senses the low T4 and releases more TSH to push the gland — so a low T4 pairs with a high TSH.</div></div>
+        <div class="q"><div class="qq">2. Which hyperglycemic emergency features ketones, a metabolic acidosis, and Kussmaul breathing — and which type of diabetes is it?</div>
+          <button onclick="this.parentNode.classList.add('show')">Reveal answer</button>
+          <div class="ans"><span class="a">DKA — diabetic ketoacidosis, in Type 1.</span> With no insulin, the body burns fat and makes ketoacids, dropping the pH; deep, rapid Kussmaul breathing blows off CO₂ to compensate. HHS (Type 2) has very high glucose but little or no ketosis.</div></div>
+        <div class="q"><div class="qq">3. A client has low blood pressure, weight loss, salt cravings, and bronze patches on the skin. What is the likely diagnosis?</div>
+          <button onclick="this.parentNode.classList.add('show')">Reveal answer</button>
+          <div class="ans"><span class="a">Addison's disease (adrenal insufficiency).</span> Low cortisol and aldosterone cause the hypotension and weight loss; the high ACTH driving the low cortisol also stimulates skin pigment, giving the bronze appearance.</div></div>
+        <div class="q"><div class="qq">4. An adult develops enlarging hands and feet and a more prominent jaw. Excess growth hormone is found. Gigantism or acromegaly — and why?</div>
+          <button onclick="this.parentNode.classList.add('show')">Reveal answer</button>
+          <div class="ans"><span class="a">Acromegaly.</span> Because the growth plates have already closed in adulthood, bone can no longer lengthen — so it thickens instead, enlarging the hands, feet, jaw, and brow. The same excess GH <em>before</em> the plates close would cause gigantism.</div></div>
+        <div class="q"><div class="qq">5. A client with too much ADH is admitted. Which way will the serum sodium move, and what is this syndrome called?</div>
+          <button onclick="this.parentNode.classList.add('show')">Reveal answer</button>
+          <div class="ans"><span class="a">Sodium goes down (hyponatremia) — this is SIADH.</span> Excess ADH makes the kidneys retain water, diluting the blood. The opposite, diabetes insipidus, loses water and raises the sodium.</div></div>
+      </div>
+
+      <div class="chapnav">
+        <span class="disabled"><span class="k">Previous</span>— beginning of the book —</span>
+        <a class="next" href="index.html"><span class="k">Next</span>Back to Contents →</a>
+      </div>
+    </main>
+  </div>
+
+  <footer>
+    A student-friendly pathophysiology guide · by <b>Dr. Vidya</b> · for Nightingale College students<br>
+    The interactive figures open in place; tap “Open full ↗” for a full-screen version.
+  </footer>
+
+<script>
+  // reading progress bar
+  var bar=document.getElementById('bar');
+  function prog(){var h=document.documentElement, max=h.scrollHeight-h.clientHeight; bar.style.width=(max>0?(h.scrollTop/max*100):0)+'%';}
+  addEventListener('scroll',prog,{passive:true}); prog();
+  // scroll-spy TOC
+  var links=[].slice.call(document.querySelectorAll('.toc a'));
+  var ids=links.map(function(a){return a.getAttribute('href').slice(1);});
+  var secs=ids.map(function(id){return document.getElementById(id);});
+  function spy(){var y=scrollY+90,cur=0;
+    for(var i=0;i<secs.length;i++){ if(secs[i] && secs[i].offsetTop<=y) cur=i; }
+    links.forEach(function(a,i){a.classList.toggle('on',i===cur);});}
+  addEventListener('scroll',spy,{passive:true}); spy();
+</script>
+</body>
+</html>
