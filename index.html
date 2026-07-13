@@ -139,6 +139,20 @@
 
   footer{text-align:center;color:var(--faint);font-size:12.5px;margin-top:44px;}
   footer .lampf{font-size:20px;opacity:.7;}
+
+  /* HOW-TO-USE (tucked-away) */
+  details.usehub{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);margin-top:34px;overflow:hidden;}
+  details.usehub>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:11px;padding:15px 18px;font-weight:700;font-size:15px;color:var(--accent-dk);}
+  details.usehub>summary::-webkit-details-marker{display:none;}
+  details.usehub .uh-ic{font-size:19px;flex:0 0 auto;}
+  details.usehub .uh-hint{font-weight:500;font-size:12.5px;color:var(--faint);}
+  details.usehub>summary .chev{margin-left:auto;color:var(--faint);font-size:16px;transition:transform .2s;flex:0 0 auto;}
+  details.usehub[open]>summary{border-bottom:1px solid var(--line);}
+  details.usehub[open]>summary .chev{transform:rotate(90deg);}
+  .uh-body{padding:4px 18px 18px;}
+  .uh-body .sl{margin:22px 4px 10px;}
+  .uh-body .sl:first-child{margin-top:14px;}
+  @media(max-width:560px){details.usehub .uh-hint{display:none;}}
 </style>
 </head>
 <body>
@@ -163,8 +177,8 @@
 <div class="wrap">
   <div class="divline"></div>
 
-  <!-- GAMES -->
-  <div class="sl">Games</div>
+  <!-- STUDY TOOLS -->
+  <div class="sl">Study Tools</div>
   <div class="games">
     <a class="game main" href="games/the-chase.html">
       <div class="ico">🏃</div>
@@ -178,8 +192,28 @@
       <div class="ico">🩺</div>
       <div><h3>Medical Mystery</h3><p>Diagnose real patient cases in a clinical EHR sim.</p></div>
     </a>
+    <a class="game" href="flashcards.html">
+      <div class="ico">🃏</div>
+      <div><h3>Flashcards</h3><p>Flip 70 cards per week, self-grade, and take a daily challenge.</p></div>
+    </a>
+    <a class="game" href="patho/index.html">
+      <div class="ico">🫀</div>
+      <div><h3>Interactive Lessons</h3><p>86 hands-on animated lessons + ABG &amp; Punnett calculators.</p></div>
+    </a>
   </div>
 
+  <!-- BY WEEK -->
+  <div class="sl">By Week
+    <span class="tog"><button onclick="setAll(true)">Expand all</button><button onclick="setAll(false)">Collapse all</button></span>
+  </div>
+  <div id="weeks"></div>
+
+  <!-- HOW TO USE THIS HUB (tucked away) -->
+  <details class="usehub">
+    <summary><span class="uh-ic">📖</span> New here? How to use this hub<span class="uh-hint"> — what each tool is, how to play the games, and a study routine</span><span class="chev">›</span></summary>
+    <div class="uh-body">
+
+    <div class="sl">How to play the games</div>
   <div class="gdrops">
     <details class="gdrop">
       <summary><span class="gico">🏃</span> How to play · The Chase <span class="gtag">main</span><span class="chev">›</span></summary>
@@ -236,34 +270,6 @@
       </div>
     </details>
   </div>
-
-  <!-- FLASHCARDS -->
-  <div class="sl">Flashcards</div>
-  <a class="flashbanner" href="flashcards.html">
-    <div class="fb-ic">🃏</div>
-    <div class="fb-txt">
-      <h3>Pathophysiology Flashcards <span class="fb-tag">910 cards</span></h3>
-      <p>Flip through <strong>70 cards for every week</strong>, grade yourself Again / Got&nbsp;it, and watch each deck fill up — plus a daily 20-question challenge with streaks. Like Quizlet, built for SCI&nbsp;225.</p>
-    </div>
-    <div class="fb-go">Study&nbsp;→</div>
-  </a>
-
-  <!-- INTERACTIVE LESSONS -->
-  <div class="sl">Interactive Lessons</div>
-  <a class="flashbanner" href="patho/index.html">
-    <div class="fb-ic">🫀</div>
-    <div class="fb-txt">
-      <h3>The Interactive Body <span class="fb-tag">86 lessons</span></h3>
-      <p>Pathophysiology you can <strong>play with</strong> — 86 hands-on, animated lessons across every body system. Interpret an ABG, solve a Punnett square, hear real lung sounds, watch a plaque build. Browse by body system or by week.</p>
-    </div>
-    <div class="fb-go">Open&nbsp;→</div>
-  </a>
-
-  <!-- WEEKS -->
-  <div class="sl">By Week
-    <span class="tog"><button onclick="setAll(true)">Expand all</button><button onclick="setAll(false)">Collapse all</button></span>
-  </div>
-  <div id="weeks"></div>
 
   <!-- TOOL GUIDE -->
   <div class="sl">Guide to the Tools</div>
@@ -324,6 +330,9 @@
       <li>Lock it in by playing <b>The Chase</b> and <b>PathoQuest</b>.</li>
     </ol>
   </div>
+
+    </div>
+  </details>
 
   <footer>
     <div class="lampf">🪔</div>
