@@ -135,6 +135,9 @@
 </style>
 </head>
 <body>
+<div id="pbgate" style="position:fixed;inset:0;z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:30px;background:linear-gradient(160deg,#faf8f2,#eef1e9);font-family:Inter,system-ui,sans-serif;"><div style="font-family:Fraunces,Georgia,serif;font-weight:700;color:#b8862f;letter-spacing:4px;text-transform:uppercase;font-size:13px;">✨ Coming Soon</div><div style="font-family:Fraunces,Georgia,serif;font-weight:700;color:#0c3a44;font-size:clamp(28px,5.4vw,42px);margin:10px 0 4px;line-height:1.1;">Pathophysiology</div><div style="font-family:Fraunces,Georgia,serif;font-style:italic;color:#0c7283;font-size:19px;margin-bottom:14px;">an interactive book by Dr. Vidya</div><div style="color:#4a5a58;max-width:440px;line-height:1.6;font-size:15px;">This book is being finalized for launch. Enter the access code to preview it.</div><div style="margin-top:22px;display:flex;gap:8px;flex-wrap:wrap;justify-content:center;"><input id="pbpw" type="password" placeholder="Access code" autocomplete="off" style="font-family:Inter,sans-serif;font-size:16px;padding:11px 14px;border:1px solid #d3e5e7;border-radius:10px;background:#fff;width:200px;color:#22312f;"><button id="pbgo" style="font-family:Inter,sans-serif;font-weight:700;font-size:15px;color:#fff;background:#0c7283;border:none;border-radius:10px;padding:11px 22px;cursor:pointer;">Enter →</button></div><div id="pberr" style="color:#b03a3a;font-size:13px;margin-top:10px;height:16px;"></div><div style="margin-top:28px;color:#9aa8a6;font-size:12px;">Pathophysiology · Nightingale College · Dr. Vidya Aggrawal</div></div>
+<script>(function(){function h(s){var x=0;for(var i=0;i<s.length;i++){x=(x*31+s.charCodeAt(i))>>>0;}return x;}var K=2914355096,g=document.getElementById("pbgate");try{if(localStorage.getItem("pb_ok")==="1"){g.parentNode.removeChild(g);return;}}catch(e){}var html=document.documentElement;html.style.overflow="hidden";function go(){var v=(document.getElementById("pbpw").value||"").trim().toLowerCase();if(h(v)===K){try{localStorage.setItem("pb_ok","1");}catch(e){}html.style.overflow="";g.parentNode.removeChild(g);}else{document.getElementById("pberr").textContent="Incorrect code — try again.";}}document.getElementById("pbgo").addEventListener("click",go);document.getElementById("pbpw").addEventListener("keydown",function(e){if(e.key==="Enter")go();});document.getElementById("pbpw").focus();})();</script>
+
   <div class="topbar">
     <div class="row">
       <a class="home" href="index.html">📖 Contents</a>
@@ -176,6 +179,9 @@
       </div>
 
       <h2 id="w3_normal"><span class="num">Section 1</span>From a normal cell to cancer</h2>
+<figure class="bref" data-sec="1" style="max-width:1040px;margin:10px 0 24px;padding:0;"><div style="border:1px solid #e6e2d6;border-radius:16px;overflow:hidden;background:#fffdf7;box-shadow:0 8px 26px rgba(20,40,46,.09);"><img src="img/oncology_s1.jpg" alt="Normal cell to cancer reference figure" loading="lazy" style="display:block;width:100%;height:auto;background:#fff;" onerror="this.closest('figure').style.display='none'"></div><figcaption style="font-family:Inter,system-ui,sans-serif;font-size:12.5px;color:#7c8a88;margin-top:8px;line-height:1.5;"><b style="color:#0c3a44;">Reference.</b> Normal cell to cancer <span style="color:#9aa8a6;">&mdash; Jia-Xun Wu, Andy T Y Lau, and Yan-Ming Xu, CC BY 4.0 (via Wikimedia Commons)</span></figcaption></figure>
+
+
       <p>Every cell in your body lives by a simple rule: <em>divide only when you are told to, and stop when the job is done.</em> A healthy cell reads chemical signals from its neighbors, copies its DNA carefully, checks that copy for errors, and either keeps going or quietly retires. That balance between growing and stopping is controlled by genes. When those control genes get damaged, the balance tips, and a normal cell can slowly turn into a cancer cell. Cancer is not an invader from outside. It is one of your own cells that has lost its instructions.</p>
 
 <h3>The accelerator and the brakes</h3>
@@ -228,6 +234,9 @@
 </ul></div>
 
       <h2 id="w3_benmal"><span class="num">Section 2</span>Benign vs malignant</h2>
+<figure class="bref" data-sec="2" style="max-width:1040px;margin:10px 0 24px;padding:0;"><div style="border:1px solid #e6e2d6;border-radius:16px;overflow:hidden;background:#fffdf7;box-shadow:0 8px 26px rgba(20,40,46,.09);"><img src="img/oncology_s2.jpg" alt="Benign vs malignant reference figure" loading="lazy" style="display:block;width:100%;height:auto;background:#fff;" onerror="this.closest('figure').style.display='none'"></div><figcaption style="font-family:Inter,system-ui,sans-serif;font-size:12.5px;color:#7c8a88;margin-top:8px;line-height:1.5;"><b style="color:#0c3a44;">Reference.</b> Benign vs malignant <span style="color:#9aa8a6;">&mdash; Yale Rosen from USA, CC BY-SA 2.0 (via Wikimedia Commons)</span></figcaption></figure>
+
+
       <p>Your body makes new cells constantly. Skin, gut lining, blood cells, and more are always being replaced, and normally this happens under tight control: cells divide only when signaled, mature into a specific job, and stop dividing when the tissue is repaired. This maturing process is called <b>differentiation</b>. A well-differentiated cell looks and acts like the tissue it came from. A <b>neoplasm</b> (literally "new growth") is a lump of cells that has escaped normal growth controls and keeps dividing when it should not. The big clinical question is always the same: is this growth <b>benign</b> or <b>malignant</b>?</p>
 
 <h3>Benign growths: slow, walled-off, and well-behaved</h3>
@@ -254,6 +263,9 @@
       <div class="kp"><div class="t">Key points</div><ul><li>Benign tumors are slow, encapsulated, well-differentiated, and stay put; malignant tumors are fast, invasive, poorly differentiated, and metastasize.</li><li>Metastasis is the defining danger of malignancy and the main reason cancer is hard to cure.</li><li>Naming: -oma usually means benign, carcinoma means malignant epithelial, sarcoma means malignant connective tissue; watch the exceptions melanoma and lymphoma.</li><li>Differentiation drives grade; anaplasia (primitive, pleomorphic, high mitotic cells) signals the most aggressive tumors.</li><li>A benign tumor can still be deadly because of its location, hormone secretion, or compression, classically a meningioma raising intracranial pressure.</li></ul></div>
 
       <h2 id="w3_spread"><span class="num">Section 3</span>How cancer grows and spreads</h2>
+<figure class="bref" data-sec="3" style="max-width:1040px;margin:10px 0 24px;padding:0;"><div style="border:1px solid #e6e2d6;border-radius:16px;overflow:hidden;background:#fffdf7;box-shadow:0 8px 26px rgba(20,40,46,.09);"><img src="img/oncology_s3.jpg" alt="Growth & metastasis reference figure" loading="lazy" style="display:block;width:100%;height:auto;background:#fff;" onerror="this.closest('figure').style.display='none'"></div><figcaption style="font-family:Inter,system-ui,sans-serif;font-size:12.5px;color:#7c8a88;margin-top:8px;line-height:1.5;"><b style="color:#0c3a44;">Reference.</b> Growth & metastasis <span style="color:#9aa8a6;">&mdash; Jane Hurd (Illustrator), Public domain (via Wikimedia Commons)</span></figcaption></figure>
+
+
       <p>Normally, your tissues are beautifully organized. Cells stay in their own neighborhood, held in place by a thin, tough sheet called the <b>basement membrane</b> that separates the surface layer (epithelium) from the deeper connective tissue below. Cells also respect their neighbors: they stop dividing when they touch (contact inhibition), they anchor down where they belong, and they call for new blood vessels only when the body genuinely needs them. Cancer is what happens when a cell breaks every one of these rules at once, and understanding how it grows and travels is really a story about a cell that has forgotten how to stay put. Explore it below as we walk through each step.</p>
 
 <h3>Local invasion: breaking through the basement membrane</h3>
@@ -296,6 +308,9 @@
 </ul></div>
 
       <h2 id="w3_causes"><span class="num">Section 4</span>What causes cancer</h2>
+<figure class="bref" data-sec="4" style="max-width:1040px;margin:10px 0 24px;padding:0;"><div style="border:1px solid #e6e2d6;border-radius:16px;overflow:hidden;background:#fffdf7;box-shadow:0 8px 26px rgba(20,40,46,.09);"><img src="img/oncology_s4.jpg" alt="Causes of cancer reference figure" loading="lazy" style="display:block;width:100%;height:auto;background:#fff;" onerror="this.closest('figure').style.display='none'"></div><figcaption style="font-family:Inter,system-ui,sans-serif;font-size:12.5px;color:#7c8a88;margin-top:8px;line-height:1.5;"><b style="color:#0c3a44;">Reference.</b> Causes of cancer <span style="color:#9aa8a6;">&mdash; Brian E. Hingerty, Oak Ridge National Laboratory Suse Broyde, New York University Dinshaw J. Patel, , Public domain (via Wikimedia Commons)</span></figcaption></figure>
+
+
       <p>Every day, your body makes billions of new cells. Old cells wear out, get injured, or reach the end of their lifespan, so a healthy cell divides to make a fresh copy of itself. This is normally a <em>tightly controlled</em> process. Before a cell divides, it copies its entire DNA, then pauses at built-in <b>checkpoints</b> to proofread that copy. If the DNA looks damaged, the cell either fixes it or, if the damage is too severe, deliberately kills itself through a tidy self-destruct program called <b>apoptosis</b>. Cancer begins when this careful system breaks down and a cell starts dividing on its own schedule, ignoring the stop signals, and refusing to die.</p>
 
 <p>So the real question is: what damages the DNA and the control genes badly enough to let a cell go rogue? The answer is usually a slow buildup of <b>mutations</b> (permanent changes in the DNA sequence) hitting the specific genes that run the cell cycle.</p>
@@ -340,6 +355,9 @@
 </ul></div>
 
       <h2 id="w3_stage"><span class="num">Section 5</span>Grading, staging &amp; living with cancer</h2>
+<figure class="bref" data-sec="5" style="max-width:1040px;margin:10px 0 24px;padding:0;"><div style="border:1px solid #e6e2d6;border-radius:16px;overflow:hidden;background:#fffdf7;box-shadow:0 8px 26px rgba(20,40,46,.09);"><img src="img/oncology_s5.jpg" alt="Grading & staging reference figure" loading="lazy" style="display:block;width:100%;height:auto;background:#fff;" onerror="this.closest('figure').style.display='none'"></div><figcaption style="font-family:Inter,system-ui,sans-serif;font-size:12.5px;color:#7c8a88;margin-top:8px;line-height:1.5;"><b style="color:#0c3a44;">Reference.</b> Grading & staging <span style="color:#9aa8a6;">&mdash; https://www.scientificanimations.com, CC BY-SA 4.0 (via Wikimedia Commons)</span></figcaption></figure>
+
+
       <p>Your cells normally follow strict rules. They divide only when told to, they mature into a specific job (a skin cell, a colon cell), and they stay in their own neighborhood. Cancer breaks all three rules: the cells divide without permission, they fail to mature, and they invade and travel. Once a tumor exists, two of the first questions a care team asks are <em>how ugly do these cells look under the microscope?</em> and <em>how far has this spread?</em> Those are two different questions, and mixing them up is one of the most common student errors.</p>
 
 <h3>Grading vs staging</h3>

@@ -135,6 +135,9 @@
 </style>
 </head>
 <body>
+<div id="pbgate" style="position:fixed;inset:0;z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:30px;background:linear-gradient(160deg,#faf8f2,#eef1e9);font-family:Inter,system-ui,sans-serif;"><div style="font-family:Fraunces,Georgia,serif;font-weight:700;color:#b8862f;letter-spacing:4px;text-transform:uppercase;font-size:13px;">✨ Coming Soon</div><div style="font-family:Fraunces,Georgia,serif;font-weight:700;color:#0c3a44;font-size:clamp(28px,5.4vw,42px);margin:10px 0 4px;line-height:1.1;">Pathophysiology</div><div style="font-family:Fraunces,Georgia,serif;font-style:italic;color:#0c7283;font-size:19px;margin-bottom:14px;">an interactive book by Dr. Vidya</div><div style="color:#4a5a58;max-width:440px;line-height:1.6;font-size:15px;">This book is being finalized for launch. Enter the access code to preview it.</div><div style="margin-top:22px;display:flex;gap:8px;flex-wrap:wrap;justify-content:center;"><input id="pbpw" type="password" placeholder="Access code" autocomplete="off" style="font-family:Inter,sans-serif;font-size:16px;padding:11px 14px;border:1px solid #d3e5e7;border-radius:10px;background:#fff;width:200px;color:#22312f;"><button id="pbgo" style="font-family:Inter,sans-serif;font-weight:700;font-size:15px;color:#fff;background:#0c7283;border:none;border-radius:10px;padding:11px 22px;cursor:pointer;">Enter →</button></div><div id="pberr" style="color:#b03a3a;font-size:13px;margin-top:10px;height:16px;"></div><div style="margin-top:28px;color:#9aa8a6;font-size:12px;">Pathophysiology · Nightingale College · Dr. Vidya Aggrawal</div></div>
+<script>(function(){function h(s){var x=0;for(var i=0;i<s.length;i++){x=(x*31+s.charCodeAt(i))>>>0;}return x;}var K=2914355096,g=document.getElementById("pbgate");try{if(localStorage.getItem("pb_ok")==="1"){g.parentNode.removeChild(g);return;}}catch(e){}var html=document.documentElement;html.style.overflow="hidden";function go(){var v=(document.getElementById("pbpw").value||"").trim().toLowerCase();if(h(v)===K){try{localStorage.setItem("pb_ok","1");}catch(e){}html.style.overflow="";g.parentNode.removeChild(g);}else{document.getElementById("pberr").textContent="Incorrect code — try again.";}}document.getElementById("pbgo").addEventListener("click",go);document.getElementById("pbpw").addEventListener("keydown",function(e){if(e.key==="Enter")go();});document.getElementById("pbpw").focus();})();</script>
+
   <div class="topbar">
     <div class="row">
       <a class="home" href="index.html">📖 Contents</a>
@@ -177,6 +180,9 @@
       </div>
 
       <h2 id="w10_vq"><span class="num">Section 1</span>How breathing works: ventilation, perfusion &amp; V/Q</h2>
+<figure class="bref" data-sec="1" style="max-width:1040px;margin:10px 0 24px;padding:0;"><div style="border:1px solid #e6e2d6;border-radius:16px;overflow:hidden;background:#fffdf7;box-shadow:0 8px 26px rgba(20,40,46,.09);"><img src="img/pulmonary_s1.jpg" alt="Ventilation & V/Q reference figure" loading="lazy" style="display:block;width:100%;height:auto;background:#fff;" onerror="this.closest('figure').style.display='none'"></div><figcaption style="font-family:Inter,system-ui,sans-serif;font-size:12.5px;color:#7c8a88;margin-top:8px;line-height:1.5;"><b style="color:#0c3a44;">Reference.</b> Ventilation & V/Q <span style="color:#9aa8a6;">&mdash; Hellerhoff, CC BY-SA 4.0 (via Wikimedia Commons)</span></figcaption></figure>
+
+
       <p>Every breath you take is really two jobs happening at once, and they have to be perfectly coordinated. <b>Ventilation</b> is the movement of air in and out of the lungs, delivering fresh oxygen to the tiny air sacs called <b>alveoli</b> and carrying carbon dioxide away. <b>Perfusion</b> is the flow of blood through the <b>pulmonary capillaries</b> that wrap around those alveoli. Think of it like a delivery system: ventilation brings the packages (oxygen) to the loading dock, and perfusion is the truck fleet that picks them up. If the packages arrive but no trucks show up, or the trucks show up but there are no packages, the whole system stalls. For gas exchange to work, air and blood must meet at the <em>same place, at the same time</em>.</p>
 
 <h3>Matching air to blood: the V/Q ratio</h3>
@@ -206,6 +212,9 @@
       <div class="kp"><div class="t">Key points</div><ul><li><b>Ventilation</b> (air in and out) and <b>perfusion</b> (blood flow past alveoli) must match at the same place and time for gas exchange to work; the normal <b>V/Q ratio</b> is about 0.8.</li><li><b>Dead space</b> is ventilation without perfusion (high V/Q, classic cause pulmonary embolism); <b>shunt</b> is perfusion without ventilation (low V/Q, classic causes pneumonia, edema, atelectasis).</li><li>Gases cross the thin <b>alveolar-capillary membrane</b> by <b>diffusion</b> from high to low pressure; a thickened membrane slows oxygen uptake.</li><li><b>Hypoxemia</b> is low oxygen in the blood; <b>hypoxia</b> is low oxygen in the tissues, and they do not always occur together.</li><li>About 97 percent of oxygen is carried bound to <b>hemoglobin</b>, so oxygen delivery depends on carriers, not just lung function.</li></ul></div>
 
       <h2 id="w10_copd"><span class="num">Section 2</span>Obstructive disease: COPD</h2>
+<figure class="bref" data-sec="2" style="max-width:1040px;margin:10px 0 24px;padding:0;"><div style="border:1px solid #e6e2d6;border-radius:16px;overflow:hidden;background:#fffdf7;box-shadow:0 8px 26px rgba(20,40,46,.09);"><img src="img/pulmonary_s2.jpg" alt="COPD reference figure" loading="lazy" style="display:block;width:100%;height:auto;background:#fff;" onerror="this.closest('figure').style.display='none'"></div><figcaption style="font-family:Inter,system-ui,sans-serif;font-size:12.5px;color:#7c8a88;margin-top:8px;line-height:1.5;"><b style="color:#0c3a44;">Reference.</b> COPD <span style="color:#9aa8a6;">&mdash; NIH Image Gallery from Bethesda, Maryland, USA, Public domain (via Wikimedia Commons)</span></figcaption></figure>
+
+
       <p>Every time you breathe, air travels down your windpipe, splits into smaller and smaller tubes (the <b>bronchi</b> and <b>bronchioles</b>), and finally reaches millions of tiny balloon-like sacs called <b>alveoli</b>. This is where oxygen slips into the blood and carbon dioxide slips out. Two things make this work: the airways must stay <em>open</em>, and the lung tissue must be <em>springy</em>. That springiness, called <b>elastic recoil</b>, is what quietly squeezes air back out when you exhale. Normal exhalation is passive and effortless.</p>
 
 <p>In <b>chronic obstructive pulmonary disease (COPD)</b>, that easy exhale breaks down. The airways narrow and the springiness is lost, so air flows in but gets <em>stuck</em> on the way out. Think of COPD as a disease of getting air <b>OUT</b>, not in. Stale air piles up behind the blockage, a problem called <b>air trapping</b>, and the lungs stay over-inflated. This is why patients often push air out through pursed lips and why their exhale takes so long.</p>
@@ -250,6 +259,9 @@
 </ul></div>
 
       <h2 id="w10_asthma"><span class="num">Section 3</span>Asthma</h2>
+<figure class="bref" data-sec="3" style="max-width:1040px;margin:10px 0 24px;padding:0;"><div style="border:1px solid #e6e2d6;border-radius:16px;overflow:hidden;background:#fffdf7;box-shadow:0 8px 26px rgba(20,40,46,.09);"><img src="img/pulmonary_s3.jpg" alt="Asthma reference figure" loading="lazy" style="display:block;width:100%;height:auto;background:#fff;" onerror="this.closest('figure').style.display='none'"></div><figcaption style="font-family:Inter,system-ui,sans-serif;font-size:12.5px;color:#7c8a88;margin-top:8px;line-height:1.5;"><b style="color:#0c3a44;">Reference.</b> Asthma <span style="color:#9aa8a6;">&mdash; BruceBlaus, CC BY-SA 4.0 (via Wikimedia Commons)</span></figcaption></figure>
+
+
       <p>Take a slow breath in. Air rushes down your windpipe, splits into two <b>bronchi</b>, then branches again and again into ever-smaller <b>bronchioles</b> before reaching the tiny air sacs where gas exchange happens. Those small airways are wrapped in a thin layer of smooth muscle, lined with a moist membrane, and are supposed to stay <em>open and springy</em> so air moves in and out with almost no effort. In a healthy lung, breathing out is passive and quiet: the airways stay wide, and the air leaves easily.</p>
 
 <p>In <b>asthma</b>, those small airways become hyperreactive. They overreact to things that should be harmless, and the airway narrows. The key word for asthma is <b>reversible</b> obstruction: unlike the fixed damage of emphysema, an asthma attack can open back up with treatment or even on its own. But while it is happening, air gets trapped, and the person has to work hard to move it.</p>
@@ -299,6 +311,9 @@
 </ul></div>
 
       <h2 id="w10_pe"><span class="num">Section 4</span>Pulmonary embolism</h2>
+<figure class="bref" data-sec="4" style="max-width:1040px;margin:10px 0 24px;padding:0;"><div style="border:1px solid #e6e2d6;border-radius:16px;overflow:hidden;background:#fffdf7;box-shadow:0 8px 26px rgba(20,40,46,.09);"><img src="img/pulmonary_s4.jpg" alt="Pulmonary embolism reference figure" loading="lazy" style="display:block;width:100%;height:auto;background:#fff;" onerror="this.closest('figure').style.display='none'"></div><figcaption style="font-family:Inter,system-ui,sans-serif;font-size:12.5px;color:#7c8a88;margin-top:8px;line-height:1.5;"><b style="color:#0c3a44;">Reference.</b> Pulmonary embolism <span style="color:#9aa8a6;">&mdash; Laboratoires Servier, CC BY-SA 3.0 (via Wikimedia Commons)</span></figcaption></figure>
+
+
       <p>Every breath you take is only half the job. Your lungs pull in <b>oxygen</b>, but that oxygen is useless unless blood flows past the air sacs to pick it up and carry it to the rest of your body. Normally, the right side of your heart pumps blood through the <b>pulmonary arteries</b> into a lacy network of capillaries wrapped around millions of tiny air sacs called <b>alveoli</b>. There, oxygen loads onto red blood cells and carbon dioxide unloads. Air (ventilation) and blood (perfusion) meet in perfect partnership. A <b>pulmonary embolism (PE)</b> is what happens when that partnership is suddenly broken by a plug in the pipe.</p>
 
 <h3>What actually goes wrong</h3>
@@ -350,6 +365,9 @@
 </ul></div>
 
       <h2 id="w10_pna"><span class="num">Section 5</span>Pneumonia &amp; respiratory infections</h2>
+<figure class="bref" data-sec="5" style="max-width:1040px;margin:10px 0 24px;padding:0;"><div style="border:1px solid #e6e2d6;border-radius:16px;overflow:hidden;background:#fffdf7;box-shadow:0 8px 26px rgba(20,40,46,.09);"><img src="img/pulmonary_s5.jpg" alt="Pneumonia reference figure" loading="lazy" style="display:block;width:100%;height:auto;background:#fff;" onerror="this.closest('figure').style.display='none'"></div><figcaption style="font-family:Inter,system-ui,sans-serif;font-size:12.5px;color:#7c8a88;margin-top:8px;line-height:1.5;"><b style="color:#0c3a44;">Reference.</b> Pneumonia <span style="color:#9aa8a6;">&mdash; Department of Pathology, Calicut Medical College, CC BY-SA 4.0 (via Wikimedia Commons)</span></figcaption></figure>
+
+
       <p>Every time you take a breath, air travels down to about 300 million tiny air sacs called <b>alveoli</b>. These sacs are wrapped in a fine mesh of capillaries, and their walls are astonishingly thin, roughly one cell thick, so oxygen can slip across into the blood while carbon dioxide slips out. This trade is called <b>gas exchange</b>, and it depends on those air sacs staying open, dry, and full of air. Pneumonia is what happens when that clean, air-filled space becomes a battleground.</p>
 
 <h3>What goes wrong: the alveoli flood</h3>
@@ -400,6 +418,9 @@
 </ul></div>
 
       <h2 id="w10_sounds"><span class="num">Section 6</span>Lung sounds &amp; assessment</h2>
+<figure class="bref" data-sec="6" style="max-width:1040px;margin:10px 0 24px;padding:0;"><div style="border:1px solid #e6e2d6;border-radius:16px;overflow:hidden;background:#fffdf7;box-shadow:0 8px 26px rgba(20,40,46,.09);"><img src="img/pulmonary_s6.jpg" alt="Lung assessment reference figure" loading="lazy" style="display:block;width:100%;height:auto;background:#fff;" onerror="this.closest('figure').style.display='none'"></div><figcaption style="font-family:Inter,system-ui,sans-serif;font-size:12.5px;color:#7c8a88;margin-top:8px;line-height:1.5;"><b style="color:#0c3a44;">Reference.</b> Lung assessment <span style="color:#9aa8a6;">&mdash; Pöllö, CC BY 3.0 (via Wikimedia Commons)</span></figcaption></figure>
+
+
       <p>Every time you breathe, air rushes down your windpipe, splits into smaller and smaller tubes, and finally reaches millions of tiny air sacs called <b>alveoli</b>. When those airways are open and the air sacs are dry and elastic, air moves smoothly and quietly. That smooth flow is exactly what a stethoscope is listening for. When you place your stethoscope on someone's chest, you are eavesdropping on how easily air is getting in and out, and whether anything, fluid, mucus, swelling, or scarring, is getting in the way.</p>
 
 <h3>Normal breath sounds: the quiet baseline</h3>

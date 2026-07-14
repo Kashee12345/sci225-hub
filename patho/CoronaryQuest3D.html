@@ -121,6 +121,8 @@
   .startBtn:active{transform:translateY(3px);box-shadow:0 2px 0 #7a5c10;}
   @keyframes pulse{50%{filter:brightness(1.22)}}
   .credit{font-family:var(--font-pixel);font-size:11px;color:var(--gold-bright);margin-top:4px;}
+  #madeby{position:fixed;left:12px;bottom:9px;z-index:20;font-family:var(--font-pixel);font-size:9px;
+    color:var(--gold-bright);opacity:.5;letter-spacing:1px;pointer-events:none;}
 
   /* quiz */
   #quiz{display:none;z-index:32;background:radial-gradient(ellipse at center,rgba(20,8,12,.96),rgba(2,1,2,.98));}
@@ -149,6 +151,7 @@
 <body>
 <canvas id="c"></canvas>
 <div id="alarm"></div>
+<div id="madeby">— DR. VIDYA AGGRAWAL —</div>
 
 <div id="hud">
   <div id="stageCard" class="card">
@@ -215,15 +218,6 @@
     <button id="cPause" title="Play/Pause">▶</button>
     <button id="cFast" title="Faster">»</button>
   </div>
-</div>
-
-<!-- Title -->
-<div id="title" class="overlay">
-  <div class="sub">A WALKABLE 3D PATHOPHYSIOLOGY VOYAGE</div>
-  <h1>CORONARY QUEST</h1>
-  <div class="desc">Shrink down and travel <i>inside</i> a coronary artery. Drag the plaque dial to watch atherosclerosis build in real time — and see the heart muscle starve.</div>
-  <button class="startBtn" id="startBtn">▶ ENTER THE ARTERY</button>
-  <div class="credit">— DR. AKASH GARG —</div>
 </div>
 
 <!-- Quiz -->
@@ -698,9 +692,10 @@ $('quizClose').addEventListener('click',()=>$('quiz').style.display='none');
 $('btnQuiz').addEventListener('click',openQuiz);
 
 /* =================== start =================== */
-let started=false;
-$('startBtn').addEventListener('click',()=>{ started=true; $('title').style.display='none'; ac();
-  tone(392,0.1,'sine'); setTimeout(()=>tone(587,0.16,'sine'),110); });
+let started=true;   // launch straight into the sim — no title/landing screen
+// browsers block audio until a user gesture, so start it on the first interaction
+let _audioOn=false;
+window.addEventListener('pointerdown',()=>{ if(_audioOn)return; _audioOn=true; ac(); },{once:true});
 
 /* =================== main loop =================== */
 let last=performance.now(), beatT=0;

@@ -135,6 +135,9 @@
 </style>
 </head>
 <body>
+<div id="pbgate" style="position:fixed;inset:0;z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:30px;background:linear-gradient(160deg,#faf8f2,#eef1e9);font-family:Inter,system-ui,sans-serif;"><div style="font-family:Fraunces,Georgia,serif;font-weight:700;color:#b8862f;letter-spacing:4px;text-transform:uppercase;font-size:13px;">✨ Coming Soon</div><div style="font-family:Fraunces,Georgia,serif;font-weight:700;color:#0c3a44;font-size:clamp(28px,5.4vw,42px);margin:10px 0 4px;line-height:1.1;">Pathophysiology</div><div style="font-family:Fraunces,Georgia,serif;font-style:italic;color:#0c7283;font-size:19px;margin-bottom:14px;">an interactive book by Dr. Vidya</div><div style="color:#4a5a58;max-width:440px;line-height:1.6;font-size:15px;">This book is being finalized for launch. Enter the access code to preview it.</div><div style="margin-top:22px;display:flex;gap:8px;flex-wrap:wrap;justify-content:center;"><input id="pbpw" type="password" placeholder="Access code" autocomplete="off" style="font-family:Inter,sans-serif;font-size:16px;padding:11px 14px;border:1px solid #d3e5e7;border-radius:10px;background:#fff;width:200px;color:#22312f;"><button id="pbgo" style="font-family:Inter,sans-serif;font-weight:700;font-size:15px;color:#fff;background:#0c7283;border:none;border-radius:10px;padding:11px 22px;cursor:pointer;">Enter →</button></div><div id="pberr" style="color:#b03a3a;font-size:13px;margin-top:10px;height:16px;"></div><div style="margin-top:28px;color:#9aa8a6;font-size:12px;">Pathophysiology · Nightingale College · Dr. Vidya Aggrawal</div></div>
+<script>(function(){function h(s){var x=0;for(var i=0;i<s.length;i++){x=(x*31+s.charCodeAt(i))>>>0;}return x;}var K=2914355096,g=document.getElementById("pbgate");try{if(localStorage.getItem("pb_ok")==="1"){g.parentNode.removeChild(g);return;}}catch(e){}var html=document.documentElement;html.style.overflow="hidden";function go(){var v=(document.getElementById("pbpw").value||"").trim().toLowerCase();if(h(v)===K){try{localStorage.setItem("pb_ok","1");}catch(e){}html.style.overflow="";g.parentNode.removeChild(g);}else{document.getElementById("pberr").textContent="Incorrect code — try again.";}}document.getElementById("pbgo").addEventListener("click",go);document.getElementById("pbpw").addEventListener("keydown",function(e){if(e.key==="Enter")go();});document.getElementById("pbpw").focus();})();</script>
+
   <div class="topbar">
     <div class="row">
       <a class="home" href="index.html">📖 Contents</a>
@@ -177,6 +180,9 @@
       </div>
 
       <h2 id="w9_bp"><span class="num">Section 1</span>Blood pressure &amp; hypertension</h2>
+<figure class="bref" data-sec="1" style="max-width:1040px;margin:10px 0 24px;padding:0;"><div style="border:1px solid #e6e2d6;border-radius:16px;overflow:hidden;background:#fffdf7;box-shadow:0 8px 26px rgba(20,40,46,.09);"><img src="img/cardiovascular_s1.jpg" alt="Hypertension reference figure" loading="lazy" style="display:block;width:100%;height:auto;background:#fff;" onerror="this.closest('figure').style.display='none'"></div><figcaption style="font-family:Inter,system-ui,sans-serif;font-size:12.5px;color:#7c8a88;margin-top:8px;line-height:1.5;"><b style="color:#0c3a44;">Reference.</b> Hypertension <span style="color:#9aa8a6;">&mdash; https://www.myupchar.com/en, CC BY-SA 4.0 (via Wikimedia Commons)</span></figcaption></figure>
+
+
       <p>Every time your heart beats, it pushes blood against the walls of your arteries. <b>Blood pressure</b> is simply the force of that push. We write it as two numbers, like 120/80 mmHg: the top (<b>systolic</b>) is the pressure when the heart squeezes, and the bottom (<b>diastolic</b>) is the pressure when the heart relaxes between beats. Healthy pressure keeps blood moving to every organ without hammering the vessels so hard they get damaged.</p>
 
 <h3>What actually sets the pressure</h3>
@@ -213,6 +219,9 @@
       <div class="kp"><div class="t">Key points</div><ul><li>Blood pressure equals cardiac output times systemic vascular resistance, so more fluid, a faster heart, or tighter vessels all raise it.</li><li>Baroreceptors give fast, moment-to-moment correction; the RAAS gives slower control by constricting vessels (angiotensin II) and retaining salt and water (aldosterone).</li><li>Primary (essential) hypertension is 90-95% of cases with no single cause; secondary hypertension has an identifiable, often treatable cause.</li><li>Hypertension is the silent killer because it causes no symptoms while quietly harming the heart, brain, kidneys, and eyes (target-organ damage).</li><li>Because patients feel fine, adherence teaching is critical; drugs like ACE inhibitors and ARBs work by blocking the RAAS pathway.</li></ul></div>
 
       <h2 id="w9_cad"><span class="num">Section 2</span>Coronary artery disease, angina &amp; MI</h2>
+<figure class="bref" data-sec="2" style="max-width:1040px;margin:10px 0 24px;padding:0;"><div style="border:1px solid #e6e2d6;border-radius:16px;overflow:hidden;background:#fffdf7;box-shadow:0 8px 26px rgba(20,40,46,.09);"><img src="img/cardiovascular_s2.jpg" alt="CAD & MI reference figure" loading="lazy" style="display:block;width:100%;height:auto;background:#fff;" onerror="this.closest('figure').style.display='none'"></div><figcaption style="font-family:Inter,system-ui,sans-serif;font-size:12.5px;color:#7c8a88;margin-top:8px;line-height:1.5;"><b style="color:#0c3a44;">Reference.</b> CAD & MI <span style="color:#9aa8a6;">&mdash; https://www.myupchar.com/en, CC BY-SA 4.0 (via Wikimedia Commons)</span></figcaption></figure>
+
+
       <p>Your heart is a muscle, and like any muscle it needs a steady supply of oxygen-rich blood to keep working. But here is the twist: even though gallons of blood rush <em>through</em> its chambers every hour, the heart muscle itself cannot use that blood directly. Instead, it feeds itself through its own dedicated plumbing, the <b>coronary arteries</b>, which branch off the aorta and wrap around the outside of the heart. When those vessels are open and healthy, supply easily keeps up with demand, and the muscle never notices. Trouble begins when the pipes get narrow.</p>
 
 <h3>How the coronary arteries get clogged</h3>
@@ -246,6 +255,9 @@
       <div class="kp"><div class="t">Key points</div><ul><li><b>Atherosclerosis</b> narrows the coronary arteries over years, reducing blood flow to the heart muscle (coronary artery disease).</li><li><b>Stable angina</b> is reversible ischemia from a demand-supply mismatch, relieved by rest or nitroglycerin; <b>unstable angina</b> occurs at rest and warns of an impending MI.</li><li>A <b>myocardial infarction</b> results from plaque rupture and a <b>thrombus</b> that blocks the artery, causing irreversible muscle death.</li><li>Recognize an MI by <b>chest pain</b> (watch for atypical presentations), <b>ST-elevation</b> on ECG, and <b>rising troponin</b> - and remember that <em>time is muscle</em>.</li></ul></div>
 
       <h2 id="w9_hf"><span class="num">Section 3</span>Heart failure</h2>
+<figure class="bref" data-sec="3" style="max-width:1040px;margin:10px 0 24px;padding:0;"><div style="border:1px solid #e6e2d6;border-radius:16px;overflow:hidden;background:#fffdf7;box-shadow:0 8px 26px rgba(20,40,46,.09);"><img src="img/cardiovascular_s3.jpg" alt="Heart failure reference figure" loading="lazy" style="display:block;width:100%;height:auto;background:#fff;" onerror="this.closest('figure').style.display='none'"></div><figcaption style="font-family:Inter,system-ui,sans-serif;font-size:12.5px;color:#7c8a88;margin-top:8px;line-height:1.5;"><b style="color:#0c3a44;">Reference.</b> Heart failure <span style="color:#9aa8a6;">&mdash; CDC/ Dr. Thomas Hooten, Public domain (via Wikimedia Commons)</span></figcaption></figure>
+
+
       <p>Picture the heart as a two-sided pump working every second of your life. The right side collects oxygen-poor blood returning from the body and pushes it to the lungs; the left side receives freshly oxygenated blood from the lungs and drives it out to every organ. When the heart is healthy, the amount of blood coming in matches the amount going out, and tissues get exactly the oxygen they need. <b>Heart failure</b> is what happens when the pump can no longer keep up with the body's demand. It does not mean the heart has stopped. It means the heart is failing to move blood forward efficiently, so blood <em>backs up</em> behind the weak side and organs downstream go under-supplied.</p>
 
 <h3>Left-sided failure: the backup floods the lungs</h3>
@@ -275,6 +287,9 @@
       <div class="kp"><div class="t">Key points</div><ul><li>Heart failure is a pump that cannot meet the body's demand; blood backs up behind the failing side.</li><li>Left-sided failure floods the lungs (dyspnea, orthopnea, crackles); right-sided failure floods the body (JVD, peripheral edema, hepatomegaly).</li><li>Systolic failure (HFrEF) is a weak squeeze with low EF; diastolic failure (HFpEF) is a stiff, poorly filling ventricle with normal EF.</li><li>RAAS and sympathetic activation compensate at first but eventually worsen congestion and drive remodeling.</li><li>BNP rises with ventricular stretch and helps confirm that dyspnea is cardiac in origin.</li></ul></div>
 
       <h2 id="w9_valve"><span class="num">Section 4</span>Valve disorders</h2>
+<figure class="bref" data-sec="4" style="max-width:1040px;margin:10px 0 24px;padding:0;"><div style="border:1px solid #e6e2d6;border-radius:16px;overflow:hidden;background:#fffdf7;box-shadow:0 8px 26px rgba(20,40,46,.09);"><img src="img/cardiovascular_s4.jpg" alt="Valve disorders reference figure" loading="lazy" style="display:block;width:100%;height:auto;background:#fff;" onerror="this.closest('figure').style.display='none'"></div><figcaption style="font-family:Inter,system-ui,sans-serif;font-size:12.5px;color:#7c8a88;margin-top:8px;line-height:1.5;"><b style="color:#0c3a44;">Reference.</b> Valve disorders <span style="color:#9aa8a6;">&mdash; CDC/Dr. Edwin P. Ewing, Jr., Public domain (via Wikimedia Commons)</span></figcaption></figure>
+
+
       <p>Picture your heart as a house with four rooms and four one-way doors between them. Those doors are your <b>valves</b>, and their whole job is simple: let blood move <em>forward</em> and never let it slip <em>backward</em>. When the heart squeezes, the doors ahead swing open easily; when it relaxes, they snap shut tight so nothing leaks back. Two of these doors do the heavy lifting on the left side of the heart, the side that pushes blood out to the whole body: the <b>mitral valve</b> (between the left atrium and left ventricle) and the <b>aortic valve</b> (between the left ventricle and the aorta). When a valve stops opening well or stops sealing well, the heart has to work harder for every single beat, and over time that extra work reshapes the chamber behind it.</p>
 
 <h3>The two ways a valve fails: stenosis vs. regurgitation</h3>
@@ -315,6 +330,9 @@
 </ul></div>
 
       <h2 id="w9_ekg"><span class="num">Section 5</span>The EKG &amp; arrhythmias</h2>
+<figure class="bref" data-sec="5" style="max-width:1040px;margin:10px 0 24px;padding:0;"><div style="border:1px solid #e6e2d6;border-radius:16px;overflow:hidden;background:#fffdf7;box-shadow:0 8px 26px rgba(20,40,46,.09);"><img src="img/cardiovascular_s5.jpg" alt="EKG & arrhythmias reference figure" loading="lazy" style="display:block;width:100%;height:auto;background:#fff;" onerror="this.closest('figure').style.display='none'"></div><figcaption style="font-family:Inter,system-ui,sans-serif;font-size:12.5px;color:#7c8a88;margin-top:8px;line-height:1.5;"><b style="color:#0c3a44;">Reference.</b> EKG & arrhythmias <span style="color:#9aa8a6;">&mdash; Ewingdo, CC BY-SA 4.0 (via Wikimedia Commons)</span></figcaption></figure>
+
+
       <p>Your heart has its own built-in electrical wiring, and every heartbeat starts as a tiny spark. Before we talk about what goes <em>wrong</em>, let us walk the normal path that spark travels, because every arrhythmia is really just a detour, a delay, or a short-circuit somewhere along that road.</p>
 
 <h3>The normal conduction system: the heart's spark and wire</h3>
@@ -362,6 +380,9 @@
 </ul></div>
 
       <h2 id="w9_pvd"><span class="num">Section 6</span>Peripheral vascular disease</h2>
+<figure class="bref" data-sec="6" style="max-width:1040px;margin:10px 0 24px;padding:0;"><div style="border:1px solid #e6e2d6;border-radius:16px;overflow:hidden;background:#fffdf7;box-shadow:0 8px 26px rgba(20,40,46,.09);"><img src="img/cardiovascular_s6.jpg" alt="Peripheral vascular reference figure" loading="lazy" style="display:block;width:100%;height:auto;background:#fff;" onerror="this.closest('figure').style.display='none'"></div><figcaption style="font-family:Inter,system-ui,sans-serif;font-size:12.5px;color:#7c8a88;margin-top:8px;line-height:1.5;"><b style="color:#0c3a44;">Reference.</b> Peripheral vascular <span style="color:#9aa8a6;">&mdash; Intermedichbo - Dr Milorad Dimić, Serbia, CC BY-SA 4.0 (via Wikimedia Commons)</span></figcaption></figure>
+
+
       <p>Your legs are fed by a two-way plumbing system. <b>Arteries</b> carry bright, oxygen-rich blood <em>down</em> from the heart under high pressure to feed the muscles, skin, and nerves. <b>Veins</b> carry the used, oxygen-poor blood back <em>up</em> to the heart against gravity, helped by one-way valves and the squeeze of your calf muscles. When either half of this system fails, the tissue downstream suffers, but it suffers in very different ways depending on whether the problem is inflow (arterial) or outflow (venous). <b>Peripheral vascular disease</b> is the umbrella term for both.</p>
 
 <h3>Arterial disease (PAD): not enough blood getting in</h3>
