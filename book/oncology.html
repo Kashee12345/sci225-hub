@@ -527,5 +527,32 @@
   show();
 })();
 </script>
+<style id="pdfprint">
+.pdf-btn{position:fixed;right:16px;bottom:16px;z-index:400;font-family:'Inter',system-ui,sans-serif;font-weight:700;font-size:13.5px;color:#fff;background:#0c7283;border:none;border-radius:24px;padding:11px 17px;box-shadow:0 6px 20px rgba(12,58,68,.30);cursor:pointer;display:inline-flex;align-items:center;gap:7px;}
+.pdf-btn:hover{background:#0c3a44;}
+@media print{
+ @page{margin:14mm;}
+ html,body{background:#fff !important;}
+ .topbar,.progress,aside,.chapnav,.pdf-btn{display:none !important;}
+ #pbgate{display:none !important;}
+ .layout{display:block !important;max-width:100% !important;padding:0 !important;grid-template-columns:1fr !important;gap:0 !important;}
+ .reading,.reading .col{max-width:100% !important;padding:0 !important;}
+ .embed iframe,.embed .frame{display:none !important;}
+ .embed{margin:14px 0 !important;}
+ .embed .cap{color:#555 !important;font-style:italic;}
+ .embed .cap .tag{background:#0c7283 !important;color:#fff !important;}
+ .embed .cap a{display:none !important;}
+ .bref,.bref .fr{break-inside:avoid;page-break-inside:avoid;box-shadow:none !important;}
+ .bref img{max-height:150mm;width:auto !important;margin:0 auto;}
+ .ctwrap,table.ctable,.pearl,.kp,.q,.objectives,.summary,dl.terms,figure{break-inside:avoid;page-break-inside:avoid;}
+ h1,h2,h3{break-after:avoid;page-break-after:avoid;}
+ .quiz .ans{display:block !important;}
+ .quiz .q button{display:none !important;}
+ a{color:inherit !important;text-decoration:none !important;}
+ *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
+ footer{border-top:1px solid #ccc !important;}
+}
+</style>
+<button class="pdf-btn" onclick="window.print()" title="Save this chapter as a PDF">🖨 Save as PDF</button>
 </body>
 </html>
