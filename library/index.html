@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#faf8f2">
+<title>The Library &middot; Nightingale College</title>
+<meta name="description" content="Every Nightingale interactive book by Dr. Vidya Aggrawal in one place.">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+ :root{--ink:#22312f;--soft:#4a5a58;--muted:#8b9a97;--line:#e2ebe8;--paper:#faf8f2;--card:#fffdf8;}
+ *{box-sizing:border-box;}
+ body{margin:0;background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,sans-serif;line-height:1.6;}
+ .top{max-width:1140px;margin:0 auto;padding:18px 20px 0;}
+ .top a{color:var(--soft);text-decoration:none;font-weight:600;font-size:14px;}
+ .wrap{max-width:1140px;margin:0 auto;padding:24px 20px 80px;}
+ header{text-align:center;margin-bottom:8px;}
+ .school{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 8px;}
+ h1{font-family:'Fraunces',Georgia,serif;font-size:clamp(30px,6vw,50px);margin:0 0 8px;}
+ .sub{color:var(--soft);font-size:16px;max-width:56ch;margin:0 auto 8px;}
+ .stats{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:20px 0 30px;}
+ .stat{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:7px 15px;font-size:13px;color:var(--soft);}
+ .stat b{color:var(--ink);}
+ .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;}
+ .lbook{display:flex;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 1px 3px rgba(40,60,55,.05);transition:transform .16s,box-shadow .16s;}
+ .lbook:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(40,60,55,.12);}
+ .bar{width:7px;flex:none;background:linear-gradient(180deg,var(--a),var(--ad));}
+ .bd{padding:16px 18px;display:flex;flex-direction:column;gap:4px;}
+ .t{font-family:'Fraunces',Georgia,serif;font-size:19px;font-weight:700;color:var(--ad);}
+ .p{color:var(--soft);font-size:13.5px;}
+ .m{color:var(--muted);font-size:12px;margin-top:2px;}
+ .m b{color:var(--a);}
+ footer{margin-top:40px;text-align:center;color:var(--muted);font-size:13px;line-height:1.8;}
+ @media (max-width:600px){.grid{grid-template-columns:1fr;}}
+ @media (prefers-reduced-motion:reduce){.lbook{transition:none;} .lbook:hover{transform:none;}}
+</style>
+</head>
+<body>
+<div id="pbgate" style="position:fixed;inset:0;z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:30px;background:linear-gradient(160deg,#faf8f2,#eef1e9);font-family:Inter,system-ui,sans-serif;"><div style="font-family:Fraunces,Georgia,serif;font-weight:700;color:#b8862f;letter-spacing:4px;text-transform:uppercase;font-size:13px;">✨ Coming Soon</div><div style="font-family:Fraunces,Georgia,serif;font-weight:700;color:#0c3a44;font-size:clamp(28px,5.4vw,42px);margin:10px 0 4px;line-height:1.1;">The Nightingale Library</div><div style="font-family:Fraunces,Georgia,serif;font-style:italic;color:#0c7283;font-size:19px;margin-bottom:14px;">an interactive book by Dr. Vidya</div><div style="color:#4a5a58;max-width:440px;line-height:1.6;font-size:15px;">This book is being finalized for launch. Enter the access code to preview it.</div><div style="margin-top:22px;display:flex;gap:8px;flex-wrap:wrap;justify-content:center;"><input id="pbpw" type="password" placeholder="Access code" autocomplete="off" style="font-family:Inter,sans-serif;font-size:16px;padding:11px 14px;border:1px solid #d3e5e7;border-radius:10px;background:#fff;width:200px;color:#22312f;"><button id="pbgo" style="font-family:Inter,sans-serif;font-weight:700;font-size:15px;color:#fff;background:#0c7283;border:none;border-radius:10px;padding:11px 22px;cursor:pointer;">Enter →</button></div><div id="pberr" style="color:#b03a3a;font-size:13px;margin-top:10px;height:16px;"></div><div style="margin-top:28px;color:#9aa8a6;font-size:12px;">The Nightingale Library · Nightingale College · Dr. Vidya Aggrawal</div></div>
+<script>(function(){function h(s){var x=0;for(var i=0;i<s.length;i++){x=(x*31+s.charCodeAt(i))>>>0;}return x;}var K=2914355096,g=document.getElementById("pbgate");try{if(localStorage.getItem("pb_ok")==="1"){g.parentNode.removeChild(g);return;}}catch(e){}var html=document.documentElement;html.style.overflow="hidden";function go(){var v=(document.getElementById("pbpw").value||"").trim().toLowerCase();if(h(v)===K){try{localStorage.setItem("pb_ok","1");}catch(e){}html.style.overflow="";g.parentNode.removeChild(g);}else{document.getElementById("pberr").textContent="Incorrect code — try again.";}}document.getElementById("pbgo").addEventListener("click",go);document.getElementById("pbpw").addEventListener("keydown",function(e){if(e.key==="Enter")go();});document.getElementById("pbpw").focus();})();</script>
+<div class="top"><a href="../index.html">&larr; Back to the SCI 225 hub</a></div>
+<div class="wrap">
+  <header>
+    <p class="school">Nightingale College</p>
+    <h1>The Library</h1>
+    <p class="sub">Every interactive book by Dr. Vidya Aggrawal, in one place &mdash; each one readable in the browser or saved as a PDF.</p>
+  </header>
+  <div class="stats">
+    <div class="stat"><b>11</b> books</div>
+    <div class="stat"><b>168</b> chapters</div>
+    <div class="stat"><b>865</b> interactives</div>
+    <div class="stat">every book saves as <b>PDF</b></div>
+  </div>
+  <div class="grid">
+    <a class="lbook" style="--a:#0c7283;--ad:#084e5a;" href="../anatomy/book/index.html"><span class="bar"></span><span class="bd"><span class="t">Anatomy &amp; Physiology</span><span class="p">The human body, system by system</span><span class="m"><b>28</b> chapters &middot; <b>163</b> figures &middot; <b>168</b> interactives</span></span></a>
+    <a class="lbook" style="--a:#0c7283;--ad:#084e5a;" href="../book/index.html"><span class="bar"></span><span class="bd"><span class="t">Pathophysiology</span><span class="p">How disease processes actually work</span><span class="m"><b>13</b> chapters &middot; <b>71</b> figures &middot; <b>62</b> interactives</span></span></a>
+    <a class="lbook" style="--a:#6d3f9c;--ad:#3d2a5c;" href="Microbiology/book/index.html"><span class="bar"></span><span class="bd"><span class="t">Microbiology</span><span class="p">Microbes, infection, and immunity</span><span class="m"><b>15</b> chapters &middot; <b>75</b> figures &middot; <b>75</b> interactives</span></span></a>
+    <a class="lbook" style="--a:#2f5f9e;--ad:#1d3d68;" href="Pharmacology/book/index.html"><span class="bar"></span><span class="bd"><span class="t">Pharmacology</span><span class="p">Drug classes and how they act on the body</span><span class="m"><b>14</b> chapters &middot; <b>70</b> figures &middot; <b>70</b> interactives</span></span></a>
+    <a class="lbook" style="--a:#a1466b;--ad:#5e2846;" href="Psychology/book/index.html"><span class="bar"></span><span class="bd"><span class="t">Psychology</span><span class="p">Mind, brain, and behavior</span><span class="m"><b>14</b> chapters &middot; <b>70</b> figures &middot; <b>70</b> interactives</span></span></a>
+    <a class="lbook" style="--a:#2e7d52;--ad:#1a4b31;" href="HumanDevelopment/book/index.html"><span class="bar"></span><span class="bd"><span class="t">Human Development</span><span class="p">Growth across the whole lifespan</span><span class="m"><b>14</b> chapters &middot; <b>70</b> figures &middot; <b>70</b> interactives</span></span></a>
+    <a class="lbook" style="--a:#bf6a30;--ad:#7a3d15;" href="Sociology/book/index.html"><span class="bar"></span><span class="bd"><span class="t">Sociology</span><span class="p">The patterns you are standing inside of</span><span class="m"><b>14</b> chapters &middot; <b>67</b> figures &middot; <b>70</b> interactives</span></span></a>
+    <a class="lbook" style="--a:#9a5834;--ad:#5e3319;" href="Anthropology/book/index.html"><span class="bar"></span><span class="bd"><span class="t">Cultural Anthropology</span><span class="p">Culture, kinship, and being human</span><span class="m"><b>14</b> chapters &middot; <b>69</b> figures &middot; <b>70</b> interactives</span></span></a>
+    <a class="lbook" style="--a:#2f6f8a;--ad:#1c4454;" href="Statistics/book/index.html"><span class="bar"></span><span class="bd"><span class="t">Statistics</span><span class="p">Turning data into decisions</span><span class="m"><b>14</b> chapters &middot; <b>70</b> figures &middot; <b>70</b> interactives</span></span></a>
+    <a class="lbook" style="--a:#43458f;--ad:#262a5c;" href="CollegeAlgebra/book/index.html"><span class="bar"></span><span class="bd"><span class="t">College Algebra</span><span class="p">Every rule, worked step by step</span><span class="m"><b>14</b> chapters &middot; <b>68</b> figures &middot; <b>70</b> interactives</span></span></a>
+    <a class="lbook" style="--a:#b07a1e;--ad:#6b4710;" href="Nutrition/book/index.html"><span class="bar"></span><span class="bd"><span class="t">Nutrition</span><span class="p">Evidence-based, minus the diet noise</span><span class="m"><b>14</b> chapters &middot; <b>67</b> figures &middot; <b>70</b> interactives</span></span></a>
+  </div>
+  <footer>by <b>Dr. Vidya Aggrawal</b> &middot; Nightingale College<br>Figures reused under open licenses; each book lists its figure credits.</footer>
+</div>
+</body>
+</html>
