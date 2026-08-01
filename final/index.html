@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Final Exam HQ · SCI 225 Pathophysiology</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="suite.css">
+<style>
+  .tbar .back{}
+  .weakbox{background:var(--gold-lt);border-left:4px solid var(--gold);border-radius:0 10px 10px 0;
+           padding:12px 16px;font-size:14px;margin:12px 0 4px;}
+  .weakbox b{color:#8a6416;}
+  .reslist{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;}
+  .res{display:flex;gap:11px;align-items:center;background:var(--card);border:1px solid var(--line);
+       border-radius:12px;padding:12px 14px;transition:border-color .15s,transform .15s;}
+  .res:hover{border-color:var(--accent);transform:translateY(-2px);}
+  .res .ri{font-size:19px;flex:0 0 auto;}
+  .res .rt{font-size:13.5px;font-weight:600;line-height:1.35;}
+  .res .rs{font-size:11.5px;color:var(--muted);}
+  .chapgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:8px;}
+  .chapgrid a{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 12px;
+              font-size:13px;font-weight:600;transition:border-color .15s;}
+  .chapgrid a:hover{border-color:var(--accent);}
+  .chapgrid a span{display:block;font-size:11px;color:var(--muted);font-weight:500;}
+</style>
+</head>
+<body>
+
+<div class="tbar"><div class="ti">
+  <a class="back" href="../index.html">‹ SCI 225 Hub</a>
+  <span class="tt">Final Exam HQ</span>
+  <span class="spacer"></span>
+  <span class="meta">Weeks 8–14</span>
+</div></div>
+
+<div class="wrap">
+
+  <div class="hero">
+    <div class="eyebrow">SCI 225 · Pathophysiology</div>
+    <h1>Final Exam HQ</h1>
+    <p>Everything for the final in one place. The exam covers <b>Weeks 8 through 14</b> &mdash; blood, heart, lungs, kidneys, reproduction, digestion, and the musculoskeletal and integumentary systems.</p>
+  </div>
+
+  <div class="sect">Where you stand</div>
+  <div class="card">
+    <div id="readiness"></div>
+    <div id="weakbox"></div>
+    <div class="row" style="margin-top:14px;">
+      <span class="note" id="summary"></span>
+      <span style="flex:1 1 auto;"></span>
+      <button class="btn ghost sm" id="resetBtn">Reset progress</button>
+    </div>
+  </div>
+
+  <div class="sect">Practice &amp; drill</div>
+  <div class="tools">
+    <a class="tool" href="simulator.html">
+      <div class="ico">📝</div>
+      <div><h3>Exam Simulator</h3><p>Timed and scored, 30 to 90 questions, no answers until you submit. Full breakdown afterwards.</p></div>
+    </a>
+    <a class="tool" href="abg.html">
+      <div class="ico">🫁</div>
+      <div><h3>ABG Trainer</h3><p>Fresh blood gas every time. Name the disorder, judge the compensation, see the four-step reasoning.</p></div>
+    </a>
+    <a class="tool" href="labs.html">
+      <div class="ico">🧪</div>
+      <div><h3>Lab Signature Drill</h3><p>Read the arrows, name the disorder. The most reliable question shape on the exam.</p></div>
+    </a>
+    <a class="tool" href="discriminator.html">
+      <div class="ico">⚖️</div>
+      <div><h3>Which Is It?</h3><p>One clue, two look-alikes. Drills the single fact that separates each confusable pair.</p></div>
+    </a>
+    <a class="tool" href="redflag.html">
+      <div class="ico">🚨</div>
+      <div><h3>Red-Flag Triage</h3><p>Act now, or monitor? Trains the priority judgement that priority questions test.</p></div>
+    </a>
+    <a class="tool" href="chains.html">
+      <div class="ico">🔗</div>
+      <div><h3>Mechanism Chains</h3><p>Put the downstream steps in order and follow a mechanism across systems.</p></div>
+    </a>
+    <a class="tool" href="cram.html">
+      <div class="ico">📄</div>
+      <div><h3>Cram Sheet</h3><p>One printable page: lab signatures, ABG rules, look-alikes, and every act-now finding.</p></div>
+    </a>
+  </div>
+
+  <div class="sect">Read &amp; review</div>
+  <div class="reslist">
+    <a class="res" href="../study-guides/SCI225_Final_Exam_Study_Guide.html">
+      <span class="ri">📘</span><span><span class="rt">Final Exam Study Guide</span><span class="rs">43 topics · 166 practice questions</span></span></a>
+    <a class="res" href="../games/the-chase.html">
+      <span class="ri">🎯</span><span><span class="rt">The Chase — Final mode</span><span class="rs">581 questions across Weeks 8–14</span></span></a>
+    <a class="res" href="../flashcards.html">
+      <span class="ri">🗂️</span><span><span class="rt">Flashcards</span><span class="rs">70 cards per week, Weeks 8–14</span></span></a>
+    <a class="res" href="../games/medical-mystery.html">
+      <span class="ri">🔍</span><span><span class="rt">Medical Mystery</span><span class="rs">Work cases in a clinical record</span></span></a>
+  </div>
+
+  <div class="sect">Book chapters on the exam</div>
+  <div class="chapgrid">
+    <a href="../book/hematology.html">Hematology<span>Week 8</span></a>
+    <a href="../book/cardiovascular.html">Cardiovascular<span>Week 9</span></a>
+    <a href="../book/pulmonary.html">Pulmonary<span>Week 10</span></a>
+    <a href="../book/renal.html">Renal &amp; Urinary<span>Week 11</span></a>
+    <a href="../book/reproductive.html">Reproductive<span>Week 12</span></a>
+    <a href="../book/digestive.html">Digestive<span>Week 13</span></a>
+    <a href="../book/musculoskeletal.html">MSK &amp; Skin<span>Week 14</span></a>
+  </div>
+
+  <p class="note" style="margin-top:34px;text-align:center;">
+    SCI 225 · Pathophysiology · Dr. Vidya Aggrawal · Nightingale College<br>
+    <span style="font-size:12px;opacity:.8;">Progress is saved in this browser only — it is not sent anywhere.</span>
+  </p>
+
+</div>
+
+<script src="bank.js"></script>
+<script src="suite.js"></script>
+<script>
+(function(){
+  var S=window.FinalSuite, P=S.Progress;
+
+  function render(){
+    var d=P.all(), any=false, worst=null, totC=0, totN=0;
+
+    document.getElementById('readiness').innerHTML=S.WEEKS.map(function(w){
+      var wk=d.weeks[w], pct=null;
+      if(wk && wk.n){ pct=Math.round(wk.c/wk.n*100); any=true; totC+=wk.c; totN+=wk.n;
+        if(worst===null || pct<worst.pct) worst={w:w,pct:pct,n:wk.n}; }
+      var label=S.weekShort(w);
+      return '<div class="wrow">'+
+        '<span class="wlab">'+S.esc(label.split(' · ')[0])+'</span>'+
+        '<span class="wbar"><span class="pbar'+(pct!==null&&pct<70?' gold':'')+'"><span style="width:'+(pct||0)+'%"></span></span>'+
+          '<span class="sublab">'+S.esc(label.split(' · ')[1]||'')+'</span></span>'+
+        '<span class="wpct">'+(pct===null?'not started':pct+'% · '+wk.n)+'</span>'+
+      '</div>';
+    }).join('');
+
+    var wb=document.getElementById('weakbox');
+    if(any && worst && worst.n>=5){
+      wb.innerHTML='<div class="weakbox">Your weakest area right now is <b>'+S.esc(S.weekShort(worst.w))+
+        '</b> at '+worst.pct+'%. Start there &mdash; open the study guide section for that week, then re-run a drill.</div>';
+    } else if(any){
+      wb.innerHTML='<div class="weakbox">Answer a few more questions and this will tell you which week to study first.</div>';
+    } else {
+      wb.innerHTML='<div class="weakbox">Nothing recorded yet. Run the <b>Exam Simulator</b> once to find out where you stand, then drill the weak weeks.</div>';
+    }
+
+    document.getElementById('summary').textContent=
+      totN? (totC+' of '+totN+' correct overall ('+Math.round(totC/totN*100)+'%)') : 'No attempts recorded yet.';
+  }
+
+  document.getElementById('resetBtn').addEventListener('click',function(){
+    if(confirm('Clear all saved progress for the final exam tools?')){ P.reset(); render(); }
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>

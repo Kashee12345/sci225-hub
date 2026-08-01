@@ -153,6 +153,25 @@
   .uh-body .sl{margin:22px 4px 10px;}
   .uh-body .sl:first-child{margin-top:14px;}
   @media(max-width:560px){details.usehub .uh-hint{display:none;}}
+
+  /* WHAT'S NEW */
+  .wnew{background:var(--card);border-bottom:1px solid var(--line);}
+  .wnew details>summary{list-style:none;cursor:pointer;max-width:780px;margin:0 auto;display:flex;align-items:center;gap:10px;padding:13px 20px;font-size:14px;font-weight:700;color:var(--accent-dk);}
+  .wnew details>summary::-webkit-details-marker{display:none;}
+  .wnew .wn-ic{font-size:16px;flex:0 0 auto;}
+  .wnew .wn-latest{font-weight:500;color:var(--faint);font-size:12.5px;}
+  .wnew .wn-chev{margin-left:auto;color:var(--faint);font-size:15px;transition:transform .2s;}
+  .wnew details[open] .wn-chev{transform:rotate(90deg);}
+  .wnew details[open]>summary{border-bottom:1px solid var(--line);}
+  .wnew .wn-body{max-width:780px;margin:0 auto;padding:4px 20px 20px;}
+  .wnew .wn-intro{margin:8px 0 4px;font-size:12.5px;color:var(--faint);line-height:1.5;font-style:italic;}
+  .wnew .wn-item{display:flex;gap:14px;padding:11px 0;border-bottom:1px dashed var(--line);}
+  .wnew .wn-item:last-child{border-bottom:none;}
+  .wnew .wn-date{flex:0 0 auto;width:98px;font-size:11.5px;font-weight:700;color:var(--accent);background:#eef5f6;border-radius:8px;padding:5px 0;text-align:center;height:-moz-fit-content;height:fit-content;}
+  .wnew .wn-txt h4{margin:0 0 2px;font-size:14px;font-weight:700;}
+  .wnew .wn-txt p{margin:0;font-size:13px;color:var(--muted);line-height:1.5;}
+  .wnew .wn-tag{font-size:9px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold);padding:1px 6px;border-radius:9px;margin-left:7px;vertical-align:middle;}
+  @media(max-width:560px){.wnew .wn-item{flex-direction:column;gap:5px;}.wnew .wn-date{width:auto;align-self:flex-start;padding:4px 11px;}}
 </style>
 </head>
 <body>
@@ -164,6 +183,11 @@
     <span>New podcasts, books, workbooks, study guides, and games are added every week. If something is missing or marked "coming soon," it's on the way. Thanks for bearing with me as it grows! 🙏</span>
   </div>
 </div></div>
+
+<div class="wnew"><details id="whatsnew">
+  <summary><span class="wn-ic">📢</span>What&rsquo;s New <span class="wn-latest" id="wnLatest"></span><span class="wn-chev">›</span></summary>
+  <div class="wn-body" id="wnBody"></div>
+</details></div>
 
 <header class="hero">
   <div id="hubAurora" aria-hidden="true"></div>
@@ -202,11 +226,11 @@
     </a>
     <a class="game" href="book/index.html">
       <div class="ico">📖</div>
-      <div><h3>The Book <span class="mtag">Coming Soon</span></h3><p>An interactive pathophysiology book — 13 chapters with figures, tables, and interactives.</p></div>
+      <div><h3>The Book</h3><p>An interactive pathophysiology book — 13 chapters with figures, tables, and interactives.</p></div>
     </a>
-    <a class="game" href="anatomy/book/index.html">
-      <div class="ico">📗</div>
-      <div><h3>A&amp;P Book <span class="mtag">Coming Soon</span></h3><p>An interactive anatomy &amp; physiology book — 28 chapters with figures, tables, and interactives.</p></div>
+    <a class="game" href="final/index.html">
+      <div class="ico">🎓</div>
+      <div><h3>Final Exam HQ</h3><p>Everything for the final (Weeks 8–14) — timed exam simulator, ABG trainer, lab-signature and red-flag drills, and a printable cram sheet.</p></div>
     </a>
     <a class="game" href="library/index.html">
       <div class="ico">📚</div>
@@ -358,6 +382,64 @@
 const H5P="https://akashgarg.h5p.com/content/";
 const SPOT="https://open.spotify.com/episode/";
 const FLIP="https://online.fliphtml5.com/okqmf/";
+/* ---------- WHAT'S NEW ----------
+   To add an update: copy one line to the TOP of this list. Newest first.
+   date is YYYY-MM-DD and is the only place the date is written.
+   Course-material entries are dated to the teaching week they were released
+   (term began Tue 7 Apr 2026); hub-feature entries are dated to when they went live. */
+const CHANGELOG=[
+ {date:"2026-08-01", title:"Final Exam HQ — a full suite of exam tools",
+  body:"One place for the final (Weeks 8-14) with seven new tools: a timed and scored Exam Simulator drawing on 581 questions, an ABG Trainer that generates a fresh blood gas every time, a Lab Signature Drill, a Which Is It? drill for the easily confused pairs, Red-Flag Triage, Mechanism Chains, and a printable one-page Cram Sheet. A readiness dashboard tracks your accuracy per week and tells you which one to study first."},
+ {date:"2026-08-01", title:"Final Exam Study Guide",
+  body:"A complete review guide for Weeks 8-14, the material the final covers. 43 topics, 166 practice questions with rationales, lab-signature and ABG cheat sheets, an emergencies reference, a 40-question rehearsal exam, and a 7-day study plan. Open the Final card at the bottom of the week list."},
+ {date:"2026-08-01", title:"The Book is now open to everyone",
+  body:"The interactive pathophysiology book no longer needs an access code - all 13 chapters are open."},
+ {date:"2026-07-21", title:"Sound off in every game",
+  body:"The Chase, PathoQuest, and Medical Mystery each got a single mute button that silences all audio, including voice."},
+ {date:"2026-07-20", title:"The Library",
+  body:"Eleven interactive books in one place, spanning the sciences, math, and social sciences. Access code required."},
+ {date:"2026-07-14", title:"Save any chapter as a PDF",
+  body:"The Book gained a print and save-as-PDF button on every chapter plus a whole-book option, and real medical reference figures throughout."},
+ {date:"2026-07-13", title:"The Pathophysiology Book",
+  body:"Thirteen chapters matched to the course weeks, each with figures, comparison tables, a glossary, a 12-question quiz, and embedded interactives."},
+ {date:"2026-07-13", title:"The Interactive Body",
+  body:"86 hands-on animated lessons plus ABG and Punnett square calculators. The hub layout was also cleaned up, moving the week list to the top."},
+ {date:"2026-07-07", title:"Week 14 — Musculoskeletal & Integumentary",
+  body:"Study guide and slide deck on bone disorders and fractures, the arthritis trio, muscle and spine conditions, burns, pressure injuries, and skin disease. The last content week of the term."},
+ {date:"2026-07-06", title:"Flashcards",
+  body:"910 cards - 70 per week across all 13 weeks - with a fresh daily challenge."},
+ {date:"2026-06-30", title:"Week 13 — Digestive",
+  body:"Study guide and slide deck on motility and absorption, GERD and peptic ulcers, inflammatory bowel disease, bowel obstruction, jaundice and cirrhosis, and the gallbladder and pancreas."},
+ {date:"2026-06-30", title:"Medical Mystery, and game upgrades",
+  body:"Medical Mystery, a clinical diagnostic-reasoning simulator, joined as the third game. Every game got step-by-step how-to-play instructions, and PathoQuest got faster movement, smoother camera follow, and readable answer explanations."},
+ {date:"2026-06-29", title:"The hub launched",
+  body:"Everything gathered into one page instead of scattered links: every week's podcasts, interactive books, workbooks, Kahoots, study guides, and slide decks, plus The Chase (1,062 questions across all 13 content weeks, with Midterm and Final modes) and PathoQuest."},
+ {date:"2026-06-23", title:"Week 12 — Reproductive",
+  body:"Study guide and slide deck for the female and male reproductive systems: the menstrual cycle and PCOS, endometriosis and fibroids, testicular and prostate disorders."},
+ {date:"2026-06-16", title:"Week 11 — Renal & Urology",
+  body:"Podcast, interactive book, study guide, and slides on the nephron and GFR, kidney stones and UTI, acute kidney injury, and chronic kidney disease."},
+ {date:"2026-06-09", title:"Week 10 — Pulmonary",
+  body:"Podcast, interactive book, study guide, and slides covering ventilation and gas exchange, ABGs, obstructive versus restrictive disease, and V/Q mismatch."},
+ {date:"2026-06-02", title:"Week 9 — Cardiovascular",
+  body:"Podcast, interactive book, illustrated workbook, Kahoot, study guide, and slides on cardiac output, heart failure, ischaemia and infarction, and congenital defects."},
+ {date:"2026-05-26", title:"Week 8 — Hematology",
+  body:"Podcast, interactive book, Kahoot, study guide, and slides on blood components, the anemias, hemostasis and the coagulation labs, and DIC."},
+ {date:"2026-05-19", title:"Midterm review",
+  body:"A consolidated review guide covering Weeks 1 to 6, plus the midterm workbook and a review podcast."},
+ {date:"2026-05-12", title:"Week 6 — Endocrine",
+  body:"Podcast, interactive book, Kahoot, study guide, and slides on hormone regulation and feedback, the thyroid (Graves and Hashimoto), adrenal disorders (Cushing and Addison), ADH problems, and diabetes mellitus."},
+ {date:"2026-05-05", title:"Week 5 — Neurology",
+  body:"Podcast, interactive book, illustrated workbook, Kahoot, study guide, and slides on the nervous system and its disorders."},
+ {date:"2026-04-28", title:"Week 4 — Pain",
+  body:"Podcast, interactive book, illustrated workbook, Kahoot, study guide, and slides on pain pathways, types of pain, and how pain is treated."},
+ {date:"2026-04-21", title:"Week 3 — Oncology",
+  body:"Podcast, two interactive books, illustrated workbook, Kahoot, study guide, and slides on how cancer works: benign versus malignant, spread and staging."},
+ {date:"2026-04-14", title:"Week 2 — Immunity & Inflammation",
+  body:"Podcast, two interactive books, illustrated workbook, Kahoot, study guide, and slides on defences, antibodies, inflammation, allergy, and autoimmunity."},
+ {date:"2026-04-07", title:"Week 1 — Foundations · The Cell",
+  body:"The course opens: two podcasts, three interactive books (the cell, then ABGs and genetics), two illustrated workbooks, two Kahoots, the study guide, and slides."}
+];
+
 const SG="study-guides/";
 const DK="decks/";
 
@@ -402,11 +484,11 @@ const WEEKS=[
   guide:["SCI225_Week5_Study_Guide.html","SCI225_Week5_Study_Guide.pdf"],
   deck:"SCI225 Week 05.pptx"},
 
- {n:"6",topic:"Neurology 2",
+ {n:"6",topic:"Endocrine",
   podcasts:[["Week 6",SPOT+"1GBD4bPzgo7VSyvIWTIk6Y"]],
-  books:[["Neurology 2",H5P+"1292822850993468028"]],
+  books:[["Endocrine",H5P+"1292822850993468028"]],
   workbooks:[],
-  kahoots:[["Neurology 2","https://create.kahoot.it/details/b50e4d9a-93e4-4a8e-9b97-a57440cb3d76"]],
+  kahoots:[["Endocrine","https://create.kahoot.it/details/b50e4d9a-93e4-4a8e-9b97-a57440cb3d76"]],
   guide:["SCI225_Week6_Study_Guide.html","SCI225_Week6_Study_Guide.pdf"],
   deck:"SCI225 Week 06.pptx"},
 
@@ -462,7 +544,13 @@ const WEEKS=[
  {n:"14",topic:"Musculoskeletal & Integumentary",
   podcasts:[],books:[],workbooks:[],kahoots:[],
   guide:["SCI225_Week14_Musculoskeletal_Integumentary_Study_Guide.html","SCI225_Week14_Musculoskeletal_Integumentary_Study_Guide.pdf"],
-  deck:"SCI225 Week 14.pptx"}
+  deck:"SCI225 Week 14.pptx"},
+
+ {n:"Final",fin:true,topic:"Final exam review — Weeks 8–14",
+  podcasts:[],books:[],workbooks:[],kahoots:[],
+  guide:["SCI225_Final_Exam_Study_Guide.html",null],
+  hq:"final/index.html",
+  deck:null}
 ];
 
 /* ---------- RENDER ---------- */
@@ -481,22 +569,45 @@ WEEKS.forEach(w=>{
   rows+=row('📚','Book', w.books.map(b=>link(b[0],b[1],true)));
   rows+=row('🎨','Workbook', w.workbooks.map(b=>link(b[0],b[1],true)));
   rows+=row('🎮','Kahoot', w.kahoots.map(k=>link(k[0],k[1],true)));
-  if(w.guide) rows+=row('📝','Study Guide', [link('View',SG+enc(w.guide[0]),false),link('PDF',SG+enc(w.guide[1]),false)]);
+  if(w.guide){
+    const gl=[link('View',SG+enc(w.guide[0]),false)];
+    if(w.guide[1]) gl.push(link('PDF',SG+enc(w.guide[1]),false));
+    rows+=row('📝','Study Guide', gl);
+  }
+  if(w.hq) rows+=row('🎓','Final Exam HQ', [link('Open the suite',w.hq,false)]);
   if(w.deck) rows+=row('📊','Slides', [link('Download',DK+enc(w.deck),false)]);
   if(!rows) rows='<div class="soon">'+(w.construction?'🚧 Under construction — coming soon.':'Resources coming soon.')+'</div>';
 
-  const count = w.podcasts.length + w.books.length + w.workbooks.length + w.kahoots.length + (w.guide?1:0) + (w.deck?1:0);
-  const label = w.mid ? 'Midterm' : 'Week '+w.n;
+  const count = w.podcasts.length + w.books.length + w.workbooks.length + w.kahoots.length + (w.guide?1:0) + (w.hq?1:0) + (w.deck?1:0);
+  const label = (w.mid || w.fin) ? w.n : 'Week '+w.n;
   const countTxt = w.construction ? 'in progress' : count+' item'+(count===1?'':'s');
 
   weeksEl.insertAdjacentHTML('beforeend',
-    '<details class="week'+(w.mid?' mid':'')+'">'+
+    '<details class="week'+((w.mid||w.fin)?' mid':'')+'">'+
       '<summary><span class="wn">'+label+'</span><span class="wt">'+w.topic+'</span><span class="wc">'+countTxt+'</span><span class="chev">›</span></summary>'+
       '<div class="wbody">'+rows+'</div>'+
     '</details>');
 });
 
 function setAll(open){document.querySelectorAll('details.week').forEach(d=>d.open=open);}
+
+/* ---------- RENDER WHAT'S NEW ---------- */
+(function(){
+  const body=document.getElementById('wnBody'), latest=document.getElementById('wnLatest');
+  if(!body||!Array.isArray(CHANGELOG)) return;
+  function fmt(d){
+    const p=d.split('-').map(Number);
+    return new Date(p[0],p[1]-1,p[2]).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
+  }
+  body.innerHTML='<p class="wn-intro">Course materials are dated to the teaching week they were released to the class (the term began 7 April 2026). Hub features are dated to when they went live on this site.</p>'+
+    CHANGELOG.map(function(c,i){
+    return '<div class="wn-item">'+
+      '<div class="wn-date">'+fmt(c.date)+'</div>'+
+      '<div class="wn-txt"><h4>'+c.title+(i===0?'<span class="wn-tag">New</span>':'')+'</h4>'+
+      '<p>'+c.body+'</p></div></div>';
+  }).join('');
+  if(latest&&CHANGELOG.length) latest.textContent='· last updated '+fmt(CHANGELOG[0].date);
+})();
 </script>
 
 <script>
