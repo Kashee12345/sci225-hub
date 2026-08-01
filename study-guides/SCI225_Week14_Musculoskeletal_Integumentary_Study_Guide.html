@@ -580,5 +580,46 @@
     btn.textContent=ans.classList.contains('show')?'Hide answer':'Show answer';
   }
 </script>
+<script id="printfix">
+/* Print / Save-as-PDF: include every collapsed section and hidden answer,
+   then put the page back exactly as the reader had it. */
+(function () {
+  var reopened = [], revealed = [];
+  function expand() {
+    var d = document.querySelectorAll('details'), i;
+    for (i = 0; i < d.length; i++) { if (!d[i].open) { d[i].open = true; reopened.push(d[i]); } }
+    var a = document.querySelectorAll('.ans'), j;
+    for (j = 0; j < a.length; j++) {
+      if (!a[j].classList.contains('show')) { a[j].classList.add('show'); revealed.push(a[j]); }
+    }
+  }
+  function restore() {
+    var i;
+    for (i = 0; i < reopened.length; i++) { reopened[i].open = false; }
+    for (i = 0; i < revealed.length; i++) { revealed[i].classList.remove('show'); }
+    reopened = []; revealed = [];
+  }
+  window.addEventListener('beforeprint', expand);
+  window.addEventListener('afterprint', restore);
+  if (window.matchMedia) {                     /* Safari and older engines */
+    var mq = window.matchMedia('print');
+    var h = function (e) { e.matches ? expand() : restore(); };
+    if (mq.addEventListener) mq.addEventListener('change', h);
+    else if (mq.addListener) mq.addListener(h);
+  }
+  window.__printExpand = expand; window.__printRestore = restore;   /* for verification */
+})();
+</script>
+<style id="printfixcss">
+@media print {
+  details, details[open] { display: block !important; }
+  details > summary { display: block !important; }
+  .ans { display: block !important; }
+  .reveal, .btn, .toolbar, .btns, nav.toc, .toc { display: none !important; }
+  a[href]:after { content: "" !important; }
+  h2, h3, h4 { page-break-after: avoid; }
+  table, .practice, .box, .keyidea, .pearl, .mnem, .redflag { page-break-inside: avoid; }
+}
+</style>
 </body>
 </html>
