@@ -27,7 +27,7 @@
 <div class="wrap">
 
   <div class="hero">
-    <div class="eyebrow">Final Exam Suite</div>
+    <div class="eyebrow"><span data-label>Final Exam</span> Suite</div>
     <h1>Mechanism Chains</h1>
     <p>Given the starting lesion, put the downstream steps in order. Finals reward students who can follow a mechanism across systems instead of memorising isolated facts.</p>
   </div>
@@ -53,7 +53,7 @@
       <div class="why" id="why"></div>
       <div class="row" style="margin-top:14px;">
         <button class="btn" id="nextBtn">Next chain &rsaquo;</button>
-        <a class="btn ghost sm" href="index.html">Back to HQ</a>
+        <a class="btn ghost sm" href="#" data-hq="1">Back to HQ</a>
       </div>
     </div>
   </div>
@@ -62,15 +62,14 @@
     <div class="sect" style="margin-top:0;">All chains complete</div>
     <p id="doneTxt" class="note"></p>
     <div class="row"><button class="btn" onclick="location.reload()">Go again</button>
-    <a class="btn ghost" href="index.html">Back to HQ</a></div>
+    <a class="btn ghost" href="#" data-hq="1">Back to HQ</a></div>
   </div>
 
 </div>
 
-<script src="drills.js"></script>
 <script src="suite.js"></script>
 <script>
-(function(){
+window.FinalSuite.loadData(function(){
   var S=window.FinalSuite, P=S.Progress;
   document.getElementById('bar').innerHTML=S.topbar('Mechanism Chains','<span id="tbS"></span>');
 
@@ -149,7 +148,7 @@
 
   document.getElementById('nextBtn').addEventListener('click',function(){ i++; draw(); });
   draw(); stat();
-})();
+});
 </script>
 </body>
 </html>

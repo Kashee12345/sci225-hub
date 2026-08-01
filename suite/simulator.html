@@ -37,7 +37,7 @@
   <!-- SETUP -->
   <section id="setup">
     <div class="hero">
-      <div class="eyebrow">Final Exam Suite</div>
+      <div class="eyebrow"><span data-label>Final Exam</span> Suite</div>
       <h1>Exam Simulator</h1>
       <p>A timed, scored practice exam drawn from the Weeks 8&ndash;14 question bank. No answers until you submit &mdash; then you get a full breakdown of where you stand.</p>
     </div>
@@ -98,7 +98,7 @@
     </div>
     <div class="row" style="margin:16px 0;">
       <button class="btn" onclick="location.reload()">New exam</button>
-      <a class="btn ghost" href="index.html">Back to Final Exam HQ</a>
+      <a class="btn ghost" href="#" data-hq="1">Back to Final Exam HQ</a>
       <button class="btn ghost sm" id="onlyMissed">Show only missed</button>
     </div>
     <div class="sect">Full review</div>
@@ -107,10 +107,9 @@
 
 </div>
 
-<script src="bank.js"></script>
 <script src="suite.js"></script>
 <script>
-(function(){
+window.FinalSuite.loadData(function(){
   var S=window.FinalSuite, P=S.Progress;
   document.getElementById('bar').innerHTML=S.topbar('Exam Simulator','<span class="timer" id="clock"></span>');
 
@@ -269,7 +268,7 @@
   });
 
   renderSetup();
-})();
+});
 </script>
 </body>
 </html>

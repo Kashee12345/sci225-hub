@@ -23,8 +23,11 @@
   }
 
   var Progress = {
-    /* record one answered item.  week may be null for cross-week items. */
+    /* record one answered item.  week may be null for cross-week items.
+       Week stats are shared (1-6 and 8-14 never collide) but tool stats are
+       namespaced per exam, so a midterm run cannot skew a final average. */
     hit: function (tool, week, correct) {
+      tool = examKey + ":" + tool;
       var d = load();
       if (week != null) {
         var k = String(week);
@@ -39,6 +42,7 @@
     },
     /* record a completed run (simulator score, drill session) */
     run: function (tool, pct) {
+      tool = examKey + ":" + tool;
       var d = load();
       var t = d.tools[tool] || { c: 0, n: 0, runs: 0, best: null };
       t.runs = (t.runs || 0) + 1;
@@ -110,16 +114,64 @@
 
   var topbar = function (title, meta) {
     return '<div class="tbar"><div class="ti">' +
-      '<a class="back" href="index.html">‹ Final Exam HQ</a>' +
+      '<a class="back" href="' + w.FinalSuite.hq + '">‹ ' + esc(EXAM.label) + ' HQ</a>' +
       '<span class="tt">' + esc(title) + '</span>' +
       '<span class="spacer"></span>' +
       '<span class="meta" id="tbMeta">' + (meta || "") + '</span>' +
       '</div></div>';
   };
 
+  /* ---------- which exam is this? ----------
+     One copy of each tool serves both suites; ?exam=final|midterm picks the data. */
+  var EXAMS = {
+    final:   { label: "Final Exam",  span: "Weeks 8–14", weeks: ["8","9","10","11","12","13","14"], abgWeek: "10" },
+    midterm: { label: "Midterm",     span: "Weeks 1–6",  weeks: ["1","2","3","4","5","6"],          abgWeek: "1"  }
+  };
+  var examKey = (function () {
+    /* an explicit ?exam= wins (the shared tools under /suite/ use it);
+       otherwise infer from the folder, so /midterm/index.html needs no query string */
+    var m = /[?&]exam=([a-z]+)/i.exec(w.location.search);
+    if (m && EXAMS[m[1].toLowerCase()]) return m[1].toLowerCase();
+    var p = /\/(midterm|final)\//i.exec(w.location.pathname);
+    if (p && EXAMS[p[1].toLowerCase()]) return p[1].toLowerCase();
+    return "final";
+  })();
+  var EXAM = EXAMS[examKey];
+
+  /* load this exam's bank + drills, then run cb */
+  function loadData(cb) {
+    var files = ["../" + examKey + "/bank.js", "../" + examKey + "/drills.js"];
+    var i = 0;
+    (function next() {
+      if (i >= files.length) return cb();
+      var s = document.createElement("script");
+      s.src = files[i++];
+      s.onload = next;
+      s.onerror = function () { next(); };   /* a missing drills.js must not wedge the page */
+      document.head.appendChild(s);
+    })();
+  }
+
   w.FinalSuite = {
     Progress: Progress, shuffle: shuffle, esc: esc, shuffleQ: shuffleQ,
     bankAll: bankAll, weekTitle: weekTitle, weekShort: weekShort, topbar: topbar,
-    WEEKS: ["8", "9", "10", "11", "12", "13", "14"]
+    exam: examKey, EXAM: EXAM, loadData: loadData, span: EXAM.span,
+    hq: "../" + examKey + "/index.html",
+    link: function (page) { return page + "?exam=" + examKey; },
+    get WEEKS() { return EXAM.weeks; }
   };
+
+  /* back-links and any [data-span] placeholders resolve once the DOM is up */
+  function wire() {
+    var a = document.querySelectorAll('[data-hq]');
+    for (var i = 0; i < a.length; i++) a[i].setAttribute("href", w.FinalSuite.hq);
+    var t = document.querySelectorAll("[data-span]");
+    for (var j = 0; j < t.length; j++) t[j].textContent = EXAM.span;
+    var l = document.querySelectorAll("[data-label]");
+    for (var k = 0; k < l.length; k++) l[k].textContent = EXAM.label;
+    if (document.title.indexOf("SCI 225") >= 0)
+      document.title = document.title.replace(/SCI 225 (Final|Midterm)/, "SCI 225 " + EXAM.label);
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", wire);
+  else wire();
 })(window);

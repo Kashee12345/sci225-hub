@@ -228,6 +228,10 @@
       <div class="ico">📖</div>
       <div><h3>The Book</h3><p>An interactive pathophysiology book — 13 chapters with figures, tables, and interactives.</p></div>
     </a>
+    <a class="game" href="midterm/index.html">
+      <div class="ico">🎓</div>
+      <div><h3>Midterm HQ</h3><p>Everything for the midterm (Weeks 1–6) — timed exam simulator, ABG trainer, lab-signature and red-flag drills, and a printable cram sheet.</p></div>
+    </a>
     <a class="game" href="final/index.html">
       <div class="ico">🎓</div>
       <div><h3>Final Exam HQ</h3><p>Everything for the final (Weeks 8–14) — timed exam simulator, ABG trainer, lab-signature and red-flag drills, and a printable cram sheet.</p></div>
@@ -388,6 +392,8 @@ const FLIP="https://online.fliphtml5.com/okqmf/";
    Course-material entries are dated to the teaching week they were released
    (term began Tue 7 Apr 2026); hub-feature entries are dated to when they went live. */
 const CHANGELOG=[
+ {date:"2026-08-01", title:"Midterm HQ, and a rebuilt Midterm Review Guide",
+  body:"The same seven tools now cover the midterm (Weeks 1-6), drawing on 481 questions: exam simulator, ABG trainer, lab signatures, Which Is It?, red-flag triage, mechanism chains, and a cram sheet. The Midterm Review Guide has also been rewritten in the same format as the final guide, with 27 topics and over 100 practice questions."},
  {date:"2026-08-01", title:"Final Exam HQ — a full suite of exam tools",
   body:"One place for the final (Weeks 8-14) with seven new tools: a timed and scored Exam Simulator drawing on 581 questions, an ABG Trainer that generates a fresh blood gas every time, a Lab Signature Drill, a Which Is It? drill for the easily confused pairs, Red-Flag Triage, Mechanism Chains, and a printable one-page Cram Sheet. A readiness dashboard tracks your accuracy per week and tells you which one to study first."},
  {date:"2026-08-01", title:"Final Exam Study Guide",
@@ -497,7 +503,8 @@ const WEEKS=[
   books:[],
   workbooks:[["Midterm Workbook",FLIP+"uppb/"]],
   kahoots:[],
-  guide:["SCI225_Pathophysiology_Midterm_Review.html","SCI225_Pathophysiology_Midterm_Review.pdf"],
+  guide:["SCI225_Pathophysiology_Midterm_Review.html",null],
+  hq:"midterm/index.html",
   deck:null},
 
  {n:"8",topic:"Hematology",
@@ -574,7 +581,7 @@ WEEKS.forEach(w=>{
     if(w.guide[1]) gl.push(link('PDF',SG+enc(w.guide[1]),false));
     rows+=row('📝','Study Guide', gl);
   }
-  if(w.hq) rows+=row('🎓','Final Exam HQ', [link('Open the suite',w.hq,false)]);
+  if(w.hq) rows+=row('🎓',(w.mid?'Midterm HQ':'Final Exam HQ'), [link('Open the suite',w.hq,false)]);
   if(w.deck) rows+=row('📊','Slides', [link('Download',DK+enc(w.deck),false)]);
   if(!rows) rows='<div class="soon">'+(w.construction?'🚧 Under construction — coming soon.':'Resources coming soon.')+'</div>';
 

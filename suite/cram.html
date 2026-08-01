@@ -43,12 +43,12 @@
 <div class="wrap">
 
   <div class="hero">
-    <div class="eyebrow">Final Exam Suite</div>
+    <div class="eyebrow"><span data-label>Final Exam</span> Suite</div>
     <h1>Cram Sheet</h1>
     <p>Everything that fits on a page: lab signatures, ABG rules, the look-alike pairs, and the findings that mean act now. Built from the same content as the drills.</p>
     <div class="row noprint" style="justify-content:center;margin-top:16px;">
       <button class="btn" onclick="window.print()">Print / Save as PDF</button>
-      <a class="btn ghost" href="index.html">Back to HQ</a>
+      <a class="btn ghost" href="#" data-hq="1">Back to HQ</a>
     </div>
   </div>
 
@@ -109,15 +109,14 @@
       <div><b>Hirschsprung</b> no meconium in 48 h</div>
     </div>
 
-    <p class="note" style="margin-top:14px;font-size:10.5px;">SCI 225 · Pathophysiology · Final Exam (Weeks 8–14) · Dr. Vidya Aggrawal · Nightingale College</p>
+    <p class="note" style="margin-top:14px;font-size:10.5px;">SCI 225 · Pathophysiology · <span data-label>Final Exam</span> (<span data-span>Weeks 8–14</span>) · Dr. Vidya Aggrawal · Nightingale College</p>
   </div>
 
 </div>
 
-<script src="drills.js"></script>
 <script src="suite.js"></script>
 <script>
-(function(){
+window.FinalSuite.loadData(function(){
   var S=window.FinalSuite, D=window.FINAL_DRILLS;
   document.getElementById('bar').innerHTML=S.topbar('Cram Sheet','');
 
@@ -146,7 +145,7 @@
     return '<div><b>'+S.esc(c.title)+'</b> (Wk '+c.week+') — '+S.esc(c.start)+' → '+
       c.steps.map(S.esc).join(' → ')+'</div>';
   }).join('');
-})();
+});
 </script>
 </body>
 </html>

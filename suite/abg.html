@@ -29,7 +29,7 @@
 <div class="wrap">
 
   <div class="hero">
-    <div class="eyebrow">Final Exam Suite</div>
+    <div class="eyebrow"><span data-label>Final Exam</span> Suite</div>
     <h1>ABG Trainer</h1>
     <p>Read the gas, name the disorder, then judge the compensation. Values are generated fresh every time, so you can drill until the four-step method is automatic.</p>
   </div>
@@ -56,7 +56,7 @@
       <div class="why" id="why"></div>
       <div class="row" style="margin-top:14px;">
         <button class="btn" id="nextBtn">Next gas &rsaquo;</button>
-        <a class="btn ghost sm" href="index.html">Back to HQ</a>
+        <a class="btn ghost sm" href="#" data-hq="1">Back to HQ</a>
       </div>
     </div>
   </div>
@@ -77,7 +77,7 @@
 
 <script src="suite.js"></script>
 <script>
-(function(){
+window.FinalSuite.loadData(function(){
   var S=window.FinalSuite, P=S.Progress;
   document.getElementById('bar').innerHTML=S.topbar('ABG Trainer','<span id="tbS"></span>');
 
@@ -183,7 +183,7 @@
     });
     var ok=(cur.got1===cur.d.k)&&(b.dataset.c===cur.c.k);
     stats.n++; if(ok){stats.c++;stats.streak++;} else stats.streak=0;
-    P.hit('abg','10',ok);
+    P.hit('abg', S.EXAM.abgWeek, ok);   /* ABGs sit in Wk 1 for the midterm, Wk 10 for the final */
     explain(ok);
     stat();
   });
@@ -221,7 +221,7 @@
 
   document.getElementById('nextBtn').addEventListener('click',draw);
   draw(); stat();
-})();
+});
 </script>
 </body>
 </html>
